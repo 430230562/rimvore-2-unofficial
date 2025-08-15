@@ -1,12 +1,13 @@
-# Introduction
-This is the repo for the mod RimVore-2 for the game Rimworld by Ludeon Studios.
+# 介绍
+一个名为RimVore2的环世界模组
 
-The mod contains extreme fetish content, based on Vore. If you dislike the fetish or things associated with it, **do not install this mod**.
+如果你不知道什么是vore或者对此不感兴趣**那就别玩**.
 
-You can join our discord server for direct discussions and troubleshooting: https://discord.gg/w9tYgTGgx4
+加入[discord](https://discord.gg/w9tYgTGgx4)以获取最新版本
 
-If you find a bug or have a mod integration / compatibility request, [provide a ticket](https://gitlab.com/Nabber/rimvore-2/-/issues) and the development team will take a look at it.
-
-Supported languages:
+语言包:
 English
 [Japanese](https://gitlab.com/Amecissist7/rimvore-jp) - Translator: https://twitter.com/Milcandybox
+[Chinese](https://github.com/430230562/RimVore2-Chinese-translate)
+
+原模组链接:https://gitlab.com/Nabber/rimvore-2
