@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RecordDef>
+    <defName>RV2_Predator</defName>
+    <label>Vore: Predator</label>
+    <description>The number of times I vored someone.</description>
+    <type>Int</type>
+  </RecordDef>
+  <RecordDef>
+    <defName>RV2_Prey</defName>
+    <label>Vore: Prey</label>
+    <description>The number of times I have been vored.</description>
+    <type>Int</type>
+  </RecordDef>
+
+  <!-- VoreType -->
+  <!-- increased on vore initiation -->
+  <RecordDef>
+    <defName>RV2_Type_Oral_Predator</defName>
+    <label>Vore: Oral Predator</label>
+    <description>The number of times I have swallowed someone.</description>
+    <type>Int</type>
+  </RecordDef>
+  <RecordDef>
+    <defName>RV2_Type_Oral_Prey</defName>
+    <label>Vore: Oral Prey</label>
+    <description>The number of times I have been swallowed.</description>
+    <type>Int</type>
+  </RecordDef>
+  <RecordDef>
+    <defName>RV2_Type_Anal_Predator</defName>
+    <label>Vore: Anal Predator</label>
+    <description>The number of times I have anally swallowed someone.</description>
+    <type>Int</type>
+  </RecordDef>
+  <RecordDef>
+    <defName>RV2_Type_Anal_Prey</defName>
+    <label>Vore: Anal Prey</label>
+    <description>The number of times I have been anally swallowed.</description>
+    <type>Int</type>
+  </RecordDef>
+  <RecordDef>
+    <defName>RV2_Type_Cock_Predator</defName>
+    <label>Vore: Cock Predator</label>
+    <description>The number of times I have swallowed someone with my cock.</description>
+    <type>Int</type>
+  </RecordDef>
+  <RecordDef>
+    <defName>RV2_Type_Cock_Prey</defName>
+    <label>Vore: Cock Prey</label>
+    <description>The number of times I have been swallowed by someones cock.</description>
+    <type>Int</type>
+  </RecordDef>
+  <RecordDef>
+    <defName>RV2_Type_Vaginal_Predator</defName>
+    <label>Vore: Vaginal Predator</label>
+    <description>The number of times I have vaginally swallowed someone.</description>
+    <type>Int</type>
+  </RecordDef>
+  <RecordDef>
+    <defName>RV2_Type_Vaginal_Prey</defName>
+    <label>Vore: Vaginal Prey</label>
+    <description>The number of times I have been vaginally swallowed.</description>
+    <type>Int</type>
+  </RecordDef>
+  <RecordDef>
+    <defName>RV2_Type_Nipple_Predator</defName>
+    <label>Vore: Nipple Predator</label>
+    <description>The number of times I have swallowed someone with my nipple.</description>
+    <type>Int</type>
+  </RecordDef>
+  <RecordDef>
+    <defName>RV2_Type_Nipple_Prey</defName>
+    <label>Vore: Nipple Prey</label>
+    <description>The number of times I have been swallowed by someones nipple.</description>
+    <type>Int</type>
+  </RecordDef>
+
+  <!-- ESEGN: New full tour records -->
+
+  <RecordDef>
+    <defName>RV2_Type_FullTour_Predator</defName>
+    <label>Vore: Full Tour Predator</label>
+    <description>The number of times I have swallowed someone to shown them my whole tract.</description>
+    <type>Int</type>
+  </RecordDef>
+  <RecordDef>
+    <defName>RV2_Type_FullTour_Prey</defName>
+    <label>Vore: Full Tour Prey</label>
+    <description>The number of times I have been swallowed to see my predator's whole tract.</description>
+    <type>Int</type>
+  </RecordDef>
+
+  <!-- VoreGoal -->
+  <!-- increased on vore end -->
+  <RecordDef>
+    <defName>RV2_Goal_Digest_Predator</defName>
+    <label>Vore: Digestion Predator</label>
+    <description>The number of times I have digested someone.</description>
+    <type>Int</type>
+  </RecordDef>
+  <RecordDef>
+    <defName>RV2_Goal_Digest_Prey</defName>
+    <label>Vore: Digestion Prey</label>
+    <description>The number of times I have been digested.</description>
+    <type>Int</type>
+  </RecordDef>
+  <RecordDef>
+    <defName>RV2_Goal_ConvertLube_Predator</defName>
+    <label>Vore: Lubify Predator</label>
+    <description>The number of times I have converted someone into lube.</description>
+    <type>Int</type>
+  </RecordDef>
+  <RecordDef>
+    <defName>RV2_Goal_ConvertLube_Prey</defName>
+    <label>Vore: Lubify Prey</label>
+    <description>The number of times I have been converted into lube.</description>
+    <type>Int</type>
+  </RecordDef>
+  <RecordDef>
+    <defName>RV2_Goal_ConvertMilk_Predator</defName>
+    <label>Vore: Milkify Predator</label>
+    <description>The number of times I have converted someone into milk.</description>
+    <type>Int</type>
+  </RecordDef>
+  <RecordDef>
+    <defName>RV2_Goal_ConvertMilk_Prey</defName>
+    <label>Vore: Milkify Prey</label>
+    <description>The number of times I have been converted into milk.</description>
+    <type>Int</type>
+  </RecordDef>
+  <RecordDef>
+    <defName>RV2_Goal_ConvertSperm_Predator</defName>
+    <label>Vore: Spermify Predator</label>
+    <description>The number of times I have converted someone into sperm.</description>
+    <type>Int</type>
+  </RecordDef>
+  <RecordDef>
+    <defName>RV2_Goal_ConvertSperm_Prey</defName>
+    <label>Vore: Spermify Prey</label>
+    <description>The number of times I have been converted into sperm.</description>
+    <type>Int</type>
+  </RecordDef>
+  <RecordDef>
+    <defName>RV2_Goal_Reform_Predator</defName>
+    <label>Vore: Reformation Predator</label>
+    <description>The number of times I have reformed someone.</description>
+    <type>Int</type>
+  </RecordDef>
+  <RecordDef>
+    <defName>RV2_Goal_Reform_Prey</defName>
+    <label>Vore: Reformation Prey</label>
+    <description>The number of times I have been reformed.</description>
+    <type>Int</type>
+  </RecordDef>
+
+  <RecordDef>
+    <defName>RV2_Goal_Heal_Predator</defName>
+    <label>Vore: Healing Predator</label>
+    <description>The number of times I have healed someone.</description>
+    <type>Int</type>
+  </RecordDef>
+  <RecordDef>
+    <defName>RV2_Goal_Heal_Prey</defName>
+    <label>Vore: Healing Prey</label>
+    <description>The number of times I have been healed.</description>
+    <type>Int</type>
+  </RecordDef>
+  <RecordDef>
+    <defName>RV2_Goal_Pleasure_Predator</defName>
+    <label>Vore: Pleasure Predator</label>
+    <description>The number of times I have vored someone for pleasure.</description>
+    <type>Int</type>
+  </RecordDef>
+  <RecordDef>
+    <defName>RV2_Goal_Pleasure_Prey</defName>
+    <label>Vore: Pleasure Prey</label>
+    <description>The number of times I have been vored for pleasure.</description>
+    <type>Int</type>
+  </RecordDef>
+  <RecordDef>
+    <defName>RV2_Goal_Store_Predator</defName>
+    <label>Vore: Storage Predator</label>
+    <description>The number of times I have vored someone for storage.</description>
+    <type>Int</type>
+  </RecordDef>
+  <RecordDef>
+    <defName>RV2_Goal_Store_Prey</defName>
+    <label>Vore: Storage Prey</label>
+    <description>The number of times I have been stored inside of someone.</description>
+    <type>Int</type>
+  </RecordDef>
+  <RecordDef>
+    <defName>RV2_Goal_Hold_Predator</defName>
+    <label>Vore: Temporary Storage Predator</label>
+    <description>The number of times I have vored someone for temporary storage.</description>
+    <type>Int</type>
+  </RecordDef>
+  <RecordDef>
+    <defName>RV2_Goal_Hold_Prey</defName>
+    <label>Vore: Temporary Storage Prey</label>
+    <description>The number of times I have been temporarily stored inside of someone.</description>
+    <type>Int</type>
+  </RecordDef>
+</Defs>

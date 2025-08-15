@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+  <RimVore2.VoreStageDef Abstract="True" Name="Breasts_Base">
+    <partName>chest</partName>
+    <displayPartTranslationKey>RV2_DisplayPart_Breasts</displayPartTranslationKey>
+    <requirements>
+      <li>
+        <target>Predator</target>
+        <requirements>
+          <li Class="RimVore2.Requirement_HediffAlias">
+            <bodyPartAlias>chest</bodyPartAlias>
+            <hediffAlias>breasts</hediffAlias>
+            <minSeverity>0.02</minSeverity> <!-- RJW male breast size: 0.01 -->
+          </li>
+        </requirements>
+      </li>
+    </requirements>
+  </RimVore2.VoreStageDef>
+  
+  <!-- Warmup-->
+  <RimVore2.VoreStageDef ParentName="Breasts_Base">
+    <defName>Breasts_Warmup</defName>
+    <partGoal>WarmUp</partGoal>
+    <canReverseDirection>true</canReverseDirection>
+    <predatorHediffDef>RV2_PreyInBreastsWarming</predatorHediffDef>
+    <predatorThoughtDef>RV2_PreyInBreastsWarming</predatorThoughtDef>
+    <jumpKey>Breasts</jumpKey>
+    <onCycle>
+      <rollPresets>
+        <li>Sound_Churn_10</li>
+      </rollPresets>
+    </onCycle>
+    <passConditions>
+      <!-- ESEGN: Changed to warmup pass condition -->
+      <li Class="RimVore2.StagePassCondition_Warmup">
+        <duration>32</duration>
+        <hediffs>
+          <li>RV2_PreyInBreastsDissolving</li>
+          <li>RV2_PreyInBreastsMushing</li>
+          <li>RV2_PreyInBreastsConvertingMilk</li>
+        </hediffs>
+      </li>
+    </passConditions>
+  </RimVore2.VoreStageDef>
+
+  <!-- Dissolve -->
+  <RimVore2.VoreStageDef Abstract="True" Name="Breasts_Dissolve" ParentName="Breasts_Base">
+    <partGoal>Dissolve</partGoal>
+    <canReverseDirection>true</canReverseDirection>
+    <predatorHediffDef>RV2_PreyInBreastsDissolving</predatorHediffDef>
+    <jumpKey>Breasts</jumpKey>
+    <onStart>
+      <actions>
+        <li Class="RimVore2.RollAction_PassValue_Set">
+          <name>DigestionProgress</name>
+          <type>DigestionProgress</type>
+        </li>
+      </actions>
+    </onStart>
+    <onCycle>
+      <rollPresets>
+        <li>Sound_Churn_Chance_5</li>
+        <li>Sound_Gurgle_Chance_5</li>
+        <li>Sound_Moan_Chance_15</li>
+        <li>IncreaseDigestionProgress</li>
+      </rollPresets>
+    </onCycle>
+    <onEnd>
+      <actions>
+        <li Class="RimVore2.RollAction_ShowMote">
+          <mote>RV2_Mote_Skull</mote>
+        </li>
+        <li Class="RimVore2.RollAction_PlaySound">
+          <sound>RV2_Moan</sound>
+        </li>
+        <li Class="RimVore2.RollAction_RecordTale_GoalFinish"/>
+      </actions>
+    </onEnd>
+    <passConditions>
+      <li Class="RimVore2.StagePassCondition_PassValue">
+        <passValueName>DigestionProgress</passValueName>
+        <targetValue>1</targetValue>
+      </li>
+    </passConditions>
+  </RimVore2.VoreStageDef>
+  
+  
+  <RimVore2.VoreStageDef ParentName="Breasts_Dissolve">
+    <defName>Breasts_DissolveMilk</defName>
+    <predatorThoughtDef>RV2_PreyInBreastsDissolvingMilk</predatorThoughtDef>
+    <onStart>
+      <actions>
+        <li Class="RimVore2.RollAction_ShowMote">
+          <mote>RV2_Mote_BubblesMilk</mote>
+        </li>
+      </actions>
+    </onStart>
+    <onCycle>
+      <rollPresets>
+        <li>Mote_BubbleMilk</li>
+      </rollPresets>
+    </onCycle>
+    <onEnd>
+      <actions>
+        <li Class="RimVore2.RollAction_Digest">
+          <damageDef>RV2_MilkConversionEnzymes</damageDef>
+        </li>
+        <li Class="RimVore2.RollAction_ShowMote">
+          <mote>RV2_Mote_BubblesMilk</mote>
+        </li>
+      </actions>
+    </onEnd>
+  </RimVore2.VoreStageDef>
+  
+  <!-- Mush -->
+  <RimVore2.VoreStageDef Abstract="True" Name="Breasts_Mush" ParentName="Breasts_Base">
+    <partGoal>Mush</partGoal>
+    <canReverseDirection>false</canReverseDirection>
+    <predatorHediffDef>RV2_PreyInBreastsMushing</predatorHediffDef>
+    <onStart>
+      <actions>
+        <li Class="RimVore2.RollAction_PassValue_Set">
+          <name>BreakDownProgress</name>
+          <value>0</value>
+        </li>
+      </actions>
+    </onStart>
+    <onCycle>
+      <rollPresets>
+        <li>Sound_Churn_Chance_5</li>
+        <li>Sound_Gurgle_Chance_5</li>
+        <li>Sound_Moan_Chance_15</li>
+        <li>IncreaseBreakDownProgress</li>
+      </rollPresets>
+    </onCycle>
+    <passConditions>
+      <li Class="RimVore2.StagePassCondition_PassValue">
+        <passValueName>BreakDownProgress</passValueName>
+        <targetValue>1</targetValue>
+      </li>
+    </passConditions>
+    <onEnd>
+      <actions>
+        <li Class="RimVore2.RollAction_PlaySound">
+          <sound>RV2_Moan</sound>
+        </li>
+      </actions>
+    </onEnd>
+  </RimVore2.VoreStageDef>
+
+  <RimVore2.VoreStageDef ParentName="Breasts_Mush">
+    <defName>Breasts_MushMilk</defName>
+    <predatorThoughtDef>RV2_PreyInBreastsMushingMilk</predatorThoughtDef>
+    <onCycle>
+      <rollPresets>
+        <li>Mote_BubbleMilk</li>
+      </rollPresets>
+    </onCycle>
+    <onEnd>
+      <actions>
+        <li Class="RimVore2.RollAction_ShowMote">
+          <mote>RV2_Mote_BubblesMilk</mote>
+        </li>
+      </actions>
+    </onEnd>
+  </RimVore2.VoreStageDef>
+
+    <!-- Convert -->
+  <RimVore2.VoreStageDef Abstract="True" Name="Breasts_Convert" ParentName="Breasts_Base">
+    <canReverseDirection>true</canReverseDirection>
+    <onStart>
+      <actions>
+        <li Class="RimVore2.RollAction_PassValue_Set">
+          <name>PreyNutrition</name>
+          <type>PreyNutrition</type>
+        </li>
+      </actions>
+    </onStart>
+    <onCycle>
+      <rollPresets>
+        <li>Sound_Churn_Chance_5</li>
+        <li>Sound_Gurgle_Chance_5</li>
+        <li>Sound_Moan_Chance_15</li>
+      </rollPresets>
+    </onCycle>
+    <passConditions>
+      <li Class="RimVore2.StagePassCondition_PassValue">
+        <passValueName>PreyNutrition</passValueName>
+        <targetValue>0</targetValue>
+        <decreasing>true</decreasing>
+      </li>
+    </passConditions>
+  </RimVore2.VoreStageDef>
+  
+  <RimVore2.VoreStageDef ParentName="Breasts_Convert">
+    <defName>Breasts_ConvertMilk</defName>
+    <partGoal>Lactify</partGoal>
+    <predatorHediffDef>RV2_PreyInBreastsConvertingMilk</predatorHediffDef>
+    <predatorThoughtDef>RV2_PreyInBreastsConvertingMilk</predatorThoughtDef>
+    <onCycle>
+      <rollPresets>
+        <li>Mote_BubbleMilk</li>
+        <li>ConvertNutritionToMilk</li>
+      </rollPresets>
+    </onCycle>
+    <onEnd>
+      <actions>
+        <li Class="RimVore2.RollAction_ShowMote">
+          <mote>RV2_Mote_BubblesMilk</mote>
+        </li>
+        <li Class="RimVore2.RollAction_PlaySound">
+          <sound>RV2_Moan</sound>
+        </li>
+        <li Class="RimVore2.RollAction_RecordTale_GoalFinish"/>
+      </actions>
+    </onEnd>
+  </RimVore2.VoreStageDef>
+  
+  <!-- Pleasure -->
+  <RimVore2.VoreStageDef ParentName="Breasts_Base">
+    <defName>Breasts_Pleasure</defName>
+    <partGoal>Pleasure</partGoal>
+    <canReverseDirection>true</canReverseDirection>
+    <predatorHediffDef>RV2_PreyInBreastsPleasuring</predatorHediffDef>
+    <predatorThoughtDef>RV2_PreyInBreastsPleasuring</predatorThoughtDef>
+    <jumpKey>Breasts</jumpKey>
+    <onCycle>
+      <rollPresets>
+        <li>Sound_Churn_10</li>
+        <li>Sound_Moan_Chance_15</li>
+        <li>StealNeed_ForPrey_Food</li>
+        <li>IncreaseNeed_Predator_Comfort</li>
+        <li>IncreaseNeed_Prey_Comfort</li>
+      </rollPresets>
+    </onCycle>
+    <onEnd>
+      <actions>
+        <li Class="RimVore2.RollAction_PlaySound">
+          <sound>RV2_Moan</sound>
+        </li>
+        <li Class="RimVore2.RollAction_RecordTale_GoalFinish"/>
+      </actions>
+    </onEnd>
+    <passConditions>
+      <li Class="RimVore2.StagePassCondition_Need">
+        <target>Prey</target>
+        <need>Comfort</need>
+        <targetLevel>0.95</targetLevel>
+      </li>
+      <li Class="RimVore2.StagePassCondition_Need">
+        <target>Predator</target>
+        <need>Comfort</need>
+        <targetLevel>0.95</targetLevel>
+      </li>
+    </passConditions>
+  </RimVore2.VoreStageDef>
+  
+  <!-- Store / Hold -->
+  <RimVore2.VoreStageDef Name="Breasts_Store" ParentName="Breasts_Base">
+    <defName>Breasts_Store</defName>
+    <partGoal>Store</partGoal>
+    <canReverseDirection>true</canReverseDirection>
+    <predatorHediffDef>RV2_PreyInBreastsStoring</predatorHediffDef>
+    <predatorThoughtDef>RV2_PreyInBreastsStoring</predatorThoughtDef>
+    <jumpKey>Breasts</jumpKey>
+    <onCycle>
+      <rollPresets>
+        <li>Sound_Churn_Chance_30</li>
+        <li>IncreaseNeed_Prey_Rest</li>
+        <li>StealNeed_ForPrey_Food</li>
+      </rollPresets>
+    </onCycle>
+    <onEnd>
+      <actions>
+        <li Class="RimVore2.RollAction_RecordTale_GoalFinish"/>
+      </actions>
+    </onEnd>
+    <passConditions>
+      <li Class="RimVore2.StagePassCondition_Manual"/>
+    </passConditions>
+  </RimVore2.VoreStageDef>
+
+  <RimVore2.VoreStageDef ParentName="Breasts_Store">
+    <defName>Breasts_Hold</defName>
+    <partGoal>Hold</partGoal>
+    <passConditions Inherit="False">
+      <li Class="RimVore2.StagePassCondition_Timed">
+        <duration>36</duration>
+      </li>
+    </passConditions>
+  </RimVore2.VoreStageDef>
+
+  <RimVore2.VoreStageDef Name="Breasts_Heal" ParentName="Breasts_Base">
+    <defName>Breasts_Heal</defName>
+    <partGoal>Heal</partGoal>
+    <jumpKey>Breasts</jumpKey>
+    <canReverseDirection>true</canReverseDirection>
+    <predatorHediffDef>RV2_PreyInBreastsHealing</predatorHediffDef>
+    <predatorThoughtDef>RV2_PreyInBreastsHealing</predatorThoughtDef>
+    <onCycle>
+      <rollPresets>
+        <li>Sound_Churn_10</li>
+        <li>IncreaseNeed_Prey_Rest</li>
+        <li>StealNeed_ForPrey_Food</li>
+        <li>Heal_Prey</li>
+        <!-- actions are interrupted here if predator has no food for healing -->
+        <li>Mote_Heal</li>
+      </rollPresets>
+    </onCycle>
+    <onEnd>
+      <actions>
+        <li Class="RimVore2.RollAction_RecordTale_GoalFinish"/>
+      </actions>
+    </onEnd>
+    <passConditions>
+      <li Class="RimVore2.StagePassCondition_Healed">
+        <target>Prey</target>
+      </li>
+    </passConditions>
+  </RimVore2.VoreStageDef>
+  
+</Defs>

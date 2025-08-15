@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <IssueDef>
+    <defName>RV2_HumanoidPrey</defName>
+    <label>Humanoid Prey</label>
+    <iconPath>UI/Issues/Humanoid</iconPath>
+  </IssueDef>
+
+  <!-- Neutral -->
+  <!--<PreceptDef>
+    <defName>RV2_HumanoidPrey_Accepted</defName>
+    <issue>RV2_HumanoidPrey</issue>
+    <label>Accepted</label>
+    <description>Voring humans is acceptable.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <associatedMemes>
+      <li>RV2_Predation</li>
+    </associatedMemes>
+  </PreceptDef>-->
+
+  <!-- Disliked -->
+  <PreceptDef>
+    <defName>RV2_HumanoidPrey_Disliked</defName>
+    <issue>RV2_HumanoidPrey</issue>
+    <label>disliked</label>
+    <description>Voring humanoids is not okay.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <associatedMemes>
+      <li>RV2_Predation</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>RV2_HumanoidPrey</eventDef>
+        <thought>RV2_HumanoidPrey_Disliked</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>RV2_HumanoidPrey</eventDef>
+        <thought>RV2_HumanoidPrey_Know_Disliked</thought>
+      </li>
+      <!-- Nabber: I personally feel like cannibals should still be able to generate with obsessed preference -->
+      <li Class="RimVore2.PreceptComp_Quirk_RemoveQuirks">
+        <quirks>
+          <li>DietaryPreference_Predator_Humanoids_Obsessed_NotCannibal</li>
+          <li>DietaryPreference_Prey_Humanoids_Obsessed</li>
+        </quirks>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <ThoughtDef>
+    <defName>RV2_HumanoidPrey_Disliked</defName>
+    <durationDays>3</durationDays>
+    <stages>
+      <li>
+        <label>I vored a human</label>
+        <description>I should not have done that, my ideology discourages it</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>RV2_HumanoidPrey_Know_Disliked</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>3</durationDays>
+    <stackLimit>1</stackLimit>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>vored a human</label>
+        <baseOpinionOffset>-5</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- Abhorrent -->
+  <PreceptDef>
+    <defName>RV2_HumanoidPrey_Abhorrent</defName>
+    <issue>RV2_HumanoidPrey</issue>
+    <label>abhorrent</label>
+    <description>Nothing is a worse insult to our religion than voring another human.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <associatedMemes>
+      <li>RV2_Predation</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>RV2_HumanoidPrey</eventDef>
+        <thought>RV2_HumanoidPrey_Abhorrent</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>RV2_HumanoidPrey</eventDef>
+        <thought>RV2_HumanoidPrey_Know_Abhorrent</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>RV2_HumanoidPrey</eventDef>
+        <thought>RV2_HumanoidPrey_Know_Social_Abhorrent</thought>
+      </li>
+      <li Class="RimVore2.PreceptComp_Quirk_RemoveQuirks">
+        <quirks>
+          <li>DietaryPreference_Predator_Humanoids_Likes_NotCannibal</li>
+          <li>DietaryPreference_Predator_Humanoids_Obsessed_Cannibal</li>
+          <li>DietaryPreference_Predator_Humanoids_Obsessed_NotCannibal</li>
+          <li>DietaryPreference_Prey_Humanoids_Likes</li>
+          <li>DietaryPreference_Prey_Humanoids_Obsessed</li>
+        </quirks>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <ThoughtDef>
+    <defName>RV2_HumanoidPrey_Abhorrent</defName>
+    <durationDays>3</durationDays>
+    <stages>
+      <li>
+        <label>Human vore</label>
+        <description>I vored a human when it is against my ideology. I feel horrible.</description>
+        <baseMoodEffect>-24</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>RV2_HumanoidPrey_Know_Abhorrent</defName>
+    <durationDays>3</durationDays>
+    <stages>
+      <li>
+        <label>Someone vored a human!!</label>
+        <description>One of us consumed a person, this is a disgusting insult to our beliefs!</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>RV2_HumanoidPrey_Know_Social_Abhorrent</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>3</durationDays>
+    <stackLimit>5</stackLimit>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>vored human</label>
+        <baseOpinionOffset>-10</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- Liked -->
+  <PreceptDef>
+    <defName>RV2_HumanoidPrey_Liked</defName>
+    <issue>RV2_HumanoidPrey</issue>
+    <label>liked</label>
+    <description>Voring other people is encouraged</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <associatedMemes>
+      <li>RV2_Predation</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>RV2_HumanoidPrey</eventDef>
+        <thought>RV2_HumanoidPrey_Liked</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>RV2_HumanoidPrey</eventDef>
+        <thought>RV2_HumanoidPrey_Know_Liked</thought>
+      </li>
+      <li Class="RimVore2.PreceptComp_Quirk_RemoveQuirks">
+        <quirks>
+          <li>DietaryPreference_Predator_Humanoids_Refuses</li>
+          <li>DietaryPreference_Prey_Humanoids_Refuses</li>
+        </quirks>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <ThoughtDef>
+    <defName>RV2_HumanoidPrey_Liked</defName>
+    <durationDays>3</durationDays>
+    <stages>
+      <li>
+        <label>I vored a human</label>
+        <description>Partaking in this divine art fills me with joy</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>RV2_HumanoidPrey_Know_Liked</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>3</durationDays>
+    <stackLimit>1</stackLimit>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>human taster</label>
+        <baseOpinionOffset>5</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- Required -->
+  <PreceptDef>
+    <defName>RV2_HumanoidPrey_Required</defName>
+    <issue>RV2_HumanoidPrey</issue>
+    <label>required</label>
+    <description>We are born to eat humans, only through regular consumption can we stay true to our beliefs.</description>
+    <impact>High</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <associatedMemes>
+      <li>RV2_Predation</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>RV2_HumanoidPrey</eventDef>
+        <thought>RV2_HumanoidPrey_Required</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>RV2_HumanoidPrey</eventDef>
+        <thought>RV2_HumanoidPrey_Know_Required</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>RV2_HumanoidPrey</eventDef>
+        <thought>RV2_HumanoidPrey_Know_Social_Required</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>RV2_NoRecentHumanoidPrey_Required</thought>
+        <description>Not vored a human for {VORERELATEDINTERVAL} days</description>
+      </li>
+      <li Class="RimVore2.PreceptComp_Quirk_RemoveQuirks">
+        <quirks>
+          <li>DietaryPreference_Predator_Humanoids_Dislikes</li>
+          <li>DietaryPreference_Predator_Humanoids_Refuses</li>
+          <li>DietaryPreference_Prey_Humanoids_Dislikes</li>
+          <li>DietaryPreference_Prey_Humanoids_Refuses</li>
+        </quirks>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <ThoughtDef>
+    <defName>RV2_HumanoidPrey_Required</defName>
+    <durationDays>1</durationDays>
+    <stages>
+      <li>
+        <label>Vored humanlike</label>
+        <description>By voring people I honor my beliefs.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>RV2_HumanoidPrey_Know_Required</defName>
+    <durationDays>1</durationDays>
+    <stages>
+      <li>
+        <label>Someone vored a person!</label>
+        <description>One of our members consumed human prey, a very respectable act!</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>RV2_HumanoidPrey_Know_Social_Required</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>3</durationDays>
+    <stackLimit>5</stackLimit>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>divine human enjoyer</label>
+        <baseOpinionOffset>2</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>RV2_NoRecentHumanoidPrey_Required</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>RimVore2.ThoughtWorker_Precept_RecentKeyword</workerClass>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>want to vore humans</label>
+        <description>It's been far too long since I last vored a human.</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+    <modExtensions>
+      <li Class="RimVore2.PreceptThoughtWorker_ListeningKeyword">
+        <keyword>HumanoidPrey</keyword>
+      </li>
+    </modExtensions>
+  </ThoughtDef>
+
+</Defs>

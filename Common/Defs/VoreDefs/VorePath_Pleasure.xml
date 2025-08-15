@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!-- Here are the pleasure paths. -->
+
+  <RimVore2.VorePathDef Abstract="True" Name="Pleasure_Base">
+    <voreGoal>Pleasure</voreGoal>
+    <requirements>
+      <li>
+        <target>Prey</target>
+        <requirements>
+          <li Class="RimVore2.Requirement_Need">
+            <def>Comfort</def>
+          </li>
+        </requirements>
+      </li>
+      <li>
+        <target>Predator</target>
+        <requirements>
+          <li Class="RimVore2.Requirement_Need">
+            <def>Comfort</def>
+          </li>
+        </requirements>
+      </li>
+    </requirements>
+    <defaultRequiredStruggles>9</defaultRequiredStruggles>
+  </RimVore2.VorePathDef>
+
+  <!-- Essential Paths -->
+
+  <!-- Oral -->
+
+  <RimVore2.VorePathDef ParentName="Pleasure_Base">
+    <defName>OralPleasure</defName>
+    <label>(Pleasure) Oral</label>
+    <RMBLabel>Oral vore</RMBLabel>
+    <actionDescription>{PREDATOR} will swallow {PREY} for pleasure</actionDescription>
+    <description>Oral pleasure is where the predator safely swallows the prey for mutual sexual pleasure.</description>
+    <initTale>RV2_VoreInitiation_OralPleasure</initTale>
+    <exitTale>RV2_VoreExit_OralPleasure</exitTale>
+    <voreType>Oral</voreType>
+    <postVoreMemories>
+      <predatorPostVoreSuccess>RV2_PredatorOralPleasureSuccess</predatorPostVoreSuccess>
+      <predatorPostVoreInterrupted>RV2_PredatorOralPleasureInterrupted</predatorPostVoreInterrupted>
+      <preyPostVoreSuccess>RV2_PreyOralPleasureSuccess</preyPostVoreSuccess>
+      <preyPostVoreInterrupted>RV2_PreyOralPleasureInterrupted</preyPostVoreInterrupted>
+    </postVoreMemories>
+    <stages>
+      <li>Mouth_Enter_Pleasure</li>
+      <li>Stomach_Pleasure</li>
+      <li>Mouth_Regurgitate_Pleasure</li>
+    </stages>
+  </RimVore2.VorePathDef>
+
+  <!-- ESEGN: FullTour -->
+
+  <RimVore2.VorePathDef ParentName="Pleasure_Base">
+    <defName>FullTourPleasure</defName>
+    <label>(Pleasure) Full Tour</label>
+    <RMBLabel>Full tour vore</RMBLabel>
+    <actionDescription>{PREDATOR} will swallow {PREY} for pleasure, and release them out the other end</actionDescription>
+    <description>Full tour pleasure is where the predator safely swallows the prey for mutual sexual pleasure, then releases them through their guts.</description>
+    <initTale>RV2_VoreInitiation_FullTourPleasure</initTale>
+    <exitTale>RV2_VoreExit_FullTourPleasure</exitTale>
+    <voreType>FullTour</voreType>
+    <postVoreMemories>
+      <predatorPostVoreSuccess>RV2_PredatorFullTourPleasureSuccess</predatorPostVoreSuccess>
+      <predatorPostVoreInterrupted>RV2_PredatorFullTourPleasureInterrupted</predatorPostVoreInterrupted>
+      <preyPostVoreSuccess>RV2_PreyFullTourPleasureSuccess</preyPostVoreSuccess>
+      <preyPostVoreInterrupted>RV2_PreyFullTourPleasureInterrupted</preyPostVoreInterrupted>
+    </postVoreMemories>
+    <stages>
+      <li>Mouth_Enter_Pleasure</li>
+      <li>Stomach_Pleasure</li>
+      <li>Intestines_Exit_Pleasure</li>
+      <li>Anus_Exit_Pleasure</li>
+    </stages>
+  </RimVore2.VorePathDef>
+
+  <!-- Anal -->
+
+  <RimVore2.VorePathDef ParentName="Pleasure_Base">
+    <defName>AnalPleasure</defName>
+    <label>(Pleasure) Anal</label>
+    <RMBLabel>Anal vore</RMBLabel>
+    <actionDescription>{PREDATOR} will posternate {PREY} for pleasure</actionDescription>
+    <description>Anal pleasure is where the predator stuffs the prey up their butt and into their intestines for mutual sexual pleasure.</description>
+    <initTale>RV2_VoreInitiation_AnalPleasure</initTale>
+    <exitTale>RV2_VoreExit_AnalPleasure</exitTale>
+    <voreType>Anal</voreType>
+    <postVoreMemories>
+      <predatorPostVoreSuccess>RV2_PredatorAnalPleasureSuccess</predatorPostVoreSuccess>
+      <predatorPostVoreInterrupted>RV2_PredatorAnalPleasureInterrupted</predatorPostVoreInterrupted>
+      <preyPostVoreSuccess>RV2_PreyAnalPleasureSuccess</preyPostVoreSuccess>
+      <preyPostVoreInterrupted>RV2_PreyAnalPleasureInterrupted</preyPostVoreInterrupted>
+    </postVoreMemories>
+    <stages>
+      <li>Anus_Enter_Pleasure</li>
+      <li>Intestines_Pleasure</li>
+      <li>Anus_Exit_Pleasure</li>
+    </stages>
+  </RimVore2.VorePathDef>
+
+  <!-- Vaginal -->
+
+  <RimVore2.VorePathDef ParentName="Pleasure_Base">
+    <defName>VaginalPleasure</defName>
+    <label>(Pleasure) Vaginal</label>
+    <RMBLabel>Vaginal vore</RMBLabel>
+    <actionDescription>{PREDATOR} will unbirth {PREY} for pleasure</actionDescription>
+    <description>Vaginal pleasure is where the predator unbirths the prey into their womb for mutual sexual pleasure.</description>
+    <initTale>RV2_VoreInitiation_VaginalPleasure</initTale>
+    <exitTale>RV2_VoreExit_VaginalPleasure</exitTale>
+    <voreType>Vaginal</voreType>
+    <postVoreMemories>
+      <predatorPostVoreSuccess>RV2_PredatorVaginalPleasureSuccess</predatorPostVoreSuccess>
+      <predatorPostVoreInterrupted>RV2_PredatorVaginalPleasureInterrupted</predatorPostVoreInterrupted>
+      <preyPostVoreSuccess>RV2_PreyVaginalPleasureSuccess</preyPostVoreSuccess>
+      <preyPostVoreInterrupted>RV2_PreyVaginalPleasureInterrupted</preyPostVoreInterrupted>
+    </postVoreMemories>
+    <stages>
+      <li>Vagina_Enter_Pleasure</li>
+      <li>Womb_Pleasure</li>
+      <li>Vagina_Exit_Pleasure</li>
+    </stages>
+  </RimVore2.VorePathDef>
+
+  <!-- Cock -->
+
+  <RimVore2.VorePathDef ParentName="Pleasure_Base">
+    <defName>CockPleasure</defName>
+    <label>(Pleasure) Cock</label>
+    <RMBLabel>Cock vore</RMBLabel>
+    <actionDescription>{PREDATOR} will unsow {PREY} for pleasure</actionDescription>
+    <description>Cock pleasure is where the predator shunts the prey down their cock and into their balls for mutual sexual pleasure.</description>
+    <initTale>RV2_VoreInitiation_CockPleasure</initTale>
+    <exitTale>RV2_VoreExit_CockPleasure</exitTale>
+    <voreType>Cock</voreType>
+    <postVoreMemories>
+      <predatorPostVoreSuccess>RV2_PredatorCockPleasureSuccess</predatorPostVoreSuccess>
+      <predatorPostVoreInterrupted>RV2_PredatorCockPleasureInterrupted</predatorPostVoreInterrupted>
+      <preyPostVoreSuccess>RV2_PreyCockPleasureSuccess</preyPostVoreSuccess>
+      <preyPostVoreInterrupted>RV2_PreyCockPleasureInterrupted</preyPostVoreInterrupted>
+    </postVoreMemories>
+    <stages>
+      <li>Cock_Enter_Pleasure</li>
+      <li>Testicles_Pleasure</li>
+      <li>Cock_Exit_Pleasure</li>
+    </stages>
+  </RimVore2.VorePathDef>
+
+  <!-- Nipple -->
+
+  <RimVore2.VorePathDef ParentName="Pleasure_Base">
+    <defName>NipplePleasure</defName>
+    <label>(Pleasure) Nipple</label>
+    <RMBLabel>Nipple vore</RMBLabel>
+    <actionDescription>{PREDATOR} will unnurse {PREY} for pleasure</actionDescription>
+    <description>Nipple pleasure is where the predator shoves the prey through their nipple and into their mammary for mutual sexual pleasure.</description>
+    <initTale>RV2_VoreInitiation_NipplePleasure</initTale>
+    <exitTale>RV2_VoreExit_NipplePleasure</exitTale>
+    <voreType>Nipple</voreType>
+    <postVoreMemories>
+      <predatorPostVoreSuccess>RV2_PredatorNipplePleasureSuccess</predatorPostVoreSuccess>
+      <predatorPostVoreInterrupted>RV2_PredatorNipplePleasureInterrupted</predatorPostVoreInterrupted>
+      <preyPostVoreSuccess>RV2_PreyNipplePleasureSuccess</preyPostVoreSuccess>
+      <preyPostVoreInterrupted>RV2_PreyNipplePleasureInterrupted</preyPostVoreInterrupted>
+    </postVoreMemories>
+    <stages>
+      <li>Nipple_Enter_Pleasure</li>
+      <li>Breasts_Pleasure</li>
+      <li>Nipple_Exit_Pleasure</li>
+    </stages>
+  </RimVore2.VorePathDef>
+
+</Defs>

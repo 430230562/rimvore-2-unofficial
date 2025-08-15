@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- Widget Descriptions -->
+  <RV2_ExtraDescription_VoreProductContainer_Label> ({NAME})</RV2_ExtraDescription_VoreProductContainer_Label>
+  <RV2_ExtraDescription_VoreProductContainer>These remains belong to {NAME}, aged {AGE}. They were a {PROFESSION} of the {FACTION} faction.</RV2_ExtraDescription_VoreProductContainer>
+  <RV2_ExtraDescription_VoreProductContainer_ProfessionFallback>Member</RV2_ExtraDescription_VoreProductContainer_ProfessionFallback>
+  
+</LanguageData>

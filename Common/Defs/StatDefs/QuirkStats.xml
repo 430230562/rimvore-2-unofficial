@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RimVore2.RV2StatDef Name="RV2_StatDefBase" Abstract="True">
+    <category>Vore</category>
+    <workerClass>RimVore2.RV2StatWorker</workerClass>
+    <defaultBaseValue>1</defaultBaseValue>
+    <minValue>0</minValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <forInformationOnly>true</forInformationOnly>
+  </RimVore2.RV2StatDef>
+
+  <RimVore2.RV2StatDef ParentName="RV2_StatDefBase">
+    <defName>RV2_DigestionStrength</defName>
+    <label>Digestion Strength</label>
+    <description>The speed at which a pawn is capable of digesting their prey</description>
+    <displayPriorityInCategory>900</displayPriorityInCategory>
+    <quirkFactors>
+      <li Class="RimVore2.QuirkFactor_ValueModifier">
+        <modifierName>DigestionStrength</modifierName>
+      </li>
+    </quirkFactors>
+  </RimVore2.RV2StatDef>
+
+  <RimVore2.RV2StatDef ParentName="RV2_StatDefBase">
+    <defName>RV2_DigestionResistance</defName>
+    <label>Digestion Weakness</label>
+    <description>The speed at which other pawns can digest this pawn</description>
+    <displayPriorityInCategory>800</displayPriorityInCategory>
+    <quirkFactors>
+      <li Class="RimVore2.QuirkFactor_ValueModifier">
+        <modifierName>DigestionResistance</modifierName>
+      </li>
+    </quirkFactors>
+  </RimVore2.RV2StatDef>
+
+  <RimVore2.RV2StatDef ParentName="RV2_StatDefBase">
+    <defName>RV2_SwallowSpeed</defName>
+    <label>Swallowing/Ejection speed</label>
+    <description>The speed at which this pawn can swallow or eject their prey</description>
+    <displayPriorityInCategory>700</displayPriorityInCategory>
+    <capacityFactors>
+      <li>
+        <capacity>Eating</capacity>
+      </li>
+    </capacityFactors>
+    <quirkFactors>
+      <li Class="RimVore2.QuirkFactor_ValueModifier">
+        <modifierName>SwallowSpeed</modifierName>
+      </li>
+    </quirkFactors>
+  </RimVore2.RV2StatDef>
+
+  <RimVore2.RV2StatDef ParentName="RV2_StatDefBase">
+    <defName>RV2_Persuasiveness</defName>
+    <label>Proposal persuasiveness</label>
+    <description>The acceptance modifier for Proposals made by this pawn</description>
+    <displayPriorityInCategory>600</displayPriorityInCategory>
+    <quirkFactors>
+      <li Class="RimVore2.QuirkFactor_ValueModifier">
+        <modifierName>VoreProposalSuccessModifier</modifierName>
+      </li>
+    </quirkFactors>
+  </RimVore2.RV2StatDef>
+
+  <RimVore2.RV2StatDef ParentName="RV2_StatDefBase">
+    <defName>RV2_Capacity</defName>
+    <label>Vore capacity</label>
+    <description>The total body size that this pawn can vore</description>
+    <defaultBaseValue Inherit="False">1</defaultBaseValue>
+    <toStringStyle Inherit="False">FloatTwo</toStringStyle>
+    <displayPriorityInCategory>500</displayPriorityInCategory>
+    <parts>
+      <li Class="StatPart_BodySize" />
+      <li Class="RimVore2.StatPart_VoreCapacityMultiplier"/>
+      <li Class="RimVore2.StatPart_VoreCapacityMinimum"/>
+    </parts>
+    <quirkFactors>
+      <li Class="RimVore2.QuirkFactor_ValueModifier">
+        <modifierName>StorageCapacity</modifierName>
+      </li>
+    </quirkFactors>
+  </RimVore2.RV2StatDef>
+
+  <RimVore2.RV2StatDef ParentName="RV2_StatDefBase">
+    <defName>RV2_GrappleChance</defName>
+    <label>Grapple Chance</label>
+    <description>The likelihood of the pawn initiating a vore grapple in melee combat.</description>
+    <defaultBaseValue Inherit="False">1</defaultBaseValue>
+    <displayPriorityInCategory>400</displayPriorityInCategory>
+    <parts>
+      <li Class="RimVore2.StatPart_DefaultGrappleChance"/>
+      <li Class="RimVore2.StatPart_MaxGrappleChance"/>
+    </parts>
+    <quirkFactors>
+      <li Class="RimVore2.QuirkFactor_ValueModifier">
+        <modifierName>GrappleChance</modifierName>
+      </li>
+    </quirkFactors>
+  </RimVore2.RV2StatDef>
+
+  <RimVore2.RV2StatDef ParentName="RV2_StatDefBase">
+    <defName>RV2_GrappleStrength_General</defName>
+    <label>Grapple Ability</label>
+    <description>The pawns ability to handle themself in a vore grapple</description>
+    <defaultBaseValue Inherit="False">1</defaultBaseValue>
+    <toStringStyle Inherit="False">FloatTwo</toStringStyle>
+    <displayPriorityInCategory>300</displayPriorityInCategory>
+    <parts>
+      <li Class="RimVore2.StatPart_BodySizeCurve">
+        <curve>
+          <points>
+            <li>(0,0.5)</li>
+            <li>(1,4)</li>
+            <li>(4,16)</li>
+          </points>
+        </curve>
+      </li>
+      <li Class="RimVore2.StatPart_GrappleMeleeSkill"/>
+    </parts>
+    <capacityFactors>
+      <li>
+        <capacity>Manipulation</capacity>
+      </li>
+    </capacityFactors>
+    <quirkFactors>
+      <li Class="RimVore2.QuirkFactor_ValueModifier">
+        <modifierName>GrappleStrength</modifierName>
+      </li>
+    </quirkFactors>
+  </RimVore2.RV2StatDef>
+
+  <RimVore2.RV2StatDef ParentName="RV2_StatDefBase">
+    <defName>RV2_GrappleStrength_Attacker</defName>
+    <label>Grapple Attack</label>
+    <description>The pawns capability to overpower their opponent in a vore grapple</description>
+    <defaultBaseValue Inherit="False">1</defaultBaseValue>
+    <toStringStyle Inherit="False">FloatTwo</toStringStyle>
+    <displayPriorityInCategory>200</displayPriorityInCategory>
+    <statFactors>
+      <li>RV2_GrappleStrength_General</li>
+    </statFactors>
+    <quirkFactors>
+      <li Class="RimVore2.QuirkFactor_ValueModifier">
+        <modifierName>GrappleStrengthAsAttacker</modifierName>
+      </li>
+    </quirkFactors>
+    
+  </RimVore2.RV2StatDef>
+
+  <RimVore2.RV2StatDef ParentName="RV2_StatDefBase">
+    <defName>RV2_GrappleStrength_Defender</defName>
+    <label>Grapple Defense</label>
+    <description>The pawns capability to withstand their opponent in a vore grapple</description>
+    <defaultBaseValue Inherit="False">1</defaultBaseValue>
+    <toStringStyle Inherit="False">FloatTwo</toStringStyle>
+    <displayPriorityInCategory>100</displayPriorityInCategory>
+    <statFactors>
+      <li>RV2_GrappleStrength_General</li>
+    </statFactors>
+    <quirkFactors>
+      <li Class="RimVore2.QuirkFactor_ValueModifier">
+        <modifierName>GrappleStrengthAsDefender</modifierName>
+      </li>
+    </quirkFactors>
+
+  </RimVore2.RV2StatDef>
+  
+
+</Defs>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!-- social -->
+  <ThoughtDef Abstract="True" Name="RV2_FedMePrey_Base">
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>3</durationDays>
+    <stackLimit>4</stackLimit>
+    <stackLimitForSameOtherPawn>2</stackLimitForSameOtherPawn>
+    <stackedEffectMultiplier>0.75</stackedEffectMultiplier>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="RV2_FedMePrey_Base">
+    <defName>RV2_FedMePrey_VeryGood</defName>
+    <stages>
+      <li>
+        <label>fed me prey in a way I really enjoy</label>
+        <baseOpinionOffset>6</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_FedMePrey_Base">
+    <defName>RV2_FedMePrey_Good</defName>
+    <stages>
+      <li>
+        <label>fed me prey in a way I like</label>
+        <baseOpinionOffset>3</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_FedMePrey_Base">
+    <defName>RV2_FedMePrey_Bad</defName>
+    <stages>
+      <li>
+        <label>fed me prey in a way I don't like</label>
+        <baseOpinionOffset>-3</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_FedMePrey_Base">
+    <defName>RV2_FedMePrey_VeryBad</defName>
+    <stages>
+      <li>
+        <label>fed me prey in a way I hate</label>
+        <baseOpinionOffset>-6</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>

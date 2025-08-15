@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <Operation Class="PatchOperationReplace">
+    <xpath>//actionsOnSuccess/li[@Class="RimVore2.RollAction_IncreaseNeed"]/need[text()="Comfort"]</xpath>
+    <value>
+      <need>Sex</need>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>//passConditions/li[@Class="RimVore2.StagePassCondition_Need"]/need[text()="Comfort"]</xpath>
+    <value>
+      <need>Sex</need>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>//requirements/li[@Class="RimVore2.Requirement_Need"]/def[text()="Comfort"]</xpath>
+    <value>
+      <def>Sex</def>
+    </value>
+  </Operation>
+</Patch>

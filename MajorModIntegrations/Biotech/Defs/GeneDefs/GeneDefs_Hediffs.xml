@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <GeneDef Abstract="True" Name="RV2_VoreEnabler">
+    <geneClass>RimVore2.Gene_ForcedHediff</geneClass>
+    <displayCategory>RV2_Vore</displayCategory>
+    <displayOrderInCategory>300</displayOrderInCategory>
+    <biostatMet>0</biostatMet>
+  </GeneDef>
+
+  <GeneDef ParentName="RV2_VoreEnabler">
+    <defName>RV2_GoalEnabler_ConvertLube</defName>
+    <label>Lubrifactive enzymes</label>
+    <description>This pawn is capable of turning live prey into lubricant within their womb, using powerful enzymes.</description>
+    <iconPath>UI/Icons/Genes/ConvertLube</iconPath>
+    <modExtensions>
+      <li Class="RimVore2.GeneDefExtension_ForcedHediff">
+        <hediffs>
+          <li>RV2_GoalEnabler_ConvertLube</li>
+        </hediffs>
+        <removeHediffsOnGeneRemoval>true</removeHediffsOnGeneRemoval>
+      </li>
+    </modExtensions>
+  </GeneDef>
+
+  <GeneDef ParentName="RV2_VoreEnabler">
+    <defName>RV2_GoalEnabler_ConvertMilk</defName>
+    <label>Lactifactive enzymes</label>
+    <description>This pawn is capable of turning live prey into edible milk within their breasts, using powerful enzymes.</description>
+    <iconPath>UI/Icons/Genes/ConvertMilk</iconPath>
+    <modExtensions>
+      <li Class="RimVore2.GeneDefExtension_ForcedHediff">
+        <hediffs>
+          <li>RV2_GoalEnabler_ConvertMilk</li>
+        </hediffs>
+        <removeHediffsOnGeneRemoval>true</removeHediffsOnGeneRemoval>
+      </li>
+    </modExtensions>
+  </GeneDef>
+
+  <GeneDef ParentName="RV2_VoreEnabler">
+    <defName>RV2_GoalEnabler_ConvertSperm</defName>
+    <label>Spermifactive enzymes</label>
+    <description>This pawn is capable of turning live prey into edible sperm within their testes, using powerful enzymes.</description>
+    <iconPath>UI/Icons/Genes/ConvertSperm</iconPath>
+    <modExtensions>
+      <li Class="RimVore2.GeneDefExtension_ForcedHediff">
+        <hediffs>
+          <li>RV2_GoalEnabler_ConvertSperm</li>
+        </hediffs>
+        <removeHediffsOnGeneRemoval>true</removeHediffsOnGeneRemoval>
+      </li>
+    </modExtensions>
+  </GeneDef>
+
+  <GeneDef ParentName="RV2_VoreEnabler">
+    <defName>RV2_GoalEnabler_Digest</defName>
+    <label>Hyperdigestive enzymes</label>
+    <description>This pawn is capable of digesting live prey in a timely manner, using powerful enzymes.</description>
+    <iconPath>UI/Icons/Genes/Digest</iconPath>
+    <modExtensions>
+      <li Class="RimVore2.GeneDefExtension_ForcedHediff">
+        <hediffs>
+          <li>RV2_GoalEnabler_Digest</li>
+        </hediffs>
+        <removeHediffsOnGeneRemoval>true</removeHediffsOnGeneRemoval>
+      </li>
+    </modExtensions>
+  </GeneDef>
+
+  <GeneDef ParentName="RV2_VoreEnabler">
+    <defName>RV2_GoalEnabler_Heal</defName>
+    <label>Analeptic enzymes</label>
+    <description>This pawn's internal organs can function as a sanitary, comfortable, and even medicinal substitute for conventional bedrest.</description>
+    <iconPath>UI/Icons/Genes/Heal</iconPath>
+    <modExtensions>
+      <li Class="RimVore2.GeneDefExtension_ForcedHediff">
+        <hediffs>
+          <li>RV2_GoalEnabler_Heal</li>
+        </hediffs>
+        <removeHediffsOnGeneRemoval>true</removeHediffsOnGeneRemoval>
+      </li>
+    </modExtensions>
+  </GeneDef>
+
+  <GeneDef ParentName="RV2_VoreEnabler">
+    <defName>RV2_GoalEnabler_Reform</defName>
+    <label>Reproductive enzymes</label>
+    <description>This pawn's womb can deconstruct the genetic code of their prey and re-form them with their own genetic influence.</description>
+    <iconPath>UI/Icons/Genes/Reform</iconPath>
+    <modExtensions>
+      <li Class="RimVore2.GeneDefExtension_ForcedHediff">
+        <hediffs>
+          <li>RV2_GoalEnabler_Reform</li>
+        </hediffs>
+        <removeHediffsOnGeneRemoval>true</removeHediffsOnGeneRemoval>
+      </li>
+    </modExtensions>
+  </GeneDef>
+
+  <GeneDef ParentName="RV2_VoreEnabler">
+    <defName>RV2_GoalEnabler_TempEndo</defName>
+    <label>Storage-safe organs</label>
+    <description>This pawn's body comfortable and safe for temporary ingestion, thanks to a number of improvements, including the addition of proper airflow.</description>
+    <iconPath>UI/Icons/Genes/TempEndo</iconPath>
+    <modExtensions>
+      <li Class="RimVore2.GeneDefExtension_ForcedHediff">
+        <hediffs>
+          <li>RV2_GoalEnabler_TempEndo</li>
+        </hediffs>
+        <removeHediffsOnGeneRemoval>true</removeHediffsOnGeneRemoval>
+      </li>
+    </modExtensions>
+  </GeneDef>
+
+  <GeneDef ParentName="RV2_VoreEnabler">
+    <defName>RV2_GoalEnabler_Store</defName>
+    <label>Sphincter strength</label>
+    <description>This pawn's body can hold onto prey indefinitely, without killing them or letting them out on accident.</description>
+    <iconPath>UI/Icons/Genes/Store</iconPath>
+    <modExtensions>
+      <li Class="RimVore2.GeneDefExtension_ForcedHediff">
+        <hediffs>
+          <li>RV2_GoalEnabler_Store</li>
+        </hediffs>
+        <removeHediffsOnGeneRemoval>true</removeHediffsOnGeneRemoval>
+      </li>
+    </modExtensions>
+  </GeneDef>
+  
+  
+  <!-- type enablers-->
+
+  <GeneDef ParentName="RV2_VoreEnabler">
+    <defName>RV2_TypeEnabler_Oral</defName>
+    <label>Oral elasticity</label>
+    <description>This pawn has an elastic mouth and throat for oral vore.</description>
+    <iconPath>UI/Icons/Genes/Oral</iconPath>
+    <modExtensions>
+      <li Class="RimVore2.GeneDefExtension_ForcedHediff">
+        <hediffs>
+          <li>RV2_TypeEnabler_Oral</li>
+        </hediffs>
+        <removeHediffsOnGeneRemoval>true</removeHediffsOnGeneRemoval>
+      </li>
+    </modExtensions>
+  </GeneDef>
+
+  <GeneDef ParentName="RV2_VoreEnabler">
+    <defName>RV2_TypeEnabler_Anal</defName>
+    <label>Anal elasticity</label>
+    <description>This pawn has an elastic anus and intestines for anal vore.</description>
+    <iconPath>UI/Icons/Genes/Anal</iconPath>
+    <modExtensions>
+      <li Class="RimVore2.GeneDefExtension_ForcedHediff">
+        <hediffs>
+          <li>RV2_TypeEnabler_Anal</li>
+        </hediffs>
+        <removeHediffsOnGeneRemoval>true</removeHediffsOnGeneRemoval>
+      </li>
+    </modExtensions>
+  </GeneDef>
+
+  <GeneDef ParentName="RV2_VoreEnabler">
+    <defName>RV2_TypeEnabler_Vaginal</defName>
+    <label>Vaginal elasticity</label>
+    <description>This pawn has an elastic vagina and womb for vaginal vore.</description>
+    <iconPath>UI/Icons/Genes/Vaginal</iconPath>
+    <modExtensions>
+      <li Class="RimVore2.GeneDefExtension_ForcedHediff">
+        <hediffs>
+          <li>RV2_TypeEnabler_Vaginal</li>
+        </hediffs>
+        <removeHediffsOnGeneRemoval>true</removeHediffsOnGeneRemoval>
+      </li>
+    </modExtensions>
+  </GeneDef>
+
+  <GeneDef ParentName="RV2_VoreEnabler">
+    <defName>RV2_TypeEnabler_Cock</defName>
+    <label>Penile elasticity</label>
+    <description>This pawn has an elastic penis and testes for cock vore.</description>
+    <iconPath>UI/Icons/Genes/Cock</iconPath>
+    <modExtensions>
+      <li Class="RimVore2.GeneDefExtension_ForcedHediff">
+        <hediffs>
+          <li>RV2_TypeEnabler_Cock</li>
+        </hediffs>
+        <removeHediffsOnGeneRemoval>true</removeHediffsOnGeneRemoval>
+      </li>
+    </modExtensions>
+  </GeneDef>
+
+  <GeneDef ParentName="RV2_VoreEnabler">
+    <defName>RV2_TypeEnabler_Nipple</defName>
+    <label>Nipple elasticity</label>
+    <description>This pawn has elastic nipples and breasts for nipple vore.</description>
+    <iconPath>UI/Icons/Genes/Nipple</iconPath>
+    <modExtensions>
+      <li Class="RimVore2.GeneDefExtension_ForcedHediff">
+        <hediffs>
+          <li>RV2_TypeEnabler_Nipple</li>
+        </hediffs>
+        <removeHediffsOnGeneRemoval>true</removeHediffsOnGeneRemoval>
+      </li>
+    </modExtensions>
+  </GeneDef>
+
+</Defs>

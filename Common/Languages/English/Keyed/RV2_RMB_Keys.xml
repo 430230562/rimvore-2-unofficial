@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- Intro button -->
+  <!-- RMB layer 0 vore header -->
+  <RV2_RMB_Home>Vore</RV2_RMB_Home>
+  <RV2_RMB_VoreTarget>Vore - {0}</RV2_RMB_VoreTarget>
+  
+	<!-- vore target -->
+	<!-- RMB layer 1 vore initiation role -->
+	<RV2_RMB_InitiateAsPredator>DEV: Vore {0}</RV2_RMB_InitiateAsPredator>
+  <RV2_RMB_InitiateAsPrey>DEV: Get vored by {0}</RV2_RMB_InitiateAsPrey>
+  <RV2_RMB_AsFeeder>DEV: Feed {0} to ...</RV2_RMB_AsFeeder>
+	<!--<RV2_RMB_Reserve>Reserve {0} as prey</RV2_RMB_Reserve>
+  <RV2_RMB_UnReserve>Remove {0}'s prey reservation</RV2_RMB_UnReserve>-->
+  <RV2_RMB_ManualPass>Pass manual stage</RV2_RMB_ManualPass>
+  <RV2_RMB_JumpGoal>Change vore goal</RV2_RMB_JumpGoal>
+  <RV2_RMB_Random>Random</RV2_RMB_Random>
+  <RV2_RMB_RandomPreferred>Random Preferred</RV2_RMB_RandomPreferred>
+	
+  <!-- prey Eject -->
+  <RV2_RMB_EjectPrey_Self>Eject Prey</RV2_RMB_EjectPrey_Self>
+  <RV2_RMB_EjectPrey_Target>Force {0} to eject prey</RV2_RMB_EjectPrey_Target>
+  <RV2_RMB_AlreadyAttemptedEject>Already attempted</RV2_RMB_AlreadyAttemptedEject>
+  <RV2_RMB_EjectIncapable>Incapable of violence</RV2_RMB_EjectIncapable>
+  
+  <!-- Proposals -->
+  <RV2_RMB_ProposeAsPredator>Propose as predator to {0}</RV2_RMB_ProposeAsPredator>
+  <RV2_RMB_ProposeAsPrey>Propose as prey to {0}</RV2_RMB_ProposeAsPrey>
+  <RV2_RMB_ProposeAsFeederRandomPrey>Propose feeding vore to {0} (random prey)</RV2_RMB_ProposeAsFeederRandomPrey>
+  <RV2_RMB_ProposeAsFeederTargetPrey>Propose feeding vore to {0} (targeted prey)</RV2_RMB_ProposeAsFeederTargetPrey>
+</LanguageData>

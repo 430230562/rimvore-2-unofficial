@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!-- Here is how tales will generally work: 
+    There is generally only one parent (abstract), which covers all vore, which is then passed down to each vore type parent (abstract), which then passes down to each vore path TaleDef
+    The VoreGoal ruleStrings come from a RulePack, which is referenced inside each VorePath-TaleDef
+    The VoreType ruleStrings come from inheritance, which can generally be found in the same file
+  -->
+
+
+  <!-- These are necessary for tales, but add virtually no flavor. 
+    Feel free to make them vore related, I don't care, these are copied from base game -->
+  <TaleDef Abstract="True" Name="RV2_TaleBase">
+    <rulePack>
+      <rulesStrings>
+        <li>circumstance_phrase->seemingly without remorse</li>
+        <li>circumstance_phrase->with cold efficiency</li>
+        <li>circumstance_phrase->with passionate rage</li>
+        <li>circumstance_phrase->with quick, efficient movements</li>
+        <li>circumstance_phrase->without emotion or expression</li>
+        <li>circumstance_phrase->out of bleak necessity</li>
+        <li>circumstance_phrase->in a cowardly, halfhearted way</li>
+        <li>circumstance_phrase->in a vorny way</li>
+      </rulesStrings>
+    </rulePack>
+  </TaleDef>
+</Defs>

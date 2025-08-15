@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RimVore2.QuirkPoolDef>
+    <defName>StruggleCapability</defName>
+    <label>Struggle Capability</label>
+    <category>Combat</category>
+    <description>These quirks influence whether or not struggling is available for prey or predator.</description>
+    <generationOrder>4</generationOrder>
+    <poolType>RollForEach</poolType>
+    <quirks>
+      <li>StruggleCapability_NoStruggleAsPrey</li>
+      <li>StruggleCapability_NoStruggleAsPredator</li>
+    </quirks>
+  </RimVore2.QuirkPoolDef>
+  <RimVore2.QuirkPoolDef>
+    <defName>StruggleStrength_Prey</defName>
+    <label>Struggle strength (Prey)</label>
+    <category>Combat</category>
+    <description>These quirks influence the struggling capability for the pawn when vored by others.</description>
+    <generationOrder>5</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>StruggleStrength_Prey_Good</li>
+      <li>StruggleStrength_Prey_Normal</li>
+      <li>StruggleStrength_Prey_Bad</li>
+    </quirks>
+    <blockingQuirks>
+      <li>StruggleCapability_NoStruggleAsPrey</li>
+    </blockingQuirks>
+  </RimVore2.QuirkPoolDef>
+  <RimVore2.QuirkPoolDef>
+    <defName>StruggleStrength_Predator</defName>
+    <label>Struggle strength (Predator)</label>
+    <category>Combat</category>
+    <description>These quirks influence the struggling capability for the pawn when voring others.</description>
+    <generationOrder>5</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>StruggleStrength_Predator_Good</li>
+      <li>StruggleStrength_Predator_Normal</li>
+      <li>StruggleStrength_Predator_Bad</li>
+    </quirks>
+    <blockingQuirks>
+      <li>StruggleCapability_NoStruggleAsPredator</li>
+    </blockingQuirks>
+  </RimVore2.QuirkPoolDef>
+
+  <RimVore2.QuirkDef>
+    <defName>StruggleCapability_NoStruggleAsPrey</defName>
+    <label>Sedentary</label>
+    <description>[PAWN_label] does not mind being vored, no matter what the repercussions might be. As a result [PAWN_pronoun] will never bother to struggle.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_SpecialFlag">
+        <flag>BlockStruggleAsPrey</flag>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>StruggleCapability_NoStruggleAsPredator</defName>
+    <label>Numbing</label>
+    <description>[PAWN_label]'s stomach secretes numbing enzymes that paralyze [PAWN_possessive] prey, as a result anyone vored by [PAWN_objective] will never struggle.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_SpecialFlag">
+        <flag>BlockStruggleAsPredator</flag>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <!-- struggle strength prey -->
+  <RimVore2.QuirkDef>
+    <defName>StruggleStrength_Prey_Good</defName>
+    <label>Wiggler</label>
+    <description>[PAWN_label] knows how to move to struggle [PAWN_possessive] way out of [PAWN_possessive] predator.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>RequiredStrugglesMultiplierAsPrey</modifierName>
+        <modifierValue>0.9</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>StruggleChanceMultiplierAsPrey</modifierName>
+        <modifierValue>1.2</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>StruggleStrength_Prey_Normal</defName>
+    <label>Normal</label>
+    <description>[PAWN_label] is as good as anyone else at struggling.</description>
+    <rarity>Common</rarity>
+    <hidden>true</hidden>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>StruggleStrength_Prey_Bad</defName>
+    <label>Clumsy</label>
+    <description>[PAWN_label] is a bit of a klutz and can't figure out how to move to make [PAWN_possessive] predator release [PAWN_objective].</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>RequiredStrugglesMultiplierAsPrey</modifierName>
+        <modifierValue>1.2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>StruggleChanceMultiplierAsPrey</modifierName>
+        <modifierValue>0.8</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <!-- struggle strength predator -->
+  <RimVore2.QuirkDef>
+    <defName>StruggleStrength_Predator_Good</defName>
+    <label>Iron gut</label>
+    <description>[PAWN_label] has a resolve of steel, with the guts to match. Prey will have a more difficult time trying to struggle out of [PAWN_possessive].</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>RequiredStrugglesMultiplierAsPredator</modifierName>
+        <modifierValue>1.2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>StruggleChanceMultiplierAsPredator</modifierName>
+        <modifierValue>0.8</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>StruggleStrength_Predator_Normal</defName>
+    <label>Normal</label>
+    <description>[PAWN_label] does not have any influence on [PAWN_possessive] struggling prey.</description>
+    <rarity>Common</rarity>
+    <hidden>true</hidden>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>StruggleStrength_Predator_Bad</defName>
+    <label>Loose</label>
+    <description>[PAWN_label] has a hard time trying to keep [PAWN_possessive] prey from struggling out of [PAWN_possessive] insides.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>RequiredStrugglesMultiplierAsPredator</modifierName>
+        <modifierValue>0.9</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>StruggleChanceMultiplierAsPredator</modifierName>
+        <modifierValue>1.2</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+</Defs>

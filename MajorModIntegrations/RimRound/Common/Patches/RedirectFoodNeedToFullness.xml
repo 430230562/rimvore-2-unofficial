@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <!-- Removes the food filling from RV2 and instead increases the pawns fullness by calling the "ingest" patch that RimRound uses -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/RimVore2.RollPresetDef[defName="IncreaseNeed_Predator_Food"]/actionsOnSuccess</xpath>
+    <value>
+      <actionsOnSuccess>
+        <li Class="RV2_RimRound.RollAction_IncreaseFullness">
+          <target>Predator</target>
+        </li>
+      </actionsOnSuccess>
+    </value>
+  </Operation>
+</Patch>

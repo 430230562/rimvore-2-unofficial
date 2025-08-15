@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Toot -->
+  <RimVore2.RollPresetDef>
+    <defName>Sound_Toot_Chance_4</defName>
+    <successChance>0.5</successChance>
+    <interval>4</interval>
+    <actionsOnSuccess>
+      <li Class="RimVore2.RollAction_PlaySound">
+        <sound>RV2_Toot</sound>
+      </li>
+    </actionsOnSuccess>
+  </RimVore2.RollPresetDef>
+  <RimVore2.RollPresetDef>
+    <defName>Sound_Toot_Chance_15</defName>
+    <successChance>0.5</successChance>
+    <interval>15</interval>
+    <actionsOnSuccess>
+      <li Class="RimVore2.RollAction_PlaySound">
+        <sound>RV2_Toot</sound>
+      </li>
+    </actionsOnSuccess>
+  </RimVore2.RollPresetDef>
+
+  <!-- Moan -->
+  <RimVore2.RollPresetDef>
+    <defName>Sound_Moan_Chance</defName>
+    <successChance>0.5</successChance>
+    <interval>1</interval>
+    <actionsOnSuccess>
+      <li Class="RimVore2.RollAction_PlaySound">
+        <sound>RV2_Moan</sound>
+      </li>
+    </actionsOnSuccess>
+  </RimVore2.RollPresetDef>
+  <RimVore2.RollPresetDef>
+    <defName>Sound_Moan_Chance_3</defName>
+    <successChance>0.6</successChance>
+    <interval>3</interval>
+    <actionsOnSuccess>
+      <li Class="RimVore2.RollAction_PlaySound">
+        <sound>RV2_Moan</sound>
+      </li>
+    </actionsOnSuccess>
+  </RimVore2.RollPresetDef>
+  <RimVore2.RollPresetDef>
+    <defName>Sound_Moan_Chance_5</defName>
+    <successChance>0.6</successChance>
+    <interval>5</interval>
+    <actionsOnSuccess>
+      <li Class="RimVore2.RollAction_PlaySound">
+        <sound>RV2_Moan</sound>
+      </li>
+    </actionsOnSuccess>
+  </RimVore2.RollPresetDef>
+  <RimVore2.RollPresetDef>
+    <defName>Sound_Moan_Chance_15</defName>
+    <successChance>0.5</successChance>
+    <interval>15</interval>
+    <actionsOnSuccess>
+      <li Class="RimVore2.RollAction_PlaySound">
+        <sound>RV2_Moan</sound>
+      </li>
+    </actionsOnSuccess>
+  </RimVore2.RollPresetDef>
+
+  <!-- Churn -->
+  <RimVore2.RollPresetDef>
+    <defName>Sound_Churn_10</defName>
+    <interval>10</interval>
+    <actionsOnSuccess>
+      <li Class="RimVore2.RollAction_PlaySound">
+        <sound>RV2_Churn</sound>
+      </li>
+    </actionsOnSuccess>
+  </RimVore2.RollPresetDef>
+  <RimVore2.RollPresetDef>
+    <defName>Sound_Churn_Chance_5</defName>
+    <interval>5</interval>
+    <successChance>0.6</successChance>
+    <actionsOnSuccess>
+      <li Class="RimVore2.RollAction_PlaySound">
+        <sound>RV2_Churn</sound>
+      </li>
+    </actionsOnSuccess>
+  </RimVore2.RollPresetDef>
+  <RimVore2.RollPresetDef>
+    <defName>Sound_Churn_Chance_30</defName>
+    <interval>30</interval>
+    <successChance>0.5</successChance>
+    <actionsOnSuccess>
+      <li Class="RimVore2.RollAction_PlaySound">
+        <sound>RV2_Churn</sound>
+      </li>
+    </actionsOnSuccess>
+  </RimVore2.RollPresetDef>
+
+  <!-- Gurgle -->
+  <RimVore2.RollPresetDef>
+    <defName>Sound_Gurgle_Chance_5</defName>
+    <interval>5</interval>
+    <successChance>0.6</successChance>
+    <actionsOnSuccess>
+      <li Class="RimVore2.RollAction_PlaySound">
+        <sound>RV2_Gurgle</sound>
+      </li>
+    </actionsOnSuccess>
+  </RimVore2.RollPresetDef>
+
+  <!-- Slurp -->
+  <RimVore2.RollPresetDef>
+    <defName>Sound_Slurp_Chance_5</defName>
+    <interval>5</interval>
+    <successChance>0.5</successChance>
+    <actionsOnSuccess>
+      <li Class="RimVore2.RollAction_PlaySound">
+        <sound>RV2_Slurp</sound>
+      </li>
+    </actionsOnSuccess>
+  </RimVore2.RollPresetDef>
+  
+  <!-- Burp -->
+  <RimVore2.RollPresetDef>
+    <defName>Sound_Burp_Chance_15</defName>
+    <interval>15</interval>
+    <successChance>0.5</successChance>
+    <actionsOnSuccess>
+      <li Class="RimVore2.RollAction_PlaySound">
+        <sound>RV2_Burp</sound>
+      </li>
+    </actionsOnSuccess>
+  </RimVore2.RollPresetDef>
+
+  <!-- Squish -->
+  <RimVore2.RollPresetDef>
+    <defName>Sound_Squish_2</defName>
+    <interval>2</interval>
+    <actionsOnSuccess>
+      <li Class="RimVore2.RollAction_PlaySound">
+        <sound>RV2_Squish</sound>
+      </li>
+    </actionsOnSuccess>
+  </RimVore2.RollPresetDef>
+  <RimVore2.RollPresetDef>
+    <defName>Sound_Squish_10</defName>
+    <interval>10</interval>
+    <actionsOnSuccess>
+      <li Class="RimVore2.RollAction_PlaySound">
+        <sound>RV2_Squish</sound>
+      </li>
+    </actionsOnSuccess>
+  </RimVore2.RollPresetDef>
+  <RimVore2.RollPresetDef>
+    <defName>Sound_Squish_Chance_5</defName>
+    <interval>5</interval>
+    <successChance>0.5</successChance>
+    <actionsOnSuccess>
+      <li Class="RimVore2.RollAction_PlaySound">
+        <sound>RV2_Squish</sound>
+      </li>
+    </actionsOnSuccess>
+  </RimVore2.RollPresetDef>
+  <RimVore2.RollPresetDef>
+    <defName>Sound_Squish_Chance_30</defName>
+    <interval>30</interval>
+    <successChance>0.5</successChance>
+    <actionsOnSuccess>
+      <li Class="RimVore2.RollAction_PlaySound">
+        <sound>RV2_Squish</sound>
+      </li>
+    </actionsOnSuccess>
+  </RimVore2.RollPresetDef>
+  
+  
+</Defs>

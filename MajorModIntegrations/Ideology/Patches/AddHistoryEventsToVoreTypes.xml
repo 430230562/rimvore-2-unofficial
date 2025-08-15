@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/RimVore2.VoreTypeDef[defName="Oral"]</xpath>
+    <value>
+      <postVoreEvent>RV2_OralVore</postVoreEvent>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/RimVore2.VoreTypeDef[defName="Anal"]</xpath>
+    <value>
+      <postVoreEvent>RV2_AnalVore</postVoreEvent>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/RimVore2.VoreTypeDef[defName="Vaginal"]</xpath>
+    <value>
+      <postVoreEvent>RV2_VaginalVore</postVoreEvent>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/RimVore2.VoreTypeDef[defName="Cock"]</xpath>
+    <value>
+      <postVoreEvent>RV2_CockVore</postVoreEvent>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/RimVore2.VoreTypeDef[defName="Nipple"]</xpath>
+    <value>
+      <postVoreEvent>RV2_NippleVore</postVoreEvent>
+    </value>
+  </Operation>
+</Patch>

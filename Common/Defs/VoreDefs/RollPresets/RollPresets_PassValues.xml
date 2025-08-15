@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- All rollActions related to digesting, mushing, absorbing, converting, etc. for prey consider these modifiers -->
+  <RimVore2.RollPresetDef Abstract="True" Name="Digest_StrengthModifiers">
+    <strengthModifiers>
+      <li Class="RimVore2.RollModifier_VoreSpeed"/>
+      <li Class="RimVore2.RollModifier_SizeDifference">
+        <pawn>Predator</pawn>
+        <relationTo>Prey</relationTo>
+      </li>
+      <li Class="RimVore2.RollModifier_Capacity">
+        <target>Predator</target>
+        <capacity>Metabolism</capacity>
+      </li>
+      <li Class="RimVore2.RollModifier_Quirk">
+        <target>Predator</target>
+        <modifierName>DigestionStrength</modifierName>
+      </li>
+      <li Class="RimVore2.RollModifier_Quirk">
+        <target>Prey</target>
+        <modifierName>DigestionResistance</modifierName>
+      </li>
+      <li Class="RimVore2.RollModifier_Stat">
+        <target>Prey</target>
+        <stat>IncomingDamageFactor</stat>
+      </li>
+    </strengthModifiers>
+  </RimVore2.RollPresetDef>
+
+  <RimVore2.RollPresetDef ParentName="Digest_StrengthModifiers">
+    <defName>IncreaseDigestionProgress</defName>
+    <strength>0.01~0.03</strength>
+    <actionsOnSuccess>
+      <li Class="RimVore2.RollAction_PassValue_Add">
+        <name>DigestionProgress</name>
+        <maxValue>1</maxValue>
+      </li>
+    </actionsOnSuccess>
+  </RimVore2.RollPresetDef>
+
+  <RimVore2.RollPresetDef ParentName="Digest_StrengthModifiers">
+    <defName>IncreaseBreakDownProgress</defName>
+    <strength>0.025</strength>
+    <actionsOnSuccess>
+      <li Class="RimVore2.RollAction_PassValue_Add">
+        <name>BreakDownProgress</name>
+        <maxValue>1</maxValue>
+      </li>
+    </actionsOnSuccess>
+  </RimVore2.RollPresetDef>
+
+  <RimVore2.RollPresetDef ParentName="Digest_StrengthModifiers">
+    <defName>ConvertNutritionToPredatorFood</defName>
+    <strength>0.01~0.03</strength>
+    <actionsOnSuccess>
+      <li Class="RimVore2.RollAction_IncreaseNeed">
+        <target>Predator</target>
+        <need>Food</need>
+      </li>
+      <li Class="RimVore2.RollAction_PassValue_Subtract">
+        <name>PreyNutrition</name>
+        <minValue>0</minValue>
+      </li>
+    </actionsOnSuccess>
+  </RimVore2.RollPresetDef>
+
+  <!-- Item-Creating Presets -->
+  <RimVore2.RollPresetDef Abstract="True" Name="CreateThing" ParentName="Digest_StrengthModifiers">
+    <strength>0.03~0.05</strength>
+    <actionsOnSuccess>
+      <!-- pass value subtraction is now internally done by CreateThing roll actions -->
+      <!--<li Class="RimVore2.RollAction_PassValue_Subtract">
+        <name>PreyNutrition</name>
+        <minValue>0</minValue>
+      </li>-->
+    </actionsOnSuccess>
+  </RimVore2.RollPresetDef>
+  
+  <RimVore2.RollPresetDef ParentName="CreateThing">
+    <defName>ConvertNutritionToContainerItem</defName>
+    <actionsOnSuccess>
+      <li Class="RimVore2.RollAction_CreateThingsFromContainer">
+        <name>PreyNutrition</name>
+        <minValue>0</minValue>
+      </li>
+    </actionsOnSuccess>
+  </RimVore2.RollPresetDef>
+  
+  <RimVore2.RollPresetDef ParentName="CreateThing">
+    <defName>ConvertNutritionToMilk</defName>
+    <actionsOnSuccess>
+      <li Class="RimVore2.RollAction_CreateThingsFromDef">
+        <name>PreyNutrition</name>
+        <minValue>0</minValue>
+        <nutritionReserve>1</nutritionReserve>
+        <requiredNutrition>0.025</requiredNutrition>
+        <things>
+          <li>RV2_Resource_Milk</li>
+        </things>
+      </li>
+    </actionsOnSuccess>
+  </RimVore2.RollPresetDef>
+
+  <RimVore2.RollPresetDef ParentName="CreateThing">
+    <defName>ConvertNutritionToSperm</defName>
+    <actionsOnSuccess>
+      <li Class="RimVore2.RollAction_CreateThingsFromDef">
+        <name>PreyNutrition</name>
+        <minValue>0</minValue>
+        <nutritionReserve>1</nutritionReserve>
+        <requiredNutrition>0.025</requiredNutrition>
+        <things>
+          <li>RV2_Resource_Cum</li>
+        </things>
+      </li>
+    </actionsOnSuccess>
+  </RimVore2.RollPresetDef>
+
+  <RimVore2.RollPresetDef ParentName="CreateThing">
+    <defName>ConvertNutritionToLube</defName>
+    <actionsOnSuccess>
+      <li Class="RimVore2.RollAction_CreateThingsFromDef">
+        <name>PreyNutrition</name>
+        <minValue>0</minValue>
+        <nutritionReserve>1</nutritionReserve>
+        <requiredNutrition>0.025</requiredNutrition>
+        <things>
+          <li>RV2_Resource_Cum</li> <!-- TODO -->
+        </things>
+      </li>
+    </actionsOnSuccess>
+  </RimVore2.RollPresetDef>
+  
+  
+</Defs>

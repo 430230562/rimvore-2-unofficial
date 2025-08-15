@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- Description placeholders -->
+  <RV2_Pronoun_Unnamed>Unnamed {0}</RV2_Pronoun_Unnamed>
+  <RV2_Pronoun_nomMale>he</RV2_Pronoun_nomMale>
+  <RV2_Pronoun_accMale>him</RV2_Pronoun_accMale>
+  <RV2_Pronoun_posMale>his</RV2_Pronoun_posMale>
+  <RV2_Pronoun_genMale>his</RV2_Pronoun_genMale>
+  <RV2_Pronoun_refMale>himself</RV2_Pronoun_refMale>
+  
+  <RV2_Pronoun_nomFemale>she</RV2_Pronoun_nomFemale>
+  <RV2_Pronoun_accFemale>her</RV2_Pronoun_accFemale>
+  <RV2_Pronoun_posFemale>her</RV2_Pronoun_posFemale>
+  <RV2_Pronoun_genFemale>hers</RV2_Pronoun_genFemale>
+  <RV2_Pronoun_refFemale>herself</RV2_Pronoun_refFemale>
+
+  <RV2_Pronoun_nomObject>it</RV2_Pronoun_nomObject>
+  <RV2_Pronoun_accObject>it</RV2_Pronoun_accObject>
+  <RV2_Pronoun_posObject>its</RV2_Pronoun_posObject>
+  <RV2_Pronoun_genObject>it</RV2_Pronoun_genObject>
+  <RV2_Pronoun_refObject>itself</RV2_Pronoun_refObject>
+
+  <RV2_Pronoun_nomNeutral>they</RV2_Pronoun_nomNeutral>
+  <RV2_Pronoun_accNeutral>them</RV2_Pronoun_accNeutral>
+  <RV2_Pronoun_posNeutral>their</RV2_Pronoun_posNeutral>
+  <RV2_Pronoun_genNeutral>theirs</RV2_Pronoun_genNeutral>
+  <RV2_Pronoun_refNeutral>themself</RV2_Pronoun_refNeutral>
+</LanguageData>

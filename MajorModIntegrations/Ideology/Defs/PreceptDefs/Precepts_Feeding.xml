@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <IssueDef>
+    <defName>RV2_Feeding</defName>
+    <label>Feeding</label>
+    <iconPath>UI/Issues/Feeding</iconPath>
+  </IssueDef>
+
+  <!-- Neutral -->
+  <!--<PreceptDef>
+    <defName>RV2_Feeding_Accepted</defName>
+    <issue>RV2_Feeding</issue>
+    <label>Accepted</label>
+    <description>Making two pawns vore has no special connotations.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <associatedMemes>
+      <li>RV2_Preyism</li>
+      <li>RV2_Predation</li>
+    </associatedMemes>
+  </PreceptDef>-->
+
+  <!-- Disliked -->
+  <PreceptDef>
+    <defName>RV2_Feeding_Disliked</defName>
+    <issue>RV2_Feeding</issue>
+    <label>disliked</label>
+    <description>We are not meant to make others vore.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <associatedMemes>
+      <li>RV2_Preyism</li>
+      <li>RV2_Predation</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>RV2_FeederInitiatedVore</eventDef>
+        <thought>RV2_FeederInitiatedVore_Disliked</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>RV2_FeederInitiatedVore</eventDef>
+        <thought>RV2_FeederInitiatedVore_Know_Disliked</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <ThoughtDef>
+    <defName>RV2_FeederInitiatedVore_Disliked</defName>
+    <durationDays>3</durationDays>
+    <stages>
+      <li>
+        <label>I was vored</label>
+        <description>I should not have done that, my ideology discourages it</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>RV2_FeederInitiatedVore_Know_Disliked</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>3</durationDays>
+    <stackLimit>1</stackLimit>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>shunned feeder</label>
+        <baseOpinionOffset>-5</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- Abhorrent -->
+  <PreceptDef>
+    <defName>RV2_Feeding_Abhorrent</defName>
+    <issue>RV2_Feeding</issue>
+    <label>abhorrent</label>
+    <description>Anyone daring to act as a feeder is to be shunned.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <associatedMemes>
+      <li>RV2_Preyism</li>
+      <li>RV2_Predation</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>RV2_FeederInitiatedVore</eventDef>
+        <thought>RV2_FeederInitiatedVore_Abhorrent</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>RV2_FeederInitiatedVore</eventDef>
+        <thought>RV2_FeederInitiatedVore_Know_Abhorrent</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>RV2_FeederInitiatedVore</eventDef>
+        <thought>RV2_FeederInitiatedVore_Know_Social_Abhorrent</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <ThoughtDef>
+    <defName>RV2_FeederInitiatedVore_Abhorrent</defName>
+    <durationDays>3</durationDays>
+    <stages>
+      <li>
+        <label>I fed someone</label>
+        <description>I acted as a feeder, what a horrible affront to my ideology!</description>
+        <baseMoodEffect>-24</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>RV2_FeederInitiatedVore_Know_Abhorrent</defName>
+    <durationDays>3</durationDays>
+    <stages>
+      <li>
+        <label>Someone was a feder!!</label>
+        <description>One of us fed someone, this is a disgusting insult to our beliefs!</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>RV2_FeederInitiatedVore_Know_Social_Abhorrent</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>3</durationDays>
+    <stackLimit>5</stackLimit>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>disgusting feeder</label>
+        <baseOpinionOffset>-10</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- Liked -->
+  <PreceptDef>
+    <defName>RV2_Feeding_Liked</defName>
+    <issue>RV2_Feeding</issue>
+    <label>liked</label>
+    <description>Feeding predators is to be praised and encouraged.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <associatedMemes>
+      <li>RV2_Preyism</li>
+      <li>RV2_Predation</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>RV2_FeederInitiatedVore</eventDef>
+        <thought>RV2_FeederInitiatedVore_Liked</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>RV2_FeederInitiatedVore</eventDef>
+        <thought>RV2_FeederInitiatedVore_Know_Liked</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <ThoughtDef>
+    <defName>RV2_FeederInitiatedVore_Liked</defName>
+    <durationDays>3</durationDays>
+    <stages>
+      <li>
+        <label>I fed someone</label>
+        <description>Partaking in this divine art fills me with joy</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>RV2_FeederInitiatedVore_Know_Liked</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>3</durationDays>
+    <stackLimit>1</stackLimit>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>admirable feeder</label>
+        <baseOpinionOffset>5</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- Required -->
+  <PreceptDef>
+    <defName>RV2_Feeding_Required</defName>
+    <issue>RV2_Feeding</issue>
+    <label>required</label>
+    <description>We are the driving hand of vore, it is our job to find the perfect vore partners.</description>
+    <impact>High</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <associatedMemes>
+      <li>RV2_Preyism</li>
+      <li>RV2_Predation</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>RV2_FeederInitiatedVore</eventDef>
+        <thought>RV2_FeederInitiatedVore_Required</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>RV2_FeederInitiatedVore</eventDef>
+        <thought>RV2_FeederInitiatedVore_Know_Required</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>RV2_FeederInitiatedVore</eventDef>
+        <thought>RV2_FeederInitiatedVore_Know_Social_Required</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>RV2_NoRecentFeederInitiatedVore_Required</thought>
+        <description>Not fed anyone for {VORERELATEDINTERVAL} days</description>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <ThoughtDef>
+    <defName>RV2_FeederInitiatedVore_Required</defName>
+    <durationDays>1</durationDays>
+    <stages>
+      <li>
+        <label>I fed someone</label>
+        <description>By shoving someone into a predator I can express my beliefs.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>RV2_FeederInitiatedVore_Know_Required</defName>
+    <durationDays>1</durationDays>
+    <stages>
+      <li>
+        <label>Someone was a feeder!</label>
+        <description>One of our members made sure a predator got fed, very admirable!</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>RV2_FeederInitiatedVore_Know_Social_Required</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>3</durationDays>
+    <stackLimit>5</stackLimit>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>divine feeder</label>
+        <baseOpinionOffset>2</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>RV2_NoRecentFeederInitiatedVore_Required</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>RimVore2.ThoughtWorker_Precept_RecentKeyword</workerClass>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>want to be feeder</label>
+        <description>It's been far too long since I last fed someone.</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+    <modExtensions>
+      <li Class="RimVore2.PreceptThoughtWorker_ListeningKeyword">
+        <keyword>InitiatedAsFeeder</keyword>
+      </li>
+    </modExtensions>
+  </ThoughtDef>
+
+
+</Defs>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RimVore2.QuirkPoolDef>
+    <defName>Mobility</defName>
+    <label>Mobility</label>
+	<category>Capacity</category>
+	<description>These quirks determine the impact on a pawn's mobility when said pawn is full of prey. It serves as a soft limit on capacity, as an immobile pawn can still be hand-fed.</description>
+    <generationOrder>3</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>Mobility_Godlike</li>
+      <li>Mobility_VeryGood</li>
+      <li>Mobility_Good</li>
+      <li>Mobility_Normal</li>
+      <li>Mobility_Bad</li>
+      <li>Mobility_VeryBad</li>
+    </quirks>
+  </RimVore2.QuirkPoolDef>
+  
+    <RimVore2.QuirkDef>
+    <defName>Mobility_Godlike</defName>
+    <label>Godlike Agility</label>
+    <description>[PAWN_label] makes walking around with the weight of multiple full grown people hanging off of [PAWN_objective] look effortless, in a way that seems to defy the laws of physics.</description>
+    <rarity>VeryRare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_CapacityOffsetModifier">
+        <capacity>Moving</capacity>
+        <modifierValue>0.1</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkDef>
+    <defName>Mobility_VeryGood</defName>
+    <label>Belly acrobat</label>
+    <description>[PAWN_label] moves freely while full of prey, as though [PAWN_possessive] belly wasn't there.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_CapacityOffsetModifier">
+        <capacity>Moving</capacity>
+        <modifierValue>0.5</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  
+  <RimVore2.QuirkDef>
+    <defName>Mobility_Good</defName>
+    <label>Belly-nimble</label>
+    <description>[PAWN_label] knows how to keep [PAWN_possessive] balance with a bulging belly.</description>
+    <rarity>Common</rarity>
+  </RimVore2.QuirkDef>
+  
+  <RimVore2.QuirkDef>
+    <defName>Mobility_Normal</defName>
+    <label>Belly-functional</label>
+    <hidden>true</hidden>
+    <description>[PAWN_label] is affected by their prey's weight like anyone else.</description>
+    <rarity>Abundant</rarity>    
+    <comps>
+      <li Class="RimVore2.QuirkComp_CapacityOffsetModifier">
+        <capacity>Moving</capacity>
+        <modifierValue>1.5</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  
+  <RimVore2.QuirkDef>
+    <defName>Mobility_Bad</defName>
+    <label>Belly-clumsy</label>
+    <description>[PAWN_label] is unsteady with a big belly and prone to tumbling whenever [PAWN_possessive] prey decide to kick around.</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_CapacityOffsetModifier">
+        <capacity>Moving</capacity>
+        <modifierValue>2</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  
+  <RimVore2.QuirkDef>
+    <defName>Mobility_VeryBad</defName>
+    <label>Belly-dysfunctional</label>
+    <description>[PAWN_label] can barely stay on [PAWN_possessive] feet with a big, round belly, let alone jog around.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_CapacityOffsetModifier">
+        <capacity>Moving</capacity>
+        <modifierValue>2.5</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+</Defs>

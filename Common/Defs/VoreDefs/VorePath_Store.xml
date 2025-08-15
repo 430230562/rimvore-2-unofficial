@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!-- Here are the store paths. Storage is distinct from amalgamation (see VorePath_Amalgamate) in that the pawn inside is considered to still be intact, and not contributing anything to the pred other than a bulge-->
+
+  <!-- Oral -->
+  <RimVore2.VorePathDef>
+    <defName>OralStore</defName>
+    <label>(Store) Oral</label>
+    <RMBLabel>Oral vore</RMBLabel>
+    <actionDescription>{PREDATOR} will store {PREY} in their stomach</actionDescription>
+    <description>Oral storage is where the predator swallows the prey into their stomach for indefinite storage.</description>
+    <initTale>RV2_VoreInitiation_OralStore</initTale>
+    <exitTale>RV2_VoreExit_OralStore</exitTale>
+    <voreType>Oral</voreType>
+    <voreGoal>Store</voreGoal>
+    <postVoreMemories>
+      <predatorPostVoreSuccess>RV2_PredatorOralStoreEnd</predatorPostVoreSuccess>
+      <preyPostVoreSuccess>RV2_PreyOralStoreEnd</preyPostVoreSuccess>
+    </postVoreMemories>
+    <stages>
+      <li>Mouth_Enter</li>
+      <li>Stomach_Store</li>
+      <li>Mouth_Regurgitate</li>
+    </stages>
+    <defaultRequiredStruggles>100</defaultRequiredStruggles>
+  </RimVore2.VorePathDef>
+
+  <!-- ESEGN: FullTour -->
+  <!-- ESEGN: Difference between this and OV store is minimal but this is needed for completion's sake -->
+  <RimVore2.VorePathDef>
+    <defName>FullTourStore</defName>
+    <label>(Store) Full Tour</label>
+    <RMBLabel>Full tour vore</RMBLabel>
+    <actionDescription>{PREDATOR} will store {PREY} in their stomach, and later release them out the other end</actionDescription>
+    <description>Full tour storage is where the predator swallows the prey into their stomach for indefinite storage, eventually releasing them through their guts.</description>
+    <initTale>RV2_VoreInitiation_FullTourStore</initTale>
+    <exitTale>RV2_VoreExit_FullTourStore</exitTale>
+    <voreType>FullTour</voreType>
+    <voreGoal>Store</voreGoal>
+    <postVoreMemories>
+      <predatorPostVoreSuccess>RV2_PredatorFullTourStoreEnd</predatorPostVoreSuccess>
+      <preyPostVoreSuccess>RV2_PreyFullTourStoreEnd</preyPostVoreSuccess>
+    </postVoreMemories>
+    <stages>
+      <li>Mouth_Enter</li>
+      <li>Stomach_Store</li>
+      <li>Intestines_Exit</li>
+      <li>Anus_Exit</li>
+    </stages>
+    <defaultRequiredStruggles>100</defaultRequiredStruggles>
+  </RimVore2.VorePathDef>
+
+  <!-- Anal -->
+  <RimVore2.VorePathDef>
+    <defName>AnalStore</defName>
+    <label>(Store) Anal</label>
+    <RMBLabel>Anal vore</RMBLabel>
+    <actionDescription>{PREDATOR} will store {PREY} in their guts</actionDescription>
+    <description>Anal storage is where the predator stuffs the prey up their butt and into their intestines for indefinite storage.</description>
+    <initTale>RV2_VoreInitiation_AnalStore</initTale>
+    <exitTale>RV2_VoreExit_AnalStore</exitTale>
+    <voreType>Anal</voreType>
+    <voreGoal>Store</voreGoal>
+    <postVoreMemories>
+      <predatorPostVoreSuccess>RV2_PredatorAnalStoreEnd</predatorPostVoreSuccess>
+      <preyPostVoreSuccess>RV2_PreyAnalStoreEnd</preyPostVoreSuccess>
+    </postVoreMemories>
+    <stages>
+      <li>Anus_Enter</li>
+      <li>Intestines_Store</li>
+      <li>Anus_Exit</li>
+    </stages>
+    <defaultRequiredStruggles>100</defaultRequiredStruggles>
+  </RimVore2.VorePathDef>
+
+  <!-- Vaginal -->
+  <RimVore2.VorePathDef>
+    <defName>VaginalStore</defName>
+    <label>(Store) Vaginal</label>
+    <RMBLabel>Vaginal vore</RMBLabel>
+    <actionDescription>{PREDATOR} will store {PREY} up their box</actionDescription>
+    <description>Vaginal storage is where the predator unbirths the prey into their womb for indefinite storage.</description>
+    <initTale>RV2_VoreInitiation_VaginalStore</initTale>
+    <exitTale>RV2_VoreExit_VaginalStore</exitTale>
+    <voreType>Vaginal</voreType>
+    <voreGoal>Store</voreGoal>
+    <postVoreMemories>
+      <predatorPostVoreSuccess>RV2_PredatorVaginalStoreEnd</predatorPostVoreSuccess>
+      <preyPostVoreSuccess>RV2_PreyVaginalStoreEnd</preyPostVoreSuccess>
+    </postVoreMemories>
+    <stages>
+      <li>Vagina_Enter</li>
+      <li>Womb_Store</li>
+      <li>Vagina_Exit</li>
+    </stages>
+    <defaultRequiredStruggles>100</defaultRequiredStruggles>
+  </RimVore2.VorePathDef>
+
+  <!-- Cock -->
+  <RimVore2.VorePathDef>
+    <defName>CockStore</defName>
+    <label>(Store) Cock</label>
+    <RMBLabel>Cock vore</RMBLabel>
+    <actionDescription>{PREDATOR} will store {PREY} down their cock</actionDescription>
+    <description>Cock storage is where the predator shunts the prey down their cock and into their balls for indefinite storage.</description>
+    <initTale>RV2_VoreInitiation_CockStore</initTale>
+    <exitTale>RV2_VoreExit_CockStore</exitTale>
+    <voreType>Cock</voreType>
+    <voreGoal>Store</voreGoal>
+    <postVoreMemories>
+      <predatorPostVoreSuccess>RV2_PredatorCockStoreEnd</predatorPostVoreSuccess>
+      <preyPostVoreSuccess>RV2_PreyCockStoreEnd</preyPostVoreSuccess>
+    </postVoreMemories>
+    <stages>
+      <li>Cock_Enter</li>
+      <li>Testicles_Store</li>
+      <li>Cock_Exit</li>
+    </stages>
+    <defaultRequiredStruggles>100</defaultRequiredStruggles>
+  </RimVore2.VorePathDef>
+
+  <!-- Nipple -->
+  <RimVore2.VorePathDef>
+    <defName>NippleStore</defName>
+    <label>(Store) Nipple</label>
+    <RMBLabel>Nipple vore</RMBLabel>
+    <actionDescription>{PREDATOR} will store {PREY} behind their nipple</actionDescription>
+    <description>Nipple storage is where the predator shoves the prey through their nipple and into their mammary for indefinite storage.</description>
+    <initTale>RV2_VoreInitiation_NippleStore</initTale>
+    <exitTale>RV2_VoreExit_NippleStore</exitTale>
+    <voreType>Nipple</voreType>
+    <voreGoal>Store</voreGoal>
+    <postVoreMemories>
+      <predatorPostVoreSuccess>RV2_PredatorNippleStoreEnd</predatorPostVoreSuccess>
+      <preyPostVoreSuccess>RV2_PreyNippleStoreEnd</preyPostVoreSuccess>
+    </postVoreMemories>
+    <stages>
+      <li>Nipple_Enter</li>
+      <li>Breasts_Store</li>
+      <li>Nipple_Exit</li>
+    </stages>
+    <defaultRequiredStruggles>100</defaultRequiredStruggles>
+  </RimVore2.VorePathDef>
+
+</Defs>

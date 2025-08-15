@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!-- Here are the Hold paths. Storage is distinct from amalgamation (see VorePath_Amalgamate) in that the pawn inside is considered to still be intact, and not contributing anything to the pred other than a bulge-->
+
+  <!-- Oral -->
+  <RimVore2.VorePathDef>
+    <defName>OralHold</defName>
+    <label>(Hold) Oral</label>
+    <RMBLabel>Oral vore</RMBLabel>
+    <actionDescription>{PREDATOR} will temporarily store {PREY} in their stomach</actionDescription>
+    <description>Oral hold is where the predator swallows the prey into their stomach for temporary storage.</description>
+    <initTale>RV2_VoreInitiation_OralHold</initTale>
+    <exitTale>RV2_VoreExit_OralHold</exitTale>
+    <voreType>Oral</voreType>
+    <voreGoal>Hold</voreGoal>
+    <postVoreMemories>
+      <!-- @MamaHorseteeth Please implement proper HoldEnd memories -->
+      <predatorPostVoreSuccess>RV2_PredatorOralStoreEnd</predatorPostVoreSuccess>
+      <preyPostVoreSuccess>RV2_PreyOralStoreEnd</preyPostVoreSuccess>
+    </postVoreMemories>
+    <stages>
+      <li>Mouth_Enter</li>
+      <li>Stomach_Hold</li>
+      <!-- ESEGN: Changed to 3-stage, final is regurgitate -->
+      <li>Mouth_Regurgitate</li>
+    </stages>
+    <defaultRequiredStruggles>10</defaultRequiredStruggles>
+  </RimVore2.VorePathDef>
+
+  <!-- ESEGN: FullTour -->
+  <RimVore2.VorePathDef>
+    <defName>FullTourHold</defName>
+    <label>(Hold) Full Tour</label>
+    <RMBLabel>Full tour vore</RMBLabel>
+    <actionDescription>{PREDATOR} will temporarily store {PREY} in their stomach, and release them out the other end</actionDescription>
+    <description>Full tour hold is where the predator swallows the prey into their stomach for temporary storage, then releases them through their guts.</description>
+    <initTale>RV2_VoreInitiation_FullTourHold</initTale>
+    <exitTale>RV2_VoreExit_FullTourHold</exitTale>
+    <voreType>FullTour</voreType>
+    <voreGoal>Hold</voreGoal>
+    <postVoreMemories>
+      <!-- ESEGN: Also needs hold-specific memories if those are ever added -->
+      <predatorPostVoreSuccess>RV2_PredatorFullTourStoreEnd</predatorPostVoreSuccess>
+      <preyPostVoreSuccess>RV2_PreyFullTourStoreEnd</preyPostVoreSuccess>
+    </postVoreMemories>
+    <stages>
+      <li>Mouth_Enter</li>
+      <li>Stomach_Hold</li>
+      <li>Intestines_Exit</li>
+      <li>Anus_Exit</li>
+    </stages>
+    <defaultRequiredStruggles>10</defaultRequiredStruggles>
+  </RimVore2.VorePathDef>
+
+  <!-- Anal -->
+  <RimVore2.VorePathDef>
+    <defName>AnalHold</defName>
+    <label>(Hold) Anal</label>
+    <RMBLabel>Anal vore</RMBLabel>
+    <actionDescription>{PREDATOR} will temporarily store {PREY} in their guts</actionDescription>
+    <description>Anal storage is where the predator stuffs the prey up their butt and into their intestines for temporary storage.</description>
+    <initTale>RV2_VoreInitiation_AnalHold</initTale>
+    <exitTale>RV2_VoreExit_AnalHold</exitTale>
+    <voreType>Anal</voreType>
+    <voreGoal>Hold</voreGoal>
+    <postVoreMemories>
+      <!-- @MamaHorseteeth Please implement proper HoldEnd memories -->
+      <predatorPostVoreSuccess>RV2_PredatorAnalStoreEnd</predatorPostVoreSuccess>
+      <preyPostVoreSuccess>RV2_PreyAnalStoreEnd</preyPostVoreSuccess>
+    </postVoreMemories>
+    <stages>
+      <li>Anus_Enter</li>
+      <li>Intestines_Hold</li>
+      <li>Anus_Exit</li>
+    </stages>
+    <defaultRequiredStruggles>6</defaultRequiredStruggles>
+  </RimVore2.VorePathDef>
+
+  <!-- Vaginal -->
+  <RimVore2.VorePathDef>
+    <defName>VaginalHold</defName>
+    <label>(Hold) Vaginal</label>
+    <RMBLabel>Vaginal vore</RMBLabel>
+    <actionDescription>{PREDATOR} will temporarily store {PREY} in their vagina</actionDescription>
+    <description>Vaginal storage is where the predator unbirths the prey into their womb for temporary storage.</description>
+    <initTale>RV2_VoreInitiation_VaginalHold</initTale>
+    <exitTale>RV2_VoreExit_VaginalHold</exitTale>
+    <voreType>Vaginal</voreType>
+    <voreGoal>Hold</voreGoal>
+    <postVoreMemories>
+      <!-- @MamaHorseteeth Please implement proper HoldEnd memories -->
+      <predatorPostVoreSuccess>RV2_PredatorVaginalStoreEnd</predatorPostVoreSuccess>
+      <preyPostVoreSuccess>RV2_PreyVaginalStoreEnd</preyPostVoreSuccess>
+    </postVoreMemories>
+    <stages>
+      <li>Vagina_Enter</li>
+      <li>Womb_Hold</li>
+      <li>Vagina_Exit</li>
+    </stages>
+    <defaultRequiredStruggles>6</defaultRequiredStruggles>
+  </RimVore2.VorePathDef>
+
+  <!-- Cock -->
+  <RimVore2.VorePathDef>
+    <defName>CockHold</defName>
+    <label>(Hold) Cock</label>
+    <RMBLabel>Cock vore</RMBLabel>
+    <actionDescription>{PREDATOR} will temporarily store {PREY} in their cock</actionDescription>
+    <description>Cock storage is where the predator shunts the prey down their cock and into their balls for temporary storage.</description>
+    <initTale>RV2_VoreInitiation_CockHold</initTale>
+    <exitTale>RV2_VoreExit_CockHold</exitTale>
+    <voreType>Cock</voreType>
+    <voreGoal>Hold</voreGoal>
+    <postVoreMemories>
+      <!-- @MamaHorseteeth Please implement proper HoldEnd memories -->
+      <predatorPostVoreSuccess>RV2_PredatorCockStoreEnd</predatorPostVoreSuccess>
+      <preyPostVoreSuccess>RV2_PreyCockStoreEnd</preyPostVoreSuccess>
+    </postVoreMemories>
+    <stages>
+      <li>Cock_Enter</li>
+      <li>Testicles_Hold</li>
+      <li>Cock_Exit</li>
+    </stages>
+    <defaultRequiredStruggles>6</defaultRequiredStruggles>
+  </RimVore2.VorePathDef>
+
+  <!-- Nipple -->
+  <RimVore2.VorePathDef>
+    <defName>NippleHold</defName>
+    <label>(Hold) Nipple</label>
+    <RMBLabel>Nipple vore</RMBLabel>
+    <actionDescription>{PREDATOR} will temporarily store {PREY} in their nipple</actionDescription>
+    <description>Nipple storage is where the predator shoves the prey through their nipple and into their mammary for temporary storage.</description>
+    <initTale>RV2_VoreInitiation_NippleHold</initTale>
+    <exitTale>RV2_VoreExit_NippleHold</exitTale>
+    <voreType>Nipple</voreType>
+    <voreGoal>Hold</voreGoal>
+    <postVoreMemories>
+      <!-- @MamaHorseteeth Please implement proper HoldEnd memories -->
+      <predatorPostVoreSuccess>RV2_PredatorNippleStoreEnd</predatorPostVoreSuccess>
+      <preyPostVoreSuccess>RV2_PreyNippleStoreEnd</preyPostVoreSuccess>
+    </postVoreMemories>
+    <stages>
+      <li>Nipple_Enter</li>
+      <li>Breasts_Hold</li>
+      <li>Nipple_Exit</li>
+    </stages>
+    <defaultRequiredStruggles>6</defaultRequiredStruggles>
+  </RimVore2.VorePathDef>
+
+</Defs>

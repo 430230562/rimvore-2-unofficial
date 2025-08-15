@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="ResourceBase">
+    <defName>RV2_DestroyedImplant</defName>
+    <label>digested implant</label>
+    <description>This implant did not withstand the harsh environment of someones insides. You can destroy this at a Machining Table to regain some materials.</description>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Item/Unfinished/UnfinishedHealthItem</texPath>
+    </graphicData>
+    <soundInteract>Standard_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <statBases>
+      <MaxHitPoints>60</MaxHitPoints>
+      <MarketValue>1</MarketValue>
+      <Mass>1</Mass>
+      <Flammability>0.8</Flammability>
+      <DeteriorationRate>8</DeteriorationRate>
+    </statBases>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+    <tradeability>None</tradeability>
+    <generateCommonality>0</generateCommonality>
+  </ThingDef>
+  
+  <RecipeDef>
+    <defName>RV2_DisassembleDigestedImplant</defName>
+    <label>disassemble implant remains</label>
+    <description>Disassemble implants that were destroyed during fatal vore.</description>
+    <jobString>Disassembling implant.</jobString>
+    <workAmount>60</workAmount>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+    <workSkill>Crafting</workSkill>
+    <effectWorking>ButcherMechanoid</effectWorking>
+    <soundWorking>Recipe_ButcherCorpseMechanoid</soundWorking>
+    <uiIconThing>Steel</uiIconThing>
+    <recipeUsers>
+      <li>TableMachining</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>RV2_DestroyedImplant</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>RV2_DestroyedImplant</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Steel>5</Steel>
+    </products>
+  </RecipeDef>
+</Defs>

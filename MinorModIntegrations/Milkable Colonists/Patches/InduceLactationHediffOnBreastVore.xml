@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- 
+  The mod sadly doesn't make it possible to extend a new hediff that we could use to make the label show "vore" as the cause of the lactation
+  so we just need to re-use the drug one because the natural variant is applied for *way* too long
+-->
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/RimVore2.VoreStageDef[defName="Breasts_ConvertMilk"]/onEnd/actions</xpath>
+    <value>
+      <li Class="RimVore2.RollAction_AddHediff">
+        <hediff>Lactating_Drug</hediff>
+        <target>Predator</target>
+      </li>
+    </value>
+  </Operation>
+</Patch>

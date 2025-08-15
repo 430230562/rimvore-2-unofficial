@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <WorkGiverDef>
+    <defName>RV2_ProposeVore</defName>
+    <label>propose vore</label>
+    <giverClass>RimVore2.WorkGiver_ProposeVore</giverClass>
+    <workType>RV2_Propose</workType>
+    <priorityInType>50</priorityInType>
+    <verb>propose</verb>
+    <gerund>proposing vore to</gerund>
+    <requiredCapacities>
+      <li>Consciousness</li>
+      <li>Hearing</li>
+      <li>Talking</li>
+    </requiredCapacities>
+  </WorkGiverDef>
+</Defs>

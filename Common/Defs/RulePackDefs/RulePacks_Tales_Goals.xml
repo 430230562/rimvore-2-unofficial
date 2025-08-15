@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RulePackDef>
+    <defName>RV2_Goal_Digest</defName>
+    <include>
+        <li>RV2_Goal_Fatal</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        <li>extraSentencePack->[RECIPIENT_nameDef] for [RV2_goalFinish_noun].</li>
+        <!-- local RV2_digestion_* -->
+        <li>RV2_digestion_product->an indiscernible glob</li>
+        <li>RV2_digestion_product->mush</li>
+        <li>RV2_digestion_product->paste</li>
+        <li>RV2_digestion_meal_adjective->disappointing</li>
+        <li>RV2_digestion_meal_adjective->boring</li>
+        <li>RV2_digestion_meal_adjective->simple</li>
+        <li>RV2_digestion_meal_adjective->fair</li>
+        <li>RV2_digestion_meal_adjective->nice</li>
+        <li>RV2_digestion_meal_adjective->delicious</li>
+        <li>RV2_digestion_meal_adjective->exellent</li>
+        <li>RV2_digestion_meal_noun->snack</li>
+        <li>RV2_digestion_meal_noun->meal</li>
+        <li>RV2_digestion_meal_noun->feast</li>
+        <li>RV2_digestion_meal->[RV2_digestion_meal_noun]</li>
+        <li>RV2_digestion_meal->[RV2_digestion_meal_adjective] [RV2_digestion_meal_noun]</li>
+        <!-- RV2_adverb -->
+        <li>RV2_adverb->hungrily</li>
+        <li>RV2_adverb->gluttonously</li>
+        <!-- RV2_adjective -->
+        <li>RV2_adjective->hungry</li>
+        <li>RV2_adjective->gluttonous</li>
+        <!-- RV2_addendum -->
+        <li>RV2_addendum->to satisfy [PREDATOR_possessive] hunger</li>
+        <li>RV2_addendum->to feed [PREDATOR_objective]</li>
+        <li>RV2_addendum->to sustain [PREDATOR_objective]</li>
+        <li>RV2_addendum->for the calories</li>
+        <li>RV2_addendum->for sustenance</li>
+        <!-- RV2_goalFinish_verb -->
+        <li>RV2_goalFinish_verb->digesting</li>
+        <!-- RV2_goalFinish_noun -->
+        <li>RV2_goalFinish_noun->digestion</li>
+        <!-- RV2_goalFinish_tale_noun -->
+        <li>RV2_goalFinish_tale_noun->[PREY_definite] turning into [RV2_digestion_product]</li>
+        <li>RV2_goalFinish_tale_noun->[PREY_definite] turning into [RV2_digestion_product] inside of [PREDATOR_definite]</li>
+        <li>RV2_goalFinish_tale_noun->[PREY_definite] being digested by [PREDATOR_definite]</li>
+        <li>RV2_goalFinish_tale_noun->[PREY_definite] satiating [PREDATOR_possessive] hunger</li>
+        <!-- RV2_goalFinish_image -->
+        <!-- RV2_goalFinish_desc_sentence -->
+        <li>RV2_goalFinish_desc_sentence->[PREY_definite] has turned into [RV2_digestion_product].</li>
+        <li>RV2_goalFinish_desc_sentence(p=5)->[PREY_definite] was a [RV2_digestion_meal] for [PREDATOR_definite].</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  <RulePackDef>
+    <defName>RV2_Goal_Pleasure</defName>
+    <include>
+        <li>RV2_Goal_Endo</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        <li>extraSentencePack->[RECIPIENT_nameDef] for [RV2_goalFinish_noun].</li>
+        <!-- local RV2_pleasure_* -->
+        <!-- RV2_adverb -->
+        <li>RV2_adverb->lustily</li>
+        <li>RV2_adverb->lovingly</li>
+        <li>RV2_adverb->hornily</li>
+        <li>RV2_adverb->hedonistically</li>
+        <!-- RV2_adjective -->
+        <li>RV2_adjective->lusty</li>
+        <li>RV2_adjective->loving</li>
+        <li>RV2_adjective->horny</li>
+        <li>RV2_adjective->hedonistic</li>
+        <!-- RV2_addendum -->
+        <!-- RV2_goalFinish_verb -->
+        <li>RV2_goalFinish_verb->pleasuring</li>
+        <!-- RV2_goalFinish_noun -->
+        <li>RV2_goalFinish_noun->pleasure</li>
+        <!-- RV2_goalFinish_tale_noun -->
+        <li>RV2_goalFinish_tale_noun->[PREDATOR_definite] enjoying [PREY_definite] pleasuring [PREDATOR_objective] from inside</li>
+        <!-- RV2_goalFinish_image -->
+        <!-- RV2_goalFinish_desc_sentence -->
+        <li>RV2_goalFinish_desc_sentence->[PREY_definite] appears to be masturbating while inside [PREDATOR_definite].</li>
+        <li>RV2_goalFinish_desc_sentence->[PREDATOR_definite] felt [PREY_definite] masturbating inside of [PREDATOR_objective].</li>
+        <li>RV2_goalFinish_desc_sentence->[PREDATOR_definite] dons a wide smile of bliss.</li>
+        <li>RV2_goalFinish_desc_sentence->[PREY_definite] smiles [RV2_adverb] at [PREDATOR_definite].</li>
+        <li>RV2_goalFinish_desc_sentence->[PREDATOR_definite] revels in [PREDATOR_pronoun] post-orgasm clarity.</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  <RulePackDef>
+    <defName>RV2_Goal_Store</defName>
+    <include>
+        <li>RV2_Goal_Endo</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        <li>extraSentencePack->[RECIPIENT_nameDef] for [RV2_goalFinish_noun].</li>
+        <!-- RV2_store_* -->
+        <!-- RV2_adverb -->
+        <li>RV2_adverb->lovingly</li>
+        <li>RV2_adverb->lengthily</li>
+        <li>RV2_adverb->permanently</li>
+        <!-- RV2_adjective -->
+        <li>RV2_adjective->loving</li>
+        <li>RV2_adjective->lengthy</li>
+        <li>RV2_adjective->permanent</li>
+        <!-- RV2_addendum -->
+        <!-- RV2_goalFinish_verb -->
+        <li>RV2_goalFinish_verb->storing</li>
+        <li>RV2_goalFinish_verb->hoarding</li>
+        <li>RV2_goalFinish_verb->jailing</li>
+        <li>RV2_goalFinish_verb->capturing</li>
+        <!-- RV2_goalFinish_noun -->
+        <li>RV2_goalFinish_noun->storage</li>
+        <li>RV2_goalFinish_noun->hoard</li>
+        <li>RV2_goalFinish_noun->jail</li>
+        <li>RV2_goalFinish_noun->captivity</li>
+        <!-- RV2_goalFinish_tale_noun -->
+        <li>RV2_goalFinish_tale_noun->[PREDATOR_definite] keeping [PREY_definite] captive</li>
+        <li>RV2_goalFinish_tale_noun->[PREDATOR_definite] releasing [PREY_definite] from [PREDATOR_pronoun] body jail</li>
+        <li>RV2_goalFinish_tale_noun->[PREY_definite] escaping from captivity</li>
+        <li>RV2_goalFinish_tale_noun->[PREY_definite] escaping from captivity inside [PREDATOR_definite]</li>
+        <!-- RV2_goalFinish_image -->
+        <!-- RV2_goalFinish_desc_sentence -->
+        <li>RV2_goalFinish_desc_sentence->[PREDATOR_definite] is telling [PREY_definite] that the next time [PREY_pronoun] won't get out alive.</li>
+        <li>RV2_goalFinish_desc_sentence->[PREDATOR_definite] is telling [PREY_definite] that [PREDATOR_pronoun] won't let [PREY_pronoun] out next time.</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  <RulePackDef>
+    <defName>RV2_Goal_Hold</defName>
+    <include>
+        <li>RV2_Goal_Endo</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        <li>extraSentencePack->[RECIPIENT_nameDef] for [RV2_goalFinish_noun].</li>
+        <!-- RV2_hold_* -->
+        <!-- RV2_adverb -->
+        <li>RV2_adverb->lovingly</li>
+        <li>RV2_adverb->hastily</li>
+        <!-- RV2_adjective -->
+        <li>RV2_adjective->loving</li>
+        <li>RV2_adjective->hasty</li>
+        <!-- RV2_addendum -->
+        <!-- RV2_goalFinish_verb -->
+        <li>RV2_goalFinish_verb->holding</li>
+        <li>RV2_goalFinish_verb->visiting</li>
+        <!-- RV2_goalFinish_noun -->
+        <li>RV2_goalFinish_noun->hold</li>
+        <li>RV2_goalFinish_noun->visit</li>
+        <!-- RV2_goalFinish_tale_noun -->
+        <li>RV2_goalFinish_tale_noun->[PREDATOR_definite] touring [PREY_definite] around [PREDATOR_possessive] body</li>
+        <li>RV2_goalFinish_tale_noun->[PREY_definite] touring the insides of [PREDATOR_definite]</li>
+        <li>RV2_goalFinish_tale_noun->[PREY_definite] taking a break from it all inside [PREDATOR_definite]</li>
+        <li>RV2_goalFinish_tale_noun->[PREY_definite] inspecting inside of [PREDATOR_definite]</li>
+        <li>RV2_goalFinish_tale_noun->[PREDATOR_definite] making sure [PREY_definite] doesn't wander off</li>
+        <!-- RV2_goalFinish_image -->
+        <!-- RV2_goalFinish_desc_sentence -->
+        <li>RV2_goalFinish_desc_sentence->[PREDATOR_definite] is telling [PREY_definite] that next time [PREY_pronoun] can stay longer.</li>
+        <li>RV2_goalFinish_desc_sentence->[PREDATOR_definite] is helping [PREY_definite] stand up after [PREY_possessive] long stay.</li>
+        <li>RV2_goalFinish_desc_sentence->[PREY_possessive] stay inside [PREDATOR_definite] has left [PREY_objective] a little off-balance.</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  <RulePackDef>
+    <defName>RV2_Goal_ConvertLube</defName>
+    <include>
+        <li>RV2_Goal_Fatal</li>
+        <li>RV2_Goal_Convert</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        <li>extraSentencePack->[RECIPIENT_nameDef] for [RV2_goalFinish_noun].</li>
+        <!-- RV2_convertLube_* -->
+        <!-- RV2_goalProduct (convert) -->
+        <li>RV2_goalProduct->lube</li>
+        <li>RV2_goalProduct->lubricant</li>
+        <li>RV2_goalProduct->squirt</li>
+        <!-- RV2_adverb -->
+        <li>RV2_adverb->lustily</li>
+        <li>RV2_adverb->lovingly</li>
+        <li>RV2_adverb->hornily</li>
+        <!-- RV2_adjective -->
+        <li>RV2_adjective->lusty</li>
+        <li>RV2_adjective->horny</li>
+        <!-- RV2_addendum -->
+        <li>RV2_addendum->to churn [PREY_definite] in [PREDATOR_possessive] vagina</li>
+        <!-- RV2_goalFinish_verb -->
+        <li>RV2_goalFinish_verb->lubrifying</li>
+        <!-- RV2_goalFinish_noun -->
+        <li>RV2_goalFinish_noun->lubrify</li>
+        <!-- RV2_goalFinish_tale_noun -->
+        <li>RV2_goalFinish_tale_noun->[PREY_definite] lubricating [PREDATOR_possessive] vagina</li>
+        <!-- RV2_goalFinish_image -->
+        <li>RV2_goalFinish_image->[PREY_definite] lining the inside of [PREDATOR_possessive] vagina</li>
+        <li>RV2_goalFinish_image->[PREY_definite] dripping out of [PREDATOR_possessive] vagina as [RV2_goalProduct]</li>
+        <!-- RV2_goalFinish_desc_sentence -->
+        <li>RV2_goalFinish_desc_sentence->[PREDATOR_definite] made a mess of [PREY_definite] on the ground.</li>
+        <li>RV2_goalFinish_desc_sentence->[PREDATOR_possessive] [RV2_goalProduct] puddle was very noticeable.</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  <RulePackDef>
+    <defName>RV2_Goal_ConvertMilk</defName>
+    <include>
+        <li>RV2_Goal_Fatal</li>
+        <li>RV2_Goal_Convert</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        <li>extraSentencePack->[RECIPIENT_nameDef] for [RV2_goalFinish_noun].</li>
+        <!-- RV2_convertMilk_* -->
+        <!-- RV2_goalProduct (convert) -->
+        <li>RV2_goalProduct->milk</li>
+        <li>RV2_goalProduct->breastmilk</li>
+        <!-- RV2_adverb -->
+        <li>RV2_adverb->motherly</li>
+        <!-- RV2_adjective -->
+        <!-- RV2_addendum -->
+        <li>RV2_addendum->to churn [PREY_definite] in [PREDATOR_possessive] mammaries</li>
+        <!-- RV2_goalFinish_verb -->
+        <li>RV2_goalFinish_verb->milkifying</li>
+        <!-- RV2_goalFinish_noun -->
+        <li>RV2_goalFinish_noun->milkify</li>
+        <!-- RV2_goalFinish_tale_noun -->
+        <li>RV2_goalFinish_tale_noun->[PREDATOR_definite] engorging [PREDATOR_pronoun] breasts with [RV2_goalProduct]</li>
+        <!-- RV2_goalFinish_image -->
+        <li>RV2_goalFinish_image->[PREY_definite] as a nice glass of [RV2_goalProduct] on the table</li>
+        <li>RV2_goalFinish_image->someone drinking [PREDATOR_possessive] [RV2_goalProduct] from the glass</li>
+        <!-- RV2_goalFinish_desc_sentence -->
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  <RulePackDef>
+    <defName>RV2_Goal_ConvertSperm</defName>
+    <include>
+        <li>RV2_Goal_Fatal</li>
+        <li>RV2_Goal_Convert</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        <li>extraSentencePack->[RECIPIENT_nameDef] for [RV2_goalFinish_noun].</li>
+        <!-- RV2_convertSperm_* -->
+        <!-- RV2_goalProduct (convert) -->
+        <li>RV2_goalProduct->sperm</li>
+        <li>RV2_goalProduct->cum</li>
+        <li>RV2_goalProduct->baby batter</li>
+        <li>RV2_goalProduct->spooge</li>
+        <!-- RV2_adverb -->
+        <li>RV2_adverb->lustily</li>
+        <li>RV2_adverb->lovingly</li>
+        <li>RV2_adverb->hornily</li>
+        <!-- RV2_adjective -->
+        <li>RV2_adjective->horny</li>
+        <!-- RV2_addendum -->
+        <li>RV2_addendum->to churn [PREY_definite] in [PREDATOR_possessive] balls</li>
+        <li>RV2_addendum->to churn [PREY_definite] in [PREDATOR_possessive] sack</li>
+        <li>RV2_addendum->to prepare for [PREDATOR_possessive] next session</li>
+        <!-- RV2_goalFinish_verb -->
+        <!-- RV2_goalFinish_noun -->
+        <!-- RV2_goalFinish_tale_noun -->
+        <!-- RV2_goalFinish_image -->
+        <li>RV2_goalFinish_image->[PREY_definite] as a condom of [RV2_goalProduct] on the ground</li>
+        <li>RV2_goalFinish_image->someone eating [PREDATOR_possessive] [RV2_goalProduct] from the condom</li>
+        <!-- RV2_goalFinish_desc_sentence -->
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  <RulePackDef>
+    <defName>RV2_Goal_Heal</defName>
+    <include>
+        <li>RV2_Goal_Endo</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        <li>extraSentencePack->[RECIPIENT_nameDef] for [RV2_goalFinish_noun].</li>
+        <!-- RV2_heal_* -->
+        <!-- RV2_adverb -->
+        <li>RV2_adverb->carefully</li>
+        <li>RV2_adverb->clinically</li>
+        <li>RV2_adverb->lovingly</li>
+        <!-- RV2_adjective -->
+        <li>RV2_adjective->caring</li>
+        <li>RV2_adjective->loving</li>
+        <!-- RV2_addendum -->
+        <li>RV2_addendum->to patch [PREY_pronoun] up</li>
+        <li>RV2_addendum->to offer respite to [PREY_pronoun]</li>
+        <li>RV2_addendum->to save [PREY_possessive] life</li>
+        <!-- RV2_goalFinish_verb -->
+        <li>RV2_goalFinish_verb->healing</li>
+        <!-- RV2_goalFinish_noun -->
+        <li>RV2_goalFinish_noun->healing</li>
+        <!-- RV2_goalFinish_tale_noun -->
+        <li>RV2_goalFinish_tale_noun->[PREY_definite] healing inside of [PREDATOR_definite]</li>
+        <li>RV2_goalFinish_tale_noun->[PREDATOR_definite] caring for [PREY_definite]</li>
+        <li>RV2_goalFinish_tale_noun->[PREDATOR_definite] doing [PREDATOR_possessive] best to heal [PREY_definite]</li>
+        <!-- RV2_goalFinish_image -->
+        <li>RV2_goalFinish_image->[PREY_definite] being filled with newfound vigor.</li>
+        <!-- RV2_goalFinish_desc_sentence -->
+        <li>RV2_goalFinish_desc_sentence->[PREDATOR_definite] kept [PREY_definite] safe while all hell broke loose around them.</li>
+        <li>RV2_goalFinish_desc_sentence->Doctors could critize [PREY_possessive] care, but [PREY_definite] is ever thankful for it in [PREY_possessive] time of need.</li>
+        <li>RV2_goalFinish_desc_sentence->[PREY_definite] complimented [PREDATOR_possessive] bedside manner.</li>
+        <li>RV2_goalFinish_desc_sentence->[PREY_definite] criticized [PREDATOR_possessive] bedside manner.</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  <RulePackDef>
+    <defName>RV2_Goal_Reform</defName>
+    <include>
+        <li>RV2_Goal_Endo</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        <li>extraSentencePack->[RECIPIENT_nameDef] for [RV2_goalFinish_noun].</li>
+        <!-- RV2_reform_* -->
+        <!-- RV2_adverb -->
+        <li>RV2_adverb->lovingly</li>
+        <!-- RV2_adjective -->
+        <li>RV2_adjective->caring</li>
+        <li>RV2_adjective->loving</li>
+        <!-- RV2_addendum -->
+        <li>RV2_addendum->to remake [PREY_definite] in [PREDATOR_possessive] image</li>
+        <li>RV2_addendum->to reform [PREY_definite]</li>
+        <li>RV2_addendum->to propagate [PREDATOR_possessive] genes through [PREY_definite]</li>
+        <!-- RV2_goalFinish_verb -->
+        <li>RV2_goalFinish_verb->reforming</li>
+        <!-- RV2_goalFinish_noun -->
+        <li>RV2_goalFinish_noun->reformation</li>
+        <!-- RV2_goalFinish_tale_noun -->
+        <li>RV2_goalFinish_tale_noun->[PREY_definite] being reformed</li>
+        <!-- RV2_goalFinish_image -->
+        <li>RV2_goalFinish_image->[PREY_definite] arises in [PREY_possessive] new form.</li>
+        <li>RV2_goalFinish_image->[PREY_definite] popping out of [PREDATOR_definite] ready to take on the world.</li>
+        <li>RV2_goalFinish_image->[PREY_definite] in the arms of [PREDATOR_definite].</li>
+        <!-- RV2_goalFinish_desc_sentence -->
+        <li>RV2_goalFinish_desc_sentence->[PREY_definite] looks just like [PREDATOR_definite].</li>
+        <li>RV2_goalFinish_desc_sentence->[PREDATOR_definite] is thiking that [PREY_definite] looks too much like [PREY_posessive] old self.</li>
+        <li>RV2_goalFinish_desc_sentence->[PREDATOR_definite] appears happy to have another member of the family.</li>
+        <li>RV2_goalFinish_desc_sentence->[PREDATOR_definite] threaten [PREY_definite] with a second reformation if [PREY_pronoun] don't behave.</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  <RulePackDef>
+    <defName>RV2_Goal_Fatal</defName>
+    <rulePack>
+      <rulesStrings>
+        <!-- RV2_fatal_* -->
+        <li>RV2_fatal_reform_destination->at [PREY_possessive] birthplace</li>
+        <li>RV2_fatal_reform_destination->in [PREY_possessive] childhood home</li>
+        <li>RV2_fatal_reform_destination->on a distant urbworld</li>
+        <li>RV2_fatal_reform_destination->in another settlement</li>
+        <li>RV2_fatal_reform_destination->where [PREY_pronoun] died</li>
+        <li>RV2_fatal_reform_destination->in [PREY_possessive] bed</li>
+        <li>RV2_fatal_reform_destination->at the summit of a grand mountain</li>
+        <li>RV2_fatal_reform_destination->on the banks of a grand river</li>
+        <li>RV2_fatal_reform_destination->by the coast, overlooking a vast sea</li>
+        <!-- RV2_adverb -->
+        <li>RV2_adverb->fatally</li>
+        <!-- RV2_adjective -->
+        <li>RV2_adjective->fatal</li>
+        <!-- RV2_addendum -->
+        <li>RV2_addendum->to put [PAWN_definite] to death</li>
+        <!-- RV2_goalFinish_verb -->
+        <!-- RV2_goalFinish_noun -->
+        <!-- RV2_goalFinish_tale_noun -->
+        <li>RV2_goalFinish_tale->[PREY_definite] dying at the hand of [PREDATOR_definite]</li>
+        <li>RV2_goalFinish_tale->[PREDATOR_definite] taking the life of [PREY_definite]</li>
+        <!-- RV2_goalFinish_image -->
+        <li>RV2_goalFinish_image->[PREY_definite] looking down on [PREDATOR_definite]</li>
+        <li>RV2_goalFinish_image->[PREY_definite] looking down on [PREDATOR_definite] [RV2_adverb]</li>
+        <li>RV2_goalFinish_image->[PREDATOR_definite] looking at the remains of [PREY_definite]</li>
+        <li>RV2_goalFinish_image->[PREDATOR_definite] looking at the remains of [PREY_definite] [RV2_adverb]</li>
+        <li>RV2_goalFinish_image->[PREY_definite] being reformed</li>
+        <li>RV2_goalFinish_image(p=5)->[PREY_definite] being reformed [RV2_fatal_reform_destination]</li>
+        <li>RV2_goalFinish_image->[PREY_definite] waking up in [PREY_possessive] bed, after dying in a vore nightmare</li>
+        <!-- RV2_goalFinish_desc_sight -->
+        <li>RV2_goalFinish_desc_sight->[PREY_definite] sees the remains of others inside [PREDATOR_definite].</li>
+        <!-- RV2_goalFinish_desc_sentence -->
+        <li>RV2_goalFinish_desc_sentence->[PREY_possessive] last moments were [RV2_adjective].</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  <RulePackDef>
+    <defName>RV2_Goal_Endo</defName>
+    <rulePack>
+      <rulesStrings>
+        <!-- RV2_endo_* -->
+        <!-- RV2_adverb -->
+        <!-- RV2_adjective -->
+        <!-- RV2_addendum -->
+        <!-- RV2_goalFinish_verb -->
+        <!-- RV2_goalFinish_noun -->
+        <!-- RV2_goalFinish_tale_noun -->
+        <!-- RV2_goalFinish_image -->
+        <li>RV2_goalFinish_image->[PREY_definite] popping out of [PREDATOR_definite]</li>
+        <li>RV2_goalFinish_image->[PREDATOR_definite] pushing [PREY_definite] out</li>
+        <li>RV2_goalFinish_image->[PREDATOR_definite] walking away from [PREY_definite]</li>
+        <li>RV2_goalFinish_image->[PREDATOR_definite] checking on [PREY_definite]</li>
+        <!-- RV2_goalFinish_desc_sentence -->
+        <li>RV2_goalFinish_desc_sentence->[PREY_pronoun] had to get back to regular life.</li>
+        <li>RV2_goalFinish_desc_sentence->[PREY_pronoun] was ready to get out of [PREDATOR_definite].</li>
+        <li>RV2_goalFinish_desc_sentence->[PREY_pronoun] could have stayed longer inside [PREDATOR_definite].</li>
+        <li>RV2_goalFinish_desc_sentence->afterwards [PREDATOR_definite] looked like [PREDATOR_pronoun] wants to do that again.</li>
+        <li>RV2_goalFinish_desc_sentence->afterwards [PREY_definite] looked like [PREY_pronoun] wants to do that again.</li>
+        <li>RV2_goalFinish_desc_sentence->afterwards [PREY_definite] and [PREDATOR_definite] look at each other, agreeing to do that again.</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  <RulePackDef>
+    <defName>RV2_Goal_Convert</defName>
+    <rulePack>
+      <rulesStrings>
+        <!-- RV2_convert_* -->
+        <!-- RV2_adverb -->
+        <!-- RV2_adjective -->
+        <!-- RV2_addendum -->
+        <li>RV2_addendum->to turn [PREY_definite] into [RV2_goalProduct]</li>
+        <li>RV2_addendum->to convert into [RV2_goalProduct]</li>
+        <li>RV2_addendum->to become [RV2_goalProduct] inside [PREDATOR_pronoun]</li>
+        <!-- RV2_goalFinish_verb -->
+        <li>RV2_goalFinish_verb->converting into [RV2_goalProduct]</li>
+        <li>RV2_goalFinish_verb->breaking down into [RV2_goalProduct]</li>
+        <!-- RV2_goalFinish_noun -->
+        <li>RV2_goalFinish_noun->conversion into [RV2_goalProduct]</li>
+        <li>RV2_goalFinish_noun->break down into [RV2_goalProduct]</li>
+        <!-- RV2_goalFinish_tale_noun -->
+        <li>RV2_goalFinish_tale_noun->[PREY_definite] turning into [RV2_goalProduct] by [PREDATOR_definite]</li>
+        <li>RV2_goalFinish_tale_noun->[PREDATOR_definite] turning [PREY_definite] into [PREDATOR_possessive] [RV2_goalProduct]</li>
+        <li>RV2_goalFinish_tale_noun->[PREY_definite] becoming [RV2_goalProduct]</li>
+        <!-- RV2_goalFinish_image -->
+	<li>RV2_goalFinish_image->[PREY_definite] as [PREDATOR_possessive] [RV2_goalProduct]</li>
+	<li>RV2_goalFinish_image->a collection of [RV2_goalProduct] made from [PREY_definite]</li>
+        <!-- RV2_goalFinish_desc_sentence -->
+        <li>RV2_goalFinish_desc_sentence->Nothing identifiable remains of [PREY_definite].</li>
+        <li>RV2_goalFinish_desc_sentence->The resulting [RV2_goalProduct] tastes like [PREY_definite] looked.</li>
+        <li>RV2_goalFinish_desc_sentence->[PREDATOR_definite] had everyone taste [PREDATOR_possessive] [RV2_goalProduct] before telling them it was [PREY_definite].</li>
+        <li>RV2_goalFinish_desc_sentence->[PREDATOR_definite] snuck a taste of [PREDATOR_possessive] own [RV2_goalProduct] to see what [PREY_definite] tasted like.</li>
+        <li>RV2_goalFinish_desc_sentence->[PREY_definite] was better as [RV2_goalProduct] than walking around.</li>
+        <li>RV2_goalFinish_desc_sentence->[PREY_definite] really left a strange aftertaste in [PREDATOR_possessive] [RV2_goalProduct].</li>
+        <li>RV2_goalFinish_desc_sentence->The [RV2_goalProduct] may go to waste, but [PREDATOR_definite] had fun making it.</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+</Defs>

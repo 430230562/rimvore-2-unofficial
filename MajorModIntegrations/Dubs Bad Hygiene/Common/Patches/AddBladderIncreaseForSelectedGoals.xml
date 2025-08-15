@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <!-- OVERSTUFFED: set bladder need for urify vore -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>RimVore-2 (Overstuffed)</li>
+    </mods>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/RimVore2.VoreStageDef[defName="Kidney_DissolveUrine"]/onEnd</xpath>
+      <value>
+        <rolls>
+          <li>
+            <strength>-1</strength>
+            <actionsOnSuccess>
+              <li Class="RimVore2.RollAction_IncreaseNeed">
+                <target>Predator</target>
+                <need>Bladder</need>
+              </li>
+            </actionsOnSuccess>
+          </li>
+        </rolls>
+      </value>
+    </match>
+  </Operation>
+</Patch>

@@ -1,0 +1,1308 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+  <RimVore2.RV2_BackstoryDef Abstract="True" Name="RV2_CYA_Base">
+    <slot>Childhood</slot>
+    <!-- this is the RV-2 implemented commonality for 1.4 -->
+    <commonality>0.15</commonality>
+    <!-- 1.4 backstories have no commonalities for gender -->
+    <!-- 5 = 5%, so 0.05 (direct complaints @ HAR) -->
+    <!--<femaleCommonality>5</femaleCommonality>
+    <maleCommonality>5</maleCommonality>-->
+  </RimVore2.RV2_BackstoryDef>
+
+  <!-- Pred Anytype Anygoal Casual Dubious -->
+
+  <RimVore2.RV2_BackstoryDef ParentName="RV2_CYA_Base">
+    <defName>RV2_CYA_PredAnytypeAnygoal_CasualDubious_IdolPredator</defName>
+    <title>predator idol</title>
+    <titleShort>pred idol</titleShort>
+    <baseDesc>[PAWN_nameDef] was a popular idol as a young adult, whose image was plastered on all [PAWN_possessive] homeworld’s holoscreens and advertisements. In not one of these promotional images was [PAWN_pronoun] not either about to devour, part-way through ingesting, or in the process of digesting (simulated or otherwise) some likewise prettied-up prey. [PAWN_pronoun] never learned to hunt these meals, or really fight at all, lest [PAWN_pronoun] ruin [PAWN_possessive] figure with muscles.</baseDesc>
+    <workDisables>
+      <li>ManualDumb</li>
+    </workDisables>
+    <skillGains>
+      <Social>8</Social>
+      <Melee>-4</Melee>
+      <Shooting>-4</Shooting>
+    </skillGains>
+    <forcedTraits>
+      <Beauty>2</Beauty>
+    </forcedTraits>
+    <spawnCategories>
+      <li>Offworld</li>
+      <li>ImperialRoyal</li>
+      <li>Rare</li>
+    </spawnCategories>
+    <forcedQuirkPickers>
+      <li Class="RimVore2.QuirkPicker_RollOne">
+        <quirks>
+          <li>
+            <chanceOrWeight>2</chanceOrWeight>
+            <quirk>ProposalFrequency_High</quirk>
+          </li>
+          <li>
+            <chanceOrWeight>1</chanceOrWeight>
+            <quirk>ProposalFrequency_VeryHigh</quirk>
+          </li>
+        </quirks>
+      </li>
+      <li Class="RimVore2.QuirkPicker_RollAll">
+        <quirks>
+          <li>
+            <chanceOrWeight>0.6</chanceOrWeight>
+            <quirk>Persuasiveness_VeryGood</quirk>
+          </li>
+        </quirks>
+      </li>
+    </forcedQuirkPickers>
+    <blockedQuirkPickers>
+      <li Class="RimVore2.QuirkPicker_All">
+        <quirks>
+          <li>PredatorDisposition_Dislikes</li>
+          <li>PredatorDisposition_Refuses</li>
+          <li>Inability_PredEndoOnly</li>
+          <li>Inability_PredFatalOnly</li>
+        </quirks>
+      </li>
+    </blockedQuirkPickers>
+  </RimVore2.RV2_BackstoryDef>
+
+  <!-- Pred Anytype Anygoal Casual Unwilling -->
+
+  <RimVore2.RV2_BackstoryDef ParentName="RV2_CYA_Base">
+    <defName>RV2_CYA_PredAnytypeAnygoal_CasualDubious_WaterslideLurker</defName>
+    <title>waterslide lurker</title>
+    <titleShort>predator</titleShort>
+    <baseDesc>Once, while [PAWN_nameDef] was at the waterpark, [PAWN_pronoun] failed to give the waterslide the clearance it asked for, just as [PAWN_possessive] best friend was coming down. In one hilarious accident, [PAWN_nameDef] discovered both [PAWN_possessive] elasticity and [PAWN_possessive] new favorite leisure activity: hiding out at the bottom of a waterslide and trying not to get caught.</baseDesc>
+    <skillGains>
+      <Shooting>2</Shooting>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+      <li>Offworld</li>
+    </spawnCategories>
+    <forcedQuirkPickers>
+      <li Class="RimVore2.QuirkPicker_RollOne">
+        <quirks>
+          <li>
+            <chanceOrWeight>2</chanceOrWeight>
+            <quirk>ProposalFrequency_High</quirk>
+          </li>
+          <li>
+            <chanceOrWeight>1</chanceOrWeight>
+            <quirk>ProposalFrequency_VeryHigh</quirk>
+          </li>
+        </quirks>
+      </li>
+    </forcedQuirkPickers>
+    <blockedQuirkPickers>
+      <li Class="RimVore2.QuirkPicker_All">
+        <quirks>
+          <li>PredatorDisposition_Dislikes</li>
+          <li>PredatorDisposition_Refuses</li>
+          <li>Inability_PredEndoOnly</li>
+          <li>Inability_PredFatalOnly</li>
+        </quirks>
+      </li>
+    </blockedQuirkPickers>
+  </RimVore2.RV2_BackstoryDef>
+
+  <!-- Pred Anytype Digest Casual Dubious -->
+
+  <RimVore2.RV2_BackstoryDef ParentName="RV2_CYA_Base">
+    <defName>RV2_CYA_PredAnytypeDigest_CasualDubious_CheerleaderGluttonous</defName>
+    <title>gluttonous cheerleader</title>
+    <titleShort>cheerleader</titleShort>
+    <baseDesc>[PAWN_nameDef] started cheerleading in school and kept it up in college. [PAWN_pronoun] was the envy of [PAWN_possessive] team, able to maintain peak fitness despite eating almost [PAWN_possessive] body weight in junk food every day. When [PAWN_pronoun] discovered vore in college, however, “body weight” took on a much more literal meaning. Turns out lifting people up and throwing them translated very well to stuffing them down [PAWN_possessive] throat (or up [PAWN_possessive] rear, or wherever [PAWN_pronoun] wanted) in the locker room. Of course, [PAWN_nameDef] had to pick [PAWN_possessive] meals carefully, lest the team be unfit to rally the players to victory--the winning teams got to eat the losers, after all.</baseDesc>
+    <skillGains>
+      <Intellectual>-2</Intellectual>
+      <Shooting>2</Shooting>
+      <Social>4</Social>
+    </skillGains>
+    <forcedTraits>
+      <Nimble>0</Nimble>
+    </forcedTraits>
+    <spawnCategories>
+      <li>Offworld</li>
+      <li>Outlander</li>
+    </spawnCategories>
+    <bodyTypeMale>Thin</bodyTypeMale>
+    <bodyTypeFemale>Female</bodyTypeFemale>
+    <forcedHediffs>
+      <li>RV2_GoalEnabler_Digest</li>
+    </forcedHediffs>
+    <forcedQuirkPickers>
+      <li Class="RimVore2.QuirkPicker_RollOne">
+        <quirks>
+          <li>
+            <chanceOrWeight>1</chanceOrWeight>
+            <quirk>GoalPreference_Predator_Digest_Obsessed</quirk>
+          </li>
+          <li>
+            <chanceOrWeight>2</chanceOrWeight>
+            <quirk>GoalPreference_Predator_Digest_Likes</quirk>
+          </li>
+        </quirks>
+      </li>
+      <li Class="RimVore2.QuirkPicker_RollOne">
+        <quirks>
+          <li>
+            <chanceOrWeight>2</chanceOrWeight>
+            <quirk>ProposalFrequency_High</quirk>
+          </li>
+          <li>
+            <chanceOrWeight>1</chanceOrWeight>
+            <quirk>ProposalFrequency_VeryHigh</quirk>
+          </li>
+        </quirks>
+      </li>
+    </forcedQuirkPickers>
+    <blockedQuirkPickers>
+      <li Class="RimVore2.QuirkPicker_All">
+        <quirks>
+          <li>PredatorDisposition_Dislikes</li>
+          <li>PredatorDisposition_Refuses</li>
+          <li>Inability_PredEndoOnly</li>
+        </quirks>
+      </li>
+    </blockedQuirkPickers>
+  </RimVore2.RV2_BackstoryDef>
+
+  <!-- Pred Anytype Digest Open Dubious -->
+
+  <RimVore2.RV2_BackstoryDef ParentName="RV2_CYA_Base">
+    <defName>RV2_CYA_PredAnytypeDigest_OpenDubious_VorriorYoungblood</defName>
+    <title>youngblood vorrior</title>
+    <titleShort>youngblood</titleShort>
+    <baseDesc>[PAWN_nameDef] participated in [PAWN_possessive] tribe’s coming-of-age ritual in which, in order to join the ranks of the esteemed vorriors, [PAWN_pronoun] had to overpower and devour an armed captive in hand-to-hand combat. [PAWN_pronoun] won and was inducted, though, as a youngblood, [PAWN_nameDef] was expected to do all the menial labor around the vorriors’ lodge.</baseDesc>
+    <skillGains>
+      <Melee>4</Melee>
+      <Shooting>1</Shooting>
+    </skillGains>
+    <spawnCategories>
+      <li>Tribal</li>
+    </spawnCategories>
+    <forcedHediffs>
+      <li>RV2_GoalEnabler_Digest</li>
+    </forcedHediffs>
+    <forcedQuirkPickers>
+      <li Class="RimVore2.QuirkPicker_RollOne">
+        <quirks>
+          <li>
+            <chanceOrWeight>1</chanceOrWeight>
+            <quirk>GoalPreference_Predator_Digest_Obsessed</quirk>
+          </li>
+          <li>
+            <chanceOrWeight>2</chanceOrWeight>
+            <quirk>GoalPreference_Predator_Digest_Likes</quirk>
+          </li>
+        </quirks>
+      </li>
+      <li Class="RimVore2.QuirkPicker_RollAll">
+        <quirks>
+          <li>
+            <chanceOrWeight>0.25</chanceOrWeight>
+            <quirk>ProposalFrequency_VeryHigh</quirk>
+          </li>
+          <li>
+            <chanceOrWeight>0.5</chanceOrWeight>
+            <quirk>ProposalFrequency_High</quirk>
+          </li>
+        </quirks>
+      </li>
+    </forcedQuirkPickers>
+    <blockedQuirkPickers>
+      <li Class="RimVore2.QuirkPicker_All">
+        <quirks>
+          <li>PredatorDisposition_Dislikes</li>
+          <li>PredatorDisposition_Refuses</li>
+          <li>Inability_PredEndoOnly</li>
+          <li>ProposalFrequency_None</li>
+        </quirks>
+      </li>
+    </blockedQuirkPickers>
+  </RimVore2.RV2_BackstoryDef>
+
+  <!-- Pred Anytype Digest Open Unwilling -->
+
+  <RimVore2.RV2_BackstoryDef ParentName="RV2_CYA_Base">
+    <defName>RV2_CYA_PredAnytypeDigest_OpenUnwilling_PredationMajor</defName>
+    <title>predation major</title>
+    <titleShort>college student</titleShort>
+    <baseDesc>[PAWN_nameDef] attended an obscure yet prestigious private college, just after graduating highschool. This was a school for predators, and would not investigate or prosecute any digestions of its student body, handily paying off any families who felt insufficiently forewarned that they were sending their kid to be turned into fat on a fellow student’s belly. [PAWN_nameDef] was among the very small graduating class of [PAWN_possessive] year, and not just out of dumb luck.</baseDesc>
+    <skillGains>
+      <Intellectual>3</Intellectual>
+      <Melee>1</Melee>
+      <Social>1</Social>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+      <li>Offworld</li>
+      <li>ImperialFighter</li>
+      <li>ImperialRoyal</li>
+    </spawnCategories>
+    <forcedHediffs>
+      <li>RV2_GoalEnabler_Digest</li>
+    </forcedHediffs>
+    <forcedQuirkPickers>
+      <li Class="RimVore2.QuirkPicker_RollOne">
+        <quirks>
+          <li>
+            <chanceOrWeight>1</chanceOrWeight>
+            <quirk>GoalPreference_Predator_Digest_Obsessed</quirk>
+          </li>
+          <li>
+            <chanceOrWeight>2</chanceOrWeight>
+            <quirk>GoalPreference_Predator_Digest_Likes</quirk>
+          </li>
+        </quirks>
+      </li>
+      <li Class="RimVore2.QuirkPicker_RollAll">
+        <quirks>
+          <li>
+            <chanceOrWeight>0.25</chanceOrWeight>
+            <quirk>ProposalFrequency_VeryHigh</quirk>
+          </li>
+          <li>
+            <chanceOrWeight>0.5</chanceOrWeight>
+            <quirk>ProposalFrequency_High</quirk>
+          </li>
+          <li>
+            <chanceOrWeight>0.6</chanceOrWeight>
+            <quirk>Persuasiveness_VeryGood</quirk>
+          </li>
+        </quirks>
+      </li>
+    </forcedQuirkPickers>
+    <blockedQuirkPickers>
+      <li Class="RimVore2.QuirkPicker_All">
+        <quirks>
+          <li>PredatorDisposition_Dislikes</li>
+          <li>PredatorDisposition_Refuses</li>
+          <li>Inability_PredEndoOnly</li>
+          <li>ProposalFrequency_None</li>
+        </quirks>
+      </li>
+    </blockedQuirkPickers>
+  </RimVore2.RV2_BackstoryDef>
+
+  <!-- Pred Anytype Digest Secret Unwilling -->
+
+  <RimVore2.RV2_BackstoryDef ParentName="RV2_CYA_Base">
+    <defName>RV2_CYA_PredAnytypeDigest_SecretUnwilling_PredatorNatural</defName>
+    <title>natural predator</title>
+    <titleShort>wild child</titleShort>
+    <baseDesc>No one ever bothered to explain to [PAWN_nameDef] that vore is an unnatural thing, mainly because [PAWN_nameDef] grew up on the outskirts of society. When [PAWN_pronoun] accidentally discovered vore in adulthood, [PAWN_pronoun] just assumed it was natural, and so the world as [PAWN_pronoun] saw it was one of pawn-eat-pawn; no mercy for the unprotected.</baseDesc>
+    <workDisables>
+      <li>Caring</li>
+    </workDisables>
+    <skillGains>
+      <Melee>3</Melee>
+      <Plants>2</Plants>
+      <Social>-6</Social>
+    </skillGains>
+    <forcedTraits>
+      <Psychopath>0</Psychopath>
+    </forcedTraits>
+    <spawnCategories>
+      <li>Tribal</li>
+      <li>Pirate</li>
+      <li>Outsider</li>
+      <li>Uncommon</li>
+    </spawnCategories>
+    <forcedHediffs>
+      <li>RV2_GoalEnabler_Digest</li>
+    </forcedHediffs>
+    <forcedQuirkPickers>
+      <li Class="RimVore2.QuirkPicker_RollOne">
+        <quirks>
+          <li>
+            <chanceOrWeight>1</chanceOrWeight>
+            <quirk>GoalPreference_Predator_Digest_Obsessed</quirk>
+          </li>
+          <li>
+            <chanceOrWeight>2</chanceOrWeight>
+            <quirk>GoalPreference_Predator_Digest_Likes</quirk>
+          </li>
+        </quirks>
+      </li>
+      <li Class="RimVore2.QuirkPicker_RollOne">
+        <quirks>
+          <li>
+            <chanceOrWeight>1</chanceOrWeight>
+            <quirk>Brutality_Always</quirk>
+          </li>
+          <li>
+            <chanceOrWeight>2</chanceOrWeight>
+            <quirk>Brutality_High</quirk>
+          </li>
+        </quirks>
+      </li>
+      <li Class="RimVore2.QuirkPicker_RollAll">
+        <quirks>
+          <li>
+            <chanceOrWeight>0.25</chanceOrWeight>
+            <quirk>ProposalFrequency_VeryHigh</quirk>
+          </li>
+          <li>
+            <chanceOrWeight>0.5</chanceOrWeight>
+            <quirk>ProposalFrequency_High</quirk>
+          </li>
+        </quirks>
+      </li>
+    </forcedQuirkPickers>
+    <blockedQuirkPickers>
+      <li Class="RimVore2.QuirkPicker_All">
+        <quirks>
+          <li>PredatorDisposition_Dislikes</li>
+          <li>PredatorDisposition_Refuses</li>
+          <li>Inability_PredEndoOnly</li>
+          <li>ProposalFrequency_None</li>
+        </quirks>
+      </li>
+    </blockedQuirkPickers>
+  </RimVore2.RV2_BackstoryDef>
+
+  <RimVore2.RV2_BackstoryDef ParentName="RV2_CYA_Base">
+    <defName>RV2_CYA_PredAnytypeDigest_SecretUnwilling_PredatorsProtege</defName>
+    <title>predator's protege</title>
+    <titleShort>pred protege</titleShort>
+    <baseDesc>[PAWN_nameDef] was chosen by an experienced predator, after fighting long and hard for [PAWN_possessive] life, to be an apprentice, rather than a meal. [PAWN_possessive] mentor taught [PAWN_objective] every trick they knew, so that when [PAWN_nameDef] became an adult, [PAWN_pronoun] wouldn’t be stumbling blindly through the challenges of devouring [PAWN_possessive] first meals.</baseDesc>
+    <skillGains>
+      <Melee>4</Melee>
+      <Shooting>1</Shooting>
+      <Social>2</Social>
+    </skillGains>
+    <spawnCategories>
+      <li>Tribal</li>
+      <li>Outlander</li>
+      <li>Pirate</li>
+      <li>Offworld</li>
+      <li>ImperialCommon</li>
+      <li>ImperialFighter</li>
+    </spawnCategories>
+    <forcedHediffs>
+      <li>RV2_GoalEnabler_Digest</li>
+    </forcedHediffs>
+    <forcedQuirkPickers>
+      <li Class="RimVore2.QuirkPicker_RollOne">
+        <quirks>
+          <li>
+            <chanceOrWeight>1</chanceOrWeight>
+            <quirk>GoalPreference_Predator_Digest_Obsessed</quirk>
+          </li>
+          <li>
+            <chanceOrWeight>2</chanceOrWeight>
+            <quirk>GoalPreference_Predator_Digest_Likes</quirk>
+          </li>
+        </quirks>
+      </li>
+      <li Class="RimVore2.QuirkPicker_RollAll">
+        <quirks>
+          <li>
+            <chanceOrWeight>0.5</chanceOrWeight>
+            <quirk>ProposalFrequency_Low</quirk>
+          </li>
+          <li>
+            <chanceOrWeight>0.25</chanceOrWeight>
+            <quirk>ProposalFrequency_None</quirk>
+          </li>
+        </quirks>
+      </li>
+    </forcedQuirkPickers>
+    <blockedQuirkPickers>
+      <li Class="RimVore2.QuirkPicker_All">
+        <quirks>
+          <li>PredatorDisposition_Dislikes</li>
+          <li>PredatorDisposition_Refuses</li>
+          <li>Inability_PredEndoOnly</li>
+          <li>ProposalFrequency_VeryHigh</li>
+          <li>ProposalFrequency_High</li>
+        </quirks>
+      </li>
+    </blockedQuirkPickers>
+  </RimVore2.RV2_BackstoryDef>
+
+  <RimVore2.RV2_BackstoryDef ParentName="RV2_CYA_Base">
+    <defName>RV2_CYA_PredAnytypeDigest_SecretUnwilling_ValedictorianUnscrupulous</defName>
+    <title>unscrupulous valedictorian</title>
+    <titleShort>valedictorian</titleShort>
+    <baseDesc>Having achieved valedictorian effortlessly in high school, [PAWN_nameDef] was just determined to earn the honor again in college. Unfortunately, [PAWN_pronoun] had fierce competition in [PAWN_possessive] class, and as graduation approached, [PAWN_pronoun] realized [PAWN_pronoun] was in second place. However, it turns out, all it took for [PAWN_nameDef] to take first place was the untimely disappearance of [PAWN_possessive] rival... and maybe some of the challengers trailing [PAWN_objective], too.</baseDesc>
+    <skillGains>
+      <Intellectual>6</Intellectual>
+      <Social>-1</Social>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+      <li>Offworld</li>
+      <li>ImperialFighter</li>
+      <li>ImperialRoyal</li>
+    </spawnCategories>
+    <forcedHediffs>
+      <li>RV2_GoalEnabler_Digest</li>
+    </forcedHediffs>
+    <forcedQuirkPickers>
+      <li Class="RimVore2.QuirkPicker_RollAll">
+        <quirks>
+          <li>
+            <chanceOrWeight>0.5</chanceOrWeight>
+            <quirk>ProposalFrequency_Low</quirk>
+          </li>
+        </quirks>
+      </li>
+    </forcedQuirkPickers>
+    <blockedQuirkPickers>
+      <li Class="RimVore2.QuirkPicker_All">
+        <quirks>
+          <li>PredatorDisposition_Dislikes</li>
+          <li>PredatorDisposition_Refuses</li>
+          <li>Inability_PredEndoOnly</li>
+        </quirks>
+      </li>
+    </blockedQuirkPickers>
+  </RimVore2.RV2_BackstoryDef>
+
+  <!-- Pred Anytype Digest Reluctant Unwilling -->
+
+  <RimVore2.RV2_BackstoryDef ParentName="RV2_CYA_Base">
+    <defName>RV2_CYA_PredAnytypeDigest_ReluctantUnwilling_GurglerAccidental</defName>
+    <title>accidental gurgler</title>
+    <titleShort>predator</titleShort>
+    <baseDesc>[PAWN_nameDef] lost [PAWN_possessive] voreginity completely by accident. It just takes a very poorly-timed tumble to end up digesting someone you didn’t mean to.</baseDesc>
+    <skillGains>
+      <Melee>-1</Melee>
+    </skillGains>
+    <spawnCategories>
+      <li>Tribal</li>
+      <li>Outlander</li>
+      <li>Pirate</li>
+      <li>Offworld</li>
+      <li>ImperialCommon</li>
+      <li>ImperialFighter</li>
+    </spawnCategories>
+    <forcedHediffs>
+      <li>RV2_GoalEnabler_Digest</li>
+    </forcedHediffs>
+    <forcedQuirkPickers>
+      <li Class="RimVore2.QuirkPicker_RollAll">
+        <quirks>
+          <li>
+            <chanceOrWeight>0.5</chanceOrWeight>
+            <quirk>GoalPreference_Predator_Digest_Likes</quirk>
+          </li>
+          <li>
+            <chanceOrWeight>0.5</chanceOrWeight>
+            <quirk>ProposalFrequency_Low</quirk>
+          </li>
+        </quirks>
+      </li>
+    </forcedQuirkPickers>
+    <blockedQuirkPickers>
+      <li Class="RimVore2.QuirkPicker_All">
+        <quirks>
+          <li>PredatorDisposition_Dislikes</li>
+          <li>PredatorDisposition_Refuses</li>
+          <li>Inability_PredEndoOnly</li>
+          <li>Inability_PredFatalOnly</li>
+          <li>ProposalFrequency_VeryHigh</li>
+        </quirks>
+      </li>
+    </blockedQuirkPickers>
+  </RimVore2.RV2_BackstoryDef>
+
+  <RimVore2.RV2_BackstoryDef ParentName="RV2_CYA_Base">
+    <defName>RV2_CYA_PredAnytypeDigest_ReluctantUnwilling_GurglerRegretful</defName>
+    <title>regretful gurgler</title>
+    <titleShort>predator</titleShort>
+    <baseDesc>Fancying [PAWN_objective]self as a fearsome predator, [PAWN_nameDef] lost [PAWN_possessive] voreginity by hunting down and digesting someone against their will, but what [PAWN_pronoun] didn’t expect was that [PAWN_possessive] yet-unsmothered conscience would make [PAWN_objective] regret the deed.</baseDesc>
+    <skillGains>
+      <Melee>1</Melee>
+    </skillGains>
+    <disallowedTraits>
+      <Psychopath>0</Psychopath>
+    </disallowedTraits>
+    <spawnCategories>
+      <li>Tribal</li>
+      <li>Outlander</li>
+      <li>Pirate</li>
+      <li>Offworld</li>
+      <li>ImperialCommon</li>
+      <li>ImperialFighter</li>
+    </spawnCategories>
+    <forcedHediffs>
+      <li>RV2_GoalEnabler_Digest</li>
+    </forcedHediffs>
+    <forcedQuirkPickers>
+      <li Class="RimVore2.QuirkPicker_All">
+        <quirks>
+          <li>GoalPreference_Predator_Digest_Refuses</li>
+          <li>Inability_PredEndoOnly</li>
+        </quirks>
+      </li>
+    </forcedQuirkPickers>
+  </RimVore2.RV2_BackstoryDef>
+
+  <RimVore2.RV2_BackstoryDef ParentName="RV2_CYA_Base">
+    <defName>RV2_CYA_PredAnytypeDigest_ReluctantUnwilling_Voracious</defName>
+    <title>voracious runaway</title>
+    <titleShort>runaway</titleShort>
+    <baseDesc>[PAWN_nameDef] had a lousy childhood which [PAWN_pronoun] would rather not remember, so when [PAWN_pronoun] discovered vore, shortly into adulthood, [PAWN_pronoun] immediately used it to sever all ties to [PAWN_possessive] old life, flee the scene, and reinvent [PAWN_objective]self. Ever since, vore has been the first and only answer to every bad situation [PAWN_nameDef] has found [PAWN_objective]self in.</baseDesc>
+    <skillGains>
+      <Melee>1</Melee>
+      <Social>-3</Social>
+    </skillGains>
+    <spawnCategories>
+      <li>Tribal</li>
+      <li>Outlander</li>
+      <li>Pirate</li>
+      <li>Offworld</li>
+      <li>ImperialCommon</li>
+    </spawnCategories>
+    <forcedHediffs>
+      <li>RV2_GoalEnabler_Digest</li>
+    </forcedHediffs>
+    <forcedQuirkPickers>
+      <li Class="RimVore2.QuirkPicker_RollAll">
+        <quirks>
+          <li>
+            <chanceOrWeight>0.5</chanceOrWeight>
+            <quirk>ProposalFrequency_Low</quirk>
+          </li>
+          <li>
+            <chanceOrWeight>0.75</chanceOrWeight>
+            <quirk>Brutality_High</quirk>
+          </li>
+        </quirks>
+      </li>
+    </forcedQuirkPickers>
+    <blockedQuirkPickers>
+      <li Class="RimVore2.QuirkPicker_All">
+        <quirks>
+          <li>PredatorDisposition_Dislikes</li>
+          <li>PredatorDisposition_Refuses</li>
+          <li>Inability_PredEndoOnly</li>
+        </quirks>
+      </li>
+    </blockedQuirkPickers>
+  </RimVore2.RV2_BackstoryDef>
+
+  <!-- Pred Oral Anygoal Casual Dubious -->
+
+  <RimVore2.RV2_BackstoryDef ParentName="RV2_CYA_Base">
+    <defName>RV2_CYA_PredOralAnygoal_CasualDubious_IdolPredatorOral</defName>
+    <title>oral pred idol</title>
+    <titleShort>oral idol</titleShort>
+    <baseDesc>[PAWN_nameDef] was an oral vore idol as a young adult, whose glistening teeth, luscious lips, and drooling tongue were known to millions. While it taught [PAWN_objective] few practical skills, even for predding, [PAWN_pronoun] picked up a scrap or two about cooking and knifework on those cliche kitchen shoots.</baseDesc>
+    <workDisables>
+      <li>ManualDumb</li>
+    </workDisables>
+    <skillGains>
+      <Social>6</Social>
+      <Cooking>2</Cooking>
+      <Melee>-2</Melee>
+      <Shooting>-6</Shooting>
+    </skillGains>
+    <forcedTraits>
+      <Beauty>2</Beauty>
+    </forcedTraits>
+    <spawnCategories>
+      <li>Offworld</li>
+      <li>ImperialRoyal</li>
+      <li>Rare</li>
+    </spawnCategories>
+    <forcedHediffs>
+      <li>RV2_GoalEnabler_Digest</li>
+      <li>RV2_TypeEnabler_Oral</li>
+    </forcedHediffs>
+    <forcedQuirkPickers>
+      <li Class="RimVore2.QuirkPicker_RollOne">
+        <quirks>
+          <li>
+            <chanceOrWeight>2</chanceOrWeight>
+            <quirk>ProposalFrequency_High</quirk>
+          </li>
+          <li>
+            <chanceOrWeight>1</chanceOrWeight>
+            <quirk>ProposalFrequency_VeryHigh</quirk>
+          </li>
+        </quirks>
+      </li>
+      <li Class="RimVore2.QuirkPicker_RollOne">
+        <quirks>
+          <li>
+            <chanceOrWeight>2</chanceOrWeight>
+            <quirk>TypePreference_Predator_Oral_Likes</quirk>
+          </li>
+          <li>
+            <chanceOrWeight>1</chanceOrWeight>
+            <quirk>TypePreference_Predator_Oral_Obsessed</quirk>
+          </li>
+        </quirks>
+      </li>
+      <li Class="RimVore2.QuirkPicker_RollAll">
+        <quirks>
+          <li>
+            <chanceOrWeight>0.6</chanceOrWeight>
+            <quirk>Persuasiveness_VeryGood</quirk>
+          </li>
+        </quirks>
+      </li>
+    </forcedQuirkPickers>
+    <blockedQuirkPickers>
+      <li Class="RimVore2.QuirkPicker_All">
+        <quirks>
+          <li>PredatorDisposition_Dislikes</li>
+          <li>PredatorDisposition_Refuses</li>
+          <li>Inability_PredEndoOnly</li>
+        </quirks>
+      </li>
+    </blockedQuirkPickers>
+  </RimVore2.RV2_BackstoryDef>
+
+  <!-- Pred Oral Digest Open Unwilling -->
+
+  <RimVore2.RV2_BackstoryDef ParentName="RV2_CYA_Base">
+    <defName>RV2_CYA_PredOralDigest_OpenUnwilling_HeirHungry</defName>
+    <title>hungry heir</title>
+    <titleShort>heir</titleShort>
+    <baseDesc>Throughout [PAWN_nameDef]’s spoiled childhood as a noble’s heir, [PAWN_pronoun] would exhaust the kitchen staff, always demanding bigger and bigger meals. When [PAWN_nameDef] came of age and discovered [PAWN_possessive] capacity for vore, it all clicked, and [PAWN_nameDef] decided to personally terminate the servant staff for their “laziness and ineptitude”.</baseDesc>
+    <workDisables>
+      <li>ManualDumb</li>
+      <li>Cooking</li>
+    </workDisables>
+    <skillGains>
+      <Melee>2</Melee>
+      <Social>1</Social>
+    </skillGains>
+    <forcedTraits>
+      <Gourmand>0</Gourmand>
+    </forcedTraits>
+    <spawnCategories>
+      <li>Tribal</li>
+      <li>Offworld</li>
+      <li>ImperialRoyal</li>
+      <li>Rare</li>
+    </spawnCategories>
+    <bodyTypeMale>Fat</bodyTypeMale>
+    <bodyTypeFemale>Fat</bodyTypeFemale>
+    <forcedHediffs>
+      <li>RV2_GoalEnabler_Digest</li>
+      <li>RV2_TypeEnabler_Oral</li>
+    </forcedHediffs>
+    <forcedQuirkPickers>
+      <li Class="RimVore2.QuirkPicker_RollOne">
+        <quirks>
+          <li>
+            <chanceOrWeight>2</chanceOrWeight>
+            <quirk>ProposalFrequency_High</quirk>
+          </li>
+          <li>
+            <chanceOrWeight>1</chanceOrWeight>
+            <quirk>ProposalFrequency_VeryHigh</quirk>
+          </li>
+        </quirks>
+      </li>
+      <li Class="RimVore2.QuirkPicker_RollOne">
+        <quirks>
+          <li>
+            <chanceOrWeight>2</chanceOrWeight>
+            <quirk>TypePreference_Predator_Oral_Likes</quirk>
+          </li>
+          <li>
+            <chanceOrWeight>1</chanceOrWeight>
+            <quirk>TypePreference_Predator_Oral_Obsessed</quirk>
+          </li>
+        </quirks>
+      </li>
+      <li Class="RimVore2.QuirkPicker_RollAll">
+        <quirks>
+          <li>
+            <chanceOrWeight>0.6</chanceOrWeight>
+            <quirk>StorageCapacity_Good</quirk>
+          </li>
+        </quirks>
+      </li>
+    </forcedQuirkPickers>
+    <blockedQuirkPickers>
+      <li Class="RimVore2.QuirkPicker_All">
+        <quirks>
+          <li>PredatorDisposition_Dislikes</li>
+          <li>PredatorDisposition_Refuses</li>
+          <li>Inability_PredEndoOnly</li>
+          <li>Inability_PredFatalOnly</li>
+        </quirks>
+      </li>
+    </blockedQuirkPickers>
+  </RimVore2.RV2_BackstoryDef>
+
+  <!-- Pred Oral Digest Secret Dubious -->
+
+  <RimVore2.RV2_BackstoryDef ParentName="RV2_CYA_Base">
+    <defName>RV2_CYA_PredOralDigest_SecretDubious_SelfTaughtChefStarving</defName>
+    <title>starving self-taught chef</title>
+    <titleShort>amateur chef</titleShort>
+    <baseDesc>[PAWN_nameDef] doesn’t know why, but ever since [PAWN_pronoun] was young, [PAWN_pronoun] has been so hungry that nothing less than a full feast could satisfy [PAWN_objective]. So, [PAWN_nameDef] learned how to cook at a young age, just to keep up with [PAWN_possessive] needs. It wouldn’t be until much later that [PAWN_nameDef] learned why [PAWN_pronoun] was so hungry.</baseDesc>
+    <skillGains>
+      <Cooking>5</Cooking>
+    </skillGains>
+    <forcedTraits>
+      <Gourmand>0</Gourmand>
+    </forcedTraits>
+    <spawnCategories>
+      <li>Tribal</li>
+      <li>Outlander</li>
+      <li>Offworld</li>
+      <li>ImperialCommon</li>
+    </spawnCategories>
+    <forcedHediffs>
+      <li>RV2_GoalEnabler_Digest</li>
+      <li>RV2_TypeEnabler_Oral</li>
+    </forcedHediffs>
+    <forcedQuirkPickers>
+      <li Class="RimVore2.QuirkPicker_RollAll">
+        <quirks>
+          <li>
+            <chanceOrWeight>0.6</chanceOrWeight>
+            <quirk>StorageCapacity_Good</quirk>
+          </li>
+          <li>
+            <chanceOrWeight>0.5</chanceOrWeight>
+            <quirk>ProposalFrequency_High</quirk>
+          </li>
+        </quirks>
+      </li>
+      <li Class="RimVore2.QuirkPicker_RollOne">
+        <quirks>
+          <li>
+            <chanceOrWeight>2</chanceOrWeight>
+            <quirk>TypePreference_Predator_Oral_Likes</quirk>
+          </li>
+          <li>
+            <chanceOrWeight>1</chanceOrWeight>
+            <quirk>TypePreference_Predator_Oral_Obsessed</quirk>
+          </li>
+        </quirks>
+      </li>
+    </forcedQuirkPickers>
+    <blockedQuirkPickers>
+      <li Class="RimVore2.QuirkPicker_All">
+        <quirks>
+          <li>PredatorDisposition_Dislikes</li>
+          <li>PredatorDisposition_Refuses</li>
+          <li>Inability_PredFatalOnly</li>
+        </quirks>
+      </li>
+    </blockedQuirkPickers>
+  </RimVore2.RV2_BackstoryDef>
+
+  <!-- Pred Anal Anygoal Casual Dubious -->
+
+  <RimVore2.RV2_BackstoryDef ParentName="RV2_CYA_Base">
+    <defName>RV2_CYA_PredAnalAnygoal_CasualDubious_IdolPredatorAnal</defName>
+    <title>anal pred idol</title>
+    <titleShort>anal idol</titleShort>
+    <baseDesc>[PAWN_nameDef] was an anal vore idol as a young adult, whose juicy ass and perfectly-shaped pucker plastered everything from advertisements for sturdy chairs and skirts, to PSAs about looking where you sit on public transit, to cheeky signs for donut shops and other circular foods. While it taught [PAWN_objective] few practical skills, even for predding, [PAWN_pronoun] broke enough chairs and split enough skirts to have an idea how to put them back together.</baseDesc>
+    <workDisables>
+      <li>ManualDumb</li>
+    </workDisables>
+    <skillGains>
+      <Social>6</Social>
+      <Construction>1</Construction>
+      <Crafting>1</Crafting>
+      <Melee>-4</Melee>
+      <Shooting>-4</Shooting>
+    </skillGains>
+    <forcedTraits>
+      <Beauty>2</Beauty>
+    </forcedTraits>
+    <spawnCategories>
+      <li>Offworld</li>
+      <li>ImperialRoyal</li>
+      <li>Rare</li>
+    </spawnCategories>
+    <forcedHediffs>
+      <li>RV2_GoalEnabler_Digest</li>
+      <li>RV2_TypeEnabler_Anal</li>
+    </forcedHediffs>
+    <forcedQuirkPickers>
+      <li Class="RimVore2.QuirkPicker_RollOne">
+        <quirks>
+          <li>
+            <chanceOrWeight>2</chanceOrWeight>
+            <quirk>ProposalFrequency_High</quirk>
+          </li>
+          <li>
+            <chanceOrWeight>1</chanceOrWeight>
+            <quirk>ProposalFrequency_VeryHigh</quirk>
+          </li>
+        </quirks>
+      </li>
+      <li Class="RimVore2.QuirkPicker_RollOne">
+        <quirks>
+          <li>
+            <chanceOrWeight>2</chanceOrWeight>
+            <quirk>TypePreference_Predator_Anal_Likes</quirk>
+          </li>
+          <li>
+            <chanceOrWeight>1</chanceOrWeight>
+            <quirk>TypePreference_Predator_Anal_Obsessed</quirk>
+          </li>
+        </quirks>
+      </li>
+      <li Class="RimVore2.QuirkPicker_RollAll">
+        <quirks>
+          <li>
+            <chanceOrWeight>0.6</chanceOrWeight>
+            <quirk>Persuasiveness_VeryGood</quirk>
+          </li>
+        </quirks>
+      </li>
+    </forcedQuirkPickers>
+    <blockedQuirkPickers>
+      <li Class="RimVore2.QuirkPicker_All">
+        <quirks>
+          <li>PredatorDisposition_Dislikes</li>
+          <li>PredatorDisposition_Refuses</li>
+          <li>Inability_PredEndoOnly</li>
+        </quirks>
+      </li>
+    </blockedQuirkPickers>
+  </RimVore2.RV2_BackstoryDef>
+
+  <!-- Pred Anal Anygoal Casual Unwilling -->
+
+  <RimVore2.RV2_BackstoryDef ParentName="RV2_CYA_Base">
+    <defName>RV2_CYA_PredAnytypeAnygoal_CasualUnwilling_DropAss</defName>
+    <title>drop ass</title>
+    <titleShort>drop ass</titleShort>
+    <baseDesc>[PAWN_nameDef] was a bit of a hooligan, even into young adulthood. What happens when you combine loitering in high-up places, mooning passers-by, and a slippery ledge? In [PAWN_nameDef]’s case, a nice thorough reaming and a new favorite past-time.</baseDesc>
+    <skillGains>
+      <Shooting>2</Shooting>
+    </skillGains>
+    <spawnCategories>
+      <li>Tribal</li>
+      <li>Outlander</li>
+      <li>Pirate</li>
+      <li>Offworld</li>
+      <li>ImperialCommon</li>
+      <li>ImperialFighter</li>
+    </spawnCategories>
+    <forcedHediffs>
+      <li>RV2_GoalEnabler_Digest</li>
+      <li>RV2_TypeEnabler_Anal</li>
+    </forcedHediffs>
+    <forcedQuirkPickers>
+      <li Class="RimVore2.QuirkPicker_RollAll">
+        <quirks>
+          <li>
+            <chanceOrWeight>0.6</chanceOrWeight>
+            <quirk>Brutality_High</quirk>
+          </li>
+        </quirks>
+      </li>
+      <li Class="RimVore2.QuirkPicker_RollOne">
+        <quirks>
+          <li>
+            <chanceOrWeight>2</chanceOrWeight>
+            <quirk>TypePreference_Predator_Anal_Likes</quirk>
+          </li>
+          <li>
+            <chanceOrWeight>1</chanceOrWeight>
+            <quirk>TypePreference_Predator_Anal_Obsessed</quirk>
+          </li>
+        </quirks>
+      </li>
+    </forcedQuirkPickers>
+    <blockedQuirkPickers>
+      <li Class="RimVore2.QuirkPicker_All">
+        <quirks>
+          <li>PredatorDisposition_Dislikes</li>
+          <li>PredatorDisposition_Refuses</li>
+          <li>Inability_PredEndoOnly</li>
+        </quirks>
+      </li>
+    </blockedQuirkPickers>
+  </RimVore2.RV2_BackstoryDef>
+
+  <!-- Pred Vaginal Anygoal Casual Dubious -->
+
+  <RimVore2.RV2_BackstoryDef ParentName="RV2_CYA_Base">
+    <defName>RV2_CYA_PredVaginalAnygoal_CasualDubious_IdolPredatorYonic</defName>
+    <title>yonic pred idol</title>
+    <titleShort>yonic idol</titleShort>
+    <baseDesc>[PAWN_nameDef] was an unbirth idol as a young adult, whose gravid belly and spread legs elevated [PAWN_objective] to the level of a glitterworld fertility idol. While it taught [PAWN_objective] few practical skills, even for predding, [PAWN_pronoun] has endured more than enough maternity-ward-themed shoots to pick up the absolute basics of medicine.</baseDesc>
+    <workDisables>
+      <li>ManualDumb</li>
+    </workDisables>
+    <skillGains>
+      <Social>6</Social>
+      <Medicine>2</Medicine>
+      <Melee>-4</Melee>
+      <Shooting>-4</Shooting>
+    </skillGains>
+    <forcedTraits>
+      <Beauty>2</Beauty>
+    </forcedTraits>
+    <spawnCategories>
+      <li>Offworld</li>
+      <li>ImperialRoyal</li>
+      <li>Rare</li>
+    </spawnCategories>
+    <forcedHediffs>
+      <li>RV2_GoalEnabler_Digest</li>
+      <li>RV2_TypeEnabler_Vaginal</li>
+    </forcedHediffs>
+    <forcedQuirkPickers>
+      <li Class="RimVore2.QuirkPicker_RollOne">
+        <quirks>
+          <li>
+            <chanceOrWeight>2</chanceOrWeight>
+            <quirk>ProposalFrequency_High</quirk>
+          </li>
+          <li>
+            <chanceOrWeight>1</chanceOrWeight>
+            <quirk>ProposalFrequency_VeryHigh</quirk>
+          </li>
+        </quirks>
+      </li>
+      <li Class="RimVore2.QuirkPicker_RollOne">
+        <quirks>
+          <li>
+            <chanceOrWeight>2</chanceOrWeight>
+            <quirk>TypePreference_Predator_Vaginal_Likes</quirk>
+          </li>
+          <li>
+            <chanceOrWeight>1</chanceOrWeight>
+            <quirk>TypePreference_Predator_Vaginal_Obsessed</quirk>
+          </li>
+        </quirks>
+      </li>
+      <li Class="RimVore2.QuirkPicker_RollAll">
+        <quirks>
+          <li>
+            <chanceOrWeight>0.6</chanceOrWeight>
+            <quirk>Persuasiveness_VeryGood</quirk>
+          </li>
+        </quirks>
+      </li>
+    </forcedQuirkPickers>
+    <blockedQuirkPickers>
+      <li Class="RimVore2.QuirkPicker_All">
+        <quirks>
+          <li>PredatorDisposition_Dislikes</li>
+          <li>PredatorDisposition_Refuses</li>
+          <li>Inability_PredEndoOnly</li>
+          <li>Inability_PredFatalOnly</li>
+        </quirks>
+      </li>
+    </blockedQuirkPickers>
+  </RimVore2.RV2_BackstoryDef>
+
+  <!-- Pred Cock Anygoal Casual Dubious -->
+
+  <RimVore2.RV2_BackstoryDef ParentName="RV2_CYA_Base">
+    <defName>RV2_CYA_PredCockAnygoal_CasualDubious_IdolPredatorPhallic</defName>
+    <title>phallic pred idol</title>
+    <titleShort>phallic idol</titleShort>
+    <baseDesc>[PAWN_nameDef] was a cock vore idol as a young adult, whose pendulous jewels and throbbing schlong have, by dildo proxy, penetrated the holes of countless adoring fans. While it taught [PAWN_objective] few practical skills, even for predding, [PAWN_pronoun] has done enough cumshots to develop a baseline competent aim.</baseDesc>
+    <workDisables>
+      <li>ManualDumb</li>
+    </workDisables>
+    <skillGains>
+      <Social>6</Social>
+      <Melee>-8</Melee>
+      <Shooting>2</Shooting>
+    </skillGains>
+    <forcedTraits>
+      <Beauty>2</Beauty>
+    </forcedTraits>
+    <spawnCategories>
+      <li>Offworld</li>
+      <li>ImperialRoyal</li>
+      <li>Rare</li>
+    </spawnCategories>
+    <forcedHediffs>
+      <li>RV2_GoalEnabler_Digest</li>
+      <li>RV2_TypeEnabler_Cock</li>
+    </forcedHediffs>
+    <forcedQuirkPickers>
+      <li Class="RimVore2.QuirkPicker_RollOne">
+        <quirks>
+          <li>
+            <chanceOrWeight>2</chanceOrWeight>
+            <quirk>ProposalFrequency_High</quirk>
+          </li>
+          <li>
+            <chanceOrWeight>1</chanceOrWeight>
+            <quirk>ProposalFrequency_VeryHigh</quirk>
+          </li>
+        </quirks>
+      </li>
+      <li Class="RimVore2.QuirkPicker_RollOne">
+        <quirks>
+          <li>
+            <chanceOrWeight>2</chanceOrWeight>
+            <quirk>TypePreference_Predator_Cock_Likes</quirk>
+          </li>
+          <li>
+            <chanceOrWeight>1</chanceOrWeight>
+            <quirk>TypePreference_Predator_Cock_Obsessed</quirk>
+          </li>
+        </quirks>
+      </li>
+      <li Class="RimVore2.QuirkPicker_RollAll">
+        <quirks>
+          <li>
+            <chanceOrWeight>0.6</chanceOrWeight>
+            <quirk>Persuasiveness_VeryGood</quirk>
+          </li>
+        </quirks>
+      </li>
+    </forcedQuirkPickers>
+    <blockedQuirkPickers>
+      <li Class="RimVore2.QuirkPicker_All">
+        <quirks>
+          <li>PredatorDisposition_Dislikes</li>
+          <li>PredatorDisposition_Refuses</li>
+          <li>Inability_PredEndoOnly</li>
+        </quirks>
+      </li>
+    </blockedQuirkPickers>
+  </RimVore2.RV2_BackstoryDef>
+
+  <!-- Pred Nipple Anygoal Casual Dubious -->
+
+  <RimVore2.RV2_BackstoryDef ParentName="RV2_CYA_Base">
+    <defName>RV2_CYA_PredNippleAnygoal_CasualDubious_IdolPredatorMammary</defName>
+    <title>mammary pred idol</title>
+    <titleShort>mammary idol</titleShort>
+    <baseDesc>[PAWN_nameDef] was a nipple vore idol as a young adult, whose bountiful breasts and shapely buds were used to advertise everything from lingerie and low-cut sweaters, to mousepads, to milk. While it taught [PAWN_objective] few practical skills, even for predding, [PAWN_pronoun] thinks [PAWN_pronoun] picked up a thing or two about cooking and cattle ranching on-set.</baseDesc>
+    <workDisables>
+      <li>ManualDumb</li>
+    </workDisables>
+    <skillGains>
+      <Social>6</Social>
+      <Cooking>1</Cooking>
+      <Animals>1</Animals>
+      <Melee>-4</Melee>
+      <Shooting>-4</Shooting>
+    </skillGains>
+    <forcedTraits>
+      <Beauty>2</Beauty>
+    </forcedTraits>
+    <spawnCategories>
+      <li>Offworld</li>
+      <li>ImperialRoyal</li>
+      <li>Rare</li>
+    </spawnCategories>
+    <forcedHediffs>
+      <li>RV2_GoalEnabler_Digest</li>
+      <li>RV2_TypeEnabler_Nipple</li>
+    </forcedHediffs>
+    <forcedQuirkPickers>
+      <li Class="RimVore2.QuirkPicker_RollOne">
+        <quirks>
+          <li>
+            <chanceOrWeight>2</chanceOrWeight>
+            <quirk>ProposalFrequency_High</quirk>
+          </li>
+          <li>
+            <chanceOrWeight>1</chanceOrWeight>
+            <quirk>ProposalFrequency_VeryHigh</quirk>
+          </li>
+        </quirks>
+      </li>
+      <li Class="RimVore2.QuirkPicker_RollOne">
+        <quirks>
+          <li>
+            <chanceOrWeight>2</chanceOrWeight>
+            <quirk>TypePreference_Predator_Nipple_Likes</quirk>
+          </li>
+          <li>
+            <chanceOrWeight>1</chanceOrWeight>
+            <quirk>TypePreference_Predator_Nipple_Obsessed</quirk>
+          </li>
+        </quirks>
+      </li>
+      <li Class="RimVore2.QuirkPicker_RollAll">
+        <quirks>
+          <li>
+            <chanceOrWeight>0.6</chanceOrWeight>
+            <quirk>Persuasiveness_VeryGood</quirk>
+          </li>
+        </quirks>
+      </li>
+    </forcedQuirkPickers>
+    <blockedQuirkPickers>
+      <li Class="RimVore2.QuirkPicker_All">
+        <quirks>
+          <li>PredatorDisposition_Dislikes</li>
+          <li>PredatorDisposition_Refuses</li>
+          <li>Inability_PredEndoOnly</li>
+        </quirks>
+      </li>
+    </blockedQuirkPickers>
+  </RimVore2.RV2_BackstoryDef>
+
+  <!-- Pred Nipple Digest Casual Dubious -->
+
+  <RimVore2.RV2_BackstoryDef ParentName="RV2_CYA_Base">
+    <defName>RV2_CYA_PredNippleDigest_CasualDubious_MilkshakeMixerJunior</defName>
+    <title>junior milkshake mixer</title>
+    <titleShort>milkshaker</titleShort>
+    <baseDesc>[PAWN_nameDef] mixed milkshakes at a diner, supplying the milk [PAWN_objective]self, usually starting with an unruly or simply convenient customer. Those with the best-tasting milk stood a chance of being promoted. Those without might find themselves used in the next milkshake batch.</baseDesc>
+    <skillGains>
+      <Cooking>3</Cooking>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+      <li>Offworld</li>
+    </spawnCategories>
+    <forcedHediffs>
+      <li>RV2_GoalEnabler_Digest</li>
+      <li>RV2_TypeEnabler_Nipple</li>
+    </forcedHediffs>
+    <forcedQuirkPickers>
+      <li Class="RimVore2.QuirkPicker_RollOne">
+        <quirks>
+          <li>
+            <chanceOrWeight>2</chanceOrWeight>
+            <quirk>TypePreference_Predator_Oral_Likes</quirk>
+          </li>
+          <li>
+            <chanceOrWeight>1</chanceOrWeight>
+            <quirk>TypePreference_Predator_Oral_Obsessed</quirk>
+          </li>
+        </quirks>
+      </li>
+    </forcedQuirkPickers>
+    <blockedQuirkPickers>
+      <li Class="RimVore2.QuirkPicker_All">
+        <quirks>
+          <li>PredatorDisposition_Dislikes</li>
+          <li>PredatorDisposition_Refuses</li>
+          <li>Inability_PredEndoOnly</li>
+        </quirks>
+      </li>
+    </blockedQuirkPickers>
+  </RimVore2.RV2_BackstoryDef>
+
+  <!-- Pred Anytype TempEndo Open Willing -->
+
+  <RimVore2.RV2_BackstoryDef ParentName="RV2_CYA_Base">
+    <defName>RV2_CYA_PredAnytypeTempEndo_OpenWilling_ExperimenterEndo</defName>
+    <title>endo experimenter</title>
+    <titleShort>college student</titleShort>
+    <baseDesc>[PAWN_nameDef] experimented with sex in college more than most of [PAWN_possessive] peers. (Safe) vore ended up being [PAWN_possessive] favorite. [PAWN_pronoun] made a name for [PAWN_objective]self as “that slut who uses people as sex toys”.</baseDesc>
+    <skillGains>
+      <Intellectual>2</Intellectual>
+      <Social>1</Social>
+    </skillGains>
+    <spawnCategories>
+      <li>Outlander</li>
+      <li>Offworld</li>
+    </spawnCategories>
+    <forcedHediffs>
+      <li>RV2_GoalEnabler_TempEndo</li>
+    </forcedHediffs>
+    <forcedQuirkPickers>
+      <li Class="RimVore2.QuirkPicker_RollOne">
+        <quirks>
+          <li>
+            <chanceOrWeight>2</chanceOrWeight>
+            <quirk>GoalPreference_Predator_Pleasure_Obsessed</quirk>
+          </li>
+          <li>
+            <chanceOrWeight>1</chanceOrWeight>
+            <quirk>GoalPreference_Predator_Pleasure_Likes</quirk>
+          </li>
+        </quirks>
+      </li>
+    </forcedQuirkPickers>
+    <blockedQuirkPickers>
+      <li Class="RimVore2.QuirkPicker_All">
+        <quirks>
+          <li>PredatorDisposition_Dislikes</li>
+          <li>PredatorDisposition_Refuses</li>
+        </quirks>
+      </li>
+    </blockedQuirkPickers>
+  </RimVore2.RV2_BackstoryDef>
+
+  <!-- Prey Anytype Digest Open Willing -->
+
+  <RimVore2.RV2_BackstoryDef ParentName="RV2_CYA_Base">
+    <defName>RV2_CYA_PreyAnytypeDigest_OpenWilling_FodderNatural</defName>
+    <title>natural fodder</title>
+    <titleShort>fodder</titleShort>
+    <baseDesc>[PAWN_nameDef] doesn’t know why, but [PAWN_pronoun] has always wanted to be consumed and churned into slush. [PAWN_nameDef] hopes to become a filling meal for some lucky predator soon.</baseDesc>
+    <skillGains>
+      <Cooking>1</Cooking>
+    </skillGains>
+    <spawnCategories>
+      <li>Tribal</li>
+      <li>Outlander</li>
+      <li>Pirate</li>
+      <li>Offworld</li>
+      <li>ImperialCommon</li>
+    </spawnCategories>
+    <forcedQuirkPickers>
+      <li Class="RimVore2.QuirkPicker_All">
+        <quirks>
+          <li>GoalPreference_Prey_Digest_Obsessed</li>
+          <li>PreyDisposition_Obsessed</li>
+        </quirks>
+      </li>
+    </forcedQuirkPickers>
+    <blockedQuirkPickers>
+      <li Class="RimVore2.QuirkPicker_All">
+        <quirks>
+          <li>Cheat_Indigestible</li>
+          <li>Cheat_Inedible</li>
+        </quirks>
+      </li>
+    </blockedQuirkPickers>
+  </RimVore2.RV2_BackstoryDef>
+
+  <!-- Prey Oral TempEndo Open Willing -->
+
+  <RimVore2.RV2_BackstoryDef ParentName="RV2_CYA_Base">
+    <defName>RV2_CYA_PreyOralTempEndo_OpenWilling_SquireBiteKnight</defName>
+    <title>bite-knight's squire</title>
+    <titleShort>squire</titleShort>
+    <baseDesc>[PAWN_nameDef] was a squire for a bite-knight. [PAWN_possessive] duties included, beyond regular squirely duties, taking personal care of [PAWN_possessive] master’s teeth... and everything deeper inside, as [PAWN_pronoun] would be regularly swallowed for a full cleaning.</baseDesc>
+    <skillGains>
+      <Melee>2</Melee>
+    </skillGains>
+    <spawnCategories>
+      <li>Tribal</li>
+      <li>Offworld</li>
+      <li>ImperialCommon</li>
+    </spawnCategories>
+    <forcedQuirkPickers>
+      <li Class="RimVore2.QuirkPicker_RollOne">
+        <quirks>
+          <li>
+            <chanceOrWeight>2</chanceOrWeight>
+            <quirk>TypePreference_Prey_Oral_Likes</quirk>
+          </li>
+          <li>
+            <chanceOrWeight>1</chanceOrWeight>
+            <quirk>TypePreference_Prey_Oral_Obsessed</quirk>
+          </li>
+        </quirks>
+      </li>
+    </forcedQuirkPickers>
+    <blockedQuirkPickers>
+      <li Class="RimVore2.QuirkPicker_All">
+        <quirks>
+          <li>PreyDisposition_Refuses</li>
+          <li>Cheat_Indigestible</li>
+          <li>Cheat_Inedible</li>
+        </quirks>
+      </li>
+    </blockedQuirkPickers>
+  </RimVore2.RV2_BackstoryDef>
+
+</Defs>

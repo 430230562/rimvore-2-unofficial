@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RimVore2.DefList_PawnRelationDef>
+    <defName>RelationsToConsiderFamilyByChoice</defName>
+    <relations>
+      <li>ExSpouse</li>
+      <li>Fiance</li>
+      <li>Lover</li>
+      <li>Spouse</li>
+    </relations>
+  </RimVore2.DefList_PawnRelationDef>
+</Defs>

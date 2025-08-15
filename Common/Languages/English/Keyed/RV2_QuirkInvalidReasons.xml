@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <RV2_QuirkInvalid_Reason_NoPoolForQuirk>Quirk has no pool</RV2_QuirkInvalid_Reason_NoPoolForQuirk>
+  <RV2_QuirkInvalid_BackstoryBlocking>Backstory blocks quirk</RV2_QuirkInvalid_BackstoryBlocking>
+  <RV2_QuirkInvalid_DisabledInSettings>Disabled in settings</RV2_QuirkInvalid_DisabledInSettings>
+  <RV2_QuirkInvalid_AlreadyHasQuirk>Already has quirk</RV2_QuirkInvalid_AlreadyHasQuirk>
+  <RV2_QuirkInvalid_Reason_WouldRemoveRequiredQuirk>Would remove quirk {0} that is required by {1}</RV2_QuirkInvalid_Reason_WouldRemoveRequiredQuirk>
+  <RV2_QuirkInvalid_Reason_WouldRemoveBackstoryForcedQuirk>Would remove quirk {0} that is forced by backstory</RV2_QuirkInvalid_Reason_WouldRemoveBackstoryForcedQuirk>
+  <RV2_QuirkInvalid_Reason_WouldRemoveHediffForcedQuirk>Would remove quirk {0} that is forced by hediff</RV2_QuirkInvalid_Reason_WouldRemoveHediffForcedQuirk>
+  <RV2_QuirkInvalid_Reason_OtherQuirkBlocks>Another quirk blocks this quirk</RV2_QuirkInvalid_Reason_OtherQuirkBlocks>
+  <RV2_QuirkInvalid_Reason_BackstoryBlocks>Blocked by backstory</RV2_QuirkInvalid_Reason_BackstoryBlocks>
+
+  <RV2_QuirkInvalid_Blocking>Blocked by {0} {1}</RV2_QuirkInvalid_Blocking>
+  <RV2_QuirkInvalid_Required>Requires {0} {1}</RV2_QuirkInvalid_Required>
+  <RV2_QuirkInvalid_CouldNotAddWithReason>Could not add quirk {0}: {1}</RV2_QuirkInvalid_CouldNotAddWithReason>
+
+  <!-- RV2_QuirkInvalid_Reason_ -->
+</LanguageData>

@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <IssueDef>
+    <defName>RV2_OralVore</defName>
+    <label>Oral Vore</label>
+    <iconPath>UI/Issues/Oral</iconPath>
+  </IssueDef>
+
+  <!-- Neutral -->
+  <!--<PreceptDef>
+    <defName>RV2_OralVore_Accepted</defName>
+    <issue>RV2_OralVore</issue>
+    <label>Accepted</label>
+    <description>Oral vore is acceptable.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <associatedMemes>
+      <li>RV2_Preyism</li>
+      <li>RV2_Predation</li>
+    </associatedMemes>
+  </PreceptDef>-->
+
+  <!-- Disliked -->
+  <PreceptDef>
+    <defName>RV2_OralVore_Disliked</defName>
+    <issue>RV2_OralVore</issue>
+    <label>disliked</label>
+    <description>Oral vore is not okay.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <associatedMemes>
+      <li>RV2_Preyism</li>
+      <li>RV2_Predation</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>RV2_OralVore</eventDef>
+        <thought>RV2_OralVore_Disliked</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>RV2_OralVore</eventDef>
+        <thought>RV2_OralVore_Know_Disliked</thought>
+      </li>
+      <li Class="RimVore2.PreceptComp_Quirk_RemoveQuirks">
+        <quirks>
+          <li>TypePreference_Predator_Oral_Obsessed</li>
+          <li>TypePreference_Prey_Oral_Obsessed</li>
+        </quirks>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <ThoughtDef>
+    <defName>RV2_OralVore_Disliked</defName>
+    <durationDays>3</durationDays>
+    <stages>
+      <li>
+        <label>I participated in oral vore</label>
+        <description>I should not have done that, my ideology discourages it</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>RV2_OralVore_Know_Disliked</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>3</durationDays>
+    <stackLimit>1</stackLimit>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>oral vore participant</label>
+        <baseOpinionOffset>-5</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- Abhorrent -->
+  <PreceptDef>
+    <defName>RV2_OralVore_Abhorrent</defName>
+    <issue>RV2_OralVore</issue>
+    <label>abhorrent</label>
+    <description>Oral vore is an affront to our belief.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <associatedMemes>
+      <li>RV2_Preyism</li>
+      <li>RV2_Predation</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>RV2_OralVore</eventDef>
+        <thought>RV2_OralVore_Abhorrent</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>RV2_OralVore</eventDef>
+        <thought>RV2_OralVore_Know_Abhorrent</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>RV2_OralVore</eventDef>
+        <thought>RV2_OralVore_Know_Social_Abhorrent</thought>
+      </li>
+      <li Class="RimVore2.PreceptComp_Quirk_RemoveQuirks">
+        <quirks>
+          <li>TypePreference_Predator_Oral_Likes</li>
+          <li>TypePreference_Predator_Oral_Obsessed</li>
+          <li>TypePreference_Prey_Oral_Likes</li>
+          <li>TypePreference_Prey_Oral_Obsessed</li>
+        </quirks>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <ThoughtDef>
+    <defName>RV2_OralVore_Abhorrent</defName>
+    <durationDays>3</durationDays>
+    <stages>
+      <li>
+        <label>Oral vore</label>
+        <description>I participated in oral vore when it is against my ideology. I feel horrible.</description>
+        <baseMoodEffect>-24</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>RV2_OralVore_Know_Abhorrent</defName>
+    <durationDays>3</durationDays>
+    <stages>
+      <li>
+        <label>Someone orally vored!!</label>
+        <description>One of us partook in oral vore, this is a disgusting insult to our beliefs!</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>RV2_OralVore_Know_Social_Abhorrent</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>3</durationDays>
+    <stackLimit>5</stackLimit>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>oral vore</label>
+        <baseOpinionOffset>-10</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- Liked -->
+  <PreceptDef>
+    <defName>RV2_OralVore_Liked</defName>
+    <issue>RV2_OralVore</issue>
+    <label>liked</label>
+    <description>Oral vore is to be praised and encouraged.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <associatedMemes>
+      <li>RV2_Preyism</li>
+      <li>RV2_Predation</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>RV2_OralVore</eventDef>
+        <thought>RV2_OralVore_Liked</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>RV2_OralVore</eventDef>
+        <thought>RV2_OralVore_Know_Liked</thought>
+      </li>
+      <li Class="RimVore2.PreceptComp_Quirk_RemoveQuirks">
+        <quirks>
+          <li>TypePreference_Predator_Oral_Refuses</li>
+          <li>TypePreference_Prey_Oral_Refuses</li>
+        </quirks>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <ThoughtDef>
+    <defName>RV2_OralVore_Liked</defName>
+    <durationDays>3</durationDays>
+    <stages>
+      <li>
+        <label>Oral vore</label>
+        <description>Partaking in this divine art fills me with joy</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>RV2_OralVore_Know_Liked</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>3</durationDays>
+    <stackLimit>1</stackLimit>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>oral vore participant</label>
+        <baseOpinionOffset>5</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- Required -->
+  <PreceptDef>
+    <defName>RV2_OralVore_Required</defName>
+    <issue>RV2_OralVore</issue>
+    <label>required</label>
+    <description>The mouth is a divine body part, demanding regular worship through oral vore.</description>
+    <impact>High</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <associatedMemes>
+      <li>RV2_Preyism</li>
+      <li>RV2_Predation</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>RV2_OralVore</eventDef>
+        <thought>RV2_OralVore_Required</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>RV2_OralVore</eventDef>
+        <thought>RV2_OralVore_Know_Required</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>RV2_OralVore</eventDef>
+        <thought>RV2_OralVore_Know_Social_Required</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>RV2_NoRecentOralVore_Required</thought>
+        <description>No oral vore for {VORERELATEDINTERVAL} days</description>
+      </li>
+      <li Class="RimVore2.PreceptComp_Quirk_RemoveQuirks">
+        <quirks>
+          <li>TypePreference_Predator_Oral_Dislikes</li>
+          <li>TypePreference_Predator_Oral_Refuses</li>
+          <li>TypePreference_Prey_Oral_Dislikes</li>
+          <li>TypePreference_Prey_Oral_Refuses</li>
+        </quirks>
+      </li>
+      <li Class="RimVore2.PreceptComp_Quirk_AddQuirks">
+        <quirks>
+          <li>Enablers_Core_Type_Oral</li>
+        </quirks>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <ThoughtDef>
+    <defName>RV2_OralVore_Required</defName>
+    <durationDays>1</durationDays>
+    <stages>
+      <li>
+        <label>Orally vored</label>
+        <description>A divine act to express my beliefs.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>RV2_OralVore_Know_Required</defName>
+    <durationDays>1</durationDays>
+    <stages>
+      <li>
+        <label>Someone orally vored!</label>
+        <description>One of our members was involved in oral vore, a very respectable act!</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>RV2_OralVore_Know_Social_Required</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>3</durationDays>
+    <stackLimit>5</stackLimit>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>divine oral vore participant</label>
+        <baseOpinionOffset>2</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>RV2_NoRecentOralVore_Required</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>RimVore2.ThoughtWorker_Precept_RecentKeyword</workerClass>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>want to participate in oral vore</label>
+        <description>It's been far too long since I was involved in an act of oral vore.</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+    <modExtensions>
+      <li Class="RimVore2.PreceptThoughtWorker_ListeningKeyword">
+        <keyword>VoreType_Oral</keyword>
+      </li>
+    </modExtensions>
+  </ThoughtDef>
+
+</Defs>

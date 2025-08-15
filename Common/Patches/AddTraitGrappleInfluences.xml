@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/TraitDef[defName="Bloodlust"]/degreeDatas/li[1 and not(statFactors)]</xpath>
+    <value>
+      <statFactors></statFactors>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/TraitDef[defName="Bloodlust"]/degreeDatas/li[1]/statFactors</xpath>
+    <value>
+      <RV2_GrappleStrength_Attacker>1.2</RV2_GrappleStrength_Attacker>
+      <RV2_GrappleChance>1.2</RV2_GrappleChance>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/TraitDef[defName="Brawler"]/degreeDatas/li[1 and not(statFactors)]</xpath>
+    <value>
+      <statFactors></statFactors>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/TraitDef[defName="Brawler"]/degreeDatas/li[1]/statFactors</xpath>
+    <value>
+      <RV2_GrappleStrength_General>1.5</RV2_GrappleStrength_General>
+      <RV2_GrappleChance>1.3</RV2_GrappleChance>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/TraitDef[defName="Wimp"]/degreeDatas/li[1]/statFactors</xpath>
+    <value>
+      <RV2_GrappleStrength_General>0.5</RV2_GrappleStrength_General>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/TraitDef[defName="Tough"]/degreeDatas/li[1]/statFactors</xpath>
+    <value>
+      <RV2_GrappleStrength_General>1.2</RV2_GrappleStrength_General>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/TraitDef[defName="Masochist"]/degreeDatas/li[1 and not(statFactors)]</xpath>
+    <value>
+      <statFactors></statFactors>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/TraitDef[defName="Masochist"]/degreeDatas/li[1]/statFactors</xpath>
+    <value>
+      <RV2_GrappleStrength_Defender>0.9</RV2_GrappleStrength_Defender>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/TraitDef[defName="Nimble"]/degreeDatas/li[1]/statFactors</xpath>
+    <value>
+      <RV2_GrappleStrength_Defender>1.2</RV2_GrappleStrength_Defender>
+    </value>
+  </Operation>
+
+
+  <!-- <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/TraitDef[defName="Bloodlust"]</xpath>
+    <value>
+      <li Class="RimVore2.Extension_GrappleInfluence">
+        <influences>
+          <li>
+            <role>Attacker</role>
+            <strengthMultiplier>1.2</strengthMultiplier>
+            <chanceMultiplier>1.2</chanceMultiplier>
+          </li>
+        </influences>
+      </li>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/TraitDef[defName="Brawler"]</xpath>
+    <value>
+      <li Class="RimVore2.Extension_GrappleInfluence">
+        <influences>
+          <li>
+            <role>Attacker</role>
+            <strengthMultiplier>1.5</strengthMultiplier>
+            <chanceMultiplier>1.3</chanceMultiplier>
+          </li>
+          <li>
+            <role>Defender</role>
+            <strengthMultiplier>1.5</strengthMultiplier>
+            <chanceMultiplier>1.3</chanceMultiplier>
+          </li>
+        </influences>
+      </li>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/TraitDef[defName="Wimp"]</xpath>
+    <value>
+      <li Class="RimVore2.Extension_GrappleInfluence">
+        <influences>
+          <li>
+            <role>Attacker</role>
+            <strengthMultiplier>0.5</strengthMultiplier>
+          </li>
+          <li>
+            <role>Defender</role>
+            <strengthMultiplier>0.5</strengthMultiplier>
+          </li>
+        </influences>
+      </li>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/TraitDef[defName="Tough"]</xpath>
+    <value>
+      <li Class="RimVore2.Extension_GrappleInfluence">
+        <influences>
+          <li>
+            <role>Attacker</role>
+            <strengthMultiplier>1.2</strengthMultiplier>
+          </li>
+          <li>
+            <role>Defender</role>
+            <strengthMultiplier>1.2</strengthMultiplier>
+          </li>
+        </influences>
+      </li>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/TraitDef[defName="Masochist"]</xpath>
+    <value>
+      <li Class="RimVore2.Extension_GrappleInfluence">
+        <influences>
+          <li>
+            <role>Defender</role>
+            <strengthMultiplier>0.9</strengthMultiplier>
+          </li>
+        </influences>
+      </li>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/TraitDef[defName="Nimble"]</xpath>
+    <value>
+      <li Class="RimVore2.Extension_GrappleInfluence">
+        <influences>
+          <li>
+            <role>Defender</role>
+            <strengthMultiplier>1.2</strengthMultiplier>
+          </li>
+        </influences>
+      </li>
+    </value>
+  </Operation>-->
+</Patch>

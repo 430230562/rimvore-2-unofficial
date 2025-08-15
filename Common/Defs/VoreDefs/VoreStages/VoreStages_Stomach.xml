@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+  <RimVore2.VoreStageDef Abstract="True" Name="Stomach_Base">
+    <partName>stomach</partName>
+    <displayPartTranslationKey>RV2_DisplayPart_Stomach</displayPartTranslationKey>
+    <requirements>
+      <li>
+        <target>Predator</target>
+        <requirements>
+          <li Class="RimVore2.Requirement_BodyPartAlias">
+            <bodyPartAlias>stomach</bodyPartAlias>
+          </li>
+        </requirements>
+      </li>
+    </requirements>
+  </RimVore2.VoreStageDef>
+
+  <!-- Warmup -->
+  <RimVore2.VoreStageDef ParentName="Stomach_Base">
+    <defName>Stomach_Warmup</defName>
+    <partGoal>WarmUp</partGoal>
+    <canReverseDirection>true</canReverseDirection>
+    <predatorHediffDef>RV2_PreyInStomachWarming</predatorHediffDef>
+    <predatorThoughtDef>RV2_PreyInStomachWarming</predatorThoughtDef>
+    <jumpKey>Stomach</jumpKey>
+    <onCycle>
+      <rollPresets>
+        <li>Sound_Churn_10</li>
+      </rollPresets>
+    </onCycle>
+    <passConditions>
+      <!-- ESEGN: Changed to warmup pass condition -->
+      <li Class="RimVore2.StagePassCondition_Warmup">
+        <duration>24</duration>
+        <hediffs>
+          <li>RV2_PreyInStomachDigesting</li>
+          <li>RV2_PreyInStomachChurning</li>
+        </hediffs>
+      </li>
+    </passConditions>
+  </RimVore2.VoreStageDef>
+
+  <!-- Digest -->
+  <RimVore2.VoreStageDef ParentName="Stomach_Base">
+    <defName>Stomach_Digest</defName>
+    <partGoal>Digest</partGoal>
+    <canReverseDirection>true</canReverseDirection>
+    <predatorHediffDef>RV2_PreyInStomachDigesting</predatorHediffDef>
+    <predatorThoughtDef>RV2_PreyInStomachDigesting</predatorThoughtDef>
+    <jumpKey>Stomach</jumpKey>
+    <onStart>
+      <actions>
+        <li Class="RimVore2.RollAction_PassValue_Set">
+          <name>DigestionProgress</name>
+          <type>DigestionProgress</type>
+        </li>
+        <li Class="RimVore2.RollAction_ShowMote">
+          <mote>RV2_Mote_BubbleDigest</mote>
+        </li>
+      </actions>
+    </onStart>
+    <onCycle>
+      <rollPresets>
+        <li>Mote_BubbleDigest</li>
+        <li>Sound_Gurgle_Chance_5</li>
+        <li>Sound_Burp_Chance_15</li>
+        <li>IncreaseDigestionProgress</li>
+        <li>IncreaseNeed_Predator_Food</li>
+      </rollPresets>
+    </onCycle>
+    <onEnd>
+      <actions>
+        <li Class="RimVore2.RollAction_PlaySound">
+          <sound>RV2_Belch</sound>
+        </li>
+        <li Class="RimVore2.RollAction_ShowMote">
+          <mote>RV2_Mote_Skull</mote>
+        </li>
+        <li Class="RimVore2.RollAction_ShowMote">
+          <mote>RV2_Mote_BubblesDigest</mote>
+        </li>
+        <li Class="RimVore2.RollAction_Digest">
+          <damageDef>RV2_StomachAcid</damageDef>
+        </li>
+        <li Class="RimVore2.RollAction_RecordTale_GoalFinish"/>
+      </actions>
+    </onEnd>
+    <passConditions>
+      <li Class="RimVore2.StagePassCondition_PassValue">
+        <passValueName>DigestionProgress</passValueName>
+        <targetValue>1</targetValue>
+      </li>
+    </passConditions>
+  </RimVore2.VoreStageDef>
+
+  <!-- Churn -->
+  <RimVore2.VoreStageDef ParentName="Stomach_Base">
+    <defName>Stomach_Churn</defName>
+    <partGoal>Churn</partGoal>
+    <canReverseDirection>false</canReverseDirection>
+    <predatorHediffDef>RV2_PreyInStomachChurning</predatorHediffDef>
+    <predatorThoughtDef>RV2_PreyInStomachChurning</predatorThoughtDef>
+    <onStart>
+      <actions>
+        <li Class="RimVore2.RollAction_PassValue_Set">
+          <name>BreakDownProgress</name>
+          <value>0</value>
+        </li>
+      </actions>
+    </onStart>
+    <onCycle>
+      <rollPresets>
+        <li>Mote_BubbleDigest</li>
+        <li>Sound_Gurgle_Chance_5</li>
+        <li>Sound_Burp_Chance_15</li>
+        <li>IncreaseBreakDownProgress</li>
+        <li>IncreaseNeed_Predator_Food</li>
+      </rollPresets>
+    </onCycle>
+    <onEnd>
+      <actions>
+        <li Class="RimVore2.RollAction_PlaySound">
+          <sound>RV2_Belch</sound>
+        </li>
+        <li Class="RimVore2.RollAction_ShowMote">
+          <mote>RV2_Mote_BubblesDigest</mote>
+        </li>
+      </actions>
+    </onEnd>
+    <passConditions>
+      <li Class="RimVore2.StagePassCondition_PassValue">
+        <passValueName>BreakDownProgress</passValueName>
+        <targetValue>1</targetValue>
+      </li>
+    </passConditions>
+  </RimVore2.VoreStageDef>
+
+  <!-- Pleasure -->
+  <RimVore2.VoreStageDef ParentName="Stomach_Base">
+    <defName>Stomach_Pleasure</defName>
+    <partGoal>Pleasure</partGoal>
+    <canReverseDirection>true</canReverseDirection>
+    <predatorHediffDef>RV2_PreyInStomachPleasuring</predatorHediffDef>
+    <predatorThoughtDef>RV2_PreyInStomachPleasuring</predatorThoughtDef>
+    <jumpKey>Stomach</jumpKey>
+    <onCycle>
+      <rollPresets>
+        <li>Mote_BubbleDigest</li>
+        <li>Sound_Burp_Chance_15</li>
+        <li>Sound_Moan_Chance_15</li>
+        <li>StealNeed_ForPrey_Food</li>
+        <li>IncreaseNeed_Predator_Comfort</li>
+        <li>IncreaseNeed_Prey_Comfort</li>
+      </rollPresets>
+    </onCycle>
+    <onEnd>
+      <actions>
+        <li Class="RimVore2.RollAction_PlaySound">
+          <sound>RV2_Orgasm</sound>
+        </li>
+        <li Class="RimVore2.RollAction_RecordTale_GoalFinish"/>
+      </actions>
+    </onEnd>
+    <passConditions>
+      <li Class="RimVore2.StagePassCondition_Need">
+        <target>Prey</target>
+        <need>Comfort</need>
+        <targetLevel>0.95</targetLevel>
+      </li>
+      <li Class="RimVore2.StagePassCondition_Need">
+        <target>Predator</target>
+        <need>Comfort</need>
+        <targetLevel>0.95</targetLevel>
+      </li>
+      <li Class="RimVore2.StagePassCondition_Timed">
+        <duration>20</duration>
+      </li>
+    </passConditions>
+  </RimVore2.VoreStageDef>
+
+  <!-- Store / Hold -->
+  <RimVore2.VoreStageDef Name="Stomach_Store" ParentName="Stomach_Base">
+    <defName>Stomach_Store</defName>
+    <partGoal>Store</partGoal>
+    <canReverseDirection>true</canReverseDirection>
+    <predatorHediffDef>RV2_PreyInStomachStoring</predatorHediffDef>
+    <predatorThoughtDef>RV2_PreyInStomachStoring</predatorThoughtDef>
+    <jumpKey>Stomach</jumpKey>
+    <onCycle>
+      <rollPresets>
+        <li>IncreaseNeed_Prey_Rest</li>
+        <li>StealNeed_ForPrey_Food</li>
+      </rollPresets>
+    </onCycle>
+    <onEnd>
+      <actions>
+        <li Class="RimVore2.RollAction_RecordTale_GoalFinish"/>
+      </actions>
+    </onEnd>
+    <passConditions>
+      <li Class="RimVore2.StagePassCondition_Manual"/>
+    </passConditions>
+  </RimVore2.VoreStageDef>
+
+  <RimVore2.VoreStageDef Name="Stomach_Hold" ParentName="Stomach_Store">
+    <defName>Stomach_Hold</defName>
+    <partGoal>Hold</partGoal>
+    <canReverseDirection>true</canReverseDirection>
+    <predatorHediffDef>RV2_PreyInStomachStoring</predatorHediffDef>
+    <predatorThoughtDef>RV2_PreyInStomachStoring</predatorThoughtDef>
+    <passConditions Inherit="False">
+      <li Class="RimVore2.StagePassCondition_Timed">
+        <duration>36</duration>
+      </li>
+    </passConditions>
+  </RimVore2.VoreStageDef>
+
+  <RimVore2.VoreStageDef Name="Stomach_Heal" ParentName="Stomach_Base">
+    <defName>Stomach_Heal</defName>
+    <partGoal>Heal</partGoal>
+    <canReverseDirection>true</canReverseDirection>
+    <jumpKey>Stomach</jumpKey>
+    <predatorHediffDef>RV2_PreyInStomachHealing</predatorHediffDef>
+    <predatorThoughtDef>RV2_PreyInStomachHealing</predatorThoughtDef>
+    <onCycle>
+      <rollPresets>
+        <li>Sound_Churn_10</li>
+        <li>IncreaseNeed_Prey_Rest</li>
+        <li>StealNeed_ForPrey_Food</li>
+        <li>Heal_Prey</li>
+        <!-- actions are interrupted here if predator has no food for healing -->
+        <li>Mote_Heal</li>
+      </rollPresets>
+    </onCycle>
+    <onEnd>
+      <actions>
+        <li Class="RimVore2.RollAction_RecordTale_GoalFinish"/>
+      </actions>
+    </onEnd>
+    <passConditions>
+      <li Class="RimVore2.StagePassCondition_Healed">
+        <target>Prey</target>
+      </li>
+    </passConditions>
+  </RimVore2.VoreStageDef>
+  
+  
+</Defs>

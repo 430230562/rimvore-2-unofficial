@@ -1,0 +1,1680 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+
+<!-- base game has placeholders -->
+<!-- in the label: {0} = other pawn -->
+<!-- in the description: {0} = thought owner {1} = other pawn -->
+
+
+<Defs>
+  <ThoughtDef Name="RV2_QuirkMemory_Base" Abstract ="True">
+    <durationDays>0.5</durationDays>
+    <stackLimit>20</stackLimit>
+    <stackedEffectMultiplier>0.75</stackedEffectMultiplier>
+    <showBubble>true</showBubble>
+    <validWhileDespawned>true</validWhileDespawned>
+  </ThoughtDef>
+
+  <!-- Dietary quirks predator nondescript-->
+  <!-- These can be re-enabled if anyone wants to have an ambiguous fallback 
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DietaryQuirkSatisfactionPredator_VeryGood</defName>
+    <stages>
+      <li>
+        <label>Loved kind of prey {0}</label>
+        <description>One of my special appetites was satisfied.</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DietaryQuirkSatisfactionPredator_Good</defName>
+    <stages>
+      <li>
+        <label>Liked kind of prey {0}</label>
+        <description>That played right into my tastes.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DietaryQuirkSatisfactionPredator_Bad</defName>
+    <stages>
+      <li>
+        <label>Disliked kind of prey {0}</label>
+        <description>That felt bad.</description>
+        <baseMoodEffect>-7</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DietaryQuirkSatisfactionPredator_VeryBad</defName>
+    <stages>
+      <li>
+        <label>Hated kind of prey {0}</label>
+        <description>I think I'm going to be sick.</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  -->
+  
+  <!-- Dietary quirks predator animals-->
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DietaryQuirkSatisfactionPredator_Animals_VeryGood</defName>
+    <stages>
+      <li>
+        <label>Loved consuming animal prey {0}</label>
+        <description>All that thrashing gave me a real good massage!</description>
+		<!-- possible alt text for human primacist ideology <description>I am the superior being!</description> -->
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DietaryQuirkSatisfactionPredator_Animals_Good</defName>
+    <stages>
+      <li>
+        <label>Liked consuming animal prey {0}</label>
+        <description>Nice and squirmy!</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DietaryQuirkSatisfactionPredator_Animals_Bad</defName>
+    <stages>
+      <li>
+        <label>Disliked consuming animal prey {0}</label>
+        <description>That was rough going down.</description>
+        <baseMoodEffect>-7</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DietaryQuirkSatisfactionPredator_Animals_VeryBad</defName>
+    <stages>
+      <li>
+        <label>Hated consuming animal prey {0}</label>
+        <description>Absolutely disgusting.</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- Dietary quirks predator humanoids-->
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DietaryQuirkSatisfactionPredator_Humanoids_VeryGood</defName>
+    <stages>
+      <li>
+        <label>Loved consuming humanoid prey {0}</label>
+        <description>People taste so fucking good!</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DietaryQuirkSatisfactionPredator_Humanoids_Good</defName>
+    <stages>
+      <li>
+        <label>Liked consuming humanoid prey {0}</label>
+        <description>Nice and smooth.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DietaryQuirkSatisfactionPredator_Humanoids_Bad</defName>
+    <stages>
+      <li>
+        <label>Disliked consuming humanoid prey {0}</label>
+        <description>...Does this count as cannibalism?</description>
+        <baseMoodEffect>-7</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DietaryQuirkSatisfactionPredator_Humanoids_VeryBad</defName>
+    <stages>
+      <li>
+        <label>Hated consuming humanoid prey {0}</label>
+        <description>What am I doing?!</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- Dietary quirks predator insectoids-->
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DietaryQuirkSatisfactionPredator_Insectoids_VeryGood</defName>
+    <stages>
+      <li>
+        <label>Loved consuming insectoid prey {0}</label>
+        <description>Oh, that tickles!~</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DietaryQuirkSatisfactionPredator_Insectoids_Good</defName>
+    <stages>
+      <li>
+        <label>Liked consuming insectoid prey {0}</label>
+        <description>So juicy and squirmy...~</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DietaryQuirkSatisfactionPredator_Insectoids_Bad</defName>
+    <stages>
+      <li>
+        <label>Disliked consuming insectoid prey {0}</label>
+        <description>Oh, that gave me the heebie-jeebies. At least it's done with.</description>
+        <baseMoodEffect>-7</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DietaryQuirkSatisfactionPredator_Insectoids_VeryBad</defName>
+    <stages>
+      <li>
+        <label>Hated consuming insectoid prey {0}</label>
+        <description>OH GOD IT'S WRITHING INSIDE ME GET IT OUT GET IT OUT GET IT OUT!</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- Dietary quirks predator Mechanoids -->
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DietaryQuirkSatisfactionPredator_Mechanoids_VeryGood</defName>
+    <stages>
+      <li>
+        <label>Loved consuming mechanoid prey {0}</label>
+        <description>Take that, tin can!</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DietaryQuirkSatisfactionPredator_Mechanoids_Good</defName>
+    <stages>
+      <li>
+        <label>Liked consuming mechanoid prey {0}</label>
+        <description>Nice and cold.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DietaryQuirkSatisfactionPredator_Mechanoids_Bad</defName>
+    <stages>
+      <li>
+        <label>Disliked consuming mechanoid prey {0}</label>
+        <description>Metal isn't food!</description>
+        <baseMoodEffect>-7</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DietaryQuirkSatisfactionPredator_Mechanoids_VeryBad</defName>
+    <stages>
+      <li>
+        <label>Hated consuming mechanoid prey {0}</label>
+        <description>Can't these things explode when they break?!</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- Dietary quirks prey nondescript-->
+  <!-- These can be re-enabled if anyone wants to have an ambiguous fallback 
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DietaryQuirkSatisfactionPrey_VeryGood</defName>
+    <stages>
+      <li>
+        <label>Loved kind of predator {0}</label>
+        <description>I was eaten by my favorite kind of predator!</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DietaryQuirkSatisfactionPrey_Good</defName>
+    <stages>
+      <li>
+        <label>Liked kind of predator {0}</label>
+        <description>I'm always happy to be eaten by those.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DietaryQuirkSatisfactionPrey_Bad</defName>
+    <stages>
+      <li>
+        <label>Disliked kind of predator {0}</label>
+        <description>That wasn't my cup of tea.</description>
+        <baseMoodEffect>-7</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DietaryQuirkSatisfactionPrey_VeryBad</defName>
+    <stages>
+      <li>
+        <label>Hated kind of predator {0}</label>
+        <description>I feel dirty.</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  -->
+  
+  <!-- Dietary quirks prey Animals-->
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DietaryQuirkSatisfactionPrey_Animals_VeryGood</defName>
+    <stages>
+      <li>
+        <label>Loved being consumed by an animal {0}</label>
+        <description>I wanna ride again! Yeehaw!</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DietaryQuirkSatisfactionPrey_Animals_Good</defName>
+    <stages>
+      <li>
+        <label>Liked being consumed by an animal {0}</label>
+        <description>Ride's over already?</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DietaryQuirkSatisfactionPrey_Animals_Bad</defName>
+    <stages>
+      <li>
+        <label>Disliked being consumed by an animal {0}</label>
+        <description>How degrading...</description>
+        <baseMoodEffect>-7</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DietaryQuirkSatisfactionPrey_Animals_VeryBad</defName>
+    <stages>
+      <li>
+        <label>Hated being consumed by an animal {0}</label>
+        <description>Filthy, filthy, filthy, filthy!</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- Dietary quirks prey Humanoids-->
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DietaryQuirkSatisfactionPrey_Humanoids_VeryGood</defName>
+    <stages>
+      <li>
+        <label>Loved being consumed by a humanoid {0}</label>
+        <description>I was prey for someone who could appreciate me!</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DietaryQuirkSatisfactionPrey_Humanoids_Good</defName>
+    <stages>
+      <li>
+        <label>Liked being consumed by a humanoid {0}</label>
+        <description>I hope I was nice and filling.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DietaryQuirkSatisfactionPrey_Humanoids_Bad</defName>
+    <stages>
+      <li>
+        <label>Disliked being consumed by a humanoid {0}</label>
+        <description>I feel used.</description>
+        <baseMoodEffect>-7</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DietaryQuirkSatisfactionPrey_Humanoids_VeryBad</defName>
+    <stages>
+      <li>
+        <label>Hated being consumed by a humanoid {0}</label>
+        <description>That was abhorrent. Whether or not people should eat other people, they shouldn't do it like that!</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- Dietary quirks prey Insectoids-->
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DietaryQuirkSatisfactionPrey_Insectoids_VeryGood</defName>
+    <stages>
+      <li>
+        <label>Loved being consumed by an insectoid {0}</label>
+        <description>I was, for a moment, one with the hive.</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DietaryQuirkSatisfactionPrey_Insectoids_Good</defName>
+    <stages>
+      <li>
+        <label>Liked being consumed by an insectoid {0}</label>
+        <description>I got to see where the jelly gets made.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DietaryQuirkSatisfactionPrey_Insectoids_Bad</defName>
+    <stages>
+      <li>
+        <label>Disliked being consumed by an insectoid {0}</label>
+        <description>I am covered in slime and... something sticky. This sucks.</description>
+        <baseMoodEffect>-7</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DietaryQuirkSatisfactionPrey_Insectoids_VeryBad</defName>
+    <stages>
+      <li>
+        <label>Hated being consumed by an insectoid {0}</label>
+        <description>Gross, gross, gross, gross, gross!</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- Dietary quirks prey Mechanoids-->
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DietaryQuirkSatisfactionPrey_Mechanoids_VeryGood</defName>
+    <stages>
+      <li>
+        <label>Loved being consumed by a mechanoid {0}</label>
+        <description>That soothing tick and hum, the flexing of the hydraulics...~</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DietaryQuirkSatisfactionPrey_Mechanoids_Good</defName>
+    <stages>
+      <li>
+        <label>Liked being consumed by a mechanoid {0}</label>
+        <description>Another hostile environment conquered!</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <!--
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DietaryQuirkSatisfactionPrey_Mechanoids_Bad</defName>
+    <stages>
+      <li>
+        <label>Disliked being consumed by a mechanoid {0}</label>
+        <description>I don't know how I survived.</description>
+        <baseMoodEffect>-7</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DietaryQuirkSatisfactionPrey_Mechanoids_VeryBad</defName>
+    <stages>
+      <li>
+        <label>Hated being consumed by a mechanoid {0}</label>
+        <description>I don't think I can ever be around power tools without cringing again.</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  -->
+  
+  <!-- Disposition quirks nondescript -->
+  <!-- These can be re-enabled if anyone wants to have an ambiguous fallback 
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DispositionQuirkSatisfaction_VeryGood</defName>
+    <stages>
+      <li>
+        <label>Loved playing role for {0}</label>
+        <description>I am doing what I was born to, and it feels great!</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DispositionQuirkSatisfaction_Good</defName>
+    <stages>
+      <li>
+        <label>Liked playing role for {0}</label>
+        <description>That was lovely.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DispositionQuirkSatisfaction_Bad</defName>
+    <stages>
+      <li>
+        <label>Disliked playing role for {0}</label>
+        <description>I didn't really enjoy that.</description>
+        <baseMoodEffect>-7</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DispositionQuirkSatisfaction_VeryBad</defName>
+    <stages>
+      <li>
+        <label>Hated playing role for {0}</label>
+        <description>This doesn't do it for me at all! I feel horrible!</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  -->
+  
+  <!-- Disposition quirks predator -->
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DispositionQuirkSatisfaction_Predator_VeryGood</defName>
+    <stages>
+      <li>
+        <label>Loved predding for {0}</label>
+        <description>I'm an apex predator, baby!</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DispositionQuirkSatisfaction_Predator_Good</defName>
+    <stages>
+      <li>
+        <label>Liked predding for {0}</label>
+        <description>I live to eat!</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DispositionQuirkSatisfaction_Predator_Bad</defName>
+    <stages>
+      <li>
+        <label>Disliked predding for {0}</label>
+        <description>I'm not cut out for predding.</description>
+        <baseMoodEffect>-7</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DispositionQuirkSatisfaction_Predator_VeryBad</defName>
+    <stages>
+      <li>
+        <label>Hated predding for {0}</label>
+        <description>Don't make me do that ever again.</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- Disposition quirks prey -->
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DispositionQuirkSatisfaction_Prey_VeryGood</defName>
+    <stages>
+      <li>
+        <label>Loved being prey for {0}</label>
+        <description>Someone else eat me now! Please!</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DispositionQuirkSatisfaction_Prey_Good</defName>
+    <stages>
+      <li>
+        <label>Liked being prey for {0}</label>
+        <description>I hope to get back in soon!</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DispositionQuirkSatisfaction_Prey_Bad</defName>
+    <stages>
+      <li>
+        <label>Disliked being prey for {0}</label>
+        <description>I don't like being inside people.</description>
+        <baseMoodEffect>-7</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DispositionQuirkSatisfaction_Prey_VeryBad</defName>
+    <stages>
+      <li>
+        <label>Hated being prey for {0}</label>
+        <description>Don't make me do that ever again.</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- Disposition quirks Feeder -->
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DispositionQuirkSatisfaction_Feeder_VeryGood</defName>
+    <stages>
+      <li>
+        <label>Loved hand-feeding {0}</label>
+        <description>I wonder if there's anything else around to feed {1}!</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DispositionQuirkSatisfaction_Feeder_Good</defName>
+    <stages>
+      <li>
+        <label>Liked hand-feeding {0}</label>
+        <description>Another satisfied customer!</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DispositionQuirkSatisfaction_Feeder_Bad</defName>
+    <stages>
+      <li>
+        <label>Disliked hand-feeding {0}</label>
+        <description>That was a waste. I can think of several better things to have done with that prey.</description>
+        <baseMoodEffect>-7</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_DispositionQuirkSatisfaction_Feeder_VeryBad</defName>
+    <stages>
+      <li>
+        <label>Hated hand-feeding {0}</label>
+        <description>I'm not some predator's lackey!</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- goal preference quirks nonspecific-->
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_GoalPreferenceQuirkSatisfaction_VeryGood</defName>
+    <stages>
+      <li>
+        <label>Loved using vore goal for {0}</label>
+        <description>Lovely!</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_GoalPreferenceQuirkSatisfaction_Good</defName>
+    <stages>
+      <li>
+        <label>Liked using vore goal for {0}</label>
+        <description>Nice!</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_GoalPreferenceQuirkSatisfaction_Bad</defName>
+    <stages>
+      <li>
+        <label>Disliked using vore goal for {0}</label>
+        <description>Ugh!</description>
+        <baseMoodEffect>-7</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_GoalPreferenceQuirkSatisfaction_VeryBad</defName>
+    <stages>
+      <li>
+        <label>Hated using vore goal for {0}</label>
+        <description>Yuck!</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- goal preference quirks Digest/Convert-->
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_GoalPreferenceQuirkSatisfaction_Digest_VeryGood</defName>
+    <stages>
+      <li>
+        <label>Loved digesting {0}</label>
+        <description>My body is a graveyard.~</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_GoalPreferenceQuirkSatisfaction_Digest_Good</defName>
+    <stages>
+      <li>
+        <label>Liked digesting {0}</label>
+        <description>Oh, that hit the spot!</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_GoalPreferenceQuirkSatisfaction_Digest_Bad</defName>
+    <stages>
+      <li>
+        <label>Disliked digesting {0}</label>
+        <description>That was cruel.</description>
+        <baseMoodEffect>-7</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_GoalPreferenceQuirkSatisfaction_Digest_VeryBad</defName>
+    <stages>
+      <li>
+        <label>Hated digesting {0}</label>
+        <description>Surely I could have killed it first, quick and clean, and skipped the slow, painful murder?</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- ESEGN: Prey post-digestion thoughts -->
+  <!-- ESEGN: Mood effects are more extreme than others on purpose. I imagine getting digested would be a very extreme experience. -->
+
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_GoalPreferenceQuirkSatisfaction_Digest_Prey_VeryGood</defName>
+    <stages>
+      <li>
+        <label>Loved being digested by {0}</label>
+        <description>Ahh! That was amazing, becoming part of something better.</description>
+        <baseMoodEffect>15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_GoalPreferenceQuirkSatisfaction_Digest_Prey_Good</defName>
+    <stages>
+      <li>
+        <label>Liked being digested by {0}</label>
+        <description>All my worries melted away~</description>
+        <baseMoodEffect>8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_GoalPreferenceQuirkSatisfaction_Digest_Prey_Bad</defName>
+    <stages>
+      <li>
+        <label>Disliked being digested by {0}</label>
+        <description>That was... not pleasant. At least I'm still alive...</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_GoalPreferenceQuirkSatisfaction_Digest_Prey_VeryBad</defName>
+    <stages>
+      <li>
+        <label>Hated being digested by {0}</label>
+        <description>That was horrifying.</description>
+        <baseMoodEffect>-20</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- goal preference quirks Pleasure Pred -->
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_GoalPreferenceQuirkSatisfaction_Pleasure_Predator_VeryGood</defName>
+    <stages>
+      <li>
+        <label>Loved pleasuring {0}</label>
+        <description>I live to please!~</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_GoalPreferenceQuirkSatisfaction_Pleasure_Predator_Good</defName>
+    <stages>
+      <li>
+        <label>Liked pleasuring {0}</label>
+        <description>That scratched a real deep itch.~</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_GoalPreferenceQuirkSatisfaction_Pleasure_Predator_Bad</defName>
+    <stages>
+      <li>
+        <label>Disliked pleasuring {0}</label>
+        <description>I would have preferred reular sex.</description>
+        <baseMoodEffect>-7</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_GoalPreferenceQuirkSatisfaction_Pleasure_Predator_VeryBad</defName>
+    <stages>
+      <li>
+        <label>Hated pleasuring {0}</label>
+        <description>I just feel kind of dirty now.</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- goal preference quirks Pleasure Prey -->
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_GoalPreferenceQuirkSatisfaction_Pleasure_Prey_VeryGood</defName>
+    <stages>
+      <li>
+        <label>Loved pleasuring {0}</label>
+        <description>I live to please!~</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_GoalPreferenceQuirkSatisfaction_Pleasure_Prey_Good</defName>
+    <stages>
+      <li>
+        <label>Liked pleasuring {0}</label>
+        <description>That was fun!</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_GoalPreferenceQuirkSatisfaction_Pleasure_Prey_Bad</defName>
+    <stages>
+      <li>
+        <label>Disliked pleasuring {0}</label>
+        <description>I would have preferred reular sex.</description>
+        <baseMoodEffect>-7</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_GoalPreferenceQuirkSatisfaction_Pleasure_Prey_VeryBad</defName>
+    <stages>
+      <li>
+        <label>Hated pleasuring {0}</label>
+        <description>I just feel kind of dirty now.</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- Stripping preference quirks nondescript-->
+  <!-- These can be re-enabled if anyone wants to have an ambiguous fallback 
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_StrippingQuirkSatisfaction_Good</defName>
+    <stages>
+      <li>
+        <label>Stripping quirk satisfaction for {0}</label>
+        <description>Lovely!</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_StrippingQuirkSatisfaction_Bad</defName>
+    <stages>
+      <li>
+        <label>Stripping quirk satisfaction for {0}</label>
+        <description>Ugh...</description>
+        <baseMoodEffect>-7</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  -->
+  
+  <!-- Stripping preference quirks predator clothed-->
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_StrippingQuirkSatisfaction_Predator_Clothed_Good</defName>
+    <stages>
+      <li>
+        <label>Liked consuming {0} clothed</label>
+        <description>That tickles!</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_StrippingQuirkSatisfaction_Predator_Clothed_Bad</defName>
+    <stages>
+      <li>
+        <label>Disliked consuming {0} clothed</label>
+        <description>Where's the flavor?</description>
+        <baseMoodEffect>-7</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- Stripping preference quirks predator naked-->
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_StrippingQuirkSatisfaction_Predator_Naked_Good</defName>
+    <stages>
+      <li>
+        <label>Liked consuming {0} naked</label>
+        <description>Delicious!</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_StrippingQuirkSatisfaction_Predator_Naked_Bad</defName>
+    <stages>
+      <li>
+        <label>Disliked consuming {0} naked</label>
+        <description>I didn't want to taste that.</description>
+        <baseMoodEffect>-7</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- Stripping preference quirks prey clothed-->
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_StrippingQuirkSatisfaction_Prey_Clothed_Good</defName>
+    <stages>
+      <li>
+        <label>Liked being consumed by {0} while clothed</label>
+        <description>I wonder if there are washing-machine preds out there.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_StrippingQuirkSatisfaction_Prey_Clothed_Bad</defName>
+    <stages>
+      <li>
+        <label>Disliked being consumed by {0} while clothed</label>
+        <description>My clothes! If they're full of holes or stains...</description>
+        <baseMoodEffect>-7</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- Stripping preference quirks prey naked-->
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_StrippingQuirkSatisfaction_Prey_Naked_Good</defName>
+    <stages>
+      <li>
+        <label>Liked being consumed by {0} while naked</label>
+        <description>Like taking a bath!</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_StrippingQuirkSatisfaction_Prey_Naked_Bad</defName>
+    <stages>
+      <li>
+        <label>Disliked being consumed by {0} while naked</label>
+        <description>I need a bath...</description>
+        <baseMoodEffect>-7</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- type preference quirks predator nondescript -->
+  <!-- These can be re-enabled if anyone wants to have an ambiguous fallback 
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Predator_VeryGood</defName>
+    <stages>
+      <li>
+        <label>Loved method (type) for devouring {0}</label>
+        <description>My favorite!</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Predator_Good</defName>
+    <stages>
+      <li>
+        <label>Liked method (type) for devouring {0}</label>
+        <description>Nice.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Predator_Bad</defName>
+    <stages>
+      <li>
+        <label>Disliked method (type) for devouring {0}</label>
+        <description>Ugh.</description>
+        <baseMoodEffect>-7</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Predator_VeryBad</defName>
+    <stages>
+      <li>
+        <label>Hated method (type) for devouring {0}</label>
+        <description>I hate doing it this way.</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  -->
+  
+  <!-- type preference quirks predator Anal -->
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Predator_Anal_VeryGood</defName>
+    <stages>
+      <li>
+        <label>Loved posternating {0}</label>
+        <description>Gotta keep your butt happy!</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Predator_Anal_Good</defName>
+    <stages>
+      <li>
+        <label>Liked posternating {0}</label>
+        <description>Love to give my ass a treat every now and then.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Predator_Anal_Bad</defName>
+    <stages>
+      <li>
+        <label>Disliked posternating {0}</label>
+        <description>I'll be sitting funny.</description>
+        <baseMoodEffect>-7</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Predator_Anal_VeryBad</defName>
+    <stages>
+      <li>
+        <label>Hated posternating {0}</label>
+        <description>Call me butthurt, but my butt fucking hurts!</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- type preference quirks predator Cock -->
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Predator_Cock_VeryGood</defName>
+    <stages>
+      <li>
+        <label>Loved unsowing {0}</label>
+        <description>Gotta keep your dick happy!</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Predator_Cock_Good</defName>
+    <stages>
+      <li>
+        <label>Liked unsowing {0}</label>
+        <description>Fuck yeah!</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Predator_Cock_Bad</defName>
+    <stages>
+      <li>
+        <label>Disliked unsowing {0}</label>
+        <description>It kinda stings. I don't like that.</description>
+        <baseMoodEffect>-7</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Predator_Cock_VeryBad</defName>
+    <stages>
+      <li>
+        <label>Hated unsowing {0}</label>
+        <description>This is how you get a bladder infection.</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- type preference quirks predator Nipple -->
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Predator_Nipple_VeryGood</defName>
+    <stages>
+      <li>
+        <label>Loved unnursing {0}</label>
+        <description>Gotta keep your tits happy (and balanced)!</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Predator_Nipple_Good</defName>
+    <stages>
+      <li>
+        <label>Liked unnursing {0}</label>
+        <description>Nice and milky.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Predator_Nipple_Bad</defName>
+    <stages>
+      <li>
+        <label>Disliked unnursing {0}</label>
+        <description>Ugh, this balancing act is annoying.</description>
+        <baseMoodEffect>-7</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Predator_Nipple_VeryBad</defName>
+    <stages>
+      <li>
+        <label>Hated unnursing {0}</label>
+        <description>My back! Augh!</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- ESEGN: Type preference quirks predator FullTour -->
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Predator_FullTour_VeryGood</defName>
+    <stages>
+      <li>
+        <label>Loved guiding {0}</label>
+        <description>Every part of me gets to feel every part of you~</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Predator_FullTour_Good</defName>
+    <stages>
+      <li>
+        <label>Liked guiding {0}</label>
+        <description>In one end, out the other. Just how it should be.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Predator_FullTour_Bad</defName>
+    <stages>
+      <li>
+        <label>Disliked guiding {0}</label>
+        <description>Ugh, they're *finally* out.</description>
+        <baseMoodEffect>-7</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Predator_FullTour_VeryBad</defName>
+    <stages>
+      <li>
+        <label>Hated guiding {0}</label>
+        <description>The release does not make up for holding that in so long...</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- type preference quirks predator Oral -->
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Predator_Oral_VeryGood</defName>
+    <stages>
+      <li>
+        <label>Loved swallowing {0}</label>
+        <description>Gotta keep your stomach happy!</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Predator_Oral_Good</defName>
+    <stages>
+      <li>
+        <label>Liked swallowing {0}</label>
+        <description>Tasty!</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Predator_Oral_Bad</defName>
+    <stages>
+      <li>
+        <label>Disliked swallowing {0}</label>
+        <description>Kinda clicheed.</description>
+        <baseMoodEffect>-7</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Predator_Oral_VeryBad</defName>
+    <stages>
+      <li>
+        <label>Hated swallowing {0}</label>
+        <description>My jaw hurts!</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- type preference quirks predator Vaginal -->
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Predator_Vaginal_VeryGood</defName>
+    <stages>
+      <li>
+        <label>Loved unbirthing {0}</label>
+        <description>Gotta keep your pussy happy!</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Predator_Vaginal_Good</defName>
+    <stages>
+      <li>
+        <label>Liked unbirthing {0}</label>
+        <description>Fuck yeah!</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Predator_Vaginal_Bad</defName>
+    <stages>
+      <li>
+        <label>Disliked unbirthing {0}</label>
+        <description>I'd better not get a bladder infection.</description>
+        <baseMoodEffect>-7</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Predator_Vaginal_VeryBad</defName>
+    <stages>
+      <li>
+        <label>Hated unbirthing {0}</label>
+        <description>They're not supposed to go back in!</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- type preference quirks prey nondescript -->
+  <!-- These can be re-enabled if anyone wants to have an ambiguous fallback 
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Prey_VeryGood</defName>
+    <stages>
+      <li>
+        <label>Loved method (type) for being devoured by {0}</label>
+        <description>My favorite!</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Prey_Good</defName>
+    <stages>
+      <li>
+        <label>Liked method (type) for being devoured by {0}</label>
+        <description>Nice.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Prey_Bad</defName>
+    <stages>
+      <li>
+        <label>Disliked method (type) for being devoured by {0}</label>
+        <description>Ugh.</description>
+        <baseMoodEffect>-7</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Prey_VeryBad</defName>
+    <stages>
+      <li>
+        <label>Hated method (type) for being devoured by {0}</label>
+        <description>I hate doing it this way.</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  -->
+  
+  <!-- type preference quirks prey Anal -->
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Prey_Anal_VeryGood</defName>
+    <stages>
+      <li>
+        <label>Loved being posternated by {0}</label>
+        <description>Up the butt is where I belong!</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Prey_Anal_Good</defName>
+    <stages>
+      <li>
+        <label>Liked being posternated by {0}</label>
+        <description>Tight and cozy!</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Prey_Anal_Bad</defName>
+    <stages>
+      <li>
+        <label>Disliked being posternated by {0}</label>
+        <description>Unsanitary.</description>
+        <baseMoodEffect>-7</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Prey_Anal_VeryBad</defName>
+    <stages>
+      <li>
+        <label>Hated being posternated by {0}</label>
+        <description>I need a fucking bath. Ew.</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- type preference quirks prey Cock -->
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Prey_Cock_VeryGood</defName>
+    <stages>
+      <li>
+        <label>Loved being unsown by {0}</label>
+        <description>Down the cock is where I belong!</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Prey_Cock_Good</defName>
+    <stages>
+      <li>
+        <label>Liked being unsown by {0}</label>
+        <description>Spunky!</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Prey_Cock_Bad</defName>
+    <stages>
+      <li>
+        <label>Disliked being unsown by {0}</label>
+        <description>It's a bit musky, and not in a good way.</description>
+        <baseMoodEffect>-7</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Prey_Cock_VeryBad</defName>
+    <stages>
+      <li>
+        <label>Hated being unsown by {0}</label>
+        <description>Just impale me next time.</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- type preference quirks prey Nipple -->
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Prey_Nipple_VeryGood</defName>
+    <stages>
+      <li>
+        <label>Loved being unnursed by {0}</label>
+        <description>In the boob is where I belong!</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Prey_Nipple_Good</defName>
+    <stages>
+      <li>
+        <label>Liked being unnursed by {0}</label>
+        <description>Milky!</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Prey_Nipple_Bad</defName>
+    <stages>
+      <li>
+        <label>Disliked being unnursed by {0}</label>
+        <description>Nipples shouldn't eat people.</description>
+        <baseMoodEffect>-7</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Prey_Nipple_VeryBad</defName>
+    <stages>
+      <li>
+        <label>Hated being unnursed by {0}</label>
+        <description>This pisses me off on a conceptual level!</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- ESEGN: Type preference quirks prey FullTour -->
+
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Prey_FullTour_VeryGood</defName>
+    <stages>
+      <li>
+        <label>Loved touring {0}</label>
+        <description>What a lovely trip! Amazing all the way through~</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Prey_FullTour_Good</defName>
+    <stages>
+      <li>
+        <label>Liked touring {0}</label>
+        <description>Ahh... a comfortable belly, and some nice, tight guts!</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Prey_FullTour_Bad</defName>
+    <stages>
+      <li>
+        <label>Disliked being swallowed by {0}</label>
+        <description>Ugh, there goes half my day. Not worth it.</description>
+        <baseMoodEffect>-7</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Prey_FullTour_VeryBad</defName>
+    <stages>
+      <li>
+        <label>Hated being swallowed by {0}</label>
+        <description>I envy food... it doesn't have to be awake when it goes through that.</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- type preference quirks prey Oral -->
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Prey_Oral_VeryGood</defName>
+    <stages>
+      <li>
+        <label>Loved being swallowed by {0}</label>
+        <description>Down the throat is where I belong!</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Prey_Oral_Good</defName>
+    <stages>
+      <li>
+        <label>Liked being swallowed by {0}</label>
+        <description>Ah, tongues and lips and teeth!~</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Prey_Oral_Bad</defName>
+    <stages>
+      <li>
+        <label>Disliked being swallowed by {0}</label>
+        <description>I think I scraped myself on a tooth.</description>
+        <baseMoodEffect>-7</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Prey_Oral_VeryBad</defName>
+    <stages>
+      <li>
+        <label>Hated being swallowed by {0}</label>
+        <description>I'll kick your teeth in next time, just you watch!</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- type preference quirks prey Vaginal -->
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Prey_Vaginal_VeryGood</defName>
+    <stages>
+      <li>
+        <label>Loved being unborn by {0}</label>
+        <description>Up the muff is where I belong!</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Prey_Vaginal_Good</defName>
+    <stages>
+      <li>
+        <label>Liked being unborn by {0}</label>
+        <description>Comforting.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Prey_Vaginal_Bad</defName>
+    <stages>
+      <li>
+        <label>Disliked being unborn by {0}</label>
+        <description>Being born once was enough.</description>
+        <baseMoodEffect>-7</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_TypePreferenceQuirkSatisfaction_Prey_Vaginal_VeryBad</defName>
+    <stages>
+      <li>
+        <label>Hated being unborn by {0}</label>
+        <description>I don't wanna go back!</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- Gender preference predator -->
+
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_GenderPreferenceQuirkSatisfaction_Predator_Male_VeryGood</defName>
+    <stages>
+      <li>
+        <label>Loved consuming male ({0})</label>
+        <description>Nobody squirms quite like boys do.</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_GenderPreferenceQuirkSatisfaction_Predator_Male_Good</defName>
+    <stages>
+      <li>
+        <label>Liked consuming male ({0})</label>
+        <description>Boys make the best snacks.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_GenderPreferenceQuirkSatisfaction_Predator_Male_Bad</defName>
+    <stages>
+      <li>
+        <label>Hated consuming male ({0})</label>
+        <description>Ugh, gross. When was the last time he showered?</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_GenderPreferenceQuirkSatisfaction_Predator_Female_VeryGood</defName>
+    <stages>
+      <li>
+        <label>Loved consuming female ({0})</label>
+        <description>Nothing makes me happier than the feeling of soft, feminine curves inside me.</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_GenderPreferenceQuirkSatisfaction_Predator_Female_Good</defName>
+    <stages>
+      <li>
+        <label>Liked consuming female ({0})</label>
+        <description>Girls make the best snacks.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_GenderPreferenceQuirkSatisfaction_Predator_Female_Bad</defName>
+    <stages>
+      <li>
+        <label>Hated consuming female ({0})</label>
+        <description>She looked a lot better than she tasted.</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- Gender preference prey -->
+
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_GenderPreferenceQuirkSatisfaction_Prey_Male_VeryGood</defName>
+    <stages>
+      <li>
+        <label>Loved being consumed by a male ({0})</label>
+        <description>No matter how tough they play outside, they're wonderfully soft on the inside!</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_GenderPreferenceQuirkSatisfaction_Prey_Male_Good</defName>
+    <stages>
+      <li>
+        <label>Liked being consumed by a male ({0})</label>
+        <description>Put me back!</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_GenderPreferenceQuirkSatisfaction_Prey_Male_Bad</defName>
+    <stages>
+      <li>
+        <label>Hated being consumed by a  male ({0})</label>
+        <description>Somehow he was even more disgusting on the inside.</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_GenderPreferenceQuirkSatisfaction_Prey_Female_VeryGood</defName>
+    <stages>
+      <li>
+        <label>Loved being consumed by a  female ({0})</label>
+        <description>Nothing better than the feeling of being completely enveloped by a beautiful woman.</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_GenderPreferenceQuirkSatisfaction_Prey_Female_Good</defName>
+    <stages>
+      <li>
+        <label>Liked being consumed by a  female ({0})</label>
+        <description>Put me back.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="RV2_QuirkMemory_Base">
+    <defName>RV2_GenderPreferenceQuirkSatisfaction_Prey_Female_Bad</defName>
+    <stages>
+      <li>
+        <label>Hated being consumed by a  female ({0})</label>
+        <description>I can't believe that bitch got me!</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+</Defs>

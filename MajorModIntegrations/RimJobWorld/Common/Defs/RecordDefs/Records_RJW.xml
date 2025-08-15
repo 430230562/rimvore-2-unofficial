@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RecordDef>
+    <defName>RV2_RJW_VoreTransfer_Receiver</defName>
+    <label>Vore: Received prey during sex</label>
+    <description>The number of times someone transferred a prey into me during sex.</description>
+    <type>Int</type>
+  </RecordDef>
+  <RecordDef>
+    <defName>RV2_RJW_VoreTransfer_Giver</defName>
+    <label>Vore: Gave prey during sex</label>
+    <description>The number of times I transferred prey into someone during sex.</description>
+    <type>Int</type>
+  </RecordDef>
+</Defs>

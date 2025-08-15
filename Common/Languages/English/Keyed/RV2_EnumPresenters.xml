@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- TargetComponentCombination -->
+  <RV2_TargetComponentCombination_Or>Or</RV2_TargetComponentCombination_Or>
+  <RV2_TargetComponentCombination_And>And</RV2_TargetComponentCombination_And>
+
+  <!-- RuleTargetRole -->
+  <RV2_RuleTargetRole_All>All</RV2_RuleTargetRole_All>
+  <RV2_RuleTargetRole_Predator>Predator</RV2_RuleTargetRole_Predator>
+  <RV2_RuleTargetRole_Prey>Prey</RV2_RuleTargetRole_Prey>
+  <RV2_RuleTargetRole_Feeder>Feeder</RV2_RuleTargetRole_Feeder>
+
+  <!-- CorpseProcessingType-->
+  <RV2_CorpseProcessingType_Dessicate>Dessicate</RV2_CorpseProcessingType_Dessicate>
+  <RV2_CorpseProcessingType_Rot>Rot</RV2_CorpseProcessingType_Rot>
+  <RV2_CorpseProcessingType_Destroy>Destroy</RV2_CorpseProcessingType_Destroy>
+  <RV2_CorpseProcessingType_Fresh>Fresh</RV2_CorpseProcessingType_Fresh>
+  <RV2_CorpseProcessingType_None>None</RV2_CorpseProcessingType_None>
+
+  <!-- StruggleForceMode -->
+  <RV2_StruggleForceMode_Invalid>Invalid</RV2_StruggleForceMode_Invalid>
+  <RV2_StruggleForceMode_WhenForced>When Forced</RV2_StruggleForceMode_WhenForced>
+  <RV2_StruggleForceMode_WhenNotForced>When Not Forced</RV2_StruggleForceMode_WhenNotForced>
+  <RV2_StruggleForceMode_Never>Never</RV2_StruggleForceMode_Never>
+  <RV2_StruggleForceMode_Always>Always</RV2_StruggleForceMode_Always>
+
+  <!-- QuirkRarity -->
+  <RV2_QuirkRarity_Invalid>Invalid</RV2_QuirkRarity_Invalid>
+  <RV2_QuirkRarity_ForcedOnly>Forced Only</RV2_QuirkRarity_ForcedOnly>
+  <RV2_QuirkRarity_Guaranteed>Guaranteed</RV2_QuirkRarity_Guaranteed>
+  <RV2_QuirkRarity_Abundant>Abundant</RV2_QuirkRarity_Abundant>
+  <RV2_QuirkRarity_Common>Common</RV2_QuirkRarity_Common>
+  <RV2_QuirkRarity_Uncommon>Uncommon</RV2_QuirkRarity_Uncommon>
+  <RV2_QuirkRarity_Rare>Rare</RV2_QuirkRarity_Rare>
+  <RV2_QuirkRarity_VeryRare>Very Rare</RV2_QuirkRarity_VeryRare>
+</LanguageData>

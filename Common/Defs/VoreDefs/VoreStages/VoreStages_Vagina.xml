@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <RimVore2.VoreStageDef Abstract="True" Name="Vagina_Base">
+    <partName>genitals</partName>
+    <displayPartTranslationKey>RV2_DisplayPart_Vagina</displayPartTranslationKey>
+    <requirements>
+      <li>
+        <target>Predator</target>
+        <requirements>
+          <li Class="RimVore2.Requirement_HediffAlias">
+            <bodyPartAlias>genitals</bodyPartAlias>
+            <hediffAlias>vagina</hediffAlias>
+          </li>
+        </requirements>
+      </li>
+    </requirements>
+  </RimVore2.VoreStageDef>
+  
+  <RimVore2.VoreStageDef Abstract="True" Name="Vagina_Pass" ParentName="Vagina_Base">
+    <partGoal>Pass</partGoal>
+    <canReverseDirection>true</canReverseDirection>
+    <predatorHediffDef>RV2_PreyInVaginaPassing</predatorHediffDef>
+    <predatorThoughtDef>RV2_PreyInVaginaPassing</predatorThoughtDef>
+    <onStart>
+      <actions>
+        <li Class="RimVore2.RollAction_PlaySound">
+          <sound>RV2_Squish</sound>
+        </li>
+      </actions>
+    </onStart>
+    <passConditions>
+      <li Class="RimVore2.StagePassCondition_Timed">
+        <duration>8</duration>
+      </li>
+    </passConditions>
+  </RimVore2.VoreStageDef>
+
+  <!-- Enter -->
+  <RimVore2.VoreStageDef Name="Vagina_Enter" ParentName="Vagina_Pass">
+    <defName>Vagina_Enter</defName>
+    <onStart>
+      <actions>
+        <li Class="RimVore2.RollAction_RecordTale_VoreInitiation"/>
+      </actions>
+    </onStart>
+    <onEnd>
+      <actions>
+        <li Class="RimVore2.RollAction_PlaySound">
+          <sound>RV2_Slurp</sound>
+        </li>
+      </actions>
+    </onEnd>
+  </RimVore2.VoreStageDef>
+
+  <!-- Pleasure (also functions as an Entrance) -->
+  <RimVore2.VoreStageDef Name="Vagina_Enter_Pleasure" ParentName="Vagina_Enter">
+    <defName>Vagina_Enter_Pleasure</defName>
+    <partGoal>Pleasure</partGoal>
+    <canReverseDirection>true</canReverseDirection>
+    <predatorHediffDef>RV2_PreyInVaginaPleasuring</predatorHediffDef>
+    <predatorThoughtDef>RV2_PreyInVaginaPleasuring</predatorThoughtDef>
+    <onStart>
+      <actions>
+        <li Class="RimVore2.RollAction_PlaySound">
+          <sound>RV2_Squish</sound>
+        </li>
+        <li Class="RimVore2.RollAction_RecordTale_VoreInitiation"/>
+      </actions>
+      <rollPresets>
+        <li>Sound_Moan_Chance</li>
+      </rollPresets>
+    </onStart>
+    <onCycle>
+      <rollPresets>
+        <li>Sound_Squish_2</li>
+        <li>Sound_Moan_Chance_3</li>
+        <li>StealNeed_ForPrey_Food</li>
+        <li>IncreaseNeed_Predator_Comfort</li>
+        <li>IncreaseNeed_Prey_Comfort</li>
+      </rollPresets>
+    </onCycle>
+    <onEnd>
+      <actions>
+        <li Class="RimVore2.RollAction_PlaySound">
+          <sound>RV2_Orgasm</sound>
+        </li>
+        <li Class="RimVore2.RollAction_ShowMote">
+          <mote>RV2_Mote_Heart</mote>
+        </li>
+      </actions>
+    </onEnd>
+    <passConditions>
+      <li Class="RimVore2.StagePassCondition_Need">
+        <target>Predator</target>
+        <need>Comfort</need>
+        <targetLevel>0.6</targetLevel>
+      </li>
+      <!-- inherit base timed condition as well -->
+    </passConditions>
+  </RimVore2.VoreStageDef>
+
+  <!-- Exit -->
+  <RimVore2.VoreStageDef Name="Vagina_Exit" ParentName="Vagina_Pass">
+    <defName>Vagina_Exit</defName>
+    <predatorHediffDef>RV2_PreyInVaginaExiting</predatorHediffDef>
+    <predatorThoughtDef>RV2_PreyInVaginaExiting</predatorThoughtDef>
+    <canReverseDirection>false</canReverseDirection>
+    <onStart>
+      <actions>
+        <li Class="RimVore2.RollAction_PlaySound">
+          <sound>RV2_Squish</sound>
+        </li>
+      </actions>
+    </onStart>
+    <onCycle>
+      <rollPresets>
+        <li>Sound_Squish_2</li>
+      </rollPresets>
+    </onCycle>
+    <onEnd>
+      <actions>
+        <li Class="RimVore2.RollAction_PlaySound">
+          <sound>RV2_Splatter</sound>
+        </li>
+        <li Class="RimVore2.RollAction_RecordTale_VoreExit"/>
+      </actions>
+    </onEnd>
+    <passConditions Inherit="False">
+      <li Class="RimVore2.StagePassCondition_Timed">
+        <duration>100</duration>
+      </li>
+    </passConditions>
+  </RimVore2.VoreStageDef>
+
+  <!-- Exit Pleasure -->
+  <RimVore2.VoreStageDef Name="Vagina_Exit_Pleasure" ParentName="Vagina_Exit">
+    <defName>Vagina_Exit_Pleasure</defName>
+    <predatorThoughtDef>RV2_PreyInVaginaExitingOrgasm</predatorThoughtDef>
+    <onCycle>
+      <rollPresets>
+        <li>Sound_Moan_Chance_3</li>
+        <li>StealNeed_ForPrey_Food</li>
+        <li>IncreaseNeed_Predator_Comfort</li>
+        <li>IncreaseNeed_Prey_Comfort</li>
+      </rollPresets>
+    </onCycle>
+    <onEnd>
+      <actions>
+        <li Class="RimVore2.RollAction_PlaySound">
+          <sound>RV2_Orgasm</sound>
+        </li>
+      </actions>
+    </onEnd>
+  </RimVore2.VoreStageDef>
+
+  <!-- Exit Dump-->
+  <RimVore2.VoreStageDef Name="Vagina_Dump" ParentName="Vagina_Exit">
+    <defName>Vagina_Dump</defName>
+    <partGoal>Dump</partGoal>
+    <predatorHediffDef>RV2_PreyInVaginaDumping</predatorHediffDef>
+    <predatorThoughtDef>RV2_PreyInVaginaDumpingOrgasm</predatorThoughtDef>
+    <onCycle>
+      <rollPresets>
+        <li>Sound_Moan_Chance_3</li>
+        <li>IncreaseNeed_Predator_Comfort</li>
+      </rollPresets>
+    </onCycle>
+    <onEnd>
+      <actions>
+        <li Class="RimVore2.RollAction_PlaySound">
+          <sound>RV2_Orgasm</sound>
+        </li>
+        <li Class="RimVore2.RollAction_PlaySound">
+          <sound>RV2_Sploosh</sound>
+        </li>        
+      </actions>
+    </onEnd>
+  </RimVore2.VoreStageDef>
+  
+</Defs>

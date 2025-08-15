@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net481</TargetFramework>
+    <OutputPath>..\..\$(Configuration)\Assemblies\</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <Configurations>1.4;1.5</Configurations>
+  </PropertyGroup>
+
+  <!-- version specific constants -->
+  <PropertyGroup Condition="'$(Configuration)' == '1.4'">
+    <DefineConstants>v1_4</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == '1.5'">
+    <DefineConstants>v1_5</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='1.4|AnyCPU'">
+    <NoWarn>1701;1702;CS0649</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='1.5|AnyCPU'">
+    <NoWarn>1701;1702;CS0649</NoWarn>
+  </PropertyGroup>
+  
+  <!-- nuget packages -->
+  <ItemGroup>
+    <PackageReference Include="Krafs.Rimworld.Ref" Version="$(Configuration).*-*">
+      <ExcludeAssets>runtime</ExcludeAssets>
+    </PackageReference>
+    <PackageReference Include="Lib.Harmony" Version="*">
+      <ExcludeAssets>runtime</ExcludeAssets>
+    </PackageReference>
+  </ItemGroup>
+  
+</Project>

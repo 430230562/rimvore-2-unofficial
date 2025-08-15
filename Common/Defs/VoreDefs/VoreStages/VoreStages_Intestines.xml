@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+  <RimVore2.VoreStageDef Abstract="True" Name="Intestines_Base">
+    <partName>anus</partName>
+    <displayPartTranslationKey>RV2_DisplayPart_Intestines</displayPartTranslationKey>
+    <requirements>
+      <li>
+        <target>Predator</target>
+        <requirements>
+          <li Class="RimVore2.Requirement_HediffAlias">
+            <bodyPartAlias>anus</bodyPartAlias>
+            <hediffAlias>anus</hediffAlias>
+          </li>
+        </requirements>
+      </li>
+    </requirements>
+  </RimVore2.VoreStageDef>
+  
+  <!-- ESEGN: Intestines stages previously didn't increase prey rest need so they'd always come out very tired, which was annoying. Added it to relevant stages. -->
+  <!-- ESEGN: Similarly true for prey food need, added the steal need roll to them as well -->
+
+  <!-- Exit -->
+  <RimVore2.VoreStageDef Abstract="True" Name="Intestines_Exit" ParentName="Intestines_Base">
+    <partGoal>Pass</partGoal>
+    <onCycle>
+      <rollPresets>
+        <li>Sound_Churn_Chance_30</li>
+        <li>StealNeed_ForPrey_Food</li>
+        <li>IncreaseNeed_Prey_Rest</li>
+      </rollPresets>
+    </onCycle>
+    <passConditions>
+      <li Class="RimVore2.StagePassCondition_Timed">
+        <duration>100</duration>
+      </li>
+    </passConditions>
+  </RimVore2.VoreStageDef>
+
+  <!-- Exit -->
+  <RimVore2.VoreStageDef ParentName="Intestines_Exit">
+    <defName>Intestines_Exit</defName>
+    <predatorHediffDef>RV2_PreyInIntestinesExiting</predatorHediffDef>
+    <predatorThoughtDef>RV2_PreyInIntestinesExiting</predatorThoughtDef>
+    <canReverseDirection>false</canReverseDirection>
+  </RimVore2.VoreStageDef>
+  
+  <!-- Exit Pleasure -->
+  <RimVore2.VoreStageDef ParentName="Intestines_Exit">
+    <defName>Intestines_Exit_Pleasure</defName>
+    <predatorHediffDef>RV2_PreyInIntestinesExiting</predatorHediffDef>
+    <predatorThoughtDef>RV2_PreyInIntestinesExiting</predatorThoughtDef>
+    <canReverseDirection>false</canReverseDirection>
+    <onCycle>
+      <rollPresets>
+        <li>IncreaseNeed_Predator_Comfort</li>
+        <li>IncreaseNeed_Prey_Comfort</li>
+      </rollPresets>
+    </onCycle>
+  </RimVore2.VoreStageDef>
+  
+  <!-- Enter -->
+  <RimVore2.VoreStageDef Name="Intestines_Pass" ParentName="Intestines_Base">
+    <defName>Intestines_Enter</defName>
+    <predatorHediffDef>RV2_PreyInIntestinesPassing</predatorHediffDef>
+    <predatorThoughtDef>RV2_PreyInIntestinesPassing</predatorThoughtDef>
+    <partGoal>Pass</partGoal>
+    <onCycle>
+      <rollPresets>
+        <li>Sound_Churn_10</li>
+      </rollPresets>
+    </onCycle>
+    <passConditions>
+      <li Class="RimVore2.StagePassCondition_Timed">
+        <duration>36</duration>
+      </li>
+    </passConditions>
+  </RimVore2.VoreStageDef>
+  
+  <!-- Pleasure -->
+  <RimVore2.VoreStageDef ParentName="Intestines_Base">
+    <defName>Intestines_Pleasure</defName>
+    <predatorHediffDef>RV2_PreyInIntestinesPleasuring</predatorHediffDef>
+    <predatorThoughtDef>RV2_PreyInIntestinesPleasuring</predatorThoughtDef>
+    <partGoal>Pleasure</partGoal>
+    <jumpKey>Intestines</jumpKey>
+    <onCycle>
+      <rollPresets>
+        <li>Sound_Churn_10</li>
+        <li>StealNeed_ForPrey_Food</li>
+        <li>IncreaseNeed_Predator_Comfort</li>
+        <li>IncreaseNeed_Prey_Comfort</li>
+        <li>Sound_Toot_Chance_15</li>
+        <li>Sound_Moan_Chance_15</li>
+      </rollPresets>
+    </onCycle>
+    <onEnd>
+      <actions>
+        <li Class="RimVore2.RollAction_PlaySound">
+          <sound>RV2_Orgasm</sound>
+        </li>
+        <li Class="RimVore2.RollAction_RecordTale_GoalFinish"/>
+      </actions>
+    </onEnd>
+    <passConditions>
+      <li Class="RimVore2.StagePassCondition_Need">
+        <target>Prey</target>
+        <need>Comfort</need>
+        <targetLevel>0.95</targetLevel>
+      </li>
+      <li Class="RimVore2.StagePassCondition_Need">
+        <target>Predator</target>
+        <need>Comfort</need>
+        <targetLevel>0.95</targetLevel>
+      </li>
+    </passConditions>
+  </RimVore2.VoreStageDef>
+  
+  <!-- Process -->
+  <RimVore2.VoreStageDef ParentName="Intestines_Base">
+    <defName>Intestines_Process</defName>
+    <predatorHediffDef>RV2_PreyInIntestinesProcessing</predatorHediffDef>
+    <predatorThoughtDef>RV2_PreyInIntestinesProcessing</predatorThoughtDef>
+    <partGoal>Process</partGoal>
+    <canReverseDirection>false</canReverseDirection>
+    <onStart>
+      <actions>
+        <li Class="RimVore2.RollAction_PassValue_Set">
+          <name>PreyNutrition</name>
+          <type>PreyNutrition</type>
+        </li>
+      </actions>
+    </onStart>
+    <onCycle>
+      <rollPresets>
+        <li>IncreaseNeed_Predator_Food</li>
+        <li>Mote_BubbleDigest</li>
+        <li>Sound_Churn_Chance_5</li>
+        <li>Sound_Gurgle_Chance_5</li>
+        <li>Sound_Toot_Chance_15</li>
+        <li>ConvertNutritionToContainerItem</li>
+      </rollPresets>
+    </onCycle>
+    <passConditions>
+      <li Class="RimVore2.StagePassCondition_PassValue">
+        <passValueName>PreyNutrition</passValueName>
+        <targetValue>0</targetValue>
+        <decreasing>true</decreasing>
+      </li>
+    </passConditions>
+    <onEnd>
+      <actions>
+        <li Class="RimVore2.RollAction_ShowMote">
+          <mote>RV2_Mote_BubbleDigest</mote>
+        </li>
+        <li Class="RimVore2.RollAction_PlaySound">
+          <sound>RV2_Fart</sound>
+        </li>
+        <li Class="RimVore2.RollAction_RecordTale_GoalFinish"/>
+      </actions>
+    </onEnd>
+  </RimVore2.VoreStageDef>
+  
+  <!-- Store / Hold -->
+  <RimVore2.VoreStageDef Name="Intestines_Store" ParentName="Intestines_Base">
+    <defName>Intestines_Store</defName>
+    <partGoal>Store</partGoal>
+    <canReverseDirection>true</canReverseDirection>
+    <predatorHediffDef>RV2_PreyInIntestinesStoring</predatorHediffDef>
+    <predatorThoughtDef>RV2_PreyInIntestinesStoring</predatorThoughtDef>
+    <jumpKey>Intestines</jumpKey>
+    <onCycle>
+      <rollPresets>
+        <li>Sound_Churn_Chance_30</li>
+        <li>StealNeed_ForPrey_Food</li>
+        <li>IncreaseNeed_Prey_Rest</li>
+      </rollPresets>
+    </onCycle>
+    <onEnd>
+      <actions>
+        <li Class="RimVore2.RollAction_RecordTale_GoalFinish"/>
+      </actions>
+    </onEnd>
+    <passConditions>
+      <li Class="RimVore2.StagePassCondition_Manual"/>
+    </passConditions>
+  </RimVore2.VoreStageDef>
+  
+  <RimVore2.VoreStageDef ParentName="Intestines_Store">
+    <defName>Intestines_Hold</defName>
+    <partGoal>Hold</partGoal>
+    <passConditions Inherit="False">
+      <li Class="RimVore2.StagePassCondition_Timed">
+        <duration>36</duration>
+      </li>
+    </passConditions>
+  </RimVore2.VoreStageDef>
+</Defs>

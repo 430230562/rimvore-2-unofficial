@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Used in Precepts -->
+  <HistoryEventDef>
+    <defName>RV2_Vore</defName>
+    <label>Vore</label>
+  </HistoryEventDef>
+  <HistoryEventDef>
+    <defName>RV2_FatalVore</defName>
+    <label>Fatal vore</label>
+  </HistoryEventDef>
+  <HistoryEventDef>
+    <defName>RV2_EndoVore</defName>
+    <label>Endo vore</label>
+  </HistoryEventDef>
+  <HistoryEventDef>
+    <defName>RV2_HumanoidPrey</defName>
+    <label>Humanoid vored</label>
+  </HistoryEventDef>
+  <HistoryEventDef>
+    <defName>RV2_AnimalPrey</defName>
+    <label>Animal vored</label>
+  </HistoryEventDef>
+  <HistoryEventDef>
+    <defName>RV2_AnimalPrey_Venerated</defName>
+    <label>Venerated animal vored</label>
+  </HistoryEventDef>
+  <HistoryEventDef>
+    <defName>RV2_HumanoidPredator</defName>
+    <label>Humanoid vored</label>
+  </HistoryEventDef>
+  <HistoryEventDef>
+    <defName>RV2_AnimalPredator</defName>
+    <label>Animal vored</label>
+  </HistoryEventDef>
+  <HistoryEventDef>
+    <defName>RV2_AnimalPredator_Venerated</defName>
+    <label>Venerated animal vored</label>
+  </HistoryEventDef>
+  <HistoryEventDef>
+    <defName>RV2_PreyInitiatedVore</defName>
+    <label>Vore initiated by prey</label>
+  </HistoryEventDef>
+  <HistoryEventDef>
+    <defName>RV2_PredatorInitiatedVore</defName>
+    <label>Vore initiated by predator</label>
+  </HistoryEventDef>
+  <HistoryEventDef>
+    <defName>RV2_FeederInitiatedVore</defName>
+    <label>Vore initiated by feeder</label>
+  </HistoryEventDef>
+  <HistoryEventDef>
+    <defName>RV2_ConsumedVoreProduct</defName>
+    <label>Vore product consumed</label>
+  </HistoryEventDef>
+  <HistoryEventDef>
+    <defName>RV2_InstalledVoreEnabler</defName>
+    <label>Vore enabler installed</label>
+  </HistoryEventDef>
+  <HistoryEventDef>
+    <defName>RV2_InterruptedVore</defName>
+    <label>Interrupted vore</label>
+  </HistoryEventDef>
+  <HistoryEventDef>
+    <defName>RV2_OralVore</defName>
+    <label>Oral vore</label>
+  </HistoryEventDef>
+  <HistoryEventDef>
+    <defName>RV2_AnalVore</defName>
+    <label>Anal vore</label>
+  </HistoryEventDef>
+  <HistoryEventDef>
+    <defName>RV2_VaginalVore</defName>
+    <label>Vaginal vore</label>
+  </HistoryEventDef>
+  <HistoryEventDef>
+    <defName>RV2_CockVore</defName>
+    <label>Cock vore</label>
+  </HistoryEventDef>
+  <HistoryEventDef>
+    <defName>RV2_NippleVore</defName>
+    <label>Nipple vore</label>
+  </HistoryEventDef>
+  
+</Defs>

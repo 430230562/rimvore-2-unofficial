@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Predator side -->
+
+  <RimVore2.QuirkPoolDef>
+    <defName>GenderPreference_Predator</defName>
+    <label>Predator gender preference</label>
+    <category>Role Preference</category>
+    <description>Quirks that dictate what gender preferences a predator might have when choosing prey. Please note that these preferences are not influenced by a pawn's sexuality.</description>
+    <generationOrder>3</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>GenderPreference_Predator_FemaleOnly</li>
+      <li>GenderPreference_Predator_FemalePreferred</li>
+      <li>GenderPreference_Predator_Neutral</li>
+      <li>GenderPreference_Predator_MalePreferred</li>
+      <li>GenderPreference_Predator_MaleOnly</li>
+    </quirks>
+    <blockingQuirks>
+      <li>PredatorDisposition_Refuses</li>
+    </blockingQuirks>
+    <blockingKeywords>
+      <li>PawnIsAnimal</li>
+    </blockingKeywords>
+  </RimVore2.QuirkPoolDef>
+
+  <RimVore2.QuirkDef>
+    <defName>GenderPreference_Predator_FemaleOnly</defName>
+    <label>Exclusive Gynophage</label>
+    <description>[PAWN_label] exclusively prefers female prey, and will never willingly eat a man.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <gender>Female</gender>
+          <role>Predator</role>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <gender>Male</gender>
+          <role>Predator</role>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>PreyIsFemale</li>
+        </keywords>
+        <memory>RV2_GenderPreferenceQuirkSatisfaction_Predator_Female_VeryGood</memory>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>PreyIsMale</li>
+        </keywords>
+        <memory>RV2_GenderPreferenceQuirkSatisfaction_Predator_Male_Bad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>GenderPreference_Predator_FemalePreferred</defName>
+    <label>Gynophagic Tendencies</label>
+    <description>[PAWN_label] prefers female prey, but may make occasional exceptions.</description>
+    <rarity>Uncommon</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <gender>Female</gender>
+          <role>Predator</role>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <gender>Male</gender>
+          <role>Predator</role>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>PreyIsFemale</li>
+        </keywords>
+        <memory>RV2_GenderPreferenceQuirkSatisfaction_Predator_Female_Good</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>GenderPreference_Predator_Neutral</defName>
+    <label>Gender Indifferent</label>
+    <description>The gender of their prey is not a consideration for [PAWN_label]. Prey is prey; doesn’t matter what they look like.</description>
+    <rarity>Common</rarity>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>GenderPreference_Predator_MalePreferred</defName>
+    <label>Androphagic Tendencies</label>
+    <description>[PAWN_label] prefers male prey, but may make occasional exceptions.</description>
+    <rarity>Uncommon</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <gender>Male</gender>
+          <role>Predator</role>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <gender>Female</gender>
+          <role>Predator</role>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>PreyIsMale</li>
+        </keywords>
+        <memory>RV2_GenderPreferenceQuirkSatisfaction_Predator_Male_Good</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>GenderPreference_Predator_MaleOnly</defName>
+    <label>Exclusive Androphage</label>
+    <description>[PAWN_label] exclusively prefers male prey, and will never willingly eat a woman.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <gender>Male</gender>
+          <role>Predator</role>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <gender>Female</gender>
+          <role>Predator</role>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>PreyIsMale</li>
+        </keywords>
+        <memory>RV2_GenderPreferenceQuirkSatisfaction_Predator_Male_VeryGood</memory>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>PreyIsFemale</li>
+        </keywords>
+        <memory>RV2_GenderPreferenceQuirkSatisfaction_Predator_Female_Bad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  
+  
+  
+  
+  
+  
+  <!-- Prey -->
+
+  <RimVore2.QuirkPoolDef>
+    <defName>GenderPreference_Prey</defName>
+    <label>Prey gender preference</label>
+    <category>Role Preference</category>
+    <description>Quirks that dictate what gender preferences a prey might have when choosing a predator. Please note that these preferences are not influenced by a pawn's sexuality.</description>
+    <generationOrder>3</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>GenderPreference_Prey_FemaleOnly</li>
+      <li>GenderPreference_Prey_FemalePreferred</li>
+      <li>GenderPreference_Prey_Neutral</li>
+      <li>GenderPreference_Prey_MalePreferred</li>
+      <li>GenderPreference_Prey_MaleOnly</li>
+    </quirks>
+    <blockingQuirks>
+      <li>PreyDisposition_Refuses</li>
+    </blockingQuirks>
+    <blockingKeywords>
+      <li>PawnIsAnimal</li>
+    </blockingKeywords>
+  </RimVore2.QuirkPoolDef>
+
+  <RimVore2.QuirkDef>
+    <defName>GenderPreference_Prey_FemaleOnly</defName>
+    <label>Exclusive Gynephile</label>
+    <description>[PAWN_label] exclusively prefers female predators, and will never willingly let [PAWN_objective]self be consumed by a man.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <gender>Female</gender>
+          <role>Prey</role>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <gender>Male</gender>
+          <role>Prey</role>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>PredatorIsFemale</li>
+        </keywords>
+        <memory>RV2_GenderPreferenceQuirkSatisfaction_Prey_Female_VeryGood</memory>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>PredatorIsMale</li>
+        </keywords>
+        <memory>RV2_GenderPreferenceQuirkSatisfaction_Prey_Male_Bad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>GenderPreference_Prey_FemalePreferred</defName>
+    <label>Gynephilic Tendencies</label>
+    <description>[PAWN_label] prefers female predators, but may make occasional exceptions.</description>
+    <rarity>Uncommon</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <gender>Female</gender>
+          <role>Prey</role>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <gender>Male</gender>
+          <role>Prey</role>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>PredatorIsFemale</li>
+        </keywords>
+        <memory>RV2_GenderPreferenceQuirkSatisfaction_Prey_Female_Good</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>GenderPreference_Prey_Neutral</defName>
+    <label>Gender Indifferent</label>
+    <description>The gender of the predator is not a consideration for [PAWN_label]. Everyone looks the same on the inside!</description>
+    <rarity>Common</rarity>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>GenderPreference_Prey_MalePreferred</defName>
+    <label>Androphilic Tendencies</label>
+    <description>[PAWN_label] prefers male predators, but may make occasional exceptions.</description>
+    <rarity>Uncommon</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <gender>Male</gender>
+          <role>Prey</role>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <gender>Female</gender>
+          <role>Prey</role>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>PredatorIsMale</li>
+        </keywords>
+        <memory>RV2_GenderPreferenceQuirkSatisfaction_Prey_Male_Good</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>GenderPreference_Prey_MaleOnly</defName>
+    <label>Exclusive Androphile</label>
+    <description>[PAWN_label] exclusively prefers male predators, and will never willingly let [PAWN_objective]self be consumed by a woman.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <gender>Male</gender>
+          <role>Prey</role>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <gender>Female</gender>
+          <role>Prey</role>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>PredatorIsMale</li>
+        </keywords>
+        <memory>RV2_GenderPreferenceQuirkSatisfaction_Prey_Male_VeryGood</memory>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>PredatorIsFemale</li>
+        </keywords>
+        <memory>RV2_GenderPreferenceQuirkSatisfaction_Prey_Female_Bad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+</Defs>

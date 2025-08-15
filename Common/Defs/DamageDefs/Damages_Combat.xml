@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <DamageDef ParentName="BluntBase">
+    <defName>RV2_GrappleDamage</defName>
+    <label>grapple</label>
+    <workerClass>DamageWorker_Blunt</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} has been grappled to death.</deathMessage>
+    <hediff>Crush</hediff>
+    <hediffSkin>Bruise</hediffSkin>
+    <hediffSolid>Crack</hediffSolid>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <impactSoundType>Blunt</impactSoundType>
+    <armorCategory>Blunt</armorCategory>
+    <overkillPctToDestroyPart>0</overkillPctToDestroyPart>
+    <buildingDamageFactor>0</buildingDamageFactor>
+    <bluntStunDuration>0</bluntStunDuration>
+    <bluntInnerHitChance>0</bluntInnerHitChance>
+    <bluntInnerHitDamageFractionToConvert>0</bluntInnerHitDamageFractionToConvert>
+    <bluntInnerHitDamageFractionToAdd>0</bluntInnerHitDamageFractionToAdd>
+    <bluntStunChancePerDamagePctOfCorePartToHeadCurve Inherit="False"/>
+    <bluntStunChancePerDamagePctOfCorePartToBodyCurve Inherit="False"/>
+  </DamageDef>
+  
+</Defs>

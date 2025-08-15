@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <RV2_Settings_TabNames_PM>Pawnmorpher</RV2_Settings_TabNames_PM>
+  <RV2_PM_Settings_PawnmorpherAnimalReformation>Animals reform prey as former human</RV2_PM_Settings_PawnmorpherAnimalReformation>
+  <RV2_PM_Settings_PawnmorpherAnimalReformation_Tip>If enabled, sapient prey reformed by an animal or former human will reform into a former human of themself instead of a non-sapient animal.</RV2_PM_Settings_PawnmorpherAnimalReformation_Tip>
+</LanguageData>

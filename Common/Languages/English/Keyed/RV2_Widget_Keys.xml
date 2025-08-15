@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- Widget Descriptions -->
+  <RV2_Widget_IsPredatorAutoOnDesc>Currently allowed to vore other pawns.\nAutomatically assigned by settings</RV2_Widget_IsPredatorAutoOnDesc>
+  <RV2_Widget_IsPredatorAutoOffDesc>Currently not allowed to vore other pawns.\nAutomatically assigned by settings</RV2_Widget_IsPredatorAutoOffDesc>
+  <RV2_Widget_IsPredatorManualOnDesc>Currently allowed to vore other pawns.\nManually assigned by player</RV2_Widget_IsPredatorManualOnDesc>
+  <RV2_Widget_IsPredatorManualOffDesc>Currently not allowed to vore other pawns.\nManually assigned by player</RV2_Widget_IsPredatorManualOffDesc>
+  <RV2_Widget_IsNeverPredatorDesc>Can not vore other pawns.</RV2_Widget_IsNeverPredatorDesc>
+
+  <RV2_Widget_IsEndoPreyAutoOnDesc>Currently allowed to be non-fatally vored by other pawns.\nAutomatically assigned by settings</RV2_Widget_IsEndoPreyAutoOnDesc>
+  <RV2_Widget_IsEndoPreyAutoOffDesc>Currently not allowed to be non-fatally vored by other pawns.\nAutomatically assigned by settings</RV2_Widget_IsEndoPreyAutoOffDesc>
+  <RV2_Widget_IsEndoPreyManualOnDesc>Currently allowed to be non-fatally vored by other pawns.\nManually assigned by player</RV2_Widget_IsEndoPreyManualOnDesc>
+  <RV2_Widget_IsEndoPreyManualOffDesc>Currently not allowed to be non-fatally vored by other pawns.\nManually assigned by player</RV2_Widget_IsEndoPreyManualOffDesc>
+  <RV2_Widget_IsNeverEndoPreyDesc>Can not be non-fatally vored by other pawns.</RV2_Widget_IsNeverEndoPreyDesc>
+
+  <RV2_Widget_IsFatalPreyAutoOnDesc>Currently allowed to be fatally vored by other pawns.\nAutomatically assigned by settings</RV2_Widget_IsFatalPreyAutoOnDesc>
+  <RV2_Widget_IsFatalPreyAutoOffDesc>Currently not allowed to be fatally vored by other pawns.\nAutomatically assigned by settings</RV2_Widget_IsFatalPreyAutoOffDesc>
+  <RV2_Widget_IsFatalPreyManualOnDesc>Currently allowed to be fatally vored by other pawns.\nManually assigned by player</RV2_Widget_IsFatalPreyManualOnDesc>
+  <RV2_Widget_IsFatalPreyManualOffDesc>Currently not allowed to be fatally vored by other pawns.\nManually assigned by player</RV2_Widget_IsFatalPreyManualOffDesc>
+  <RV2_Widget_IsNeverFatalPreyDesc>Can not be fatally vored by other pawns.</RV2_Widget_IsNeverFatalPreyDesc>
+
+  <RV2_Widget_Grapple_UnavailablePrefix>(Unavailable)\n</RV2_Widget_Grapple_UnavailablePrefix>
+  <RV2_Widget_Grapple>Force the pawn to walk to and initiate a vore grapple with the selected target</RV2_Widget_Grapple>
+
+  <RV2_Command_ToggleGrapple_DescOn>This pawn is currently allowed to use grapple moves during combat</RV2_Command_ToggleGrapple_DescOn>
+  <RV2_Command_ToggleGrapple_DescOff>This pawn is currently NOT allowed to use grapple moves during combat</RV2_Command_ToggleGrapple_DescOff>
+  
+</LanguageData>

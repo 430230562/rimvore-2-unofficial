@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/RimVore2.VoreStageDef[@Name="Womb_Base"]</xpath>
+    <value>
+      <onStart>
+        <rolls>
+          <li>
+            <actionsOnSuccess>
+              <li Class="RV2_RJW.RollAction_AbortPregnancies"/>
+            </actionsOnSuccess>
+          </li>
+        </rolls>
+      </onStart>
+    </value>
+  </Operation>
+</Patch>

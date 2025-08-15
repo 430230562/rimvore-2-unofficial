@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <MemeDef>
+    <defName>RV2_Preyism</defName>
+    <label>Preyism</label>
+    <description>We live only to be vored.</description>
+    <iconPath>UI/Memes/prey</iconPath>
+    <groupDef>Misc</groupDef>
+    <impact>3</impact>
+    <renderOrder>999</renderOrder>
+    <requireOne>
+      <li>
+        <li>RV2_VoreProductEating_Preferred</li>
+        <li>RV2_VoreProductEating_Required</li>
+      </li>
+    </requireOne>
+    <generalRules>
+      <rulesStrings>
+        <li>memeAdjective->vorny</li>
+        <li>memeAdjective->voracious</li>
+        <li>memeAdjective->preyish</li>
+        <li>memeAdjective->sheepish</li>
+        <li>memeCreed->vorists</li>
+        <li>memeCreed->prey</li>
+        <li>memeCreed->gutsluts</li>
+        <li>memeCreed->cult</li>
+        <li>memeCreed->consumables</li>
+        <li>memeHyphenPrefix->vore</li>
+        <li>memeHyphenPrefix->prey</li>
+        <li>memeConcept->voring</li>
+        <li>memeConcept->consumption</li>
+        <li>memeConcept->voraciousness</li>
+        <li>memeConcept->preyism</li>
+        <li>memeConcept->pleasure</li>
+        <li>memeLeaderNoun->prey</li>
+        <li>memeLeaderNoun->vore priest</li>
+        <li>memePreyism->first-eaten</li>
+        <li>memePreyism->massage-toy</li>
+        <li>memePreyism->gutslut</li>
+      </rulesStrings>
+    </generalRules>
+    <descriptionMaker>
+      <rules>
+        <rulesStrings>
+           <!--theist myth--> 
+          <li>creation(tag=meme_RV2_Preyism)        ->[deity0_name] was the first to love [deity0_possessive] lover enough to offer [deity0_possessive]self to them. By being the very first to commit to this act of ultimate intimacy, [deity0_name] became the first of gods.</li>
+          <li>episode(uses=1,tag=meme_RV2_Preyism)  ->The [deity0_type] [deity0_name] was eaten whole by [deity0_possessive] friends. With [deity0_possessive] divine powers [deity0_possessive] could resurrect from any state of digestion.</li>
+           <!--theist founder--> 
+          <li>intro(tag=meme_RV2_Preyism)           ->On the [place_summary] [place_name], there was a human named [deity0_name]. After conflicts broke out, [deity0_name] began [deity0_possessive] quest of uniting the fighting neighbours by showing them the joy of being vored, becoming the first [deity0_type].</li>
+          <li>intro(tag=meme_RV2_Preyism)           ->On the [place_summary] [place_name], during the [ritualName], [deity0_name] came down into the [altarRoomLabel] to be vored by the cult leader in front of the [memberNamePlural], lending [deity0_possessive] to them.</li>
+          <li>conflict(tag=meme_RV2_Preyism)        ->A [foeLeader] declared that all who willingly let themselves be vored are to be conquered and subjugated, and sent [foeSoldiers] to persecute the [memberNamePlural].</li>
+          <li>founderJoin(tag=meme_RV2_Preyism)     ->A [place_job] named [founderName] was attacked by one of the [foeLeader]'s [foeSoldiers]. [founderName] wounded [foeLeader_objective] with a [place_personalWeapon] and decided to show [foeLeader_possessive] mercy. Finally grasping the infinite wisdom of [founderName]s ways, [foeLeader] converted and started praising [deity0_name].</li>
+          <li>victory(tag=meme_RV2_Preyism)         ->[founderName] led a group of [memberNamePlural] into the occupied [place_powerCenter], convinced the [foeLeader]s soldiers to lay down [foeLeader_possessive] weapons. Watching this display of peaceful prowess, [deity0_name] made [founderName] into the new [foeLeader].</li>
+           <!--ideological founder--> 
+          <li>setup(tag=meme_RV2_Preyism)           ->[founderName] crashlanded on a distant world. Surrounded by hostile forces, [founder_pronoun] befriended the leaders by massaging their insides and was worshipped for her skills.</li>
+          <li>story(uses=1,tag=meme_RV2_Preyism)    ->To consecrate their commitment, [founderName] demanded that believers show their devotion to each other by being vored at least once a week.</li>
+           <!--ideological lesson--> 
+          <li>lessonIntro(tag=meme_RV2_Preyism)         ->The most important lesson to learn as a divine prey:</li>
+          <li>lesson(tag=meme_RV2_Preyism)              ->no act is more divine than giving yourself to those you love</li>
+          <li>lesson(tag=meme_RV2_Preyism)              ->even those that do not follow our ways can be swayed with enough massages from the inside</li>
+          <li>lessonReinforcement(tag=meme_RV2_Preyism) ->Before we accept new members, we must make sure they understand this.</li>
+           <!--archist--> 
+          <li>archistBasis(tag=meme_RV2_Preyism)    ->The only explanation for the archotech god-machines strength and virility is that they learned to overtake and control their predators from the inside.</li>
+          <li>archistFact(tag=meme_RV2_Preyism)     ->As the consciousness of an archotech expands, it must grow its substrate by taking over the biomatter of anyone consuming them.</li>
+          <li>archistProphecy(tag=meme_RV2_Preyism) ->[inTheEnd], the archotechs will finish their final phase of growth by being consumed by the last predator, ushering in the end of all.</li>
+           <!--animist--> 
+          <li>animistBasis(tag=meme_RV2_Preyism)    ->Spirits infuse all objects around us, and we can harmonize with these spirits by acting as prey.</li>
+          <li>animistFact(tag=meme_RV2_Preyism)     ->We can absorb the spirit and grow our own power by being consumed.</li>
+        </rulesStrings>
+      </rules>
+    </descriptionMaker>
+    <symbolPacks>
+      <li>
+        <ideoName>Voreligion</ideoName>
+        <theme>vore</theme>
+        <adjective>vore</adjective>
+        <member>vorist</member>
+      </li>
+      <li>
+        <ideoName>Preyism</ideoName>
+        <theme>vore</theme>
+        <adjective>tasty</adjective>
+        <member>prey</member>
+      </li>
+    </symbolPacks>
+    <thingStyleCategories>
+      <li>
+        <category>Rustic</category>
+        <priority>3</priority>
+      </li>
+    </thingStyleCategories>
+  </MemeDef>
+</Defs>

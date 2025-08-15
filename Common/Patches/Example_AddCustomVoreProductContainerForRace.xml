@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <!-- this DefModExtension allows you to provide an alternative ThingDef (which should inherit from RV2_Container_Base) for each vore path. This DefModExtension is added to the ThingDef of the race -->
+  <!-- and no, this doesn't do anything, nor does an ice block for vore products exist. But you could make one and enable this patch :) -->
+  <!--<Operation Class="PatchOperationAddModExtension">
+    <xpath>/Defs/ThingDef[defName="FairyIce"]</xpath>
+    <value>
+      <li Class="RimVore2.RaceDef_AlternativeVoreProductContainer">
+        <alternativeContainersForPaths>
+          <li>
+            <key>OralDigest</key> --><!-- VorePathDef reference--><!--
+            <value>MyCustomStuff_IceBlockWithVoreProducts</value> --><!-- ThingDef reference --><!--
+          </li>
+        </alternativeContainersForPaths>
+      </li>
+    </value>
+  </Operation>-->
+</Patch>

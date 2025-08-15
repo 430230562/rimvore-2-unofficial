@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <DamageDef LoadIfDate="01.04.">
+    <defName>BoomDay_NitroStomachExplosion</defName>
+    <label>The BOOM GODS look upon your pawns with disdain</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+    <isExplosive>true</isExplosive>
+    <deathMessage>{0} couldn't bear the love of the BOOM GODS.</deathMessage>
+    <hediff>Shredded</hediff>
+    <hediffSolid>Crack</hediffSolid>
+    <!--<harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>-->
+    <impactSoundType>Blunt</impactSoundType>
+    <armorCategory>Sharp</armorCategory>
+    <!--<minDamageToFragment>15</minDamageToFragment>-->
+    <defaultDamage>9999</defaultDamage>
+    <defaultStoppingPower>1</defaultStoppingPower>
+    <defaultArmorPenetration>1</defaultArmorPenetration>
+    <buildingDamageFactor>99999</buildingDamageFactor>
+    <plantDamageFactor>99999</plantDamageFactor>
+    <explosionAffectOutsidePartsOnly>false</explosionAffectOutsidePartsOnly>
+    <explosionHeatEnergyPerCell>99</explosionHeatEnergyPerCell>
+    <explosionCellFleck>BlastDry</explosionCellFleck>
+    <explosionColorCenter>(0.25, 0.86, 1)</explosionColorCenter>
+    <explosionColorEdge>(0.17, 0.13, 0.76)</explosionColorEdge>
+    <soundExplosion>Explosion_Bomb</soundExplosion>
+    <combatLogRules>Damage_Bomb</combatLogRules>
+  </DamageDef>
+</Defs>

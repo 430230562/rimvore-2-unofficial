@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RimVore2.QuirkPoolDef>
+    <defName>PostVoreAbilities</defName>
+    <label>Post vore abilities</label>
+    <category>Post-Vore</category>
+    <description>These quirks give pawns custom abilities that are triggered after vore.</description>
+    <generationOrder>5</generationOrder>
+    <poolType>RollForEach</poolType>
+    <quirks>
+      <li>PostVoreAbilities_SkillAbsorb</li>
+      <li>PostVoreAbilities_TraitAbsorb</li>
+      <li>PostVoreAbilities_PsyfocusGainPrey</li>
+      <li>PostVoreAbilities_PsyfocusGainPredator</li>
+      <!--<li>ProductPreference_ChainVore</li>-->
+    </quirks>
+    <blockingKeywords>
+      <li>PawnIsAnimal</li>
+    </blockingKeywords>
+  </RimVore2.QuirkPoolDef>
+
+  <RimVore2.QuirkDef>
+    <defName>PostVoreAbilities_SkillAbsorb</defName>
+    <label>Skill absorb</label>
+    <description>[PAWN_label] has a 20% chance of absorbing experience from [PAWN_possessive] preys highest skill.</description>
+    <rarity>VeryRare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_PostVoreAction">
+        <triggerAsRole>true</triggerAsRole>
+        <roleToTrigger>Predator</roleToTrigger>
+        <rolls>
+          <li>
+            <strength>1</strength>
+            <strengthModifiers>
+              <li Class="RimVore2.RollModifier_RandomValue">
+                <valueRange>0.2~1</valueRange>
+              </li>
+            </strengthModifiers>
+            <successChance>0.2</successChance>
+            <actionsOnSuccess>
+              <li Class="RimVore2.RollAction_StealSkill">
+                <takeFrom>Prey</takeFrom>
+                <giveTo>Predator</giveTo>
+                <useFixed>false</useFixed>
+                <useGiversBest>true</useGiversBest>
+              </li>
+            </actionsOnSuccess>
+          </li>
+        </rolls>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkDef>
+    <defName>PostVoreAbilities_PsyfocusGainPrey</defName>
+    <label>Psyfocus gain (prey)</label>
+    <description>[PAWN_label] has a 20% chance of gaining psyfocus after being vored.</description>
+    <rarity>VeryRare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_PostVoreAction">
+        <triggerAsRole>true</triggerAsRole>
+        <roleToTrigger>Prey</roleToTrigger>
+        <rolls>
+          <li>
+            <strength>0.01~0.2</strength>
+            <strengthModifiers>
+              <li Class="RimVore2.RollModifier_Stat">
+                <target>Prey</target>
+                <stat>PsychicSensitivity</stat>
+              </li>
+            </strengthModifiers>
+            <successChance>0.2</successChance>
+            <actionsOnSuccess>
+              <li Class="RimVore2.RollAction_GainPsyfocus">
+                <target>Prey</target>
+              </li>
+            </actionsOnSuccess>
+          </li>
+        </rolls>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>PostVoreAbilities_PsyfocusGainPredator</defName>
+    <label>Psyfocus gain (predator)</label>
+    <description>[PAWN_label] has a 20% chance of gaining psyfocus after doing vore.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_PostVoreAction">
+        <triggerAsRole>true</triggerAsRole>
+        <roleToTrigger>Predator</roleToTrigger>
+        <rolls>
+          <li>
+            <strength>0.01~0.2</strength>
+            <strengthModifiers>
+              <li Class="RimVore2.RollModifier_Stat">
+                <target>Predator</target>
+                <stat>PsychicSensitivity</stat>
+              </li>
+            </strengthModifiers>
+            <successChance>0.2</successChance>
+            <actionsOnSuccess>
+              <li Class="RimVore2.RollAction_GainPsyfocus">
+                <target>Predator</target>
+              </li>
+            </actionsOnSuccess>
+          </li>
+        </rolls>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkDef>
+    <defName>PostVoreAbilities_TraitAbsorb</defName>
+    <label>Trait absorb</label>
+    <description>[PAWN_label] has a 20% chance of absorbing a random trait from [PAWN_possessive] prey.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_PostVoreAction">
+        <triggerAsRole>true</triggerAsRole>
+        <roleToTrigger>Predator</roleToTrigger>
+        <rolls>
+          <li>
+            <strength>1</strength>
+            <successChance>1</successChance>
+            <actionsOnSuccess>
+              <li Class="RimVore2.RollAction_StealTrait">
+                <takeFrom>Prey</takeFrom>
+                <giveTo>Predator</giveTo>
+              </li>
+            </actionsOnSuccess>
+          </li>
+        </rolls>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+</Defs>

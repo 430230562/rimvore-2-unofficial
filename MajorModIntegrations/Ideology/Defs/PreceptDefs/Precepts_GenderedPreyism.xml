@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <IssueDef>
+    <defName>RV2_GenderedPreyism</defName>
+    <label>Gendered preyism</label>
+    <iconPath>UI/Issues/GenderedPreyism</iconPath>
+  </IssueDef>
+  
+  <PreceptDef>
+    <defName>RV2_GenderedPreyism_FemaleOnly</defName>
+    <issue>RV2_GenderedPreyism</issue>
+    <label>female predators only</label>
+    <description>Only females may be predators.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <associatedMemes>
+      <li>RV2_Preyism</li>
+    </associatedMemes>
+    <comps>
+      <li Class="RimVore2.PreceptComp_Quirk_RemoveQuirks">
+        <quirks>
+          <li>GenderPreference_Prey_FemalePreferred</li>
+          <li>GenderPreference_Prey_Neutral</li>
+          <li>GenderPreference_Prey_MalePreferred</li>
+          <li>GenderPreference_Prey_MaleOnly</li>
+        </quirks>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>RV2_GenderedPreyism_FemalePreferred</defName>
+    <issue>RV2_GenderedPreyism</issue>
+    <label>female predators encouraged</label>
+    <description>Females should be predators.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <associatedMemes>
+      <li>RV2_Preyism</li>
+    </associatedMemes>
+    <comps>
+      <li Class="RimVore2.PreceptComp_Quirk_RemoveQuirks">
+        <quirks>
+          <li>GenderPreference_Prey_Neutral</li>
+          <li>GenderPreference_Prey_MalePreferred</li>
+          <li>GenderPreference_Prey_MaleOnly</li>
+        </quirks>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>RV2_GenderedPreyism_MalePreferred</defName>
+    <issue>RV2_GenderedPreyism</issue>
+    <label>male predators encouraged</label>
+    <description>Males should be predators.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <associatedMemes>
+      <li>RV2_Preyism</li>
+    </associatedMemes>
+    <comps>
+      <li Class="RimVore2.PreceptComp_Quirk_RemoveQuirks">
+        <quirks>
+          <li>GenderPreference_Prey_FemaleOnly</li>
+          <li>GenderPreference_Prey_FemalePreferred</li>
+          <li>GenderPreference_Prey_Neutral</li>
+        </quirks>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>RV2_GenderedPreyism_MaleOnly</defName>
+    <issue>RV2_GenderedPreyism</issue>
+    <label>male predators only</label>
+    <description>Only males may be predators.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <associatedMemes>
+      <li>RV2_Preyism</li>
+    </associatedMemes>
+    <comps>
+      <li Class="RimVore2.PreceptComp_Quirk_RemoveQuirks">
+        <quirks>
+          <li>GenderPreference_Prey_FemaleOnly</li>
+          <li>GenderPreference_Prey_FemalePreferred</li>
+          <li>GenderPreference_Prey_Neutral</li>
+          <li>GenderPreference_Prey_MalePreferred</li>
+        </quirks>
+      </li>
+    </comps>
+  </PreceptDef>
+
+</Defs>

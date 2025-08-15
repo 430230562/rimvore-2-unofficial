@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <RV2_UseGrappleGizmoInvalid_DisabledInSettings>Disabled in settings</RV2_UseGrappleGizmoInvalid_DisabledInSettings>
+	<RV2_GrappleInvalid_RaceUnable>{0} can't grapple</RV2_GrappleInvalid_RaceUnable>
+	<RV2_GrappleInvalid_AlreadyGrappling>{0} is already grappling</RV2_GrappleInvalid_AlreadyGrappling>
+	<RV2_GrappleInvalid_ChanceIsZero>{0} has 0 chance to succeed</RV2_GrappleInvalid_ChanceIsZero>
+</LanguageData>
+
+<!-- RV2_GrappleInvalid_ -->

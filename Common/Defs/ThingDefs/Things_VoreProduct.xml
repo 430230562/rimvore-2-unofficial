@@ -1,0 +1,136 @@
+<Defs>
+  <ThingDef Abstract="True" Name ="RV2_Product_Base">
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <useHitPoints>true</useHitPoints>
+    <selectable>true</selectable>
+    <statBases>
+      <MaxHitPoints>20</MaxHitPoints>
+      <Flammability>0.75</Flammability>
+      <Beauty>0</Beauty>
+      <Mass>0.5</Mass>
+      <DeteriorationRate>10</DeteriorationRate>
+      <MarketValue>0</MarketValue>
+    </statBases>
+    <altitudeLayer>Item</altitudeLayer>
+    <stackLimit>75</stackLimit>
+    <tickerType>Rare</tickerType>
+    <socialPropernessMatters>true</socialPropernessMatters>
+    <alwaysHaulable>true</alwaysHaulable>
+    <tradeability>None</tradeability>
+    <generateCommonality>0</generateCommonality>
+    <comps>
+      <li Class="CompProperties_Forbiddable" />
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>14</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+    <pathCost>14</pathCost>
+    <resourceReadoutPriority>Last</resourceReadoutPriority>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <uiIconForStackCount>1</uiIconForStackCount>
+    <modExtensions>
+      <li Class="RimVore2.ThingDef_VoreProductFlag"/>
+    </modExtensions>
+  </ThingDef>
+
+  <!-- consumables -->
+  <ThingDef Abstract="True" Name ="RV2_Product_Consumable_Base" ParentName="RV2_Product_Base">
+    <thingCategories>
+      <li>FoodMeals</li>
+      <li>RV2_VoreProduct</li>
+    </thingCategories>
+    <stackLimit>150</stackLimit>
+    <ingestible>
+      <foodType>Meal</foodType>
+      <maxNumToIngestAtOnce>25</maxNumToIngestAtOnce>
+      <optimalityOffsetHumanlikes>15</optimalityOffsetHumanlikes>
+      <optimalityOffsetFeedingAnimals>-10</optimalityOffsetFeedingAnimals>
+      <preferability>MealFine</preferability>
+    </ingestible>
+    <modExtensions>
+      <li Class="RimVore2.ConsumableVoreProductFlag"/>
+    </modExtensions>
+  </ThingDef>
+  
+  <ThingDef ParentName="RV2_Product_Consumable_Base">
+    <defName>RV2_Resource_Cum</defName>
+    <label>Cummified pawn</label>
+    <description>What was once a living being, rendered into delicious cum.\nDrinkable.</description>
+    <graphicData>
+      <texPath>Things/VoreProducts/ConsumableCondom</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+    </graphicData>
+    <statBases>
+      <Nutrition>0.05</Nutrition>
+    </statBases>
+    <ingestible>
+      <tasteThought>RV2_ConsumedDigestedPrey_Cum</tasteThought>
+      <ingestEffect>RV2_DrinkCum</ingestEffect>
+      <ingestSound>Ingest_Drink</ingestSound>
+    </ingestible>
+  </ThingDef>
+
+  <ThingDef ParentName="RV2_Product_Consumable_Base">
+    <defName>RV2_Resource_Milk</defName>
+    <label>Milkified pawn</label>
+    <description>What was once a living being, rendered into delicious milk.\Drinkable.</description>
+    <graphicData>
+      <texPath>Things/VoreProducts/ConsumableMilk</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+    </graphicData>
+    <statBases>
+      <Nutrition>0.05</Nutrition>
+    </statBases>
+    <ingestible>
+      <tasteThought>RV2_ConsumedDigestedPrey_Milk</tasteThought>
+      <ingestEffect>RV2_DrinkCum</ingestEffect>
+      <ingestSound>Ingest_Drink</ingestSound>
+    </ingestible>
+  </ThingDef>
+  
+  <!-- resources -->
+  
+  <ThingDef ParentName="RV2_Product_Base">
+    <defName>RV2_Resource_Scat</defName>
+    <label>Scat</label>
+    <description>The reeking remnants of a digested living being.\nYou can make fertilizer out of this at a crafting spot.</description>
+    <graphicData>
+      <texPath>Things/VoreProducts/Scat</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+    </graphicData>
+    <thingCategories>
+      <li>RV2_FertilizerIngredient</li>
+    </thingCategories>
+  </ThingDef>
+
+  <ThingDef ParentName="RV2_Product_Base">
+    <defName>RV2_Resource_Bones</defName>
+    <label>Bones</label>
+    <description>The acid-bleached bones of a digested living being.\nYou can make fertilizer out of this at a crafting spot.</description>
+    <graphicData>
+      <texPath>Things/VoreProducts/Bones</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+    </graphicData>
+    <thingCategories>
+      <li>RV2_FertilizerIngredient</li>
+    </thingCategories>
+    <comps Inherit="False">
+      <li Class="CompProperties_Forbiddable" />
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="RV2_Product_Base">
+    <defName>RV2_Manufactured_Fertilizer</defName>
+    <label>Fertilizer</label>
+    <description>This sack contains nutritious soil and can be used to build fertilized soil.</description>
+    <graphicData>
+      <texPath>Things/VoreProducts/Fertilizer</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+    </graphicData>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+  </ThingDef>
+</Defs>

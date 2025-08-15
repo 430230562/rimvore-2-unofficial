@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!--FATAL GOALS-->
+  <RimVore2.RV2DesignationDef>
+    <defName>predator</defName>
+    <label>Predator</label>
+    <assignedTo>Predator</assignedTo>
+    <description>Predators are allowed to vore other pawns</description>
+    <iconPathEnabledManually>Widget/predator_manual_on</iconPathEnabledManually>
+    <iconPathDisabledManually>Widget/predator_manual_off</iconPathDisabledManually>
+    <iconPathEnabledAutomatically>Widget/predator_auto_on</iconPathEnabledAutomatically>
+    <iconPathDisabledAutomatically>Widget/predator_auto_off</iconPathDisabledAutomatically>
+    <iconPathBlocked>Widget/predator_deny</iconPathBlocked>
+    <tipEnabledManually>Currently allowed to vore other pawns.\nManually assigned by player</tipEnabledManually>
+    <tipDisabledManually>Currently not allowed to vore other pawns.\nManually assigned by player</tipDisabledManually>
+    <tipEnabledAutomatically>Currently allowed to vore other pawns.\nAutomatically assigned by settings</tipEnabledAutomatically>
+    <tipDisabledAutomatically>Currently not allowed to vore other pawns.\nAutomatically assigned by settings</tipDisabledAutomatically>
+    <tipBlocked>Can not vore other pawns.</tipBlocked>
+  </RimVore2.RV2DesignationDef>
+  <RimVore2.RV2DesignationDef>
+    <defName>fatal</defName>
+    <label>Fatal</label>
+    <lethal>true</lethal>
+    <assignedTo>Prey</assignedTo>
+    <description>Other pawns are allowed to use lethal vore goals on this pawn</description>
+    <iconPathEnabledManually>Widget/fatal_prey_manual_on</iconPathEnabledManually>
+    <iconPathDisabledManually>Widget/fatal_prey_manual_off</iconPathDisabledManually>
+    <iconPathEnabledAutomatically>Widget/fatal_prey_auto_on</iconPathEnabledAutomatically>
+    <iconPathDisabledAutomatically>Widget/fatal_prey_auto_off</iconPathDisabledAutomatically>
+    <iconPathBlocked>Widget/fatal_prey_deny</iconPathBlocked>
+    <tipEnabledManually>Currently allowed to be fatally vored by other pawns.\nManually assigned by player</tipEnabledManually>
+    <tipDisabledManually>Currently not allowed to be fatally vored by other pawns.\nManually assigned by player</tipDisabledManually>
+    <tipEnabledAutomatically>Currently allowed to be fatally vored by other pawns.\nAutomatically assigned by settings</tipEnabledAutomatically>
+    <tipDisabledAutomatically>Currently not allowed to be fatally vored by other pawns.\nAutomatically assigned by settings</tipDisabledAutomatically>
+    <tipBlocked>Can not be fatally vored by other pawns.</tipBlocked>
+  </RimVore2.RV2DesignationDef>
+  <RimVore2.RV2DesignationDef>
+    <defName>endo</defName>
+    <label>Endo</label>
+    <assignedTo>Prey</assignedTo>
+    <description>Other pawns are allowed to use non-lethal vore goals on this pawn</description>
+    <iconPathEnabledManually>Widget/endo_prey_manual_on</iconPathEnabledManually>
+    <iconPathDisabledManually>Widget/endo_prey_manual_off</iconPathDisabledManually>
+    <iconPathEnabledAutomatically>Widget/endo_prey_auto_on</iconPathEnabledAutomatically>
+    <iconPathDisabledAutomatically>Widget/endo_prey_auto_off</iconPathDisabledAutomatically>
+    <iconPathBlocked>Widget/endo_prey_deny</iconPathBlocked>
+    <tipEnabledManually>Currently allowed to be non-fatally vored by other pawns.\nManually assigned by player</tipEnabledManually>
+    <tipDisabledManually>Currently not allowed to be non-fatally vored by other pawns.\nManually assigned by player</tipDisabledManually>
+    <tipEnabledAutomatically>Currently allowed to be non-fatally vored by other pawns.\nAutomatically assigned by settings</tipEnabledAutomatically>
+    <tipDisabledAutomatically>Currently not allowed to be non-fatally vored by other pawns.\nAutomatically assigned by settings</tipDisabledAutomatically>
+    <tipBlocked>Can not be non-fatally vored by other pawns.</tipBlocked>
+  </RimVore2.RV2DesignationDef>
+</Defs>

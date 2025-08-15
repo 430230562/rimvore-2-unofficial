@@ -1,0 +1,66 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31710.8
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RimVore2", "RimVore2.csproj", "{2EEE05FF-7533-4B46-8512-BCA0ECC0C7BC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightGenitals", "..\LightGenitals\Source\LightGenitals.csproj", "{9C34684C-96FC-4AE9-AA09-F1259CE5E007}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Integrations", "Integrations", "{4D73297E-2CBE-4EAA-A934-DB1E85DEF064}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RV2_DBH_Integration", "..\MajorModIntegrations\Dubs Bad Hygiene\Source\RV2_DBH_Integration.csproj", "{93D9A929-B99E-41F8-8BE1-2F408DE142ED}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RV2_PawnMorpher_Integration", "..\MajorModIntegrations\Pawnmorpher\Source\RV2_PawnMorpher_Integration.csproj", "{77EFFB11-4D85-48D4-B06A-BF632ACFB14A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RV2_RJW_Integration", "..\MajorModIntegrations\RimJobWorld\Source\RV2_RJW_Integration.csproj", "{C46395C7-1FC0-48F1-9F11-0AE46A119158}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RV2_RimRound_Integration", "..\MajorModIntegrations\RimRound\Source\RV2_RimRound_Integration.csproj", "{1C593C7B-AB93-4C1C-85FD-097ECBA37510}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RV2_RealisticManhunters_Integration", "..\MajorModIntegrations\Realistic Manhunters\Source\RV2_RealisticManhunters_Integration.csproj", "{03DC3930-9397-44C9-B599-34ED11D70405}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		1.5|Any CPU = 1.5|Any CPU
+		1.6|Any CPU = 1.6|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2EEE05FF-7533-4B46-8512-BCA0ECC0C7BC}.1.5|Any CPU.ActiveCfg = 1.5|Any CPU
+		{2EEE05FF-7533-4B46-8512-BCA0ECC0C7BC}.1.5|Any CPU.Build.0 = 1.5|Any CPU
+		{2EEE05FF-7533-4B46-8512-BCA0ECC0C7BC}.1.6|Any CPU.ActiveCfg = 1.6|Any CPU
+		{2EEE05FF-7533-4B46-8512-BCA0ECC0C7BC}.1.6|Any CPU.Build.0 = 1.6|Any CPU
+		{9C34684C-96FC-4AE9-AA09-F1259CE5E007}.1.5|Any CPU.ActiveCfg = 1.5|Any CPU
+		{9C34684C-96FC-4AE9-AA09-F1259CE5E007}.1.5|Any CPU.Build.0 = 1.5|Any CPU
+		{9C34684C-96FC-4AE9-AA09-F1259CE5E007}.1.6|Any CPU.ActiveCfg = 1.6|Any CPU
+		{9C34684C-96FC-4AE9-AA09-F1259CE5E007}.1.6|Any CPU.Build.0 = 1.6|Any CPU
+		{93D9A929-B99E-41F8-8BE1-2F408DE142ED}.1.5|Any CPU.ActiveCfg = 1.5|Any CPU
+		{93D9A929-B99E-41F8-8BE1-2F408DE142ED}.1.5|Any CPU.Build.0 = 1.5|Any CPU
+		{93D9A929-B99E-41F8-8BE1-2F408DE142ED}.1.6|Any CPU.ActiveCfg = 1.6|Any CPU
+		{77EFFB11-4D85-48D4-B06A-BF632ACFB14A}.1.5|Any CPU.ActiveCfg = 1.5|Any CPU
+		{77EFFB11-4D85-48D4-B06A-BF632ACFB14A}.1.5|Any CPU.Build.0 = 1.5|Any CPU
+		{77EFFB11-4D85-48D4-B06A-BF632ACFB14A}.1.6|Any CPU.ActiveCfg = 1.6|Any CPU
+		{C46395C7-1FC0-48F1-9F11-0AE46A119158}.1.5|Any CPU.ActiveCfg = 1.5|Any CPU
+		{C46395C7-1FC0-48F1-9F11-0AE46A119158}.1.5|Any CPU.Build.0 = 1.5|Any CPU
+		{C46395C7-1FC0-48F1-9F11-0AE46A119158}.1.6|Any CPU.ActiveCfg = 1.6|Any CPU
+		{1C593C7B-AB93-4C1C-85FD-097ECBA37510}.1.5|Any CPU.ActiveCfg = 1.5|Any CPU
+		{1C593C7B-AB93-4C1C-85FD-097ECBA37510}.1.5|Any CPU.Build.0 = 1.5|Any CPU
+		{1C593C7B-AB93-4C1C-85FD-097ECBA37510}.1.6|Any CPU.ActiveCfg = 1.6|Any CPU
+		{03DC3930-9397-44C9-B599-34ED11D70405}.1.5|Any CPU.ActiveCfg = 1.5|Any CPU
+		{03DC3930-9397-44C9-B599-34ED11D70405}.1.5|Any CPU.Build.0 = 1.5|Any CPU
+		{03DC3930-9397-44C9-B599-34ED11D70405}.1.6|Any CPU.ActiveCfg = 1.6|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9C34684C-96FC-4AE9-AA09-F1259CE5E007} = {4D73297E-2CBE-4EAA-A934-DB1E85DEF064}
+		{93D9A929-B99E-41F8-8BE1-2F408DE142ED} = {4D73297E-2CBE-4EAA-A934-DB1E85DEF064}
+		{77EFFB11-4D85-48D4-B06A-BF632ACFB14A} = {4D73297E-2CBE-4EAA-A934-DB1E85DEF064}
+		{C46395C7-1FC0-48F1-9F11-0AE46A119158} = {4D73297E-2CBE-4EAA-A934-DB1E85DEF064}
+		{1C593C7B-AB93-4C1C-85FD-097ECBA37510} = {4D73297E-2CBE-4EAA-A934-DB1E85DEF064}
+		{03DC3930-9397-44C9-B599-34ED11D70405} = {4D73297E-2CBE-4EAA-A934-DB1E85DEF064}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9B65ED56-78C1-4B17-B23E-3EEF3B2C2AD0}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RecipeDef Name="RV2_InstallVoreEnabler_Base" ParentName="SurgeryFlesh" Abstract="True">
+    <workerClass>Recipe_InstallImplant</workerClass>
+    <workAmount>2500</workAmount>
+    <skillRequirements>
+      <Medicine>1</Medicine>
+    </skillRequirements>
+    <recipeUsers>
+      <li>Human</li>
+    </recipeUsers>
+    <jobString>Installing vore enabler.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>Medicine</li>
+          </categories>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>Medicine</li>
+      </categories>
+    </fixedIngredientFilter>
+  </RecipeDef>
+  
+  <!-- Goal Enablers 
+  These mainly unlock new goals for a pawn's exisiting types. -->
+  
+  <RecipeDef ParentName="RV2_InstallVoreEnabler_Base">
+    <defName>RV2_InstallGoalEnabler_ConvertLube</defName>
+    <label>Install lubrifactive enzyme seeder</label>
+    <description>Install the enzyme seeder required to allow turning prey into lube.</description>
+    <descriptionHyperlinks>
+      <ThingDef>RV2_GoalEnabler_ConvertLube</ThingDef>
+      <HediffDef>RV2_GoalEnabler_ConvertLube</HediffDef>
+    </descriptionHyperlinks>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>RV2_GoalEnabler_ConvertLube</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>RV2_GoalEnabler_ConvertLube</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <targetsBodyPart>false</targetsBodyPart>
+    <addsHediff>RV2_GoalEnabler_ConvertLube</addsHediff>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="RV2_InstallVoreEnabler_Base">
+    <defName>RV2_InstallGoalEnabler_ConvertMilk</defName>
+    <label>Install lactifactive enzyme seeder</label>
+    <description>Install the enzyme seeder required to allow turning prey into milk.</description>
+    <descriptionHyperlinks>
+      <ThingDef>RV2_GoalEnabler_ConvertMilk</ThingDef>
+      <HediffDef>RV2_GoalEnabler_ConvertMilk</HediffDef>
+    </descriptionHyperlinks>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>RV2_GoalEnabler_ConvertMilk</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>RV2_GoalEnabler_ConvertMilk</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <targetsBodyPart>false</targetsBodyPart>
+    <addsHediff>RV2_GoalEnabler_ConvertMilk</addsHediff>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="RV2_InstallVoreEnabler_Base">
+    <defName>RV2_InstallGoalEnabler_ConvertSperm</defName>
+    <label>Install spermifactive enzyme seeder</label>
+    <description>Install the enzyme seeder required to allow turning prey into sperm.</description>
+    <descriptionHyperlinks>
+      <ThingDef>RV2_GoalEnabler_ConvertSperm</ThingDef>
+      <HediffDef>RV2_GoalEnabler_ConvertSperm</HediffDef>
+    </descriptionHyperlinks>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>RV2_GoalEnabler_ConvertSperm</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>RV2_GoalEnabler_ConvertSperm</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <targetsBodyPart>false</targetsBodyPart>
+    <addsHediff>RV2_GoalEnabler_ConvertSperm</addsHediff>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="RV2_InstallVoreEnabler_Base">
+    <defName>RV2_InstallGoalEnabler_Digest</defName>
+    <label>Install hyperdigestive enzyme seeder</label>
+    <description>Install the enzyme seeder required to allow digesting prey.</description>
+    <descriptionHyperlinks>
+      <ThingDef>RV2_GoalEnabler_Digest</ThingDef>
+      <HediffDef>RV2_GoalEnabler_Digest</HediffDef>
+    </descriptionHyperlinks>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>RV2_GoalEnabler_Digest</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>RV2_GoalEnabler_Digest</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <targetsBodyPart>false</targetsBodyPart>
+    <addsHediff>RV2_GoalEnabler_Digest</addsHediff>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="RV2_InstallVoreEnabler_Base">
+    <defName>RV2_InstallGoalEnabler_TempEndo</defName>
+    <label>Install internal hospitality adjuster (Hold, Pleasure)</label>
+    <description>Install the adjustments required to allow temporary, comfortable, and safe ingestion of prey.</description>
+    <descriptionHyperlinks>
+      <ThingDef>RV2_GoalEnabler_TempEndo</ThingDef>
+      <HediffDef>RV2_GoalEnabler_TempEndo</HediffDef>
+    </descriptionHyperlinks>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>RV2_GoalEnabler_TempEndo</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>RV2_GoalEnabler_TempEndo</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <targetsBodyPart>false</targetsBodyPart>
+    <addsHediff>RV2_GoalEnabler_TempEndo</addsHediff>
+  </RecipeDef>
+
+  <RecipeDef ParentName="RV2_InstallVoreEnabler_Base">
+    <defName>RV2_InstallGoalEnabler_Store</defName>
+    <label>Install internal hospitality adjuster (Store)</label>
+    <description>Install the adjustments required to allow permanent, comfortable, and safe ingestion of prey.</description>
+    <descriptionHyperlinks>
+      <ThingDef>RV2_GoalEnabler_Store</ThingDef>
+      <HediffDef>RV2_GoalEnabler_Store</HediffDef>
+    </descriptionHyperlinks>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>RV2_GoalEnabler_Store</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>RV2_GoalEnabler_Store</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <targetsBodyPart>false</targetsBodyPart>
+    <addsHediff>RV2_GoalEnabler_Store</addsHediff>
+  </RecipeDef>
+
+  <RecipeDef ParentName="RV2_InstallVoreEnabler_Base">
+    <defName>RV2_InstallGoalEnabler_Heal</defName>
+    <label>Install regenerative enzyme seeder (Heal)</label>
+    <description>Install the gland allowing healing vore.</description>
+    <descriptionHyperlinks>
+      <ThingDef>RV2_GoalEnabler_Heal</ThingDef>
+      <HediffDef>RV2_GoalEnabler_Heal</HediffDef>
+    </descriptionHyperlinks>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>RV2_GoalEnabler_Heal</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>RV2_GoalEnabler_Heal</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <targetsBodyPart>false</targetsBodyPart>
+    <addsHediff>RV2_GoalEnabler_Heal</addsHediff>
+  </RecipeDef>
+
+  <RecipeDef ParentName="RV2_InstallVoreEnabler_Base">
+    <defName>RV2_InstallGoalEnabler_Reform</defName>
+    <label>Install reproductive enzyme seeder (Reform)</label>
+    <description>Install the nanites allowing reformation vore.</description>
+    <descriptionHyperlinks>
+      <ThingDef>RV2_GoalEnabler_Reform</ThingDef>
+      <HediffDef>RV2_GoalEnabler_Reform</HediffDef>
+    </descriptionHyperlinks>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>RV2_GoalEnabler_Reform</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>RV2_GoalEnabler_Reform</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <targetsBodyPart>false</targetsBodyPart>
+    <addsHediff>RV2_GoalEnabler_Reform</addsHediff>
+  </RecipeDef>
+  
+  <!-- Type Enablers 
+  These mainly unlock new types for a pawn's exisiting goals. -->
+  
+  <RecipeDef ParentName="RV2_InstallVoreEnabler_Base">
+    <defName>RV2_InstallTypeEnabler_Oral</defName>
+    <label>Install oral elasticizer</label>
+    <description>Install the elasticizer required to allow oral vore.</description>
+    <descriptionHyperlinks>
+      <ThingDef>RV2_TypeEnabler_Oral</ThingDef>
+      <HediffDef>RV2_TypeEnabler_Oral</HediffDef>
+    </descriptionHyperlinks>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>RV2_TypeEnabler_Oral</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>RV2_TypeEnabler_Oral</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Torso</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>RV2_TypeEnabler_Oral</addsHediff>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="RV2_InstallVoreEnabler_Base">
+    <defName>RV2_InstallTypeEnabler_Anal</defName>
+    <label>Install anal elasticizer</label>
+    <description>Install the elasticizer required to allow anal vore.</description>
+    <descriptionHyperlinks>
+      <ThingDef>RV2_TypeEnabler_Anal</ThingDef>
+      <HediffDef>RV2_TypeEnabler_Anal</HediffDef>
+    </descriptionHyperlinks>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>RV2_TypeEnabler_Anal</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>RV2_TypeEnabler_Anal</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Torso</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>RV2_TypeEnabler_Anal</addsHediff>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="RV2_InstallVoreEnabler_Base">
+    <defName>RV2_InstallTypeEnabler_Vaginal</defName>
+    <label>Install vaginal elasticizer</label>
+    <description>Install the elasticizer required to allow vaginal vore.</description>
+    <descriptionHyperlinks>
+      <ThingDef>RV2_TypeEnabler_Vaginal</ThingDef>
+      <HediffDef>RV2_TypeEnabler_Vaginal</HediffDef>
+    </descriptionHyperlinks>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>RV2_TypeEnabler_Vaginal</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>RV2_TypeEnabler_Vaginal</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Torso</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>RV2_TypeEnabler_Vaginal</addsHediff>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="RV2_InstallVoreEnabler_Base">
+    <defName>RV2_InstallTypeEnabler_Cock</defName>
+    <label>Install penile elasticizer</label>
+    <description>Install the elasticizer required to allow cock vore.</description>
+    <descriptionHyperlinks>
+      <ThingDef>RV2_TypeEnabler_Cock</ThingDef>
+      <HediffDef>RV2_TypeEnabler_Cock</HediffDef>
+    </descriptionHyperlinks>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>RV2_TypeEnabler_Cock</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>RV2_TypeEnabler_Cock</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Torso</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>RV2_TypeEnabler_Cock</addsHediff>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="RV2_InstallVoreEnabler_Base">
+    <defName>RV2_InstallTypeEnabler_Nipple</defName>
+    <label>Install nipple elasticizer</label>
+    <description>Install the elasticizer required to allow nipple vore.</description>
+    <descriptionHyperlinks>
+      <ThingDef>RV2_TypeEnabler_Nipple</ThingDef>
+      <HediffDef>RV2_TypeEnabler_Nipple</HediffDef>
+    </descriptionHyperlinks>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>RV2_TypeEnabler_Nipple</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>RV2_TypeEnabler_Nipple</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Torso</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>RV2_TypeEnabler_Nipple</addsHediff>
+  </RecipeDef>
+  
+</Defs> 

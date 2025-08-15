@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net481</TargetFramework>
+    <OutputPath>..\$(Configuration)\Assemblies\</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <Configurations>1.4;1.5;1.6</Configurations>
+  </PropertyGroup>
+
+  <!-- version specific constants -->
+  <PropertyGroup Condition="'$(Configuration)' == '1.3'">
+    <DefineConstants>v1_3</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == '1.4'">
+    <DefineConstants>v1_4</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == '1.5'">
+    <DefineConstants>v1_5</DefineConstants>
+  </PropertyGroup>
+  
+  <!-- nuget packages -->
+  <ItemGroup>
+    <PackageReference Include="Krafs.Rimworld.Ref" Version="$(Configuration).*-*">
+      <ExcludeAssets>runtime</ExcludeAssets>
+    </PackageReference>
+    <PackageReference Include="Lib.Harmony" Version="*">
+      <ExcludeAssets>runtime</ExcludeAssets>
+    </PackageReference>
+  </ItemGroup>
+  
+  <!-- local references -->
+  <ItemGroup>
+    <Reference Include="RJW">
+      <HintPath>..\..\..\..\rjw\$(Configuration)\Assemblies\RJW.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RimVore2">
+      <HintPath>..\..\..\$(Configuration)\Assemblies\RimVore2.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  
+</Project>

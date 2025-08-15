@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RimVore2.QuirkPoolDef>
+    <defName>DigestionStrength</defName>
+    <label>Digestion strength</label>
+	<category>Digestion</category>
+	<description>These quirks determine how powerful a pawn's various organs are for all forms of chemical digestion: true nourishing digestion, conversion into another material, assimilation, and any others.</description>
+    <generationOrder>3</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>DigestionStrength_Godlike</li>
+      <li>DigestionStrength_VeryGood</li>
+      <li>DigestionStrength_Good</li>
+      <li>DigestionStrength_Normal</li>
+      <li>DigestionStrength_Bad</li>
+      <li>DigestionStrength_VeryBad</li>
+    </quirks>
+  </RimVore2.QuirkPoolDef>
+  
+    <RimVore2.QuirkDef>
+    <defName>DigestionStrength_Godlike</defName>
+    <label>Godlike Digestion</label>
+    <description>Whether due to magic or a technology that's not yet understood, [PAWN_label]'s digestive abilities are in a class of their own, capable of liquifying an entire Thrumbo in minutes.</description>
+    <rarity>VeryRare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>DigestionStrength</modifierName>
+        <modifierValue>10</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkDef>
+    <defName>DigestionStrength_VeryGood</defName>
+    <label>Scouring acid</label>
+    <description>[PAWN_label] can turn prey into nutrient soup in the blink of an eye--or, at least, four times as fast as most predators.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>DigestionStrength</modifierName>
+        <modifierValue>4</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkDef>
+    <defName>DigestionStrength_Good</defName>
+    <label>Potent acid</label>
+    <description>[PAWN_label] can digest prey about twice as fast as most predators.</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>DigestionStrength</modifierName>
+        <modifierValue>2</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkDef>
+    <defName>DigestionStrength_Normal</defName>
+    <label>Normal acid strength</label>
+    <hidden>true</hidden>
+    <description>[PAWN_label] digests prey at a normal speed.</description>
+    <rarity>Abundant</rarity>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkDef>
+    <defName>DigestionStrength_Bad</defName>
+    <label>Weak acid</label>
+    <description>[PAWN_label] takes about twice as long to digest live meals as most predators.</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>DigestionStrength</modifierName>
+        <modifierValue>0.67</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkDef>
+    <defName>DigestionStrength_VeryBad</defName>
+    <label>Watery acid</label>
+    <description>[PAWN_label] takes about four times as long to digest prey as most predators. [PAWN_possessive] food is liable to die of boredom before dying of melting.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>DigestionStrength</modifierName>
+        <modifierValue>0.5</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+</Defs>

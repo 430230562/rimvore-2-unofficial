@@ -1,0 +1,1292 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+  <ThoughtDef Name="RV2_VoreThoughtSituationBase" Abstract="true">
+    <workerClass>RimVore2.ThoughtWorker_Situation_Vore</workerClass>
+  </ThoughtDef>
+  
+  <!-- currently unused 
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_FallbackPredatorThought</defName>
+    <stages>
+      <li>
+        <label>Prey inside</label>
+        <description>Feels good.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+      <li>
+        <label>Multiple prey inside</label>
+        <description>Oof...</description>
+        <baseMoodEffect>0</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  -->
+  
+  <!-- Anus -->
+  
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInAnusDumping</defName>
+    <stages>
+      <li>
+        <label>Dumping remains out of ass</label>
+        <description>Good riddance!</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+      <li>
+        <label>Dumping multiple remains out of ass</label>
+        <description>I'm gonna be sitting here a while...</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInAnusExiting</defName>
+    <stages>
+      <li>
+        <label>Dumping live prey out of ass</label>
+        <description>Time's up!</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+      <li>
+        <label>Dumping multiple live prey out of ass</label>
+        <description>How many people did I eat...?</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInAnusPassing</defName>
+    <stages>
+      <li>
+        <label>Posternating prey</label>
+        <description>Come on through my backdoor, why don't you?~</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+      <li>
+        <label>Posternating multiple prey</label>
+        <description>I'm gonna be walking funny after this...</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInAnusPleasuring</defName>
+    <stages>
+      <li>
+        <label>Pleasuring asshole with prey</label>
+        <description>Come on through my backdoor, why don't you?~</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+      <li>
+        <label>Pleasuring asshole with multiple prey</label>
+        <description>I'm gonna be walking funny after this...</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  -->
+  
+  <!-- Breasts -->
+  
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInBreastsConvertingMilk</defName>
+    <stages>
+      <li>
+        <label>Lactifying prey in breast</label>
+        <description>There's that gentle tingle I love...~</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+      <li>
+        <label>Lactifying two prey in breasts</label>
+        <description>I suppose udders don't have the same symmetry problems. Mmh, I can't wait to have a taste!</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+      <li>
+        <label>Lactifying three prey in breasts</label>
+        <description>I bet cows are envious of me!</description>
+        <baseMoodEffect>15</baseMoodEffect>
+      </li>
+      <li>
+        <label>Lactifying several prey in breasts</label>
+        <description>I'll have enough to feed the colony for days... Or just myself.~</description>
+        <baseMoodEffect>20</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInBreastsDissolvingMilk</defName>
+    <stages>
+      <li>
+        <label>Dissolving prey into breastmilk</label>
+        <description>Ever wanted to nurture something to the fullest?</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+      <li>
+        <label>Dissolving two prey into breastmilk</label>
+        <description>You two'll just be milk flowing from my taps here soon.</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+      <li>
+        <label>Dissolving three prey into breastmilk</label>
+        <description>You think I can't handle a little thrashing in my dugs?</description>
+        <baseMoodEffect>15</baseMoodEffect>
+      </li>
+      <li>
+        <label>Dissolving several prey into breastmilk</label>
+        <description>I hope we can drink all of y'all before you spoil!</description>
+        <baseMoodEffect>20</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInBreastsMushingMilk</defName>
+    <stages>
+      <li>
+        <label>Breaking down prey into breastmilk</label>
+        <description>Gone soft already?</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+      <li>
+        <label>Breaking down two prey into breastmilk</label>
+        <description>Back to the old jiggle-and-wobble.</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+      <li>
+        <label>Breaking down three prey into breastmilk</label>
+        <description>Sure is a shame I can't redistribute the load now that you're churning down. Ah, well!~</description>
+        <baseMoodEffect>15</baseMoodEffect>
+      </li>
+      <li>
+        <label>Breaking down several prey into breastmilk</label>
+        <description>I can already feel that familiar tingle!</description>
+        <baseMoodEffect>20</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInBreastsPleasuring</defName>
+    <stages>
+      <li>
+        <label>Pleasuring prey in breast</label>
+        <description>Don't stop...</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+      <li>
+        <label>Pleasuring two prey in breasts</label>
+        <description>Keep going, both of you...!</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+      <li>
+        <label>Pleasuring three prey in breasts</label>
+        <description>Three... all at once!</description>
+        <baseMoodEffect>15</baseMoodEffect>
+      </li>
+      <li>
+        <label>Pleasuring several prey in breasts</label>
+        <description>I'M GONNA--</description>
+        <baseMoodEffect>20</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInBreastsStoring</defName>
+    <stages>
+      <li>
+        <label>Prey stored in breast</label>
+        <description>My tit's laden. A bit unbalanced, but delightful all the same!</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+      <li>
+        <label>Two prey stored in breasts</label>
+        <description>Two prey, one in each jug: the perfect ratio!</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+      <li>
+        <label>Three prey stored in breasts</label>
+        <description>And back to imbalance--not that I'm complaining!</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+      <li>
+        <label>Several prey stored in breasts</label>
+        <description>I'm so buxom now that you can't even tell if I'm asymmetrical...~</description>
+        <baseMoodEffect>8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase"> 
+    <defName>RV2_PreyInBreastsWarming</defName>
+    <stages>
+      <li>
+        <label>Warming up breast for prey</label>
+        <description>Oh, the plans I have for you!</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+      <li>
+        <label>Warming up breasts for multiple prey</label>
+        <description>Oh, the plans I have for you!</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInBreastsHealing</defName>
+    <stages>
+      <li>
+        <label>Healing prey in breasts</label>
+        <description>Let's get you patched up!</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+      <li>
+        <label>Healing multiple prey in breasts</label>
+        <description>Pretty crowded...</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- Cock -->
+  
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInCockDumpingOrgasm</defName>
+    <stages>
+      <li>
+        <label>Jizzing out remains</label>
+        <description>Let's see how big a load you made!</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+      <li>
+        <label>Jizzing out multiple remains</label>
+        <description>Gonna paint the town white!~</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInCockDumpingStream</defName>
+    <stages>
+      <li>
+        <label>Hosing out remains from cock</label>
+        <description>I feel like a power washer.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+      <li>
+        <label>Hosing out multiple remains from cock</label>
+        <description>I could get a job as a public fountain!</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInCockExiting</defName>
+    <stages>
+      <li>
+        <label>Jizzing out live prey</label>
+        <description>You've earned your freedom, little cumsluts!~</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+      <li>
+        <label>Jizzing out multiple live prey</label>
+        <description>OH SWEET MERCY, ONE AT A TIME!</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInCockExitingOrgasm</defName>
+    <stages>
+      <li>
+        <label>Jizzing out live prey</label>
+        <description>You've earned your freedom, little cumsluts!~</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+      <li>
+        <label>Jizzing out multiple live prey</label>
+        <description>OH SWEET MERCY, ONE AT A TIME!</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInCockExitingStream</defName>
+    <stages>
+      <li>
+        <label>Hosing out live prey from cock</label>
+        <description>I'm a living waterslide!</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+      <li>
+        <label>Hosing out multiple live prey from cock</label>
+        <description>Hey! That's too many riders at once!</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInCockPassing</defName>
+    <stages>
+      <li>
+        <label>Unsowing prey</label>
+        <description>That's it, down the chute with you...~</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+      <li>
+        <label>Unsowing multiple prey</label>
+        <description>So... tight...~</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInCockPleasuring</defName>
+    <stages>
+      <li>
+        <label>Sounding with prey</label>
+        <description>Little preything, sounding off!~</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+      <li>
+        <label>Sounding with multiple prey</label>
+        <description>So... tight...</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- Intestines -->
+  
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInIntestinesExiting</defName>
+    <stages>
+      <li>
+        <label>Prey leaving intestines</label>
+        <description>Someone's on the way out.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+      <li>
+        <label>Two prey leaving intestines</label>
+        <description>Two gut-sluts, coming through!</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+      <li>
+        <label>Three prey leaving intestines</label>
+        <description>So wonderfully heavy...~</description>
+        <baseMoodEffect>15</baseMoodEffect>
+      </li>
+      <li>
+        <label>Several prey leaving intestines</label>
+        <description>Here's hoping I don't get backed up!</description>
+        <baseMoodEffect>20</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInIntestinesPassing</defName>
+    <stages>
+      <li>
+        <label>Stomach-bound prey in intestines</label>
+        <description>One prey stuck where the sun don't shine.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+      <li>
+        <label>Two stomach-bound prey in intestines</label>
+        <description>Two prey, coiled up tight in my innards.</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+      <li>
+        <label>Three stomach-bound prey in intestines</label>
+        <description>Three little gut-sluts, all snatched up snug...</description>
+        <baseMoodEffect>15</baseMoodEffect>
+      </li>
+      <li>
+        <label>Several stomach-bound prey up the butt</label>
+        <description>Oh, it's bumper-to-bumper traffic on the road from *my* bumper to my belly!~</description>
+        <baseMoodEffect>20</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInIntestinesPleasuring</defName>
+    <stages>
+      <li>
+        <label>Pleasuring prey in intestines</label>
+        <description>Bound up tight there, are you?</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+      <li>
+        <label>Pleasuring two prey in intestines</label>
+        <description>Lemme just clench down and force you up against each other...~</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+      <li>
+        <label>Pleasuring three prey in intestines</label>
+        <description>A threesome? I got plenty of room for that!</description>
+        <baseMoodEffect>15</baseMoodEffect>
+      </li>
+      <li>
+        <label>Pleasuring several prey in intestines</label>
+        <description>Party in my butt!</description>
+        <baseMoodEffect>20</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInIntestinesProcessing</defName>
+    <stages>
+      <li>
+        <label>Absorbing prey in intestines</label>
+        <description>Rounded out already?</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+      <li>
+        <label>Absorbing two prey in intestines</label>
+        <description>Nothing left but mush...</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+      <li>
+        <label>Absorbing three prey in intestines</label>
+        <description>I can feel nature calling already...</description>
+        <baseMoodEffect>15</baseMoodEffect>
+      </li>
+      <li>
+        <label>Absorbing several prey in intestines</label>
+        <description>I could just lie on my belly like a beanbag...~</description>
+        <baseMoodEffect>20</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInIntestinesStoring</defName>
+    <stages>
+      <li>
+        <label>Prey stored in intestines</label>
+        <description>They're in deep!</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+      <li>
+        <label>Two stored prey in intestines</label>
+        <description>Two little gut-sluts, wrapped tight like little sausage-links!~</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+      <li>
+        <label>Three stored prey in intestines</label>
+        <description>Three links, end-to-end!</description>
+        <baseMoodEffect>15</baseMoodEffect>
+      </li>
+      <li>
+        <label>Several stored prey in intestines</label>
+        <description>I hope I don't get backed up...~</description>
+        <baseMoodEffect>20</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <!-- currently unused (was used in anal digest - replaced by StomachWarming to be more uniform)
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase"> 
+    <defName>RV2_PreyInIntestinesWarming</defName>
+    <stages>
+      <li>
+        <label>Warming up intestines for prey</label>
+        <description>Oh, the plans I have for you!</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+      <li>
+        <label>Warming up intestines for multiple prey</label>
+        <description>Oh, the plans I have for you!</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  -->
+  
+  <!-- Mouth -->
+
+  <!-- ESEGN: Previously unused, now used for regurgitation OV paths -->
+
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInMouthExiting</defName>
+    <stages>
+      <li>
+        <label>Regurgitating prey</label>
+        <description>Dinner's coming back up...</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+      <li>
+        <label>Regurgitating multiple prey</label>
+        <description>It's like puking, but if vomit had elbows and knees in it...</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInMouthPassing</defName>
+    <stages>
+      <li>
+        <label>Swallowing prey</label>
+        <description>Delicious!</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+      <li>
+        <label>Swallowing two prey at once</label>
+        <description>Jaws, don't fail me now!</description>
+        <baseMoodEffect>0</baseMoodEffect><!--MH: Set to 0 because I imagine having an overstuffed mouth would be uncomfortable, and can't be easily spun into something sexual.-->
+      </li>
+      <li>
+        <label>Swallowing three prey at once</label>
+        <description>I think I bit off more than I can chew...</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+      <li>
+        <label>Swallowing several prey</label>
+        <description>Must suppress... gag reflex...</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInMouthPleasuring</defName>
+    <stages>
+      <li>
+        <label>Pleasuring prey in mouth</label>
+        <description>Let's sample the platter, shall we?~</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+      <li>
+        <label>Pleasuring prey in mouth</label>
+        <description>At this rate, I'm not sure I'll get the chance to taste *all* of you to the fullest!</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- ESEGN: For new OV pleasure path -->
+
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyExitingMouthPleasuring</defName>
+    <stages>
+      <li>
+        <label>Pleasuring prey in mouth</label>
+        <description>Mmh~! Still good on the way back up!</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+      <li>
+        <label>Pleasuring prey in mouth</label>
+        <description>I'd say "wait your turn", but this actually isn't so bad!</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- Nipple -->
+  
+  <!-- MH: this might be worth creating a variant for in case of a non-consumable resource like chemfuel, but that's not high priority this pass -->
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInNippleDumping</defName>
+    <stages>
+      <li>
+        <label>Milking out remains</label>
+        <description>Anyone care for a drink?</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+      <li>
+        <label>Milking out two remains</label>
+        <description>Anyone care for a drink?</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+      <li>
+        <label>Milking out multiple remains</label>
+        <description>I don't know if I'll ever stop leaking after this...</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInNippleExiting</defName>
+    <stages>
+      <li>
+        <label>Releasing prey from nipple</label>
+        <description>Enjoy your bath? I did!</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+      <li>
+        <label>Releasing two prey from nipples</label>
+        <description>Taking out the bra-stuffers...</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+      <li>
+        <label>Releasing several prey from nipples</label>
+        <description>I don't know if I'll ever stop leaking after this...</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInNipplePassing</defName>
+    <stages>
+      <li>
+        <label>Unnursing prey</label>
+        <description>Drink up!</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+      <li>
+        <label>Unnursing two prey</label>
+        <description>Gotta keep the symmetry!</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+      <li>
+        <label>Unnursing several prey</label>
+        <description>Two at a time! Please!~</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInNipplePleasuring</defName>
+    <stages>
+      <li>
+        <label>Pleasuring nipple with prey</label>
+        <description>Oh, that tingles!</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+	  <li>
+        <label>Pleasuring nipple with two prey</label>
+        <description>Pump 'em in, pump 'em out!</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+      <li>
+        <label>Pleasuring nipple with multiple prey</label>
+        <description>I really ought to do this one per nip, but...</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- Stomach -->
+  
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInStomachChurning</defName>
+    <stages>
+      <li>
+        <label>Breaking down prey in stomach</label>
+        <description>Stopped kicking? Already stewing into mush...</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+      <li>
+        <label>Breaking down two prey in stomach</label>
+        <description>I'm feeling a bit gassy already.</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+      <li>
+        <label>Breaking down three prey in stomach</label>
+        <description>I'm really urpy now! But, like, in a good way!</description>
+        <baseMoodEffect>15</baseMoodEffect>
+      </li>
+      <li>
+        <label>Breaking down several prey in stomach</label>
+        <description>Still no regrets!~</description>
+        <baseMoodEffect>20</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInStomachDigesting</defName>
+    <stages>
+      <li>
+        <label>Digesting prey in stomach</label>
+        <description>A proper meal!</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+      <li>
+        <label>Digesting two prey in stomach</label>
+        <description>So good, I went back for seconds!</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+      <li>
+        <label>Digesting three prey in stomach</label>
+        <description>Three whole prey, all gurgling away!</description>
+        <baseMoodEffect>15</baseMoodEffect>
+      </li>
+      <li>
+        <label>Digesting several prey in stomach</label>
+        <description>I don't care if all these morsels give me indigestion. No regrets!~</description>
+        <baseMoodEffect>20</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInStomachPleasuring</defName>
+    <stages>
+      <li>
+        <label>Pleasuring prey in stomach</label>
+        <description>Sit tight and let my muscles give you a massage...</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+      <li>
+        <label>Pleasuring two prey in stomach</label>
+        <description>Double the prey, double the pleasure!</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+      <li>
+        <label>Pleasuring three prey stored in stomach</label>
+        <description>Triple the prey... triple the... yeah...</description>
+        <baseMoodEffect>15</baseMoodEffect>
+      </li>
+      <li>
+        <label>Pleasuring four prey stored in stomach</label>
+        <description>So... full...</description>
+        <baseMoodEffect>20</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInStomachStoring</defName>
+    <stages>
+      <li>
+        <label>Prey stored in stomach</label>
+        <description>Nothing quite like a full belly. Especially one that doesn't go away.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+      <li>
+        <label>Two prey stored in stomach</label>
+        <description>Extra full!</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+      <li>
+        <label>Three prey stored in stomach</label>
+        <description>So... full...</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+      <li>
+        <label>Several prey stored in stomach</label>
+        <description>I'm packed to the brim! I don't think I could eat another... oh, well, maybe...</description>
+        <baseMoodEffect>8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInStomachWarming</defName>
+    <stages>
+      <li>
+        <label>Warming up stomach for prey</label>
+        <description>Oh, the plans I have for you!</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+      <li>
+        <label>Warming up stomach for multiple prey</label>
+        <description>Oh, the plans I have for you!</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInStomachHealing</defName>
+    <stages>
+      <li>
+        <label>Healing prey in stomach</label>
+        <description>Let's get you patched up!</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+      <li>
+        <label>Healing multiple prey in stomach</label>
+        <description>Pretty crowded...</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- Testicles -->
+  
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInTesticlesConvertingSperm</defName>
+    <stages>
+      <li>
+        <label>Spermifying prey in balls</label>
+        <description>Churning into batter...</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+      <li>
+        <label>Spermifying two prey in balls</label>
+        <description>Oh man, I'm already feeling blueballed...</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+      <li>
+        <label>Spermifying three prey in balls</label>
+        <description>Batter to bake, seeds to plant. Soon, my jewels.~</description>
+        <baseMoodEffect>15</baseMoodEffect>
+      </li>
+      <li>
+        <label>Spermifying several prey in balls</label>
+        <description>This'll be a hell of a batch! Just how pregnant could I get someone with this?~</description>
+        <baseMoodEffect>20</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInTesticlesDissolvingSperm</defName>
+    <stages>
+      <li>
+        <label>Dissolving live prey into sperm</label>
+        <description>Too tight in there to hit me in the 'nads, isn't it?</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+      <li>
+        <label>Dissolving two live prey into sperm</label>
+        <description>You two'll be creamy, delicious cum soon. You might even get fucked into someone!</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+      <li>
+        <label>Dissolving three live prey into sperm</label>
+        <description>I can't wait to jerk off... You'll be batter soon enough.</description>
+        <baseMoodEffect>15</baseMoodEffect>
+      </li>
+      <li>
+        <label>Dissolving several live prey into sperm</label>
+        <description>Ugh, I'm so blueballed! Soon, fuck, soon!</description>
+        <baseMoodEffect>20</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInTesticlesMushingSperm</defName>
+    <stages>
+      <li>
+        <label>Breaking down prey into sperm</label>
+        <description>Mmh. Lost your will to fight, or just plain died?</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+      <li>
+        <label>Breaking down two prey into sperm</label>
+        <description>I can feel my beanbags softening.~</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+      <li>
+        <label>Breaking down three prey into sperm</label>
+        <description>All that's left is to churn y'all into batter...</description>
+        <baseMoodEffect>15</baseMoodEffect>
+      </li>
+      <li>
+        <label>Breaking down several prey into sperm</label>
+        <description>Soon. Soon. Soon. Soon.</description>
+        <baseMoodEffect>20</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInTesticlesPleasuring</defName>
+    <stages>
+      <li>
+        <label>Pleasured prey in balls</label>
+        <description>Don't stop...</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+      <li>
+        <label>Pleasured by two prey in balls</label>
+        <description>Keep going, both of you...!</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+      <li>
+        <label>Pleasured by three prey in balls</label>
+        <description>Three... at once.~</description>
+        <baseMoodEffect>15</baseMoodEffect>
+      </li>
+      <li>
+        <label>Pleasured by several prey in ballss</label>
+        <description>I'm gonna--!</description>
+        <baseMoodEffect>20</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInTesticlesStoring</defName>
+    <stages>
+      <li>
+        <label>Prey in testicles</label>
+        <description>So heavy... It feels good.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+      <li>
+        <label>Two prey in testicles</label>
+        <description>One for each nut!</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+      <li>
+        <label>Three prey in testicles</label>
+        <description>My balls are getting hefty...!</description>
+        <baseMoodEffect>15</baseMoodEffect>
+      </li>
+      <li>
+        <label>Multiple prey in testicles</label>
+        <description>I can barely lift my sack!</description>
+        <baseMoodEffect>20</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInTesticlesWarming</defName>
+    <stages>
+      <li>
+        <label>Warming up testicles for prey</label>
+        <description>Oh, the plans I have for you!</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+      <li>
+        <label>Warming up testicles for multiple prey</label>
+        <description>Oh, the plans I have for you!</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInTesticlesHealing</defName>
+    <stages>
+      <li>
+        <label>Healing prey in testicles</label>
+        <description>Let's get you patched up!</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+      <li>
+        <label>Healing multiple prey in testicles</label>
+        <description>Pretty crowded...</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- Vagina -->
+  
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInVaginaDumpingOrgasm</defName>
+    <stages>
+      <li>
+        <label>Squirting out remains from pussy</label>
+        <description>Thanks for the orgasm, but goodbye!</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+      <li>
+        <label>Squiriting out multiple remains from pussy</label>
+        <description>This is gonna take a while to clean up...~</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInVaginaDumpingStream</defName>
+    <stages>
+      <li>
+        <label>Streaming out remains from pussy</label>
+        <description>Ah, sweet relief!</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+      <li>
+        <label>Streaming out multiple remains from pussy</label>
+        <description>I feel like a waterfall!</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInVaginaExiting</defName>
+    <stages>
+      <li>
+        <label>Pushing out prey</label>
+        <description>Delivery!</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+      <li>
+        <label>Pushing out multiple prey</label>
+        <description>They just keep coming...~</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInVaginaExitingOrgasm</defName>
+    <stages>
+      <li>
+        <label>Rebirthing prey</label>
+        <description>Delivery!</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+      <li>
+        <label>Rebirthing multiple prey</label>
+        <description>They just keep coming...~</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInVaginaExitingStream</defName>
+    <stages>
+      <li>
+        <label>Streaming out prey from pussy</label>
+        <description>Gotta piss this fucker out.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+      <li>
+        <label>Streaming out multiple prey from pussy</label>
+        <description>Ride the rapids!</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInVaginaPassing</defName>
+    <stages>
+      <li>
+        <label>Unbirthing prey</label>
+        <description>Deeper, deeper!</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+      <li>
+        <label>Unbirthing multiple prey</label>
+        <description>Take the ferry up the canal!</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInVaginaPleasuring</defName>
+    <stages>
+      <li>
+        <label>Pleasuring pussy with prey</label>
+        <description>I'd beg you to fuck me, but I'm already doing that to you.~</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+      <li>
+        <label>Pleasuring pussy with multiple prey</label>
+        <description>Y'all gotta get me real wet if you wanna go any deeper!</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- Womb -->
+  
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInWombConvertingLube</defName>
+    <stages>
+      <li>
+        <label>Lubrifying prey in womb</label>
+        <description>When am I due? Very soon...~</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+      <li>
+        <label>Lubrifying two prey in womb</label>
+        <description>I could take a cactus with this much lube!</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+      <li>
+        <label>Lubrifying three prey in womb</label>
+        <description>Am I leaking? I think I'm leaking.</description>
+        <baseMoodEffect>15</baseMoodEffect>
+      </li>
+      <li>
+        <label>Lubrifying several prey in womb</label>
+        <description>I could put a wildfire out with all this cunt-juice...</description>
+        <baseMoodEffect>20</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInWombDissolvingLube</defName>
+    <stages>
+      <li>
+        <label>Dissolving prey into cunt-juice</label>
+        <description>Soon, you'll be nothing more than a useless puddle!</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+      <li>
+        <label>Dissolving two prey into cunt-juice</label>
+        <description>I'm gonna be so fucking wet!</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+      <li>
+        <label>Dissolving three prey into cunt-juice</label>
+        <description>IS it getting slippery in there yet?</description>
+        <baseMoodEffect>15</baseMoodEffect>
+      </li>
+      <li>
+        <label>Dissolving several prey into cunt-juice</label>
+        <description>As wet as I am, this's gotta be some of the easiest sex any of you've ever had. Go out with a bang!</description>
+        <baseMoodEffect>20</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInWombMushingLube</defName>
+    <stages>
+      <li>
+        <label>Breaking down prey into lube</label>
+        <description>Life's ending just where it began.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+      <li>
+        <label>Breaking down two prey into lube</label>
+        <description>Guess the squirming's over. Oh well!~</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+      <li>
+        <label>Breaking down three prey into lube</label>
+        <description>Really starting to feel sloshy now!</description>
+        <baseMoodEffect>15</baseMoodEffect>
+      </li>
+      <li>
+        <label>Breaking down several prey into lube</label>
+        <description>I gotta figure out where I'm gonna gush y'all out!</description>
+        <baseMoodEffect>20</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInWombPleasuring</defName>
+    <stages>
+      <li>
+        <label>Pleasured by prey in womb</label>
+        <description>Don't stop...</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+      <li>
+        <label>Pleasured by two prey in womb</label>
+        <description>Keep going, both of you...!</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+      <li>
+        <label>Pleasured by three prey in womb</label>
+        <description>Three... all at once!</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+      <li>
+        <label>Pleasured by several prey in womb</label>
+        <description>I'M GONNA--</description>
+        <baseMoodEffect>15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInWombStoring</defName>
+    <stages>
+      <li>
+        <label>Prey stored in womb</label>
+        <description>Absolutely gravid!</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+      <li>
+        <label>Two prey stored in womb</label>
+        <description>It's twins!</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+      <li>
+        <label>Three prey stored in womb</label>
+        <description>Triplets!</description>
+        <baseMoodEffect>15</baseMoodEffect>
+      </li>
+      <li>
+        <label>Several prey stored in womb</label>
+        <description>I've got a whole litter inside me...~</description>
+        <baseMoodEffect>20</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInWombWarming</defName>
+    <stages>
+      <li>
+        <label>Warming up womb for prey</label>
+        <description>Oh, the plans I have for you!</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+      <li>
+        <label>Warming up womb for multiple prey</label>
+        <description>Oh, the plans I have for you!</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInWombReforming</defName>
+    <stages>
+      <li>
+        <label>Reforming prey</label>
+        <description>My child!</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+      <li>
+        <label>Reforming two prey</label>
+        <description>Oh my, twins!</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+      <li>
+        <label>Reforming three prey</label>
+        <description>Oh my, triplets!</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+      <li>
+        <label>Reforming multiple prey</label>
+        <description>Wow, I have a whole litter growing inside.</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="RV2_VoreThoughtSituationBase">
+    <defName>RV2_PreyInWombHealing</defName>
+    <stages>
+      <li>
+        <label>Healing prey in womb</label>
+        <description>Let's get you patched up!</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+      <li>
+        <label>Healing multiple prey in womb</label>
+        <description>Pretty crowded...</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

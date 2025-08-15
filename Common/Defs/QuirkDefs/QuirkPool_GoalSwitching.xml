@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RimVore2.QuirkPoolDef>
+    <defName>GoalSwitching</defName>
+    <label>Goal switching</label>
+    <category>General</category>
+    <description>Pawns with this quirk can trick prey to accept a different goal for proposals and then switch the goal against the preys preference.</description>
+    <generationOrder>5</generationOrder>
+    <poolType>RollForEach</poolType>
+    <quirks>
+      <li>GoalSwitching_Enabled</li>
+    </quirks>
+    <requiredKeywords>
+      <li>PawnIsHuman</li>
+    </requiredKeywords>
+  </RimVore2.QuirkPoolDef>
+
+  <RimVore2.QuirkDef>
+    <defName>GoalSwitching_Enabled</defName>
+    <label>Mischievous</label>
+    <description>[PAWN_label] is mischievous at heart. [PAWN_pronoun] may propose one kind of vore to someone and then pull a fast one and do something entirely different.</description>
+    <rarity>VeryRare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_SpecialFlag">
+        <flag>EnableGoalSwitching</flag>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+</Defs>

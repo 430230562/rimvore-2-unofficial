@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <ThingCategoryDef>
+    <defName>RV2_FertilizerIngredient</defName>
+    <label>fertilizer ingredients</label>
+    <parent>ResourcesRaw</parent>
+    <iconPath>Things/VoreProducts/Base/1</iconPath>
+  </ThingCategoryDef>
+
+  <ThingCategoryDef>
+    <defName>RV2_VoreProduct</defName>
+    <label>Vore product</label>
+    <parent>MeatRaw</parent>
+    <iconPath>Things/VoreProducts/Base/1</iconPath>
+  </ThingCategoryDef>
+
+
+  <ThingCategoryDef>
+    <defName>RV2_VoreProductContainer</defName>
+    <label>Vore product containers</label>
+    <parent>Chunks</parent>
+    <resourceReadoutRoot>true</resourceReadoutRoot>
+    <iconPath>Things/VoreResultContainers/Base/1</iconPath>
+  </ThingCategoryDef>
+
+  <ThingCategoryDef>
+    <defName>RV2_VoreEnablers</defName>
+    <label>Vore Goal Enablers</label>
+    <parent>BodyPartsBionic</parent>
+    <iconPath>Things/Item/Health/HealthItem</iconPath>
+  </ThingCategoryDef>
+</Defs>

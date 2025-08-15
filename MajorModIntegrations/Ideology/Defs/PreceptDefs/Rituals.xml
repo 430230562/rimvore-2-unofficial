@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <PreceptDef Abstract="True" Name="RV2_RitualPrecept_Base">
+    <issue>Ritual</issue>
+    <impact>Medium</impact>
+    <preceptClass>Precept_Ritual</preceptClass>
+    <countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
+    <selectionWeight>1.0</selectionWeight>
+    <displayOrderInImpact>100</displayOrderInImpact>
+    <ignoreLimitsInEditMode>false</ignoreLimitsInEditMode>
+    <receivesExpectationsQualityOffset>true</receivesExpectationsQualityOffset>
+    <canGenerateAsSpecialPrecept>false</canGenerateAsSpecialPrecept>
+  </PreceptDef>
+
+  <PreceptDef ParentName="RV2_RitualPrecept_Base">
+    <defName>RV2_ConsumptionRitual</defName>
+    <label>consumption ritual</label>
+    <iconPath>UI/Rituals/ConsumptionRitual</iconPath>
+    <description>A ritual in which the alpha predator holds a speech before fatally voring the selected prey.\nThe participants will party until the prey is digested, please be advised that some predators can take a very long time to digest their prey and some pawns may party to exhaustion.</description>
+    <ritualPatternBase>RV2_ConsumptionRitual</ritualPatternBase>
+    <requiredMemes>
+      <li>RV2_Predation</li>
+    </requiredMemes>
+  </PreceptDef>
+
+  <PreceptDef ParentName="RV2_RitualPrecept_Base">
+    <defName>RV2_ConsumptionSacrifice</defName>
+    <label>consumption sacrifice</label>
+    <iconPath>UI/Rituals/ConsumptionSacrifice</iconPath>
+    <description>A ritual in which the chosen prey holds a speech before being fatally vored by the selected predator.\nThe participants will party until the prey is digested, please be advised that some predators can take a very long time to digest their prey and some pawns may party to exhaustion.</description>
+    <ritualPatternBase>RV2_ConsumptionSacrifice</ritualPatternBase>
+    <requiredMemes>
+      <li>RV2_Preyism</li>
+    </requiredMemes>
+  </PreceptDef>
+  
+  <PreceptDef ParentName="RV2_RitualPrecept_Base">
+    <defName>RV2_VoreBondingRitual</defName>
+    <label>vore bonding ritual</label>
+    <iconPath>UI/Rituals/VoreBondingRitual</iconPath>
+    <description>A ritual in which the alpha predator holds a speech before endo voring the selected prey.\nThe participants will party until the vore is completed. The belief of both predator and prey in the vore-ideology will be increased.</description>
+    <ritualPatternBase>RV2_VoreBondingRitual</ritualPatternBase>
+    <requiredMemes>
+      <li>RV2_Predation</li>
+    </requiredMemes>
+  </PreceptDef>
+
+  <PreceptDef ParentName="RV2_RitualPrecept_Base">
+    <defName>RV2_VoreBondingSacrifice</defName>
+    <label>vore bonding sacrifice</label>
+    <iconPath>UI/Rituals/VoreBondingSacrifice</iconPath>
+    <description>A ritual in which the chosen prey holds a speech before being endo vored by the selected predator.\nThe participants will party until the vore is completed. The belief of both predator and prey in the vore-ideology will be increased.</description>
+    <ritualPatternBase>RV2_VoreBondingSacrifice</ritualPatternBase>
+    <requiredMemes>
+      <li>RV2_Preyism</li>
+    </requiredMemes>
+  </PreceptDef>
+
+  <!-- feast ritual -->
+  <PreceptDef ParentName="RV2_RitualPrecept_Base">
+    <defName>RV2_VoreFeast</defName>
+    <label>vore feast</label>
+    <iconPath>UI/Rituals/VoreFeast</iconPath>
+    <description>A ritual in which the leader holds a speech, afterwards all participants vore each other according to their preferences. The chosen goal and type are RANDOM, so participants may fatally vore each other! Use the fatal and endo designations to protect vital pawns.</description>
+    <ritualPatternBase>RV2_VoreFeast</ritualPatternBase>
+    <associatedMemes>
+      <li>RV2_Preyism</li>
+      <li>RV2_Predation</li>
+    </associatedMemes>
+  </PreceptDef>
+  
+  <!-- feeder rituals -->
+  <PreceptDef ParentName="RV2_RitualPrecept_Base">
+    <defName>RV2_VoreFeedingRitual_Endo</defName>
+    <label>feeder ritual (endo)</label>
+    <iconPath>UI/Rituals/VoreFeedingRitual_Endo</iconPath>
+    <description>A ritual in which the feeder holds a speech, after which the prey is non-fatally fed to the predator.</description>
+    <ritualPatternBase>RV2_VoreFeedingRitual_Endo</ritualPatternBase>
+    <requiredMemes>
+      <li>RV2_Preyism</li>
+      <li>RV2_Predation</li>
+    </requiredMemes>
+  </PreceptDef>
+  <PreceptDef ParentName="RV2_RitualPrecept_Base">
+    <defName>RV2_VoreFeedingRitual_Fatal</defName>
+    <label>feeder ritual (fatal)</label>
+    <iconPath>UI/Rituals/VoreFeedingRitual_Fatal</iconPath>
+    <description>A ritual in which the feeder holds a speech, after which the prey is fatally fed to the predator.</description>
+    <ritualPatternBase>RV2_VoreFeedingRitual_Fatal</ritualPatternBase>
+    <requiredMemes>
+      <li>RV2_Preyism</li>
+      <li>RV2_Predation</li>
+    </requiredMemes>
+  </PreceptDef>
+
+  <!-- pattern defs -->
+  <RitualPatternDef Abstract="True" Name="RV2_RitualPattern_Base">
+    <canStartAnytime>true</canStartAnytime>
+    <ritualObligationTargetFilter>AnyRitualSpot</ritualObligationTargetFilter>
+    <alwaysStartAnytime>true</alwaysStartAnytime>
+    <nameMaker>NamerRitualFestival</nameMaker>
+    <ritualOnlyForIdeoMembers>true</ritualOnlyForIdeoMembers>
+    <tags Inherit="False" />
+  </RitualPatternDef>
+  <!-- fatal -->
+  <RitualPatternDef ParentName="RV2_RitualPattern_Base">
+    <defName>RV2_ConsumptionRitual</defName>
+    <ritualBehavior>RV2_ConsumptionRitual</ritualBehavior>
+    <ritualOutcomeEffect>RV2_ConsumptionOutcome</ritualOutcomeEffect>
+  </RitualPatternDef>
+  <RitualPatternDef ParentName="RV2_RitualPattern_Base">
+    <defName>RV2_ConsumptionSacrifice</defName>
+    <ritualBehavior>RV2_ConsumptionSacrifice</ritualBehavior>
+    <ritualOutcomeEffect>RV2_ConsumptionOutcome</ritualOutcomeEffect>
+  </RitualPatternDef>
+  
+  <!-- endo -->
+  <RitualPatternDef ParentName="RV2_RitualPattern_Base">
+    <defName>RV2_VoreBondingRitual</defName>
+    <ritualBehavior>RV2_VoreBondingRitual</ritualBehavior>
+    <ritualOutcomeEffect>RV2_VoreBondingOutcome</ritualOutcomeEffect>
+  </RitualPatternDef>
+  <RitualPatternDef ParentName="RV2_RitualPattern_Base">
+    <defName>RV2_VoreBondingSacrifice</defName>
+    <ritualBehavior>RV2_VoreBondingSacrifice</ritualBehavior>
+    <ritualOutcomeEffect>RV2_VoreBondingOutcome</ritualOutcomeEffect>
+  </RitualPatternDef>
+  
+  <!-- etc -->
+  <RitualPatternDef ParentName="RV2_RitualPattern_Base">
+    <defName>RV2_VoreFeast</defName>
+    <ritualBehavior>RV2_VoreFeast</ritualBehavior>
+    <ritualOutcomeEffect>RV2_VoreFeastOutcome</ritualOutcomeEffect>
+  </RitualPatternDef>
+  
+  <!-- feeding -->
+  <RitualPatternDef ParentName="RV2_RitualPattern_Base">
+    <defName>RV2_VoreFeedingRitual_Endo</defName>
+    <ritualBehavior>RV2_FeedingRitual_Endo</ritualBehavior>
+    <ritualOutcomeEffect>RV2_VoreBondingOutcome</ritualOutcomeEffect>
+  </RitualPatternDef>
+  <RitualPatternDef ParentName="RV2_RitualPattern_Base">
+    <defName>RV2_VoreFeedingRitual_Fatal</defName>
+    <ritualBehavior>RV2_FeedingRitual_Fatal</ritualBehavior>
+    <ritualOutcomeEffect>RV2_ConsumptionOutcome</ritualOutcomeEffect>
+  </RitualPatternDef>
+</Defs>

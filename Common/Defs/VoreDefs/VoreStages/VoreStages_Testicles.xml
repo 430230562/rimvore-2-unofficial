@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+  <RimVore2.VoreStageDef Abstract="True" Name="Testicles_Base">
+    <partName>genitals</partName>
+    <displayPartTranslationKey>RV2_DisplayPart_Testicles</displayPartTranslationKey>
+    <requirements>
+      <li>
+        <target>Predator</target>
+        <requirements>
+          <li Class="RimVore2.Requirement_HediffAlias">
+            <bodyPartAlias>genitals</bodyPartAlias>
+            <hediffAlias>penis</hediffAlias>
+          </li>
+        </requirements>
+      </li>
+    </requirements>
+  </RimVore2.VoreStageDef>
+
+  <!-- Store / Hold -->
+  <RimVore2.VoreStageDef Name="Testicles_Store" ParentName="Testicles_Base">
+    <defName>Testicles_Store</defName>
+    <partGoal>Store</partGoal>
+    <canReverseDirection>true</canReverseDirection>
+    <predatorHediffDef>RV2_PreyInTesticlesStoring</predatorHediffDef>
+    <predatorThoughtDef>RV2_PreyInTesticlesStoring</predatorThoughtDef>
+    <jumpKey>Testicles</jumpKey>
+    <onCycle>
+      <rollPresets>
+        <li>Sound_Churn_Chance_30</li>
+        <li>IncreaseNeed_Prey_Rest</li>
+        <li>StealNeed_ForPrey_Food</li>
+      </rollPresets>
+    </onCycle>
+    <onEnd>
+      <actions>
+        <li Class="RimVore2.RollAction_RecordTale_GoalFinish"/>
+      </actions>
+    </onEnd>
+    <passConditions>
+      <li Class="RimVore2.StagePassCondition_Manual"></li>
+    </passConditions>
+  </RimVore2.VoreStageDef>
+
+  <RimVore2.VoreStageDef Name="Testicles_Hold" ParentName="Testicles_Store">
+    <defName>Testicles_Hold</defName>
+    <partGoal>Hold</partGoal>
+    <passConditions Inherit="False">
+      <li Class="RimVore2.StagePassCondition_Timed">
+        <duration>36</duration>
+      </li>
+    </passConditions>
+  </RimVore2.VoreStageDef>
+
+  <!-- Pleasure -->
+  <RimVore2.VoreStageDef Name="Testicles_Pleasure" ParentName="Testicles_Base">
+    <defName>Testicles_Pleasure</defName>
+    <partGoal>Pleasure</partGoal>
+    <canReverseDirection>true</canReverseDirection>
+    <predatorHediffDef>RV2_PreyInTesticlesPleasuring</predatorHediffDef>
+    <predatorThoughtDef>RV2_PreyInTesticlesPleasuring</predatorThoughtDef>
+    <jumpKey>Testicles</jumpKey>
+    <onCycle>
+      <rollPresets>
+        <li>Sound_Churn_10</li>
+        <li>Sound_Moan_Chance_15</li>
+        <li>StealNeed_ForPrey_Food</li>
+        <li>IncreaseNeed_Predator_Comfort</li>
+        <li>IncreaseNeed_Prey_Comfort</li>
+      </rollPresets>
+    </onCycle>
+    <onEnd>
+      <actions>
+        <li Class="RimVore2.RollAction_RecordTale_GoalFinish"/>
+      </actions>
+    </onEnd>
+    <passConditions>
+      <li Class="RimVore2.StagePassCondition_Need">
+        <target>Prey</target>
+        <need>Comfort</need>
+        <targetLevel>0.95</targetLevel>
+      </li>
+      <li Class="RimVore2.StagePassCondition_Need">
+        <target>Predator</target>
+        <need>Comfort</need>
+        <targetLevel>0.95</targetLevel>
+      </li>
+    </passConditions>
+  </RimVore2.VoreStageDef>
+
+  <!-- Warmup -->
+  <RimVore2.VoreStageDef Name="Testicles_Warmup" ParentName="Testicles_Base">
+    <defName>Testicles_Warmup</defName>
+    <partGoal>WarmUp</partGoal>
+    <canReverseDirection>true</canReverseDirection>
+    <predatorHediffDef>RV2_PreyInTesticlesWarming</predatorHediffDef>
+    <predatorThoughtDef>RV2_PreyInTesticlesWarming</predatorThoughtDef>
+    <jumpKey>Testicles</jumpKey>
+    <onCycle>
+      <rollPresets>
+        <li>Sound_Churn_10</li>
+      </rollPresets>
+    </onCycle>
+    <passConditions>
+      <!-- ESEGN: Changed to warmup pass condition -->
+      <li Class="RimVore2.StagePassCondition_Warmup">
+        <duration>32</duration>
+        <hediffs>
+          <li>RV2_PreyInTesticlesDissolving</li>
+          <li>RV2_PreyInTesticlesMushing</li>
+          <li>RV2_PreyInTesticlesConvertingSperm</li>
+        </hediffs>
+      </li>
+    </passConditions>
+  </RimVore2.VoreStageDef>
+
+  <!-- Dissolve -->
+  <RimVore2.VoreStageDef Abstract="True" Name="Testicles_Dissolve" ParentName="Testicles_Base">
+    <partGoal>Dissolve</partGoal>
+    <canReverseDirection>true</canReverseDirection>
+    <predatorHediffDef>RV2_PreyInTesticlesDissolving</predatorHediffDef>
+    <predatorThoughtDef>RV2_PreyInTesticlesDissolving</predatorThoughtDef>
+    <jumpKey>Testicles</jumpKey>
+    <onStart>
+      <actions>
+        <li Class="RimVore2.RollAction_PassValue_Set">
+          <name>DigestionProgress</name>
+          <type>DigestionProgress</type>
+        </li>
+      </actions>
+    </onStart>
+    <onCycle>
+      <rollPresets>
+        <li>Sound_Churn_Chance_5</li>
+        <li>Sound_Gurgle_Chance_5</li>
+        <li>Sound_Moan_Chance_15</li>
+        <li>IncreaseDigestionProgress</li>
+      </rollPresets>
+    </onCycle>
+    <onEnd>
+      <actions>
+        <li Class="RimVore2.RollAction_PlaySound">
+          <sound>RV2_Moan</sound>
+        </li>
+        <li Class="RimVore2.RollAction_RecordTale_GoalFinish"/>
+      </actions>
+    </onEnd>
+    <passConditions>
+      <li Class="RimVore2.StagePassCondition_PassValue">
+        <passValueName>DigestionProgress</passValueName>
+        <targetValue>1</targetValue>
+      </li>
+    </passConditions>
+  </RimVore2.VoreStageDef>
+
+  <RimVore2.VoreStageDef Name="Testicles_DissolveSperm" ParentName="Testicles_Dissolve">
+    <defName>Testicles_DissolveSperm</defName>
+    <predatorThoughtDef>RV2_PreyInTesticlesDissolvingSperm</predatorThoughtDef>
+    <onStart>
+      <actions>
+        <li Class="RimVore2.RollAction_ShowMote">
+          <mote>RV2_Mote_BubblesGamete</mote>
+        </li>
+      </actions>
+    </onStart>
+    <onCycle>
+      <rollPresets>
+        <li>Mote_BubbleGamete</li>
+      </rollPresets>
+    </onCycle>
+    <onEnd>
+      <actions>
+        <li Class="RimVore2.RollAction_Digest">
+          <damageDef>RV2_SpermConversionEnzymes</damageDef>
+        </li>
+        <li Class="RimVore2.RollAction_ShowMote">
+          <mote>RV2_Mote_BubblesGamete</mote>
+        </li>
+      </actions>
+    </onEnd>
+  </RimVore2.VoreStageDef>
+
+  <!-- Mush -->
+  <RimVore2.VoreStageDef Abstract="True" Name="Testicles_Mush" ParentName="Testicles_Base">
+    <partGoal>Mush</partGoal>
+    <canReverseDirection>false</canReverseDirection>
+    <predatorHediffDef>RV2_PreyInTesticlesMushing</predatorHediffDef>
+    <onStart>
+      <actions>
+        <li Class="RimVore2.RollAction_PassValue_Set">
+          <name>BreakDownProgress</name>
+          <value>0</value>
+        </li>
+      </actions>
+    </onStart>
+    <onCycle>
+      <rollPresets>
+        <li>Sound_Churn_Chance_5</li>
+        <li>Sound_Gurgle_Chance_5</li>
+        <li>Sound_Moan_Chance_15</li>
+        <li>IncreaseBreakDownProgress</li>
+      </rollPresets>
+    </onCycle>
+    <onEnd>
+      <actions>
+        <li Class="RimVore2.RollAction_PlaySound">
+          <sound>RV2_Moan</sound>
+        </li>
+      </actions>
+    </onEnd>
+    <passConditions>
+      <li Class="RimVore2.StagePassCondition_PassValue">
+        <passValueName>BreakDownProgress</passValueName>
+        <targetValue>1</targetValue>
+      </li>
+    </passConditions>
+  </RimVore2.VoreStageDef>
+
+  <RimVore2.VoreStageDef Name="Testicles_MushSperm" ParentName="Testicles_Mush">
+    <defName>Testicles_MushSperm</defName>
+    <predatorThoughtDef>RV2_PreyInTesticlesMushingSperm</predatorThoughtDef>
+    <onCycle>
+      <rollPresets>
+        <li>Mote_BubbleGamete</li>
+      </rollPresets>
+    </onCycle>
+    <onEnd>
+      <actions>
+        <li Class="RimVore2.RollAction_ShowMote">
+          <mote>RV2_Mote_BubblesGamete</mote>
+        </li>
+      </actions>
+    </onEnd>
+  </RimVore2.VoreStageDef>
+
+  <!-- Convert -->
+  <RimVore2.VoreStageDef Abstract="True" Name="Testicles_Convert" ParentName="Testicles_Base">
+    <canReverseDirection>false</canReverseDirection>
+    <onStart>
+      <actions>
+        <li Class="RimVore2.RollAction_PassValue_Set">
+          <name>PreyNutrition</name>
+          <type>PreyNutrition</type>
+        </li>
+      </actions>
+    </onStart>
+    <onEnd>
+      <actions>
+        <li Class="RimVore2.RollAction_PlaySound">
+          <sound>RV2_Moan</sound>
+        </li>
+        <li Class="RimVore2.RollAction_RecordTale_GoalFinish"/>
+      </actions>
+    </onEnd>
+    <passConditions>
+      <li Class="RimVore2.StagePassCondition_PassValue">
+        <passValueName>PreyNutrition</passValueName>
+        <targetValue>0</targetValue>
+        <decreasing>true</decreasing>
+      </li>
+    </passConditions>
+  </RimVore2.VoreStageDef>
+
+  <RimVore2.VoreStageDef Name="Testicles_ConvertSperm" ParentName="Testicles_Convert">
+    <defName>Testicles_ConvertSperm</defName>
+    <partGoal>Spermify</partGoal>
+    <predatorHediffDef>RV2_PreyInTesticlesConvertingSperm</predatorHediffDef>
+    <predatorThoughtDef>RV2_PreyInTesticlesConvertingSperm</predatorThoughtDef>
+    <onCycle>
+      <rollPresets>
+        <li>Mote_BubbleGamete</li>
+        <li>Sound_Churn_Chance_5</li>
+        <li>Sound_Gurgle_Chance_5</li>
+        <li>Sound_Moan_Chance_15</li>
+        <li>ConvertNutritionToSperm</li>
+      </rollPresets>
+    </onCycle>
+    <onEnd>
+      <actions>
+        <li Class="RimVore2.RollAction_ShowMote">
+          <mote>RV2_Mote_BubblesGamete</mote>
+        </li>
+        <li Class="RimVore2.RollAction_AddHediff">
+          <target>Predator</target>
+          <hediff>RV2_CumReserves</hediff>
+          <partDef>Genitals</partDef>
+        </li>
+      </actions>
+    </onEnd>
+  </RimVore2.VoreStageDef>
+
+  <RimVore2.VoreStageDef Name="Testicles_Heal" ParentName="Testicles_Base">
+    <defName>Testicles_Heal</defName>
+    <partGoal>Heal</partGoal>
+    <jumpKey>Testicles</jumpKey>
+    <canReverseDirection>true</canReverseDirection>
+    <predatorHediffDef>RV2_PreyInTesticlesHealing</predatorHediffDef>
+    <predatorThoughtDef>RV2_PreyInTesticlesHealing</predatorThoughtDef>
+    <onCycle>
+      <rollPresets>
+        <li>Sound_Churn_10</li>
+        <li>IncreaseNeed_Prey_Rest</li>
+        <li>StealNeed_ForPrey_Food</li>
+        <li>Heal_Prey</li>
+        <!-- actions are interrupted here if predator has no food for healing -->
+        <li>Mote_Heal</li>
+      </rollPresets>
+    </onCycle>
+    <onEnd>
+      <actions>
+        <li Class="RimVore2.RollAction_RecordTale_GoalFinish"/>
+      </actions>
+    </onEnd>
+    <passConditions>
+      <li Class="RimVore2.StagePassCondition_Healed">
+        <target>Prey</target>
+      </li>
+    </passConditions>
+  </RimVore2.VoreStageDef>
+  
+</Defs>

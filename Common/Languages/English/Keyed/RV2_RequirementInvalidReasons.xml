@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <RV2_RequirementInvalidReasons_NoDef>Pawn does not have {0} {1}</RV2_RequirementInvalidReasons_NoDef>
+  <RV2_RequirementInvalidReasons_DefTooLow>{0} {1} too low, min: {2}</RV2_RequirementInvalidReasons_DefTooLow>
+  <RV2_RequirementInvalidReasons_DefTooHigh>{0} {1} too high, max: {2}</RV2_RequirementInvalidReasons_DefTooHigh>
+  <RV2_RequirementInvalidReasons_NoHediffInRange>No hediff severity was in valid range: {0}</RV2_RequirementInvalidReasons_NoHediffInRange>
+
+  <RV2_RequirementInvalidReasons_NoQuirks>Pawn has no quirks</RV2_RequirementInvalidReasons_NoQuirks>
+  <RV2_RequirementInvalidReasons_InvalidRace>Pawn is race {0}, but must be {1}</RV2_RequirementInvalidReasons_InvalidRace>
+  <RV2_RequirementInvalidReasons_InvalidRelation>Pawn has relations {0}, but needs {1}</RV2_RequirementInvalidReasons_InvalidRelation>
+  <RV2_RequirementInvalidReasons_MissingAlias>Pawn does not have any of {0}</RV2_RequirementInvalidReasons_MissingAlias>
+
+
+  <RV2_RequirementInvalidReasons_MissingBodyPart>Missing body part alias {0}</RV2_RequirementInvalidReasons_MissingBodyPart>
+  <RV2_RequirementInvalidReasons_MissingHediff>Missing hediff alias {0}</RV2_RequirementInvalidReasons_MissingHediff>
+  <RV2_RequirementInvalidReasons_MissingQuirk>Missing quirks: {0}</RV2_RequirementInvalidReasons_MissingQuirk>
+  <RV2_RequirementInvalidReasons_NoHediffInSeverityRange>No hediff in range: {0}</RV2_RequirementInvalidReasons_NoHediffInSeverityRange>
+</LanguageData>
+
+
+
+<!-- RV2_RequirementInvalidReasons_ -->

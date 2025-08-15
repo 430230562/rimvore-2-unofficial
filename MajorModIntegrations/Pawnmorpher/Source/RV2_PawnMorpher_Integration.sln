@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32210.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RV2_PawnMorpher_Integration", "RV2_PawnMorpher_Integration.csproj", "{93D9A929-B99E-41F8-8BE1-2F408DE142ED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		1.3|Any CPU = 1.3|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{93D9A929-B99E-41F8-8BE1-2F408DE142ED}.1.3|Any CPU.ActiveCfg = 1.3|Any CPU
+		{93D9A929-B99E-41F8-8BE1-2F408DE142ED}.1.3|Any CPU.Build.0 = 1.3|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F427DDDB-F2F8-44C2-AF4C-DC69F57D2C98}
+	EndGlobalSection
+EndGlobal

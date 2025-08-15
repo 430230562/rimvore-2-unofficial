@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!-- The system already supports grapple strength for attacker or defender sides with modifierName = 
+    "GrappleStrengthAttacker" and "GrappleStrengthDefender" 
+    but I don't know how I would implement these here and make em look good. Trait requirements already have their own special implementation, 
+    which was the only reason I would have had for att/def specific quirks
+  -->
+  <RimVore2.QuirkPoolDef>
+    <defName>GrappleStrength</defName>
+    <label>Grapple strength</label>
+    <category>Combat</category>
+    <description>These quirks influence the pawns capability of moving the bar in their favor during a vore grapple. These apply to both attacking and defending.</description>
+    <generationOrder>4</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>GrappleStrength_VeryGood</li>
+      <li>GrappleStrength_Good</li>
+      <li>GrappleStrength_Normal</li>
+      <li>GrappleStrength_Bad</li>
+      <li>GrappleStrength_VeryBad</li>
+    </quirks>
+  </RimVore2.QuirkPoolDef>
+
+  <RimVore2.QuirkDef>
+    <defName>GrappleStrength_VeryGood</defName>
+    <label>Professional Wrestler</label>
+    <description>[PAWN_label] is an expert at hand-to-hand combat when it comes to wrestling for vore.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>GrappleStrength</modifierName>
+        <modifierValue>3</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>GrappleStrength_Good</defName>
+    <label>Wrestler</label>
+    <description>[PAWN_label] has some experience when it comes to wrestling.</description>
+    <rarity>Uncommon</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>GrappleStrength</modifierName>
+        <modifierValue>2</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkDef>
+    <defName>GrappleStrength_Normal</defName>
+    <label>Normal</label>
+    <hidden>true</hidden>
+    <description>[PAWN_label] has no special experience that affects grapple strength.</description>
+    <rarity>Abundant</rarity>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkDef>
+    <defName>GrappleStrength_Bad</defName>
+    <label>Weak grip</label>
+    <description>[PAWN_label] has issues when it comes to wrestling with [PAWN_possessive] opponents.</description>
+    <rarity>Uncommon</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>GrappleStrength</modifierName>
+        <modifierValue>0.67</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>GrappleStrength_VeryBad</defName>
+    <label>Carpal tunnel syndrome</label>
+    <description>[PAWN_label] has suffered some injuries to [PAWN_possessive] wrists, which makes [PAWN_objective] useless in grappling combat.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>GrappleStrength</modifierName>
+        <modifierValue>0.5</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+</Defs>

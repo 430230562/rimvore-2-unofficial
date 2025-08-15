@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <RimVore2.RollPresetDef>
+    <defName>Mote_BubbleDigest</defName>
+    <successChance>0.6</successChance>
+    <interval>5</interval>
+    <actionsOnSuccess>
+      <li Class="RimVore2.RollAction_ShowMote">
+        <mote>RV2_Mote_BubbleDigest</mote>
+      </li>
+    </actionsOnSuccess>
+  </RimVore2.RollPresetDef>
+  
+  <RimVore2.RollPresetDef>
+    <defName>Mote_BubbleMilk</defName>
+    <successChance>0.6</successChance>
+    <interval>5</interval>
+    <actionsOnSuccess>
+      <li Class="RimVore2.RollAction_ShowMote">
+        <mote>RV2_Mote_BubbleMilk</mote>
+      </li>
+    </actionsOnSuccess>
+  </RimVore2.RollPresetDef>
+
+  <RimVore2.RollPresetDef>
+    <defName>Mote_BubbleGamete</defName>
+    <successChance>0.6</successChance>
+    <interval>5</interval>
+    <actionsOnSuccess>
+      <li Class="RimVore2.RollAction_ShowMote">
+        <mote>RV2_Mote_BubbleGamete</mote>
+      </li>
+    </actionsOnSuccess>
+  </RimVore2.RollPresetDef>
+
+  <RimVore2.RollPresetDef>
+    <defName>Mote_BubbleLove</defName>
+    <successChance>0.6</successChance>
+    <interval>5</interval>
+    <actionsOnSuccess>
+      <li Class="RimVore2.RollAction_ShowMote">
+        <mote>RV2_Mote_BubbleLove</mote>
+      </li>
+    </actionsOnSuccess>
+  </RimVore2.RollPresetDef>
+
+  <RimVore2.RollPresetDef>
+    <defName>Mote_Heal</defName>
+    <successChance>0.6</successChance>
+    <interval>5</interval>
+    <actionsOnSuccess>
+      <li Class="RimVore2.RollAction_ShowMote">
+        <mote>RV2_Mote_Heal</mote>
+      </li>
+    </actionsOnSuccess>
+  </RimVore2.RollPresetDef>
+  
+</Defs>

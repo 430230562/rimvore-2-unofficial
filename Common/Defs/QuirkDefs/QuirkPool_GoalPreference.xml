@@ -1,0 +1,2063 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- TODO: 
+    Store, Hold, Heal currently use PostVoreMemory placeHolders, someone should write the appropriate ThoughtDefs
+  -->
+
+
+  <!-- Predator side -->
+
+  <RimVore2.QuirkPoolDef>
+    <defName>GoalPreference_Predator_Digest</defName>
+    <label>Predatory goal preference (digestion)</label>
+    <category>Goal Preference</category>
+    <description>These quirks determine how much a pawn likes digesting prey or converting them into other materials. At the extremes, the pawn will either never or always try to digest prey.</description>
+    <generationOrder>2</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>GoalPreference_Predator_Digest_Obsessed</li>
+      <li>GoalPreference_Predator_Digest_Likes</li>
+      <li>GoalPreference_Predator_Digest_Neutral</li>
+      <li>GoalPreference_Predator_Digest_Dislikes</li>
+      <li>GoalPreference_Predator_Digest_Refuses</li>
+      <!-- <li>GoalPreference_Predator_Assimilate_Incapable</li> -->
+    </quirks>
+    <blockingQuirks>
+      <li>PredatorDisposition_Refuses</li>
+    </blockingQuirks>
+    <blockingKeywords>
+      <li>PawnIsAnimal</li>
+    </blockingKeywords>
+  </RimVore2.QuirkPoolDef>
+
+  <!-- these will need updated every time new conversion variants are added! -->
+  <RimVore2.QuirkDef>
+    <defName>GoalPreference_Predator_Digest_Obsessed</defName>
+    <label>Obsessive fondeur</label>
+    <description>As an obsessive fondeu(r/se), [PAWN_label] loves digestion and all manner of conversion into bodily fluids, to the neglect of other goals.</description>
+    <requiredKeywords>
+      <li>PawnCanVoreGoal_Digest</li>
+    </requiredKeywords>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Digest</voreGoal>
+          <role>Predator</role>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>ConvertLube</voreGoal>
+          <role>Predator</role>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>ConvertMilk</voreGoal>
+          <role>Predator</role>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>ConvertSperm</voreGoal>
+          <role>Predator</role>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>ConvertLube</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>ConvertMilk</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>ConvertSperm</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreGoal_Digest</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_Digest_VeryGood</memory>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreGoal_ConvertLube</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_Digest_VeryGood</memory>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreGoal_ConvertMilk</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_Digest_VeryGood</memory>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreGoal_ConvertSperm</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_Digest_VeryGood</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>GoalPreference_Predator_Digest_Likes</defName>
+    <label>Fondeur</label>
+    <description>As a fondeu(r/se), [PAWN_label] likes the feeling of prey digesting into mush, or milk, or spunk, or what-have-you: to feel the struggle cease, and the hard lumps go soft.</description>
+    <requiredKeywords>
+      <li>PawnCanVoreGoal_Digest</li>
+    </requiredKeywords>
+    <rarity>Uncommon</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Digest</voreGoal>
+          <role>Predator</role>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>ConvertLube</voreGoal>
+          <role>Predator</role>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>ConvertMilk</voreGoal>
+          <role>Predator</role>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>ConvertSperm</voreGoal>
+          <role>Predator</role>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Digest</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>ConvertLube</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>ConvertMilk</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>ConvertSperm</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreGoal_Digest</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_Digest_Good</memory>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreGoal_ConvertLube</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_Digest_Good</memory>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreGoal_ConvertMilk</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_Digest_Good</memory>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreGoal_ConvertSperm</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_Digest_Good</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>GoalPreference_Predator_Digest_Neutral</defName>
+    <label>Digestion ambivalence</label>
+    <description>[PAWN_label] doesn't really care one way or the other about digesting prey.</description>
+    <hidden>true</hidden>
+    <rarity>Common</rarity>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>GoalPreference_Predator_Digest_Dislikes</defName>
+    <label>Digestion aversion</label>
+    <description>[PAWN_label] dislikes digesting prey. [PAWN_pronoun] takes no enjoyment out of gurgling a life away and would rather [PAWN_possessive] prey left intact.</description>
+    <requiredKeywords>
+      <li>PawnCanVoreGoal_Digest</li>
+    </requiredKeywords>
+    <rarity>Uncommon</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Digest</voreGoal>
+          <role>Predator</role>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>ConvertLube</voreGoal>
+          <role>Predator</role>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>ConvertMilk</voreGoal>
+          <role>Predator</role>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>ConvertSperm</voreGoal>
+          <role>Predator</role>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Digest</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>ConvertLube</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>ConvertMilk</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>ConvertSperm</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreGoal_Digest</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_Digest_Bad</memory>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreGoal_ConvertLube</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_Digest_Bad</memory>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreGoal_ConvertMilk</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_Digest_Bad</memory>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreGoal_ConvertSperm</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_Digest_Bad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>GoalPreference_Predator_Digest_Refuses</defName>
+    <label>Digestion disgust</label>
+    <description>[PAWN_label] hates digesting prey. What an act of unimaginable cruelty!</description>
+    <requiredKeywords>
+      <li>PawnCanVoreGoal_Digest</li>
+    </requiredKeywords>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Digest</voreGoal>
+          <role>Predator</role>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>ConvertLube</voreGoal>
+          <role>Predator</role>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>ConvertMilk</voreGoal>
+          <role>Predator</role>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>ConvertSperm</voreGoal>
+          <role>Predator</role>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Digest</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>ConvertLube</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>ConvertMilk</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>ConvertSperm</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreGoal_Digest</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_Digest_VeryBad</memory>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreGoal_ConvertLube</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_Digest_VeryBad</memory>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreGoal_ConvertMilk</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_Digest_VeryBad</memory>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreGoal_ConvertSperm</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_Digest_VeryBad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkPoolDef>
+    <defName>GoalPreference_Predator_Pleasure</defName>
+    <label>Predatory goal preference (pleasure)</label>
+    <category>Goal Preference</category>
+    <description>These quirks determine how much a pawn likes consuming prey for mutual pleasure. At the extremes, the pawn will either never or always try to pleasure prey.</description>
+    <generationOrder>2</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>GoalPreference_Predator_Pleasure_Obsessed</li>
+      <li>GoalPreference_Predator_Pleasure_Likes</li>
+      <li>GoalPreference_Predator_Pleasure_Neutral</li>
+      <li>GoalPreference_Predator_Pleasure_Dislikes</li>
+      <li>GoalPreference_Predator_Pleasure_Refuses</li>
+      <!-- <li>GoalPreference_Predator_Pleasure_Incapable</li> -->
+    </quirks>
+    <blockingQuirks>
+      <li>PredatorDisposition_Refuses</li>
+    </blockingQuirks>
+    <blockingKeywords>
+      <li>PawnIsAnimal</li>
+    </blockingKeywords>
+  </RimVore2.QuirkPoolDef>
+
+  <RimVore2.QuirkDef>
+    <defName>GoalPreference_Predator_Pleasure_Obsessed</defName>
+    <label>Obsessive plaire</label>
+    <description>[PAWN_label] loves to pleasure-vore prey. [PAWN_pronoun] seeks little else besides the usage of [PAWN_possessive] body as an engine of pleasure.</description>
+    <requiredKeywords>
+      <li>PawnCanVoreGoal_Pleasure</li>
+    </requiredKeywords>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Pleasure</voreGoal>
+          <role>Predator</role>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Pleasure</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreGoal_Pleasure</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_Pleasure_Predator_VeryGood</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>GoalPreference_Predator_Pleasure_Likes</defName>
+    <label>Plaire</label>
+    <description>[PAWN_label] likes to pleasure-vore prey, with a sensual tour of [PAWN_possessive] body.</description>
+    <requiredKeywords>
+      <li>PawnCanVoreGoal_Pleasure</li>
+    </requiredKeywords>
+    <rarity>Uncommon</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Pleasure</voreGoal>
+          <role>Predator</role>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Pleasure</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreGoal_Pleasure</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_Pleasure_Predator_Good</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>GoalPreference_Predator_Pleasure_Neutral</defName>
+    <label>Pleasure ambivalence</label>
+    <description>[PAWN_label] doesn't really care one way or the other about pleasuring prey.</description>
+    <hidden>true</hidden>
+    <rarity>Common</rarity>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>GoalPreference_Predator_Pleasure_Dislikes</defName>
+    <label>Chaste predator</label>
+    <description>[PAWN_label] dislikes pleasuring prey. Maybe [PAWN_pronoun]'s squeamish about letting prey get lewd inside [PAWN_objective]; maybe [PAWN_pronoun] just doesn't enjoy it like prey do.</description>
+    <requiredKeywords>
+      <li>PawnCanVoreGoal_Pleasure</li>
+    </requiredKeywords>
+    <rarity>Uncommon</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Pleasure</voreGoal>
+          <role>Predator</role>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Pleasure</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreGoal_Pleasure</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_Pleasure_Predator_Bad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>GoalPreference_Predator_Pleasure_Refuses</defName>
+    <label>Celibate predator</label>
+    <description>[PAWN_label] hates pleasuring prey. Vore is not to be treated as a fancy sex position.</description>
+    <requiredKeywords>
+      <li>PawnCanVoreGoal_Pleasure</li>
+    </requiredKeywords>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Pleasure</voreGoal>
+          <role>Predator</role>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Pleasure</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreGoal_Pleasure</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_Pleasure_Predator_VeryBad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkPoolDef>
+    <defName>GoalPreference_Predator_Store</defName>
+    <label>Predatory goal preference (storage)</label>
+    <category>Goal Preference</category>
+    <description>These quirks determine how much a pawn likes indefinitely storing live prey. At the extremes, the pawn will either never or always try to store prey.</description>
+    <generationOrder>2</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>GoalPreference_Predator_Store_Obsessed</li>
+      <li>GoalPreference_Predator_Store_Likes</li>
+      <li>GoalPreference_Predator_Store_Neutral</li>
+      <li>GoalPreference_Predator_Store_Dislikes</li>
+      <li>GoalPreference_Predator_Store_Refuses</li>
+      <!-- <li>GoalPreference_Predator_Store_Incapable</li> -->
+    </quirks>
+    <blockingQuirks>
+      <li>PredatorDisposition_Refuses</li>
+    </blockingQuirks>
+    <blockingKeywords>
+      <li>PawnIsAnimal</li>
+    </blockingKeywords>
+  </RimVore2.QuirkPoolDef>
+
+  <RimVore2.QuirkDef>
+    <defName>GoalPreference_Predator_Store_Obsessed</defName>
+    <label>Geolier hoarder</label>
+    <description>As a geolier(e), [PAWN_label] loves to hold onto prey for as long as possible, and would be delighted to store as many people as can be fit inside of [PAWN_objective] forever.</description>
+    <requiredKeywords>
+      <li>PawnCanVoreGoal_Store</li>
+    </requiredKeywords>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Store</voreGoal>
+          <role>Predator</role>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Store</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreGoal_Store</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_VeryGood</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>GoalPreference_Predator_Store_Likes</defName>
+    <label>Geolier</label>
+    <description>As a geolier(e), [PAWN_label] likes to hold onto prey for as long as possible. [PAWN_pronoun] would make a good jail cell.</description>
+    <requiredKeywords>
+      <li>PawnCanVoreGoal_Store</li>
+    </requiredKeywords>
+    <rarity>Uncommon</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Store</voreGoal>
+          <role>Predator</role>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Store</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreGoal_Store</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_Good</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>GoalPreference_Predator_Store_Neutral</defName>
+    <label>Storage ambivalence</label>
+    <description>[PAWN_label] doesn't really care one way or the other about storing prey.</description>
+    <hidden>true</hidden>
+    <rarity>Common</rarity>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>GoalPreference_Predator_Store_Dislikes</defName>
+    <label>Noncommittal pred</label>
+    <description>[PAWN_label] dislikes storing prey indefinitely. [PAWN_pronoun] doesn't want to be burdened by prey longer than [PAWN_pronoun] has to. Find someone else to be your warehouse.</description>
+    <requiredKeywords>
+      <li>PawnCanVoreGoal_Store</li>
+    </requiredKeywords>
+    <rarity>Uncommon</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Store</voreGoal>
+          <role>Predator</role>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Store</voreGoal>
+          <role>Predator</role>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreGoal_Store</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_Bad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>GoalPreference_Predator_Store_Refuses</defName>
+    <label>In-and-out pred</label>
+    <description>[PAWN_label] hates storing prey indefinitely. Find someone else to be your warehouse.</description>
+    <requiredKeywords>
+      <li>PawnCanVoreGoal_Store</li>
+    </requiredKeywords>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Store</voreGoal>
+          <role>Predator</role>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Store</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreGoal_Store</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_VeryBad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <!-- Hold -->
+  <RimVore2.QuirkPoolDef>
+    <defName>GoalPreference_Predator_Hold</defName>
+    <label>Predatory goal preference (Hold)</label>
+    <category>Goal Preference</category>
+    <description>These quirks determine how much a pawn likes temporarily storing live prey.</description>
+    <generationOrder>2</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>GoalPreference_Predator_Hold_Obsessed</li>
+      <li>GoalPreference_Predator_Hold_Likes</li>
+      <li>GoalPreference_Predator_Hold_Neutral</li>
+      <li>GoalPreference_Predator_Hold_Dislikes</li>
+      <li>GoalPreference_Predator_Hold_Refuses</li>
+      <!-- <li>GoalPreference_Predator_Hold_Incapable</li> -->
+    </quirks>
+    <blockingQuirks>
+      <li>PredatorDisposition_Refuses</li>
+    </blockingQuirks>
+    <blockingKeywords>
+      <li>PawnIsAnimal</li>
+    </blockingKeywords>
+  </RimVore2.QuirkPoolDef>
+
+  <RimVore2.QuirkDef>
+    <defName>GoalPreference_Predator_Hold_Obsessed</defName>
+    <label>Heavy Holder</label>
+    <description>As a heavy Holder, [PAWN_label] loves to allow [PAWN_possessive] prey a trip through [PAWN_objective]self.</description>
+    <requiredKeywords>
+      <li>PawnCanVoreGoal_Hold</li>
+    </requiredKeywords>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Hold</voreGoal>
+          <role>Predator</role>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Hold</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreGoal_Hold</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_VeryGood</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>GoalPreference_Predator_Hold_Likes</defName>
+    <label>Holder</label>
+    <description>As a Holder, [PAWN_label] likes to pass their prey.</description>
+    <requiredKeywords>
+      <li>PawnCanVoreGoal_Hold</li>
+    </requiredKeywords>
+    <rarity>Uncommon</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Hold</voreGoal>
+          <role>Predator</role>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Hold</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreGoal_Hold</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_Good</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>GoalPreference_Predator_Hold_Neutral</defName>
+    <label>Hold ambivalence</label>
+    <description>[PAWN_label] doesn't really care one way or the other about temporarily storing prey.</description>
+    <hidden>true</hidden>
+    <rarity>Common</rarity>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>GoalPreference_Predator_Hold_Dislikes</defName>
+    <label>UnHoldy pred</label>
+    <description>[PAWN_label] dislikes temporarily storing prey.</description>
+    <requiredKeywords>
+      <li>PawnCanVoreGoal_Hold</li>
+    </requiredKeywords>
+    <rarity>Uncommon</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Hold</voreGoal>
+          <role>Predator</role>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Hold</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreGoal_Hold</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_Bad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>GoalPreference_Predator_Hold_Refuses</defName>
+    <label>Holding refusal</label>
+    <description>[PAWN_label] hates storing prey temporarily.</description>
+    <requiredKeywords>
+      <li>PawnCanVoreGoal_Hold</li>
+    </requiredKeywords>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Hold</voreGoal>
+          <role>Predator</role>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Hold</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreGoal_Hold</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_VeryBad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  
+  <!-- heal -->
+  <RimVore2.QuirkPoolDef>
+    <defName>GoalPreference_Predator_Heal</defName>
+    <label>Predatory goal preference (heal)</label>
+    <category>Goal Preference</category>
+    <description>These quirks determine how much a pawn likes healing prey.</description>
+    <generationOrder>2</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>GoalPreference_Predator_Heal_Obsessed</li>
+      <li>GoalPreference_Predator_Heal_Likes</li>
+      <li>GoalPreference_Predator_Heal_Neutral</li>
+      <li>GoalPreference_Predator_Heal_Dislikes</li>
+      <li>GoalPreference_Predator_Heal_Refuses</li>
+      <!-- <li>GoalPreference_Predator_Heal_Incapable</li> -->
+    </quirks>
+    <blockingQuirks>
+      <li>PredatorDisposition_Refuses</li>
+    </blockingQuirks>
+    <blockingKeywords>
+      <li>PawnIsAnimal</li>
+    </blockingKeywords>
+  </RimVore2.QuirkPoolDef>
+
+  <RimVore2.QuirkDef>
+    <defName>GoalPreference_Predator_Heal_Obsessed</defName>
+    <label>Heal Slut</label>
+    <description>No need to spam E, [PAWN_label] has got you covered with a cozy place to stay in and get healthy.</description>
+    <requiredKeywords>
+      <li>PawnCanVoreGoal_Heal</li>
+    </requiredKeywords>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Heal</voreGoal>
+          <role>Predator</role>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Heal</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreGoal_Heal</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_VeryGood</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>GoalPreference_Predator_Heal_Likes</defName>
+    <label>Healer</label>
+    <description>As a professional MMO Healer, [PAWN_label] likes to carry their team.</description>
+    <requiredKeywords>
+      <li>PawnCanVoreGoal_Heal</li>
+    </requiredKeywords>
+    <rarity>Uncommon</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Heal</voreGoal>
+          <role>Predator</role>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Heal</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreGoal_Heal</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_Good</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>GoalPreference_Predator_Heal_Neutral</defName>
+    <label>Heal ambivalence</label>
+    <description>[PAWN_label] doesn't really care one way or the other about healing prey.</description>
+    <hidden>true</hidden>
+    <rarity>Common</rarity>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>GoalPreference_Predator_Heal_Dislikes</defName>
+    <label>Unhealthy pred</label>
+    <description>[PAWN_label] dislikes healing prey.</description>
+    <requiredKeywords>
+      <li>PawnCanVoreGoal_Heal</li>
+    </requiredKeywords>
+    <rarity>Uncommon</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Heal</voreGoal>
+          <role>Predator</role>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Heal</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreGoal_Heal</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_Bad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>GoalPreference_Predator_Heal_Refuses</defName>
+    <label>Healing refusal</label>
+    <description>[PAWN_label] hates healing prey.</description>
+    <requiredKeywords>
+      <li>PawnCanVoreGoal_Heal</li>
+    </requiredKeywords>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Heal</voreGoal>
+          <role>Predator</role>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Heal</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreGoal_Heal</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_VeryBad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  
+
+  <!-- Prey side -->
+
+  <RimVore2.QuirkPoolDef>
+    <defName>GoalPreference_Prey_Digest</defName>
+    <label>Preyish goal preference (digestion)</label>
+    <category>Goal Preference</category>
+    <description>These quirks determine how much a pawn wants to be digested (or converted into some other material). At the extremes, the pawn will either never or always try to be digested. Be careful increasing the commonality of a digestion preference: willing pawns can easily be killed by predators with little notice.</description>
+    <generationOrder>2</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>GoalPreference_Prey_Digest_Obsessed</li>
+      <li>GoalPreference_Prey_Digest_Likes</li>
+      <li>GoalPreference_Prey_Digest_Neutral</li>
+      <li>GoalPreference_Prey_Digest_Dislikes</li>
+      <li>GoalPreference_Prey_Digest_Refuses</li>
+      <!-- <li>GoalPreference_Prey_Digest_Incapable</li> -->
+    </quirks>
+    <blockingQuirks>
+      <li>PreyDisposition_Refuses</li>
+    </blockingQuirks>
+    <blockingKeywords>
+      <li>PawnIsAnimal</li>
+    </blockingKeywords>
+  </RimVore2.QuirkPoolDef>
+
+  <RimVore2.QuirkDef>
+    <defName>GoalPreference_Prey_Digest_Obsessed</defName>
+    <label>Digestion-wish</label>
+    <description>As an obsessive aliment(e), [PAWN_label] just can't help it; [PAWN_pronoun] wants to be utterly digested.</description>
+    <rarity>VeryRare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Digest</voreGoal>
+          <role>Prey</role>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>ConvertLube</voreGoal>
+          <role>Prey</role>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>ConvertMilk</voreGoal>
+          <role>Prey</role>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>ConvertSperm</voreGoal>
+          <role>Prey</role>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Digest</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>ConvertLube</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>ConvertMilk</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>ConvertSperm</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreGoal_Digest</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_Digest_Prey_VeryGood</memory>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreGoal_ConvertLube</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_Digest_Prey_VeryGood</memory>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreGoal_ConvertMilk</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_Digest_Prey_VeryGood</memory>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreGoal_ConvertSperm</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_Digest_Prey_VeryGood</memory>
+      </li>
+      <!--- no post vore thoughts, dead and digested pawns have no thoughts :) -->
+      <!--MH: but we should recall the desire for reformation in the future!-->
+      <!-- ESEGN: Now there are! -->
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>GoalPreference_Prey_Digest_Likes</defName>
+    <label>Aliment</label>
+    <description>As an aliment(e), [PAWN_label] often thinks about getting digested someday.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Digest</voreGoal>
+          <role>Prey</role>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>ConvertLube</voreGoal>
+          <role>Prey</role>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>ConvertMilk</voreGoal>
+          <role>Prey</role>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>ConvertSperm</voreGoal>
+          <role>Prey</role>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Digest</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>ConvertLube</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>ConvertMilk</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>ConvertSperm</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreGoal_Digest</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_Digest_Prey_Good</memory>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreGoal_ConvertLube</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_Digest_Prey_Good</memory>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreGoal_ConvertMilk</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_Digest_Prey_Good</memory>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreGoal_ConvertSperm</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_Digest_Prey_Good</memory>
+      </li>
+      <!--- no post vore thoughts, dead and digested pawns have no thoughts :) -->
+      <!--MH: but we should recall the desire for reformation in the future!-->
+      <!-- ESEGN: Now there are! -->
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>GoalPreference_Prey_Digest_Neutral</defName>
+    <label>Alimentary ambivalence</label>
+    <description>[PAWN_label] doesn't really care one way or the other about being digested.</description>
+    <hidden>true</hidden>
+    <rarity>Common</rarity>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>GoalPreference_Prey_Digest_Dislikes</defName>
+    <label>Alimentary aversion</label>
+    <description>[PAWN_label] is not particularly interested in an early, acidic grave.</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Digest</voreGoal>
+          <role>Prey</role>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>ConvertLube</voreGoal>
+          <role>Prey</role>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>ConvertMilk</voreGoal>
+          <role>Prey</role>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>ConvertSperm</voreGoal>
+          <role>Prey</role>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Digest</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>ConvertLube</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>ConvertMilk</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>ConvertSperm</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreGoal_Digest</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_Digest_Prey_Bad</memory>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreGoal_ConvertLube</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_Digest_Prey_Bad</memory>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreGoal_ConvertMilk</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_Digest_Prey_Bad</memory>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreGoal_ConvertSperm</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_Digest_Prey_Bad</memory>
+      </li>
+      <!--- no post vore thoughts, dead and digested pawns have no thoughts :) -->
+      <!--MH: but we should recall the desire for reformation in the future!-->
+      <!-- ESEGN: Now there are! -->
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>GoalPreference_Prey_Digest_Refuses</defName>
+    <label>Life-wish</label>
+    <description>Are you mad? Who would want to be digested alive? [PAWN_label] certainly doesn't.</description>
+    <rarity>Uncommon</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Digest</voreGoal>
+          <role>Prey</role>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>ConvertLube</voreGoal>
+          <role>Prey</role>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>ConvertMilk</voreGoal>
+          <role>Prey</role>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>ConvertSperm</voreGoal>
+          <role>Prey</role>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Digest</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>ConvertLube</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>ConvertMilk</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>ConvertSperm</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreGoal_Digest</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_Digest_Prey_VeryBad</memory>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreGoal_ConvertLube</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_Digest_Prey_VeryBad</memory>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreGoal_ConvertMilk</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_Digest_Prey_VeryBad</memory>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreGoal_ConvertSperm</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_Digest_Prey_VeryBad</memory>
+      </li>
+      <!--- no post vore thoughts, dead and digested pawns have no thoughts :) -->
+      <!--MH: but we should recall the desire for reformation in the future!-->
+      <!-- ESEGN: Now there are! -->
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkPoolDef>
+    <defName>GoalPreference_Prey_Pleasure</defName>
+    <label>Preyish goal preference (pleasure)</label>
+    <category>Goal Preference</category>
+    <description>These quirks determine how much a pawn wants to be used by a predator for pleasure. At the extremes, the pawn will either never or always try to be pleasured.</description>
+    <generationOrder>2</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>GoalPreference_Prey_Pleasure_Obsessed</li>
+      <li>GoalPreference_Prey_Pleasure_Likes</li>
+      <li>GoalPreference_Prey_Pleasure_Neutral</li>
+      <li>GoalPreference_Prey_Pleasure_Dislikes</li>
+      <li>GoalPreference_Prey_Pleasure_Refuses</li>
+      <!-- <li>GoalPreference_Prey_Pleasure_Incapable</li> -->
+    </quirks>
+    <blockingQuirks>
+      <li>PreyDisposition_Refuses</li>
+    </blockingQuirks>
+    <blockingKeywords>
+      <li>PawnIsAnimal</li>
+    </blockingKeywords>
+  </RimVore2.QuirkPoolDef>
+
+  <RimVore2.QuirkDef>
+    <defName>GoalPreference_Prey_Pleasure_Obsessed</defName>
+    <label>Obsessive Godemichet</label>
+    <description>As an obsessive godemichet(te), [PAWN_label] lives to be used for pleasure, and seeks it in the bellies of predators.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Pleasure</voreGoal>
+          <role>Prey</role>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Pleasure</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreGoal_Pleasure</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_Pleasure_Prey_VeryGood</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>GoalPreference_Prey_Pleasure_Likes</defName>
+    <label>Godemichet</label>
+    <description>As a godemichet(te), [PAWN_label] likes to get off deep inside someone just as much as shallowly.</description>
+    <rarity>Uncommon</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Pleasure</voreGoal>
+          <role>Prey</role>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Pleasure</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreGoal_Pleasure</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_Pleasure_Prey_Good</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>GoalPreference_Prey_Pleasure_Neutral</defName>
+    <label>Dildo ambivalence</label>
+    <description>[PAWN_label] doesn't really care one way or the other about being used for a predator's pleasure.</description>
+    <hidden>true</hidden>
+    <rarity>Common</rarity>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>GoalPreference_Prey_Pleasure_Dislikes</defName>
+    <label>Chaste prey</label>
+    <description>[PAWN_label] dislikes climbing into a predator for pleasure's sake. Maybe [PAWN_pronoun]'s some sort of weirdo who doesn't find innards arousing?</description>
+    <rarity>Uncommon</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Pleasure</voreGoal>
+          <role>Prey</role>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Pleasure</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreGoal_Pleasure</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_Pleasure_Prey_Bad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>GoalPreference_Prey_Pleasure_Refuses</defName>
+    <label>Celibate prey</label>
+    <description>[PAWN_label] hates trying to find pleasure in the insides of a predator. [PAWN_pronoun] just can't get it on in there.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Pleasure</voreGoal>
+          <role>Prey</role>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Pleasure</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreGoal_Pleasure</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_Pleasure_Prey_VeryBad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkPoolDef>
+    <defName>GoalPreference_Prey_Store</defName>
+    <label>Preyish goal preference (storage)</label>
+    <category>Goal Preference</category>
+    <description>These quirks determine how much a pawn wants to be stored indefinitely inside a predator. At the extremes, the pawn will either never or always try to be stored. Be careful increasing the commonality of a storage preference: willing pawns can easily be lost indefinitely among however many predators you have who are capable of storage.</description>
+    <generationOrder>2</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>GoalPreference_Prey_Store_Obsessed</li>
+      <li>GoalPreference_Prey_Store_Likes</li>
+      <li>GoalPreference_Prey_Store_Neutral</li>
+      <li>GoalPreference_Prey_Store_Dislikes</li>
+      <li>GoalPreference_Prey_Store_Refuses</li>
+      <!-- <li>GoalPreference_Prey_Store_Incapable</li> -->
+    </quirks>
+    <blockingQuirks>
+      <li>PreyDisposition_Refuses</li>
+    </blockingQuirks>
+    <blockingKeywords>
+      <li>PawnIsAnimal</li>
+    </blockingKeywords>
+  </RimVore2.QuirkPoolDef>
+
+  <RimVore2.QuirkDef>
+    <defName>GoalPreference_Prey_Store_Obsessed</defName>
+    <label>Shut-in prey</label>
+    <description>[PAWN_label] would rather live the rest of [PAWN_possessive] life inside someone's belly than contribute to society in any way.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Store</voreGoal>
+          <role>Prey</role>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Store</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreGoal_Store</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_VeryGood</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>GoalPreference_Prey_Store_Likes</defName>
+    <label>Live-in prey</label>
+    <description>Sometimes, [PAWN_label] just wants to take a vacation inside of someone. Or move in.</description>
+    <rarity>Uncommon</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Store</voreGoal>
+          <role>Prey</role>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Store</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreGoal_Store</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_Good</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>GoalPreference_Prey_Store_Neutral</defName>
+    <label>Live-in ambivalence</label>
+    <description>[PAWN_label] doesn't really care one way or the other about being stored indefinitely.</description>
+    <hidden>true</hidden>
+    <rarity>Common</rarity>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>GoalPreference_Prey_Store_Dislikes</defName>
+    <label>Busy prey</label>
+    <description>If you have to eat [PAWN_label], at least don't make it an extended stay. [PAWN_pronoun] has [PAWN_possessive] own things to do.</description>
+    <rarity>Uncommon</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Store</voreGoal>
+          <role>Prey</role>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Store</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreGoal_Store</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_Bad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>GoalPreference_Prey_Store_Refuses</defName>
+    <label>In-and-out prey</label>
+    <description>[PAWN_label] cannot think of a life more boring than squishing around inside of a predator for days, months, or heaven forbid, years.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Store</voreGoal>
+          <role>Prey</role>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Store</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreGoal_Store</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_VeryBad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkPoolDef>
+    <defName>GoalPreference_Prey_Hold</defName>
+    <label>Preyish goal preference (Hold)</label>
+    <category>Goal Preference</category>
+    <description>These quirks determine how much a pawn wants to be temporarily stored inside a predator. At the extremes, the pawn will either never or always try to be temp-stored.</description>
+    <generationOrder>2</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>GoalPreference_Prey_Hold_Obsessed</li>
+      <li>GoalPreference_Prey_Hold_Likes</li>
+      <li>GoalPreference_Prey_Hold_Neutral</li>
+      <li>GoalPreference_Prey_Hold_Dislikes</li>
+      <li>GoalPreference_Prey_Hold_Refuses</li>
+      <!-- <li>GoalPreference_Prey_Hold_Incapable</li> -->
+    </quirks>
+    <blockingQuirks>
+      <li>PreyDisposition_Refuses</li>
+    </blockingQuirks>
+    <blockingKeywords>
+      <li>PawnIsAnimal</li>
+    </blockingKeywords>
+  </RimVore2.QuirkPoolDef>
+
+  <RimVore2.QuirkDef>
+    <defName>GoalPreference_Prey_Hold_Obsessed</defName>
+    <label>In-and-out prey</label>
+    <description>[PAWN_label] loves passing through and taking in the sights of [PAWN_possessive] predators.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Hold</voreGoal>
+          <role>Prey</role>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Hold</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreGoal_Hold</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_VeryGood</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>GoalPreference_Prey_Hold_Likes</defName>
+    <label>Live-in prey</label>
+    <description>Sometimes, [PAWN_label] just wants to take a vacation inside of someone. Or move in.</description>
+    <rarity>Uncommon</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Hold</voreGoal>
+          <role>Prey</role>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Hold</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreGoal_Hold</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_Good</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>GoalPreference_Prey_Hold_Neutral</defName>
+    <label>Hold ambivalence</label>
+    <description>[PAWN_label] doesn't really care one way or the other about being held temporarily.</description>
+    <hidden>true</hidden>
+    <rarity>Common</rarity>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>GoalPreference_Prey_Hold_Dislikes</defName>
+    <label>Busy prey</label>
+	<!-- MP11: This one and the next one should probably get their descriptions updated; for one thing, the Hold goal generally isn't an extended stay. -->
+    <description>If you have to eat [PAWN_label], at least don't make it an extended stay. [PAWN_pronoun] has [PAWN_possessive] own things to do.</description>
+    <rarity>Uncommon</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Hold</voreGoal>
+          <role>Prey</role>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Hold</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreGoal_Hold</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_Bad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>GoalPreference_Prey_Hold_Refuses</defName>
+    <label>Unwilling</label>
+    <description>[PAWN_label] cannot think of a life more boring than squishing around inside of a predator for days, months, or heaven forbid, years.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Hold</voreGoal>
+          <role>Prey</role>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Hold</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreGoal_Hold</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_VeryBad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+
+  <RimVore2.QuirkPoolDef>
+    <defName>GoalPreference_Prey_Heal</defName>
+    <label>Preyish goal preference (heal)</label>
+    <category>Goal Preference</category>
+    <description>These quirks determine how much a pawn wants to be healed inside a predator. At the extremes, the pawn will either never or always try to be heal-vored.</description>
+    <generationOrder>2</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>GoalPreference_Prey_Heal_Obsessed</li>
+      <li>GoalPreference_Prey_Heal_Likes</li>
+      <li>GoalPreference_Prey_Heal_Neutral</li>
+      <li>GoalPreference_Prey_Heal_Dislikes</li>
+      <li>GoalPreference_Prey_Heal_Refuses</li>
+      <!-- <li>GoalPreference_Prey_Heal_Incapable</li> -->
+    </quirks>
+    <blockingQuirks>
+      <li>PreyDisposition_Refuses</li>
+    </blockingQuirks>
+    <blockingKeywords>
+      <li>PawnIsAnimal</li>
+    </blockingKeywords>
+  </RimVore2.QuirkPoolDef>
+
+  <RimVore2.QuirkDef>
+    <defName>GoalPreference_Prey_Heal_Obsessed</defName>
+    <label>Hypochondriac</label>
+    <description>[PAWN_label] always feels like they need to slip into someone to be healed, even when [PAWN_possessive] is perfectly fine.</description>
+    <rarity>Uncommon</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Heal</voreGoal>
+          <role>Prey</role>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Heal</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreGoal_Heal</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_VeryGood</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>GoalPreference_Prey_Heal_Likes</defName>
+    <label>Cozy prey</label>
+    <description>[PAWN_label] prefers healing vore over an expensive trip to a spa.</description>
+    <rarity>Uncommon</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Heal</voreGoal>
+          <role>Prey</role>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Heal</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreGoal_Heal</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_Good</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>GoalPreference_Prey_Heal_Neutral</defName>
+    <label>Heal ambivalence</label>
+    <description>[PAWN_label] doesn't really care one way or the other about being vored for health.</description>
+    <hidden>true</hidden>
+    <rarity>Common</rarity>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>GoalPreference_Prey_Heal_Dislikes</defName>
+    <label>Uncomfortable prey</label>
+    <description>[PAWN_label] would prefer not being vored this way, even if it would be beneficial for their health.</description>
+    <rarity>Uncommon</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Heal</voreGoal>
+          <role>Prey</role>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Heal</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreGoal_Heal</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_Bad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>GoalPreference_Prey_Heal_Refuses</defName>
+    <label>Trypanophobia</label>
+    <description>[PAWN_label] would rather succumb to their injuries than allow [PAWN_objective]self to be used as a healing prey.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Heal</voreGoal>
+          <role>Prey</role>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <voreGoal>Heal</voreGoal>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreGoal_Heal</li>
+        </keywords>
+        <memory>RV2_GoalPreferenceQuirkSatisfaction_VeryBad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+</Defs>

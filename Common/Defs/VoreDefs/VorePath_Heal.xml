@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RimVore2.VorePathDef>
+    <defName>OralHeal</defName>
+    <label>(Heal) Oral</label>
+    <RMBLabel>Oral vore</RMBLabel>
+    <actionDescription>{PREDATOR} will heal {PREY} in their stomach</actionDescription>
+    <description>Healing vore will tend to a pawns wounds and slowly heal their damaged body parts. Healing vore is relatively weak, so if you want to treat a pawn properly, use medicine and a good doctor.</description>
+    <initTale>RV2_VoreInitiation_OralHeal</initTale>
+    <exitTale>RV2_VoreExit_OralHeal</exitTale>
+    <voreType>Oral</voreType>
+    <voreGoal>Heal</voreGoal>
+    <postVoreMemories>
+      <predatorPostVoreSuccess>RV2_PredatorOralHealSuccess</predatorPostVoreSuccess>
+      <preyPostVoreSuccess>RV2_PreyOralHealSuccess</preyPostVoreSuccess>
+    </postVoreMemories>
+    <stages>
+      <li>Mouth_Enter</li>
+      <li>Stomach_Warmup</li>
+      <li>Stomach_Heal</li>
+      <li>Mouth_Regurgitate</li>
+    </stages>
+    <defaultRequiredStruggles>9</defaultRequiredStruggles>
+  </RimVore2.VorePathDef>
+
+  <!-- ESEGN: FullTour -->
+
+  <RimVore2.VorePathDef>
+    <defName>FullTourHeal</defName>
+    <label>(Heal) Full Tour</label>
+    <RMBLabel>Full tour vore</RMBLabel>
+    <actionDescription>{PREDATOR} will heal {PREY} in their stomach, and release them out the other end</actionDescription>
+    <description>Healing vore will tend to a pawns wounds and slowly heal their damaged body parts. Healing vore is relatively weak, so if you want to treat a pawn properly, use medicine and a good doctor.</description>
+    <initTale>RV2_VoreInitiation_FullTourHeal</initTale>
+    <exitTale>RV2_VoreExit_FullTourHeal</exitTale>
+    <voreType>FullTour</voreType>
+    <voreGoal>Heal</voreGoal>
+    <postVoreMemories>
+      <predatorPostVoreSuccess>RV2_PredatorFullTourHealSuccess</predatorPostVoreSuccess>
+      <preyPostVoreSuccess>RV2_PreyFullTourHealSuccess</preyPostVoreSuccess>
+    </postVoreMemories>
+    <stages>
+      <li>Mouth_Enter</li>
+      <li>Stomach_Warmup</li>
+      <li>Stomach_Heal</li>
+      <li>Intestines_Exit</li>
+      <li>Anus_Exit</li>
+    </stages>
+    <defaultRequiredStruggles>9</defaultRequiredStruggles>
+  </RimVore2.VorePathDef>
+
+  <RimVore2.VorePathDef>
+    <defName>VaginalHeal</defName>
+    <label>(Heal) Vaginal</label>
+    <RMBLabel>Vaginal vore</RMBLabel>
+    <actionDescription>{PREDATOR} will heal {PREY} in their womb</actionDescription>
+    <description>Healing vore will tend to a pawns wounds and slowly heal their damaged body parts. Healing vore is relatively weak, so if you want to treat a pawn properly, use medicine and a good doctor.</description>
+    <initTale>RV2_VoreInitiation_VaginalHeal</initTale>
+    <exitTale>RV2_VoreExit_VaginalHeal</exitTale>
+    <voreType>Vaginal</voreType>
+    <voreGoal>Heal</voreGoal>
+    <postVoreMemories>
+      <predatorPostVoreSuccess>RV2_PredatorVaginalHealSuccess</predatorPostVoreSuccess>
+      <preyPostVoreSuccess>RV2_PreyVaginalHealSuccess</preyPostVoreSuccess>
+    </postVoreMemories>
+    <stages>
+      <li>Vagina_Enter</li>
+      <li>Womb_Warmup</li>
+      <li>Womb_Heal</li>
+      <li>Vagina_Exit</li>
+    </stages>
+    <defaultRequiredStruggles>9</defaultRequiredStruggles>
+  </RimVore2.VorePathDef>
+
+  <RimVore2.VorePathDef>
+    <defName>CockHeal</defName>
+    <label>(Heal) Cock</label>
+    <RMBLabel>Cock vore</RMBLabel>
+    <actionDescription>{PREDATOR} will heal {PREY} in their testicles</actionDescription>
+    <description>Healing vore will tend to a pawns wounds and slowly heal their damaged body parts. Healing vore is relatively weak, so if you want to treat a pawn properly, use medicine and a good doctor.</description>
+    <initTale>RV2_VoreInitiation_CockHeal</initTale>
+    <exitTale>RV2_VoreExit_CockHeal</exitTale>
+    <voreType>Cock</voreType>
+    <voreGoal>Heal</voreGoal>
+    <postVoreMemories>
+      <predatorPostVoreSuccess>RV2_PredatorCockHealSuccess</predatorPostVoreSuccess>
+      <preyPostVoreSuccess>RV2_PreyCockHealSuccess</preyPostVoreSuccess>
+    </postVoreMemories>
+    <stages>
+      <li>Cock_Enter</li>
+      <li>Testicles_Warmup</li>
+      <li>Testicles_Heal</li>
+      <li>Cock_Exit</li>
+    </stages>
+    <defaultRequiredStruggles>9</defaultRequiredStruggles>
+  </RimVore2.VorePathDef>
+
+  <RimVore2.VorePathDef>
+    <defName>NippleHeal</defName>
+    <label>(Heal) Nipple</label>
+    <RMBLabel>Nipple vore</RMBLabel>
+    <actionDescription>{PREDATOR} will heal {PREY} in their breasts</actionDescription>
+    <description>Healing vore will tend to a pawns wounds and slowly heal their damaged body parts. Healing vore is relatively weak, so if you want to treat a pawn properly, use medicine and a good doctor.</description>
+    <initTale>RV2_VoreInitiation_NippleHeal</initTale>
+    <exitTale>RV2_VoreExit_NippleHeal</exitTale>
+    <voreType>Nipple</voreType>
+    <voreGoal>Heal</voreGoal>
+    <postVoreMemories>
+      <predatorPostVoreSuccess>RV2_PredatorNippleHealSuccess</predatorPostVoreSuccess>
+      <preyPostVoreSuccess>RV2_PreyNippleHealSuccess</preyPostVoreSuccess>
+    </postVoreMemories>
+    <stages>
+      <li>Nipple_Enter</li>
+      <li>Breasts_Warmup</li>
+      <li>Breasts_Heal</li>
+      <li>Nipple_Exit</li>
+    </stages>
+    <defaultRequiredStruggles>9</defaultRequiredStruggles>
+  </RimVore2.VorePathDef>
+
+</Defs>

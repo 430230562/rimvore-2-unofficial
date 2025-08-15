@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <!-- More Monster Girls - mod version: 18th sep 21 - https://steamcommunity.com/sharedfiles/filedetails/?id=2014838309 -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>More Monster Girls</li>
+    </mods>
+    <match Class="PatchOperationAddModExtension">
+      <xpath>/Defs/ThingDef[defName="FairyIce"]</xpath>
+      <value>
+        <li Class="RimVore2.InternalTemperatureExtension">
+          <temperature>1</temperature>
+        </li>
+      </value>
+    </match>
+  </Operation>
+</Patch>

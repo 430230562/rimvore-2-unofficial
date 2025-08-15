@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RimVore2.QuirkPoolDef>
+    <defName>Persuasiveness</defName>
+    <label>Persuasiveness</label>
+	<category>Proposals</category>
+	<description>These quirks determine how convincing a pawn is at proposing a vore attempt.</description>
+    <generationOrder>3</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>Persuasiveness_VeryGood</li>
+	  <li>Persuasiveness_Good</li>
+      <li>Persuasiveness_Normal</li>
+      <li>Persuasiveness_Bad</li>
+	  <li>Persuasiveness_VeryBad</li>
+    </quirks>
+    <blockingKeywords>
+      <li>PawnIsAnimal</li>
+    </blockingKeywords>
+  </RimVore2.QuirkPoolDef>
+
+  <RimVore2.QuirkDef>
+    <defName>Persuasiveness_VeryGood</defName>
+    <label>Beguilingly voresuasive</label>
+    <description>Forget a silver tongue; [PAWN_label] has a whole maw-full of gold and honey. Targets are much more likely to agree to [PAWN_possessive] proposals.</description>
+    <rarity>VeryRare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>VoreProposalSuccessModifier</modifierName>
+        <modifierValue>2</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>Persuasiveness_Good</defName>
+    <label>Voresuasive</label>
+    <description>[PAWN_label] has a silver tongue with the subject of vore. Targets are more likely to agree to [PAWN_possessive] proposals.</description>
+    <rarity>Uncommon</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>VoreProposalSuccessModifier</modifierName>
+        <modifierValue>1.3</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>Persuasiveness_Normal</defName>
+    <label>Neutral charm</label>
+    <hidden>true</hidden>
+    <description>[PAWN_label] is not particularly persuasive or unpersuasive about vore.</description>
+    <rarity>Abundant</rarity>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>Persuasiveness_Bad</defName>
+    <label>Unvoresuasive</label>
+    <description>[PAWN_label] can't think of any good arguments for why you should do vore with [PAWN_objective]. Targets are less likely to agree to [PAWN_possessive] proposals.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>VoreProposalSuccessModifier</modifierName>
+        <modifierValue>0.75</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>Persuasiveness_VeryBad</defName>
+    <label>Staggeringly unvoresuasive</label>
+    <description>[PAWN_label] could convince a rampaging predator not to eat [PAWN_objective]... so long as [PAWN_pronoun] was actively trying to get eaten. Targets are much less likely to agree to [PAWN_possessive] proposals.</description>
+    <rarity>VeryRare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>VoreProposalSuccessModifier</modifierName>
+        <modifierValue>0.5</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+</Defs>

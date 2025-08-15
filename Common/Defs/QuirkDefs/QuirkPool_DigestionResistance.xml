@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RimVore2.QuirkPoolDef>
+    <defName>DigestionResistance</defName>
+    <label>Digestion resistance</label>
+    <category>Digestion</category>
+    <description>These quirks determine how resistant pawns are to all forms of chemical digestion: nourishing digestion, conversion into another material, assimilation, and any others.</description>
+    <generationOrder>3</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>DigestionResistance_VeryGood</li>
+      <li>DigestionResistance_Good</li>
+      <li>DigestionResistance_Normal</li>
+      <li>DigestionResistance_Bad</li>
+      <li>DigestionResistance_VeryBad</li>
+    </quirks>
+  </RimVore2.QuirkPoolDef>
+
+  <RimVore2.QuirkDef>
+    <defName>DigestionResistance_VeryGood</defName>
+    <label>Acid-proof</label>
+    <description>[PAWN_label] is very difficult to digest. Not impossible, but it’ll take a while; about four times as long as most prey.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>DigestionResistance</modifierName>
+        <modifierValue>0.25</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>DigestionResistance_Good</defName>
+    <label>Acid-resistant</label>
+    <description>[PAWN_label] resists digestion well, and will last about twice as long as most prey in a hostile belly.</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>DigestionResistance</modifierName>
+        <modifierValue>0.5</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>DigestionResistance_Normal</defName>
+    <label>Normal acid resistance</label>
+    <hidden>true</hidden>
+    <description>[PAWN_label] is digested as easily as anyone else.</description>
+    <rarity>Abundant</rarity>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkDef>
+    <defName>DigestionResistance_Bad</defName>
+    <label>Melty</label>
+    <description>[PAWN_label] melts under acid easily and won’t last more than half as long in a hostile belly as most prey.</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>DigestionResistance</modifierName>
+        <modifierValue>1.5</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>DigestionResistance_VeryBad</defName>
+    <label>Cotton candy</label>
+    <description>[PAWN_label] falls apart in stomach acid like cotton candy, and doesn’t fare any better in other organs. They have maybe a quarter of the time to escape as normal prey.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>DigestionResistance</modifierName>
+        <modifierValue>2</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+</Defs>

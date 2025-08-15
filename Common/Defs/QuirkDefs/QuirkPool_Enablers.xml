@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RimVore2.QuirkPoolDef>
+    <defName>Enablers_Goals_Core</defName>
+    <label>Goal enablers</label>
+    <category>General</category>
+    <description>These quirks are required for a pawn to be able to use vore, each representing one goal. Modifying their commonality sets the global chances that any pawn will be capable of using any given vore path. Vore enablers can be aquired to add the quirk to an existing pawn, even if the quirk itself is set to ForcedOnly; do this if you want vore to be a power unlocked solely through acquisition of the required enabler surgeries.</description>
+    <generationOrder>1</generationOrder>
+    <poolType>RollForEach</poolType>
+    <quirks>
+      <li>Enablers_Core_Goal_ConvertLube</li>
+      <li>Enablers_Core_Goal_ConvertMilk</li>
+      <li>Enablers_Core_Goal_ConvertSperm</li>
+      <li>Enablers_Core_Goal_Digest</li>
+      <!--<li>Enablers_Core_Goal_Pleasure</li>-->
+      <!--<li>Enablers_Core_Goal_Store</li>-->
+      <li>Enablers_Core_Goal_TempEndo</li>
+      <li>Enablers_Core_Goal_Longendo</li>
+      <li>Enablers_Core_Goal_Heal</li>
+      <li>Enablers_Core_Goal_Reform</li>
+    </quirks>
+  </RimVore2.QuirkPoolDef>
+
+  <RimVore2.QuirkPoolDef>
+    <defName>Enablers_Types_Core</defName>
+    <label>Type enablers</label>
+    <category>General</category>
+    <description>These quirks are required for a pawn to be able to use vore, each representing one type. Modifying their commonality sets the global chances that any pawn will be capable of using any given vore path. Vore enablers can be aquired to add the quirk to an existing pawn, even if the quirk itself is set to Invalid; do this if you want vore to be a power unlocked solely through acquisition of the required enabler surgeries.</description>
+    <generationOrder>1</generationOrder>
+    <poolType>RollForEach</poolType>
+    <quirks>
+      <li>Enablers_Core_Type_Oral</li>
+      <li>Enablers_Core_Type_Anal</li>
+      <li>Enablers_Core_Type_Vaginal</li>
+      <li>Enablers_Core_Type_Cock</li>
+      <li>Enablers_Core_Type_Nipple</li>
+    </quirks>
+  </RimVore2.QuirkPoolDef>
+
+  <!-- Goal Enablers -->
+
+  <RimVore2.QuirkDef>
+    <defName>Enablers_Core_Goal_ConvertLube</defName>
+    <label>Lubrifactive enzymes</label>
+    <description>[PAWN_label] can melt live prey down to a great big puddle of vaginal lubricant in [PAWN_possessive] womb.</description>
+    <rarity>Abundant</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreEnabler">
+        <selector>
+          <voreGoal>ConvertLube</voreGoal>
+        </selector>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkDef>
+    <defName>Enablers_Core_Goal_ConvertMilk</defName>
+    <label>Lactifactive enzymes</label>
+    <description>[PAWN_label] can melt live prey down to milk in [PAWN_possessive] breasts.</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreEnabler">
+        <selector>
+          <voreGoal>ConvertMilk</voreGoal>
+        </selector>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkDef>
+    <defName>Enablers_Core_Goal_ConvertSperm</defName>
+    <label>Spermifactive enzymes</label>
+    <description>[PAWN_label] can melt live prey down to sperm in [PAWN_possessive] balls.</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreEnabler">
+        <selector>
+          <voreGoal>ConvertSperm</voreGoal>
+        </selector>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkDef>
+    <defName>Enablers_Core_Goal_Digest</defName>
+    <label>Digestive enzymes</label>
+    <description>[PAWN_label] has potent enough digestive enzymes to reasonably digest live prey.</description>
+    <rarity>Abundant</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreEnabler">
+        <selector>
+          <voreGoal>Digest</voreGoal>
+        </selector>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkDef>
+    <defName>Enablers_Core_Goal_Heal</defName>
+    <label>Analeptic enzymes</label>
+    <description>[PAWN_label]'s internal organs can function as a sanitary, comfortable, and even medicinal substitute for conventional bedrest.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreEnabler">
+        <selector>
+          <voreGoal>Heal</voreGoal>
+        </selector>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkDef>
+    <defName>Enablers_Core_Goal_Reform</defName>
+    <label>Reforming enzymes</label>
+    <description>[PAWN_label] is able to remake a pawn in their own image.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreEnabler">
+        <selector>
+          <voreGoal>Reform</voreGoal>
+        </selector>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkDef>
+    <defName>Enablers_Core_Goal_TempEndo</defName>
+    <label>Short-term endo</label>
+    <description>[PAWN_label] is nice and hospitable enough inside that [PAWN_possessive] innards can be used for comfort, leisure, and sexual pleasure, thanks to numerous quality of life improvements such as sanitization and passive airflow induction.</description>
+    <rarity>Guaranteed</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreEnabler">
+        <selector>
+          <voreGoal>Pleasure</voreGoal>
+        </selector>
+      </li>
+      <!-- this is where Hold would go -->
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkDef>
+    <defName>Enablers_Core_Goal_Longendo</defName>
+    <label>Long-term endo</label>
+    <description>[PAWN_label] is sphinctrally strong and biochemically stable enough to hold onto prey indefinitely.</description>
+    <rarity>Uncommon</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreEnabler">
+        <selector>
+          <voreGoal>Store</voreGoal>
+        </selector>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <!-- Type Enablers -->
+
+  <!-- ESEGN: Ideally full tour would need both oral and anal type enablers, but in my testing it ends up being that a pred only needs one or the other if I add it to both quirks -->
+  <!-- ESEGN: So I'm just going to put it on oral since that seems more fitting, and having a special enabler for it doesn't make as much sense -->
+
+  <RimVore2.QuirkDef>
+    <defName>Enablers_Core_Type_Oral</defName>
+    <label>Oral elasticity</label>
+    <description>[PAWN_label] has a throat with enough stretch to swallow down live prey.</description>
+    <rarity>Abundant</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreEnabler">
+        <selector>
+          <voreType>Oral</voreType>
+        </selector>
+      </li>
+      <!-- ESEGN: Full tour enabler. -->
+      <li Class="RimVore2.QuirkComp_VoreEnabler">
+        <selector>
+          <voreType>FullTour</voreType>
+        </selector>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkDef>
+    <defName>Enablers_Core_Type_Anal</defName>
+    <label>Anal elasticity</label>
+    <description>[PAWN_label] has a pucker and guts stretchy enough to posternate up live prey.</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreEnabler">
+        <selector>
+          <voreType>Anal</voreType>
+        </selector>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkDef>
+    <defName>Enablers_Core_Type_Vaginal</defName>
+    <label>Vaginal elasticity</label>
+    <description>[PAWN_label] has a snatch stretchy enough to unbirth live prey.</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreEnabler">
+        <selector>
+          <voreType>Vaginal</voreType>
+        </selector>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkDef>
+    <defName>Enablers_Core_Type_Cock</defName>
+    <label>Penile elasticity</label>
+    <description>[PAWN_label] has a shaft stretchy enough to unsow live prey.</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreEnabler">
+        <selector>
+          <voreType>Cock</voreType>
+        </selector>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkDef>
+    <defName>Enablers_Core_Type_Nipple</defName>
+    <label>Nipple elasticity</label>
+    <description>[PAWN_label] has tits stretchy enough to unnurse live prey.</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreEnabler">
+        <selector>
+          <voreType>Nipple</voreType>
+        </selector>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+</Defs>

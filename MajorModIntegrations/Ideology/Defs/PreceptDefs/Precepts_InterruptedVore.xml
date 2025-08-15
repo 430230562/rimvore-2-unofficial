@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <IssueDef>
+    <defName>RV2_InterruptedVore</defName>
+    <label>Interrupted Vore</label>
+    <iconPath>UI/Issues/voreInterrupted</iconPath>
+  </IssueDef>
+
+  <!-- Neutral -->
+  <!--<PreceptDef>
+    <defName>RV2_InterruptedVore_Accepted</defName>
+    <issue>RV2_InterruptedVore</issue>
+    <label>Accepted</label>
+    <description>Sometimes accidental vore happens, it's okay to break it up.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <associatedMemes>
+      <li>RV2_Preyism</li>
+      <li>RV2_Predation</li>
+    </associatedMemes>
+  </PreceptDef>-->
+  
+  <!-- Abhorrent -->
+  <PreceptDef>
+    <defName>RV2_InterruptedVore_Abhorrent</defName>
+    <issue>RV2_InterruptedVore</issue>
+    <label>abhorrent</label>
+    <description>Good cultists swallow, they don't spit.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <associatedMemes>
+      <li>RV2_Preyism</li>
+      <li>RV2_Predation</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>RV2_InterruptedVore</eventDef>
+        <thought>RV2_InterruptedVore_Abhorrent</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>RV2_InterruptedVore</eventDef>
+        <thought>RV2_InterruptedVore_Know_Abhorrent</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>RV2_InterruptedVore</eventDef>
+        <thought>RV2_InterruptedVore_Know_Social_Abhorrent</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <ThoughtDef>
+    <defName>RV2_InterruptedVore_Abhorrent</defName>
+    <durationDays>3</durationDays>
+    <stages>
+      <li>
+        <label>Interrupted vore</label>
+        <description>I forced a pred to release their prey, my peer are shunning me</description>
+        <baseMoodEffect>-24</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>RV2_InterruptedVore_Know_Abhorrent</defName>
+    <durationDays>3</durationDays>
+    <stages>
+      <li>
+        <label>Someone interrupted vore!!</label>
+        <description>One of us interrupted a predator, this is a disgusting insult to our beliefs!</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>RV2_InterruptedVore_Know_Social_Abhorrent</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>3</durationDays>
+    <stackLimit>5</stackLimit>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>interrupted vore</label>
+        <baseOpinionOffset>-10</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+</Defs>

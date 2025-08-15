@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <!-- Mass is not visible on pawns by default, this "fixes" that behaviour-->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/StatDef[defName="Mass"]/showOnUnhaulables</xpath>
+    <value>
+      <showOnUnhaulables>true</showOnUnhaulables>
+    </value>
+  </Operation>
+  
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/StatDef[defName="Mass"]/parts</xpath>
+    <value>
+      <li Class="RimVore2.StatPart_VoredWeight"/>
+    </value>
+  </Operation>
+  
+  <!-- Adds the StatPart to calculate a vore product containers contents value -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/StatDef[@Name="MarketValueBase"]/parts</xpath>
+    <value>
+      <li Class="RimVore2.StatPart_VoreProductContentValue"/>
+    </value>
+  </Operation>
+</Patch>

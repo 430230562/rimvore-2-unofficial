@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!-- Here are the store paths. Storage is distinct from amalgamation (see VorePath_Amalgamate) in that the pawn inside is considered to still be intact, and not contributing anything to the pred other than a bulge-->
+
+  <!-- Vaginal -->
+  <RimVore2.VorePathDef>
+    <defName>VaginalReform</defName>
+    <label>(Reform) Vaginal</label>
+    <RMBLabel>Vaginal vore</RMBLabel>
+    <actionDescription>{PREDATOR} will reform {PREY} in their womb</actionDescription>
+    <description>Reformation creates a new pawn inheriting attributes from both original prey and predator</description>
+    <initTale>RV2_VoreInitiation_VaginalReform</initTale>
+    <exitTale>RV2_VoreExit_VaginalReform</exitTale>
+    <voreType>Vaginal</voreType>
+    <voreGoal>Reform</voreGoal>
+    <postVoreMemories>
+      <predatorPostVoreSuccess>RV2_PredatorVaginalReformSuccess</predatorPostVoreSuccess>
+      <predatorPostVoreInterrupted>RV2_PreyVaginalReformInterrupted</predatorPostVoreInterrupted>
+      <preyPostVoreSuccess>RV2_PreyVaginalReformSuccess</preyPostVoreSuccess>
+      <preyPostVoreInterrupted>RV2_PreyVaginalReformInterrupted</preyPostVoreInterrupted>
+    </postVoreMemories>
+    <stages>
+      <li>Vagina_Enter</li>
+      <li>Womb_Reform</li>
+      <li>Vagina_Exit</li>
+    </stages>
+    <defaultRequiredStruggles>300</defaultRequiredStruggles>
+  </RimVore2.VorePathDef>
+
+</Defs>

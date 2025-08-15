@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RimVore2.QuirkPoolDef>
+    <defName>ItemDamage</defName>
+    <label>Item damage</label>
+	<category>Digestion</category>
+	<description>These quirks determine how much damage implants and clothing worn by the prey receives when the prey who came with them is digested, converted into some other material, assimilated, or otherwise killed by an act of vore.</description>
+    <generationOrder>3</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>ItemDamage_Traceless</li>
+      <li>ItemDamage_Moth</li>
+      <li>ItemDamage_Default</li>
+      <li>ItemDamage_FiberFriendly</li>
+      <li>ItemDamage_Spotless</li>
+    </quirks>
+  </RimVore2.QuirkPoolDef>
+  
+  <!-- Note: These quirks, particularly the cleanest one, are hard-coded for whether a mechanoid chassis survives digestion or is turned into slag. 
+  MH: I would very much like to standardize their names to Full-High-Normal-Low-None, as well as have the factor of what to do with mechanoid chassis be determined in the defs instead of the code.-->
+
+  <RimVore2.QuirkDef>
+    <defName>ItemDamage_Traceless</defName>
+    <label>Traceless digestion</label>
+    <description>[PAWN_label] leaves no trace of [PAWN_possessive] prey when [PAWN_pronoun] is done digesting. Clothing, implants, power armor? It all turns to mush, if anything at all.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_SpecialFlag">
+        <flag>DestroyEquipment</flag>
+      </li>
+      <li Class="RimVore2.QuirkComp_SpecialFlag">
+        <flag>DestroyPawn</flag>
+      </li>
+      <li Class="RimVore2.QuirkComp_SpecialFlag">
+        <flag>DestroyImplants</flag>
+      </li>
+      <li Class="RimVore2.QuirkComp_SpecialFlag">
+        <flag>DestroyEverything</flag>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkDef>
+    <defName>ItemDamage_Moth</defName>
+    <label>Mothlike digestion</label>
+    <description>[PAWN_label] has a habit of melting the clothes amd prosthetics off [PAWN_possessive] prey when digesting them. Their innards are just so harsh on such petty accessories.</description>
+    <rarity>Uncommon</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>EquipmentDigestionStrength</modifierName>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>ImplantDigestionStrength</modifierName>
+        <modifierValue>2</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkDef>
+    <defName>ItemDamage_Default</defName>
+    <label>Normal item damage</label>
+    <description>[PAWN_label] damages clothing and implants to a normal degree. The stomach wasn't necessarily designed to digest tough fiber and machined plasteel, but neither were clothes and delicate mechanisms necessarily designed to survive a long acid bath.</description>
+    <rarity>Abundant</rarity>
+    <hidden>true</hidden>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkDef>
+    <defName>ItemDamage_FiberFriendly</defName>
+    <label>Fiber-friendly digestion</label>
+    <description>[PAWN_label]’s digestive system isn’t all that harsh on clothing and other accessories [PAWN_possessive] gurgled prey might have. That’s not to say that they’ll come out completely unscathed, however.</description>
+    <rarity>Uncommon</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>EquipmentDigestionStrength</modifierName>
+        <modifierValue>0.5</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>ImplantDigestionStrength</modifierName>
+        <modifierValue>0.5</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>ItemDamage_Spotless</defName>
+    <label>Spotless digestion</label>
+    <description>[PAWN_label] has such a clean and purpose-driven digestive system that [PAWN_pronoun] can digest prey clean out of their clothes, leaving such vestments not only undamaged, but just as spotless as when they were donned. The same goes for implants and so on.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>EquipmentDigestionStrength</modifierName>
+        <modifierValue>0</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>ImplantDigestionStrength</modifierName>
+        <modifierValue>0</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_SpecialFlag">
+        <flag>NoTaintedApparel</flag>
+      </li>
+      <li Class="RimVore2.QuirkComp_SpecialFlag">
+        <flag>NeverDestroyImplants</flag>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+</Defs>

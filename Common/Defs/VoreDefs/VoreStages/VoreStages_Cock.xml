@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+  <RimVore2.VoreStageDef Abstract="True" Name="Cock_Base">
+    <partName>genitals</partName>
+    <displayPartTranslationKey>RV2_DisplayPart_Cock</displayPartTranslationKey>
+    <requirements>
+      <li>
+        <target>Predator</target>
+        <requirements>
+          <li Class="RimVore2.Requirement_HediffAlias">
+            <bodyPartAlias>genitals</bodyPartAlias>
+            <hediffAlias>penis</hediffAlias>
+          </li>
+        </requirements>
+      </li>
+    </requirements>
+  </RimVore2.VoreStageDef>
+  
+  <!-- Pass -->
+  <RimVore2.VoreStageDef Abstract="True" Name="Cock_Pass" ParentName="Cock_Base">
+    <defName>Cock_Pass</defName>
+    <partGoal>Pass</partGoal>
+    <onStart>
+      <actions>
+        <li Class="RimVore2.RollAction_PlaySound">
+          <sound>RV2_Squish</sound>
+        </li>
+      </actions>
+    </onStart>
+    <passConditions>
+      <li Class="RimVore2.StagePassCondition_Timed">
+        <duration>8</duration>
+      </li>
+    </passConditions>
+  </RimVore2.VoreStageDef>
+
+  <!-- Enter -->
+  <RimVore2.VoreStageDef Name="Cock_Enter" ParentName="Cock_Pass">
+    <defName>Cock_Enter</defName>
+    <canReverseDirection>true</canReverseDirection>
+    <predatorHediffDef>RV2_PreyInCockPassing</predatorHediffDef>
+    <predatorThoughtDef>RV2_PreyInCockPassing</predatorThoughtDef>
+    <onStart>
+      <actions>
+        <li Class="RimVore2.RollAction_RecordTale_VoreInitiation"/>
+      </actions>
+    </onStart>
+    <onEnd>
+      <actions>
+        <li Class="RimVore2.RollAction_PlaySound">
+          <sound>RV2_Slurp</sound>
+        </li>
+      </actions>
+    </onEnd>
+  </RimVore2.VoreStageDef>
+  
+  <!-- Enter Pleasure -->
+  <RimVore2.VoreStageDef Name="Cock_Enter_Pleasure" ParentName="Cock_Enter">
+    <defName>Cock_Enter_Pleasure</defName>
+    <partGoal>Pleasure</partGoal>
+    <canReverseDirection>true</canReverseDirection>
+    <predatorHediffDef>RV2_PreyInCockPleasuring</predatorHediffDef>
+    <predatorThoughtDef>RV2_PreyInCockPleasuring</predatorThoughtDef>
+    <onStart>
+      <rollPresets>
+        <li>Sound_Moan_Chance</li>
+      </rollPresets>
+    </onStart>
+    <onCycle>
+      <rollPresets>
+        <li>Sound_Squish_2</li>
+        <li>Sound_Moan_Chance_3</li>
+        <li>StealNeed_ForPrey_Food</li>
+        <li>IncreaseNeed_Predator_Comfort</li>
+        <li>IncreaseNeed_Prey_Comfort</li>
+      </rollPresets>
+    </onCycle>
+    <onEnd>
+      <actions>
+        <li Class="RimVore2.RollAction_PlaySound">
+          <sound>RV2_Orgasm</sound>
+        </li>
+      </actions>
+    </onEnd>
+    <passConditions>
+      <li Class="RimVore2.StagePassCondition_Need">
+        <target>Predator</target>
+        <need>Comfort</need>
+        <targetLevel>0.7</targetLevel>
+      </li>
+    </passConditions>
+  </RimVore2.VoreStageDef>
+  
+  <!-- Exit -->
+  <RimVore2.VoreStageDef Name="Cock_Exit" ParentName="Cock_Pass">
+    <defName>Cock_Exit</defName>
+    <partGoal>Pass</partGoal>
+    <canReverseDirection>false</canReverseDirection>
+    <predatorHediffDef>RV2_PreyInCockExiting</predatorHediffDef>
+    <predatorThoughtDef>RV2_PreyInCockExiting</predatorThoughtDef>
+    <onStart>
+      <actions>
+        <li Class="RimVore2.RollAction_PlaySound">
+          <sound>RV2_Squish</sound>
+        </li>
+      </actions>
+    </onStart>
+    <onEnd>
+      <actions>
+        <li Class="RimVore2.RollAction_PlaySound">
+          <sound>RV2_Splatter</sound>
+        </li>
+        <li Class="RimVore2.RollAction_RecordTale_VoreExit"/>
+      </actions>
+    </onEnd>
+    <passConditions Inherit="False">
+      <li Class="RimVore2.StagePassCondition_Timed">
+        <duration>100</duration>
+      </li>
+    </passConditions>
+  </RimVore2.VoreStageDef>
+
+  <!-- Exit Pleasure -->
+  <RimVore2.VoreStageDef Name="Cock_Exit_Pleasure" ParentName="Cock_Exit">
+    <defName>Cock_Exit_Pleasure</defName>
+    <predatorThoughtDef>RV2_PreyInCockExitingOrgasm</predatorThoughtDef>
+    <onCycle>
+      <rollPresets>
+        <li>Sound_Moan_Chance_3</li>
+        <li>StealNeed_ForPrey_Food</li>
+        <li>IncreaseNeed_Predator_Comfort</li>
+        <li>IncreaseNeed_Prey_Comfort</li>
+      </rollPresets>
+    </onCycle>
+    <onEnd>
+      <actions>
+        <li Class="RimVore2.RollAction_PlaySound">
+          <sound>RV2_Orgasm</sound>
+        </li>
+      </actions>
+    </onEnd>
+  </RimVore2.VoreStageDef>
+
+  <!-- Exit Dump -->
+  <RimVore2.VoreStageDef Name="Cock_Dump" ParentName="Cock_Exit">
+    <defName>Cock_Dump</defName>
+    <partGoal>Dump</partGoal>
+    <predatorHediffDef>RV2_PreyInCockDumping</predatorHediffDef>
+    <predatorThoughtDef>RV2_PreyInCockDumpingOrgasm</predatorThoughtDef>
+    <onCycle>
+      <rollPresets>
+        <li>Sound_Moan_Chance_3</li>
+        <li>IncreaseNeed_Predator_Comfort</li>
+      </rollPresets>
+    </onCycle>
+    <onEnd>
+      <actions>
+        <li Class="RimVore2.RollAction_PlaySound">
+          <sound>RV2_Orgasm</sound>
+        </li>
+        <li Class="RimVore2.RollAction_PlaySound">
+          <sound>RV2_Splurt</sound>
+        </li>        
+      </actions>
+    </onEnd>
+  </RimVore2.VoreStageDef>
+  
+</Defs>

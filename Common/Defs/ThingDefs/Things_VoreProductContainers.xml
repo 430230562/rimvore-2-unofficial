@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef Abstract="True" Name ="RV2_Container_Base">
+    <label>Unopened remains</label>
+    <category>Item</category>
+    <thingClass>RimVore2.VoreProductContainer</thingClass>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.50</fillPercent>
+    <description>The final result of a living being that has been digested. \nThis can be opened to retrieve undigested items.</description>
+    <selectable>true</selectable>
+    <altitudeLayer>Item</altitudeLayer>
+    <tickerType>Rare</tickerType>
+    <pathCost>30</pathCost>
+    <designateHaulable>true</designateHaulable>
+    <soundInteract></soundInteract>
+    <tradeability>Sellable</tradeability>
+    <generateCommonality>0</generateCommonality>
+    <soundDrop></soundDrop>
+    <graphicData>
+      <graphicClass>Graphic_Random</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>1</MarketValue>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>10</Mass>
+      <Flammability>0.75</Flammability>
+      <DeteriorationRate>20</DeteriorationRate>
+    </statBases>
+    <stackLimit>1</stackLimit>
+    <thingCategories>
+      <!-- prevents storing with other "normal" items for storage mods -->
+      <li>RV2_VoreProductContainer</li>
+    </thingCategories>
+    <comps>
+      <li Class="RimVore2.ThingCompProperties_DeadPreyInformation"/>
+      <li Class="CompProperties_Forbiddable"/>
+    </comps>
+    <modExtensions>
+      <li Class="RimVore2.VoreContainerExtension">
+        <isBones>false</isBones>
+        <isScat>false</isScat>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef ParentName="RV2_Container_Base">
+    <defName>RV2_Container_Sack</defName>
+    <description Inherit ="False">A digested pawn's remains, neatly bundled in a sack, to retrieve any undigested items later.</description>
+    <label>Sack</label>
+    <graphicData>
+      <texPath>Things/VoreResultContainers/Base</texPath>
+    </graphicData>
+  </ThingDef>
+  
+  <ThingDef ParentName="RV2_Container_Base">
+    <defName>RV2_Container_Bones</defName>
+    <description Inherit ="False">A pile of bones which used to be a pawn. You can dig around in it to retrieve undigested items.</description>
+    <label>Bones</label>
+    <graphicData>
+      <texPath>Things/VoreResultContainers/Bones</texPath>
+    </graphicData>
+    <modExtensions Inherit="False">
+      <li Class="RimVore2.VoreContainerExtension">
+        <forcedProducedThings>
+          <li>RV2_Resource_Bones</li>
+        </forcedProducedThings>
+        <isBones>true</isBones>
+        <isScat>false</isScat>
+		<!--<isPiss>false</isPiss>-->
+      </li>
+    </modExtensions>
+  </ThingDef>
+  
+  <!--MH: pretend it makes sense that you can pick up and move a puddle. they, uh, store it perfectly in their mouths and spit it out-->
+  <ThingDef ParentName="RV2_Container_Base">
+    <defName>RV2_Container_LubePuddle</defName>
+    <description Inherit ="False">A thick puddle of cunt-juice, in which a number of undigested items may float.</description>
+    <label>Lube puddle</label>
+    <graphicData>
+      <texPath>Things/VoreResultContainers/LubePuddle</texPath>
+    </graphicData>
+  </ThingDef>
+  
+  <ThingDef ParentName="RV2_Container_Base">
+    <defName>RV2_Container_Condom</defName>
+    <description Inherit ="False">A condom full of cummified pawn, tied off for late retrieval of undigested items.</description>
+    <label>Condom</label>
+    <graphicData>
+      <texPath>Things/VoreResultContainers/Condom</texPath>
+    </graphicData>
+  </ThingDef>
+  <!--MH: pretend it makes sense that you can pick up and move a puddle. they, uh, store it perfectly in their mouths and spit it out-->
+  <ThingDef ParentName="RV2_Container_Base">
+    <defName>RV2_Container_CumPuddle</defName>
+    <description Inherit ="False">A thick puddle of cum, in which a number of undigested items may float.</description>
+    <label>Cum puddle</label>
+    <graphicData>
+      <texPath>Things/VoreResultContainers/CumPuddle</texPath>
+    </graphicData>
+  </ThingDef>
+  
+  <ThingDef ParentName="RV2_Container_Base">
+    <defName>RV2_Container_MilkJug</defName>
+    <description Inherit ="False">A jug of milk that used to be a living thing. You can rummage around in it to retrieve undigested items.</description>
+    <label>Jug</label>
+    <graphicData>
+      <texPath>Things/VoreResultContainers/MilkJug</texPath>
+    </graphicData>
+  </ThingDef>
+  <!--MH: pretend it makes sense that you can pick up and move a puddle. they, uh, store it perfectly in their mouths and spit it out-->
+  <ThingDef ParentName="RV2_Container_Base">
+    <defName>RV2_Container_MilkPuddle</defName>
+    <description Inherit ="False">Twinly-puddled milk, in which a number of undigested items may float.</description>
+    <label>Milk puddle</label>
+    <graphicData>
+      <texPath>Things/VoreResultContainers/MilkPuddle</texPath>
+    </graphicData>
+  </ThingDef>
+  
+  <ThingDef ParentName="RV2_Container_Base">
+    <defName>RV2_Container_Scat</defName>
+    <description Inherit ="False">The reeking aftermath of digestion. If you're okay with getting your hands dirty, you can dig around in it to retrieve undigested items.</description>
+    <label>Scat</label>
+    <graphicData>
+      <texPath>Things/VoreResultContainers/Scat</texPath>
+    </graphicData>
+    <modExtensions Inherit="False">
+      <li Class="RimVore2.VoreContainerExtension">
+        <forcedProducedThings>
+          <li>RV2_Resource_Scat</li>
+        </forcedProducedThings>
+        <isBones>false</isBones>
+        <isScat>true</isScat>
+		<!--<isPiss>false</isPiss>-->
+      </li>
+    </modExtensions>
+  </ThingDef>
+  
+  <ThingDef ParentName="RV2_Container_Base">
+    <defName>RV2_Container_None</defName>
+    <description Inherit ="False">This item does not exist and is merely a visible indicator for directly excreting the vore products.</description>
+    <label>None</label>
+    <graphicData>
+      <texPath>Things/VoreResultContainers/Base</texPath>
+    </graphicData>
+  </ThingDef>
+  
+</Defs>

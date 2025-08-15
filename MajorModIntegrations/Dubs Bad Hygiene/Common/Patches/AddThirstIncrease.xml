@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/RimVore2.RollPresetDef[defName="IncreaseNeed_Predator_Food"]/actionsOnSuccess</xpath>
+    <value>
+      <li Class="RimVore2.RollAction_IncreaseNeed">
+        <target>Predator</target>
+        <need>DBHThirst</need>
+      </li>
+    </value>
+  </Operation>
+  
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/RimVore2.RollPresetDef[defName="StealNeed_ForPrey_Food"]/actionsOnSuccess</xpath>
+    <value>
+      <li Class="RimVore2.RollAction_StealNeed">
+        <takeFrom>Predator</takeFrom>
+        <giveTo>Prey</giveTo>
+        <need>DBHThirst</need>
+      </li>
+    </value>
+  </Operation>
+</Patch>

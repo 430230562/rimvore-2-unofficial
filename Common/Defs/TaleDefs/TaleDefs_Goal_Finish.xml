@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <TaleDef Abstract="True" Name="RV2_GoalFinish_Base" ParentName="RV2_TaleBase">
+    <label>finished vore goal</label>
+    <taleClass>Tale_DoublePawnAndDef</taleClass>
+    <type>Volatile</type>
+    <firstPawnSymbol>PREDATOR</firstPawnSymbol>
+    <secondPawnSymbol>PREY</secondPawnSymbol>
+    <defSymbol>VOREGOAL</defSymbol>
+    <baseInterest>2</baseInterest>
+    <rulePack>
+      <rulesStrings>
+        <!-- Used like: "This illustration tells the story of [tale_noun] -->
+        <li>RV2_goalFinish_tale_noun->[PREDATOR_definite] finally being done [RV2_goalFinish_verb] [PREY_definite]</li>
+        <li>RV2_goalFinish_tale_noun->[PREDATOR_definite] finally being done [RV2_goalFinish_verb] [PREY_definite] [RV2_adverb]</li>
+        <li>RV2_goalFinish_tale_noun->[PREDATOR_definite] finally being done [RV2_goalFinish_verb] [PREY_definite] [RV2_addendum]</li>
+        <li>RV2_goalFinish_tale_noun->[PREDATOR_definite] finishing the [RV2_goalFinish_noun] of [PREY_definite]</li>
+        <li>RV2_goalFinish_tale_noun->[PREDATOR_definite] finishing the [RV2_adjective] [RV2_goalFinish_noun] of [PREY_definite]</li>
+        <li>RV2_goalFinish_tale_noun->[PREDATOR_definite] finishing the [RV2_goalFinish_noun] of [PREY_definite] [RV2_addendum]</li>
+        <li>RV2_goalFinish_tale_noun->[PREDATOR_definite] finishing [VOREGOAL_label]</li>
+        <li>tale_noun->[RV2_goalFinish_tale_noun]</li>
+
+        <!-- Used like: "This piece resembles [image]" -->
+        <li>RV2_goalFinish_image->[PREDATOR_definite] finishing [RV2_goalFinish_noun]</li>
+        <li>RV2_goalFinish_image->[PREDATOR_definite] finishing [RV2_adjective] [RV2_goalFinish_noun]</li>
+        <li>RV2_goalFinish_image->[PREDATOR_definite] finishing the [RV2_goalFinish_noun] of [PREY_definite]</li>
+        <li>RV2_goalFinish_image->[PREDATOR_definite] finishing the [RV2_adjective] [RV2_goalFinish_noun] of [PREY_definite]</li>
+        <li>image->[RV2_goalFinish_image]</li>
+
+        <!-- Randomly appear in descriptions, these are their own full sentence, no context given -->
+        <li>RV2_goalFinish_desc_sentence->[PREY_definite] is completely disoriented inside of [PREDATOR_definite], not sure of which way is up, or out.</li>
+        <li>RV2_goalFinish_desc_sentence->[PREDATOR_possessive] body undulates against [PREY_definite], moving [PREY_objective] along intentionally.</li>
+        <li>RV2_goalFinish_desc_sentence->[PREY_definite] is crawling to get out.</li>
+
+	<li>RV2_goalFinish_init(p=2)-></li>
+	<li>RV2_goalFinish_init->[PREDATOR_definite] managed to vore [PREY_definite].</li>
+	<li>RV2_goalFinish_init->[PREY_definite] was vored by [PREDATOR_definite].</li>
+	<li>RV2_goalFinish_init->[PREY_definite] got lost and found themselves inside [PREDATOR_definite].</li>
+	<li>RV2_goalFinish_init->[PREDATOR_definite] tricked [PREY_definite] into getting inside [PREDATOR_objective].</li>
+	<li>RV2_goalFinish_init->[PREDATOR_definite] forced [PREY_definite] into getting inside [PREDATOR_objective].</li>
+	<li>RV2_goalFinish_init->[PREY_definite] willingly got inside [PREDATOR_definite] knowing what would happen.</li>
+        <li>RV2_goalFinish_desc_capacity(p=2)-></li>
+        <li>RV2_goalFinish_desc_capacity->[PREDATOR_definite] was nearly crushing [PREY_definite], squeezing all of the air out of [PREY_objective].</li>
+	<li>RV2_goalFinish_desc_capacity->[PREDATOR_definite] was tight up against [PREY_definite], restricting [PREY_possessive] movement.</li>
+        <li>RV2_goalFinish_desc_capacity->[PREY_definite] had just enough space to move around.</li>
+        <li>RV2_goalFinish_desc_capacity->Inside [PREDATOR_definite], [PREY_definite] stretched out and got comfortable.</li>
+        <li>RV2_goalFinish_desc_sound(p=5)-></li>
+        <li>RV2_goalFinish_desc_sound->[PREY_definite] was listening closely to figure out when [PREY_pronoun] would be released.</li>
+        <li>RV2_goalFinish_desc_sound->[PREY_definite] couldn't quite make out what [PREDATOR_definite] was saying.</li>
+        <li>RV2_goalFinish_desc_sound->[PREY_definite] looked distressed by what [PREDATOR_definite] was saying about [PREY_objective].</li>
+        <li>RV2_goalFinish_desc_sound->[PREY_definite] could make out the sounds of nearby machines humming away.</li>
+        <li>RV2_goalFinish_desc_sound->[PREDATOR_possessive] voice resonated, comforting [PREY_definite].</li>
+        <li>RV2_goalFinish_desc_sound->[PREDATOR_possessive] voice cackled, taunting [PREY_definite].</li>
+        <li>RV2_goalFinish_desc_sound->There was a raucous noise outside of [PREDATOR_definite].</li>
+        <li>RV2_goalFinish_desc_sound->There was the sound of gunfire and war outside of [PREDATOR_definite].</li>
+        <li>RV2_goalFinish_desc_sound->There was an eerie silence.</li>
+        <li>RV2_goalFinish_desc_sound->The slience was deafening.</li>
+        <li>RV2_goalFinish_desc_sight(p=5)-></li>
+        <li>RV2_goalFinish_desc_sight->[PREY_definite] was in complete darkness, surrounded on all sides by opaque flesh.</li>
+        <li>RV2_goalFinish_desc_sight->[PREY_definite] couldn't see anyting inside [PREDATOR_definite].</li>
+        <li>RV2_goalFinish_desc_sight->[PREY_definite] was dimly lit by sunlight passing through [PREY_possessive] predator's flesh.</li>
+        <li>RV2_goalFinish_desc_sight->An unusual glowing part of [PREDATOR_possessive] flesh gave [PREY_definite] just enough light to see.</li>
+        <li>RV2_goalFinish_desc_sight->[PREY_definite] saw evidence others have been inside [PREDATOR_definite] before.</li>
+        <li>RV2_goalFinish_desc_sight->[PREY_definite] saw marks inside [PREDATOR_definite] from past prey trying to escape.</li>
+        <li>RV2_goalFinish_desc_sight->[PREY_definite] was completely immersed in fluid.</li>
+        <li>RV2_goalFinish_desc_sight->the space around [PREY_definite] was filled partway with fluid.</li>
+        <li>RV2_goalFinish_desc_sight->everything around [PREY_definite] was coated in a thin layer of fluid.</li>
+        <li>desc_sentence->[RV2_goalFinish_init] [RV2_goalFinish_desc_capacity] [RV2_goalFinish_desc_sound] [RV2_goalFinish_desc_sight] [RV2_goalFinish_desc_sentence]</li>
+
+      </rulesStrings>
+    </rulePack>
+  </TaleDef>
+
+  <TaleDef ParentName="RV2_GoalFinish_Base">
+    <defName>RV2_GoalFinish_Digest</defName>
+    <rulePack>
+      <include>
+        <li>RV2_Goal_Digest</li>
+      </include>
+    </rulePack>
+  </TaleDef>
+  <TaleDef ParentName="RV2_GoalFinish_Base">
+    <defName>RV2_GoalFinish_Pleasure</defName>
+    <rulePack>
+      <include>
+        <li>RV2_Goal_Pleasure</li>
+      </include>
+    </rulePack>
+  </TaleDef>
+  <TaleDef ParentName="RV2_GoalFinish_Base">
+    <defName>RV2_GoalFinish_Store</defName>
+    <rulePack>
+      <include>
+        <li>RV2_Goal_Store</li>
+      </include>
+    </rulePack>
+  </TaleDef>
+  <TaleDef ParentName="RV2_GoalFinish_Base">
+    <defName>RV2_GoalFinish_Hold</defName>
+    <rulePack>
+      <include>
+        <li>RV2_Goal_Hold</li>
+      </include>
+    </rulePack>
+  </TaleDef>
+  <TaleDef ParentName="RV2_GoalFinish_Base">
+    <defName>RV2_GoalFinish_ConvertLube</defName>
+    <rulePack>
+      <include>
+        <li>RV2_Goal_ConvertLube</li>
+      </include>
+    </rulePack>
+  </TaleDef>
+  <TaleDef ParentName="RV2_GoalFinish_Base">
+    <defName>RV2_GoalFinish_ConvertSperm</defName>
+    <rulePack>
+      <include>
+        <li>RV2_Goal_ConvertSperm</li>
+      </include>
+    </rulePack>
+  </TaleDef>
+  <TaleDef ParentName="RV2_GoalFinish_Base">
+    <defName>RV2_GoalFinish_ConvertMilk</defName>
+    <rulePack>
+      <include>
+        <li>RV2_Goal_ConvertMilk</li>
+      </include>
+    </rulePack>
+  </TaleDef>
+  <TaleDef ParentName="RV2_GoalFinish_Base">
+    <defName>RV2_GoalFinish_Heal</defName>
+    <rulePack>
+      <include>
+        <li>RV2_Goal_Heal</li>
+      </include>
+    </rulePack>
+  </TaleDef>
+  <TaleDef ParentName="RV2_GoalFinish_Base">
+    <defName>RV2_GoalFinish_Reform</defName>
+    <rulePack>
+      <include>
+        <li>RV2_Goal_Reform</li>
+      </include>
+    </rulePack>
+  </TaleDef>
+</Defs>

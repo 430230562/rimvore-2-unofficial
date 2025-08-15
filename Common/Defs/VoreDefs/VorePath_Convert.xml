@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!-- This document contains all conversion paths. Conversion does not directly nourish the pred, but produces a product other than fertilizer/bonemeal to be used otherwise -->
+
+  <!-- Essential Paths -->
+
+  <!-- Vaginal -->
+
+  <RimVore2.VorePathDef>
+    <defName>VaginalConvertLube</defName>
+    <label>(Lubrify) Vaginal</label>
+    <RMBLabel>Vaginal vore</RMBLabel>
+    <actionDescription>{PREDATOR} will melt {PREY} into cunt-juice</actionDescription>
+    <description>Vaginal lubrifaction is where the predator unbirths the prey into their womb for conversion into cunt-juice. This does not feed the predator.</description>
+    <initTale>RV2_VoreInitiation_VaginalConvertLube</initTale>
+    <exitTale>RV2_VoreExit_VaginalConvertLube</exitTale>
+    <voreGoal>ConvertLube</voreGoal>
+    <voreType>Vaginal</voreType>
+    <voreProduct>
+      <destroyPrey>true</destroyPrey>
+      <selectableContainers>
+        <li>RV2_Container_LubePuddle</li>
+        <li>RV2_Container_Bones</li>
+        <li>RV2_Container_Sack</li>
+        <li>RV2_Container_None</li>
+      </selectableContainers>
+      <!--MH: i want no items for now, but when we can properly grab the rjw cumstains, we can properly make a mess
+	  
+	  <items>
+        <li>Filth_</li>
+      </items>
+	  <containerItems>
+        <li>Filth_</li>
+      </containerItems>-->
+    </voreProduct>
+    <postVoreMemories>
+      <predatorPostVoreSuccess>RV2_PredatorVaginalConvertLubeSuccess</predatorPostVoreSuccess>
+      <predatorPostVoreInterrupted>RV2_PredatorVaginalConvertLubeInterrupted</predatorPostVoreInterrupted>
+      <preyPostVoreInterrupted>RV2_PreyVaginalConvertLubeInterrupted</preyPostVoreInterrupted>
+    </postVoreMemories>
+    <stages>
+      <li>Vagina_Enter</li>
+      <li>Womb_Warmup</li>
+      <li>Womb_DissolveLube</li>
+      <li>Womb_MushLube</li>
+      <li>Womb_ConvertLube</li>
+      <li>Vagina_Dump</li>
+    </stages>
+    <defaultRequiredStruggles>60</defaultRequiredStruggles>
+  </RimVore2.VorePathDef>
+
+  <!-- Cock -->
+
+  <RimVore2.VorePathDef>
+    <defName>CockConvertSperm</defName>
+    <label>(Spermify) Cock</label>
+    <RMBLabel>Cock vore</RMBLabel>
+    <actionDescription>{PREDATOR} will melt {PREY} into jizz</actionDescription>
+    <description>Cock spermifaction is where the predator shunts the prey down their cock and into their balls for conversion into nutritious consumable sperm. This process itself does not feed the predator.</description>
+    <initTale>RV2_VoreInitiation_CockConvertSperm</initTale>
+    <exitTale>RV2_VoreExit_CockConvertSperm</exitTale>
+    <voreGoal>ConvertSperm</voreGoal>
+    <voreType>Cock</voreType>
+    <voreProduct>
+      <destroyPrey>true</destroyPrey>
+      <selectableContainers>
+        <li>RV2_Container_Condom</li>
+        <li>RV2_Container_CumPuddle</li>
+        <li>RV2_Container_Bones</li>
+        <li>RV2_Container_Sack</li>
+        <li>RV2_Container_None</li>
+      </selectableContainers>
+      <!--MH: i want no items for now, but when we can properly grab the rjw cumstains, we can properly make a mess
+	  
+	  <items>
+        <li>Filth_</li>
+      </items>
+	  <containerItems>
+        <li>Filth_</li>
+      </containerItems>-->
+    </voreProduct>
+    <postVoreMemories>
+      <predatorPostVoreSuccess>RV2_PredatorCockConvertSpermSuccess</predatorPostVoreSuccess>
+      <predatorPostVoreInterrupted>RV2_PredatorCockConvertSpermInterrupted</predatorPostVoreInterrupted>
+      <preyPostVoreInterrupted>RV2_PreyCockConvertSpermInterrupted</preyPostVoreInterrupted>
+    </postVoreMemories>
+    <stages>
+      <li>Cock_Enter</li>
+      <li>Testicles_Warmup</li>
+      <li>Testicles_DissolveSperm</li>
+      <li>Testicles_MushSperm</li>
+      <li>Testicles_ConvertSperm</li>
+      <li>Cock_Dump</li>
+    </stages>
+    <defaultRequiredStruggles>60</defaultRequiredStruggles>
+  </RimVore2.VorePathDef>
+
+  <!-- Nipple -->
+
+  <RimVore2.VorePathDef>
+    <defName>NippleConvertMilk</defName>
+    <label>(Lactify) Nipple</label>
+    <RMBLabel>Nipple vore</RMBLabel>
+    <actionDescription>{PREDATOR} will churn {PREY} into milk in their breasts</actionDescription>
+    <description>Nipple lactifaction is where the predator shoves the prey through their nipple and into their mammary for conversion into nutritious consumable milk. This process itself does not feed the predator.</description>
+    <initTale>RV2_VoreInitiation_NippleConvertMilk</initTale>
+    <exitTale>RV2_VoreExit_NippleConvertMilk</exitTale>
+    <voreGoal>ConvertMilk</voreGoal>
+    <voreType>Nipple</voreType>
+    <voreProduct>
+      <destroyPrey>true</destroyPrey>
+      <selectableContainers>
+        <li>RV2_Container_MilkJug</li>
+        <li>RV2_Container_MilkPuddle</li>
+        <li>RV2_Container_Bones</li>
+        <li>RV2_Container_Sack</li>
+        <li>RV2_Container_None</li>
+      </selectableContainers>
+      <!--MH: gonna want a custom milk stain at some point
+	  
+	  <items>
+        <li>Filth_</li>
+      </items>
+	  <containerItems>
+        <li>Filth_</li>
+      </containerItems>-->
+    </voreProduct>
+    <postVoreMemories>
+      <predatorPostVoreSuccess>RV2_PredatorNippleConvertMilkSuccess</predatorPostVoreSuccess>
+      <predatorPostVoreInterrupted>RV2_PredatorNippleConvertMilkInterrupted</predatorPostVoreInterrupted>
+      <preyPostVoreInterrupted>RV2_PreyNippleConvertMilkInterrupted</preyPostVoreInterrupted>
+    </postVoreMemories>
+    <stages>
+      <li>Nipple_Enter</li>
+      <li>Breasts_Warmup</li>
+      <li>Breasts_DissolveMilk</li>
+      <li>Breasts_MushMilk</li>
+      <li>Breasts_ConvertMilk</li>
+      <li>Nipple_Dump</li>
+    </stages>
+    <defaultRequiredStruggles>60</defaultRequiredStruggles>
+  </RimVore2.VorePathDef>
+
+  <!-- Niche Paths -->
+
+</Defs>

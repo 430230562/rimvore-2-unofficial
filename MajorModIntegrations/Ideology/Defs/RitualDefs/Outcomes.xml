@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RitualOutcomeEffectDef Abstract="True" Name="RV2_RitualOutcome_Base">
+    <description>Depending on ritual quality, participants will get between {MINMOOD} and {MAXMOOD} mood for {MOODDAYS} days.</description>
+    <startingQuality>0.6</startingQuality>
+    <comps>
+      <li Class="RitualOutcomeComp_ParticipantCount">
+        <label>participant count</label>
+        <curve>
+          <points>
+            <li>(1, 0.0)</li>
+            <li>(4, 0.15)</li>
+            <li>(8, 0.25)</li>
+          </points>
+        </curve>
+      </li>
+    </comps>
+    <outcomeChances>
+      <li>
+        <label>Terrible</label>
+        <chance>0.05</chance>
+        <memory>RV2_VoreRitual_Terrible</memory>
+        <description>The {0} was terrible! The speech was stuttering and incoherent, and the vore technique was botched. The predator took far too long to get the prey inside - everyone was waiting for it to end.</description>
+        <positivityIndex>-2</positivityIndex>
+      </li>
+      <li>
+        <label>Boring</label>
+        <chance>0.15</chance>
+        <memory>RV2_VoreRitual_Boring</memory>
+        <description>The {0} was boring. The speech was repetitive and the vore technique was noticeably flawed. It just didn't feel dignified.</description>
+        <positivityIndex>-1</positivityIndex>
+      </li>
+      <li>
+        <label>Satisfying</label>
+        <chance>0.6</chance>
+        <memory>RV2_VoreRitual_Satisfying</memory>
+        <description>The {0} was satisfying. The speech felt meaningful, and the vore technique was precise and dignified.</description>
+        <potentialExtraOutcomeDesc>There's a 5% chance that a random participant gets an inspiration.</potentialExtraOutcomeDesc>
+        <positivityIndex>1</positivityIndex>
+      </li>
+      <li>
+        <label>Spectacular</label>
+        <chance>0.2</chance>
+        <memory>RV2_VoreRitual_Spectacular</memory>
+        <description>The {0} was spectacular! The speech brought everyone to the edge of a frenzy, and the act of vore was astonishing to watch!</description>
+        <potentialExtraOutcomeDesc>There's a 10% chance that a random participant gets an inspiration.</potentialExtraOutcomeDesc>
+        <positivityIndex>2</positivityIndex>
+      </li>
+    </outcomeChances>
+  </RitualOutcomeEffectDef>
+
+  <RitualOutcomeEffectDef ParentName="RV2_RitualOutcome_Base">
+    <defName>RV2_ConsumptionOutcome</defName>
+    <workerClass>RitualOutcomeEffectWorker_Consumable</workerClass>
+    <extraPredictedOutcomeDescriptions>
+      <li>If the {0} is satisfying, one of the participants might gain an inspiration.</li>
+    </extraPredictedOutcomeDescriptions>
+  </RitualOutcomeEffectDef>
+
+  <RitualOutcomeEffectDef ParentName="RV2_RitualOutcome_Base">
+    <defName>RV2_VoreBondingOutcome</defName>
+    <workerClass>RimVore2.RitualOutcomeEffectWorker_VoreBonding</workerClass>
+    <extraPredictedOutcomeDescriptions>
+      <li>If the {0} is satisfying, the targets belief in the ideoligion will be reinforced.</li>
+      <li>One of the participants may also gain an inspiration.</li>
+    </extraPredictedOutcomeDescriptions>
+  </RitualOutcomeEffectDef>
+
+  <RitualOutcomeEffectDef ParentName="RV2_RitualOutcome_Base">
+    <defName>RV2_VoreFeastOutcome</defName>
+    <workerClass>RimVore2.RitualOutcomeEffectWorker_VoreFeast</workerClass>
+    <extraPredictedOutcomeDescriptions>
+      <li>One of the participants may gain an inspiration.</li>
+    </extraPredictedOutcomeDescriptions>
+    <outcomeChances Inherit="False">
+      <li>
+        <label>Terrible</label>
+        <chance>0.05</chance>
+        <memory>RV2_VoreRitual_Terrible</memory>
+        <description>The {0} was terrible!</description>
+        <positivityIndex>-2</positivityIndex>
+      </li>
+      <li>
+        <label>Boring</label>
+        <chance>0.15</chance>
+        <memory>RV2_VoreRitual_Boring</memory>
+        <description>The {0} was boring.</description>
+        <positivityIndex>-1</positivityIndex>
+      </li>
+      <li>
+        <label>Satisfying</label>
+        <chance>0.6</chance>
+        <memory>RV2_VoreRitual_Satisfying</memory>
+        <description>The {0} was satisfying.</description>
+        <potentialExtraOutcomeDesc>There's a 5% chance each, that participants gets an inspiration.</potentialExtraOutcomeDesc>
+        <positivityIndex>1</positivityIndex>
+      </li>
+      <li>
+        <label>Spectacular</label>
+        <chance>0.2</chance>
+        <memory>RV2_VoreRitual_Spectacular</memory>
+        <description>The {0} was spectacular!</description>
+        <potentialExtraOutcomeDesc>There's a 10% chance each, that participants gets an inspiration.</potentialExtraOutcomeDesc>
+        <positivityIndex>2</positivityIndex>
+      </li>
+    </outcomeChances>
+  </RitualOutcomeEffectDef>
+  
+</Defs>

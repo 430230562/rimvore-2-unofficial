@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!-- The system already supports grapple strength for attacker or defender sides with modifierName = 
+    "GrappleStrengthAttacker" and "GrappleStrengthDefender" 
+    but I don't know how I would implement these here and make em look good. Trait requirements already have their own special implementation, 
+    which was the only reason I would have had for att/def specific quirks
+  -->
+  <RimVore2.QuirkPoolDef>
+    <defName>StrugglePreference</defName>
+    <label>Struggle Preference</label>
+    <category>Combat</category>
+    <description>These quirks determine the pawns preference for prey struggling inside of them</description>
+    <generationOrder>5</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>StrugglePreference_Hated</li>
+      <li>StrugglePreference_Normal</li>
+      <li>StrugglePreference_Loved</li>
+    </quirks>
+  </RimVore2.QuirkPoolDef>
+
+  <RimVore2.QuirkDef>
+    <defName>StrugglePreference_Hated</defName>
+    <label>Hated</label>
+    <description>[PAWN_label] has very irritable insides and hates prey working against [PAWN_objective].</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_SituationalThoughtEnabler">
+        <enabledThought>RV2_PreyStruggling_Hated</enabledThought>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>StrugglePreference_Normal</defName>
+    <label>Normal</label>
+    <description>[PAWN_label] feels like anyone else when prey is struggling inside of [PAWN_objective] - slightly discomforted.</description>
+    <rarity>Common</rarity>
+    <hidden>true</hidden>
+    <comps>
+      <li Class="RimVore2.QuirkComp_SituationalThoughtEnabler">
+        <enabledThought>RV2_PreyStruggling</enabledThought>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>StrugglePreference_Loved</defName>
+    <label>Loved</label>
+    <description>[PAWN_label] enjoys being "massaged" from the inside.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_SituationalThoughtEnabler">
+        <enabledThought>RV2_PreyStruggling_Loved</enabledThought>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+</Defs>

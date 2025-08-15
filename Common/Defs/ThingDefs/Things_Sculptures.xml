@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef Abstract="True" Name ="RV2_Sculpture_Base" ParentName="SculptureBase">
+    <description>The remains of a pawn, presented on a pedestal.</description>
+    <graphicData>
+      <shaderType>CutoutComplex</shaderType>
+      <graphicClass>Graphic_Random</graphicClass> <!-- multi is enforced due to shaderType -->
+    </graphicData>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <costStuffCount>50</costStuffCount>
+    <rotatable>false</rotatable>
+    <fillPercent>0.35</fillPercent>
+    <statBases>
+      <MaxHitPoints>90</MaxHitPoints>
+      <Mass>3</Mass>
+      <Beauty>150</Beauty>
+      <WorkToMake>9000</WorkToMake>
+    </statBases>
+    <comps>
+      <li Class="RimVore2.ThingCompProperties_DeadPreyInformation"/>
+    </comps>
+    <tradeability>Sellable</tradeability>
+    <generateCommonality>0</generateCommonality>
+  </ThingDef>
+
+  <ThingDef ParentName="RV2_Sculpture_Base">
+    <defName>RV2_Sculpture_Sack</defName>
+    <label>Ambiguous Sculpture</label>
+    <graphicData>
+      <texPath>Things/Sculptures/Base</texPath>
+    </graphicData>
+    <costList>
+      <RV2_Container_Sack>1</RV2_Container_Sack>
+    </costList>
+  </ThingDef>
+  <ThingDef ParentName="RV2_Sculpture_Base">
+    <defName>RV2_Sculpture_Bones</defName>
+    <label>Bones Sculpture</label>
+    <graphicData>
+      <texPath>Things/Sculptures/Bones</texPath>
+    </graphicData>
+    <costList>
+      <RV2_Container_Bones>1</RV2_Container_Bones>
+    </costList>
+  </ThingDef>
+  <ThingDef ParentName="RV2_Sculpture_Base">
+    <defName>RV2_Sculpture_Condom</defName>
+    <label>Condom Sculpture</label>
+    <graphicData>
+      <texPath>Things/Sculptures/Condom</texPath>
+    </graphicData>
+    <costList>
+      <RV2_Container_Condom>1</RV2_Container_Condom>
+    </costList>
+  </ThingDef>
+  <ThingDef ParentName="RV2_Sculpture_Base">
+    <defName>RV2_Sculpture_Jug</defName>
+    <label>Jug Sculpture</label>
+    <graphicData>
+      <texPath>Things/Sculptures/MilkJug</texPath>
+    </graphicData>
+    <costList>
+      <RV2_Container_MilkJug>1</RV2_Container_MilkJug>
+    </costList>
+  </ThingDef>
+  <ThingDef ParentName="RV2_Sculpture_Base">
+    <defName>RV2_Sculpture_Scat</defName>
+    <label>Scat Sculpture</label>
+    <graphicData>
+      <texPath>Things/Sculptures/Scat</texPath>
+    </graphicData>
+    <costList>
+      <RV2_Container_Scat>1</RV2_Container_Scat>
+    </costList>
+  </ThingDef>
+</Defs>

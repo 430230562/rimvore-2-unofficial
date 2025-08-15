@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+  <RimVore2.VoreQuirkThoughtDef Name="RV2_BaseQuirkInteraction" Abstract="true">
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
+    <workerClass>RimVore2.ThoughtWorker_Quirk</workerClass>
+  </RimVore2.VoreQuirkThoughtDef>
+
+  <!-- Dispositions -->
+  <RimVore2.VoreQuirkThoughtDef ParentName="RV2_BaseQuirkInteraction">
+    <defName>RV2_DispositionMatch_Prey</defName>
+    <stages>
+      <li>
+        <label>preyslut likes ravenous predator</label>
+        <baseOpinionOffset>10</baseOpinionOffset>
+      </li>
+    </stages>
+    <thisPawnQuirks>
+      <li>PreyDisposition_Obsessed</li>
+    </thisPawnQuirks>
+    <otherPawnQuirks>
+      <li>PredatorDisposition_Obsessed</li>
+    </otherPawnQuirks>
+  </RimVore2.VoreQuirkThoughtDef>
+  <RimVore2.VoreQuirkThoughtDef ParentName="RV2_BaseQuirkInteraction">
+    <defName>RV2_DispositionMatch_Predator</defName>
+    <stages>
+      <li>
+        <label>ravenous predator likes preyslut</label>
+        <baseOpinionOffset>10</baseOpinionOffset>
+      </li>
+    </stages>
+    <thisPawnQuirks>
+      <li>PredatorDisposition_Obsessed</li>
+    </thisPawnQuirks>
+    <otherPawnQuirks>
+      <li>PreyDisposition_Obsessed</li>
+    </otherPawnQuirks>
+  </RimVore2.VoreQuirkThoughtDef>
+
+  <!-- Goal preference -->
+  <RimVore2.VoreQuirkThoughtDef ParentName="RV2_BaseQuirkInteraction">
+    <defName>RV2_GoalPreferenceMatch_Digestion_Prey</defName>
+    <stages>
+      <li>
+        <label>digestion-wish likes obsessive fondeur</label>
+        <baseOpinionOffset>10</baseOpinionOffset>
+      </li>
+    </stages>
+    <thisPawnQuirks>
+      <li>GoalPreference_Prey_Digest_Obsessed</li>
+    </thisPawnQuirks>
+    <otherPawnQuirks>
+      <li>GoalPreference_Predator_Digest_Obsessed</li>
+    </otherPawnQuirks>
+  </RimVore2.VoreQuirkThoughtDef>
+  <RimVore2.VoreQuirkThoughtDef ParentName="RV2_BaseQuirkInteraction">
+    <defName>RV2_GoalPreferenceMatch_Digestion_Predator</defName>
+    <stages>
+      <li>
+        <label>Obsessive fondeur likes digestion-wish</label>
+        <baseOpinionOffset>10</baseOpinionOffset>
+      </li>
+    </stages>
+    <thisPawnQuirks>
+      <li>GoalPreference_Predator_Digest_Obsessed</li>
+    </thisPawnQuirks>
+    <otherPawnQuirks>
+      <li>GoalPreference_Prey_Digest_Obsessed</li>
+    </otherPawnQuirks>
+  </RimVore2.VoreQuirkThoughtDef>
+
+  <RimVore2.VoreQuirkThoughtDef ParentName="RV2_BaseQuirkInteraction">
+    <defName>RV2_GoalPreferenceMatch_Pleasure_Prey</defName>
+    <stages>
+      <li>
+        <label>godemichet likes obsessive plaire</label>
+        <baseOpinionOffset>10</baseOpinionOffset>
+      </li>
+    </stages>
+    <thisPawnQuirks>
+      <li>GoalPreference_Prey_Pleasure_Obsessed</li>
+    </thisPawnQuirks>
+    <otherPawnQuirks>
+      <li>GoalPreference_Predator_Pleasure_Obsessed</li>
+    </otherPawnQuirks>
+  </RimVore2.VoreQuirkThoughtDef>
+  <RimVore2.VoreQuirkThoughtDef ParentName="RV2_BaseQuirkInteraction">
+    <defName>RV2_GoalPreferenceMatch_Pleasure_Predator</defName>
+    <stages>
+      <li>
+        <label>obsessive plaire likes godemichet</label>
+        <baseOpinionOffset>10</baseOpinionOffset>
+      </li>
+    </stages>
+    <thisPawnQuirks>
+      <li>GoalPreference_Predator_Pleasure_Obsessed</li>
+    </thisPawnQuirks>
+    <otherPawnQuirks>
+      <li>GoalPreference_Prey_Pleasure_Obsessed</li>
+    </otherPawnQuirks>
+  </RimVore2.VoreQuirkThoughtDef>
+
+  <RimVore2.VoreQuirkThoughtDef ParentName="RV2_BaseQuirkInteraction">
+    <defName>RV2_GoalPreferenceMatch_Store_Prey</defName>
+    <stages>
+      <li>
+        <label>shut-in prey likes geolier hoarder</label>
+        <baseOpinionOffset>10</baseOpinionOffset>
+      </li>
+    </stages>
+    <thisPawnQuirks>
+      <li>GoalPreference_Prey_Store_Obsessed</li>
+    </thisPawnQuirks>
+    <otherPawnQuirks>
+      <li>GoalPreference_Predator_Store_Obsessed</li>
+    </otherPawnQuirks>
+  </RimVore2.VoreQuirkThoughtDef>
+  <RimVore2.VoreQuirkThoughtDef ParentName="RV2_BaseQuirkInteraction">
+    <defName>RV2_GoalPreferenceMatch_Store_Predator</defName>
+    <stages>
+      <li>
+        <label>geolier hoarder prey likes shut-in</label>
+        <baseOpinionOffset>10</baseOpinionOffset>
+      </li>
+    </stages>
+    <thisPawnQuirks>
+      <li>GoalPreference_Predator_Store_Obsessed</li>
+    </thisPawnQuirks>
+    <otherPawnQuirks>
+      <li>GoalPreference_Prey_Store_Obsessed</li>
+    </otherPawnQuirks>
+  </RimVore2.VoreQuirkThoughtDef>
+  
+  <!-- Type preferences -->
+  <RimVore2.VoreQuirkThoughtDef ParentName="RV2_BaseQuirkInteraction">
+    <defName>RV2_TypePreferenceMatch_Anal_Prey</defName>
+    <stages>
+      <li>
+        <label>obsessive analist likes ravenous analist</label>
+        <baseOpinionOffset>10</baseOpinionOffset>
+      </li>
+    </stages>
+    <thisPawnQuirks>
+      <li>TypePreference_Prey_Anal_Obsessed</li>
+    </thisPawnQuirks>
+    <otherPawnQuirks>
+      <li>TypePreference_Predator_Anal_Obsessed</li>
+    </otherPawnQuirks>
+  </RimVore2.VoreQuirkThoughtDef>
+  <RimVore2.VoreQuirkThoughtDef ParentName="RV2_BaseQuirkInteraction">
+    <defName>RV2_TypePreferenceMatch_Anal_Predator</defName>
+    <stages>
+      <li>
+        <label>ravenous analist likes obsessive analist</label>
+        <baseOpinionOffset>10</baseOpinionOffset>
+      </li>
+    </stages>
+    <thisPawnQuirks>
+      <li>TypePreference_Predator_Anal_Obsessed</li>
+    </thisPawnQuirks>
+    <otherPawnQuirks>
+      <li>TypePreference_Prey_Anal_Obsessed</li>
+    </otherPawnQuirks>
+  </RimVore2.VoreQuirkThoughtDef>
+
+  <RimVore2.VoreQuirkThoughtDef ParentName="RV2_BaseQuirkInteraction">
+    <defName>RV2_TypePreferenceMatch_Cock_Prey</defName>
+    <stages>
+      <li>
+        <label>obsessive phallicist likes ravenous phallicist</label>
+        <baseOpinionOffset>10</baseOpinionOffset>
+      </li>
+    </stages>
+    <thisPawnQuirks>
+      <li>TypePreference_Prey_Cock_Obsessed</li>
+    </thisPawnQuirks>
+    <otherPawnQuirks>
+      <li>TypePreference_Predator_Cock_Obsessed</li>
+    </otherPawnQuirks>
+  </RimVore2.VoreQuirkThoughtDef>
+  <RimVore2.VoreQuirkThoughtDef ParentName="RV2_BaseQuirkInteraction">
+    <defName>RV2_TypePreferenceMatch_Cock_Predator</defName>
+    <stages>
+      <li>
+        <label>ravenous phallicist likes obsessive phallicist</label>
+        <baseOpinionOffset>10</baseOpinionOffset>
+      </li>
+    </stages>
+    <thisPawnQuirks>
+      <li>TypePreference_Predator_Cock_Obsessed</li>
+    </thisPawnQuirks>
+    <otherPawnQuirks>
+      <li>TypePreference_Prey_Cock_Obsessed</li>
+    </otherPawnQuirks>
+  </RimVore2.VoreQuirkThoughtDef>
+
+  <RimVore2.VoreQuirkThoughtDef ParentName="RV2_BaseQuirkInteraction">
+    <defName>RV2_TypePreferenceMatch_Nipple_Prey</defName>
+    <stages>
+      <li>
+        <label>obsessive mammilist likes ravenous mammilist</label>
+        <baseOpinionOffset>10</baseOpinionOffset>
+      </li>
+    </stages>
+    <thisPawnQuirks>
+      <li>TypePreference_Prey_Nipple_Obsessed</li>
+    </thisPawnQuirks>
+    <otherPawnQuirks>
+      <li>TypePreference_Predator_Nipple_Obsessed</li>
+    </otherPawnQuirks>
+  </RimVore2.VoreQuirkThoughtDef>
+  <RimVore2.VoreQuirkThoughtDef ParentName="RV2_BaseQuirkInteraction">
+    <defName>RV2_TypePreferenceMatch_Nipple_Predator</defName>
+    <stages>
+      <li>
+        <label>ravenous mammilist likes obsessive mammilist</label>
+        <baseOpinionOffset>10</baseOpinionOffset>
+      </li>
+    </stages>
+    <thisPawnQuirks>
+      <li>TypePreference_Predator_Nipple_Obsessed</li>
+    </thisPawnQuirks>
+    <otherPawnQuirks>
+      <li>TypePreference_Prey_Nipple_Obsessed</li>
+    </otherPawnQuirks>
+  </RimVore2.VoreQuirkThoughtDef>
+
+  <RimVore2.VoreQuirkThoughtDef ParentName="RV2_BaseQuirkInteraction">
+    <defName>RV2_TypePreferenceMatch_Oral_Prey</defName>
+    <stages>
+      <li>
+        <label>obsessive oralist likes ravenous oralist</label>
+        <baseOpinionOffset>10</baseOpinionOffset>
+      </li>
+    </stages>
+    <thisPawnQuirks>
+      <li>TypePreference_Prey_Oral_Obsessed</li>
+    </thisPawnQuirks>
+    <otherPawnQuirks>
+      <li>TypePreference_Predator_Oral_Obsessed</li>
+    </otherPawnQuirks>
+  </RimVore2.VoreQuirkThoughtDef>
+  <RimVore2.VoreQuirkThoughtDef ParentName="RV2_BaseQuirkInteraction">
+    <defName>RV2_TypePreferenceMatch_Oral_Predator</defName>
+    <stages>
+      <li>
+        <label>ravenous oralist likes obsessive oralist</label>
+        <baseOpinionOffset>10</baseOpinionOffset>
+      </li>
+    </stages>
+    <thisPawnQuirks>
+      <li>TypePreference_Predator_Oral_Obsessed</li>
+    </thisPawnQuirks>
+    <otherPawnQuirks>
+      <li>TypePreference_Prey_Oral_Obsessed</li>
+    </otherPawnQuirks>
+  </RimVore2.VoreQuirkThoughtDef>
+
+  <RimVore2.VoreQuirkThoughtDef ParentName="RV2_BaseQuirkInteraction">
+    <defName>RV2_TypePreferenceMatch_Vaginal_Prey</defName>
+    <stages>
+      <li>
+        <label>obsessive yonicist likes ravenous yonicist</label>
+        <baseOpinionOffset>10</baseOpinionOffset>
+      </li>
+    </stages>
+    <thisPawnQuirks>
+      <li>TypePreference_Prey_Vaginal_Obsessed</li>
+    </thisPawnQuirks>
+    <otherPawnQuirks>
+      <li>TypePreference_Predator_Vaginal_Obsessed</li>
+    </otherPawnQuirks>
+  </RimVore2.VoreQuirkThoughtDef>
+  <RimVore2.VoreQuirkThoughtDef ParentName="RV2_BaseQuirkInteraction">
+    <defName>RV2_TypePreferenceMatch_Vaginal_Predator</defName>
+    <stages>
+      <li>
+        <label>ravenous yonicist likes obsessive yonicist</label>
+        <baseOpinionOffset>10</baseOpinionOffset>
+      </li>
+    </stages>
+    <thisPawnQuirks>
+      <li>TypePreference_Predator_Vaginal_Obsessed</li>
+    </thisPawnQuirks>
+    <otherPawnQuirks>
+      <li>TypePreference_Prey_Vaginal_Obsessed</li>
+    </otherPawnQuirks>
+  </RimVore2.VoreQuirkThoughtDef>
+</Defs>

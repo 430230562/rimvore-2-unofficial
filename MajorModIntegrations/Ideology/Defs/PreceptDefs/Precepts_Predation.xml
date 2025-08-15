@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <IssueDef>
+    <defName>RV2_Predation</defName>
+    <label>Predation</label>
+    <iconPath>UI/Issues/Predation</iconPath>
+  </IssueDef>
+
+  <!-- Neutral -->
+  <!--<PreceptDef>
+    <defName>RV2_Predation_Accepted</defName>
+    <issue>RV2_Predation</issue>
+    <label>accepted</label>
+    <description>Participating in vore as a predator has no special connotations.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <associatedMemes>
+      <li>RV2_Preyism</li>
+      <li>RV2_Predation</li>
+    </associatedMemes>
+  </PreceptDef>-->
+  
+  <!-- Disliked -->
+  <PreceptDef>
+    <defName>RV2_Predation_Disliked</defName>
+    <issue>RV2_Predation</issue>
+    <label>disliked</label>
+    <description>We are not meant to vore others.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <associatedMemes>
+      <li>RV2_Preyism</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>RV2_PredatorInitiatedVore</eventDef>
+        <thought>RV2_PredatorInitiatedVore_Disliked</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>RV2_PredatorInitiatedVore</eventDef>
+        <thought>RV2_PredatorInitiatedVore_Know_Disliked</thought>
+      </li>
+      <li Class="RimVore2.PreceptComp_Quirk_RemoveQuirks">
+        <quirks>
+          <li>PredatorDisposition_Obsessed</li>
+        </quirks>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <ThoughtDef>
+    <defName>RV2_PredatorInitiatedVore_Disliked</defName>
+    <durationDays>3</durationDays>
+    <stages>
+      <li>
+        <label>I vored someone</label>
+        <description>I should not have done that, my ideology discourages it</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>RV2_PredatorInitiatedVore_Know_Disliked</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>3</durationDays>
+    <stackLimit>1</stackLimit>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>shunned predator</label>
+        <baseOpinionOffset>-5</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- Abhorrent -->
+  <PreceptDef>
+    <defName>RV2_Predation_Abhorrent</defName>
+    <issue>RV2_Predation</issue>
+    <label>abhorrent</label>
+    <description>Anyone partaking in vore as a predator is to be shunned.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <associatedMemes>
+      <li>RV2_Preyism</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>RV2_PredatorInitiatedVore</eventDef>
+        <thought>RV2_PredatorInitiatedVore_Abhorrent</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>RV2_PredatorInitiatedVore</eventDef>
+        <thought>RV2_PredatorInitiatedVore_Know_Abhorrent</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>RV2_PredatorInitiatedVore</eventDef>
+        <thought>RV2_PredatorInitiatedVore_Know_Social_Abhorrent</thought>
+      </li>
+      <li Class="RimVore2.PreceptComp_Quirk_RemoveQuirks">
+        <quirks>
+          <li>PredatorDisposition_Likes</li>
+          <li>PredatorDisposition_Obsessed</li>
+        </quirks>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <ThoughtDef>
+    <defName>RV2_PredatorInitiatedVore_Abhorrent</defName>
+    <durationDays>3</durationDays>
+    <stages>
+      <li>
+        <label>I vored someone</label>
+        <description>This is an insult to my ideology, what am I doing?</description>
+        <baseMoodEffect>-24</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>RV2_PredatorInitiatedVore_Know_Abhorrent</defName>
+    <durationDays>3</durationDays>
+    <stages>
+      <li>
+        <label>Someone was a predator!!</label>
+        <description>One of us vored someone, this is a disgusting insult to our beliefs!</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>RV2_PredatorInitiatedVore_Know_Social_Abhorrent</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>3</durationDays>
+    <stackLimit>5</stackLimit>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>disgusting predator</label>
+        <baseOpinionOffset>-10</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- Liked -->
+  <PreceptDef>
+    <defName>RV2_Predation_Liked</defName>
+    <issue>RV2_Predation</issue>
+    <label>Liked</label>
+    <description>Commiting an act of predation is to be praised and encouraged.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <associatedMemes>
+      <li>RV2_Predation</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>RV2_PredatorInitiatedVore</eventDef>
+        <thought>RV2_PredatorInitiatedVore_Liked</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>RV2_PredatorInitiatedVore</eventDef>
+        <thought>RV2_PredatorInitiatedVore_Know_Liked</thought>
+      </li>
+      <li Class="RimVore2.PreceptComp_Quirk_RemoveQuirks">
+        <quirks>
+          <li>PredatorDisposition_Refuses</li>
+        </quirks>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <ThoughtDef>
+    <defName>RV2_PredatorInitiatedVore_Liked</defName>
+    <durationDays>3</durationDays>
+    <stages>
+      <li>
+        <label>I vored someone</label>
+        <description>Partaking in this divine art fills me with joy</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>RV2_PredatorInitiatedVore_Know_Liked</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>3</durationDays>
+    <stackLimit>1</stackLimit>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>admirable predator</label>
+        <baseOpinionOffset>2</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- Required -->
+  <PreceptDef>
+    <defName>RV2_Predation_Required</defName>
+    <issue>RV2_Predation</issue>
+    <label>required</label>
+    <description>Only by regularly voring others can we truly honor our ideology.</description>
+    <impact>High</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <associatedMemes>
+      <li>RV2_Predation</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>RV2_PredatorInitiatedVore</eventDef>
+        <thought>RV2_PredatorInitiatedVore_Required</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>RV2_PredatorInitiatedVore</eventDef>
+        <thought>RV2_PredatorInitiatedVore_Know_Required</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>RV2_PredatorInitiatedVore</eventDef>
+        <thought>RV2_PredatorInitiatedVore_Know_Social_Required</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>RV2_NoRecentPredatorInitiatedVore_Required</thought>
+        <description>No one vored for {VORERELATEDINTERVAL} days</description>
+      </li>
+      <li Class="RimVore2.PreceptComp_Quirk_RemoveQuirks">
+        <quirks>
+          <li>PredatorDisposition_Dislikes</li>
+          <li>PredatorDisposition_Refuses</li>
+        </quirks>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <ThoughtDef>
+    <defName>RV2_PredatorInitiatedVore_Required</defName>
+    <durationDays>1</durationDays>
+    <stages>
+      <li>
+        <label>I vored someone</label>
+        <description>Regular predation allows me to honor my beliefs!</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>RV2_PredatorInitiatedVore_Know_Required</defName>
+    <durationDays>1</durationDays>
+    <stages>
+      <li>
+        <label>Someone was a predator!</label>
+        <description>One of our members acted as a predator, very admirable!</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>RV2_PredatorInitiatedVore_Know_Social_Required</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>3</durationDays>
+    <stackLimit>5</stackLimit>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>divine predator</label>
+        <baseOpinionOffset>3</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>RV2_NoRecentPredatorInitiatedVore_Required</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>RimVore2.ThoughtWorker_Precept_RecentKeyword</workerClass>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>want to be predator</label>
+        <description>It's been far too long since last vored anyone.</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+    <modExtensions>
+      <li Class="RimVore2.PreceptThoughtWorker_ListeningKeyword">
+        <keyword>Predator</keyword>
+      </li>
+    </modExtensions>
+  </ThoughtDef>
+
+
+</Defs>

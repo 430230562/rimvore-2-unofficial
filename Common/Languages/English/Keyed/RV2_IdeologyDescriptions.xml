@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- Widget Descriptions -->
+  <RV2_IdeologyDescription_QuirksHeader>Quirks</RV2_IdeologyDescription_QuirksHeader>
+  <RV2_IdeologyDescription_PreceptComp_AddQuirks>Add Quirks:</RV2_IdeologyDescription_PreceptComp_AddQuirks>
+  <RV2_IdeologyDescription_PreceptComp_RemoveQuirks>Remove Quirks:</RV2_IdeologyDescription_PreceptComp_RemoveQuirks>
+  <RV2_IdeologyDescription_PreceptComp_EnsureOneOf>Guarantee one of:</RV2_IdeologyDescription_PreceptComp_EnsureOneOf>
+  </LanguageData>

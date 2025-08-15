@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RecipeDef>
+    <defName>RV2_Make_ChemfuelFromRemains</defName>
+    <label>make chemfuel from remains</label>
+    <description>Make a batch of chemfuel by extracting biofuel from digested remains.</description>
+    <jobString>Refining chemfuel from remains.</jobString>
+    <effectWorking>Cremate</effectWorking>
+    <soundWorking>Recipe_Cremate</soundWorking>
+    <workAmount>2000</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <recipeUsers>
+      <li>BiofuelRefinery</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>RV2_FertilizerIngredient</li>
+          </categories>
+        </filter>
+        <count>10</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>RV2_FertilizerIngredient</li>
+      </categories>
+    </fixedIngredientFilter>
+    <products>
+      <Chemfuel>20</Chemfuel>
+    </products>
+  </RecipeDef>
+</Defs> 

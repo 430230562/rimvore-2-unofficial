@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <!-- 
+  RV-2 checks this extensionon in race-ThingDef AND TraitDef - so you can add it in either
+  
+  This extension is very similar to the GrappleExtension, check the "AddTraitGrappleInfluences.xml" file for an 
+  example of traits with degrees
+  -->
+
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/TraitDef[defName="Brawler"]</xpath>
+    <value>
+      <li Class="RimVore2.Extension_StruggleInfluence">
+        <influences>
+          <li>
+            <role>Prey</role>
+            <struggleChanceMultiplier>1.2</struggleChanceMultiplier>
+          </li>
+        </influences>
+      </li>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/TraitDef[defName="Masochist"]</xpath>
+    <value>
+      <li Class="RimVore2.Extension_StruggleInfluence">
+        <influences>
+          <li>
+            <role>Prey</role>
+            <blockStruggle>true</blockStruggle>
+          </li>
+          <li>
+            <role>Predator</role>
+            <struggleChanceMultiplier>0.8</struggleChanceMultiplier>
+          </li>
+        </influences>
+      </li>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/TraitDef[defName="Wimp"]</xpath>
+    <value>
+      <li Class="RimVore2.Extension_StruggleInfluence">
+        <influences>
+          <li>
+            <role>Prey</role>
+            <blockStruggle>true</blockStruggle>
+          </li>
+        </influences>
+      </li>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/TraitDef[defName="Nimble"]</xpath>
+    <value>
+      <li Class="RimVore2.Extension_StruggleInfluence">
+        <influences>
+          <li>
+            <role>Prey</role>
+            <struggleChanceMultiplier>1.2</struggleChanceMultiplier>
+            <requiredStrugglesMultiplier>0.9</requiredStrugglesMultiplier>
+          </li>
+        </influences>
+      </li>
+    </value>
+  </Operation>
+  <!-- Undergrounders are used to tight tunnels and crawling through holes :) -->
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/TraitDef[defName="Undergrounder"]</xpath>
+    <value>
+      <li Class="RimVore2.Extension_StruggleInfluence">
+        <influences>
+          <li>
+            <role>Prey</role>
+            <struggleChanceMultiplier>1.2</struggleChanceMultiplier>
+          </li>
+        </influences>
+      </li>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/TraitDef[defName="Tough"]</xpath>
+    <value>
+      <li Class="RimVore2.Extension_StruggleInfluence">
+        <influences>
+          <li>
+            <role>Predator</role>
+            <struggleChanceMultiplier>0.8</struggleChanceMultiplier>
+            <requiredStrugglesMultiplier>1.2</requiredStrugglesMultiplier>
+          </li>
+        </influences>
+      </li>
+    </value>
+  </Operation>
+</Patch>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RimVore2.QuirkPoolDef>
+    <defName>RV2_RJW_SexVoreEjectChance</defName>
+    <label>Sex eject chance</label>
+    <category>RJW</category>
+    <description>These quirks determine how often the pawn ejects or transfers their prey during sexual interactions.</description>
+    <generationOrder>5</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>RV2_RJW_SexEjectChance_Always</li>
+      <li>RV2_RJW_SexEjectChance_Often</li>
+      <li>RV2_RJW_SexEjectChance_Normal</li>
+      <li>RV2_RJW_SexEjectChance_Rare</li>
+      <li>RV2_RJW_SexEjectChance_Never</li>
+    </quirks>
+  </RimVore2.QuirkPoolDef>
+
+  <RimVore2.QuirkDef>
+    <defName>RV2_RJW_SexEjectChance_Always</defName>
+    <label>Extra Loose</label>
+    <description>[PAWN_label] just can't keep prey inside $pAccself, any time [PAWN_pronoun] has sex and could eject [PAWN_possessive] prey, [PAWN_pronoun] will.</description>
+    <rarity>VeryRare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>SexEjectChance</modifierName>
+        <modifierValue>9999999</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>RV2_RJW_SexEjectChance_Often</defName>
+    <label>Loose</label>
+    <description>[PAWN_label] has a loose grip on $pAcc prey, so [PAWN_pronoun] is 50% more likely to leave her ownership once [PAWN_pronoun] gets down and busy.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>SexEjectChance</modifierName>
+        <modifierValue>1.5</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>RV2_RJW_SexEjectChance_Normal</defName>
+    <label>Normal</label>
+    <description>[PAWN_label] ejects prey as often as anyone else.</description>
+    <rarity>Abundant</rarity>
+    <hidden>true</hidden>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>RV2_RJW_SexEjectChance_Rare</defName>
+    <label>Rare</label>
+    <description>[PAWN_label] knows how to keep [PAWN_possessive] prey inside, [PAWN_pronoun] is only half as likely to eject [PAWN_possessive] prey.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>SexEjectChance</modifierName>
+        <modifierValue>0.5</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>RV2_RJW_SexEjectChance_Never</defName>
+    <label>Iron Hold</label>
+    <description>[PAWN_label] runs a tight ship and even tigher innards, [PAWN_pronoun] will never eject or transfer prey.</description>
+    <rarity>VeryRare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>SexEjectChance</modifierName>
+        <modifierValue>0.0000001</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+</Defs>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <!-- RV2 uses a release jobGiver that is very highly prioritzed, we reduce it for DBH so the normal toilet jobGiver can be used instead -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThinkTreeDef[defName="RV2_ReleasePreyHuman"]/insertTag</xpath>
+    <value>
+      <insertTag>Humanlike_PostDuty</insertTag>
+    </value>
+  </Operation>
+  
+  <!-- Inject the UseToilet JobGiver from DBH to be preferrable to RV2 positional logic -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThinkTreeDef[defName="RV2_ReleasePreyHuman"]/thinkRoot/subNodes</xpath>
+    <value>
+      <subNodes>
+        <li Class="DubsBadHygiene.JobGiver_UseToilet">
+          <leaveJoinableLordIfIssuesJob>true</leaveJoinableLordIfIssuesJob>
+        </li>
+        <li Class="RimVore2.ThinkNode_JobGiver_ReleasePrey" />
+      </subNodes>
+    </value>
+  </Operation>
+  
+  
+  
+</Patch>

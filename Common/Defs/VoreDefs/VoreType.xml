@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!--THE ESSENTIAL TYPES-->
+  
+  <RimVore2.VoreTypeDef>
+    <defName>Oral</defName>
+    <label>Oral</label>
+    <IconPath>UI/Icons/mouth</IconPath>
+    <initiationRecordPredator>RV2_Type_Oral_Predator</initiationRecordPredator>
+    <initiationRecordPrey>RV2_Type_Oral_Prey</initiationRecordPrey>
+    <relatedRulePacks>
+      <li>RV2_Type_Oral</li>
+    </relatedRulePacks>
+  </RimVore2.VoreTypeDef>
+  <RimVore2.VoreTypeDef>
+    <defName>Anal</defName>
+    <label>Anal</label>
+    <IconPath>UI/Icons/anus</IconPath>
+    <initiationRecordPredator>RV2_Type_Anal_Predator</initiationRecordPredator>
+    <initiationRecordPrey>RV2_Type_Anal_Prey</initiationRecordPrey>
+    <relatedRulePacks>
+      <li>RV2_Type_Anal</li>
+    </relatedRulePacks>
+  </RimVore2.VoreTypeDef>
+  <RimVore2.VoreTypeDef>
+    <defName>Vaginal</defName>
+    <label>Vaginal</label>
+    <IconPath>UI/Icons/vagina</IconPath>
+    <initiationRecordPredator>RV2_Type_Vaginal_Predator</initiationRecordPredator>
+    <initiationRecordPrey>RV2_Type_Vaginal_Prey</initiationRecordPrey>
+    <relatedRulePacks>
+      <li>RV2_Type_Vaginal</li>
+    </relatedRulePacks>
+  </RimVore2.VoreTypeDef>
+  <RimVore2.VoreTypeDef>
+    <defName>Cock</defName>
+    <label>Cock</label>
+    <IconPath>UI/Icons/penis</IconPath>
+    <initiationRecordPredator>RV2_Type_Cock_Predator</initiationRecordPredator>
+    <initiationRecordPrey>RV2_Type_Cock_Prey</initiationRecordPrey>
+    <relatedRulePacks>
+      <li>RV2_Type_Cock</li>
+    </relatedRulePacks>
+  </RimVore2.VoreTypeDef>
+  <RimVore2.VoreTypeDef>
+    <defName>Nipple</defName>
+    <label>Nipple</label>
+    <IconPath>UI/Icons/breast</IconPath>
+    <initiationRecordPredator>RV2_Type_Nipple_Predator</initiationRecordPredator>
+    <initiationRecordPrey>RV2_Type_Nipple_Prey</initiationRecordPrey>
+    <relatedRulePacks>
+      <li>RV2_Type_Nipple</li>
+    </relatedRulePacks>
+  </RimVore2.VoreTypeDef>
+  
+  <!-- ESEGN: Full tour, added later -->
+  <!-- ESEGN: I don't have a new icon to use for this so I'm just going to use the mouth icon -->
+
+  <RimVore2.VoreTypeDef>
+    <defName>FullTour</defName>
+    <label>Full Tour</label>
+    <IconPath>UI/Icons/mouth</IconPath>
+    <initiationRecordPredator>RV2_Type_FullTour_Predator</initiationRecordPredator>
+    <initiationRecordPrey>RV2_Type_FullTour_Prey</initiationRecordPrey>
+    <relatedRulePacks>
+      <li>RV2_Type_FullTour</li>
+    </relatedRulePacks>
+  </RimVore2.VoreTypeDef>
+
+</Defs>

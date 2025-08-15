@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <RV2_Category_None>Uncategorized</RV2_Category_None>
+  <RV2_QuirkWindow_Header>Vore Quirks</RV2_QuirkWindow_Header>
+  <RV2_QuirkWindow_RerollButtonLabel>Reroll All</RV2_QuirkWindow_RerollButtonLabel>
+  <RV2_QuirkWindow_RerollPool>Reroll quirk pool</RV2_QuirkWindow_RerollPool>
+  <RV2_QuirkWindow_SavePreset>Save Preset</RV2_QuirkWindow_SavePreset>
+  <RV2_QuirkWindow_LoadPreset>Load Preset</RV2_QuirkWindow_LoadPreset>
+  <RV2_QuirkWindow_DeletePreset>Delete Preset</RV2_QuirkWindow_DeletePreset>
+  
+  
+  <RV2_QuirkWindow_CycleQuirk>Cycle quirk</RV2_QuirkWindow_CycleQuirk>
+  <RV2_QuirkWindow_RemoveQuirk>Remove quirk</RV2_QuirkWindow_RemoveQuirk>
+  <RV2_QuirkWindow_InvalidButton>This entry is invalid. Refer to the description in dev mode to understand why.\n\nIt is highly recommended to remove this quirk or resolve the conflict!</RV2_QuirkWindow_InvalidButton>
+  <RV2_QuirkWindow_HiddenButton>This entry is normally not visible. You can see it because you have dev mode turned on.</RV2_QuirkWindow_HiddenButton>
+  <RV2_QuirkWindow_TemporaryButton>This entry is temporary and will expire at some point, which removes it or replaces it with the original.</RV2_QuirkWindow_TemporaryButton>
+  <RV2_QuirkWindow_IdeologyButton>This entry is enforced by this pawns ideology. It can force quirks that the pawn would normally not have.</RV2_QuirkWindow_IdeologyButton>
+  <RV2_QuirkWindow_IdeologySuppressingQuirk>Currently suppressing:</RV2_QuirkWindow_IdeologySuppressingQuirk>
+
+</LanguageData>

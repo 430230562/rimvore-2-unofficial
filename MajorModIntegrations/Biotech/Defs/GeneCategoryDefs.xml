@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <GeneCategoryDef>
+    <defName>RV2_Vore</defName>
+    <label>Vore</label>
+    <displayPriorityInXenotype>620</displayPriorityInXenotype>
+  </GeneCategoryDef>
+</Defs>

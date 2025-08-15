@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+  <!-- Anus -->
+  <RimVore2.VoreStageDef Abstract="True" Name="Anus_Base">
+    <partName>anus</partName>
+    <displayPartTranslationKey>RV2_DisplayPart_Anus</displayPartTranslationKey>
+    <requirements>
+      <li>
+        <target>Predator</target>
+        <requirements>
+          <li Class="RimVore2.Requirement_HediffAlias">
+            <bodyPartAlias>anus</bodyPartAlias>
+            <hediffAlias>anus</hediffAlias>
+          </li>
+        </requirements>
+      </li>
+    </requirements>
+  </RimVore2.VoreStageDef>
+
+  <!-- Anus Pass -->
+  <RimVore2.VoreStageDef Abstract="True" Name="Anus_Pass" ParentName="Anus_Base">
+    <defName>Anus_Pass</defName>
+    <partGoal>Pass</partGoal>
+    <passConditions>
+      <li Class="RimVore2.StagePassCondition_Timed">
+        <duration>16</duration>
+      </li>
+    </passConditions>
+  </RimVore2.VoreStageDef>
+
+  <!-- ESEGN: Added food need steal and rest need increase rolls to anus exit stages -->
+  <!-- ESEGN: So if a pred goes to sleep with someone waiting to leave the prey isn't extremely hungry and tired -->
+
+  <!-- Anus Exit -->
+  <RimVore2.VoreStageDef Name="Anus_Exit" ParentName="Anus_Pass">
+    <defName>Anus_Exit</defName>
+    <predatorHediffDef>RV2_PreyInAnusExiting</predatorHediffDef>
+    <predatorThoughtDef>RV2_PreyInAnusExiting</predatorThoughtDef>
+    <onStart>
+      <actions>
+        <li Class="RimVore2.RollAction_PlaySound">
+          <sound>RV2_Squish</sound>
+        </li>
+      </actions>
+    </onStart>
+    <onCycle>
+      <rollPresets>
+        <li>Sound_Toot_Chance_4</li>
+        <li>StealNeed_ForPrey_Food</li>
+        <li>IncreaseNeed_Prey_Rest</li>
+      </rollPresets>
+    </onCycle>
+    <onEnd>
+      <actions>
+        <li Class="RimVore2.RollAction_PlaySound">
+          <sound>RV2_Fart</sound>
+        </li>
+        <li Class="RimVore2.RollAction_PlaySound">
+          <sound>RV2_Splatter</sound>
+        </li>
+        <li Class="RimVore2.RollAction_RecordTale_VoreExit"/>
+      </actions>
+    </onEnd>
+    <passConditions Inherit="False">
+      <li Class="RimVore2.StagePassCondition_Timed">
+        <duration>100</duration>
+      </li>
+    </passConditions>
+  </RimVore2.VoreStageDef>
+
+  <!--Anus Exit Dump-->
+  <RimVore2.VoreStageDef ParentName="Anus_Exit">
+    <defName>Anus_Dump</defName>
+    <partGoal>Dump</partGoal>
+    <canReverseDirection>false</canReverseDirection>
+    <predatorHediffDef>RV2_PreyInAnusDumping</predatorHediffDef>
+    <predatorThoughtDef>RV2_PreyInAnusDumping</predatorThoughtDef>
+  </RimVore2.VoreStageDef>
+
+  <!-- Anus Exit Pleasure -->
+  <RimVore2.VoreStageDef ParentName="Anus_Exit">
+    <defName>Anus_Exit_Pleasure</defName>
+    <partGoal>Pleasure</partGoal>
+    <canReverseDirection>true</canReverseDirection>
+    <predatorHediffDef>RV2_PreyInAnusPleasuring</predatorHediffDef>
+    <onStart>
+      <rollPresets>
+        <li>Sound_Moan_Chance</li>
+      </rollPresets>
+    </onStart>
+    <onCycle>
+      <rollPresets>
+        <li>IncreaseNeed_Predator_Comfort</li>
+        <li>IncreaseNeed_Prey_Comfort</li>
+      </rollPresets>
+    </onCycle>
+  </RimVore2.VoreStageDef>
+
+  <!-- Anus Enter -->
+  <RimVore2.VoreStageDef Name="Anus_Enter" ParentName="Anus_Pass">
+    <defName>Anus_Enter</defName>
+    <canReverseDirection>true</canReverseDirection>
+    <predatorHediffDef>RV2_PreyInAnusPassing</predatorHediffDef>
+    <predatorThoughtDef>RV2_PreyInAnusPassing</predatorThoughtDef>
+    <onStart>
+      <actions>
+        <li Class="RimVore2.RollAction_RecordTale_VoreInitiation"/>
+      </actions>
+    </onStart>
+  </RimVore2.VoreStageDef>
+
+  <!-- Anus Enter Pleasure -->
+  <RimVore2.VoreStageDef ParentName="Anus_Enter">
+    <defName>Anus_Enter_Pleasure</defName>
+    <predatorThoughtDef>RV2_PreyInAnusPleasuring</predatorThoughtDef>
+    <onCycle>
+      <rollPresets>
+        <li>StealNeed_ForPrey_Food</li>
+        <li>IncreaseNeed_Predator_Comfort</li>
+        <li>IncreaseNeed_Prey_Comfort</li>
+      </rollPresets>
+    </onCycle>
+    <passConditions>
+      <li Class="RimVore2.StagePassCondition_Need">
+        <target>Predator</target>
+        <need>Comfort</need>
+        <targetLevel>0.6</targetLevel>
+      </li>
+      <!-- keep the parents timed pass condition -->
+    </passConditions>
+  </RimVore2.VoreStageDef>
+  
+</Defs>

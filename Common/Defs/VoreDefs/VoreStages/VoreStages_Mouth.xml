@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+  <RimVore2.VoreStageDef Abstract="True" Name="Mouth_Base">
+    <partName>mouth</partName>
+    <displayPartTranslationKey>RV2_DisplayPart_Mouth</displayPartTranslationKey>
+    <requirements>
+      <li>
+        <target>Predator</target>
+        <requirements>
+          <li Class="RimVore2.Requirement_BodyPartAlias">
+            <bodyPartAlias>mouth</bodyPartAlias>
+          </li>
+        </requirements>
+      </li>
+    </requirements>
+  </RimVore2.VoreStageDef>
+
+  <RimVore2.VoreStageDef Abstract="True" Name="Mouth_Pass" ParentName="Mouth_Base">
+    <partGoal>Pass</partGoal>
+    <passConditions>
+      <li Class="RimVore2.StagePassCondition_Timed">
+        <duration>8</duration>
+      </li>
+    </passConditions>
+  </RimVore2.VoreStageDef>
+
+  <RimVore2.VoreStageDef Name="Mouth_Enter" ParentName="Mouth_Pass">
+    <defName>Mouth_Enter</defName>
+    <canReverseDirection>true</canReverseDirection>
+    <predatorHediffDef>RV2_PreyInMouthPassing</predatorHediffDef>
+    <predatorThoughtDef>RV2_PreyInMouthPassing</predatorThoughtDef>
+    <onStart>
+      <actions>
+        <li Class="RimVore2.RollAction_PlaySound">
+          <sound>RV2_Nom</sound>
+        </li>
+        <li Class="RimVore2.RollAction_RecordTale_VoreInitiation"/>
+      </actions>
+    </onStart>
+    <onCycle>
+      <rollPresets>
+        <li>Sound_Slurp_Chance_5</li>
+      </rollPresets>
+    </onCycle>
+    <onEnd>
+      <actions>
+        <li Class="RimVore2.RollAction_PlaySound">
+          <sound>RV2_Swallow</sound>
+        </li>
+      </actions>
+    </onEnd>
+  </RimVore2.VoreStageDef>
+
+  <RimVore2.VoreStageDef Name="Mouth_Pleasure" ParentName="Mouth_Enter">
+    <defName>Mouth_Enter_Pleasure</defName>
+    <partGoal>Pleasure</partGoal>
+    <canReverseDirection>true</canReverseDirection>
+    <predatorHediffDef>RV2_PreyInMouthPleasuring</predatorHediffDef>
+    <predatorThoughtDef>RV2_PreyInMouthPleasuring</predatorThoughtDef>
+    <onCycle>
+      <rollPresets>
+        <li>StealNeed_ForPrey_Food</li>
+        <li>IncreaseNeed_Prey_Comfort</li>
+      </rollPresets>
+    </onCycle>
+    <passConditions>
+      <li Class="RimVore2.StagePassCondition_Need">
+        <target>Prey</target>
+        <need>Comfort</need>
+        <targetLevel>0.7</targetLevel>
+      </li>
+      <!-- keep the parents timed pass condition -->
+    </passConditions>
+  </RimVore2.VoreStageDef>
+
+  <!-- extended by Overstuffed for Purge / Reshape, not directly used in RV2, remove the Abstract="True when actual vore path reversal makes it in-->
+  <RimVore2.VoreStageDef Abstract="True" Name="Mouth_Exit" ParentName="Mouth_Pass">
+    <defName>Mouth_Exit</defName>
+    <predatorHediffDef>RV2_PreyInMouthExiting</predatorHediffDef>
+    <predatorThoughtDef>RV2_PreyInMouthExiting</predatorThoughtDef>
+    <onEnd>
+      <actions>
+        <li Class="RimVore2.RollAction_RecordTale_VoreExit"/>
+      </actions>
+    </onEnd>
+    <passConditions Inherit="False">
+      <li Class="RimVore2.StagePassCondition_Timed">
+        <duration>32</duration>
+      </li>
+    </passConditions>
+  </RimVore2.VoreStageDef>
+
+  <!-- ESEGN: "Mouth_Exit" is in use by the above and I'm not going to touch it to make sure I don't break anything, so it's "Mouth_Regurgitate" here -->
+
+  <RimVore2.VoreStageDef Name="Mouth_Regurgitate" ParentName="Mouth_Pass">
+    <defName>Mouth_Regurgitate</defName>
+    <predatorHediffDef>RV2_PreyInMouthExiting</predatorHediffDef>
+    <predatorThoughtDef>RV2_PreyInMouthExiting</predatorThoughtDef>
+    <onStart>
+      <actions>
+        <li Class="RimVore2.RollAction_PlaySound">
+          <sound>RV2_Squish</sound>
+        </li>
+      </actions>
+    </onStart>
+    <onCycle>
+      <rollPresets>
+        <li>Sound_Slurp_Chance_5</li>
+      </rollPresets>
+    </onCycle>
+    <onEnd>
+      <actions>
+        <li Class="RimVore2.RollAction_PlaySound">
+          <sound>RV2_Splatter</sound>
+        </li>
+        <li Class="RimVore2.RollAction_RecordTale_VoreExit"/>
+      </actions>
+    </onEnd>
+    <passConditions Inherit="False">
+      <li Class="RimVore2.StagePassCondition_Timed">
+        <duration>100</duration>
+      </li>
+    </passConditions>
+  </RimVore2.VoreStageDef>
+
+  <!-- ESEGN: For new OV pleasure exit stage -->
+
+  <RimVore2.VoreStageDef Name="Mouth_Regurgitate_Pleasure" ParentName="Mouth_Regurgitate">
+    <defName>Mouth_Regurgitate_Pleasure</defName>
+    <partGoal>Pleasure</partGoal>
+    <canReverseDirection>true</canReverseDirection>
+    <predatorHediffDef>RV2_PreyExitingMouthPleasuring</predatorHediffDef>
+    <predatorThoughtDef>RV2_PreyExitingMouthPleasuring</predatorThoughtDef>
+    <onCycle>
+      <rollPresets>
+        <li>StealNeed_ForPrey_Food</li>
+        <li>IncreaseNeed_Predator_Comfort</li>
+        <li>IncreaseNeed_Prey_Comfort</li>
+      </rollPresets>
+    </onCycle>
+  </RimVore2.VoreStageDef>
+</Defs>

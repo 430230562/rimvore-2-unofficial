@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <PreceptDef Abstract="True" Name="RV2_RoleBase" ParentName="PreceptRoleSingleBase">
+    <displayOrderInImpact>100</displayOrderInImpact>
+    <restrictToSupremeGenderChance>1</restrictToSupremeGenderChance>
+    <convertPowerFactor>2</convertPowerFactor>
+    <expectationsOffset>2</expectationsOffset>
+    <canRemoveInUI>false</canRemoveInUI>
+    <!--<grantedAbilities>
+      <li>RV2_ConvoresionRitual</li>
+    </grantedAbilities>-->
+    <roleRequiredWorkTags>
+      <li>Social</li>
+    </roleRequiredWorkTags>
+  </PreceptDef>
+
+  <PreceptDef ParentName="RV2_RoleBase">
+    <defName>RV2_IdeoRole_AlphaPredator</defName>
+    <label>alpha predator</label>
+    <description>The alpha predator is responsible for leading predatory rituals. An alpha predator boasts impressive strength, but is slower at common work.</description>
+    <iconPath>UI/Roles/AlphaPredator</iconPath>
+    <nameMaker>RV2_NamerRoleAlphaPredator</nameMaker>
+    <roleRequirements>
+      <li Class="RoleRequirement_MinSkillAny">
+        <skills>
+          <Shooting>5</Shooting>
+          <Melee>5</Melee>
+        </skills>
+      </li>
+    </roleRequirements>
+    <roleRequiredWorkTags>
+      <li>Shooting</li>
+      <li>Violent</li>
+    </roleRequiredWorkTags>
+    <requiredMemes>
+      <li>RV2_Predation</li>
+    </requiredMemes>
+    <roleEffects>
+      <li Class="RoleEffect_PawnStatOffset">
+        <statDef>MoveSpeed</statDef>
+        <modifier>0.5</modifier>
+      </li>
+      <li Class="RoleEffect_PawnStatFactor">
+        <statDef>EatingSpeed</statDef>
+        <modifier>1.4</modifier>
+      </li>
+      <!--<li Class="RoleEffect_PawnStatOffset">
+        <statDef>HungerRateMultiplier</statDef>
+        <modifier>0.1</modifier>
+      </li>-->
+      <li Class="RoleEffect_PawnStatFactor">
+        <statDef>WorkSpeedGlobal</statDef>
+        <modifier>0.8</modifier>
+      </li>
+      <li Class="RoleEffect_PawnStatFactor">
+        <statDef>GeneralLaborSpeed</statDef>
+        <modifier>0.8</modifier>
+      </li>
+      <li Class="RoleEffect_PawnStatFactor">
+        <statDef>HuntingStealth</statDef>
+        <modifier>1.3</modifier>
+      </li>
+      <li Class="RoleEffect_PawnStatOffset">
+        <statDef>ShootingAccuracyPawn</statDef>
+        <modifier>5</modifier>
+      </li>
+      <li Class="RoleEffect_PawnStatOffset">
+        <statDef>MeleeHitChance</statDef>
+        <modifier>5</modifier>
+      </li>
+      <li Class="RoleEffect_PawnStatOffset">
+        <statDef>MeleeDodgeChance</statDef>
+        <modifier>5</modifier>
+      </li>
+    </roleEffects>
+    <roleDisabledWorkTags>
+      <li>ManualDumb</li>
+      <li>Caring</li>
+    </roleDisabledWorkTags>
+    <roleTags>
+      <li>RV2_AlphaPredator</li>
+    </roleTags>
+  </PreceptDef>
+
+  <PreceptDef ParentName="RV2_RoleBase">
+    <defName>RV2_IdeoRole_ChosenPrey</defName>
+    <label>chosen prey</label>
+    <description>The chosen prey is responsible for leading prey-specific rituals. The chosen prey boasts superior social skills and faster recovery from wounds.</description>
+    <iconPath>UI/Roles/ChosenPrey</iconPath>
+    <nameMaker>RV2_NamerRoleChosenPrey</nameMaker>
+    <roleRequirements>
+      <li Class="RoleRequirement_MinSkillAny">
+        <skills>
+          <Social>6</Social>
+        </skills>
+      </li>
+    </roleRequirements>
+    <roleRequiredWorkTags>
+      <li>Caring</li>
+    </roleRequiredWorkTags>
+    <requiredMemes>
+      <li>RV2_Preyism</li>
+    </requiredMemes>
+    <roleEffects>
+      <li Class="RoleEffect_PawnStatFactor">
+        <statDef>MaxHitPoints</statDef>
+        <modifier>1.15</modifier>
+      </li>
+      <li Class="RoleEffect_PawnStatOffset">
+        <statDef>PawnBeauty</statDef>
+        <modifier>0.5</modifier>
+      </li>
+      <li Class="RoleEffect_PawnStatFactor">
+        <statDef>MeatAmount</statDef>
+        <modifier>1.2</modifier>
+      </li>
+      <li Class="RoleEffect_PawnStatFactor">
+        <statDef>WorkSpeedGlobal</statDef>
+        <modifier>1.1</modifier>
+      </li>
+      <li Class="RoleEffect_PawnStatOffset">
+        <statDef>MedicalTendSpeed</statDef>
+        <modifier>0.2</modifier>
+      </li>
+      <li Class="RoleEffect_PawnStatOffset">
+        <statDef>MedicalTendQuality</statDef>
+        <modifier>0.2</modifier>
+      </li>
+      <li Class="RoleEffect_PawnStatFactor">
+        <statDef>NegotiationAbility</statDef>
+        <modifier>1.2</modifier>
+      </li>
+      <li Class="RoleEffect_PawnStatOffset">
+        <statDef>TradePriceImprovement</statDef>
+        <modifier>0.1</modifier>
+      </li>
+      <li Class="RoleEffect_PawnStatOffset">
+        <statDef>SocialImpact</statDef>
+        <modifier>0.5</modifier>
+      </li>
+      <li Class="RoleEffect_PawnStatOffset">
+        <statDef>InjuryHealingFactor</statDef>
+        <modifier>1.3</modifier>
+      </li>
+    </roleEffects>
+    <roleDisabledWorkTags>
+      <li>Violent</li>
+      <li>Mining</li>
+    </roleDisabledWorkTags>
+    <roleTags>
+      <li>RV2_ChosenPrey</li>
+    </roleTags>
+  </PreceptDef>
+
+  <PreceptDef ParentName="RV2_RoleBase">
+    <defName>RV2_IdeoRole_Feeder</defName>
+    <label>feeder</label>
+    <description>The feeder coordinates vore between two other pawns during rituals</description>
+    <iconPath>UI/Roles/ChosenPrey</iconPath>
+    <nameMaker>RV2_NamerRoleFeeder</nameMaker>
+    <roleRequirements>
+      <li Class="RoleRequirement_MinSkillAny">
+        <skills>
+          <Social>6</Social>
+        </skills>
+      </li>
+    </roleRequirements>
+    <roleEffects>
+      <li Class="RoleEffect_PawnStatFactor">
+        <statDef>NegotiationAbility</statDef>
+        <modifier>1.2</modifier>
+      </li>
+      <li Class="RoleEffect_PawnStatOffset">
+        <statDef>TradePriceImprovement</statDef>
+        <modifier>0.1</modifier>
+      </li>
+      <li Class="RoleEffect_PawnStatOffset">
+        <statDef>SocialImpact</statDef>
+        <modifier>0.5</modifier>
+      </li>
+    </roleEffects>
+    <requiredMemes>
+      <li>RV2_Predation</li>
+      <li>RV2_Preyism</li>
+    </requiredMemes>
+    <roleTags>
+      <li>RV2_Feeder</li>
+    </roleTags>
+  </PreceptDef>
+
+</Defs>

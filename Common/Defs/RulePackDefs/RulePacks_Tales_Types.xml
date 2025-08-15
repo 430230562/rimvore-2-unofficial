@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RulePackDef>
+    <defName>RV2_Type_OralInit</defName>
+    <rulePack>
+      <rulesStrings>
+        <!-- local RV2_oralInit_* -->
+        <!-- RV2_adverb -->
+        <!-- RV2_addendum -->
+        <li>RV2_addendum->for a taste of [PREY_objective]</li>
+        <!-- RV2_adjective -->
+        <li>RV2_adjective->slimy</li>
+        <li>RV2_adjective->slippery</li>
+        <!-- RV2_init_predVerb -->
+        <li>RV2_init_predVerb->swallowing</li>
+        <li>RV2_init_predVerb->ingesting</li>
+        <li>RV2_init_predVerb->gulping down</li>
+        <!-- RV2_bodypart (init) -->
+        <li>RV2_bodypart->mouth</li>
+        <li>RV2_bodypart->throat</li>
+        <li>RV2_bodypart->gullet</li>
+        <li>RV2_bodypart->esophagus</li>
+        <!-- RV2_init_preyVerb -->
+        <li>RV2_init_preyVerb->being swallowed by</li>
+        <li>RV2_init_preyVerb->being gulped by</li>
+        <li>RV2_init_preyVerb->sliding down</li>
+        <!-- RV2_init_tale_noun -->
+        <!-- RV2_init_image -->
+        <li>RV2_init_image->[PREDATOR_definite] covering [PREY_definite] in [PREDATOR_possessive] favorite condiments</li>
+        <li>RV2_init_image->[PREY_definite] inspecting the teeth of [PREDATOR_definite] on the way into [PREDATOR_possessive] [RV2_bodypart]</li>
+        <li>RV2_init_image->[PREDATOR_definite] massaging [PREY_definite] with [PREDATOR_possessive] tongue</li>
+        <!-- RV2_init_desc_sentence -->
+        <li>RV2_init_desc_sentence->[PREDATOR_definite] liked the natural taste of [PREY_definite].</li>
+        <li>RV2_init_desc_sentence->[PREY_definite] left a bad aftertaste in [PREDATOR_possessive] mouth.</li>
+        <li>RV2_init_desc_sentence->[PREY_definite] was a little too salty for [PREDATOR_objective].</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  <RulePackDef>
+    <defName>RV2_Type_AnalExit</defName>
+    <rulePack>
+      <rulesStrings>
+        <!-- local RV2_analExit_* -->
+        <!-- RV2_adverb -->
+        <!-- RV2_addendum -->
+        <!-- RV2_adjective -->
+        <!-- RV2_exit_predVerb -->
+        <li>RV2_exit_predVerb->defecating</li>
+        <li>RV2_exit_predVerb->shitting out</li>
+	<li>RV2_exit_predVerb->dropping</li>
+        <!-- RV2_exit_tale_noun -->
+        <!-- RV2_exit_preyVerb -->
+        <li>RV2_exit_preyVerb->being shat out by</li>
+        <!-- RV2_exit_image -->
+        <li>RV2_exit_image->[PREDATOR_definite] leaving to do [PREDATOR_possessive] business in the great outdoors</li>
+        <li>RV2_exit_image->[PREDATOR_definite] looking frantically for a place to let [PREY_definite] out</li>
+        <li>RV2_exit_image->[PREDATOR_definite] letting [PREY_definite] out straight into a latrine</li>
+        <li>RV2_exit_image->[PREY_definite] making a mess of [PREDATOR_possessive] pants</li>
+        <li>RV2_exit_image->a latrine with the remains of [PREY_definite] inside</li>
+        <!-- RV2_exit_desc_sentence -->
+        <li>RV2_exit_desc_sentence->Bears shit in the woods, and so does [PREDATOR_definite].</li>
+        <li>RV2_exit_desc_sentence->[PREY_definite] appears to have left [PREDATOR_definite] a bit constipated.</li>
+        <li>RV2_exit_desc_sentence->[PREY_definite] gave [PREDATOR_definite] a bad case of the squirts.</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  <RulePackDef>
+    <defName>RV2_Type_Oral</defName>
+    <include>
+      <li>RV2_Type_OralInit</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        <li>extraSentencePack->[INITIATOR_nameDef] is using [INITIATOR_possessive] [RV2_bodypart] to vore</li>
+        <!-- local RV2_oral_* -->
+        <!-- RV2_adverb -->
+        <!-- RV2_addendum -->
+        <!-- RV2_adjective -->
+        <!-- RV2_init_* should go in RV2_Type_OralInit -->
+        <!-- RV2_exit_predVerb -->
+        <li>RV2_exit_predVerb->spitting out</li>
+        <li>RV2_exit_predVerb->throwing up</li>
+        <li>RV2_exit_predVerb->regurgitating</li>
+        <!-- RV2_exit_tale_noun -->
+        <!-- RV2_exit_preyVerb -->
+        <li>RV2_exit_preyVerb->being spat out by</li>
+        <li>RV2_exit_preyVerb->being thrown up</li>
+        <li>RV2_exit_preyVerb->being regurgitated</li>
+        <!-- RV2_exit_image -->
+        <li>RV2_exit_image->[PREY_definite] covered in predator saliva</li>
+        <li>RV2_exit_image->[PREY_definite] flying out of [PREDATOR_definite] with great speed</li>
+        <li>RV2_exit_image->[PREDATOR_definite] crawling backwards with [PREDATOR_possessive] mouth open, leaving [PREY_definite] on the ground in front of [PREDATOR_pronoun]</li>
+        <!-- RV2_exit_desc_sentence -->
+        <li>RV2_exit_desc_sentence->[PREY_definite] appears even more tasty on the way out.</li>
+        <li>RV2_exit_desc_sentence->[PREDATOR_definite] shows disgust at tasting [PREY_definite] on the way out.</li>
+        <li>RV2_exit_desc_sentence->[PREDATOR_definite] dry heaves after finishing the job.</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  <RulePackDef>
+    <defName>RV2_Type_FullTour</defName>
+    <include>
+      <li>RV2_Type_OralInit</li>
+      <li>RV2_Type_AnalExit</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        <li>extraSentencePack->[INITIATOR_nameDef] is using [INITIATOR_possessive] [RV2_bodypart] to vore</li>
+        <!-- local RV2_fullTour_* -->
+        <!-- RV2_adverb -->
+        <!-- RV2_addendum -->
+        <li>RV2_addendum->for a full tour</li>
+        <li>RV2_addendum->for a full tour of [PREDATOR_possessive] insides</li>
+        <!-- RV2_adjective -->
+        <!-- RV2_init_* should go in RV2_Type_OralInit -->
+        <!-- RV2_exit_* should go in RV2_Type_AnalExit -->
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>RV2_Type_Anal</defName>
+    <include>
+      <li>RV2_Type_AnalExit</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        <li>extraSentencePack->[INITIATOR_nameDef] is using [INITIATOR_possessive] [RV2_bodypart] to vore</li>
+        <!-- local RV2_anal_* -->
+        <!-- RV2_adverb -->
+        <!-- RV2_addendum -->
+        <!-- RV2_adjective -->
+        <!-- RV2_init_predVerb -->
+        <li>RV2_init_predVerb->anally swallowing</li>
+        <li>RV2_init_predVerb->rectally swallowing</li>
+        <!-- RV2_bodypart (init) -->
+        <li>RV2_bodypart->anus</li>
+        <li>RV2_bodypart->asshole</li>
+        <li>RV2_bodypart->pooper</li>
+        <li>RV2_bodypart->starfish</li>
+        <!-- RV2_init_preyVerb -->
+        <li>RV2_init_preyVerb->being anally swallowed</li>
+        <li>RV2_init_preyVerb->being rectally swallowed</li>
+        <!-- RV2_init_tale_noun -->
+        <!-- RV2_init_image -->
+        <li>RV2_init_image->[PREDATOR_definite] sitting down on [PREY_definite] to stuff [PREY_pronoun] up [PREDATOR_possessive] [RV2_bodypart]</li>
+        <li>RV2_init_image->[PREDATOR_definite] having [PREY_definite] crawl into [PREDATOR_possessive] [RV2_bodypart] as [PREDATOR_pronoun] lays on [PREDATOR_possessive] back</li>
+        <li>RV2_init_image->[PREDATOR_definite] letting gravity do the work of drawing [PREY_definite] inside [PREDATOR_possessive] [RV2_bodypart]</li>
+        <!-- RV2_init_desc_sentence -->
+        <li>RV2_init_desc_sentence->[PREDATOR_definite] really should have started with a dildo first.</li>
+        <li>RV2_init_desc_sentence->[PREDATOR_definite] really should have cleaned up first.</li>
+        <!-- RV2_exit_* should go in RV2_Type_AnalExit -->
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  <RulePackDef>
+    <defName>RV2_Type_Vaginal</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>extraSentencePack->[INITIATOR_nameDef] is using [INITIATOR_possessive] [RV2_bodypart] to vore</li>
+        <!-- local RV2_vaginal_* -->
+        <!-- RV2_adverb -->
+        <li>RV2_adverb->sexually</li>
+        <!-- RV2_addendum -->
+        <!-- RV2_adjective -->
+        <li>RV2_adjective->sexual</li>
+        <!-- RV2_init_predVerb -->
+        <li>RV2_init_predVerb->vaginally swallowing</li>
+        <li>RV2_init_predVerb->unbirthing</li>
+        <!-- RV2_bodypart (init) -->
+        <li>RV2_bodypart->vagina</li>
+        <li>RV2_bodypart->cunt</li>
+        <li>RV2_bodypart->vagoo</li>
+        <!-- RV2_init_preyVerb -->
+        <li>RV2_init_preyVerb->being vaginally swallowed</li>
+        <li>RV2_init_preyVerb->being unbirthed</li>
+        <!-- RV2_init_tale_noun -->
+        <!-- RV2_init_image -->
+        <!-- RV2_init_desc_sentence -->
+        <li>RV2_init_desc_sentence->[PREDATOR_definite] really should have started with a dildo first.</li>
+        <li>RV2_init_desc_sentence->[PREDATOR_definite] winced at [PREY_definite] hitting [PREDATOR_possessive] cervix.</li>
+        <!-- RV2_exit_predVerb -->
+        <li>RV2_exit_predVerb->squirting out</li>
+        <li>RV2_exit_predVerb->birthing</li>
+        <!-- RV2_exit_tale_noun -->
+        <!-- RV2_exit_preyVerb -->
+        <li>RV2_exit_preyVerb->being squirt out by</li>
+        <li>RV2_exit_preyVerb->being reborn</li>
+        <!-- RV2_exit_image -->
+        <li>RV2_exit_image->[PREY_definite] reexperiencing the events of [PREY_possessive] own birth</li>
+        <!-- RV2_exit_desc_sentence -->
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  <RulePackDef>
+    <defName>RV2_Type_Cock</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>extraSentencePack->[INITIATOR_nameDef] is using [INITIATOR_possessive] [RV2_bodypart] to vore</li>
+        <!-- lcoal RV2_cock_* -->
+        <!-- RV2_adverb -->
+        <li>RV2_adverb->sexually</li>
+        <!-- RV2_addendum -->
+        <!-- RV2_adjective -->
+        <li>RV2_adjective->sexual</li>
+        <!-- RV2_init_predVerb -->
+        <li>RV2_init_predVerb->unsowing</li>
+        <!-- RV2_bodypart (init) -->
+        <li>RV2_bodypart->penis</li>
+        <li>RV2_bodypart->cock</li>
+        <li>RV2_bodypart->urethra</li>
+        <!-- RV2_init_preyVerb -->
+        <li>RV2_init_preyVerb->being unsown</li>
+        <!-- RV2_init_tale_noun -->
+        <!-- RV2_init_image -->
+        <li>RV2_init_image->[PREY_definite] sliding down [PREDATOR_possessive] [RV2_bodypart]</li>
+        <li>RV2_init_image->[PREDATOR_definite] feeling the intense stretch from [PREY_definite] in [PREDATOR_possessive] [RV2_bodypart]</li>
+        <!-- RV2_init_desc_sentence -->
+	<li>RV2_init_desc_sentence->[PREDATOR_definite] wonders how many millimeters [PREY_definite] is at [PREY_possessive] widest.</li>
+	<li>RV2_init_desc_sentence->[PREDATOR_definite] measures the diameter of [PREY_definite] for [PREDATOR_possessive] records.</li>
+        <!-- RV2_exit_predVerb -->
+        <li>RV2_exit_predVerb->cumming out</li>
+        <li>RV2_exit_predVerb->ejaculating</li>
+        <!-- RV2_exit_tale_noun -->
+        <!-- RV2_exit_preyVerb -->
+        <li>RV2_exit_preyVerb->being cum out by</li>
+        <li>RV2_exit_preyVerb->being ejaculated by</li>
+        <!-- RV2_exit_image -->
+	<li>RV2_exit_image->[PREY_definite] emerging from the [RV2_bodypart] of [PREDATOR_definite]</li>
+	<li>RV2_exit_image->[PREY_definite] flying out of the [RV2_bodypart] of [PREDATOR_definite] at great speed</li>
+        <!-- RV2_exit_desc_sentence -->
+	<li>RV2_exit_desc_sentence->[PREDATOR_definite] feels a profound emptiness now that [PREY_definite] is out.</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  <RulePackDef>
+    <defName>RV2_Type_Nipple</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>extraSentencePack->[INITIATOR_nameDef] is using [INITIATOR_possessive] [RV2_bodypart] to vore</li>
+        <!-- local RV2_nipple_* -->
+        <!-- RV2_adverb -->
+        <!-- RV2_addendum -->
+        <li>RV2_addendum->to give [PREY_definite] a milk bath</li>
+        <!-- RV2_adjective -->
+        <!-- RV2_init_predVerb -->
+        <li>RV2_init_predVerb->unnursing</li>
+        <!-- RV2_bodypart (init) -->
+        <li>RV2_bodypart->nipple</li>
+        <!-- RV2_init_preyVerb -->
+        <li>RV2_init_preyVerb->being unnused</li>
+        <!-- RV2_init_tale_noun -->
+        <!-- RV2_init_image -->
+        <li>RV2_init_image->[PREDATOR_definite] nursing [PREY_definite] from [PREDATOR_possessive] [RV2_bodypart] before [RV2_init_preyVerb] [RV2_pronoun]</li>
+        <!-- RV2_init_desc_sentence -->
+        <!-- RV2_exit_predVerb -->
+        <li>RV2_exit_predVerb->milking out</li>
+        <li>RV2_exit_predVerb->squeezing out</li>
+        <!-- RV2_exit_tale_noun -->
+        <!-- RV2_exit_preyVerb -->
+        <li>RV2_exit_preyVerb->being milked out by</li>
+        <li>RV2_exit_preyVerb->being squeezed out by</li>
+        <!-- RV2_exit_image -->
+        <!-- RV2_exit_desc_sentence -->
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+</Defs>

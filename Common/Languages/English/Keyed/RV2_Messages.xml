@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- Auto-Vore Notifications -->
+  <RV2_Message_VoreProposalForced>{INITIATOR} is forcing a vore proposal on {TARGET}</RV2_Message_VoreProposalForced>
+  <RV2_Message_VoreProposalAccepted>{TARGET} accepted {INITIATOR}'s vore proposal</RV2_Message_VoreProposalAccepted>
+  <RV2_Message_VoreProposalDenied>{TARGET} denied {INITIATOR}'s vore proposal</RV2_Message_VoreProposalDenied>
+  <RV2_Message_VoreProposalAccepted_Feeder_Predator>{PREDATOR} accepted {FEEDER}'s vore proposal to be fed prey</RV2_Message_VoreProposalAccepted_Feeder_Predator>
+  <RV2_Message_VoreProposalForced_Feeder_Predator>{FEEDER} is forcing {PREDATOR} to be fed with prey</RV2_Message_VoreProposalForced_Feeder_Predator>
+  <RV2_Message_VoreProposalDenied_Feeder_Predator>{PREDATOR} denied {FEEDER}'s proposal to be fed with prey</RV2_Message_VoreProposalDenied_Feeder_Predator>
+  <RV2_Message_VoreProposalAccepted_Feeder_Prey>{PREY} accepted {FEEDER}'s vore proposal to be fed to {PREDATOR}</RV2_Message_VoreProposalAccepted_Feeder_Prey>
+  <RV2_Message_VoreProposalForced_Feeder_Prey>{FEEDER} is forcing {PREDATOR} to be fed with prey</RV2_Message_VoreProposalForced_Feeder_Prey>
+  <RV2_Message_VoreProposalDenied_Feeder_Prey>{PREY} denied {FEEDER}'s proposal to be fed to {PREDATOR}</RV2_Message_VoreProposalDenied_Feeder_Prey>
+  
+  <!-- reformation failure -->
+  <RV2_Message_ReformationFailed_PawnDead>{0} died before being reformed</RV2_Message_ReformationFailed_PawnDead>
+  
+  <!-- mental states -->
+  <RV2_Message_AsPredatorTargetChange>{0} has decided to vore {1} instead.</RV2_Message_AsPredatorTargetChange>
+  <RV2_Message_AsPreyTargetChange>{0} has decided to slip into {1} instead.</RV2_Message_AsPreyTargetChange>
+
+  <!-- Rituals -->
+  <MessageRitualRoleMustBeColonyAnimal>{0} must be a colony animal</MessageRitualRoleMustBeColonyAnimal>
+  
+  <!-- struggling -->
+  <RV2_Message_StrugglingBrokeFree>{0} has struggled out of {1}</RV2_Message_StrugglingBrokeFree>
+  
+  <!-- taming failed vore -->
+  <RV2_Message_FailedTameVore_Title>Taming retaliation</RV2_Message_FailedTameVore_Title>
+  <RV2_Message_FailedTameVore_Description>{TAMER} has failed to tame a wild {TAMEE}, which responded with voring {TAMER}</RV2_Message_FailedTameVore_Description>
+  
+  <!-- external eject failure -->
+  <RV2_Message_ExternalEjectFailed>{INITIATOR} failed to force {TARGET} to eject {PREY}</RV2_Message_ExternalEjectFailed>
+  
+</LanguageData>
+
+<!-- RV2_Message_ -->

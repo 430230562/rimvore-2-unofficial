@@ -1,0 +1,1849 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- MH: known shortcoming of these quirks: they are written in such a way as to describe conventional vore and do not account for absorption. alas! -->
+
+  <RimVore2.QuirkPoolDef>
+    <!-- This should be named TypePreference_ but changing it now would break saved games -->
+    <defName>GoalPreference_Predator_Anal</defName>
+    <label>Predatory type preference (anal)</label>
+    <category>Type Preference</category>
+    <description>These quirks determine how much a pawn likes to stuff prey up their butt. At the extremes, the pawn will either never or always try to posternate prey.</description>
+    <generationOrder>2</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>TypePreference_Predator_Anal_Obsessed</li>
+      <li>TypePreference_Predator_Anal_Likes</li>
+      <li>TypePreference_Predator_Anal_Neutral</li>
+      <li>TypePreference_Predator_Anal_Dislikes</li>
+      <li>TypePreference_Predator_Anal_Refuses</li>
+      <!-- <li>TypePreference_Predator_Anal_Incapable</li> -->
+    </quirks>
+    <blockingQuirks>
+      <li>PredatorDisposition_Refuses</li>
+    </blockingQuirks>
+    <blockingKeywords>
+      <li>PawnIsAnimal</li>
+    </blockingKeywords>
+  </RimVore2.QuirkPoolDef>
+
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Predator_Anal_Obsessed</defName>
+    <label>Ravenous analist pred</label>
+    <description>[PAWN_label] loves posternating [PAWN_possessive] prey, to the exclusion of other types. It may as well be a second mouth for [PAWN_objective].</description>
+    <requiredKeywords>
+      <li>PawnCanVoreType_Anal</li>
+    </requiredKeywords>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+          <voreType>Anal</voreType>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Feeder</role>
+          <voreType>Anal</voreType>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreType_Anal</li>
+        </keywords>
+        <memory>RV2_TypePreferenceQuirkSatisfaction_Predator_Anal_VeryGood</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Predator_Anal_Likes</defName>
+    <label>Analist pred</label>
+    <description>[PAWN_label] likes posternating [PAWN_possessive] prey. Not to be confused with an analyst.</description>
+    <requiredKeywords>
+      <li>PawnCanVoreType_Anal</li>
+    </requiredKeywords>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+          <voreType>Anal</voreType>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Feeder</role>
+          <voreType>Anal</voreType>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreType_Anal</li>
+        </keywords>
+        <memory>RV2_TypePreferenceQuirkSatisfaction_Predator_Anal_Good</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Predator_Anal_Neutral</defName>
+    <label>Anal-ambivalent pred</label>
+    <description>[PAWN_label] doesn't really care one way or the other about posternating prey.</description>
+    <hidden>true</hidden>
+    <rarity>Abundant</rarity>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Predator_Anal_Dislikes</defName>
+    <label>Anal-averse pred</label>
+    <description>[PAWN_label] dislikes posternating [PAWN_possessive] prey. That's an exit, not an entrance.</description>
+    <requiredKeywords>
+      <li>PawnCanVoreType_Anal</li>
+    </requiredKeywords>
+    <rarity>Uncommon</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+          <voreType>Anal</voreType>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Feeder</role>
+          <voreType>Anal</voreType>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreType_Anal</li>
+        </keywords>
+        <memory>RV2_TypePreferenceQuirkSatisfaction_Predator_Anal_Bad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Predator_Anal_Refuses</defName>
+    <label>Anal-abhorring pred</label>
+    <description>[PAWN_label] hates posternating [PAWN_possessive] prey. Maybe it just hurts, maybe it's disgusting to [PAWN_objective].</description>
+    <requiredKeywords>
+      <li>PawnCanVoreType_Anal</li>
+    </requiredKeywords>
+    <rarity>Uncommon</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+          <voreType>Anal</voreType>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Feeder</role>
+          <voreType>Anal</voreType>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreType_Anal</li>
+        </keywords>
+        <memory>RV2_TypePreferenceQuirkSatisfaction_Predator_Anal_VeryBad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkPoolDef>
+    <defName>GoalPreference_Predator_Cock</defName>
+    <label>Predatory type preference (cock)</label>
+    <category>Type Preference</category>
+    <description>These quirks determine how much a pawn likes to sound prey down their cock. At the extremes, the pawn will either never or always try to unsow prey.</description>
+    <generationOrder>2</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>TypePreference_Predator_Cock_Obsessed</li>
+      <li>TypePreference_Predator_Cock_Likes</li>
+      <li>TypePreference_Predator_Cock_Neutral</li>
+      <li>TypePreference_Predator_Cock_Dislikes</li>
+      <li>TypePreference_Predator_Cock_Refuses</li>
+      <!-- <li>TypePreference_Predator_Cock_Incapable</li> -->
+    </quirks>
+    <blockingQuirks>
+      <li>PredatorDisposition_Refuses</li>
+    </blockingQuirks>
+    <blockingKeywords>
+      <li>PawnIsAnimal</li>
+    </blockingKeywords>
+  </RimVore2.QuirkPoolDef>
+
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Predator_Cock_Obsessed</defName>
+    <label>Ravenous phallicist pred</label>
+    <description>[PAWN_label] loves unsowing [PAWN_possessive] prey, to the exclusion of other types. The serpent hungers!</description>
+    <requiredKeywords>
+      <li>PawnCanVoreType_Cock</li>
+    </requiredKeywords>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+          <voreType>Cock</voreType>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Feeder</role>
+          <voreType>Cock</voreType>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreType_Cock</li>
+        </keywords>
+        <memory>RV2_TypePreferenceQuirkSatisfaction_Predator_Cock_VeryGood</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Predator_Cock_Likes</defName>
+    <label>Phallicist pred</label>
+    <description>[PAWN_label] likes unsowing [PAWN_possessive] prey. Spunky!</description>
+    <requiredKeywords>
+      <li>PawnCanVoreType_Cock</li>
+    </requiredKeywords>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+          <voreType>Cock</voreType>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Feeder</role>
+          <voreType>Cock</voreType>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreType_Cock</li>
+        </keywords>
+        <memory>RV2_TypePreferenceQuirkSatisfaction_Predator_Cock_Good</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Predator_Cock_Neutral</defName>
+    <label>Cock-ambivalent pred</label>
+    <description>[PAWN_label] doesn't really care one way or the other about unsowing prey.</description>
+    <hidden>true</hidden>
+    <rarity>Abundant</rarity>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Predator_Cock_Dislikes</defName>
+    <label>Phallic-averse pred</label>
+    <description>[PAWN_label] dislikes unsowing [PAWN_possessive] prey. What sane person would willingly let a whole person thrash around against their gonads?</description>
+    <requiredKeywords>
+      <li>PawnCanVoreType_Cock</li>
+    </requiredKeywords>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+          <voreType>Cock</voreType>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Feeder</role>
+          <voreType>Cock</voreType>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreType_Cock</li>
+        </keywords>
+        <memory>RV2_TypePreferenceQuirkSatisfaction_Predator_Cock_Bad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Predator_Cock_Refuses</defName>
+    <label>Phallic-abhorring pred</label>
+    <description>[PAWN_label] hates unsowing [PAWN_possessive] prey. It just takes one nick, one errant nail or tooth, and then you have a bladder infection.</description>
+    <requiredKeywords>
+      <li>PawnCanVoreType_Cock</li>
+    </requiredKeywords>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+          <voreType>Cock</voreType>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Feeder</role>
+          <voreType>Cock</voreType>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreType_Cock</li>
+        </keywords>
+        <memory>RV2_TypePreferenceQuirkSatisfaction_Predator_Cock_VeryBad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkPoolDef>
+    <defName>GoalPreference_Predator_Nipple</defName>
+    <label>Predatory type preference (nipple)</label>
+    <category>Type Preference</category>
+    <description>These quirks determine how much a pawn likes to stuff prey into their nipples. At the extremes, the pawn will either never or always try to unnurse prey.</description>
+    <generationOrder>2</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>TypePreference_Predator_Nipple_Obsessed</li>
+      <li>TypePreference_Predator_Nipple_Likes</li>
+      <li>TypePreference_Predator_Nipple_Neutral</li>
+      <li>TypePreference_Predator_Nipple_Dislikes</li>
+      <li>TypePreference_Predator_Nipple_Refuses</li>
+      <!-- <li>TypePreference_Predator_Nipple_Incapable</li> -->
+    </quirks>
+    <blockingQuirks>
+      <li>PredatorDisposition_Refuses</li>
+    </blockingQuirks>
+    <blockingKeywords>
+      <li>PawnIsAnimal</li>
+    </blockingKeywords>
+  </RimVore2.QuirkPoolDef>
+
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Predator_Nipple_Obsessed</defName>
+    <label>Ravenous mammilist pred</label>
+    <description>[PAWN_label] loves unnursing [PAWN_possessive] prey, to the exclusion of other types. It's the quickest way to a heaving bosom!</description>
+    <requiredKeywords>
+      <li>PawnCanVoreType_Nipple</li>
+    </requiredKeywords>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+          <voreType>Nipple</voreType>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Feeder</role>
+          <voreType>Nipple</voreType>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreType_Nipple</li>
+        </keywords>
+        <memory>RV2_TypePreferenceQuirkSatisfaction_Predator_Nipple_VeryGood</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Predator_Nipple_Likes</defName>
+    <label>Mammilist pred</label>
+    <description>[PAWN_label] likes unnursing [PAWN_possessive] prey. Milk's good.</description>
+    <requiredKeywords>
+      <li>PawnCanVoreType_Nipple</li>
+    </requiredKeywords>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+          <voreType>Nipple</voreType>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Feeder</role>
+          <voreType>Nipple</voreType>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreType_Nipple</li>
+        </keywords>
+        <memory>RV2_TypePreferenceQuirkSatisfaction_Predator_Nipple_Good</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Predator_Nipple_Neutral</defName>
+    <label>Mammary-ambivalent pred</label>
+    <description>[PAWN_label] doesn't really care one way or the other about unnursing prey.</description>
+    <hidden>true</hidden>
+    <rarity>Abundant</rarity>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Predator_Nipple_Dislikes</defName>
+    <label>Mammary-averse pred</label>
+    <description>[PAWN_label] dislikes unnursing [PAWN_possessive] prey. Figuring out the symmetry is just such a pain.</description>
+    <requiredKeywords>
+      <li>PawnCanVoreType_Nipple</li>
+    </requiredKeywords>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+          <voreType>Nipple</voreType>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Feeder</role>
+          <voreType>Nipple</voreType>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreType_Nipple</li>
+        </keywords>
+        <memory>RV2_TypePreferenceQuirkSatisfaction_Predator_Nipple_Bad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Predator_Nipple_Refuses</defName>
+    <label>Mammary-abhorring pred</label>
+    <description>[PAWN_label] hates unnursing [PAWN_possessive] prey. There's no quicker way to destroy your spine.</description>
+    <requiredKeywords>
+      <li>PawnCanVoreType_Nipple</li>
+    </requiredKeywords>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+          <voreType>Nipple</voreType>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Feeder</role>
+          <voreType>Nipple</voreType>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreType_Nipple</li>
+        </keywords>
+        <memory>RV2_TypePreferenceQuirkSatisfaction_Predator_Nipple_VeryBad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <!-- ESEGN: Full tour predator type preference -->
+  <!-- ESEGN: Dunno how good the descriptions are, but I'd like to think they're at least passable -->
+
+  <RimVore2.QuirkPoolDef>
+    <defName>TypePreference_Predator_FullTour</defName>
+    <label>Predatory type preference (full tour)</label>
+    <category>Type Preference</category>
+    <description>These quirks determine how much a pawn likes to swallow down prey and show them their whole digestive tract. At the extremes, the pawn will either never or always try to give prey a full tour.</description>
+    <generationOrder>2</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>TypePreference_Predator_FullTour_Obsessed</li>
+      <li>TypePreference_Predator_FullTour_Likes</li>
+      <li>TypePreference_Predator_FullTour_Neutral</li>
+      <li>TypePreference_Predator_FullTour_Dislikes</li>
+      <li>TypePreference_Predator_FullTour_Refuses</li>
+    </quirks>
+    <blockingQuirks>
+      <li>PredatorDisposition_Refuses</li>
+    </blockingQuirks>
+    <blockingKeywords>
+      <li>PawnIsAnimal</li>
+    </blockingKeywords>
+  </RimVore2.QuirkPoolDef>
+
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Predator_FullTour_Obsessed</defName>
+    <label>Obsessive guiding pred</label>
+    <description>[PAWN_label] loves guiding [PAWN_possessive] prey through [PAWN_possessive] body, to the exclusion of other types. There's just nothing quite like feeling them go *all* the way through!</description>
+    <requiredKeywords>
+      <li>PawnCanVoreType_FullTour</li>
+    </requiredKeywords>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+          <voreType>FullTour</voreType>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Feeder</role>
+          <voreType>FullTour</voreType>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreType_FullTour</li>
+        </keywords>
+        <memory>RV2_TypePreferenceQuirkSatisfaction_Predator_FullTour_VeryGood</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Predator_FullTour_Likes</defName>
+    <label>Guiding pred</label>
+    <description>[PAWN_pronoun] likes guiding [PAWN_possessive] prey through [PAWN_possessive] body. It's fun to let nature take its course.</description>
+    <requiredKeywords>
+      <li>PawnCanVoreType_FullTour</li>
+    </requiredKeywords>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+          <voreType>FullTour</voreType>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Feeder</role>
+          <voreType>FullTour</voreType>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreType_FullTour</li>
+        </keywords>
+        <memory>RV2_TypePreferenceQuirkSatisfaction_Predator_FullTour_Good</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Predator_FullTour_Neutral</defName>
+    <label>Guiding-ambivalent pred</label>
+    <description>[PAWN_label] doesn't really care one way or the other about guiding prey through [PAWN_possessive] body.</description>
+    <hidden>true</hidden>
+    <rarity>Abundant</rarity>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Predator_FullTour_Dislikes</defName>
+    <label>Guiding-averse pred</label>
+    <description>[PAWN_label] dislikes guiding [PAWN_possessive] prey through [PAWN_possessive] body. It's annoying to have someone stuck inside your guts for so long.</description>
+    <requiredKeywords>
+      <li>PawnCanVoreType_FullTour</li>
+    </requiredKeywords>
+    <rarity>Uncommon</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+          <voreType>FullTour</voreType>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Feeder</role>
+          <voreType>FullTour</voreType>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreType_FullTour</li>
+        </keywords>
+        <memory>RV2_TypePreferenceQuirkSatisfaction_Predator_FullTour_Bad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Predator_FullTour_Refuses</defName>
+    <label>Guiding-abhorring pred</label>
+    <description>[PAWN_label] hates guiding [PAWN_possessive] prey through [PAWN_possessive] body. Being backed up with prey for so long is an awful sensation.</description>
+    <requiredKeywords>
+      <li>PawnCanVoreType_FullTour</li>
+    </requiredKeywords>
+    <rarity>Uncommon</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+          <voreType>FullTour</voreType>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Feeder</role>
+          <voreType>FullTour</voreType>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreType_FullTour</li>
+        </keywords>
+        <memory>RV2_TypePreferenceQuirkSatisfaction_Predator_FullTour_VeryBad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkPoolDef>
+    <defName>GoalPreference_Predator_Oral</defName>
+    <label>Predatory type preference (oral)</label>
+    <category>Type Preference</category>
+    <description>These quirks determine how much a pawn likes to gulp prey down their throat. At the extremes, the pawn will either never or always try to swallow prey.</description>
+    <generationOrder>2</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>TypePreference_Predator_Oral_Obsessed</li>
+      <li>TypePreference_Predator_Oral_Likes</li>
+      <li>TypePreference_Predator_Oral_Neutral</li>
+      <li>TypePreference_Predator_Oral_Dislikes</li>
+      <li>TypePreference_Predator_Oral_Refuses</li>
+      <!-- <li>TypePreference_Predator_Oral_Incapable</li> -->
+    </quirks>
+    <blockingQuirks>
+      <li>PredatorDisposition_Refuses</li>
+    </blockingQuirks>
+    <blockingKeywords>
+      <li>PawnIsAnimal</li>
+    </blockingKeywords>
+  </RimVore2.QuirkPoolDef>
+
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Predator_Oral_Obsessed</defName>
+    <label>Ravenous oralist pred</label>
+    <description>[PAWN_label] loves swallowing [PAWN_possessive] prey, to the exclusion of other types. No other type's gonna give you a *taste* sensation!</description>
+    <requiredKeywords>
+      <li>PawnCanVoreType_Oral</li>
+    </requiredKeywords>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+          <voreType>Oral</voreType>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Feeder</role>
+          <voreType>Oral</voreType>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreType_Oral</li>
+        </keywords>
+        <memory>RV2_TypePreferenceQuirkSatisfaction_Predator_Oral_VeryGood</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Predator_Oral_Likes</defName>
+    <label>Oralist pred</label>
+    <description>[PAWN_pronoun] likes swallowing [PAWN_possessive] prey. [PAWN_pronoun] is a fan of the classics.</description>
+    <requiredKeywords>
+      <li>PawnCanVoreType_Oral</li>
+    </requiredKeywords>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+          <voreType>Oral</voreType>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Feeder</role>
+          <voreType>Oral</voreType>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreType_Oral</li>
+        </keywords>
+        <memory>RV2_TypePreferenceQuirkSatisfaction_Predator_Oral_Good</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Predator_Oral_Neutral</defName>
+    <label>Oral-ambivalent pred</label>
+    <description>[PAWN_label] doesn't really care one way or the other about swallowing prey.</description>
+    <hidden>true</hidden>
+    <rarity>Abundant</rarity>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Predator_Oral_Dislikes</defName>
+    <label>Oral-averse pred</label>
+    <description>[PAWN_label] dislikes swallowing [PAWN_possessive] prey. It's just so overdone.</description>
+    <requiredKeywords>
+      <li>PawnCanVoreType_Oral</li>
+    </requiredKeywords>
+    <rarity>Uncommon</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+          <voreType>Oral</voreType>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Feeder</role>
+          <voreType>Oral</voreType>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreType_Oral</li>
+        </keywords>
+        <memory>RV2_TypePreferenceQuirkSatisfaction_Predator_Oral_Bad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Predator_Oral_Refuses</defName>
+    <label>Oral-abhorring pred</label>
+    <description>[PAWN_label] hates swallowing [PAWN_possessive] prey. Prey generally all feel pretty good, but they sure don't all taste good.</description>
+    <requiredKeywords>
+      <li>PawnCanVoreType_Oral</li>
+    </requiredKeywords>
+    <rarity>Uncommon</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+          <voreType>Oral</voreType>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Feeder</role>
+          <voreType>Oral</voreType>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreType_Oral</li>
+        </keywords>
+        <memory>RV2_TypePreferenceQuirkSatisfaction_Predator_Oral_VeryBad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkPoolDef>
+    <defName>GoalPreference_Predator_Vaginal</defName>
+    <label>Predatory type preference (vaginal)</label>
+    <category>Type Preference</category>
+    <description>These quirks determine how much a pawn likes to stuff prey up their muff. At the extremes, the pawn will either never or always try to unbirth prey.</description>
+    <generationOrder>2</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>TypePreference_Predator_Vaginal_Obsessed</li>
+      <li>TypePreference_Predator_Vaginal_Likes</li>
+      <li>TypePreference_Predator_Vaginal_Neutral</li>
+      <li>TypePreference_Predator_Vaginal_Dislikes</li>
+      <li>TypePreference_Predator_Vaginal_Refuses</li>
+      <!-- <li>TypePreference_Predator_Vaginal_Incapable</li> -->
+    </quirks>
+    <blockingQuirks>
+      <li>PredatorDisposition_Refuses</li>
+    </blockingQuirks>
+    <blockingKeywords>
+      <li>PawnIsAnimal</li>
+    </blockingKeywords>
+  </RimVore2.QuirkPoolDef>
+
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Predator_Vaginal_Obsessed</defName>
+    <label>Ravenous yonicist pred</label>
+    <description>[PAWN_label] loves unbirthing [PAWN_possessive] prey, to the exclusion of other types. [PAWN_pronoun] has what's known as an "alpha-beaver".</description>
+    <requiredKeywords>
+      <li>PawnCanVoreType_Vaginal</li>
+    </requiredKeywords>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+          <voreType>Vaginal</voreType>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Feeder</role>
+          <voreType>Vaginal</voreType>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreType_Vaginal</li>
+        </keywords>
+        <memory>RV2_TypePreferenceQuirkSatisfaction_Predator_Vaginal_VeryGood</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Predator_Vaginal_Likes</defName>
+    <label>Yonicist pred</label>
+    <description>[PAWN_label] likes unbirthing [PAWN_possessive] prey. What comes out, must go in. Or something like that...</description>
+    <requiredKeywords>
+      <li>PawnCanVoreType_Vaginal</li>
+    </requiredKeywords>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+          <voreType>Vaginal</voreType>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Feeder</role>
+          <voreType>Vaginal</voreType>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreType_Vaginal</li>
+        </keywords>
+        <memory>RV2_TypePreferenceQuirkSatisfaction_Predator_Vaginal_Good</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Predator_Vaginal_Neutral</defName>
+    <label>Yonic-ambivalent pred</label>
+    <description>[PAWN_label] doesn't really care one way or the other about unbirthing prey.</description>
+    <hidden>true</hidden>
+    <rarity>Abundant</rarity>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Predator_Vaginal_Dislikes</defName>
+    <label>Yonic-averse pred</label>
+    <description>[PAWN_label] dislikes unbirthing [PAWN_possessive] prey. Giving birth is painful enough.</description>
+    <requiredKeywords>
+      <li>PawnCanVoreType_Vaginal</li>
+    </requiredKeywords>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+          <voreType>Vaginal</voreType>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Feeder</role>
+          <voreType>Vaginal</voreType>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreType_Vaginal</li>
+        </keywords>
+        <memory>RV2_TypePreferenceQuirkSatisfaction_Predator_Vaginal_Bad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Predator_Vaginal_Refuses</defName>
+    <label>Yonic-abhorring pred</label>
+    <description>[PAWN_label] hates unbirthing [PAWN_possessive] prey. It's a total perversion of the reproductive system.</description>
+    <requiredKeywords>
+      <li>PawnCanVoreType_Vaginal</li>
+    </requiredKeywords>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+          <voreType>Vaginal</voreType>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Feeder</role>
+          <voreType>Vaginal</voreType>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>VoreType_Vaginal</li>
+        </keywords>
+        <memory>RV2_TypePreferenceQuirkSatisfaction_Predator_Vaginal_VeryBad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <!-- prey side -->
+
+  <RimVore2.QuirkPoolDef>
+    <defName>GoalPreference_Prey_Anal</defName>
+    <label>Preyish type preference (anal)</label>
+    <category>Type Preference</category>
+    <description>These quirks determine how much a pawn likes to be stuffed up predators' butts. At the extremes, the pawn will either never or always try to get posternated.</description>
+    <generationOrder>2</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>TypePreference_Prey_Anal_Obsessed</li>
+      <li>TypePreference_Prey_Anal_Likes</li>
+      <li>TypePreference_Prey_Anal_Neutral</li>
+      <li>TypePreference_Prey_Anal_Dislikes</li>
+      <li>TypePreference_Prey_Anal_Refuses</li>
+      <!-- <li>TypePreference_Prey_Anal_Incapable</li> -->
+    </quirks>
+    <blockingQuirks>
+      <li>PreyDisposition_Refuses</li>
+    </blockingQuirks>
+    <blockingKeywords>
+      <li>PawnIsAnimal</li>
+    </blockingKeywords>
+  </RimVore2.QuirkPoolDef>
+
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Prey_Anal_Obsessed</defName>
+    <label>Obsessive analist prey</label>
+    <description>[PAWN_label] loves to be let in through the back; to be posternated, derried, undumped, anally-vored.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Prey</role>
+          <voreType>Anal</voreType>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Feeder</role>
+          <voreType>Anal</voreType>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreType_Anal</li>
+        </keywords>
+        <memory>RV2_TypePreferenceQuirkSatisfaction_Prey_Anal_VeryGood</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Prey_Anal_Likes</defName>
+    <label>Analist prey</label>
+    <description>[PAWN_label] likes to be posternated. It's a cozy kind of warmth and tightness in there.</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Prey</role>
+          <voreType>Anal</voreType>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Feeder</role>
+          <voreType>Anal</voreType>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreType_Anal</li>
+        </keywords>
+        <memory>RV2_TypePreferenceQuirkSatisfaction_Prey_Anal_Good</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Prey_Anal_Neutral</defName>
+    <label>Anal-ambivalent prey</label>
+    <description>[PAWN_label] doesn't really care one way or the other about being posternated.</description>
+    <hidden>true</hidden>
+    <rarity>Abundant</rarity>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Prey_Anal_Dislikes</defName>
+    <label>Anal-averse prey</label>
+    <description>[PAWN_label] dislikes being posternated. It's (probably) gross and it (probably) stinks up there.</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Prey</role>
+          <voreType>Anal</voreType>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Feeder</role>
+          <voreType>Anal</voreType>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreType_Anal</li>
+        </keywords>
+        <memory>RV2_TypePreferenceQuirkSatisfaction_Prey_Anal_Bad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Prey_Anal_Refuses</defName>
+    <label>Anal-abhorring prey</label>
+    <description>[PAWN_label] hates being posternated. There is no treasure to be found in the waste disposal chute.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Prey</role>
+          <voreType>Anal</voreType>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Feeder</role>
+          <voreType>Anal</voreType>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreType_Anal</li>
+        </keywords>
+        <memory>RV2_TypePreferenceQuirkSatisfaction_Prey_Anal_VeryBad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkPoolDef>
+    <defName>GoalPreference_Prey_Cock</defName>
+    <label>Preyish type preference (cock)</label>
+    <category>Type Preference</category>
+    <description>These quirks determine how much a pawn likes to be sounded down a predator's cock. At the extremes, the pawn will either never or always try to get unsown.</description>
+    <generationOrder>2</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>TypePreference_Prey_Cock_Obsessed</li>
+      <li>TypePreference_Prey_Cock_Likes</li>
+      <li>TypePreference_Prey_Cock_Neutral</li>
+      <li>TypePreference_Prey_Cock_Dislikes</li>
+      <li>TypePreference_Prey_Cock_Refuses</li>
+      <!-- <li>TypePreference_Prey_Cock_Incapable</li> -->
+    </quirks>
+    <blockingQuirks>
+      <li>PreyDisposition_Refuses</li>
+    </blockingQuirks>
+    <blockingKeywords>
+      <li>PawnIsAnimal</li>
+    </blockingKeywords>
+  </RimVore2.QuirkPoolDef>
+
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Prey_Cock_Obsessed</defName>
+    <label>Obsessive phallicist prey</label>
+    <description>[PAWN_label] loves to clean pipes, to sound up, to feed the trouser snake; to be unsown, unjerked, cock-vored.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Prey</role>
+          <voreType>Cock</voreType>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Feeder</role>
+          <voreType>Cock</voreType>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreType_Cock</li>
+        </keywords>
+        <memory>RV2_TypePreferenceQuirkSatisfaction_Prey_Cock_VeryGood</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Prey_Cock_Likes</defName>
+    <label>Phallicist prey</label>
+    <description>[PAWN_label] likes being unsown. The nads make for a delightful cum-bath.</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Prey</role>
+          <voreType>Cock</voreType>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Feeder</role>
+          <voreType>Cock</voreType>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreType_Cock</li>
+        </keywords>
+        <memory>RV2_TypePreferenceQuirkSatisfaction_Prey_Cock_Good</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Prey_Cock_Neutral</defName>
+    <label>Phallic-ambivalent prey</label>
+    <description>[PAWN_label] doesn't really care one way or the other about being unsown.</description>
+    <hidden>true</hidden>
+    <rarity>Abundant</rarity>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Prey_Cock_Dislikes</defName>
+    <label>Phallic-averse prey</label>
+    <description>[PAWN_label] dislikes being unsown. It's tight as hell and the loop around the bladder is the worst.</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Prey</role>
+          <voreType>Cock</voreType>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Feeder</role>
+          <voreType>Cock</voreType>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreType_Cock</li>
+        </keywords>
+        <memory>RV2_TypePreferenceQuirkSatisfaction_Prey_Cock_Bad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Prey_Cock_Refuses</defName>
+    <label>Phallic-abhorring prey</label>
+    <description>[PAWN_label] hates being unsown. The cock is supposed to go in you, not around you.</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Prey</role>
+          <voreType>Cock</voreType>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Feeder</role>
+          <voreType>Cock</voreType>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreType_Cock</li>
+        </keywords>
+        <memory>RV2_TypePreferenceQuirkSatisfaction_Prey_Cock_VeryBad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkPoolDef>
+    <defName>GoalPreference_Prey_Nipple</defName>
+    <label>Preyish type preference (nipple)</label>
+    <category>Type Preference</category>
+    <description>These quirks determine how much a pawn likes to be stuffed into a predator's nipples. At the extremes, the pawn will either never or always try to get unnursed.</description>
+    <generationOrder>2</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>TypePreference_Prey_Nipple_Obsessed</li>
+      <li>TypePreference_Prey_Nipple_Likes</li>
+      <li>TypePreference_Prey_Nipple_Neutral</li>
+      <li>TypePreference_Prey_Nipple_Dislikes</li>
+      <li>TypePreference_Prey_Nipple_Refuses</li>
+      <!-- <li>TypePreference_Prey_Nipple_Incapable</li> -->
+    </quirks>
+    <blockingQuirks>
+      <li>PreyDisposition_Refuses</li>
+    </blockingQuirks>
+    <blockingKeywords>
+      <li>PawnIsAnimal</li>
+    </blockingKeywords>
+  </RimVore2.QuirkPoolDef>
+
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Prey_Nipple_Obsessed</defName>
+    <label>Obsessive mammilist prey</label>
+    <description>[PAWN_label] loves to dive into dugs; to be unnursed, unsuckled, bathe in milk, be breast-vored.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Prey</role>
+          <voreType>Nipple</voreType>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Feeder</role>
+          <voreType>Nipple</voreType>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreType_Nipple</li>
+        </keywords>
+        <memory>RV2_TypePreferenceQuirkSatisfaction_Prey_Nipple_VeryGood</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Prey_Nipple_Likes</defName>
+    <label>Mammilist prey</label>
+    <description>[PAWN_label] likes being unnursed. Milk's good for your skin, or something like that.</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Prey</role>
+          <voreType>Nipple</voreType>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Feeder</role>
+          <voreType>Nipple</voreType>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreType_Nipple</li>
+        </keywords>
+        <memory>RV2_TypePreferenceQuirkSatisfaction_Prey_Nipple_Good</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Prey_Nipple_Neutral</defName>
+    <label>Mammary-ambivalent prey</label>
+    <description>[PAWN_label] doesn't really care one way or the other about being unnursed.</description>
+    <hidden>true</hidden>
+    <rarity>Abundant</rarity>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Prey_Nipple_Dislikes</defName>
+    <label>Mammary-averse prey</label>
+    <description>[PAWN_label] dislikes being unnursed. You suck nipple, not the other way around.</description> <!-- MP11: In Soviet Russia, nipple suck you, or something. -->
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Prey</role>
+          <voreType>Nipple</voreType>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Feeder</role>
+          <voreType>Nipple</voreType>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreType_Nipple</li>
+        </keywords>
+        <memory>RV2_TypePreferenceQuirkSatisfaction_Prey_Nipple_Bad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Prey_Nipple_Refuses</defName>
+    <label>Mammary-abhorring prey</label>
+    <description>[PAWN_label] hates being unnursed. Breasts don't even have one big mammary gland!</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Prey</role>
+          <voreType>Nipple</voreType>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Feeder</role>
+          <voreType>Nipple</voreType>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreType_Nipple</li>
+        </keywords>
+        <memory>RV2_TypePreferenceQuirkSatisfaction_Prey_Nipple_VeryBad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <!-- ESEGN: Full tour prey type preference -->
+  <!-- ESEGN: Dunno how good the descriptions are, but I'd like to think they're at least passable -->
+
+  <RimVore2.QuirkPoolDef>
+    <defName>TypePreference_Prey_FullTour</defName>
+    <label>Preyish type preference (full tour)</label>
+    <category>Type Preference</category>
+    <description>These quirks determine how much a pawn likes take a tour through a predator's insides. At the extremes, the pawn will either never or always try to get sent through the whole digestive tract.</description>
+    <generationOrder>2</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>TypePreference_Prey_FullTour_Obsessed</li>
+      <li>TypePreference_Prey_FullTour_Likes</li>
+      <li>TypePreference_Prey_FullTour_Neutral</li>
+      <li>TypePreference_Prey_FullTour_Dislikes</li>
+      <li>TypePreference_Prey_FullTour_Refuses</li>
+    </quirks>
+    <blockingQuirks>
+      <li>PreyDisposition_Refuses</li>
+    </blockingQuirks>
+    <blockingKeywords>
+      <li>PawnIsAnimal</li>
+    </blockingKeywords>
+  </RimVore2.QuirkPoolDef>
+
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Prey_FullTour_Obsessed</defName>
+    <label>Obsessive tourist prey</label>
+    <description>[PAWN_label] loves to get close with every inch of a predator's insides, from the very top to the very bottom.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Prey</role>
+          <voreType>FullTour</voreType>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Feeder</role>
+          <voreType>FullTour</voreType>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreType_FullTour</li>
+        </keywords>
+        <memory>RV2_TypePreferenceQuirkSatisfaction_Prey_FullTour_VeryGood</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Prey_FullTour_Likes</defName>
+    <label>Tourist prey</label>
+    <description>[PAWN_label] likes touring through guts. It's a lovely variety of sensations all the way through.</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Prey</role>
+          <voreType>FullTour</voreType>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Feeder</role>
+          <voreType>FullTour</voreType>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreType_FullTour</li>
+        </keywords>
+        <memory>RV2_TypePreferenceQuirkSatisfaction_Prey_FullTour_Good</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Prey_FullTour_Neutral</defName>
+    <label>Tour-ambivalent prey</label>
+    <description>[PAWN_label] doesn't really care one way or the other about taking full tours.</description>
+    <hidden>true</hidden>
+    <rarity>Abundant</rarity>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Prey_FullTour_Dislikes</defName>
+    <label>Tour-averse prey</label>
+    <description>[PAWN_label] dislikes taking full tours. Guts get rough when they need to push you through like that.</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Prey</role>
+          <voreType>Oral</voreType>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Feeder</role>
+          <voreType>Oral</voreType>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreType_FullTour</li>
+        </keywords>
+        <memory>RV2_TypePreferenceQuirkSatisfaction_Prey_FullTour_Bad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Prey_FullTour_Refuses</defName>
+    <label>Tour-abhorring prey</label>
+    <description>[PAWN_label] hates taking full tours. The thought of being trapped in claustrophobic intestines and handled like food alone makes [PAWN_objective] shudder, let alone actually being there!</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Prey</role>
+          <voreType>FullTour</voreType>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Feeder</role>
+          <voreType>FullTour</voreType>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreType_FullTour</li>
+        </keywords>
+        <memory>RV2_TypePreferenceQuirkSatisfaction_Prey_FullTour_VeryBad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkPoolDef>
+    <defName>GoalPreference_Prey_Oral</defName>
+    <label>Preyish type preference (oral)</label>
+    <category>Type Preference</category>
+    <description>These quirks determine how much a pawn likes to be gulped down a predator's mouth. At the extremes, the pawn will either never or always try to get swallowed.</description>
+    <generationOrder>2</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>TypePreference_Prey_Oral_Obsessed</li>
+      <li>TypePreference_Prey_Oral_Likes</li>
+      <li>TypePreference_Prey_Oral_Neutral</li>
+      <li>TypePreference_Prey_Oral_Dislikes</li>
+      <li>TypePreference_Prey_Oral_Refuses</li>
+      <!-- <li>TypePreference_Prey_Oral_Incapable</li> -->
+    </quirks>
+    <blockingQuirks>
+      <li>PreyDisposition_Refuses</li>
+    </blockingQuirks>
+    <blockingKeywords>
+      <li>PawnIsAnimal</li>
+    </blockingKeywords>
+  </RimVore2.QuirkPoolDef>
+
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Prey_Oral_Obsessed</defName>
+    <label>Obsessive oralist prey</label>
+    <description>[PAWN_label] loves to be swallowed whole, gulped down, licked all over, orally-vored.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Prey</role>
+          <voreType>Oral</voreType>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Feeder</role>
+          <voreType>Oral</voreType>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreType_Oral</li>
+        </keywords>
+        <memory>RV2_TypePreferenceQuirkSatisfaction_Prey_Oral_VeryGood</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Prey_Oral_Likes</defName>
+    <label>Oralist prey</label>
+    <description>[PAWN_label] likes being swallowed. It's a classic for a reason; you don't get that kind of tongue action elsewhere!</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Prey</role>
+          <voreType>Oral</voreType>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Feeder</role>
+          <voreType>Oral</voreType>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreType_Oral</li>
+        </keywords>
+        <memory>RV2_TypePreferenceQuirkSatisfaction_Prey_Oral_Good</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Prey_Oral_Neutral</defName>
+    <label>Oral-ambivalent prey</label>
+    <description>[PAWN_label] doesn't really care one way or the other about being swallowed.</description>
+    <hidden>true</hidden>
+    <rarity>Abundant</rarity>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Prey_Oral_Dislikes</defName>
+    <label>Oral-averse prey</label>
+    <description>[PAWN_label] dislikes being swallowed. Teeth are scary.</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Prey</role>
+          <voreType>Oral</voreType>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Feeder</role>
+          <voreType>Oral</voreType>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreType_Oral</li>
+        </keywords>
+        <memory>RV2_TypePreferenceQuirkSatisfaction_Prey_Oral_Bad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Prey_Oral_Refuses</defName>
+    <label>Oral-abhorring prey</label>
+    <description>[PAWN_label] hates being swallowed. It triggers a kind of primal fear in [PAWN_objective].</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Prey</role>
+          <voreType>Oral</voreType>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Feeder</role>
+          <voreType>Oral</voreType>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreType_Oral</li>
+        </keywords>
+        <memory>RV2_TypePreferenceQuirkSatisfaction_Prey_Oral_VeryBad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkPoolDef>
+    <defName>GoalPreference_Prey_Vaginal</defName>
+    <label>Preyish type preference (vaginal)</label>
+    <category>Type Preference</category>
+    <description>These quirks determine how much a pawn likes to be stuffed up a predator's muff. At the extremes, the pawn will either never or always try to get unbirthed.</description>
+    <generationOrder>2</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>TypePreference_Prey_Vaginal_Obsessed</li>
+      <li>TypePreference_Prey_Vaginal_Likes</li>
+      <li>TypePreference_Prey_Vaginal_Neutral</li>
+      <li>TypePreference_Prey_Vaginal_Dislikes</li>
+      <li>TypePreference_Prey_Vaginal_Refuses</li>
+      <!-- <li>TypePreference_Prey_Vaginal_Incapable</li> -->
+    </quirks>
+    <blockingQuirks>
+      <li>PreyDisposition_Refuses</li>
+    </blockingQuirks>
+    <blockingKeywords>
+      <li>PawnIsAnimal</li>
+    </blockingKeywords>
+  </RimVore2.QuirkPoolDef>
+
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Prey_Vaginal_Obsessed</defName>
+    <label>Obsessive yonicist prey</label>
+    <description>[PAWN_label] loves to swim the channel; to be snatched up, clamshelled, unjilled, unborn.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Prey</role>
+          <voreType>Vaginal</voreType>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Feeder</role>
+          <voreType>Vaginal</voreType>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreType_Vaginal</li>
+        </keywords>
+        <memory>RV2_TypePreferenceQuirkSatisfaction_Prey_Vaginal_VeryGood</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Prey_Vaginal_Likes</defName>
+    <label>Yonicist prey</label>
+    <description>[PAWN_label] likes to swim the channel; to be snatched up, clamshelled, unjilled, unborn.</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Prey</role>
+          <voreType>Vaginal</voreType>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Feeder</role>
+          <voreType>Vaginal</voreType>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreType_Vaginal</li>
+        </keywords>
+        <memory>RV2_TypePreferenceQuirkSatisfaction_Prey_Vaginal_Good</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Prey_Vaginal_Neutral</defName>
+    <label>Yonic-ambivalent prey</label>
+    <description>[PAWN_label] doesn't really care one way or the other about being unborn.</description>
+    <hidden>true</hidden>
+    <rarity>Abundant</rarity>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Prey_Vaginal_Dislikes</defName>
+    <label>Yonic-averse prey</label>
+    <description>[PAWN_label] dislikes being unborn, especially if the unbirther tries to act like [PAWN_possessive] parent afterwards.</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Prey</role>
+          <voreType>Vaginal</voreType>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Feeder</role>
+          <voreType>Vaginal</voreType>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreType_Vaginal</li>
+        </keywords>
+        <memory>RV2_TypePreferenceQuirkSatisfaction_Prey_Vaginal_Bad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>TypePreference_Prey_Vaginal_Refuses</defName>
+    <label>Yonic-abhorring prey</label>
+    <description>[PAWN_label] hates being unborn. Once is enough!</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Prey</role>
+          <voreType>Vaginal</voreType>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Feeder</role>
+          <voreType>Vaginal</voreType>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>VoreType_Vaginal</li>
+        </keywords>
+        <memory>RV2_TypePreferenceQuirkSatisfaction_Prey_Vaginal_VeryBad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+</Defs>

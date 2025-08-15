@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- 
+  This will produce bones to any vore path that produces items
+-->
+<Patch>
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>
+      Defs/TraitDef[
+      defName = "TM_ArcaneConduitTD"
+      or defName = "TM_ManaWellTD"
+      or defName = "TM_BoundlessTD"
+      or defName = "TM_FaeBloodTD"
+      or defName = "TM_GiantsBloodTD"
+      or defName = "TM_EnlightenedTD"
+      or defName = "TM_CursedTD"
+      or defName = "TM_OKWithDeath"
+      or defName = "Undead"
+      or defName = "TM_Gifted"
+      or defName = "TM_Empath"
+      or defName = "TM_Wanderer"
+      or defName = "InnerFire"
+      or defName = "HeartOfFrost"
+      or defName = "StormBorn"
+      or defName = "Arcanist"
+      or defName = "Druid"
+      or defName = "Paladin"
+      or defName = "Summoner"
+      or defName = "Necromancer"
+      or defName = "Lich"
+      or defName = "Priest"
+      or defName = "TM_Bard"
+      or defName = "Succubus"
+      or defName = "Warlock"
+      or defName = "Geomancer"
+      or defName = "Technomancer"
+      or defName = "BloodMage"
+      or defName = "Enchanter"
+      or defName = "Chronomancer"
+      or defName = "ChaosMage"
+      or defName = "TM_TheShadow"
+      or defName = "TM_Brightmage"
+      or defName = "TM_Shaman"
+      or defName = "TM_Golemancer"
+      or defName = "PhysicalProdigy"
+      or defName = "TM_Wayfarer"
+      or defName = "TM_Apothecary"
+      or defName = "Gladiator"
+      or defName = "Ranger"
+      or defName = "TM_Sniper"
+      or defName = "Bladedancer"
+      or defName = "Faceless"
+      or defName = "TM_Psionic"
+      or defName = "DeathKnight"
+      or defName = "TM_Monk"
+      or defName = "TM_Commander"
+      or defName = "TM_SuperSoldier"
+      ]
+    </xpath>
+    <value>
+      <li Class="RimVore2.TraitExtension_NotStealableFlag"/>
+    </value>
+  </Operation>
+</Patch>

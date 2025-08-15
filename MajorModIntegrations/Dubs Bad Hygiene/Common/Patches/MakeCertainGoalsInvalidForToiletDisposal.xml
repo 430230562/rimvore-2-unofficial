@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <!-- OVERSTUFFED: set bladder need for urify vore -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>RimVore-2 (Overstuffed)</li>
+    </mods>
+    <match Class="PatchOperationAddModExtension">
+      <xpath>Defs/RimVore2.VoreGoalDef[defName="Assimilate"]</xpath>
+      <value>
+        <li Class="RV2_DBH.InvalidForToiletDisposalFlag"/>
+      </value>
+    </match>
+  </Operation>
+</Patch>

@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <HediffDef Abstract="True" Name="RV2_VoreHediffBase">
+    <isBad>false</isBad>
+    <hediffClass>RimVore2.Hediff_ContainingPrey</hediffClass>
+    <defaultLabelColor>(0.5, 1, 1)</defaultLabelColor>
+    <initialSeverity>0.11</initialSeverity>
+    <stages>
+      <li>
+        <!-- When no prey exist for the hediff, which happens when the prey just moved out of the hediff - don't apply capMods -->
+        <minSeverity>0</minSeverity>
+      </li>
+      <li>
+        <minSeverity>0.1</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.2</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>0.2</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.4</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>0.3</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.6</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>0.4</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.8</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+  
+  <!-- Anus -->
+  
+  <HediffDef Abstract="True" Name="RV2_PreyInAnus" ParentName="RV2_VoreHediffBase">
+    <defName>RV2_PreyInAnus</defName>
+    <label>Prey in Anus</label>
+  </HediffDef>
+  
+  <HediffDef ParentName="RV2_PreyInAnus">
+    <defName>RV2_PreyInAnusDumping</defName>
+    <description>This pawn is dumping the remains of their prey out of their butt.</description>
+  </HediffDef>
+  <HediffDef ParentName="RV2_PreyInAnus">
+    <defName>RV2_PreyInAnusExiting</defName>
+    <description>This pawn is dumping their prey out of their butt.</description>
+  </HediffDef>
+  <HediffDef ParentName="RV2_PreyInAnus">
+    <defName>RV2_PreyInAnusPassing</defName>
+    <description>This pawn is stuffing their prey up their butt.</description>
+  </HediffDef>
+  <HediffDef ParentName="RV2_PreyInAnus">
+    <defName>RV2_PreyInAnusPleasuring</defName>
+    <description>This pawn is using their prey as an anal dildo.</description>
+  </HediffDef>
+  
+  <!-- Breasts -->
+  
+  <HediffDef Abstract="True" Name="RV2_PreyInBreasts" ParentName="RV2_VoreHediffBase">
+    <defName>RV2_PreyInBreasts</defName>
+    <label>Prey in Breast</label>
+  </HediffDef>
+
+  <HediffDef ParentName="RV2_PreyInBreasts">
+    <defName>RV2_PreyInBreastsConvertingMilk</defName>
+    <description>This pawn is turning what's left of someone into milk.</description>
+  </HediffDef>
+  <HediffDef ParentName="RV2_PreyInBreasts">
+    <defName>RV2_PreyInBreastsDissolving</defName>
+    <description>This pawn is melting living prey down in their breast. This is non-nutritious.</description>
+  </HediffDef>
+  <HediffDef ParentName="RV2_PreyInBreasts">
+    <defName>RV2_PreyInBreastsMushing</defName>
+    <description>This pawn is breaking down dead prey in their breast. This is non-nutritious.</description>
+  </HediffDef>
+  <HediffDef ParentName="RV2_PreyInBreasts">
+    <defName>RV2_PreyInBreastsPleasuring</defName>
+    <description>This pawn is being pleasured internally by the prey in their breast.</description>
+  </HediffDef>
+  <HediffDef ParentName="RV2_PreyInBreasts">
+    <defName>RV2_PreyInBreastsStoring</defName>
+    <description>This pawn is holding someone in their breast for storage.</description>
+  </HediffDef>
+  <HediffDef ParentName="RV2_PreyInBreasts">
+    <defName>RV2_PreyInBreastsWarming</defName>
+    <description>This pawn is preparing to do something to a pawn in their breast.</description>
+  </HediffDef>
+  <HediffDef ParentName="RV2_PreyInBreasts">
+    <defName>RV2_PreyInBreastsHealing</defName>
+    <description>This pawn is healing a pawn in their breast.</description>
+  </HediffDef>
+  
+  <!-- Cock -->
+  
+  <HediffDef Abstract="True" Name="RV2_PreyInCock" ParentName="RV2_VoreHediffBase">
+    <defName>RV2_PreyInCock</defName>
+    <label>Prey in Penis</label>
+  </HediffDef>
+  
+  <HediffDef ParentName="RV2_PreyInCock">
+    <label>Prey in Urethra</label>
+    <defName>RV2_PreyInCockDumping</defName>
+    <description>This pawn is letting what remains of their prey out of their cock, whether in ejaculative bursts or a steady stream.</description>
+  </HediffDef>
+  <HediffDef ParentName="RV2_PreyInCock">
+    <label>Prey in Urethra</label>
+	<defName>RV2_PreyInCockExiting</defName>
+    <description>This pawn is releasing prey from their cock.</description>
+  </HediffDef>
+  <HediffDef ParentName="RV2_PreyInCock">
+    <label>Prey in Urethra</label>
+	<defName>RV2_PreyInCockPassing</defName>
+    <description>This pawn is shoving their prey down their cock.</description>
+  </HediffDef>
+  <HediffDef ParentName="RV2_PreyInCock">
+    <label>Prey in Urethra</label>
+	<defName>RV2_PreyInCockPleasuring</defName>
+    <description>This pawn is using their prey as an sounding rod.</description>
+  </HediffDef>
+  
+  <!-- Intestines -->
+  
+  <HediffDef Abstract="True" Name="RV2_PreyInIntestines" ParentName="RV2_VoreHediffBase">
+    <defName>RV2_PreyInIntestines</defName>
+    <label>Prey in Intestines</label>
+  </HediffDef>
+  
+  <HediffDef ParentName="RV2_PreyInIntestines">
+    <defName>RV2_PreyInIntestinesExiting</defName>
+    <description>This pawn is passing someone through their guts, towards the anus.</description>
+  </HediffDef>
+  <HediffDef ParentName="RV2_PreyInIntestines">
+    <defName>RV2_PreyInIntestinesPassing</defName>
+    <description>This pawn is passing someone through their guts, towards the stomach.</description>
+  </HediffDef>
+  <HediffDef ParentName="RV2_PreyInIntestines">
+    <defName>RV2_PreyInIntestinesPleasuring</defName>
+    <description>This pawn is being pleasured internally by the prey in their guts.</description>
+  </HediffDef>
+  <HediffDef ParentName="RV2_PreyInIntestines">
+    <defName>RV2_PreyInIntestinesProcessing</defName>
+    <description>This pawn is absorbing what's left of someone in their guts.</description>
+  </HediffDef>
+  <HediffDef ParentName="RV2_PreyInIntestines">
+    <defName>RV2_PreyInIntestinesStoring</defName>
+    <description>This pawn is holding someone in their guts for storage.</description>
+  </HediffDef>
+  <!-- currently unused 
+  <HediffDef ParentName="RV2_PreyInIntestines">
+    <defName>RV2_PreyInIntestinesWarming</defName>
+    <description>This pawn is preparing to do something to a pawn in their guts.</description>
+  </HediffDef>
+  -->
+  
+  <!-- Mouth -->
+  
+  <HediffDef Abstract="True" Name="RV2_PreyInMouth" ParentName="RV2_VoreHediffBase">
+    <defName>RV2_PreyInMouth</defName>
+    <label>Prey in Mouth</label>
+    <stages Inherit="False">
+      <li>
+        <minSeverity>0</minSeverity>
+      </li>
+      <li>
+        <minSeverity>0.1</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.2</offset>
+          </li>
+          <li>
+            <capacity>Talking</capacity>
+            <offset>-0.8</offset>
+          </li>
+          <li>
+            <capacity>Breathing</capacity>
+            <offset>-0.4</offset>
+          </li>
+          <li>
+            <capacity>Eating</capacity>
+            <offset>-1</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>0.2</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.4</offset>
+          </li>
+          <li>
+            <capacity>Talking</capacity>
+            <offset>-1</offset>
+          </li>
+          <li>
+            <capacity>Breathing</capacity>
+            <offset>-0.6</offset>
+          </li>
+          <li>
+            <capacity>Eating</capacity>
+            <offset>-1</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>0.3</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.6</offset>
+          </li>
+          <li>
+            <capacity>Talking</capacity>
+            <offset>-1</offset>
+          </li>
+          <li>
+            <capacity>Breathing</capacity>
+            <offset>-0.6</offset>
+          </li>
+          <li>
+            <capacity>Eating</capacity>
+            <offset>-1</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>0.4</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.8</offset>
+          </li>
+          <li>
+            <capacity>Talking</capacity>
+            <offset>-1</offset>
+          </li>
+          <li>
+            <capacity>Breathing</capacity>
+            <offset>-0.7</offset>
+          </li>
+          <li>
+            <capacity>Eating</capacity>
+            <offset>-1</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!-- ESEGN: Previously unused, now used for regurgitation OV paths -->
+
+  <HediffDef ParentName="RV2_PreyInMouth">
+    <defName>RV2_PreyInMouthExiting</defName>
+    <description>This pawn is regurgitating their prey, which obviously makes talking and breathing a little harder.</description>
+  </HediffDef>
+
+  <!-- ESEGN: Added for OV pleasure regurgitation -->
+
+  <HediffDef ParentName="RV2_PreyInMouth">
+    <defName>RV2_PreyExitingMouthPleasuring</defName>
+    <description>This pawn is performing oral sex on prey being released, which obviously makes talking and breathing a little harder.</description>
+  </HediffDef>
+
+  <HediffDef ParentName="RV2_PreyInMouth">
+    <defName>RV2_PreyInMouthPassing</defName>
+    <description>This pawn is swallowing their prey, which obviously makes talking and breathing a little harder.</description>
+  </HediffDef>
+  <HediffDef ParentName="RV2_PreyInMouth">
+    <defName>RV2_PreyInMouthPleasuring</defName>
+    <description>This pawn is performing oral sex on partially-swallowed prey, which obviously makes talking and breathing a little harder.</description>
+  </HediffDef>
+  
+  <!-- Nipple -->
+  
+  <HediffDef Abstract="True" Name="RV2_PreyInNipple" ParentName="RV2_VoreHediffBase">
+    <defName>RV2_PreyInNipple</defName>
+    <label>Prey in Nipple</label>
+  </HediffDef>
+  
+  <HediffDef ParentName="RV2_PreyInNipple">
+    <defName>RV2_PreyInNippleDumping</defName>
+    <description>This pawn is lactating what remains of their prey out of their nipple.</description>
+  </HediffDef>
+  <HediffDef ParentName="RV2_PreyInNipple">
+    <defName>RV2_PreyInNippleExiting</defName>
+    <description>This pawn is releasing prey from their nipple.</description>
+  </HediffDef>
+  <HediffDef ParentName="RV2_PreyInNipple">
+    <defName>RV2_PreyInNipplePassing</defName>
+    <description>This pawn is shoving their prey into their nipple.</description>
+  </HediffDef>
+  <HediffDef ParentName="RV2_PreyInNipple">
+	<defName>RV2_PreyInNipplePleasuring</defName>
+    <description>This pawn is penetrating their nipple with their prey.</description>
+  </HediffDef>
+  
+  <!-- Stomach -->
+  
+  <HediffDef Abstract="True" Name="RV2_PreyInStomach" ParentName="RV2_VoreHediffBase">
+    <defName>RV2_PreyInStomach</defName>
+    <label>Prey in Stomach</label>
+  </HediffDef>
+  
+  <HediffDef ParentName="RV2_PreyInStomach">
+    <defName>RV2_PreyInStomachChurning</defName>
+    <description>This pawn is breaking down dead prey in their stomach.</description>
+  </HediffDef>
+  <HediffDef ParentName="RV2_PreyInStomach">
+    <defName>RV2_PreyInStomachDigesting</defName>
+    <description>This pawn is digesting living prey in their stomach.</description>
+  </HediffDef>
+  <HediffDef ParentName="RV2_PreyInStomach">
+    <defName>RV2_PreyInStomachPleasuring</defName>
+    <description>This pawn is being pleasured internally by the prey in their stomach.</description>
+  </HediffDef>
+  <HediffDef ParentName="RV2_PreyInStomach">
+    <defName>RV2_PreyInStomachStoring</defName>
+    <description>This pawn is holding someone in their stomach for storage.</description>
+  </HediffDef>
+  <HediffDef ParentName="RV2_PreyInStomach">
+    <defName>RV2_PreyInStomachWarming</defName>
+    <description>This pawn is preparing to do something to a pawn in their stomach.</description>
+  </HediffDef>
+  <HediffDef ParentName="RV2_PreyInStomach">
+    <defName>RV2_PreyInStomachHealing</defName>
+    <description>This pawn is healing a pawn in their stomach.</description>
+  </HediffDef>
+
+  <!-- Testicles -->
+  
+  <HediffDef Abstract="True" Name="RV2_PreyInTesticles" ParentName="RV2_VoreHediffBase">
+    <defName>RV2_PreyInTesticles</defName>
+    <label>Prey in Testicles</label>
+  </HediffDef>
+  
+  <HediffDef ParentName="RV2_PreyInTesticles">
+    <defName>RV2_PreyInTesticlesConvertingSperm</defName>
+    <description>This pawn is turning what's left of someone into semen.</description>
+  </HediffDef>
+  <HediffDef ParentName="RV2_PreyInTesticles">
+    <defName>RV2_PreyInTesticlesDissolving</defName>
+    <description>This pawn is melting living prey down in their balls. This is non-nutritious.</description>
+  </HediffDef>
+  <HediffDef ParentName="RV2_PreyInTesticles">
+    <defName>RV2_PreyInTesticlesMushing</defName>
+    <description>This pawn is breaking down dead prey in their balls. This is non-nutritious.</description>
+  </HediffDef>
+  <HediffDef ParentName="RV2_PreyInTesticles">
+    <defName>RV2_PreyInTesticlesPleasuring</defName>
+    <description>This pawn is being pleasured internally by the prey in their balls.</description>
+  </HediffDef>
+  <HediffDef ParentName="RV2_PreyInTesticles">
+    <defName>RV2_PreyInTesticlesStoring</defName>
+    <description>This pawn is holding someone in their balls for storage.</description>
+  </HediffDef>
+  <HediffDef ParentName="RV2_PreyInTesticles">
+    <defName>RV2_PreyInTesticlesWarming</defName>
+    <description>This pawn is preparing to do something to a pawn in their balls.</description>
+  </HediffDef>
+  <HediffDef ParentName="RV2_PreyInTesticles">
+    <defName>RV2_PreyInTesticlesHealing</defName>
+    <description>This pawn is healing a pawn in their balls.</description>
+  </HediffDef>
+  
+  <!-- Vagina -->
+  
+  <HediffDef Abstract="True" Name="RV2_PreyInVagina" ParentName="RV2_VoreHediffBase">
+    <defName>RV2_PreyInVagina</defName>
+    <label>Prey in Vagina</label>
+  </HediffDef>
+  
+  <HediffDef ParentName="RV2_PreyInVagina">
+    <defName>RV2_PreyInVaginaDumping</defName>
+    <description>This pawn is letting what remains of their prey out of their vagina, whether in ejaculative bursts or a steady stream.</description>
+  </HediffDef>
+  <HediffDef ParentName="RV2_PreyInVagina">
+    <defName>RV2_PreyInVaginaExiting</defName>
+    <description>This pawn is releasing prey from their vagina.</description>
+  </HediffDef>
+  <HediffDef ParentName="RV2_PreyInVagina">
+    <defName>RV2_PreyInVaginaPassing</defName>
+    <description>This pawn is shoving their prey up their vagina.</description>
+  </HediffDef>
+  <HediffDef ParentName="RV2_PreyInVagina">
+	<defName>RV2_PreyInVaginaPleasuring</defName>
+    <description>This pawn is using their prey as a vaginal dildo.</description>
+  </HediffDef>
+  
+  <!-- Womb -->
+  
+  <HediffDef Abstract="True" Name="RV2_PreyInWomb" ParentName="RV2_VoreHediffBase">
+    <defName>RV2_PreyInWomb</defName>
+    <label>Prey in Womb</label>
+  </HediffDef>
+  
+  <HediffDef ParentName="RV2_PreyInWomb">
+    <defName>RV2_PreyInWombConvertingLube</defName>
+    <description>This pawn is turning what's left of someone into lube.</description>
+  </HediffDef>
+  <HediffDef ParentName="RV2_PreyInWomb">
+    <defName>RV2_PreyInWombDissolving</defName>
+    <description>This pawn is melting living prey down in their womb. This is non-nutritious.</description>
+  </HediffDef>
+  <HediffDef ParentName="RV2_PreyInWomb">
+    <defName>RV2_PreyInWombMushing</defName>
+    <description>This pawn is breaking down dead prey in their womb. This is non-nutritious.</description>
+  </HediffDef>
+  <HediffDef ParentName="RV2_PreyInWomb">
+    <defName>RV2_PreyInWombPleasuring</defName>
+    <description>This pawn is being pleasured internally by the prey in their womb.</description>
+  </HediffDef>
+  <HediffDef ParentName="RV2_VoreHediffBase">
+    <defName>RV2_PreyInWombStoring</defName>
+    <label>Prey in Womb</label>
+    <description>This pawn is holding someone in their womb for storage.</description>
+  </HediffDef>
+  <HediffDef ParentName="RV2_PreyInWomb">
+    <defName>RV2_PreyInWombWarming</defName>
+    <description>This pawn is preparing to do something to a pawn in their womb.</description>
+  </HediffDef>
+  <HediffDef ParentName="RV2_PreyInWomb">
+    <defName>RV2_PreyInWombReforming</defName>
+    <description>This pawn is reforming a pawn in their womb.</description>
+  </HediffDef>
+  <HediffDef ParentName="RV2_PreyInWomb">
+    <defName>RV2_PreyInWombHealing</defName>
+    <description>This pawn is healing a pawn in their womb.</description>
+  </HediffDef>
+  
+</Defs>

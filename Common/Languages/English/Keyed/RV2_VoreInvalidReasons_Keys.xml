@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- VoreValidator -->
+  <RV2_VoreInvalidReasons_TooYoung>Too young</RV2_VoreInvalidReasons_TooYoung>
+  <RV2_VoreInvalidReasons_Animal>Animal</RV2_VoreInvalidReasons_Animal>
+  <RV2_VoreInvalidReasons_WildAnimalForAuto>Wild animals disabled for auto-proposals</RV2_VoreInvalidReasons_WildAnimalForAuto>
+  <RV2_VoreInvalidReasons_VisitorForAuto>Visitors disabled for auto-proposals</RV2_VoreInvalidReasons_VisitorForAuto>
+  <RV2_VoreInvalidReasons_SelfVore>Cannot vore self</RV2_VoreInvalidReasons_SelfVore>
+  <RV2_VoreInvalidReasons_QuirksDisabled>Quirks disabled</RV2_VoreInvalidReasons_QuirksDisabled>
+  <RV2_VoreInvalidReasons_FatalDisabled>Fatal disabled</RV2_VoreInvalidReasons_FatalDisabled>
+  <RV2_VoreInvalidReasons_EndoDisabled>Endo disabled</RV2_VoreInvalidReasons_EndoDisabled>
+  <RV2_VoreInvalidReasons_FeedingDisabled>Feeding vore disabled</RV2_VoreInvalidReasons_FeedingDisabled>
+  <RV2_VoreInvalidReasons_FatalAndEndoDisabled>Fatal and endo disabled</RV2_VoreInvalidReasons_FatalAndEndoDisabled>
+  <RV2_VoreInvalidReasons_FatalDisabledAndQuirkFatalOnlyPredator>Fatal disabled + fatal only predator</RV2_VoreInvalidReasons_FatalDisabledAndQuirkFatalOnlyPredator>
+  <RV2_VoreInvalidReasons_EndoDisabledAndQuirkEndoOnlyPredator>Endo disabled + endo only predator</RV2_VoreInvalidReasons_EndoDisabledAndQuirkEndoOnlyPredator>
+  <RV2_VoreInvalidReasons_QuirkNeverPredator>Quirk: never predator</RV2_VoreInvalidReasons_QuirkNeverPredator>
+  <RV2_VoreInvalidReasons_QuirkNeverPrey>Quirk: never prey</RV2_VoreInvalidReasons_QuirkNeverPrey>
+  <RV2_VoreInvalidReasons_QuirkFatalOnlyPredator>Quirk: fatal only predator</RV2_VoreInvalidReasons_QuirkFatalOnlyPredator>
+  <RV2_VoreInvalidReasons_QuirkEndoOnlyPredator>Quirk: endo only predator</RV2_VoreInvalidReasons_QuirkEndoOnlyPredator>
+  <RV2_VoreInvalidReasons_PredatorCantVore>Predator can't vore: </RV2_VoreInvalidReasons_PredatorCantVore>
+  <RV2_VoreInvalidReasons_PreyCantBeVored>Prey can't be vored: </RV2_VoreInvalidReasons_PreyCantBeVored>
+  <RV2_VoreInvalidReasons_OngoingVore>Can't vore a current predator</RV2_VoreInvalidReasons_OngoingVore>
+  <RV2_VoreInvalidReasons_NoCapacity>No capacity</RV2_VoreInvalidReasons_NoCapacity>
+  <RV2_VoreInvalidReasons_MentalState>Mental state</RV2_VoreInvalidReasons_MentalState>
+  <RV2_VoreInvalidReasons_NoGoals>No vore goal valid</RV2_VoreInvalidReasons_NoGoals>
+  <RV2_VoreInvalidReasons_NoTypes>No vore type valid</RV2_VoreInvalidReasons_NoTypes>
+  <RV2_VoreInvalidReasons_Predator>Predator</RV2_VoreInvalidReasons_Predator>
+  <RV2_VoreInvalidReasons_Prey>Prey</RV2_VoreInvalidReasons_Prey>
+  <RV2_VoreInvalidReasons_DesignationMissing>{0} does not have designation {1}</RV2_VoreInvalidReasons_DesignationMissing>
+  <RV2_VoreInvalidReasons_NoPredatorDesignations>{0} has no predator designation</RV2_VoreInvalidReasons_NoPredatorDesignations>
+  <RV2_VoreInvalidReasons_NoPreyDesignations>No prey designations</RV2_VoreInvalidReasons_NoPreyDesignations>
+  <RV2_VoreInvalidReasons_CurrentlyInitiatingVore>Prey is already involved in vore</RV2_VoreInvalidReasons_CurrentlyInitiatingVore>
+  <RV2_VoreInvalidReasons_PredatorInRitual>Predator busy in ritual</RV2_VoreInvalidReasons_PredatorInRitual>
+  <RV2_VoreInvalidReasons_PreyInRitual>Prey busy in ritual</RV2_VoreInvalidReasons_PreyInRitual>#
+  <RV2_VoreInvalidReasons_Unavailable>Unavailable</RV2_VoreInvalidReasons_Unavailable>
+  <RV2_VoreInvalidReasons_NoPreyAvailable>No prey available</RV2_VoreInvalidReasons_NoPreyAvailable>
+  
+  <!-- VoreGoalDef -->
+  <RV2_VoreInvalidReasons_PawnsWithoutSexNeed>Pleasure goal not allowed because neither pawn has sex need</RV2_VoreInvalidReasons_PawnsWithoutSexNeed>
+  <RV2_VoreInvalidReasons_AlreadyPleasured>Already pleasured</RV2_VoreInvalidReasons_AlreadyPleasured>
+  
+  <!-- VorePathDef -->
+  <!--RV2_VoreInvalidReasons_PathDisabled>Disabled by settings</RV2_VoreInvalidReasons_PathDisabled-->
+  <RV2_VoreInvalidReasons_PredatorRuleBlockingPath>Predator rules blocking</RV2_VoreInvalidReasons_PredatorRuleBlockingPath>
+  <RV2_VoreInvalidReasons_PreyRuleBlockingPath>Prey rules blocking</RV2_VoreInvalidReasons_PreyRuleBlockingPath>
+  
+  <!-- VoreInteractionManager -->
+  <RV2_VoreInvalidReasons_NoPaths>No vore path valid: {0}</RV2_VoreInvalidReasons_NoPaths>
+  <RV2_VoreInvalidReasons_NoValidRole>No valid role</RV2_VoreInvalidReasons_NoValidRole>
+  <RV2_VoreInvalidReasons_RoleBlacklisted>VoreRole is blacklisted</RV2_VoreInvalidReasons_RoleBlacklisted>
+  <RV2_VoreInvalidReasons_RoleNotWhitelisted>VoreRole is not whitelisted</RV2_VoreInvalidReasons_RoleNotWhitelisted>
+  <RV2_VoreInvalidReasons_TypeBlacklisted>VoreType is blacklisted</RV2_VoreInvalidReasons_TypeBlacklisted>
+  <RV2_VoreInvalidReasons_TypeNotWhitelisted>VoreType is not whitelisted</RV2_VoreInvalidReasons_TypeNotWhitelisted>
+  <RV2_VoreInvalidReasons_GoalBlacklisted>VoreGoal is blacklisted</RV2_VoreInvalidReasons_GoalBlacklisted>
+  <RV2_VoreInvalidReasons_GoalNotWhitelisted>VoreGoal is not whitelisted</RV2_VoreInvalidReasons_GoalNotWhitelisted>
+  <RV2_VoreInvalidReasons_PathBlacklisted>VorePath is blacklisted</RV2_VoreInvalidReasons_PathBlacklisted>
+  <RV2_VoreInvalidReasons_PathNotWhitelisted>VorePath is not whitelisted</RV2_VoreInvalidReasons_PathNotWhitelisted>
+  <RV2_VoreInvalidReasons_DesignationBlacklisted>Designation is blacklisted</RV2_VoreInvalidReasons_DesignationBlacklisted>
+  <RV2_VoreInvalidReasons_DesignationNotWhitelisted>Designation is not whitelisted</RV2_VoreInvalidReasons_DesignationNotWhitelisted>
+  <RV2_VoreInvalidReasons_NoPreferredGoal>No preferred goal</RV2_VoreInvalidReasons_NoPreferredGoal>
+  <RV2_VoreInvalidReasons_NoPreferredType>No preferred type</RV2_VoreInvalidReasons_NoPreferredType>
+  <RV2_VoreInvalidReasons_NoPreferredPath>No preferred path</RV2_VoreInvalidReasons_NoPreferredPath>
+  
+  <!-- ReservedPrey -->
+  <RV2_VoreInvalidReasons_AlreadyReserved>Already reserved</RV2_VoreInvalidReasons_AlreadyReserved>
+  <RV2_VoreInvalidReasons_NoReservedPrey>No reserved prey</RV2_VoreInvalidReasons_NoReservedPrey>
+  
+  <!-- Other -->
+  <RV2_VoreInvalidReasons_PawnDead>Pawn is dead</RV2_VoreInvalidReasons_PawnDead>
+  <RV2_VoreInvalidReasons_ProposalCooldown>Vore proposal cooldown</RV2_VoreInvalidReasons_ProposalCooldown>
+
+</LanguageData>
+
+
+
+<!-- RV2_VoreInvalidReasons_ -->

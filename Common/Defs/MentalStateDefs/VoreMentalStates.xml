@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RimVore2.VoreMentalStateDef Abstract="True" Name="RV2_BaseMentalState" ParentName="BaseMentalState">
+    <stateClass>RimVore2.MentalState_VoreTargeter</stateClass>
+    <workerClass>RimVore2.MentalStateWorker_VoreTargetsAvailable</workerClass>
+    <category>Misc</category>
+    <colonistsOnly>true</colonistsOnly>
+    <moodRecoveryThought>Catharsis</moodRecoveryThought>
+    <blockNormalThoughts>true</blockNormalThoughts>
+    <nameColor>(0.65, 0.9, 0.93)</nameColor>
+    <minTicksBeforeRecovery>3500</minTicksBeforeRecovery>
+    <recoveryMtbDays>0.2</recoveryMtbDays>
+    <beginLetterDef>NegativeEvent</beginLetterDef>
+  </RimVore2.VoreMentalStateDef>
+  
+  <RimVore2.VoreMentalStateDef Abstract="True" Name="RV2_BaseMentalState_Prey" ParentName="RV2_BaseMentalState">
+    <initiatorRole>Prey</initiatorRole>
+    <targetChangeMessageKey>RV2_Message_AsPreyTargetChange</targetChangeMessageKey>
+    <modExtensions>
+      <li Class="RimVore2.Extension_ValidMentalStateForVore">
+        <forPrey>true</forPrey>
+      </li>
+    </modExtensions>
+  </RimVore2.VoreMentalStateDef>
+  <RimVore2.VoreMentalStateDef Abstract="True" Name="RV2_BaseMentalState_Predator" ParentName="RV2_BaseMentalState">
+    <initiatorRole>Predator</initiatorRole>
+    <targetChangeMessageKey>RV2_Message_AsPredatorTargetChange</targetChangeMessageKey>
+    <modExtensions>
+      <li Class="RimVore2.Extension_ValidMentalStateForVore">
+        <forPredator>true</forPredator>
+      </li>
+    </modExtensions>
+  </RimVore2.VoreMentalStateDef>
+  
+  <!-- prey mental breaks -->
+  <MentalBreakDef>
+    <defName>RV2_GurgleSeeker</defName>
+    <mentalState>RV2_GurgleSeeker</mentalState>
+    <baseCommonality>1</baseCommonality>
+    <intensity>Extreme</intensity>
+  </MentalBreakDef>
+  <RimVore2.VoreMentalStateDef ParentName="RV2_BaseMentalState_Prey">
+    <defName>RV2_GurgleSeeker</defName>
+    <label>Gurgle Seeker</label>
+    <recoveryMessage>{0} has changed their mind about being digested.</recoveryMessage>
+    <beginLetterLabel>Gurgle Seeker</beginLetterLabel>
+    <beginLetter>{0} has given up and decided to get vored by {1}!</beginLetter>
+    <baseInspectLine>Mental state: Gurgle Seeker</baseInspectLine>
+    <minTicksBeforeRecovery>99999999</minTicksBeforeRecovery>
+    <request>
+      <canDoFatalVore>true</canDoFatalVore>
+    </request>
+    <fallbackMentalState>GiveUpExit</fallbackMentalState>
+    <designationWhitelist>
+      <li>fatal</li>
+    </designationWhitelist>
+  </RimVore2.VoreMentalStateDef>
+  
+  <MentalBreakDef>
+    <defName>RV2_HideInPredator</defName>
+    <mentalState>RV2_HideInPredator</mentalState>
+    <baseCommonality>1</baseCommonality>
+    <intensity>Minor</intensity>
+  </MentalBreakDef>
+  <RimVore2.VoreMentalStateDef ParentName="RV2_BaseMentalState_Prey">
+    <defName>RV2_HideInPredator</defName>
+    <label>Hide In Predator</label>
+    <recoveryMessage>{0} had a great time inside {1}. They will now stop trying to hide in them</recoveryMessage>
+    <beginLetterLabel>Hide In Predator</beginLetterLabel>
+    <beginLetter>{0} is going to get themselves vored by {1}!</beginLetter>
+    <baseInspectLine>Mental state: Endo-Abductor</baseInspectLine>
+    <request>
+      <isColonist>true</isColonist>
+      <canDoEndoVore>true</canDoEndoVore>
+      <initiatorQuirks>
+        <li>Enablers_Core_Goal_Longendo</li>
+      </initiatorQuirks>
+    </request>
+    <fallbackMentalState>Wander_OwnRoom</fallbackMentalState>
+    <goalWhitelist>
+      <li>Store</li>
+    </goalWhitelist>
+  </RimVore2.VoreMentalStateDef>
+  
+  <!-- predator mental breaks (non-lethal, vore targets, then idle until recovery timer hit) -->
+  <MentalBreakDef>
+    <defName>RV2_PrisonerAbductor</defName>
+    <mentalState>RV2_PrisonerAbductor</mentalState>
+    <baseCommonality>1</baseCommonality>
+    <intensity>Minor</intensity>
+  </MentalBreakDef>
+  <RimVore2.VoreMentalStateDef ParentName="RV2_BaseMentalState_Predator">
+    <defName>RV2_PrisonerAbductor</defName>
+    <label>Endo-abducting</label>
+    <recoveryMessage>{0} is no longer endo-voring {1}.</recoveryMessage>
+    <beginLetterLabel>Endo-abduction</beginLetterLabel>
+    <beginLetter>{0} is trying to kidnap someone in their belly! [PAWN_pronoun] has decided to devour {1} and will not let them out until [PAWN_pronoun] gets bored!</beginLetter>
+    <baseInspectLine>Mental state: Endo-Abductor</baseInspectLine>
+    <request>
+      <isPrisoner>true</isPrisoner>
+      <isHostedByInitiatorFaction>true</isHostedByInitiatorFaction>
+      <canBeEndoVored>true</canBeEndoVored>
+    </request>
+    <fallbackMentalState>Wander_Sad</fallbackMentalState>
+    <goalWhitelist>
+      <li>Store</li>
+    </goalWhitelist>
+  </RimVore2.VoreMentalStateDef>
+
+  <MentalBreakDef>
+    <defName>RV2_PetThief</defName>
+    <mentalState>RV2_PetThief</mentalState>
+    <baseCommonality>1</baseCommonality>
+    <intensity>Minor</intensity>
+  </MentalBreakDef>
+  <RimVore2.VoreMentalStateDef ParentName="RV2_BaseMentalState_Predator">
+    <defName>RV2_PetThief</defName>
+    <label>Pet Thief</label>
+    <recoveryMessage>{0} is done endo-voring {1}</recoveryMessage>
+    <beginLetterLabel>Pet thief</beginLetterLabel>
+    <beginLetter>{0} is trying to steal someone’s pet! [PAWN_pronoun] has decided to devour {1} and will not let it out until [PAWN_pronoun] gets bored!</beginLetter>
+    <baseInspectLine>Mental state: Pet Thief</baseInspectLine>
+    <request>
+      <isAnimal>true</isAnimal>
+      <isSameFaction>true</isSameFaction>
+      <canBeEndoVored>true</canBeEndoVored>
+    </request>
+    <fallbackMentalState>Wander_Sad</fallbackMentalState>
+    <goalWhitelist>
+      <li>Store</li>
+      <li>Hold</li>
+      <li>Pleasure</li>
+      <li>Store</li>
+    </goalWhitelist>
+  </RimVore2.VoreMentalStateDef>
+
+  <MentalBreakDef>
+    <defName>RV2_EndoAbductor</defName>
+    <mentalState>RV2_EndoAbductor</mentalState>
+    <baseCommonality>1</baseCommonality>
+    <intensity>Major</intensity>
+  </MentalBreakDef>
+  <RimVore2.VoreMentalStateDef ParentName="RV2_BaseMentalState_Predator">
+    <defName>RV2_EndoAbductor</defName>
+    <label>Endo-abducting</label>
+    <recoveryMessage>{0} is no longer endo-voring {1}.</recoveryMessage>
+    <beginLetterLabel>Endo-abduction</beginLetterLabel>
+    <beginLetter>{0} is trying to kidnap someone in their belly! [PAWN_pronoun] has decided to devour {1} and will not let them out until [PAWN_pronoun] gets bored!</beginLetter>
+    <baseInspectLine>Mental state: Endo-Abductor</baseInspectLine>
+    <request>
+      <isColonist>true</isColonist>
+      <canBeEndoVored>true</canBeEndoVored>
+    </request>
+    <fallbackMentalState>Wander_Sad</fallbackMentalState>
+    <goalWhitelist>
+      <li>Pleasure</li>
+      <li>Store</li>
+    </goalWhitelist>
+  </RimVore2.VoreMentalStateDef>
+  
+  <MentalBreakDef>
+    <defName>RV2_EndoSpree</defName>
+    <mentalState>RV2_EndoSpree</mentalState>
+    <baseCommonality>1</baseCommonality>
+    <commonalityFactorPerPopulationCurve>
+      <points>
+        <li>(3, 0)</li>
+        <li>(4, 0.5)</li>
+        <li>(6, 1)</li>
+        <li>(12, 2)</li>
+      </points>
+    </commonalityFactorPerPopulationCurve>
+    <intensity>Major</intensity>
+  </MentalBreakDef>
+  <RimVore2.VoreMentalStateDef ParentName="RV2_BaseMentalState_Predator">
+    <defName>RV2_EndoSpree</defName>
+    <label>Endo Spree</label>
+    <recoveryMessage>{0} has finished their endo voring spree</recoveryMessage>
+    <beginLetterLabel>Endo Spree</beginLetterLabel>
+    <beginLetter>{0} has started an endo spree!</beginLetter>
+    <baseInspectLine>Mental state: Endo Spree</baseInspectLine>
+    <request>
+      <isColonist>true</isColonist>
+      <canBeEndoVored>true</canBeEndoVored>
+    </request>
+    <fallbackMentalState>Wander_Sad</fallbackMentalState>
+    <goalWhitelist>
+      <li>Store</li>
+      <li>Pleasure</li>
+    </goalWhitelist>
+    <targetCountToVore>3</targetCountToVore>
+  </RimVore2.VoreMentalStateDef>
+
+  <MentalBreakDef>
+    <defName>RV2_LivestockSwallower</defName>
+    <mentalState>RV2_LivestockSwallower</mentalState>
+    <baseCommonality>1</baseCommonality>
+    <intensity>Extreme</intensity>
+  </MentalBreakDef>
+  <RimVore2.VoreMentalStateDef ParentName="RV2_BaseMentalState_Predator">
+    <defName>RV2_LivestockSwallower</defName>
+    <label>Livestock Swallower</label>
+    <recoveryMessage>{0} no longer wants to digest {1}.</recoveryMessage>
+    <beginLetterLabel>Livestock Swallower</beginLetterLabel>
+    <beginLetter>{0} is going to fatally vore {1}!</beginLetter>
+    <baseInspectLine>Mental state: Livestock Swallower</baseInspectLine>
+    <request>
+      <isAnimal>true</isAnimal>
+      <isSameFaction>true</isSameFaction>
+      <canBeFatalVored>true</canBeFatalVored>
+    </request>
+    <fallbackMentalState>Slaughterer</fallbackMentalState>
+    <designationWhitelist>
+      <li>fatal</li>
+    </designationWhitelist>
+  </RimVore2.VoreMentalStateDef>
+
+  <!-- predator mental breaks (lethal, attack targets, then vore them. After prey death, recover from mental state) -->
+
+  <RimVore2.VoreMentalStateDef Abstract="True" Name="RV2_VoreAndKillBase" ParentName="RV2_BaseMentalState_Predator">
+    <stateClass>RimVore2.MentalState_VoreTargeter_Kill</stateClass>
+    <minTicksBeforeRecovery>999999999</minTicksBeforeRecovery>
+    <category>Aggro</category>
+  </RimVore2.VoreMentalStateDef>
+  
+  <MentalBreakDef>
+    <defName>RV2_VoraciousHunt</defName>
+    <mentalState>RV2_VoraciousHunt</mentalState>
+    <baseCommonality>1</baseCommonality>
+    <intensity>Major</intensity>
+  </MentalBreakDef>
+  <RimVore2.VoreMentalStateDef ParentName="RV2_VoreAndKillBase">
+    <defName>RV2_VoraciousHunt</defName>
+    <label>Voracious hunt</label>
+    <recoveryMessage>{0} has finished voring {1}</recoveryMessage>
+    <beginLetterLabel>Voracious hunt</beginLetterLabel>
+    <beginLetter>{0} has decided to go and hunt {1}!</beginLetter>
+    <baseInspectLine>Mental state: Voracious hunt</baseInspectLine>
+    <request>
+      <isAnimal>true</isAnimal>
+      <isSameFaction>false</isSameFaction>
+      <canBeFatalVored>true</canBeFatalVored>
+    </request>
+    <fallbackMentalState>Wander_Sad</fallbackMentalState>
+    <designationWhitelist>
+      <li>fatal</li>
+    </designationWhitelist>
+  </RimVore2.VoreMentalStateDef>
+
+  <MentalBreakDef>
+    <defName>RV2_Digesticutioner</defName>
+    <mentalState>RV2_Digesticutioner</mentalState>
+    <baseCommonality>1</baseCommonality>
+    <intensity>Extreme</intensity>
+  </MentalBreakDef>
+  <RimVore2.VoreMentalStateDef ParentName="RV2_VoreAndKillBase">
+    <defName>RV2_Digesticutioner</defName>
+    <label>Digesticutioner</label>
+    <recoveryMessage>{0} has finished digesticuting {1}.</recoveryMessage>
+    <beginLetterLabel>Digesticutioner</beginLetterLabel>
+    <beginLetter>{0} is going to fatally vore {1}!</beginLetter>
+    <baseInspectLine>Mental state: Digesticutioner</baseInspectLine>
+    <request>
+      <isPrisoner>true</isPrisoner>
+      <isHostedByInitiatorFaction>true</isHostedByInitiatorFaction>
+      <canBeFatalVored>true</canBeFatalVored>
+    </request>
+    <fallbackMentalState>SadisticRage</fallbackMentalState>
+    <designationWhitelist>
+      <li>fatal</li>
+    </designationWhitelist>
+  </RimVore2.VoreMentalStateDef>
+
+  <MentalBreakDef>
+    <defName>RV2_ForbiddenFruit</defName>
+    <mentalState>RV2_ForbiddenFruit</mentalState>
+    <baseCommonality>1</baseCommonality>
+    <intensity>Extreme</intensity>
+  </MentalBreakDef>
+  <RimVore2.VoreMentalStateDef ParentName="RV2_VoreAndKillBase">
+    <stateClass>RimVore2.MentalState_ForbiddenFruit</stateClass>
+    <defName>RV2_ForbiddenFruit</defName>
+    <label>Forbidden Fruit</label>
+    <recoveryMessage>The boom gods will not forget this.</recoveryMessage>
+    <beginLetterLabel>Forbidden Fruit</beginLetterLabel>
+    <beginLetter>The boom gods scream in anguish</beginLetter>
+    <baseInspectLine>Mental state: Forbidden Fruit</baseInspectLine>
+    <fallbackMentalState>Slaughterer</fallbackMentalState>
+    <designationWhitelist>
+      <li>fatal</li>
+    </designationWhitelist>
+  </RimVore2.VoreMentalStateDef>
+
+  <MentalBreakDef>
+    <defName>RV2_VorederousRage</defName>
+    <mentalState>RV2_VorederousRage</mentalState>
+    <baseCommonality>1</baseCommonality>
+    <intensity>Extreme</intensity>
+  </MentalBreakDef>
+  <RimVore2.VoreMentalStateDef ParentName="RV2_VoreAndKillBase">
+    <defName>RV2_VorederousRage</defName>
+    <label>Vorederous Rage</label>
+    <recoveryMessage>{0} has stopped their vorederous rage.</recoveryMessage>
+    <beginLetterLabel>Vorederous Rage</beginLetterLabel>
+    <beginLetter>{0} is going to fatally vore {1}!</beginLetter>
+    <baseInspectLine>Mental state: Vorederous Rage</baseInspectLine>
+    <request>
+      <isColonist>true</isColonist>
+      <canBeFatalVored>true</canBeFatalVored>
+    </request>
+    <fallbackMentalState>MurderousRage</fallbackMentalState>
+    <designationWhitelist>
+      <li>fatal</li>
+    </designationWhitelist>
+  </RimVore2.VoreMentalStateDef>
+
+  <MentalBreakDef>
+    <defName>RV2_Voreserk</defName>
+    <mentalState>RV2_Voreserk</mentalState>
+    <baseCommonality>1</baseCommonality>
+    <commonalityFactorPerPopulationCurve>
+      <points>
+        <li>(3, 0)</li>
+        <li>(4, 0.5)</li>
+        <li>(6, 1)</li>
+        <li>(12, 2)</li>
+      </points>
+    </commonalityFactorPerPopulationCurve>
+    <intensity>Extreme</intensity>
+  </MentalBreakDef>
+  <RimVore2.VoreMentalStateDef ParentName="RV2_VoreAndKillBase">
+    <defName>RV2_Voreserk</defName>
+    <label>Voreserk</label>
+    <recoveryMessage>{0} has finished their fatal voring spree.</recoveryMessage>
+    <beginLetterLabel>Voreserk</beginLetterLabel>
+    <beginLetter>{0} is going on a fatal vore spree!</beginLetter>
+    <baseInspectLine>Mental state: Voreserk</baseInspectLine>
+    <request>
+      <isColonist>true</isColonist>
+      <canBeFatalVored>true</canBeFatalVored>
+    </request>
+    <fallbackMentalState>Berserk</fallbackMentalState>
+    <designationWhitelist>
+      <li>fatal</li>
+    </designationWhitelist>
+    <targetCountToVore>3</targetCountToVore>
+  </RimVore2.VoreMentalStateDef>
+
+
+  <!-- these two are used for saving-throws after failed vore proposals -->
+  <MentalStateDef ParentName="BaseMentalState">
+    <defName>RV2_VoreFighting_Attacker</defName>
+    <stateClass>RimVore2.MentalState_ForcedVoreFight_Attacker</stateClass>
+    <label>vore fighting (attacking)</label>
+    <minTicksBeforeRecovery>1000</minTicksBeforeRecovery>
+    <recoveryMtbDays>0.02</recoveryMtbDays>
+    <category>Aggro</category>
+    <nameColor>(0.88,0.48,0.16)</nameColor>
+    <baseInspectLine>Mental state: Vore fighting</baseInspectLine>
+  </MentalStateDef>
+  <MentalStateDef ParentName="BaseMentalState">
+    <defName>RV2_VoreFighting_Defender</defName>
+    <stateClass>RimVore2.MentalState_ForcedVoreFight_Defender</stateClass>
+    <label>vore fighting (defending)</label>
+    <minTicksBeforeRecovery>99999</minTicksBeforeRecovery>
+    <recoveryMtbDays>0.02</recoveryMtbDays>
+    <category>Aggro</category>
+    <nameColor>(0.88,0.48,0.16)</nameColor>
+    <baseInspectLine>Mental state: Vore fighting</baseInspectLine>
+  </MentalStateDef>
+</Defs>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!-- Applied during digestion -->
+  
+  <!-- BASES -->
+  <HediffDef Abstract="True" Name="RV2AcidBase" ParentName="InjuryBase">
+    <isBad>true</isBad>
+    <defaultLabelColor>(1, 0, 0)</defaultLabelColor>
+    <hediffClass>Hediff_Injury</hediffClass>
+    <description>Damage caused by digestion.</description>
+    <comps>
+      <li Class="HediffCompProperties_TendDuration">
+        <labelTendedWell>bandaged</labelTendedWell>
+        <labelTendedWellInner>tended</labelTendedWellInner>
+        <labelSolidTendedWell>tended</labelSolidTendedWell>
+      </li>
+      <li Class="HediffCompProperties_Infecter">
+        <infectionChance>0.05</infectionChance>
+      </li>
+    </comps>
+    <injuryProps>
+      <painPerSeverity>0.01</painPerSeverity>
+      <averagePainPerSeverityPermanent>0.005</averagePainPerSeverityPermanent>
+      <canMerge>true</canMerge>
+    </injuryProps>
+  </HediffDef>
+  
+  <HediffDef Abstract="True" Name="RV2MeltingAcidBase" ParentName="RV2AcidBase">
+    <label>Partly melted</label>
+    <comps>
+      <li Class="HediffCompProperties_GetsPermanent">
+        <permanentLabel>Acid-scarred</permanentLabel>
+      </li>
+    </comps>
+    <injuryProps>
+      <destroyedLabel>Melted</destroyedLabel>
+      <destroyedOutLabel>Melted</destroyedOutLabel>
+    </injuryProps>
+  </HediffDef>
+  
+  <HediffDef Abstract="True" Name="RV2LubeConversionEnzymesBase" ParentName="RV2AcidBase">
+    <label>Partly lubrified</label>
+    <comps>
+      <li Class="HediffCompProperties_GetsPermanent">
+        <permanentLabel>Lubrifaction-scarred</permanentLabel>
+      </li>
+    </comps>
+    <injuryProps>
+      <destroyedLabel>Dissolved into lube</destroyedLabel>
+      <destroyedOutLabel>Dissolved into lube</destroyedOutLabel>
+    </injuryProps>
+  </HediffDef>
+  <HediffDef Abstract="True" Name="RV2MilkConversionEnzymesBase" ParentName="RV2AcidBase">
+    <label>Partly lactified</label>
+    <comps>
+      <li Class="HediffCompProperties_GetsPermanent">
+        <permanentLabel>Lactifaction-scarred</permanentLabel>
+      </li>
+    </comps>
+    <injuryProps>
+      <destroyedLabel>Dissolved into milk</destroyedLabel>
+      <destroyedOutLabel>Dissolved into milk</destroyedOutLabel>
+    </injuryProps>
+  </HediffDef>
+  <HediffDef Abstract="True" Name="RV2SpermConversionEnzymesBase" ParentName="RV2AcidBase">
+    <label>Partly spermified</label>
+    <comps>
+      <li Class="HediffCompProperties_GetsPermanent">
+        <permanentLabel>Spermifaction-scarred</permanentLabel>
+      </li>
+    </comps>
+    <injuryProps>
+      <destroyedLabel>Dissolved into sperm</destroyedLabel>
+      <destroyedOutLabel>Dissolved into sperm</destroyedOutLabel>
+    </injuryProps>
+  </HediffDef>
+  
+  <!--END OF BASES-->
+
+  <HediffDef ParentName="RV2MeltingAcidBase">
+    <defName>RV2_StomachAcid</defName>
+    <labelNoun>Stomach acid</labelNoun>
+  </HediffDef>
+  <HediffDef ParentName="RV2LubeConversionEnzymesBase">
+    <defName>RV2_LubeConversionEnzymes</defName>
+    <labelNoun>Lubrifying enzymes</labelNoun>
+  </HediffDef>
+  <HediffDef ParentName="RV2MilkConversionEnzymesBase">
+    <defName>RV2_MilkConversionEnzymes</defName>
+    <labelNoun>Lactifying enzymes</labelNoun>
+  </HediffDef>
+  <HediffDef ParentName="RV2SpermConversionEnzymesBase">
+    <defName>RV2_SpermConversionEnzymes</defName>
+    <labelNoun>Spermifying enzymes</labelNoun>
+  </HediffDef>
+  
+  <!-- Applied in case of interrupted digestion -->
+  <HediffDef>
+    <defName>RV2_DigestionRecovery</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <labelNoun>Digestion recovery</labelNoun>
+    <description>This pawn is recovering from almost being digested.\nIf they were to be digested again, the progress would pick up at this hediff's level!</description>
+    <initialSeverity>0.001</initialSeverity>
+    <isBad>false</isBad>
+    <tendable>false</tendable>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.1</severityPerDay>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <label>Digestion recovery (&#60;25%)</label>  <!-- I hate XML so much. the &#60; will become '<' -->
+      </li>
+      <li>
+        <minSeverity>0.25</minSeverity>
+        <label>Digestion recovery (&#62;25%)</label>
+      </li>
+      <li>
+        <minSeverity>0.5</minSeverity>
+        <label>Digestion recovery (&#62;50%)</label>
+      </li>
+      <li>
+        <minSeverity>0.75</minSeverity>
+        <label>Digestion recovery (&#62;75%)</label>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>

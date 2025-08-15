@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <AbilityDef Abstract="True" Name="RV2_VoreSkip_Base" ParentName="PsycastBaseSkip">
+    <abilityClass>RimVore2.Ability_VoreSkip</abilityClass>
+    <writeCombatLog>True</writeCombatLog>
+    <statBases>
+      <Ability_EntropyGain>25</Ability_EntropyGain>
+      <Ability_PsyfocusCost>0.3</Ability_PsyfocusCost>
+    </statBases>
+    <verbProperties>
+      <verbClass>RimVore2.Verb_CastPsycast_MultiTarget</verbClass>
+      <warmupTime>0.05</warmupTime>
+      <range>14.9</range>
+      <targetParams>
+        <canTargetSelf>True</canTargetSelf>
+        <canTargetAnimals>True</canTargetAnimals>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityFleckOnTarget">
+        <fleckDef>PsycastPsychicEffect</fleckDef>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="RimVore2.AbilityExtension_MultiTarget">
+        <canPickSameTargetMultipleTimes>false</canPickSameTargetMultipleTimes>
+        <requiredTargets>2</requiredTargets>
+      </li>
+    </modExtensions>
+  </AbilityDef>
+
+  <AbilityDef ParentName="RV2_VoreSkip_Base">
+    <defName>RV2_VoreSkip_Chaotic</defName>
+    <label>Chaotic Vore Skip</label>
+    <description>Teleport the target into another target (either can be self). Body part and vore goal are selected randomly.</description>
+    <level>4</level>
+    <iconPath>UI/Abilities/voreskip</iconPath>
+    <modExtensions>
+      <li Class="RimVore2.AbilityExtension_VoreSkip"/>
+    </modExtensions>
+  </AbilityDef>
+</Defs>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Nabber: Man, these can be extended extremely wildly, 
+  but I truly truly hate writing interesting snippets and doing the whole grammar logic -->
+
+<Defs>
+  <InteractionDef>
+    <defName>RV2_SwitchedGoal</defName>
+    <label>switched vore goal</label>
+    <symbol>Motes/SpeechSymbols/GoalSwitched</symbol>
+    <logRulesInitiator>
+      <rulesStrings>
+        <li>r_logentry->[INITIATOR_nameDef] decided to change the vore goal for [RECIPIENT_nameDef]! -> </li>
+      </rulesStrings>
+    </logRulesInitiator>
+  </InteractionDef>
+</Defs>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/AlienRace.ThingDef_AlienRace[@Name="BaseAnthro"]/tools</xpath>
+    <value>
+      <li>
+        <label>vore grapple</label>
+        <capacities>
+          <li>RV2_VoreGrapple</li>
+        </capacities>
+        <power>5</power>
+        <cooldownTime>5</cooldownTime>
+      </li>
+    </value>
+  </Operation>
+</Patch>

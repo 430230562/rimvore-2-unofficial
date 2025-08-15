@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+  <!-- category -->
+  <KeyBindingCategoryDef>
+    <defName>RV2_Keys</defName>
+    <label>RimVore-2</label>
+    <description>Various hotkeys used for RV-2 menus.</description>
+  </KeyBindingCategoryDef>
+
+  <!-- keys -->
+  
+  <KeyBindingDef Abstract="True" Name="RV2_KeyCategory">
+    <category>RV2_Keys</category>
+  </KeyBindingDef>
+  
+  
+  <KeyBindingDef ParentName="RV2_KeyCategory">
+    <defName>RV2_QuirkMenuPrevious</defName>
+    <label>Previous Quirk</label>
+    <defaultKeyCodeA>UpArrow</defaultKeyCodeA>
+  </KeyBindingDef>
+  <KeyBindingDef ParentName="RV2_KeyCategory">
+    <defName>RV2_QuirkMenuNext</defName>
+    <label>Next Quirk</label>
+    <defaultKeyCodeA>DownArrow</defaultKeyCodeA>
+  </KeyBindingDef>
+</Defs>

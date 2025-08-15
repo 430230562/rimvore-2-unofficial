@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RimVore2.QuirkPoolDef>
+    <defName>RV2_RJW_PostSexProposalChance</defName>
+    <label>Post sex proposal</label>
+    <category>RJW</category>
+    <description>These quirks determine how if or how often a pawn proposes vore after sexual interactions.</description>
+    <generationOrder>5</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>RV2_RJW_PostSexProposalChance_Always</li>
+      <li>RV2_RJW_PostSexProposalChance_Often</li>
+      <li>RV2_RJW_PostSexProposalChance_Normal</li>
+      <li>RV2_RJW_PostSexProposalChance_Rare</li>
+      <li>RV2_RJW_PostSexProposalChance_Never</li>
+    </quirks>
+  </RimVore2.QuirkPoolDef>
+
+  <RimVore2.QuirkDef>
+    <defName>RV2_RJW_PostSexProposalChance_Always</defName>
+    <label>Exclusive</label>
+    <description>[PAWN_label] just can't get off unless there's someone squirming away inside [PAWN_possessive], and will always propose vore after sex.</description>
+    <rarity>VeryRare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>PostSexProposalChance</modifierName>
+        <modifierValue>9999999</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>RV2_RJW_PostSexProposalChance_Often</defName>
+    <label>Enthusiastic</label>
+    <description>[PAWN_label] enjoys the feeling of a post-coital internal massage, and is twice as likely to propose vore after sex.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>PostSexProposalChance</modifierName>
+        <modifierValue>2</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>RV2_RJW_PostSexProposalChance_Normal</defName>
+    <label>Indifferent</label>
+    <description>[PAWN_label] has no strong feelings about vore, and will propose it after sex as often as the next person.</description>
+    <rarity>Abundant</rarity>
+    <hidden>true</hidden>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>RV2_RJW_PostSexProposalChance_Rare</defName>
+    <label>Disinterested</label>
+    <description>[PAWN_label] doesn't care much for involving vore in [PAWN_possessive] sex life, and is half as likely to propose it after sex.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>PostSexProposalChance</modifierName>
+        <modifierValue>0.5</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>RV2_RJW_PostSexProposalChance_Never</defName>
+    <label>Revulsed</label>
+    <description>[PAWN_label] cannot fathom the idea of being turned on by vore after sex. Keep it out of the bedroom.</description>
+    <rarity>VeryRare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>PostSexProposalChance</modifierName>
+        <modifierValue>0.0000001</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+</Defs>

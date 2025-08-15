@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <RV2_RJW.RJW_SexToVoreLookupDef>
+    <defName>Cock</defName>
+    <giverVoreType>Cock</giverVoreType>
+    <ejectSexTypes>
+      <li>Masturbation</li>
+      <li>MutualMasturbation</li>
+      <li>Boobjob</li>
+      <li>Handjob</li>
+      <li>Footjob</li>
+    </ejectSexTypes>
+    <transferSexTypes>
+      <li>
+        <sexTypes>
+          <li>Vaginal</li>
+        </sexTypes>
+        <targetVoreType>Vaginal</targetVoreType>
+      </li>
+      <li>
+        <sexTypes>
+          <li>Anal</li>
+        </sexTypes>
+        <targetVoreType>Anal</targetVoreType>
+      </li>
+      <li>
+        <sexTypes>
+          <li>Sixtynine</li>
+          <li>Fellatio</li>
+        </sexTypes>
+        <targetVoreType>Oral</targetVoreType>
+      </li>
+    </transferSexTypes>
+  </RV2_RJW.RJW_SexToVoreLookupDef>
+
+  <RV2_RJW.RJW_SexToVoreLookupDef>
+    <defName>Vaginal</defName>
+    <giverVoreType>Vaginal</giverVoreType>
+    <transferSexTypes>
+      <li>
+        <sexTypes>
+          <li>Scissoring</li>
+        </sexTypes>
+        <targetVoreType>Vaginal</targetVoreType>
+      </li>
+      <li>
+        <sexTypes>
+          <li>Cunnilingus</li>
+        </sexTypes>
+        <targetVoreType>Oral</targetVoreType>
+      </li>
+    </transferSexTypes>
+  </RV2_RJW.RJW_SexToVoreLookupDef>
+</Defs>

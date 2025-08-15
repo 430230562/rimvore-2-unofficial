@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <IssueDef>
+    <defName>RV2_GenderedPredation</defName>
+    <label>Gendered predation</label>
+    <iconPath>UI/Issues/GenderedPredation</iconPath>
+  </IssueDef>
+  
+  <PreceptDef>
+    <defName>RV2_GenderedPredation_FemaleOnly</defName>
+    <issue>RV2_GenderedPredation</issue>
+    <label>female prey only</label>
+    <description>Only females may serve as prey.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <associatedMemes>
+      <li>RV2_Predation</li>
+    </associatedMemes>
+    <comps>
+      <li Class="RimVore2.PreceptComp_Quirk_RemoveQuirks">
+        <quirks>
+          <li>GenderPreference_Predator_FemalePreferred</li>
+          <li>GenderPreference_Predator_Neutral</li>
+          <li>GenderPreference_Predator_MalePreferred</li>
+          <li>GenderPreference_Predator_MaleOnly</li>
+        </quirks>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>RV2_GenderedPredation_FemalePreferred</defName>
+    <issue>RV2_GenderedPredation</issue>
+    <label>female prey encouraged</label>
+    <description>Females should serve as prey.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <associatedMemes>
+      <li>RV2_Predation</li>
+    </associatedMemes>
+    <comps>
+      <li Class="RimVore2.PreceptComp_Quirk_RemoveQuirks">
+        <quirks>
+          <li>GenderPreference_Predator_Neutral</li>
+          <li>GenderPreference_Predator_MalePreferred</li>
+          <li>GenderPreference_Predator_MaleOnly</li>
+        </quirks>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>RV2_GenderedPredation_MalePreferred</defName>
+    <issue>RV2_GenderedPredation</issue>
+    <label>male prey encouraged</label>
+    <description>Males should serve as prey.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <associatedMemes>
+      <li>RV2_Predation</li>
+    </associatedMemes>
+    <comps>
+      <li Class="RimVore2.PreceptComp_Quirk_RemoveQuirks">
+        <quirks>
+          <li>GenderPreference_Predator_FemaleOnly</li>
+          <li>GenderPreference_Predator_FemalePreferred</li>
+          <li>GenderPreference_Predator_Neutral</li>
+        </quirks>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>RV2_GenderedPredation_MaleOnly</defName>
+    <issue>RV2_GenderedPredation</issue>
+    <label>male prey only</label>
+    <description>Only males may serve as prey.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <associatedMemes>
+      <li>RV2_Predation</li>
+    </associatedMemes>
+    <comps>
+      <li Class="RimVore2.PreceptComp_Quirk_RemoveQuirks">
+        <quirks>
+          <li>GenderPreference_Predator_FemaleOnly</li>
+          <li>GenderPreference_Predator_FemalePreferred</li>
+          <li>GenderPreference_Predator_Neutral</li>
+          <li>GenderPreference_Predator_MalePreferred</li>
+        </quirks>
+      </li>
+    </comps>
+  </PreceptDef>
+
+</Defs>

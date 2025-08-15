@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- makes it possible to retrieve RJW bodyparts without being bound to their genital functions 
+  also contains custom body parts from the custom race support mod -->
+<!-- PSEUDO: for(hediff in hediffs){ for(alias in aliases){ hediff.contains(alias) }} -->
+<Defs>
+  <RimVore2.AliasDef>
+    <defName>hediff_penis</defName>
+    <label>Penis</label>
+    <category>Hediff</category>
+    <aliases>
+      <li>penis</li>
+      <li>ovipositorm</li>
+    </aliases>
+  </RimVore2.AliasDef>
+  <RimVore2.AliasDef>
+    <defName>hediff_vagina</defName>
+    <label>Vagina</label>
+    <category>Hediff</category>
+    <aliases>
+      <li>vagina</li>
+      <li>ovipositorf</li>
+      <li>tentaclesf</li>
+      <li>ovipore</li>
+      <li>NephilaEggTentacles</li>
+    </aliases>
+  </RimVore2.AliasDef>
+  <RimVore2.AliasDef>
+    <defName>hediff_anus</defName>
+    <label>Anus</label>
+    <category>Hediff</category>
+    <aliases>
+      <li>anus</li>
+    </aliases>
+  </RimVore2.AliasDef>
+  <RimVore2.AliasDef>
+    <defName>hediff_breasts</defName>
+    <label>Breasts</label>
+    <category>Hediff</category>
+    <aliases>
+      <li>breasts</li>
+    </aliases>
+  </RimVore2.AliasDef>
+  <RimVore2.AliasDef>
+    <defName>hediff_udder</defName>
+    <label>Udder</label>
+    <category>Hediff</category>
+    <aliases>
+      <li>udder</li>
+    </aliases>
+  </RimVore2.AliasDef>
+</Defs>

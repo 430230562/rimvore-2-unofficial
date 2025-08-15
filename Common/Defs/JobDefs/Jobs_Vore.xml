@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+  <!-- Jobs that get vore started -->
+  <JobDef>
+    <defName>RV2_VoreInitAsPredator</defName>
+    <driverClass>RimVore2.JobDriver_Vore_Init_AsPredator</driverClass>
+    <reportString>Voring victim</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+  <JobDef>
+    <defName>RV2_VoreInitAsPrey</defName>
+    <driverClass>RimVore2.JobDriver_Vore_Init_AsPrey</driverClass>
+    <reportString>Getting vored</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+  <JobDef>
+    <defName>RV2_VoreInitAsFeeder</defName>
+    <driverClass>RimVore2.JobDriver_Vore_Init_AsFeeder</driverClass>
+    <reportString>Feeding predator</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+
+  <!-- Jobs that interrupt vore -->
+  <JobDef>
+    <defName>RV2_EjectPreySelf</defName>
+    <driverClass>RimVore2.JobDriver_Vore_EjectPrey_Self</driverClass>
+    <reportString>Ejecting prey</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+  <JobDef>
+    <defName>RV2_EjectPreyForce</defName>
+    <driverClass>RimVore2.JobDriver_Vore_EjectPrey_Force</driverClass>
+    <reportString>Forcing to eject prey</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+  
+  <!-- auto vore -->
+  <JobDef>
+    <defName>RV2_HuntVorePrey</defName>
+    <driverClass>RimVore2.JobDriver_Vore_DownAndVore_AsAnimal</driverClass>
+    <reportString>Vore-hunting prey</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+  <JobDef>
+    <defName>RV2_KidnapVorePrey</defName>
+    <driverClass>RimVore2.JobDriver_Vore_VoreAndExitMap</driverClass>
+    <reportString>Vore-kidnapping prey</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+  <JobDef>
+    <defName>RV2_ProposeVore</defName>
+    <driverClass>RimVore2.JobDriver_Vore_DirectProposal</driverClass>
+    <reportString>Proposing vore</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+  <JobDef>
+    <defName>RV2_ProposeVore_Feeder</defName>
+    <driverClass>RimVore2.JobDriver_Vore_FeederProposal</driverClass>
+    <reportString>Proposing feeder vore</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+  <!-- release -->
+  <JobDef>
+    <defName>RV2_ReleasePrey</defName>
+    <driverClass>RimVore2.JobDriver_Vore_ReleasePrey</driverClass>
+    <reportString>Releasing prey</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+  
+  <!-- Vore combat -->
+	<JobDef>
+		<defName>RV2_VoreGrapple</defName>
+		<driverClass>RimVore2.JobDriver_Vore_Grapple</driverClass>
+		<reportString>Grappling target</reportString>
+		<casualInterruptible>false</casualInterruptible>
+	</JobDef>
+</Defs>

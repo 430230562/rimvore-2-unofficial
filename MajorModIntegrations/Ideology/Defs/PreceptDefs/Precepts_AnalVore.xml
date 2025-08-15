@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <IssueDef>
+    <defName>RV2_AnalVore</defName>
+    <label>Anal Vore</label>
+    <iconPath>UI/Issues/Anal</iconPath>
+  </IssueDef>
+
+  <!-- Neutral -->
+  <!--<PreceptDef>
+    <defName>RV2_AnalVore_Accepted</defName>
+    <issue>RV2_AnalVore</issue>
+    <label>Accepted</label>
+    <description>Anal vore is acceptable.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <associatedMemes>
+      <li>RV2_Preyism</li>
+      <li>RV2_Predation</li>
+    </associatedMemes>
+  </PreceptDef>-->
+
+  <!-- Disliked -->
+  <PreceptDef>
+    <defName>RV2_AnalVore_Disliked</defName>
+    <issue>RV2_AnalVore</issue>
+    <label>disliked</label>
+    <description>Anal vore is not okay.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <associatedMemes>
+      <li>RV2_Preyism</li>
+      <li>RV2_Predation</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>RV2_AnalVore</eventDef>
+        <thought>RV2_AnalVore_Disliked</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>RV2_AnalVore</eventDef>
+        <thought>RV2_AnalVore_Know_Disliked</thought>
+      </li>
+      <li Class="RimVore2.PreceptComp_Quirk_RemoveQuirks">
+        <quirks>
+          <li>TypePreference_Predator_Anal_Obsessed</li>
+          <li>TypePreference_Prey_Anal_Obsessed</li>
+        </quirks>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <ThoughtDef>
+    <defName>RV2_AnalVore_Disliked</defName>
+    <durationDays>3</durationDays>
+    <stages>
+      <li>
+        <label>I participated in anal vore</label>
+        <description>I should not have done that, my ideology discourages it</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>RV2_AnalVore_Know_Disliked</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>3</durationDays>
+    <stackLimit>1</stackLimit>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>Anal vore participant</label>
+        <baseOpinionOffset>-5</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- Abhorrent -->
+  <PreceptDef>
+    <defName>RV2_AnalVore_Abhorrent</defName>
+    <issue>RV2_AnalVore</issue>
+    <label>abhorrent</label>
+    <description>Anal vore is an affront to our belief.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <associatedMemes>
+      <li>RV2_Preyism</li>
+      <li>RV2_Predation</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>RV2_AnalVore</eventDef>
+        <thought>RV2_AnalVore_Abhorrent</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>RV2_AnalVore</eventDef>
+        <thought>RV2_AnalVore_Know_Abhorrent</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>RV2_AnalVore</eventDef>
+        <thought>RV2_AnalVore_Know_Social_Abhorrent</thought>
+      </li>
+      <li Class="RimVore2.PreceptComp_Quirk_RemoveQuirks">
+        <quirks>
+          <li>TypePreference_Predator_Anal_Likes</li>
+          <li>TypePreference_Predator_Anal_Obsessed</li>
+          <li>TypePreference_Prey_Anal_Likes</li>
+          <li>TypePreference_Prey_Anal_Obsessed</li>
+        </quirks>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <ThoughtDef>
+    <defName>RV2_AnalVore_Abhorrent</defName>
+    <durationDays>3</durationDays>
+    <stages>
+      <li>
+        <label>Anal vore</label>
+        <description>I participated in anal vore when it is against my ideology. I feel horrible.</description>
+        <baseMoodEffect>-24</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>RV2_AnalVore_Know_Abhorrent</defName>
+    <durationDays>3</durationDays>
+    <stages>
+      <li>
+        <label>Someone anally vored!!</label>
+        <description>One of us partook in anal vore, this is a disgusting insult to our beliefs!</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>RV2_AnalVore_Know_Social_Abhorrent</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>3</durationDays>
+    <stackLimit>5</stackLimit>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>Anal vore</label>
+        <baseOpinionOffset>-10</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- Liked -->
+  <PreceptDef>
+    <defName>RV2_AnalVore_Liked</defName>
+    <issue>RV2_AnalVore</issue>
+    <label>liked</label>
+    <description>Anal vore is to be praised and encouraged.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <associatedMemes>
+      <li>RV2_Preyism</li>
+      <li>RV2_Predation</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>RV2_AnalVore</eventDef>
+        <thought>RV2_AnalVore_Liked</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>RV2_AnalVore</eventDef>
+        <thought>RV2_AnalVore_Know_Liked</thought>
+      </li>
+      <li Class="RimVore2.PreceptComp_Quirk_RemoveQuirks">
+        <quirks>
+          <li>TypePreference_Predator_Anal_Refuses</li>
+        </quirks>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <ThoughtDef>
+    <defName>RV2_AnalVore_Liked</defName>
+    <durationDays>3</durationDays>
+    <stages>
+      <li>
+        <label>Anal vore</label>
+        <description>Partaking in this divine art fills me with joy</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>RV2_AnalVore_Know_Liked</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>3</durationDays>
+    <stackLimit>1</stackLimit>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>Anal vore participant</label>
+        <baseOpinionOffset>5</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- Required -->
+  <PreceptDef>
+    <defName>RV2_AnalVore_Required</defName>
+    <issue>RV2_AnalVore</issue>
+    <label>required</label>
+    <description>The anus is a divine body part, demanding regular worship through anal vore.</description>
+    <impact>High</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <associatedMemes>
+      <li>RV2_Preyism</li>
+      <li>RV2_Predation</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>RV2_AnalVore</eventDef>
+        <thought>RV2_AnalVore_Required</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>RV2_AnalVore</eventDef>
+        <thought>RV2_AnalVore_Know_Required</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>RV2_AnalVore</eventDef>
+        <thought>RV2_AnalVore_Know_Social_Required</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>RV2_NoRecentAnalVore_Required</thought>
+        <description>No anal vore for {VORERELATEDINTERVAL} days</description>
+      </li>
+      <li Class="RimVore2.PreceptComp_Quirk_RemoveQuirks">
+        <quirks>
+          <li>TypePreference_Predator_Anal_Dislikes</li>
+          <li>TypePreference_Predator_Anal_Refuses</li>
+          <li>TypePreference_Prey_Anal_Dislikes</li>
+          <li>TypePreference_Prey_Anal_Refuses</li>
+        </quirks>
+      </li>
+      <li Class="RimVore2.PreceptComp_Quirk_AddQuirks">
+        <quirks>
+          <li>Enablers_Core_Type_Anal</li>
+        </quirks>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <ThoughtDef>
+    <defName>RV2_AnalVore_Required</defName>
+    <durationDays>1</durationDays>
+    <stages>
+      <li>
+        <label>Anally vored</label>
+        <description>A divine act to express my beliefs.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>RV2_AnalVore_Know_Required</defName>
+    <durationDays>1</durationDays>
+    <stages>
+      <li>
+        <label>Someone anally vored!</label>
+        <description>One of our members was involved in anal vore, a very respectable act!</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>RV2_AnalVore_Know_Social_Required</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>3</durationDays>
+    <stackLimit>5</stackLimit>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>divine anal vore participant</label>
+        <baseOpinionOffset>2</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>RV2_NoRecentAnalVore_Required</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>RimVore2.ThoughtWorker_Precept_RecentKeyword</workerClass>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>want to participate in anal vore</label>
+        <description>It's been far too long since I was involved in an act of anal vore.</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+    <modExtensions>
+      <li Class="RimVore2.PreceptThoughtWorker_ListeningKeyword">
+        <keyword>VoreType_Anal</keyword>
+      </li>
+    </modExtensions>
+  </ThoughtDef>
+
+</Defs>

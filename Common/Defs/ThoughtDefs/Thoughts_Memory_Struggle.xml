@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+
+<!-- base game has placeholders -->
+<!-- in the label: {0} = other pawn -->
+<!-- in the description: {0} = thought owner {1} = other pawn -->
+<!-- RV2_VoreMemory_BasePredatorSuccessMemory is a great example of place holders -->
+
+
+<Defs>
+  <ThoughtDef Name="RV2_StruggleMemory_Base" Abstract ="True">
+    <durationDays>0.5</durationDays>
+    <stackLimit>3</stackLimit>
+    <showBubble>true</showBubble>
+    <validWhileDespawned>true</validWhileDespawned>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="RV2_StruggleMemory_Base">
+    <defName>RV2_SuccessfulStruggle_Prey</defName>
+    <stages>
+      <li>
+        <label>Escaped vore</label>
+        <description>I was vored, but managed to struggle my way out of {1}!</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_StruggleMemory_Base">
+    <defName>RV2_SuccessfulStruggle_Predator</defName>
+    <stages>
+      <li>
+        <label>Prey escaped</label>
+        <description>{1} managed to struggle out of me, what a shame!</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+</Defs>

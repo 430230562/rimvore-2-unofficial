@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <MainButtonDef>
+    <defName>VoreTab_MainButton</defName>
+    <label>Vore</label>
+    <description>Currently ongoing vore</description>
+    <tabWindowClass>RimVore2.Tabs_MainVore</tabWindowClass>
+    <order>35</order>
+    <minimized>True</minimized>
+    <iconPath>UI/Icons/stomach_White</iconPath>
+    <modExtensions>
+      <li Class="RimVore2.AlternativeMainTabIcon">
+        <iconPath>UI/Icons/slimepog</iconPath>
+      </li>
+    </modExtensions>
+  </MainButtonDef>
+</Defs>

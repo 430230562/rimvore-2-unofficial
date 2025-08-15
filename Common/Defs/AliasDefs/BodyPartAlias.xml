@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- These are all just seen as strings, this may cause problems when they are called in the code, but is easier to maintain -->
+  <!-- label is not used anywhere yet, but may in the future be used to display the vore-hediffs body part -->
+  <!-- The vore stages have the partName field, which will check all Defs here if the current partName is in any alias. 
+      If it was found in an alias, it will iterate over the pawns body parts and return any part that string-contains any alias -->
+
+  <RimVore2.AliasDef>
+    <defName>bodyPart_tailTip</defName>
+    <category>BodyPart</category>
+    <label>Tail tip</label>
+    <aliases>
+      <li>Tail</li>
+      <li>SlitherTail</li>
+      <li>NagaTail</li>
+    </aliases>
+  </RimVore2.AliasDef>
+  <RimVore2.AliasDef>
+    <defName>bodyPart_mouth</defName>
+    <category>BodyPart</category>
+    <label>Mouth</label>
+    <aliases>
+      <li>Mouth</li>
+      <li>Teeth</li>
+      <li>Jaw</li>
+      <li>Beak</li>
+    </aliases>
+  </RimVore2.AliasDef>
+  <RimVore2.AliasDef>
+    <defName>bodyPart_body</defName>
+    <category>BodyPart</category>
+    <label>Body</label>
+    <aliases>
+      <li>Torso</li>
+      <li>Body</li>
+    </aliases>
+  </RimVore2.AliasDef>
+  
+  <RimVore2.AliasDef>
+    <defName>bodyPart_stomach</defName>
+    <category>BodyPart</category>
+    <label>Stomach</label>
+    <aliases>
+      <li>Stomach</li>
+    </aliases>
+  </RimVore2.AliasDef>
+</Defs>

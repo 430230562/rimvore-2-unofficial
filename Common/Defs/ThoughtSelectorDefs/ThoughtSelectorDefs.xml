@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!--
+  >> Example of a single quirk overriding a thought
+  <RimVore2.ThoughtSelectorDef>
+    <defName>PreyInAnus</defName>
+    <baseThought>RV2_PreyInAnus</baseThought>
+    <overrides>
+      <li>
+        <quirk>Disposition_PurePrey</quirk>
+        <thought>RV2_PreyInAnus_Displeased</thought>
+      </li>
+    </overrides>
+  </RimVore2.ThoughtSelectorDef>
+  >> Multiple quirks can override a thought, when there is more than one quirk, the priority MUST be set, 
+  >> the highest priority wins, if multiple quirks would override the thought
+  <RimVore2.ThoughtSelectorDef>
+    <defName>PreyInAnus</defName>
+    <baseThought>RV2_PreyInAnus</baseThought>
+    <overrides>
+      <li>
+        <quirk>Philosophy_FoodChainer</quirk>
+        <thought>RV2_PreyInAnus_FoodChainer</thought>
+        <priority>1</priority>
+      </li>
+      <li>
+        <quirk>Disposition_PurePrey</quirk>
+        <thought>RV2_PreyInAnus_Displeased</thought>
+        <priority>99</priority> <- will win if both quirks are present, can be values like 1.5 if you have to squeeze it between two other round values
+      </li>
+    </overrides>
+  </RimVore2.ThoughtSelectorDef>-->
+</Defs>
+
+

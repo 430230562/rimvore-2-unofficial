@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- Universal -->
+  <RV2_Settings_On>On</RV2_Settings_On>
+  <RV2_Settings_Off>Off</RV2_Settings_Off>
+  <RV2_Settings_EnableAll>Enable all</RV2_Settings_EnableAll>
+  <RV2_Settings_DisableAll>Disable all</RV2_Settings_DisableAll>
+  <RV2_Settings_Disabled>Disabled</RV2_Settings_Disabled>
+  <RV2_Settings_Enabled>Enabled</RV2_Settings_Enabled>
+  <RV2_Settings_Reset>Reset</RV2_Settings_Reset>
+  <RV2_Settings_ResetAll>Reset all</RV2_Settings_ResetAll>
+  <RV2_Settings_Guaranteed>Guaranteed</RV2_Settings_Guaranteed>
+  <RV2_Settings_None>None</RV2_Settings_None>
+  <RV2_Settings_Add>Add</RV2_Settings_Add>
+  <RV2_Settings_Remove>Remove</RV2_Settings_Remove>
+  <RV2_Settings_DisableRule>Disable rule</RV2_Settings_DisableRule>
+  <RV2_Settings_EnableRule>Enable rule</RV2_Settings_EnableRule>
+  <RV2_Settings_RuleDisabled>Rule is currently disabled</RV2_Settings_RuleDisabled>
+  <RV2_Settings_MoveUp>Move up</RV2_Settings_MoveUp>
+  <RV2_Settings_MoveDown>Move down</RV2_Settings_MoveDown>
+  <RV2_Settings_Edit>Edit</RV2_Settings_Edit>
+  <RV2_Settings_Expand>Expand</RV2_Settings_Expand>
+  <RV2_Settings_Collapse>Collapse</RV2_Settings_Collapse>
+  <RV2_Settings_SearchToolInfo>Filter settings?</RV2_Settings_SearchToolInfo>
+  <RV2_Settings_SearchToolInfo_Tip>Enabling this will hide all settings that do not contain the given search text. This includes the tooltip and the set value for settings.\n\nSome basic labels like section text will still be displayed.</RV2_Settings_SearchToolInfo_Tip>
+  
+  <RV2_Settings_Infinite>Infinite</RV2_Settings_Infinite>
+  
+  <!-- Settings -->
+  <RV2_Settings_Category>RimVore-2</RV2_Settings_Category>
+  <RV2_Settings_TabNames_Debug>Debug</RV2_Settings_TabNames_Debug>
+  <RV2_Settings_TabNames_Features>Features</RV2_Settings_TabNames_Features>
+  <RV2_Settings_TabNames_FineTuning>Fine-Tuning</RV2_Settings_TabNames_FineTuning>
+  <RV2_Settings_TabNames_Sounds>Sounds</RV2_Settings_TabNames_Sounds>
+  <RV2_Settings_TabNames_Cheats>Cheats</RV2_Settings_TabNames_Cheats>
+  <RV2_Settings_TabNames_Rules>Rules</RV2_Settings_TabNames_Rules>
+  <RV2_Settings_TabNames_Quirks>Quirks</RV2_Settings_TabNames_Quirks>
+  <RV2_Settings_TabNames_Ideology>Ideology</RV2_Settings_TabNames_Ideology>
+  <RV2_Settings_TabNames_Combat>Combat</RV2_Settings_TabNames_Combat>
+  
+  <!-- Settings: Debug -->
+  <RV2_Settings_Debug_Logging>Logging</RV2_Settings_Debug_Logging>
+  <RV2_Settings_Debug_VerboseLogging>Verbose logging</RV2_Settings_Debug_VerboseLogging>
+  <RV2_Settings_Debug_PassPredatorTick>Pass predator tick</RV2_Settings_Debug_PassPredatorTick>
+  <RV2_Settings_Debug_LabelRefresh>Hediff label refresh interval (ticks)</RV2_Settings_Debug_LabelRefresh>
+  <RV2_Settings_Debug_MaxCachedInteractions>Max cached vore interactions</RV2_Settings_Debug_MaxCachedInteractions>
+  <RV2_Settings_Debug_MaxCachedInteractions_Tip>Going too big here might bloat your RAM, you have been warned</RV2_Settings_Debug_MaxCachedInteractions_Tip>
+
+  <!-- Settings: Features -->
+  <RV2_Settings_Features_VoreQuirksEnabled>Vore Quirks</RV2_Settings_Features_VoreQuirksEnabled>
+  <RV2_Settings_Features_VoreQuirksEnabled_Tip>Enable the quirk creation for pawns.\nThe quirks of each pawn can be accessed via the gizmo when the pawn is selected.</RV2_Settings_Features_VoreQuirksEnabled_Tip>
+  <RV2_Settings_Features_FatalVoreEnabled>Fatal vore</RV2_Settings_Features_FatalVoreEnabled>
+  <RV2_Settings_Features_FatalVoreEnabled_Tip>Enable vore with the intent to kill a prey.</RV2_Settings_Features_FatalVoreEnabled_Tip>
+  <RV2_Settings_Features_EndoVoreEnabled>Endo vore</RV2_Settings_Features_EndoVoreEnabled>
+  <RV2_Settings_Features_EndoVoreEnabled_Tip>Enable vore that does not directly lead to a pawns death.</RV2_Settings_Features_EndoVoreEnabled_Tip>
+  <RV2_Settings_Features_FeederVoreEnabled>Feeder vore</RV2_Settings_Features_FeederVoreEnabled>
+  <RV2_Settings_Features_FeederVoreEnabled_Tip>Enable pawns feeding a prey to a predator without doing any direct vore themself.</RV2_Settings_Features_FeederVoreEnabled_Tip>
+  <RV2_Settings_Features_AnimalsEnabled>Animals</RV2_Settings_Features_AnimalsEnabled>
+  <RV2_Settings_Features_AnimalsEnabled_Tip>Enable animals voring and being vored.\nCan also be disabled in the rules - this is more of a legacy setting.</RV2_Settings_Features_AnimalsEnabled_Tip>
+  <RV2_Settings_Features_ShowVoreTab>Vore tab</RV2_Settings_Features_ShowVoreTab>
+  <RV2_Settings_Features_ShowVoreTab_Tip>Enable the vore tab.\nThe vore tab shows up on active predators and displays all of their prey in a fancier way than the hediffs.\nThe hediffs will still show up in the health tab though!</RV2_Settings_Features_ShowVoreTab_Tip>
+  <RV2_Settings_Features_ShowRMBVoreMenu>Manual Vore</RV2_Settings_Features_ShowRMBVoreMenu>
+  <RV2_Settings_Features_ShowRMBVoreMenu_Tip>Enable the RMB context options when right-clicking on a pawn.\nThis includes options to reserve prey for feeding vore and proposing vore directly.</RV2_Settings_Features_ShowRMBVoreMenu_Tip>
+  <RV2_Settings_Features_RMBProposalsUseAutoVoreInterval>RMB Proposals use auto vore interval</RV2_Settings_Features_RMBProposalsUseAutoVoreInterval>
+  <RV2_Settings_Features_RMBProposalsUseAutoVoreInterval_Tip>This will block vore proposals initatiated via the RMB menu if the auto vore cooldown for the given pawn has not elapsed yet.\n\nYou can configure this cooldown interval in the fine-tuning settings.</RV2_Settings_Features_RMBProposalsUseAutoVoreInterval_Tip>
+  <RV2_Settings_Features_ShowGizmo>Gizmo</RV2_Settings_Features_ShowGizmo>
+  <RV2_Settings_Features_ShowGizmo_Tip>Enable the RV2 gizmo containing Predator, Endo Prey and Fatal Prey designations, and the quirk menu.\nThe gizmo shows up whenever a pawn is selected.</RV2_Settings_Features_ShowGizmo_Tip>
+  <RV2_Settings_Features_ScatEnabled>Scat</RV2_Settings_Features_ScatEnabled>
+  <RV2_Settings_Features_ScatEnabled_Tip>This will not affect any already existing items or curently ongoing Vore!</RV2_Settings_Features_ScatEnabled_Tip>
+  <RV2_Settings_Features_BonesEnabled>Bones</RV2_Settings_Features_BonesEnabled>
+  <RV2_Settings_Features_BonesEnabled_Tip>This will not affect any already existing items or curently ongoing Vore!</RV2_Settings_Features_BonesEnabled_Tip>
+  <RV2_Settings_Features_BackstoryGenitalsEnabled>Backstory genitals</RV2_Settings_Features_BackstoryGenitalsEnabled>
+  <RV2_Settings_Features_BackstoryGenitalsEnabled_Tip>If this is enabled, backstories provided by RV2 are allowed to force pawns to have specific genitalia. This may result in futanari pawns being generated! If you disable this and get stuck with an "invalid" backstory, you need to overwrite the backstory via dev mode.</RV2_Settings_Features_BackstoryGenitalsEnabled_Tip>
+  <RV2_Settings_Features_GrapplingEnabled>Grappling</RV2_Settings_Features_GrapplingEnabled>
+  <RV2_Settings_Features_GrapplingEnabled_Tip>Pawns can initiate a grapple move in which they attempt to throw their target to the ground and vore them.</RV2_Settings_Features_GrapplingEnabled_Tip>
+  <RV2_Settings_Features_StrugglingEnabled>Struggling</RV2_Settings_Features_StrugglingEnabled>
+  <RV2_Settings_Features_StrugglingEnabled_Tip>Unwilling prey can struggle inside of predators to force their release from vore</RV2_Settings_Features_StrugglingEnabled_Tip>
+  <RV2_Settings_Features_SpecificVoreScenariosIgnoreDesignations>Specific vore scenarios ignore designations</RV2_Settings_Features_SpecificVoreScenariosIgnoreDesignations>
+  <RV2_Settings_Features_SpecificVoreScenariosIgnoreDesignations_Tip>In some cases pawns may be allowed to ignore the designations (predator, endo prey, fatal prey).\n\nThe setting is meant to provide some level of immersion, where in some scenarios the "will of the player" should be ignored.\n\nThis means some pawns may be fatally vored when they have the fatal vore designation disabled! The rest of the rules (like age) are still enforced!\n\nExamples include but are not limited to manhunting animals and vore-kidnapping raiders.</RV2_Settings_Features_SpecificVoreScenariosIgnoreDesignations_Tip>
+  <RV2_Settings_Features_IgnoreDesignations_MentalState>Vore mental states</RV2_Settings_Features_IgnoreDesignations_MentalState>
+  <RV2_Settings_Features_IgnoreDesignations_MentalState_Tip>Note: Vore mental states may pick either endo or fatal goals</RV2_Settings_Features_IgnoreDesignations_MentalState_Tip>
+  <RV2_Settings_Features_IgnoreDesignations_VoreHuntingAnimals>Vore hunting animals</RV2_Settings_Features_IgnoreDesignations_VoreHuntingAnimals>
+  <RV2_Settings_Features_IgnoreDesignations_VoreHuntingAnimals_Tip>Note: Aggressive animals will almost always pick fatal goals!\n\nIncludes manhunting animals choosing to do vore</RV2_Settings_Features_IgnoreDesignations_VoreHuntingAnimals_Tip>
+  <RV2_Settings_Features_IgnoreDesignations_KidnappingRaiders>Kidnapping raiders</RV2_Settings_Features_IgnoreDesignations_KidnappingRaiders>
+  <RV2_Settings_Features_IgnoreDesignations_KidnappingRaiders_Tip>Note: Vore-napping raiders will always use the Store goal</RV2_Settings_Features_IgnoreDesignations_KidnappingRaiders_Tip>
+  <RV2_Settings_Features_IgnoreDesignations_IgnoreDesignationsGoalSwitching>Goal switching</RV2_Settings_Features_IgnoreDesignations_IgnoreDesignationsGoalSwitching>
+  <RV2_Settings_Features_IgnoreDesignations_IgnoreDesignationsGoalSwitching_Tip>Note: Enabling this means that pawns that predators can switch the vore goal (pleasure -> digest) on their prey even if they are not designated as fatal prey!</RV2_Settings_Features_IgnoreDesignations_IgnoreDesignationsGoalSwitching_Tip>
+  <RV2_Settings_Features_AlwaysShowDesignationGizmos>Always show designation gizmos</RV2_Settings_Features_AlwaysShowDesignationGizmos>
+  <RV2_Settings_Features_AlwaysShowDesignationGizmos_Tip>By default you can only directly control the vore designations (predator, fatal, endo) of player controlled pawns. Turning this on will allow you to change hostile pawns designations.</RV2_Settings_Features_AlwaysShowDesignationGizmos_Tip>
+  <RV2_Settings_Features_AddVoredPawnsToColonistBar>Add vored pawns to colonist bar</RV2_Settings_Features_AddVoredPawnsToColonistBar>
+  <RV2_Settings_Features_AddVoredPawnsToColonistBar_Tip>Vored pawns will be drawn in their own group on the colonist bar</RV2_Settings_Features_AddVoredPawnsToColonistBar_Tip>
+  
+  <!-- Settings: Fine Tuning -->
+  <RV2_Settings_FineTuning_Header_VoreProposals>Vore Proposals</RV2_Settings_FineTuning_Header_VoreProposals>
+  <RV2_Settings_FineTuning_Header_Misc>Misc</RV2_Settings_FineTuning_Header_Misc>
+  <RV2_Settings_FineTuning_Header_AutoVore>Auto-Vore</RV2_Settings_FineTuning_Header_AutoVore>
+  <RV2_Settings_FineTuning_Header_Feeding>Feeding</RV2_Settings_FineTuning_Header_Feeding>
+  <RV2_Settings_FineTuning_Header_Struggling>Struggling</RV2_Settings_FineTuning_Header_Struggling>
+  
+  <RV2_Settings_FineTuning_ForbidDigestedCorpse>Forbid digested Corpse</RV2_Settings_FineTuning_ForbidDigestedCorpse>
+  <RV2_Settings_FineTuning_ForbidDigestedCorpse_Tip>This setting allows you to automatically set corpses spawned by opening a vore product container to forbidden.</RV2_Settings_FineTuning_ForbidDigestedCorpse_Tip>
+  <RV2_Settings_FineTuning_DefaultStripBehaviour>Default strip?</RV2_Settings_FineTuning_DefaultStripBehaviour>
+  <RV2_Settings_FineTuning_DefaultStripBehaviour_Tip>This will only be used when predator and quirk either have no quirks to determine stripping OR their quirks cancel each other out</RV2_Settings_FineTuning_DefaultStripBehaviour_Tip>
+  <!-- disabled because they broke product spawning -->
+  <!--<RV2_Settings_FineTuning_SpawnEmptyVoreContainer>Spawn empty container</RV2_Settings_FineTuning_SpawnEmptyVoreContainer>-->
+  <!--<RV2_Settings_FineTuning_SpawnEmptyVoreContainer_Tip>Allow vore containers to spawn even if they are empty? That way you can still use them to create art</RV2_Settings_FineTuning_SpawnEmptyVoreContainer_Tip>-->
+  <RV2_Settings_FineTuning_AutoHaulVoreContainer>Auto-haul vore containers</RV2_Settings_FineTuning_AutoHaulVoreContainer>
+  <RV2_Settings_FineTuning_AutoHaulVoreContainer_Tip>Automatically designate vore containers to be hauled, which will mean hauling pawns will take it to a dumping stockpile.</RV2_Settings_FineTuning_AutoHaulVoreContainer_Tip>
+  <RV2_Settings_FineTuning_AutoOpenVoreContainer>Auto-open vore containers</RV2_Settings_FineTuning_AutoOpenVoreContainer>
+  <RV2_Settings_FineTuning_AutoOpenVoreContainer_Tip>Automatically designate vore containers to be opened, pawns generally prioritize opening over hauling, so they will pretty much always open the container before hauling the items.</RV2_Settings_FineTuning_AutoOpenVoreContainer_Tip>
+  <RV2_Settings_FineTuning_ForbidNonFactionVoreContainer>Forbid non-faction vore containers</RV2_Settings_FineTuning_ForbidNonFactionVoreContainer>
+  <RV2_Settings_FineTuning_ForbidNonFactionVoreContainer_Tip>Turning this on will automatically forbid vore containers produced by pawns that do not belong to the player faction.\n\nThis means your colonists won't automatically haul scat piles and the likes from wild animals.</RV2_Settings_FineTuning_ForbidNonFactionVoreContainer_Tip>
+  <RV2_Settings_FineTuning_ReformHumanoidsAsNewborn>Reform humanoid as newborn</RV2_Settings_FineTuning_ReformHumanoidsAsNewborn>
+  <RV2_Settings_FineTuning_ReformHumanoidsAsNewborn_Tip>If this is set to false, RV2 will try to determine the minimum age required to participate in vore for the reformed pawn.\nThis can not affect non-humanoids due to complications with PawnKinds and their valid age ranges</RV2_Settings_FineTuning_ReformHumanoidsAsNewborn_Tip>
+  <!-- ESEGN: Added next two -->
+  <RV2_Settings_FineTuning_SkipWarmupWhenAlreadyDigesting>Skip warmup when already digesting</RV2_Settings_FineTuning_SkipWarmupWhenAlreadyDigesting>
+  <RV2_Settings_FineTuning_SkipWarmupWhenAlreadyDigesting_Tip>If a predator is already digesting prey, or churning digested prey, any new prey to be digested by the same part will skip the warmup phase, and immediately begin digesting.</RV2_Settings_FineTuning_SkipWarmupWhenAlreadyDigesting_Tip>
+  <RV2_Settings_FineTuning_ManhuntersVoreDownedPawns>Manhunters vore downed pawns</RV2_Settings_FineTuning_ManhuntersVoreDownedPawns>
+  <RV2_Settings_FineTuning_ManhuntersVoreDownedPawns_Tip>Toggles manhunters voring downed pawns if there are no new pawns to attack.\nDue to the way the jobGiver for manhunters works, this is a simple true/false and not a chance like with kidnapping or hunting.</RV2_Settings_FineTuning_ManhuntersVoreDownedPawns_Tip>
+  <RV2_Settings_FineTuning_HuntingAnimalsVoreChance>Hunting animals vore chance</RV2_Settings_FineTuning_HuntingAnimalsVoreChance>
+  <RV2_Settings_FineTuning_HuntingAnimalsVoreChance_Tip>When an animal uses its hunting AI, this setting can intercept the base game hunting and replace it with a job that makes the animal down their prey and then vore it.</RV2_Settings_FineTuning_HuntingAnimalsVoreChance_Tip>
+  <RV2_Settings_FineTuning_FailedTameVoreChance>Chance to be vored when taming failed</RV2_Settings_FineTuning_FailedTameVoreChance>
+  <RV2_Settings_FineTuning_FailedTameVoreChance_Tip>When a taming attempt fails, this is the chance that the tamer will be vored by the animal. Literal predator animals will use fatal vore, other animals will use endo vore.\n\nAnimal skill impacts this with a multiplier of 1.5x - 0.5x for animal skill 0 - 20 respectively</RV2_Settings_FineTuning_FailedTameVoreChance_Tip>
+  <RV2_Settings_FineTuning_RaiderVorenappingChance>Raider kidnap vore chance</RV2_Settings_FineTuning_RaiderVorenappingChance>
+  <RV2_Settings_FineTuning_RaiderVorenappingChance_Tip>When a hostile pawn would kidnap a colonist, this setting can intercept the kidnap job and replace it with a job that makes the raider vore the colonist.</RV2_Settings_FineTuning_RaiderVorenappingChance_Tip>
+  <!--<RV2_Settings_FineTuning_MTBVoreProposalCreation>Mean time between vore requests</RV2_Settings_FineTuning_MTBVoreProposalCreation>-->
+  <!--<RV2_Settings_FineTuning_MTBVoreProposalCreation_Tip>The cooldown period between a pawn creating vore proposals</RV2_Settings_FineTuning_MTBVoreProposalCreation_Tip>-->
+  <RV2_Settings_FineTuning_MinVoreProposalCooldown>Minimum vore proposal cooldown ticks</RV2_Settings_FineTuning_MinVoreProposalCooldown>
+  <RV2_Settings_FineTuning_MaxVoreProposalCooldown>Maximum vore proposal cooldown ticks</RV2_Settings_FineTuning_MaxVoreProposalCooldown>
+  <RV2_Settings_FineTuning_VoreProposalCooldown_Tip>After a proposal there is a randomized cooldown. You can set the minimum and maximum range for the cooldown, with a detailed time explanation below the two settings.</RV2_Settings_FineTuning_VoreProposalCooldown_Tip>
+  <RV2_Settings_FineTuning_ExplainedProposalCooldown>Proposal cooldown (ingame): {0} - {1}</RV2_Settings_FineTuning_ExplainedProposalCooldown>
+  <RV2_Settings_FineTuning_ExplainedProposalCooldown_Tip>In real-time (speed 1):\n{0}\nto\n{1}\n\nFor Speed 2 divide by 3, Speed 3 by 6\n- unless you use mods that change these values.</RV2_Settings_FineTuning_ExplainedProposalCooldown_Tip>
+  <RV2_Settings_FineTuning_ProposalTimeTicks>Active proposal duration</RV2_Settings_FineTuning_ProposalTimeTicks>
+  <RV2_Settings_FineTuning_ProposalTimeTicks_Tip>The amount of time it takes to verbally propose to another pawn (the wait time until proposal acceptance is calculated)</RV2_Settings_FineTuning_ProposalTimeTicks_Tip>
+  <RV2_Settings_FineTuning_ForcedVoreChanceOnFailedProposal>Denied proposal leads to forced vore fight chance: </RV2_Settings_FineTuning_ForcedVoreChanceOnFailedProposal>
+  <RV2_Settings_FineTuning_ForcedVoreChanceOnFailedProposal_Tip>The likelihood an initiator engages in combat with their target when they deny a proposal from them.</RV2_Settings_FineTuning_ForcedVoreChanceOnFailedProposal_Tip>
+  <RV2_Settings_FineTuning_PrisonersMustConsentToProposal>Prisoners must agree to be vored</RV2_Settings_FineTuning_PrisonersMustConsentToProposal>
+  <RV2_Settings_FineTuning_PrisonersMustConsentToProposal_Tip>Enabling this means that prisoners can deny vore proposals.</RV2_Settings_FineTuning_PrisonersMustConsentToProposal_Tip>
+  <RV2_Settings_FineTuning_SlavesMustConsentToProposal>Slaves must agree to be vored</RV2_Settings_FineTuning_SlavesMustConsentToProposal>
+  <RV2_Settings_FineTuning_SlavesMustConsentToProposal_Tip>Enabling this means that slaves can deny vore proposals.</RV2_Settings_FineTuning_SlavesMustConsentToProposal_Tip>
+  <RV2_Settings_FineTuning_AutoAcceptAnimal>Auto-accept on high animal skill</RV2_Settings_FineTuning_AutoAcceptAnimal>
+  <RV2_Settings_FineTuning_AutoAcceptAnimal_Tip>Vore proposals directed at animals can be skipped if the proposer has a high animal skill.</RV2_Settings_FineTuning_AutoAcceptAnimal_Tip>
+  <RV2_Settings_FineTuning_AutoAcceptAnimalSkill>Animal skill to auto-accept</RV2_Settings_FineTuning_AutoAcceptAnimalSkill>
+  <RV2_Settings_FineTuning_AutoAcceptAnimalSkill_Tip>Pawns with an animal skill equals or higher than this will always succeed in proposing to animals.</RV2_Settings_FineTuning_AutoAcceptAnimalSkill_Tip>
+  <RV2_Settings_FineTuning_AutoAcceptSocial>Auto-accept on high social skill</RV2_Settings_FineTuning_AutoAcceptSocial>
+  <RV2_Settings_FineTuning_AutoAcceptSocial_Tip>Vore proposals directed at humans can be skipped if the initiator has a much higher social skill than the target.</RV2_Settings_FineTuning_AutoAcceptSocial_Tip>
+  <RV2_Settings_FineTuning_AutoAcceptSocialSkillDifference>Auto-Accept social difference</RV2_Settings_FineTuning_AutoAcceptSocialSkillDifference>
+  <RV2_Settings_FineTuning_AutoAcceptSocialSkillDifference_Tip>The social skill can factor in the targets social skill as well. Turning this on will subtract the targets social skill from the initiators social skill before checking the threshold.</RV2_Settings_FineTuning_AutoAcceptSocialSkillDifference_Tip>
+  <RV2_Settings_FineTuning_ProposalDeniedNotification>Notification type on denied vore proposal</RV2_Settings_FineTuning_ProposalDeniedNotification>
+  <RV2_Settings_FineTuning_ProposalAcceptedNotification>Notification type on accepted vore proposal</RV2_Settings_FineTuning_ProposalAcceptedNotification>
+  <RV2_Settings_FineTuning_FatalProposalAcceptedNotification>Notification type on accepted fatal vore proposal</RV2_Settings_FineTuning_FatalProposalAcceptedNotification>
+  <RV2_Settings_FineTuning_UnwrapOnDisposalContainerRelease>Unwrap products when releasing in disposal containers</RV2_Settings_FineTuning_UnwrapOnDisposalContainerRelease>
+  <RV2_Settings_FineTuning_UnwrapOnDisposalContainerRelease_Tip>When releasing fatally vored prey into a disposal building like disposal urns, should the original vore product container be removed?\n\nFalse - After opening the urn, you need to open the vore product container as well\nTrue - After opening the urn, the corpse and other items are directly dropped</RV2_Settings_FineTuning_UnwrapOnDisposalContainerRelease_Tip>
+  <RV2_Settings_FineTuning_MentalBreaksUseAutoVoreRules>Mental breaks use auto vore rules</RV2_Settings_FineTuning_MentalBreaksUseAutoVoreRules>
+  <RV2_Settings_FineTuning_MentalBreaksUseAutoVoreRules_Tip>Forces pawns in mental breaks to follow rules flagged with auto-vore on</RV2_Settings_FineTuning_MentalBreaksUseAutoVoreRules_Tip>
+  <RV2_Settings_FineTuning_StruggleBreakFreeNotification>Successful Struggle Notification</RV2_Settings_FineTuning_StruggleBreakFreeNotification>
+  <RV2_Settings_FineTuning_DefaultStruggleForceMode>Default struggle behaviour</RV2_Settings_FineTuning_DefaultStruggleForceMode>
+  <RV2_Settings_FineTuning_DefaultStruggleForceMode_Tip>The default value for the vore path rules struggle mode</RV2_Settings_FineTuning_DefaultStruggleForceMode_Tip>
+  <RV2_Settings_FineTuning_FeederVoreMinPrey>Minimum prey for feeder</RV2_Settings_FineTuning_FeederVoreMinPrey>
+  <RV2_Settings_FineTuning_FeederVoreMinPrey_Tip>The lower bound of prey to be fed into a predator by a feeder</RV2_Settings_FineTuning_FeederVoreMinPrey_Tip>
+  <RV2_Settings_FineTuning_FeederVoreMaxPrey>Maximum prey for feeder</RV2_Settings_FineTuning_FeederVoreMaxPrey>
+  <RV2_Settings_FineTuning_FeederVoreMaxPrey_Tip>The upper bound of prey to be fed into a predator by a feeder</RV2_Settings_FineTuning_FeederVoreMaxPrey_Tip>
+  <RV2_Settings_FineTuning_StrugglingCreatesInteractions>Struggle interactions</RV2_Settings_FineTuning_StrugglingCreatesInteractions>
+  <RV2_Settings_FineTuning_StrugglingCreatesInteractions_Tip>Whenever a prey actively struggles inside a predator, this will cause an interaction. This may result in spammed interaction logs.</RV2_Settings_FineTuning_StrugglingCreatesInteractions_Tip>
+  <RV2_Settings_FineTuning_UseAlternativeMainVoreIcon>Use alternative main vore icon</RV2_Settings_FineTuning_UseAlternativeMainVoreIcon>
+  <RV2_Settings_FineTuning_UseAlternativeMainVoreIcon_Tip>For true purveyors of art, only the best icon will do!</RV2_Settings_FineTuning_UseAlternativeMainVoreIcon_Tip>
+  <RV2_Settings_FineTuning_GoalSwitchNotification>Notification type on switched vore goal</RV2_Settings_FineTuning_GoalSwitchNotification>
+  <RV2_Settings_FineTuning_FailedTameVoreNotification>Notification type on failed taming vore</RV2_Settings_FineTuning_FailedTameVoreNotification>
+  <RV2_Settings_FineTuning_EjectStunDuration>Stun duration on vore eject</RV2_Settings_FineTuning_EjectStunDuration>
+  <RV2_Settings_FineTuning_EjectStunDuration_Tip>Whenever a pawn is released or ejected from a predator, they are stunned for this duration</RV2_Settings_FineTuning_EjectStunDuration_Tip>
+  <RV2_Settings_FineTuning_BlockProposalInitiationDuringWorkTime>Block auto-vore proposals during work-hours</RV2_Settings_FineTuning_BlockProposalInitiationDuringWorkTime>
+  <RV2_Settings_FineTuning_BlockProposalInitiationDuringWorkTime_Tip>Prevents pawns from proposing to other pawns while they are scheduled to work.\n\nThis does NOT prevent being proposed TO during work time.\n\nDo note that if this is enabled, pawns whose proposal cooldown expires during work hours will immediately propose vore once they "finish their work shift"</RV2_Settings_FineTuning_BlockProposalInitiationDuringWorkTime_Tip>
+  <RV2_Settings_FineTuning_AllowVisitorsAsAutoProposalTargets>Allow visitors as auto-proposal targets</RV2_Settings_FineTuning_AllowVisitorsAsAutoProposalTargets>
+  <RV2_Settings_FineTuning_AllowVisitorsAsAutoProposalTargets_Tip>By default only colonists and colony animals are valid targets for automatic vore proposals</RV2_Settings_FineTuning_AllowVisitorsAsAutoProposalTargets_Tip>
+  <RV2_Settings_FineTuning_AllowWildAnimalAsAutoProposalTargets>Allow wild animals as auto-proposal targets</RV2_Settings_FineTuning_AllowWildAnimalAsAutoProposalTargets>
+  <RV2_Settings_FineTuning_AllowWildAnimalAsAutoProposalTargets_Tip>By default only colonists and colony animals are valid targets for automatic vore proposals</RV2_Settings_FineTuning_AllowWildAnimalAsAutoProposalTargets_Tip>
+  <RV2_Settings_FineTuning_PredatorAnimalsOnlyUseDigestGoal>Predator animals only use digest goal</RV2_Settings_FineTuning_PredatorAnimalsOnlyUseDigestGoal>
+  <RV2_Settings_FineTuning_PredatorAnimalsOnlyUseDigestGoal_Tip>Predator animals are animals with the base game predator icon (warg, fox, jaguar, etc.). Whenever they vore someone through normal hunting or grappling, they only use digestive vore. Turning this off means wild animals may non-fatally vore pawns.</RV2_Settings_FineTuning_PredatorAnimalsOnlyUseDigestGoal_Tip>
+  <RV2_Settings_FineTuning_ProposalRange>Proposal range</RV2_Settings_FineTuning_ProposalRange>
+  <RV2_Settings_FineTuning_ProposalRange_Tip>Only pawns within this range will be considered for vore proposals.</RV2_Settings_FineTuning_ProposalRange_Tip>
+  
+  <!-- Settings: Sounds -->
+  
+  <RV2_Settings_Sounds_SoundsEnabled>Sounds enabled</RV2_Settings_Sounds_SoundsEnabled>
+  <RV2_Settings_Sounds_SoundVolumeModifier>Volume modifier</RV2_Settings_Sounds_SoundVolumeModifier>
+  
+  <!-- Settings: Cheats -->
+  <RV2_Settings_Cheats_VoreSpeedMultiplier>Vore speed multiplier</RV2_Settings_Cheats_VoreSpeedMultiplier>
+  <RV2_Settings_Cheats_VoreSpeedMultiplier_Tip>Can be used to speed up many parts of the mod. Some things may not be impacted though, but it should influence swallow speed, passing between vore stages and digestion / processing of pawns.</RV2_Settings_Cheats_VoreSpeedMultiplier_Tip>
+  <RV2_Settings_Cheats_BodySizeToVoreCapacity>Bodysize to vore capacity ratio</RV2_Settings_Cheats_BodySizeToVoreCapacity>
+  <RV2_Settings_Cheats_BodySizeToVoreCapacity_Tip>This ratio is used to calculate the base vore capacity.\nHumans at BodySize 1 with a ratio of 1.5 have a total vore capacity of 1.5, which fits 10 rats (0.15 BodySize each).</RV2_Settings_Cheats_BodySizeToVoreCapacity_Tip>
+  <RV2_Settings_Cheats_MinimumVoreCapacity>Minimum vore capacity</RV2_Settings_Cheats_MinimumVoreCapacity>
+  <RV2_Settings_Cheats_MinimumVoreCapacity_Tip>You can override the calculated ratio with this setting. Every pawn, no matter their size will always have at least THIS much vore capacity.</RV2_Settings_Cheats_MinimumVoreCapacity_Tip>
+  <RV2_Settings_Cheats_BaseInitAsPredatorChance>Base chance to initate as predator</RV2_Settings_Cheats_BaseInitAsPredatorChance>
+  <RV2_Settings_Cheats_BaseInitAsPredatorChance_Tip>This value serves as the starting point for predator role preference.</RV2_Settings_Cheats_BaseInitAsPredatorChance_Tip>
+  <RV2_Settings_Cheats_BaseStripChance>Chance to strip</RV2_Settings_Cheats_BaseStripChance>
+  <RV2_Settings_Cheats_BaseStripChance_Tip>This applies to random stripping! So if the predator + prey have decided they want to strip / not strip, this will not affect it!</RV2_Settings_Cheats_BaseStripChance_Tip>
+  <RV2_Settings_Cheats_FallbackNutritionValue>Fallback nutrition value</RV2_Settings_Cheats_FallbackNutritionValue>
+  <RV2_Settings_Cheats_FallbackNutritionValue_Tip>Nutrition value is used to calculate the amount of resources generated from a pawn. This is normally calculated by asking the base game how much "meat" the pawn has. This settings serves as a fallback for pawns without meat (mechanoids, etc.)</RV2_Settings_Cheats_FallbackNutritionValue_Tip>
+  <RV2_Settings_Cheats_PreventStarvingPrey>Prevent starving prey</RV2_Settings_Cheats_PreventStarvingPrey>
+  <RV2_Settings_Cheats_PreventStarvingPrey_Tip>Normally your prey should never starve, but people keep reporting issues, so this is your last resort to not have prey starve inside of predators. Only enable this if you have issues with starving prey, this basically checks if a prey is starving and then sets their food to 50%</RV2_Settings_Cheats_PreventStarvingPrey_Tip>
+  <RV2_Settings_Cheats_PreventDrainingPredatorFood>Prevent draining predator food</RV2_Settings_Cheats_PreventDrainingPredatorFood>
+  <RV2_Settings_Cheats_PreventDrainingPredatorFood_Tip>Normally prey steal food from their predator, turning this on will not deduct food from the predator, but still add it to the prey.</RV2_Settings_Cheats_PreventDrainingPredatorFood_Tip>
+  <RV2_Settings_Cheats_CanStealFromNullNeed>Can steal from NULL need</RV2_Settings_Cheats_CanStealFromNullNeed>
+  <RV2_Settings_Cheats_CanStealFromNullNeed_Tip>Whether or not pawns can steal a need value when the other pawn doesn't have that need.\nAllows for stealing food from Mechanoids for example</RV2_Settings_Cheats_CanStealFromNullNeed_Tip>
+  <RV2_Settings_Cheats_InternalTemperature>Default internal temperature: </RV2_Settings_Cheats_InternalTemperature>
+  <RV2_Settings_Cheats_InternalTemperature_Tip>The temperature prey will experience while inside a predator.\n\nYou can override this by adding the RimVore2.InternalTemperatureExtension ModExtension to the ThingDef of any race, check RV2s /Patches folder for examples.</RV2_Settings_Cheats_InternalTemperature_Tip>
+  <RV2_Settings_Cheats_AcidSavingThrowChance>Likelihood of body parts not being digested</RV2_Settings_Cheats_AcidSavingThrowChance>
+  <RV2_Settings_Cheats_AcidSavingThrowChance_Tip>This applies to interrupted vore where the prey has entered the digestion stages and is afflicted with acid hediffs.</RV2_Settings_Cheats_AcidSavingThrowChance_Tip>
+  <RV2_Settings_Cheats_AcidPityHealthFactor>Damage to body part when not digested</RV2_Settings_Cheats_AcidPityHealthFactor>
+  <RV2_Settings_Cheats_AcidPityHealthFactor_Tip>If the acid did not digest the body part (see above setting), how much damage is applied in relation to the body parts current health?</RV2_Settings_Cheats_AcidPityHealthFactor_Tip>
+  <RV2_Settings_Cheats_AcidImplantDamage>Implant damage</RV2_Settings_Cheats_AcidImplantDamage>
+  <RV2_Settings_Cheats_AcidImplantDamage_Tip>Damage applied to undigested implants - relative to current item health.</RV2_Settings_Cheats_AcidImplantDamage_Tip>
+  <RV2_Settings_Cheats_ReformedPawnTraitCount>Number of traits for reformed pawns</RV2_Settings_Cheats_ReformedPawnTraitCount>
+  <RV2_Settings_Cheats_ReformedPawnTraitCount_Tip>When a pawn is reformed, how many traits can the new pawn have?\nThis does not overwrite the amount of traits naturally generated, only the amount of traits "inherited" from the original pawn and the predator doing the reformation</RV2_Settings_Cheats_ReformedPawnTraitCount_Tip>
+  <RV2_Settings_Cheats_BaseProposalAcceptanceChance>Proposal acceptance chance</RV2_Settings_Cheats_BaseProposalAcceptanceChance>
+  <RV2_Settings_Cheats_BaseProposalAcceptanceChance_Tip>The base chance that a vore proposal is accepted.</RV2_Settings_Cheats_BaseProposalAcceptanceChance_Tip>
+  <RV2_Settings_Cheats_MaxProposalModifierViaQuirks>Max proposal modifier via quirks</RV2_Settings_Cheats_MaxProposalModifierViaQuirks>
+  <RV2_Settings_Cheats_MaxProposalModifierViaQuirks_Tip>The maximum a proposal can be modified with in regards to preferences.</RV2_Settings_Cheats_MaxProposalModifierViaQuirks_Tip>
+  <RV2_Settings_Cheats_ProposalModifierPerPreference>Quirk acceptance chance impact</RV2_Settings_Cheats_ProposalModifierPerPreference>
+  <RV2_Settings_Cheats_ProposalModifierPerPreference_Tip>Each preference quirk points impact to acceptance chance</RV2_Settings_Cheats_ProposalModifierPerPreference_Tip>
+  <RV2_Settings_Cheats_MaxPawnTraits>Maximum pawn traits</RV2_Settings_Cheats_MaxPawnTraits>
+  <RV2_Settings_Cheats_MaxPawnTraits_Tip>With a special quirk predators may "steal" traits from other pawns - this number determines the maximum amount of traits a pawn can have\n\nIncreasing this too much breaks game balance, but if you use trait framework mods you can increase this number</RV2_Settings_Cheats_MaxPawnTraits_Tip>
+  <RV2_Settings_Cheats_TraitStealIgnoresLearningFactor>Ignore learning factor</RV2_Settings_Cheats_TraitStealIgnoresLearningFactor>
+  <RV2_Settings_Cheats_TraitStealIgnoresLearningFactor_Tip>When stealing experience from another pawn the experience points are multiplied with the learning factor (burning passion, etc.)\n\nThis setting can toggle that behaviour off and will apply the raw XP that were actually stolen</RV2_Settings_Cheats_TraitStealIgnoresLearningFactor_Tip>
+  <RV2_Settings_Cheats_DisableFactionImpact>Disable faction impact</RV2_Settings_Cheats_DisableFactionImpact>
+  <RV2_Settings_Cheats_DisableFactionImpact_Tip>Fatally voring any pawns from other factions will never impact the faction relations. What an absolute cheater you are.</RV2_Settings_Cheats_DisableFactionImpact_Tip>
+  <RV2_Settings_Cheats_ImplantDestructionChance>Implant destruction chance</RV2_Settings_Cheats_ImplantDestructionChance>
+  <RV2_Settings_Cheats_ImplantDestructionChance_Tip>The global chance for an implant to be destroyed upon digestion</RV2_Settings_Cheats_ImplantDestructionChance_Tip>
+  <RV2_Settings_Cheats_DisableMentalStateChecks>Disable mental state checks</RV2_Settings_Cheats_DisableMentalStateChecks>
+  <RV2_Settings_Cheats_DisableMentalStateChecks_Tip>By default only specific mental states allow a pawn to be vored, enabling this will allow you to vore anyone in a mental state.</RV2_Settings_Cheats_DisableMentalStateChecks_Tip>
+  <RV2_Settings_Cheats_AllowSelfVoreJumpOnPlayerForcedVore>Allow vore jump on player forced vore</RV2_Settings_Cheats_AllowSelfVoreJumpOnPlayerForcedVore>
+  <RV2_Settings_Cheats_AllowSelfVoreJumpOnPlayerForcedVore_Tip>Normally vore goal jumping (the predator deciding on their own to switch the goal on their prey) is only possible for auto-vore. Enabling this setting means the players chosen vore goal may be swapped out for something else if the predator has the required quirk.</RV2_Settings_Cheats_AllowSelfVoreJumpOnPlayerForcedVore_Tip>
+  <RV2_Settings_Cheats_ExternalEjectAlwaysSucceeds>External eject attempts are always successful</RV2_Settings_Cheats_ExternalEjectAlwaysSucceeds>
+  <RV2_Settings_Cheats_ExternalEjectAlwaysSucceeds_Tip>Pawns can try to force other predators to eject their prey. This performs a random roll based on the pawns ejection strength stat. This cheat ignores the stat and guarantees success when attempting to eject.</RV2_Settings_Cheats_ExternalEjectAlwaysSucceeds_Tip>
+  <RV2_Settings_Cheats_AllowMultipleExternalEjectAttempts>Allow multiple external eject attempts</RV2_Settings_Cheats_AllowMultipleExternalEjectAttempts>
+  <RV2_Settings_Cheats_AllowMultipleExternalEjectAttempts_Tip>Normally only one attempt to eject another predators prey is allowed.</RV2_Settings_Cheats_AllowMultipleExternalEjectAttempts_Tip>
+  
+  <RV2_Settings_General_DisplayUnavailableRMBOptions>Display invalid RMB options</RV2_Settings_General_DisplayUnavailableRMBOptions>
+  <RV2_Settings_General_DisplayUnavailableRMBOptions_Tip>Toggle showing unavailable vores with their given reason in the RMB menu</RV2_Settings_General_DisplayUnavailableRMBOptions_Tip>
+  <RV2_Settings_General_ResetAllSettings>Reset all settings</RV2_Settings_General_ResetAllSettings>
+  <RV2_Settings_General_ResetGeneralSettings>Reset general settings</RV2_Settings_General_ResetGeneralSettings>
+  <RV2_Settings_General_FeederVore_Tip>Will allow you to "Reserve" a pawn as prey and then make a third pawn feed that reserved prey to a predator.</RV2_Settings_General_FeederVore_Tip>
+  <!--RV2_Settings_General_PassTick>Pass Tick during vore</RV2_Settings_General_PassTick-->
+  <!--RV2_Settings_General_PassTick_Tip>By default only rare ticks are passed from the predator to the prey, this reduces lag. If you want to ensure that prey tick properly, enable this option, but expect a performance hit!</RV2_Settings_General_PassTick_Tip-->
+  
+  <!-- Settings: Ideology -->
+  <RV2_Settings_Ideology_AutoVoreInterceptChance>Ideology role intercept chance</RV2_Settings_Ideology_AutoVoreInterceptChance>
+  <RV2_Settings_Ideology_AutoVoreInterceptChance_Tip>The chance that - if one is available - a chosen prey or alpha predator make auto-voring pawns target them and use the appropriate role on them. (eg If chosen prey available, pick it and set proposal to Predator role)</RV2_Settings_Ideology_AutoVoreInterceptChance_Tip>
+  <RV2_Settings_Ideology_VoreFeastProposalAcceptanceModifier>Ritual proposal modifier</RV2_Settings_Ideology_VoreFeastProposalAcceptanceModifier>
+  <RV2_Settings_Ideology_VoreFeastProposalAcceptanceModifier_Tip>In a vore feast, all participants spam vore proposals at each other, this can be used to make the voring happen faster and otherwise make proposals made in rituals more likely to be accepted</RV2_Settings_Ideology_VoreFeastProposalAcceptanceModifier_Tip>
+
+  <!-- Settings: Combat -->
+  <RV2_Settings_Combat_GrappleVerbSelectionBaseChance>Grapple move chance</RV2_Settings_Combat_GrappleVerbSelectionBaseChance>
+  <RV2_Settings_Combat_GrappleVerbSelectionBaseChance_Tip>The base % chance that the grapple verb is used when two pawns are in combat. This chance is further modified by quirks.\n\nEven if you set this to 100% the game might not pick the grapple, this is because base game calculates verb selection based on weight - there is currently no way of forcing a 100% chance to pick this quirk without breaking other mods, but a 100% weight will favor the grapple move heavily</RV2_Settings_Combat_GrappleVerbSelectionBaseChance_Tip>
+  <RV2_Settings_Combat_GrappleVerbSelectionMaxChance>Max grapple move chance</RV2_Settings_Combat_GrappleVerbSelectionMaxChance>
+  <RV2_Settings_Combat_GrappleVerbSelectionMaxChance_Tip>The maximum weight that the verb can receive through modifiers. Base game is very very odd with how verb selection weights work, settings this value too high may result in odd combat behaviour!</RV2_Settings_Combat_GrappleVerbSelectionMaxChance_Tip>
+  <RV2_Settings_Combat_GrappleStrengthMeleeSkillDivider>Melee Strength divider</RV2_Settings_Combat_GrappleStrengthMeleeSkillDivider>
+  <RV2_Settings_Combat_GrappleStrengthMeleeSkillDivider_Tip>The grapple strength of a pawn is divided by this value times their melee skill.\n\nExample: \nDefault divider of 5, Pawn has melee skill 7, base grapple strength is 10 -> (7/5)*10 = 14</RV2_Settings_Combat_GrappleStrengthMeleeSkillDivider_Tip>
+  <RV2_Settings_Combat_UseAutoRules>Use auto vore rules</RV2_Settings_Combat_UseAutoRules>
+  <RV2_Settings_Combat_UseAutoRules_Tip>Whether or not the grapple validation logic should use the rules flagges as "auto vore" or not</RV2_Settings_Combat_UseAutoRules_Tip>
+  <RV2_Settings_Combat_DefaultRequiredStruggles>Fallback required struggles</RV2_Settings_Combat_DefaultRequiredStruggles>
+  <RV2_Settings_Combat_DefaultRequiredStruggles_Tip>The amount of successful struggles required for a prey to break free from their predator\n\nThis value will be used as the fallback value for VorePath rules where the VorePathDef does not provide its own defaultRequiredStruggles value</RV2_Settings_Combat_DefaultRequiredStruggles_Tip>
+  <RV2_Settings_Combat_DefaultStruggleChance>Successful struggle chance</RV2_Settings_Combat_DefaultStruggleChance>
+  <RV2_Settings_Combat_DefaultStruggleChance_Tip>The chance that a pawn manages to do a successful struggle during a vore tick. This is NOT the total chance of a prey to break free during struggling!\n\nIf you want a mechanic like that you can set the amount of required struggles to 0 and then lower this chance to a very low value.</RV2_Settings_Combat_DefaultStruggleChance_Tip>
+  <RV2_Settings_Combat_GrapplePawnsShareCell>Grappling pawns share cell</RV2_Settings_Combat_GrapplePawnsShareCell>
+  <RV2_Settings_Combat_GrapplePawnsShareCell_Tip>During vore grapples the attacker and defender are placed on the same cell, when the vore combat stops they will automatically be "pushed" out of that cell in a random direction by the game. This may lead to your pawns getting out-of-position during combat, so you can turn it off.\n\nThis adds realism and looks neat, so you are very uncool if you turn this off B)</RV2_Settings_Combat_GrapplePawnsShareCell_Tip>
+  <RV2_Settings_Combat_GrappleFailureStunDuration>Grapple failure stun duration</RV2_Settings_Combat_GrappleFailureStunDuration>
+  <RV2_Settings_Combat_GrappleFailureStunDuration_Tip>How long (in ticks) an attacker is stunned when their vore grapple fails</RV2_Settings_Combat_GrappleFailureStunDuration_Tip>
+  <RV2_Settings_Combat_UseGrappleGizmoEnabled>"Use Grapple" Gizmo</RV2_Settings_Combat_UseGrappleGizmoEnabled>
+  <RV2_Settings_Combat_ToggleGrappleGizmoEnabled>"Toggle Free Grapple Use" Gizmo</RV2_Settings_Combat_ToggleGrappleGizmoEnabled>
+  <RV2_Settings_Combat_GrappleCanTimeout>Grapple can time-out</RV2_Settings_Combat_GrappleCanTimeout>
+  <RV2_Settings_Combat_GrappleCanTimeout_Tip>This refers to started grapple-fights, if they are not finished before the time-out, the initiator will lose the grapple</RV2_Settings_Combat_GrappleCanTimeout_Tip>
+  <RV2_Settings_Combat_GrappleTimeoutTicks>Grapple timeout ticks</RV2_Settings_Combat_GrappleTimeoutTicks>
+  <RV2_Settings_Combat_GrappleTimeoutTicks_Tip>The time needed before a grapple times out.</RV2_Settings_Combat_GrappleTimeoutTicks_Tip>
+  
+  <RV2_Settings_Combat_GrappleTimeoutExplanation>Grapples will time-out after {0}</RV2_Settings_Combat_GrappleTimeoutExplanation>
+  
+  <!-- stripping enum -->
+  <RV2_Settings_General_StrippingRandom>Random</RV2_Settings_General_StrippingRandom>
+  <RV2_Settings_General_StrippingRandom_Tip>There will be a 50% chance to strip or not strip</RV2_Settings_General_StrippingRandom_Tip>
+  <RV2_Settings_General_StrippingAlways>Always strip</RV2_Settings_General_StrippingAlways>
+  <RV2_Settings_General_StrippingAlways_Tip>The prey will always undress by default</RV2_Settings_General_StrippingAlways_Tip>
+  <RV2_Settings_General_StrippingNever>Never strip</RV2_Settings_General_StrippingNever>
+  <RV2_Settings_General_StrippingNever_Tip>The prey will never undress by default</RV2_Settings_General_StrippingNever_Tip>
+
+  <!-- NotificationType enum -->
+  <RV2_Settings_MessageNeutral>Neutral Message</RV2_Settings_MessageNeutral>
+  <RV2_Settings_MessageThreatSmall>Small Threat Message</RV2_Settings_MessageThreatSmall>
+  <RV2_Settings_MessageThreatBig>Big Threat Message</RV2_Settings_MessageThreatBig>
+  <RV2_Settings_Letter>Letter</RV2_Settings_Letter>
+  <RV2_Settings_LetterThreatSmall>Small Threat Letter</RV2_Settings_LetterThreatSmall>
+  <RV2_Settings_LetterThreatBig>Big Threat Letter</RV2_Settings_LetterThreatBig>
+
+  <!-- Designations -->
+  <RV2_Settings_Designations_Category>RimVore-2 [B] Designations</RV2_Settings_Designations_Category>
+  <RV2_Settings_Designations_ResetDesignations>Reset designations</RV2_Settings_Designations_ResetDesignations>
+  <RV2_Settings_Designations_MinimumAge>Minimum age for vore</RV2_Settings_Designations_MinimumAge>
+  <RV2_Settings_Designations_ColonyRelationOptions>DEFAULTS for roles</RV2_Settings_Designations_ColonyRelationOptions>
+  <RV2_Settings_Designations_RaceVoreOptions>OVERRIDES for custom races</RV2_Settings_Designations_RaceVoreOptions>
+  <RV2_Settings_Designations_AnimalVoreOptions>OVERRIDES for animals</RV2_Settings_Designations_AnimalVoreOptions>
+  <RV2_Settings_Designations_NoHAR>No Humanoid Alien Races loaded</RV2_Settings_Designations_NoHAR>
+
+  <!-- Designation list items -->
+  <RV2_Settings_Designations_DesignatedPredator>Is predator</RV2_Settings_Designations_DesignatedPredator>
+  <RV2_Settings_Designations_DesignatedEndoPrey>Is endo prey</RV2_Settings_Designations_DesignatedEndoPrey>
+  <RV2_Settings_Designations_DesignatedFatalPrey>Is fatal prey</RV2_Settings_Designations_DesignatedFatalPrey>
+  <RV2_Settings_Designations_IgnoreMinimumAge>Ignore minimum age</RV2_Settings_Designations_IgnoreMinimumAge>
+
+  <!-- Relation keys -->
+  <RV2_Settings_Designations_RelationKey_Base>Base</RV2_Settings_Designations_RelationKey_Base>
+  <RV2_Settings_Designations_RelationKey_Colonist>Colonist</RV2_Settings_Designations_RelationKey_Colonist>
+  <RV2_Settings_Designations_RelationKey_TemporaryColonist>Temporary Colonist</RV2_Settings_Designations_RelationKey_TemporaryColonist>
+  <RV2_Settings_Designations_RelationKey_Prisoner>Prisoner</RV2_Settings_Designations_RelationKey_Prisoner>
+  <RV2_Settings_Designations_RelationKey_Raider>Raider</RV2_Settings_Designations_RelationKey_Raider>
+  <RV2_Settings_Designations_RelationKey_Visitor>Visitor</RV2_Settings_Designations_RelationKey_Visitor>
+  <RV2_Settings_Designations_RelationKey_Trader>Trader</RV2_Settings_Designations_RelationKey_Trader>
+  <RV2_Settings_Designations_RelationKey_Mechanoid>Mechanoid</RV2_Settings_Designations_RelationKey_Mechanoid>
+  <RV2_Settings_Designations_RelationKey_WildAnimal>Wild Animal</RV2_Settings_Designations_RelationKey_WildAnimal>
+  <RV2_Settings_Designations_RelationKey_ColonyAnimal>Colony Animal</RV2_Settings_Designations_RelationKey_ColonyAnimal>
+  <RV2_Settings_Designations_RelationKey_WildMan>Wild Human</RV2_Settings_Designations_RelationKey_WildMan>
+
+  <!-- Quirks -->
+  <RV2_Settings_Quirks_Category>RimVore-2 [C] Quirks</RV2_Settings_Quirks_Category>
+  <RV2_Settings_Quirks_Pools_Header>Quirk pools</RV2_Settings_Quirks_Pools_Header>
+  <RV2_Settings_Quirks_PoolInfo_Header>Quirk pool info</RV2_Settings_Quirks_PoolInfo_Header>
+  <RV2_Settings_Quirks_QuirkInfo_Header>Quirk info</RV2_Settings_Quirks_QuirkInfo_Header>
+  <RV2_Settings_Quirks_ResetQuirks>Reset quirks and pools</RV2_Settings_Quirks_ResetQuirks>
+  <RV2_Settings_ResetAllRaritiesPoolList>Reset all quirk rarities in all pools</RV2_Settings_ResetAllRaritiesPoolList>
+  <RV2_Settings_ResetAllRaritiesPool>Reset all quirk rarities in pool</RV2_Settings_ResetAllRaritiesPool>
+  <RV2_Settings_SetAllRaritiesPool>Set all quirk rarities in pool</RV2_Settings_SetAllRaritiesPool>
+  <RV2_Settings_SetAllRaritiesPool_Tip>All quirks in this pool will be set to the given rarity</RV2_Settings_SetAllRaritiesPool_Tip>
+
+  <RV2_Settings_Quirks_PoolInfo_Enabled>Enabled?</RV2_Settings_Quirks_PoolInfo_Enabled>
+  <RV2_Settings_Quirks_PoolInfo_NoPoolSelected>No pool selected</RV2_Settings_Quirks_PoolInfo_NoPoolSelected>
+  <RV2_Settings_Quirks_PoolInfo_PoolName>Name: </RV2_Settings_Quirks_PoolInfo_PoolName>
+  <RV2_Settings_Quirks_PoolInfo_PoolType>Pool Type: </RV2_Settings_Quirks_PoolInfo_PoolType>
+  <RV2_Settings_Quirks_PoolInfo_GenerationOrder>Generation index: </RV2_Settings_Quirks_PoolInfo_GenerationOrder>
+  <RV2_Settings_Quirks_PoolInfo_Description>Description:</RV2_Settings_Quirks_PoolInfo_Description>
+  <RV2_Settings_Quirks_PoolInfo_Quirks>Quirks:</RV2_Settings_Quirks_PoolInfo_Quirks>
+
+  <RV2_Settings_Quirks_QuirkInfo_Enabled>Enabled?</RV2_Settings_Quirks_QuirkInfo_Enabled>
+  <RV2_Settings_Quirks_QuirkInfo_NoQuirkSelected>No quirk selected</RV2_Settings_Quirks_QuirkInfo_NoQuirkSelected>
+  <RV2_Settings_Quirks_PoolInfo_Chance>Chance: </RV2_Settings_Quirks_PoolInfo_Chance>
+  <RV2_Settings_Quirks_PoolInfo_Weight>Weight: </RV2_Settings_Quirks_PoolInfo_Weight>
+  <RV2_Settings_Quirks_PoolInfo_Rarity>Rarity: </RV2_Settings_Quirks_PoolInfo_Rarity>
+  <RV2_Settings_Quirks_PoolInfo_Rarity_TipOverriden>This rarity has been overriden and does not represent the intended rarity in the QuirkDef!</RV2_Settings_Quirks_PoolInfo_Rarity_TipOverriden>
+  <RV2_Settings_Quirks_PoolInfo_Rarity_TipDefault>This rarity is equal to the intended rarity in the QuirkDef</RV2_Settings_Quirks_PoolInfo_Rarity_TipDefault>
+
+  <RV2_Settings_Quirks_RequiredQuirks>Required quirks:</RV2_Settings_Quirks_RequiredQuirks>
+  <RV2_Settings_Quirks_BlockingQuirks>Blocking quirks:</RV2_Settings_Quirks_BlockingQuirks>
+  <RV2_Settings_Quirks_RequiredTraits>Required traits:</RV2_Settings_Quirks_RequiredTraits>
+  <RV2_Settings_Quirks_BlockingTraits>Blocking traits:</RV2_Settings_Quirks_BlockingTraits>
+  <RV2_Settings_Quirks_RequiredKeywords>Required keywords:</RV2_Settings_Quirks_RequiredKeywords>
+  <RV2_Settings_Quirks_BlockingKeywords>Blocking keywords:</RV2_Settings_Quirks_BlockingKeywords>
+  <RV2_Settings_Quirks_ListNone>None</RV2_Settings_Quirks_ListNone>
+  <RV2_Settings_Quirks_QuirkPoolFilter>Quirk pool filter</RV2_Settings_Quirks_QuirkPoolFilter>
+  <RV2_Settings_Quirks_QuirkFilter>Quirk / rarity filter</RV2_Settings_Quirks_QuirkFilter>
+
+  <!-- Rules -->
+  <RV2_Settings_Rules_Category>RimVore-2 [B] Rules</RV2_Settings_Rules_Category>
+  <RV2_Settings_Rules_RulesHeader>Rules</RV2_Settings_Rules_RulesHeader>
+
+  <RV2_Settings_Rules_Reset>Reset rules</RV2_Settings_Rules_Reset>
+  <RV2_Settings_Rules_SavePreset>Save preset</RV2_Settings_Rules_SavePreset>
+  <RV2_Settings_Rules_LoadPreset>Load preset</RV2_Settings_Rules_LoadPreset>
+  <RV2_Settings_Rules_RemovePreset>Remove preset</RV2_Settings_Rules_RemovePreset>
+  <RV2_Settings_Rules_PresetName>Name: </RV2_Settings_Rules_PresetName>
+  
+  <RV2_Settings_Rules_TargetHeader>Target criteria</RV2_Settings_Rules_TargetHeader>
+  <RV2_Settings_Rules_Target_PawnPickerNoMapActive>When playing on a map, you can select a pawn here to use as an example for the rules</RV2_Settings_Rules_Target_PawnPickerNoMapActive>
+  <RV2_Settings_Rules_Target_PawnPickerLabel>Currently selected pawn: </RV2_Settings_Rules_Target_PawnPickerLabel>
+  <RV2_Settings_Rules_Target_PawnPickerPickNew>Pick new</RV2_Settings_Rules_Target_PawnPickerPickNew>
+  <RV2_Settings_Rules_Target_PawnPickerUnselect>Unselect</RV2_Settings_Rules_Target_PawnPickerUnselect>
+  <RV2_Settings_Rule_RuleTargetComponent_Inverted>Inverted</RV2_Settings_Rule_RuleTargetComponent_Inverted>
+  <RV2_Settings_Rule_RuleTargetComponent_NewComponent>New Component</RV2_Settings_Rule_RuleTargetComponent_NewComponent>
+  <RV2_Settings_Rule_RuleTargetComponent_Everyone>Everyone</RV2_Settings_Rule_RuleTargetComponent_Everyone>
+  <RV2_Settings_Rule_RuleTargetComponent_ColonyRelation>Colony Relation</RV2_Settings_Rule_RuleTargetComponent_ColonyRelation>
+  <RV2_Settings_Rule_RuleTargetComponent_Race>Race</RV2_Settings_Rule_RuleTargetComponent_Race>
+  <RV2_Settings_Rule_RuleTargetComponent_AnimalRace>Animal Race</RV2_Settings_Rule_RuleTargetComponent_AnimalRace>
+  <RV2_Settings_Rule_RuleTargetComponent_Diet>Diet</RV2_Settings_Rule_RuleTargetComponent_Diet>
+  <RV2_Settings_Rule_RuleTargetComponent_Gender>Gender</RV2_Settings_Rule_RuleTargetComponent_Gender>
+  <RV2_Settings_Rule_RuleTargetComponent_WorkType>Work Type</RV2_Settings_Rule_RuleTargetComponent_WorkType>
+  <RV2_Settings_Rule_RuleTargetComponent_Precept>Ideology Precept</RV2_Settings_Rule_RuleTargetComponent_Precept>
+  <RV2_Settings_Rule_RuleTargetComponent_Hediff>Hediff</RV2_Settings_Rule_RuleTargetComponent_Hediff>
+  <RV2_Settings_Rule_RuleTargetComponent_Ability>Ability</RV2_Settings_Rule_RuleTargetComponent_Ability>
+  <RV2_Settings_Rule_RuleTargetComponent_Apparel>Apparel</RV2_Settings_Rule_RuleTargetComponent_Apparel>
+  <RV2_Settings_Rule_RuleTargetComponent_Quirk>Quirk</RV2_Settings_Rule_RuleTargetComponent_Quirk>
+  <RV2_Settings_Rule_RuleTargetComponent_RoyalTitle_Faction>Faction</RV2_Settings_Rule_RuleTargetComponent_RoyalTitle_Faction>
+  <RV2_Settings_Rule_RuleTargetComponent_RoyalTitle>Royal Title</RV2_Settings_Rule_RuleTargetComponent_RoyalTitle>
+  <RV2_Settings_Rule_RuleTargetComponent_Xenotype>Xenotype</RV2_Settings_Rule_RuleTargetComponent_Xenotype>
+
+  <RV2_Settings_Rule_RuleTargetComponent_Combinator>Combination</RV2_Settings_Rule_RuleTargetComponent_Combinator>
+  <RV2_Settings_Rule_RuleTargetComponent_Combinator_And>And</RV2_Settings_Rule_RuleTargetComponent_Combinator_And>
+  <RV2_Settings_Rule_RuleTargetComponent_Combinator_Or>Or</RV2_Settings_Rule_RuleTargetComponent_Combinator_Or>
+
+  <RV2_Settings_Rule_RuleExplanation_NoPawnSelected>Select a pawn to see if the rules would apply to them.</RV2_Settings_Rule_RuleExplanation_NoPawnSelected>
+  <RV2_Settings_Rule_RuleExplanation_Everyone>Always applies</RV2_Settings_Rule_RuleExplanation_Everyone>
+  <RV2_Settings_Rule_RuleExplanation_ColonyRelation>{0} has these relations: {1}</RV2_Settings_Rule_RuleExplanation_ColonyRelation>
+  <RV2_Settings_Rule_RuleExplanation_Race>{0} has race: {1}</RV2_Settings_Rule_RuleExplanation_Race>
+  <RV2_Settings_Rule_RuleExplanation_NotAnimal>{0} is not an animal</RV2_Settings_Rule_RuleExplanation_NotAnimal>
+  <RV2_Settings_Rule_RuleExplanation_AnimalRace>{0} is animal pawn kind: {1}</RV2_Settings_Rule_RuleExplanation_AnimalRace>
+  <RV2_Settings_Rule_RuleExplanation_Diet>{0} has diet: {1}</RV2_Settings_Rule_RuleExplanation_Diet>
+  <RV2_Settings_Rule_RuleExplanation_Gender>{0} has gender: {1}</RV2_Settings_Rule_RuleExplanation_Gender>
+  <RV2_Settings_Rule_RuleExplanation_WorkType_NeverWorks>{0} never works</RV2_Settings_Rule_RuleExplanation_WorkType_NeverWorks>
+  <RV2_Settings_Rule_RuleExplanation_WorkType>{0} has work types: {1}</RV2_Settings_Rule_RuleExplanation_WorkType>
+  <RV2_Settings_Rule_RuleExplanation_Precept_NoIdeo>{0} has no ideology</RV2_Settings_Rule_RuleExplanation_Precept_NoIdeo>
+  <RV2_Settings_Rule_RuleExplanation_Precept>{0}'s ideology {1} has precepts: {2}</RV2_Settings_Rule_RuleExplanation_Precept>
+  <RV2_Settings_Rule_RuleExplanation_Hediff_NoHealth>{0} has no health</RV2_Settings_Rule_RuleExplanation_Hediff_NoHealth>
+  <RV2_Settings_Rule_RuleExplanation_Hediff>{0} has hediffs: {1}</RV2_Settings_Rule_RuleExplanation_Hediff>
+  <RV2_Settings_Rule_RuleExplanation_Ability_NoAbilities>{0} has no abilities</RV2_Settings_Rule_RuleExplanation_Ability_NoAbilities>
+  <RV2_Settings_Rule_RuleExplanation_Ability>{0} has abilities: {1}</RV2_Settings_Rule_RuleExplanation_Ability>
+  <RV2_Settings_Rule_RuleExplanation_Apparel_NoApparel>{0} has no apparel</RV2_Settings_Rule_RuleExplanation_Apparel_NoApparel>
+  <RV2_Settings_Rule_RuleExplanation_Apparel>{0} has apparel: {1}</RV2_Settings_Rule_RuleExplanation_Apparel>
+  <RV2_Settings_Rule_RuleExplanation_Quirk_NoQuirks>{0} has no quirks</RV2_Settings_Rule_RuleExplanation_Quirk_NoQuirks>
+  <RV2_Settings_Rule_RuleExplanation_Quirk>{0} has quirks: {1}</RV2_Settings_Rule_RuleExplanation_Quirk>
+  <RV2_Settings_Rule_RuleExplanation_RoyalTitle_NoTitle>{0} has no title</RV2_Settings_Rule_RuleExplanation_RoyalTitle_NoTitle>
+  <RV2_Settings_Rule_RuleExplanation_RoyalTitle>{0} has title: {1}</RV2_Settings_Rule_RuleExplanation_RoyalTitle>
+  <RV2_Settings_Rule_RuleExplanation_NoXenotype>{0} has no xeno type</RV2_Settings_Rule_RuleExplanation_NoXenotype>
+  <RV2_Settings_Rule_RuleExplanation_Xenotype>{0} has xeno type: {1}</RV2_Settings_Rule_RuleExplanation_Xenotype>
+  
+  <RV2_Settings_Rule_RuleExplanation_DoesNotApply>{0} is currently NOT targeted by the parameters</RV2_Settings_Rule_RuleExplanation_DoesNotApply>
+  <RV2_Settings_Rule_RuleExplanation_DoesApply>{0} is currently targeted by the parameters</RV2_Settings_Rule_RuleExplanation_DoesApply>
+
+  <RV2_Settings_Rules_Name>Rule name</RV2_Settings_Rules_Name>
+  <RV2_Settings_Rules_IdentifierType>Type</RV2_Settings_Rules_IdentifierType>
+  <RV2_Settings_Rules_IdentifierType_Tip>What kind of pawn are the rules for?</RV2_Settings_Rules_IdentifierType_Tip>
+  <RV2_Settings_Rules_IdentifierRole>Role</RV2_Settings_Rules_IdentifierRole>
+  <RV2_Settings_Rules_IdentifierRole_Tip>Which role does the pawn play for the rule?</RV2_Settings_Rules_IdentifierRole_Tip>
+  <RV2_Settings_Rules_Save>Save</RV2_Settings_Rules_Save>
+  <RV2_Settings_Rules_OK>OK</RV2_Settings_Rules_OK>
+  <RV2_Settings_Rules_Cancel>Cancel</RV2_Settings_Rules_Cancel>
+  <RV2_Settings_Rules_Controls>Edit rule order</RV2_Settings_Rules_Controls>
+
+  <RV2_Settings_Rules_RuleStateOn>Currently ignoring previous rules and setting to "Enabled"</RV2_Settings_Rules_RuleStateOn>
+  <RV2_Settings_Rules_RuleStateOff>Currently ignoring previous rules and setting to "Disabled"</RV2_Settings_Rules_RuleStateOff>
+  <RV2_Settings_Rules_RuleStateCopy>Currently copying previous rules</RV2_Settings_Rules_RuleStateCopy>
+  
+  <RV2_Settings_Rules_General>General rules</RV2_Settings_Rules_General>
+  <RV2_Settings_Rules_ConsiderMinimumAge>Consider minimum age?</RV2_Settings_Rules_ConsiderMinimumAge>
+  <RV2_Settings_Rules_MinimumAge>Minimum age</RV2_Settings_Rules_MinimumAge>
+  <RV2_Settings_Rules_Designation>Default Designations</RV2_Settings_Rules_Designation>
+  <!--<RV2_Settings_Rules_DesignationPredator>Predator</RV2_Settings_Rules_DesignationPredator>-->
+  <!--<RV2_Settings_Rules_DesignationPredator_Tip>Determines if a pawn is automatically designated as a predator</RV2_Settings_Rules_DesignationPredator_Tip>-->
+  <!--<RV2_Settings_Rules_DesignationEndoPrey>Endo Prey</RV2_Settings_Rules_DesignationEndoPrey>-->
+  <!--<RV2_Settings_Rules_DesignationEndoPrey_Tip>Determines if a pawn is automatically designated as a non-fatal prey</RV2_Settings_Rules_DesignationEndoPrey_Tip>-->
+  <!--<RV2_Settings_Rules_DesignationFatalPrey>Fatal Prey</RV2_Settings_Rules_DesignationFatalPrey>-->
+  <!--<RV2_Settings_Rules_DesignationFatalPrey_Tip>Determines if a pawn is automatically designated as a fatal prey</RV2_Settings_Rules_DesignationFatalPrey_Tip>-->
+  <RV2_settings_Rules_UsesVorePathRules>Use path rules</RV2_settings_Rules_UsesVorePathRules>
+  <RV2_settings_Rules_UsesVorePathRules_Tip>With this option specific vore paths can be enabled or disabled.</RV2_settings_Rules_UsesVorePathRules_Tip>
+  <RV2_settings_Rules_CanBeProposedTo>Can be proposed to</RV2_settings_Rules_CanBeProposedTo>
+  <RV2_settings_Rules_CanBeProposedTo_Tip>Allow vore proposals directed at this pawn? This does not imply predator or prey roles!</RV2_settings_Rules_CanBeProposedTo_Tip>
+  <RV2_settings_Rules_CanForceFailedProposals>Can fight after failed vore proposals</RV2_settings_Rules_CanForceFailedProposals>
+  <RV2_settings_Rules_CanForceFailedProposals_Tip>Allow this pawn to fight other pawns if they deny this pawns vore proposal. Upon winning the vore fight, the initiator will then vore the target.\nThis does not imply predator or prey roles!\nThis may lead to this pawn being injured.</RV2_settings_Rules_CanForceFailedProposals_Tip>
+  <RV2_settings_Rules_CanBeForcedFailedProposals>Can be fought after failed vore proposals</RV2_settings_Rules_CanBeForcedFailedProposals>
+  <RV2_settings_Rules_CanBeForcedFailedProposals_Tip>Allow this pawn to be fought after other denying a vore proposal. If this pawn loses the fight, the initiator will vore their target.\nThis does not imply predator or prey roles!\nThis may lead to this pawn being injured.</RV2_settings_Rules_CanBeForcedFailedProposals_Tip>
+  <RV2_settings_Rules_CanBeForcedIfDowned>Can be forced if downed</RV2_settings_Rules_CanBeForcedIfDowned>
+  <RV2_settings_Rules_CanBeForcedIfDowned_Tip>If this pawn is downed and another colonist proposes vore to them, they will automatically accept the proposal.\nThis does not imply predator or prey roles!</RV2_settings_Rules_CanBeForcedIfDowned_Tip>
+
+  <RV2_Settings_Rules_VorePathsHeader>Vore Paths Rules</RV2_Settings_Rules_VorePathsHeader>
+  <RV2_Settings_Rules_VorePathsEnableAll>Enable all</RV2_Settings_Rules_VorePathsEnableAll>
+  <RV2_Settings_Rules_VorePathsDisableAll>Disable all</RV2_Settings_Rules_VorePathsDisableAll>
+  <RV2_Settings_Rules_Enabled>Enabled?</RV2_Settings_Rules_Enabled>
+  <RV2_Settings_Rules_Enabled_Tip>Allows you to disable the VorePath entirely for the pawns</RV2_Settings_Rules_Enabled_Tip>
+  <RV2_Settings_Rules_AllowedInAutoVore>Auto-vore?</RV2_Settings_Rules_AllowedInAutoVore>
+  <RV2_Settings_Rules_AllowedInAutoVore_Tip>Disabling this means the pawns can not use this path for automatically initiated vore</RV2_Settings_Rules_AllowedInAutoVore_Tip>
+  <RV2_Settings_Rules_Container>Container</RV2_Settings_Rules_Container>
+  <RV2_Settings_Rules_Container_Tip>Setting this will "wrap" the products of this vore path. Normally this is to be used to contain the products of digestive vore.</RV2_Settings_Rules_Container_Tip>
+  <RV2_Settings_Rules_CorpseProcessing>Corpse</RV2_Settings_Rules_CorpseProcessing>
+  <RV2_Settings_Rules_CorpseProcessing_Tip>This controls how produced corpses are treated when they are put into the container. This does not affect items or apparel carried by the pawn, only the corpse itself!\n\nDessicate - Produces skeletons\nRot - Sets the corpse to half of its rot time to become a skeleton\nDestroy - Removes the corpse entirely\nNone - Leaves the corpse alone.</RV2_Settings_Rules_CorpseProcessing_Tip>
+  <RV2_Settings_Rules_StruggleForceMode>Struggle</RV2_Settings_Rules_StruggleForceMode>
+  <RV2_Settings_Rules_StruggleForceMode_Tip>The occasion in which prey will struggle when they are vored with this vore path.\n\Vore is considered forced when voring downed pawns, forcing proposals or being vored by wild animals and raiders</RV2_Settings_Rules_StruggleForceMode_Tip>
+  <RV2_Settings_Rules_RequiredStruggles>Required struggles</RV2_Settings_Rules_RequiredStruggles>
+  <RV2_Settings_Rules_RequiredStruggles_Tip>How many successful struggles the prey needs to escape their predator</RV2_Settings_Rules_RequiredStruggles_Tip>
+  
+  <RV2_Settings_Rules_AutoVoreOn>Currently allowed to automatically initiate vore\nClick to turn off</RV2_Settings_Rules_AutoVoreOn>
+  <RV2_Settings_Rules_AutoVoreOff>Currently not allowed to automatically initiate vore\nClick to turn on</RV2_Settings_Rules_AutoVoreOff>
+  <RV2_Settings_Rules_DesignatedPredatorOn>Currently automatically designated as predator\nClick to turn off</RV2_Settings_Rules_DesignatedPredatorOn>
+  <RV2_Settings_Rules_DesignatedPredatorOff>Currently automatically designated as non-predator\nClick to turn on</RV2_Settings_Rules_DesignatedPredatorOff>
+  <RV2_Settings_Rules_DesignatedEndoPreyOn>Currently automatically designated as endo prey\nClick to turn off</RV2_Settings_Rules_DesignatedEndoPreyOn>
+  <RV2_Settings_Rules_DesignatedEndoPreyOff>Currently automatically designated as non endo prey\nClick to turn on</RV2_Settings_Rules_DesignatedEndoPreyOff>
+  <RV2_Settings_Rules_DesignatedFatalPreyOn>Currently automatically designated as fatal prey\nClick to turn off</RV2_Settings_Rules_DesignatedFatalPreyOn>
+  <RV2_Settings_Rules_DesignatedFatalPreyOff>Currently automatically designated as non fatal prey\nClick to turn on</RV2_Settings_Rules_DesignatedFatalPreyOff>
+
+
+  <RV2_Settings_ChangePrompt_DefaultStruggleForceMode>The default struggle mode has changed. Would you like to apply this change to all existing vore path settings? \n\nThis will set all settings with "{0}" to "{1}", but won't touch any other ones.</RV2_Settings_ChangePrompt_DefaultStruggleForceMode>
+
+
+
+
+</LanguageData>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Comfort -->
+  <RimVore2.RollPresetDef>
+    <defName>IncreaseNeed_Predator_Comfort</defName>
+    <successChance>0.6</successChance>
+    <strength>0.02~0.04</strength>
+    <strengthModifiers>
+      <li Class="RimVore2.RollModifier_VoreSpeed"></li>
+    </strengthModifiers>
+    <actionsOnSuccess>
+      <li Class="RimVore2.RollAction_IncreaseNeed">
+        <target>Predator</target>
+        <need>Comfort</need>
+      </li>
+    </actionsOnSuccess>
+  </RimVore2.RollPresetDef>
+
+  <RimVore2.RollPresetDef>
+    <defName>IncreaseNeed_Prey_Comfort</defName>
+    <successChance>0.6</successChance>
+    <strength>0.02~0.04</strength>
+    <strengthModifiers>
+      <li Class="RimVore2.RollModifier_VoreSpeed"></li>
+    </strengthModifiers>
+    <actionsOnSuccess>
+      <li Class="RimVore2.RollAction_IncreaseNeed">
+        <target>Prey</target>
+        <need>Comfort</need>
+      </li>
+    </actionsOnSuccess>
+  </RimVore2.RollPresetDef>
+  
+  <!-- Rest -->
+  <RimVore2.RollPresetDef>
+    <defName>IncreaseNeed_Prey_Rest</defName>
+    <interval>1</interval>
+    <strength>0.005~0.01</strength>
+    <strengthModifiers>
+      <li Class="RimVore2.RollModifier_VoreSpeed"></li>
+    </strengthModifiers>
+    <actionsOnSuccess>
+      <li Class="RimVore2.RollAction_IncreaseNeed">
+        <target>Prey</target>
+        <need>Rest</need>
+      </li>
+    </actionsOnSuccess>
+  </RimVore2.RollPresetDef>
+  
+  <!-- Food -->
+  <RimVore2.RollPresetDef ParentName="Digest_StrengthModifiers">
+    <defName>IncreaseNeed_Predator_Food</defName>
+    <strength>0.003~0.01</strength>
+    <actionsOnSuccess>
+      <li Class="RimVore2.RollAction_IncreaseNeed">
+        <target>Predator</target>
+        <need>Food</need>
+      </li>
+    </actionsOnSuccess>
+  </RimVore2.RollPresetDef>
+</Defs>

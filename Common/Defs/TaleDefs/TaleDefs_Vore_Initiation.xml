@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <TaleDef Abstract="True" Name="RV2_VoreInitiation_Base" ParentName="RV2_TaleBase">
+    <label>initiated vore</label>
+    <taleClass>Tale_DoublePawnAndDef</taleClass>
+    <type>Volatile</type>
+    <firstPawnSymbol>PREDATOR</firstPawnSymbol>
+    <secondPawnSymbol>PREY</secondPawnSymbol>
+    <defSymbol>VOREPATH</defSymbol>
+    <baseInterest>2</baseInterest>
+    <rulePack>
+      <rulesStrings>
+        <!-- Used like: "This illustration tells the story of [tale_noun] -->
+        <li>RV2_init_tale_noun->[PREDATOR_definite] [RV2_init_predVerb] [PREY_definite]</li>
+        <li>RV2_init_tale_noun->[PREDATOR_definite] [RV2_init_predVerb] [PREY_definite] with [PREDATOR_possessive] [RV2_bodypart]</li>
+        <li>RV2_init_tale_noun->[PREDATOR_definite] [RV2_init_predVerb] [PREY_definite] using [VOREPATH_label]</li>
+        <li>RV2_init_tale_noun->[PREDATOR_definite] [RV2_init_predVerb] [PREY_definite] [RV2_adverb]</li>
+        <li>RV2_init_tale_noun->[PREDATOR_definite] [RV2_init_predVerb] [PREY_definite] [RV2_addendum]</li>
+        <li>RV2_init_tale_noun->[PREY_definite] [RV2_init_preyVerb] by [PREDATOR_definite]</li>
+        <li>RV2_init_tale_noun->[PREY_definite] [RV2_init_preyVerb] by [PREDATOR_definite]'s [RV2_bodypart]</li>
+        <li>tale_noun->[RV2_init_tale_noun]</li>
+
+        <!-- Used like: "This piece resembles [image]" -->
+        <li>RV2_init_image->[PREDATOR_definite] [RV2_init_predVerb] [PREY_definite]</li>
+        <li>RV2_init_image->[PREY_definite] [RV2_init_preyVerb] [PREDATOR_definite]</li>
+        <li>RV2_init_image->[PREDATOR_definite] stretching [PREDATOR_possessive] [RV2_bodypart]</li>
+        <li>RV2_init_image->[PREDATOR_definite] stretching [PREDATOR_possessive] [RV2_bodypart] to fit [PREY_definite]</li>
+        <li>RV2_init_image->[PREY_definite] disappearing into the [RV2_bodypart] of [PREDATOR_definite] </li>
+        <li>RV2_init_image->[PREDATOR_definite] with [PREY_definite] stuck partway inside [PREDATOR_possessive] [RV2_bodypart]</li>
+        <li>RV2_init_image->[PREY_definite] being drawn deeper [PREDATOR_possessive] [RV2_bodypart]</li>
+        <li>RV2_init_image->[PREDATOR_definite] with [PREDATOR_possessive] [RV2_bodypart] around [PREY_definite]</li>
+        <li>RV2_init_image->[PREDATOR_definite] with [PREY_definite] barely sticking out from [PREDATOR_possessive] [RV2_bodypart]</li>
+        <li>image->[RV2_init_image]</li>
+
+        <!-- Randomly appear in descriptions, these are their own full sentence, no context given -->
+        <li>RV2_init_desc_sentence->[PREY_definite] gave off one last yelp before disappearing.</li>
+        <li>RV2_init_desc_sentence->[PREY_definite] is now merely a bulge in [PREDATOR_definite].</li>
+        <li>RV2_init_desc_sentence->[PREY_definite] is now merely a bulge in [PREDATOR_definite]'s [RV2_bodypart].</li>
+        <li>RV2_init_desc_sentence->[PREDATOR_definite] is doing this to [PREY_definite] [RV2_addendum].</li>
+        <li>RV2_init_desc_sentence->[PREDATOR_definite] looks [RV2_adjective].</li>
+	<li>RV2_init_desc_sentence->[PREDATOR_definite] is feeling the stretch in [PREDATOR_possessive] [RV2_bodypart].</li>
+        <li>desc_sentence->[RV2_init_desc_sentence]</li>
+
+        <!-- The placeholders for tale_noun, image and desc_sentence-->
+        <li>RV2_init_predVerb->voring</li>
+
+        <li>RV2_init_preyVerb->being vored by</li>
+        <li>RV2_init_preyVerb->being [RV2_adverb] vored by</li>
+        <li>RV2_init_preyVerb->disappearing in</li>
+        <li>RV2_init_preyVerb->vanishing into</li>
+        
+        <li>RV2_adverb->happily</li>
+        <li>RV2_adverb->maliciously</li>
+        <li>RV2_addendum->with [RV2_adjective] intent</li>
+        <li>RV2_adjective->happy</li>
+        <li>RV2_adjective->malicious</li>
+      </rulesStrings>
+    </rulePack>
+  </TaleDef>
+
+  <!-- digest -->
+  <TaleDef ParentName="RV2_VoreInitiation_Base">
+    <defName>RV2_VoreInitiation_OralDigest</defName>
+    <rulePack>
+      <include>
+        <li>RV2_Goal_Digest</li>
+        <li>RV2_Type_Oral</li>
+      </include>
+    </rulePack>
+  </TaleDef>
+  <TaleDef ParentName="RV2_VoreInitiation_Base">
+    <defName>RV2_VoreInitiation_AnalDigest</defName>
+    <rulePack>
+      <include>
+        <li>RV2_Goal_Digest</li>
+        <li>RV2_Type_Anal</li>
+      </include>
+    </rulePack>
+  </TaleDef>
+  <!-- pleasure -->
+  <TaleDef ParentName="RV2_VoreInitiation_Base">
+    <defName>RV2_VoreInitiation_OralPleasure</defName>
+    <rulePack>
+      <include>
+        <li>RV2_Goal_Pleasure</li>
+        <li>RV2_Type_Oral</li>
+      </include>
+    </rulePack>
+  </TaleDef>
+  <!-- ESEGN: Full tour -->
+  <TaleDef ParentName="RV2_VoreInitiation_Base">
+    <defName>RV2_VoreInitiation_FullTourPleasure</defName>
+    <rulePack>
+      <include>
+        <li>RV2_Goal_Pleasure</li>
+        <li>RV2_Type_FullTour</li>
+      </include>
+    </rulePack>
+  </TaleDef>
+  <TaleDef ParentName="RV2_VoreInitiation_Base">
+    <defName>RV2_VoreInitiation_AnalPleasure</defName>
+    <rulePack>
+      <include>
+        <li>RV2_Goal_Pleasure</li>
+        <li>RV2_Type_Anal</li>
+      </include>
+    </rulePack>
+  </TaleDef>
+  <TaleDef ParentName="RV2_VoreInitiation_Base">
+    <defName>RV2_VoreInitiation_VaginalPleasure</defName>
+    <rulePack>
+      <include>
+        <li>RV2_Goal_Pleasure</li>
+        <li>RV2_Type_Vaginal</li>
+      </include>
+    </rulePack>
+  </TaleDef>
+  <TaleDef ParentName="RV2_VoreInitiation_Base">
+    <defName>RV2_VoreInitiation_CockPleasure</defName>
+    <rulePack>
+      <include>
+        <li>RV2_Goal_Pleasure</li>
+        <li>RV2_Type_Cock</li>
+      </include>
+    </rulePack>
+  </TaleDef>
+  <TaleDef ParentName="RV2_VoreInitiation_Base">
+    <defName>RV2_VoreInitiation_NipplePleasure</defName>
+    <rulePack>
+      <include>
+        <li>RV2_Goal_Pleasure</li>
+        <li>RV2_Type_Nipple</li>
+      </include>
+    </rulePack>
+  </TaleDef>
+  <!-- store -->
+  <TaleDef ParentName="RV2_VoreInitiation_Base">
+    <defName>RV2_VoreInitiation_OralStore</defName>
+    <rulePack>
+      <include>
+        <li>RV2_Goal_Store</li>
+        <li>RV2_Type_Oral</li>
+      </include>
+    </rulePack>
+  </TaleDef>
+  <!-- ESEGN: Full tour -->
+  <TaleDef ParentName="RV2_VoreInitiation_Base">
+    <defName>RV2_VoreInitiation_FullTourStore</defName>
+    <rulePack>
+      <include>
+        <li>RV2_Goal_Store</li>
+        <li>RV2_Type_FullTour</li>
+      </include>
+    </rulePack>
+  </TaleDef>
+  <TaleDef ParentName="RV2_VoreInitiation_Base">
+    <defName>RV2_VoreInitiation_AnalStore</defName>
+    <rulePack>
+      <include>
+        <li>RV2_Goal_Store</li>
+        <li>RV2_Type_Anal</li>
+      </include>
+    </rulePack>
+  </TaleDef>
+  <TaleDef ParentName="RV2_VoreInitiation_Base">
+    <defName>RV2_VoreInitiation_VaginalStore</defName>
+    <rulePack>
+      <include>
+        <li>RV2_Goal_Store</li>
+        <li>RV2_Type_Vaginal</li>
+      </include>
+    </rulePack>
+  </TaleDef>
+  <TaleDef ParentName="RV2_VoreInitiation_Base">
+    <defName>RV2_VoreInitiation_CockStore</defName>
+    <rulePack>
+      <include>
+        <li>RV2_Goal_Store</li>
+        <li>RV2_Type_Cock</li>
+      </include>
+    </rulePack>
+  </TaleDef>
+  <TaleDef ParentName="RV2_VoreInitiation_Base">
+    <defName>RV2_VoreInitiation_NippleStore</defName>
+    <rulePack>
+      <include>
+        <li>RV2_Goal_Store</li>
+        <li>RV2_Type_Nipple</li>
+      </include>
+    </rulePack>
+  </TaleDef>
+  <!-- hold -->
+  <TaleDef ParentName="RV2_VoreInitiation_Base">
+    <defName>RV2_VoreInitiation_OralHold</defName>
+    <rulePack>
+      <include>
+        <li>RV2_Goal_Hold</li>
+        <li>RV2_Type_Oral</li>
+      </include>
+    </rulePack>
+  </TaleDef>
+  <!-- ESEGN: Full tour -->
+  <TaleDef ParentName="RV2_VoreInitiation_Base">
+    <defName>RV2_VoreInitiation_FullTourHold</defName>
+    <rulePack>
+      <include>
+        <li>RV2_Goal_Hold</li>
+        <li>RV2_Type_FullTour</li>
+      </include>
+    </rulePack>
+  </TaleDef>
+  <TaleDef ParentName="RV2_VoreInitiation_Base">
+    <defName>RV2_VoreInitiation_AnalHold</defName>
+    <rulePack>
+      <include>
+        <li>RV2_Goal_Hold</li>
+        <li>RV2_Type_Anal</li>
+      </include>
+    </rulePack>
+  </TaleDef>
+  <TaleDef ParentName="RV2_VoreInitiation_Base">
+    <defName>RV2_VoreInitiation_VaginalHold</defName>
+    <rulePack>
+      <include>
+        <li>RV2_Goal_Hold</li>
+        <li>RV2_Type_Vaginal</li>
+      </include>
+    </rulePack>
+  </TaleDef>
+  <TaleDef ParentName="RV2_VoreInitiation_Base">
+    <defName>RV2_VoreInitiation_CockHold</defName>
+    <rulePack>
+      <include>
+        <li>RV2_Goal_Hold</li>
+        <li>RV2_Type_Cock</li>
+      </include>
+    </rulePack>
+  </TaleDef>
+  <TaleDef ParentName="RV2_VoreInitiation_Base">
+    <defName>RV2_VoreInitiation_NippleHold</defName>
+    <rulePack>
+      <include>
+        <li>RV2_Goal_Hold</li>
+        <li>RV2_Type_Nipple</li>
+      </include>
+    </rulePack>
+  </TaleDef>
+  <!-- convert -->
+  <TaleDef ParentName="RV2_VoreInitiation_Base">
+    <defName>RV2_VoreInitiation_VaginalConvertLube</defName>
+    <rulePack>
+      <include>
+        <li>RV2_Goal_ConvertLube</li>
+        <li>RV2_Type_Vaginal</li>
+      </include>
+    </rulePack>
+  </TaleDef>
+  <TaleDef ParentName="RV2_VoreInitiation_Base">
+    <defName>RV2_VoreInitiation_CockConvertSperm</defName>
+    <rulePack>
+      <include>
+        <li>RV2_Goal_ConvertSperm</li>
+        <li>RV2_Type_Cock</li>
+      </include>
+    </rulePack>
+  </TaleDef>
+  <TaleDef ParentName="RV2_VoreInitiation_Base">
+    <defName>RV2_VoreInitiation_NippleConvertMilk</defName>
+    <rulePack>
+      <include>
+        <li>RV2_Goal_ConvertMilk</li>
+        <li>RV2_Type_Nipple</li>
+      </include>
+    </rulePack>
+  </TaleDef>
+  <!-- reform -->
+  <TaleDef ParentName="RV2_VoreInitiation_Base">
+    <defName>RV2_VoreInitiation_VaginalReform</defName>
+    <rulePack>
+      <include>
+        <li>RV2_Goal_Reform</li>
+        <li>RV2_Type_Vaginal</li>
+      </include>
+    </rulePack>
+  </TaleDef>
+  <!-- heal -->
+  <TaleDef ParentName="RV2_VoreInitiation_Base">
+    <defName>RV2_VoreInitiation_OralHeal</defName>
+    <rulePack>
+      <include>
+        <li>RV2_Goal_Heal</li>
+        <li>RV2_Type_Oral</li>
+      </include>
+    </rulePack>
+  </TaleDef>
+  <!-- ESEGN: Full tour -->
+  <TaleDef ParentName="RV2_VoreInitiation_Base">
+    <defName>RV2_VoreInitiation_FullTourHeal</defName>
+    <rulePack>
+      <include>
+        <li>RV2_Goal_Heal</li>
+        <li>RV2_Type_FullTour</li>
+      </include>
+    </rulePack>
+  </TaleDef>
+  <TaleDef ParentName="RV2_VoreInitiation_Base">
+    <defName>RV2_VoreInitiation_VaginalHeal</defName>
+    <rulePack>
+      <include>
+        <li>RV2_Goal_Heal</li>
+        <li>RV2_Type_Vaginal</li>
+      </include>
+    </rulePack>
+  </TaleDef>
+  <TaleDef ParentName="RV2_VoreInitiation_Base">
+    <defName>RV2_VoreInitiation_CockHeal</defName>
+    <rulePack>
+      <include>
+        <li>RV2_Goal_Heal</li>
+        <li>RV2_Type_Cock</li>
+      </include>
+    </rulePack>
+  </TaleDef>
+  <TaleDef ParentName="RV2_VoreInitiation_Base">
+    <defName>RV2_VoreInitiation_NippleHeal</defName>
+    <rulePack>
+      <include>
+        <li>RV2_Goal_Heal</li>
+        <li>RV2_Type_Nipple</li>
+      </include>
+    </rulePack>
+  </TaleDef>
+</Defs>

@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RitualBehaviorDef Abstract="True" Name="RV2_RitualBehavior_Base">
+    <durationTicks>15000</durationTicks>
+    <letterTitle>{RITUAL_labelCap}</letterTitle>
+    <letterText>A vore ritual is underway.</letterText>
+    <stages>
+      <li Class="RitualStage_InteractWithRole">
+        <!-- v this little fucker took 4 days to find -->
+        <ignoreDurationToFinishAfterStage>true</ignoreDurationToFinishAfterStage>
+        <targets>
+          <li>
+            <pawnId>initiator</pawnId>
+            <targetId>target</targetId>
+          </li>
+        </targets>
+        <defaultDuty>Spectate</defaultDuty>
+        <targetId>target</targetId>
+        <endTriggers>
+          <li Class="StageEndTrigger_PawnDeliveredOrNotValid"/>
+        </endTriggers>
+        <failTriggers>
+          <li Class="StageFailTrigger_TargetPawnUnreachable">
+            <takerId>initiator</takerId>
+            <takeeId>target</takeeId>
+            <desc>Prey is not reachable.</desc>
+          </li>
+        </failTriggers>
+        <roleBehaviors>
+          <li>
+            <roleId>initiator</roleId>
+            <dutyDef>DeliverPawnToAltar</dutyDef>
+          </li>
+          <li>
+            <roleId>target</roleId>
+            <dutyDef>Idle</dutyDef>
+          </li>
+        </roleBehaviors>
+      </li>
+      <li>
+        <defaultDuty>Spectate</defaultDuty>
+        <spectatorsRequired>true</spectatorsRequired>
+        <endTriggers>
+          <li Class="StageEndTrigger_DurationPercentage">
+            <percentage>0.3</percentage>
+          </li>
+        </endTriggers>
+        <roleBehaviors>
+          <li>
+            <roleId>initiator</roleId>
+            <dutyDef>SpeakOnCellFacingSpectators</dutyDef>
+            <customPositions>
+              <li Class="RitualPosition_Lectern">
+                <maxDistanceToFocus>5</maxDistanceToFocus>
+              </li>
+              <li Class="RitualPosition_OnInteractionCell" />
+            </customPositions>
+          </li>
+          <li>
+            <roleId>target</roleId>
+            <dutyDef>StandOnCell</dutyDef>
+          </li>
+        </roleBehaviors>
+      </li>
+    </stages>
+  </RitualBehaviorDef>
+
+  <RitualBehaviorDef ParentName="RV2_RitualBehavior_Base">
+    <defName>RV2_ConsumptionRitual</defName>
+    <workerClass>RimVore2.RitualBehaviorWorker_VoreSpeech</workerClass>
+    <roles>
+      <li Class="RimVore2.RitualRole_Composite_TagColonistOrColonyAnimalOrPrisonerOrSlave">
+        <label>predator</label>
+        <tag>RV2_AlphaPredator</tag>
+        <id>initiator</id>
+        <precept>RV2_IdeoRole_AlphaPredator</precept>
+        <required>true</required>
+        <maxCount>1</maxCount>
+        <countsAsParticipant>true</countsAsParticipant>
+        <substitutable>true</substitutable>
+      </li>
+      <li Class="RimVore2.RitualRole_Composite_ColonistOrColonyAnimalOrPrisonerOrSlave">
+        <label>prey</label>
+        <id>target</id>
+        <maxCount>1</maxCount>
+        <required>True</required>
+        <countsAsParticipant>true</countsAsParticipant>
+      </li>
+    </roles>
+    <stages>
+      <li Class="RitualStage_InteractWithRole">
+        <targets>
+          <li>
+            <pawnId>initiator</pawnId>
+            <targetId>target</targetId>
+          </li>
+        </targets>
+        <defaultDuty>Spectate</defaultDuty>
+        <endTriggers>
+          <li Class="RimVore2.StageEndTrigger_PawnVored">
+            <predatorId>initiator</predatorId>
+            <preyId>target</preyId>
+          </li>
+        </endTriggers>
+        <roleBehaviors>
+          <li>
+            <roleId>initiator</roleId>
+            <dutyDef>RV2_ConsumptionRitual_PredDuty</dutyDef>
+          </li>
+          <li>
+            <roleId>target</roleId>
+            <dutyDef>Idle</dutyDef>
+          </li>
+        </roleBehaviors>
+      </li>
+      <li>
+        <defaultDuty>Party</defaultDuty>
+        <endTriggers>
+          <li Class="StageEndTrigger_PawnDead">
+            <roleId>target</roleId>
+          </li>
+        </endTriggers>
+        <failTriggers>
+          <li Class="RimVore2.StageFailTrigger_PawnNotVored">
+            <predatorId>initiator</predatorId>
+            <preyId>target</preyId>
+            <desc>The predator is no longer voring the prey.</desc>
+          </li>
+        </failTriggers>
+      </li>
+    </stages>
+    <modExtensions>
+      <li Class="RimVore2.VoreRitualValidator">
+        <predatorId>initiator</predatorId>
+        <preyId>target</preyId>
+        <forceEndo>false</forceEndo>
+        <forceFatal>true</forceFatal>
+      </li>
+    </modExtensions>
+  </RitualBehaviorDef>
+
+  <RitualBehaviorDef ParentName="RV2_RitualBehavior_Base">
+    <defName>RV2_ConsumptionSacrifice</defName>
+    <workerClass>RimVore2.RitualBehaviorWorker_VoreSpeech</workerClass>
+    <roles>
+      <li Class="RimVore2.RitualRole_Composite_TagColonistOrColonyAnimalOrPrisonerOrSlave">
+        <label>prey</label>
+        <tag>RV2_ChosenPrey</tag>
+        <id>initiator</id>
+        <precept>RV2_IdeoRole_ChosenPrey</precept>
+        <required>true</required>
+        <maxCount>1</maxCount>
+        <countsAsParticipant>false</countsAsParticipant>
+        <substitutable>true</substitutable>
+      </li>
+      <li Class="RimVore2.RitualRole_Composite_ColonistOrColonyAnimalOrPrisonerOrSlave">
+        <label>predator</label>
+        <id>target</id>
+        <maxCount>1</maxCount>
+        <required>True</required>
+        <mergeId>predatorMerge</mergeId>
+        <countsAsParticipant>false</countsAsParticipant>
+      </li>
+    </roles>
+    <stages>
+      <li Class="RitualStage_InteractWithRole">
+        <targets>
+          <li>
+            <pawnId>initiator</pawnId>
+            <targetId>target</targetId>
+          </li>
+        </targets>
+        <defaultDuty>Spectate</defaultDuty>
+        <endTriggers>
+          <li Class="RimVore2.StageEndTrigger_PawnVored">
+            <predatorId>target</predatorId>
+            <preyId>initiator</preyId>
+          </li>
+        </endTriggers>
+        <roleBehaviors>
+          <li>
+            <roleId>initiator</roleId>
+            <dutyDef>RV2_ConsumptionRitual_PreyDuty</dutyDef>
+          </li>
+          <li>
+            <roleId>target</roleId>
+            <dutyDef>Idle</dutyDef>
+          </li>
+        </roleBehaviors>
+      </li>
+      <li>
+        <defaultDuty>Party</defaultDuty>
+        <endTriggers>
+          <li Class="StageEndTrigger_PawnDead">
+            <roleId>initiator</roleId>
+          </li>
+        </endTriggers>
+        <failTriggers>
+          <li Class="RimVore2.StageFailTrigger_PawnNotVored">
+            <predatorId>target</predatorId>
+            <preyId>initiator</preyId>
+            <desc>The predator is no longer voring the prey.</desc>
+          </li>
+        </failTriggers>
+      </li>
+    </stages>
+    <modExtensions>
+      <li Class="RimVore2.VoreRitualValidator">
+        <predatorId>target</predatorId>
+        <preyId>initiator</preyId>
+        <forceEndo>false</forceEndo>
+        <forceFatal>true</forceFatal>
+      </li>
+    </modExtensions>
+  </RitualBehaviorDef>
+
+  <RitualBehaviorDef ParentName="RV2_RitualBehavior_Base">
+    <defName>RV2_VoreBondingRitual</defName>
+    <workerClass>RimVore2.RitualBehaviorWorker_VoreSpeech</workerClass>
+    <roles>
+      <li Class="RimVore2.RitualRole_Composite_TagColonistOrColonyAnimalOrPrisonerOrSlave">
+        <label>predator</label>
+        <tag>RV2_AlphaPredator</tag>
+        <id>initiator</id>
+        <precept>RV2_IdeoRole_AlphaPredator</precept>
+        <required>true</required>
+        <maxCount>1</maxCount>
+        <countsAsParticipant>false</countsAsParticipant>
+        <substitutable>true</substitutable>
+      </li>
+      <li Class="RimVore2.RitualRole_Composite_ColonistOrColonyAnimalOrPrisonerOrSlave">
+        <label>prey</label>
+        <id>target</id>
+        <maxCount>1</maxCount>
+        <required>True</required>
+        <countsAsParticipant>false</countsAsParticipant>
+      </li>
+    </roles>
+    <stages>
+      <li Class="RitualStage_InteractWithRole">
+        <targets>
+          <li>
+            <pawnId>initiator</pawnId>
+            <targetId>target</targetId>
+          </li>
+        </targets>
+        <defaultDuty>Spectate</defaultDuty>
+        <endTriggers>
+          <li Class="RimVore2.StageEndTrigger_PawnVored">
+            <predatorId>initiator</predatorId>
+            <preyId>target</preyId>
+          </li>
+        </endTriggers>
+        <roleBehaviors>
+          <li>
+            <roleId>initiator</roleId>
+            <dutyDef>RV2_VoreBondingRitual_PredDuty</dutyDef>
+          </li>
+          <li>
+            <roleId>target</roleId>
+            <dutyDef>Idle</dutyDef>
+          </li>
+        </roleBehaviors>
+      </li>
+      <li>
+        <defaultDuty>Party</defaultDuty>
+        <endTriggers>
+          <li Class="RimVore2.StageEndTrigger_PawnNotVored">
+            <predatorId>initiator</predatorId>
+            <preyId>target</preyId>
+          </li>
+        </endTriggers>
+      </li>
+    </stages>
+    <modExtensions>
+      <li Class="RimVore2.VoreRitualValidator">
+        <predatorId>initiator</predatorId>
+        <preyId>target</preyId>
+        <forceEndo>true</forceEndo>
+        <forceFatal>false</forceFatal>
+      </li>
+    </modExtensions>
+  </RitualBehaviorDef>
+
+  <RitualBehaviorDef ParentName="RV2_RitualBehavior_Base">
+    <defName>RV2_VoreBondingSacrifice</defName>
+    <workerClass>RimVore2.RitualBehaviorWorker_VoreSpeech</workerClass>
+    <roles>
+      <li Class="RimVore2.RitualRole_Composite_TagColonistOrColonyAnimalOrPrisonerOrSlave">
+        <label>prey</label>
+        <tag>RV2_ChosenPrey</tag>
+        <id>initiator</id>
+        <precept>RV2_IdeoRole_ChosenPrey</precept>
+        <required>true</required>
+        <maxCount>1</maxCount>
+        <countsAsParticipant>false</countsAsParticipant>
+        <substitutable>true</substitutable>
+      </li>
+      <li Class="RimVore2.RitualRole_Composite_ColonistOrColonyAnimalOrPrisonerOrSlave">
+        <label>predator</label>
+        <id>target</id>
+        <maxCount>1</maxCount>
+        <required>True</required>
+        <countsAsParticipant>false</countsAsParticipant>
+      </li>
+    </roles>
+    <stages>
+      <li Class="RitualStage_InteractWithRole">
+        <targets>
+          <li>
+            <pawnId>initiator</pawnId>
+            <targetId>target</targetId>
+          </li>
+        </targets>
+        <defaultDuty>Spectate</defaultDuty>
+        <endTriggers>
+          <li Class="RimVore2.StageEndTrigger_PawnVored">
+            <predatorId>target</predatorId>
+            <preyId>initiator</preyId>
+          </li>
+        </endTriggers>
+        <roleBehaviors>
+          <li>
+            <roleId>initiator</roleId>
+            <dutyDef>RV2_VoreBondingRitual_PreyDuty</dutyDef>
+          </li>
+          <li>
+            <roleId>target</roleId>
+            <dutyDef>Idle</dutyDef>
+          </li>
+        </roleBehaviors>
+      </li>
+      <li>
+        <defaultDuty>Party</defaultDuty>
+        <endTriggers>
+          <li Class="RimVore2.StageEndTrigger_PawnNotVored">
+            <predatorId>target</predatorId>
+            <preyId>initiator</preyId>
+          </li>
+        </endTriggers>
+      </li>
+    </stages>
+    <modExtensions>
+      <li Class="RimVore2.VoreRitualValidator">
+        <predatorId>target</predatorId>
+        <preyId>initiator</preyId>
+        <forceEndo>true</forceEndo>
+        <forceFatal>false</forceFatal>
+      </li>
+    </modExtensions>
+  </RitualBehaviorDef>
+</Defs>

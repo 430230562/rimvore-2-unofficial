@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+  <ThoughtDef Name="RV2_Memory_ConsumedVoreProduct" Abstract ="True">
+    <durationDays>1</durationDays>
+    <showBubble>true</showBubble>
+	<icon>Things/Mote/ThoughtSymbol/Food</icon>
+    <validWhileDespawned>true</validWhileDespawned>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="RV2_Memory_ConsumedVoreProduct">
+    <defName>RV2_ConsumedDigestedPrey_Cum</defName>
+    <stages>
+      <li>
+        <label>Drank cumgested pawn</label>
+        <description>Tastes alright.</description>
+        <baseMoodEffect>0</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="RV2_Memory_ConsumedVoreProduct">
+    <defName>RV2_ConsumedDigestedPrey_Cum_VeryGood</defName>
+    <stages>
+      <li>
+        <label>Loved drinking cumgested pawn</label>
+        <description>Heavenly seed!</description>
+        <baseMoodEffect>8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_Memory_ConsumedVoreProduct">
+    <defName>RV2_ConsumedDigestedPrey_Cum_Good</defName>
+    <stages>
+      <li>
+        <label>Liked drinking cumgested pawn</label>
+        <description>Delicious batter!</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_Memory_ConsumedVoreProduct">
+    <defName>RV2_ConsumedDigestedPrey_Cum_Bad</defName>
+    <stages>
+      <li>
+        <label>Disliked drinking cumgested pawn</label>
+        <description>Yuck, slimy.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_Memory_ConsumedVoreProduct">
+    <defName>RV2_ConsumedDigestedPrey_Cum_VeryBad</defName>
+    <stages>
+      <li>
+        <label>Hated drinking cumgested pawn</label>
+        <description>I'm gonna be sick.</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  
+  <ThoughtDef ParentName="RV2_Memory_ConsumedVoreProduct">
+    <defName>RV2_ConsumedDigestedPrey_Milk</defName>
+    <stages>
+      <li>
+        <label>Drank lactified pawn</label>
+        <description>Tastes like milk.</description>
+        <baseMoodEffect>0</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef ParentName="RV2_Memory_ConsumedVoreProduct">
+    <defName>RV2_ConsumedDigestedPrey_Milk_VeryGood</defName>
+    <stages>
+      <li>
+        <label>Loved drinking lactified pawn</label>
+        <description>Like drinking from the tits of a god!</description>
+        <baseMoodEffect>8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_Memory_ConsumedVoreProduct">
+    <defName>RV2_ConsumedDigestedPrey_Milk_Good</defName>
+    <stages>
+      <li>
+        <label>Liked drinking lactified pawn</label>
+        <description>Such rich flavor!</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_Memory_ConsumedVoreProduct">
+    <defName>RV2_ConsumedDigestedPrey_Milk_Bad</defName>
+    <stages>
+      <li>
+        <label>Disliked drinking lactified pawn</label>
+        <description>Tasts a little... meaty.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_Memory_ConsumedVoreProduct">
+    <defName>RV2_ConsumedDigestedPrey_Milk_VeryBad</defName>
+    <stages>
+      <li>
+        <label>Hated drinking lactified pawn</label>
+        <description>I'm gonna be sick.</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>

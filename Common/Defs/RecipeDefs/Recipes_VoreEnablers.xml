@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RecipeDef Abstract="True" Name="RV2_MakeVoreEnabler_Base">
+    <description>Create customized nanites that allow special types of vore.</description>
+    <jobString>Creating vore enabler.</jobString>
+    <workAmount>100</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Sculpt</effectWorking>
+    <soundWorking>Recipe_Sculpt</soundWorking>
+    <autoStripCorpses>false</autoStripCorpses>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <recipeUsers>
+      <li>TableMachining</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Gold</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentSpacer</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Gold</li>
+        <li>Plasteel</li>
+        <li>ComponentSpacer</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+  </RecipeDef>
+  
+  <!-- Goal Enablers 
+  These mainly unlock new goals for a pawn's exisiting types. -->
+  
+  <RecipeDef ParentName="RV2_MakeVoreEnabler_Base">
+    <defName>RV2_MakeGoalEnabler_ConvertLube</defName>
+    <label>Make lubrifactive enzyme seeder (Convert to lube)</label>
+    <products>
+      <RV2_GoalEnabler_ConvertLube>1</RV2_GoalEnabler_ConvertLube>
+    </products>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="RV2_MakeVoreEnabler_Base">
+    <defName>RV2_MakeGoalEnabler_ConvertMilk</defName>
+    <label>Make lactifactive enzyme seeder (Convert to milk)</label>
+    <products>
+      <RV2_GoalEnabler_ConvertMilk>1</RV2_GoalEnabler_ConvertMilk>
+    </products>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="RV2_MakeVoreEnabler_Base">
+    <defName>RV2_MakeGoalEnabler_ConvertSperm</defName>
+    <label>Make spermifactive enzyme seeder (Convert to cum)</label>
+    <products>
+      <RV2_GoalEnabler_ConvertSperm>1</RV2_GoalEnabler_ConvertSperm>
+    </products>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="RV2_MakeVoreEnabler_Base">
+    <defName>RV2_MakeGoalEnabler_Digest</defName>
+    <label>Make hyperdigestive enzyme seeder (Digest)</label>
+    <products>
+      <RV2_GoalEnabler_Digest>1</RV2_GoalEnabler_Digest>
+    </products>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="RV2_MakeVoreEnabler_Base">
+    <defName>RV2_MakeGoalEnabler_TempEndo</defName>
+    <label>Make internal hospitality adjuster (Hold, Pleasure)</label>
+    <products>
+      <RV2_GoalEnabler_TempEndo>1</RV2_GoalEnabler_TempEndo>
+    </products>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="RV2_MakeVoreEnabler_Base">
+    <defName>RV2_MakeGoalEnabler_Store</defName>
+    <label>Make internal hospitality adjuster (Store)</label>
+    <products>
+      <RV2_GoalEnabler_Store>1</RV2_GoalEnabler_Store>
+    </products>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="RV2_MakeVoreEnabler_Base">
+    <defName>RV2_MakeGoalEnabler_Heal</defName>
+    <label>Make regenerative enzyme seeder (Heal)</label>
+    <products>
+      <RV2_GoalEnabler_Heal>1</RV2_GoalEnabler_Heal>
+    </products>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="RV2_MakeVoreEnabler_Base">
+    <defName>RV2_MakeGoalEnabler_Reform</defName>
+    <label>Make reproductive enzyme seeder (Reform)</label>
+    <products>
+      <RV2_GoalEnabler_Reform>1</RV2_GoalEnabler_Reform>
+    </products>
+  </RecipeDef>
+  
+  <!-- Type Enablers 
+  These mainly unlock new types for a pawn's exisiting goals. -->
+  
+  <RecipeDef ParentName="RV2_MakeVoreEnabler_Base">
+    <defName>RV2_MakeTypeEnabler_Oral</defName>
+    <label>Make oral elasticizer</label>
+    <products>
+      <RV2_TypeEnabler_Oral>1</RV2_TypeEnabler_Oral>
+    </products>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="RV2_MakeVoreEnabler_Base">
+    <defName>RV2_MakeTypeEnabler_Anal</defName>
+    <label>Make anal elasticizer</label>
+    <products>
+      <RV2_TypeEnabler_Anal>1</RV2_TypeEnabler_Anal>
+    </products>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="RV2_MakeVoreEnabler_Base">
+    <defName>RV2_MakeTypeEnabler_Vaginal</defName>
+    <label>Make vaginal elasticizer</label>
+    <products>
+      <RV2_TypeEnabler_Vaginal>1</RV2_TypeEnabler_Vaginal>
+    </products>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="RV2_MakeVoreEnabler_Base">
+    <defName>RV2_MakeTypeEnabler_Cock</defName>
+    <label>Make penile elasticizer</label>
+    <products>
+      <RV2_TypeEnabler_Cock>1</RV2_TypeEnabler_Cock>
+    </products>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="RV2_MakeVoreEnabler_Base">
+    <defName>RV2_MakeTypeEnabler_Nipple</defName>
+    <label>Make nipple elasticizer</label>
+    <products>
+      <RV2_TypeEnabler_Nipple>1</RV2_TypeEnabler_Nipple>
+    </products>
+  </RecipeDef>
+  
+</Defs>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RimVore2.QuirkPoolDef>
+    <defName>Inabilities</defName>
+    <label>Inabilities</label>
+    <category>Goal Preference</category>
+    <description>These quirks block any goals of vore that are either fatal or non-fatal. They require one of the normal extremes of digestion strength each. They may be replaced at a later date with more goal-specific blockers.</description>
+    <generationOrder>4</generationOrder>
+    <poolType>RollForEach</poolType>
+    <quirks>
+      <li>Inability_PredEndoOnly</li>
+      <li>Inability_PredFatalOnly</li>
+    </quirks>
+  </RimVore2.QuirkPoolDef>
+
+<!-- TODO: Really should have gone with a "BlocksDesignation" comp rather than a custom flag to hard-code check for... -->
+  <RimVore2.QuirkDef>
+    <!-- no need for blockingQuirk with PredFatalOnly due to acid requirement -->
+    <defName>Inability_PredEndoOnly</defName>
+    <label>Unacerbic</label>
+    <description>[PAWN_label] can’t digest anyone--not alive, at least. [PAWN_pronoun] has the stretchiness to swallow prey, but none of the acidity to melt them. For nutrition, [PAWN_pronoun] has to settle for normal food instead.</description>
+    <requiredQuirks>
+      <li>DigestionStrength_VeryBad</li>
+    </requiredQuirks>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_SpecialFlag">
+        <flag>EndoPredatorOnly</flag>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <!-- no need for blockingQuirk with PredEndoOnly due to acid requirement -->
+    <defName>Inability_PredFatalOnly</defName>
+    <label>Hyperacerbic</label>
+    <description>[PAWN_label]’s innards are totally unsafe, no matter the hole. All roads lead to digestion.</description>
+	<!-- MP11: I think DigestionStrength_Godlike should also be available for this quirk; if a pawn can "liquify an entire Thrumbo in minutes", they'd probably have some trouble not digesting their prey! -->
+    <requiredQuirks>
+      <li>DigestionStrength_VeryGood</li>
+    </requiredQuirks>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_SpecialFlag">
+        <flag>FatalPredatorOnly</flag>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+</Defs>

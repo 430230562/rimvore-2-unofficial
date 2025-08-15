@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ManeuverDef>
+    <defName>RV2_VoreGrapple</defName>
+    <requiredCapacity>RV2_VoreGrapple</requiredCapacity>
+    <verb>
+      <verbClass>RimVore2.Verb_VoreGrapple</verbClass>
+      <meleeDamageDef>RV2_GrappleDamage</meleeDamageDef>
+    </verb>
+    <logEntryDef>RV2_VoreGrappleAttacker</logEntryDef>
+    <combatLogRulesHit>Maneuver_Smash_MeleeHit</combatLogRulesHit>
+    <combatLogRulesDeflect>Maneuver_Smash_MeleeDeflect</combatLogRulesDeflect>
+    <combatLogRulesMiss>Maneuver_Smash_MeleeMiss</combatLogRulesMiss>
+    <combatLogRulesDodge>Maneuver_Smash_MeleeDodge</combatLogRulesDodge>
+  </ManeuverDef>
+
+</Defs>
+

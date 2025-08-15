@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+  <!-- DISABLED in favor of the vore WorkType -->
+	<!-- Only non-downed colonists that can participate in vore can create vore proposals -->
+  <!--<ThinkTreeDef>
+		<defName>RV2_ProposeVore_Colonist</defName>
+		<insertTag>Humanlike_PostMain</insertTag>
+		<insertPriority>10</insertPriority>
+		<thinkRoot Class="RimVore2.ThinkNode_ChancePerHour_RequestVore">
+			<subNodes>
+				<li Class="ThinkNode_ConditionalColonist">
+          <subNodes>
+            <li Class="ThinkNode_ConditionalDowned">
+              <invert>true</invert>
+              <subNodes>
+                <li Class="RimVore2.ThinkNode_ConditionalCanParticipateInVore">
+                  <subNodes>
+                    <li Class="RimVore2.JobGiver_RequestVore" />
+                  </subNodes>
+                </li>
+              </subNodes>
+            </li>
+          </subNodes>
+				</li>
+			</subNodes>
+		</thinkRoot>
+	</ThinkTreeDef>-->
+  
+  <!-- When prey ready to be released, initiate release job -->
+  <ThinkTreeDef>
+    <defName>RV2_ReleasePreyHuman</defName>
+    <insertTag>Humanlike_PreMain</insertTag>
+    <insertPriority>1</insertPriority>
+    <thinkRoot Class="RimVore2.ThinkNode_ConditionalHasPreyToRelease">
+      <subNodes>
+        <li Class="RimVore2.ThinkNode_JobGiver_ReleasePrey" />
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+  <ThinkTreeDef>
+    <defName>RV2_ReleasePreyAnimal</defName>
+    <insertTag>Animal_PreMain</insertTag>
+    <insertPriority>1</insertPriority>
+    <thinkRoot Class="RimVore2.ThinkNode_ConditionalHasPreyToRelease">
+      <subNodes>
+        <li Class="RimVore2.ThinkNode_JobGiver_ReleasePrey" />
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+  
+</Defs>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <RV2_RJW.RJW_SexTypeGiverDictionaryDef>
+    <defName>Default</defName>
+    <entries>
+      <li>
+        <giverType>Initiator</giverType>
+        <sexTypes>
+          <li>Handjob</li>
+          <li>Vaginal</li>
+          <li>Anal</li>
+          <li>Masturbation</li>
+          <li>Boobjob</li>
+          <li>Fellatio</li>
+          <li>Cunnilingus</li>
+        </sexTypes>
+      </li>
+      <li>
+        <giverType>Receiver</giverType>
+        <sexTypes>
+        </sexTypes>
+      </li>
+      <li>
+        <giverType>Mutual</giverType>
+        <sexTypes>
+          <li>MutualMasturbation</li>
+          <li>Sixtynine</li>
+          <li>Scissoring</li>
+        </sexTypes>
+      </li>
+    </entries>
+  </RV2_RJW.RJW_SexTypeGiverDictionaryDef>
+  
+</Defs>

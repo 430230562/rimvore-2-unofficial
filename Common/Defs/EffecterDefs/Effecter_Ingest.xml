@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <EffecterDef>
+    <defName>RV2_DrinkCum</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <scale>1~1.2</scale>
+        <color>(255, 255, 255)</color>
+        <ticksBetweenMotes>20</ticksBetweenMotes>
+        <positionLerpFactor>0.35</positionLerpFactor>
+        <fleckDef>BloodSplash</fleckDef>
+      </li>
+    </children>
+  </EffecterDef>
+</Defs>

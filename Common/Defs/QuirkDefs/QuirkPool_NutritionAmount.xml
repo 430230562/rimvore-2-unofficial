@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <RimVore2.QuirkPoolDef>
+    <defName>NutritionEfficiency</defName>
+    <label>Nutrition efficiency</label>
+	<category>Digestion</category>
+	<description>These quirks determine how efficient a predator's digestion and conversion are with prey, unconnected to any metabolism modifiers. The better the efficiency, the more vore product a predator produces.</description>
+    <generationOrder>3</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+    <li>NutritionEfficiency_Godlike</li>
+    <li>NutritionEfficiency_VeryGood</li>
+	  <li>NutritionEfficiency_Good</li>
+	  <li>NutritionEfficiency_Normal</li>
+	  <li>NutritionEfficiency_Bad</li>
+	  <li>NutritionEfficiency_VeryBad</li>
+    </quirks>
+  </RimVore2.QuirkPoolDef>
+  
+  <!-- MH: these work in a strange way: instead of multiplying the product, they multiply how nutritious a pawn is when the processing stage begins -->
+  
+    <RimVore2.QuirkDef>
+    <defName>NutritionEfficiency_Godlike</defName>
+    <label>Godlike Efficiency</label>
+    <description>Is it magic? Archotech implants? Who knows! At the end of the day, all that really matters is that [PAWN_label] is capable of feeding or fertilizing an entire colony on [PAWN_possessive] own.</description>
+    <rarity>VeryRare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>PreyNutritionMultiplierAsPredator</modifierName>
+        <modifierValue>10</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkDef>
+    <defName>NutritionEfficiency_VeryGood</defName>
+    <label>Industrial efficiency</label>
+    <description>[PAWN_label] is about twice as efficient at gaining nourishment and producing materials from prey as other predators. [PAWN_pronoun] uses the whole muffalo.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>PreyNutritionMultiplierAsPredator</modifierName>
+        <modifierValue>2</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkDef>
+    <defName>NutritionEfficiency_Good</defName>
+    <label>Efficient</label>
+    <description>[PAWN_label] is about 150% as efficient at gaining nourishment and producing materials from prey as other predators. [PAWN_possessive] body just knows how to coax a little more nutrition out of the marrows and ligaments of [PAWN_possessive] prey.</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>PreyNutritionMultiplierAsPredator</modifierName>
+        <modifierValue>1.5</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkDef>
+    <defName>NutritionEfficiency_Normal</defName>
+    <label>Normal efficiency</label>
+    <description>[PAWN_label] is as efficient as other predators.</description>
+	<hidden>true</hidden>
+    <rarity>Abundant</rarity>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkDef>
+    <defName>NutritionEfficiency_Bad</defName>
+    <label>Inefficient</label>
+    <description>[PAWN_label] is about 75% as efficient at gaining nourishment and producing materials from prey as other predators. [PAWN_possessive] body just isn't as good at breaking down all those tough, unchewed tissues into something nutritious.</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>PreyNutritionMultiplierAsPredator</modifierName>
+        <modifierValue>.75</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  
+  <RimVore2.QuirkDef>
+    <defName>NutritionEfficiency_VeryBad</defName>
+    <label>Very inefficient</label>
+    <description>[PAWN_label] is about half as efficient at gaining nourishment and producing materials from prey as other predators. [PAWN_pronoun] needs to eat a lot of people to stay full.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>PreyNutritionMultiplierAsPredator</modifierName>
+        <modifierValue>.5</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  
+  <RimVore2.QuirkPoolDef>
+    <defName>PreyNutrition</defName>
+    <label>Nutritiousness</label>
+	<category>Digestion</category>
+	<description>These quirks determine how nutritious the pawn is to predators. The more nutritious, the more vore products will be produced.</description>
+    <generationOrder>3</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>PreyNutrition_VeryGood</li>
+	  <li>PreyNutrition_Good</li>
+	  <li>PreyNutrition_Normal</li>
+	  <li>PreyNutrition_Bad</li>
+	  <li>PreyNutrition_VeryBad</li>
+    </quirks>
+  </RimVore2.QuirkPoolDef>
+  
+  <RimVore2.QuirkDef>
+    <defName>PreyNutrition_VeryGood</defName>
+    <label>Very nutritious</label>
+    <description>[PAWN_label] is about twice as nutritious as other prey. The best kind of ration around!</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>PreyNutritionMultiplierAsPrey</modifierName>
+        <modifierValue>2</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkDef>
+    <defName>PreyNutrition_Good</defName>
+    <label>Nutritious</label>
+    <description>[PAWN_label] is about 150% as nutritious as other prey. [PAWN_pronoun]'ll keep a pred full for a while.</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>PreyNutritionMultiplierAsPrey</modifierName>
+        <modifierValue>1.5</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkDef>
+    <defName>PreyNutrition_Normal</defName>
+    <label>Normal nutritiousness</label>
+    <description>[PAWN_label] is as nutritious as other prey.</description>
+	<hidden>true</hidden>
+    <rarity>Abundant</rarity>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkDef>
+    <defName>PreyNutrition_Bad</defName>
+    <label>Unnutritious</label>
+    <description>[PAWN_label] is about 75% as nutritious as other prey. [PAWN_pronoun] wouldn't make for good livestock.</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>PreyNutritionMultiplierAsPrey</modifierName>
+        <modifierValue>.75</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkDef>
+    <defName>PreyNutrition_VeryBad</defName>
+    <label>Junk prey</label>
+    <description>[PAWN_label] is about half as nutritious as other prey. You'd get a better meal out of a vending machine.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>PreyNutritionMultiplierAsPrey</modifierName>
+        <modifierValue>.5</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  
+</Defs>

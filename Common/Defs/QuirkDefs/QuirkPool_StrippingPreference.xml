@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RimVore2.QuirkPoolDef>
+    <defName>StrippingPreference_Predator</defName>
+    <label>Stripping preference as predator</label>
+	<category>Stripping Preference</category>
+	<description>These quirks determine what the pawn either wants to do, or will try to do, when devouring clothed prey, depending on your stripping settings.</description>
+    <generationOrder>2</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>StrippingPreference_Predator_MothTongue</li>
+      <li>StrippingPreference_Predator_None</li>
+      <li>StrippingPreference_Predator_SkinTaster</li>
+    </quirks>
+    <blockingQuirks>
+      <li>PredatorDisposition_Refuses</li>
+    </blockingQuirks>
+    <blockingKeywords>
+      <li>PawnIsAnimal</li>
+    </blockingKeywords>
+  </RimVore2.QuirkPoolDef>
+
+  <!-- predator -->
+  <RimVore2.QuirkDef>
+    <defName>StrippingPreference_Predator_MothTongue</defName>
+    <label>Moth's tongue</label>
+    <description>[PAWN_label] prefers the taste of fabric to skin (whether or not [PAWN_pronoun] actually enjoys fabric), and will keep [PAWN_possessive] prey in whatever garb they come.</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>PredatorStripDesire</modifierName>
+        <modifierValue>-1</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PreyIsNotNaked</li>
+          <li>PreyIsHumanlike</li>
+          <li>PawnIsPredator</li>
+        </keywords>
+        <memory>RV2_StrippingQuirkSatisfaction_Predator_Clothed_Good</memory>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PreyIsNaked</li>
+          <li>PreyIsHumanlike</li>
+          <li>PawnIsPredator</li>
+        </keywords>
+        <memory>RV2_StrippingQuirkSatisfaction_Predator_Naked_Bad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>StrippingPreference_Predator_None</defName>
+    <label>Hyphaphagic ambivalence</label>
+    <hidden>true</hidden>
+    <description>[PAWN_label] does not care whether their prey is clothed or not.</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>PredatorStripDesire</modifierName>
+        <modifierValue>0</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>StrippingPreference_Predator_SkinTaster</defName>
+    <label>Skin-taster</label>
+    <description>[PAWN_label] savors the flavor of skin, and will always peel the wrapper off [PAWN_possessive] prey, if given the opportunity.</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>PredatorStripDesire</modifierName>
+        <modifierValue>1</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PreyIsNotNaked</li>
+          <li>PreyIsHumanlike</li>
+          <li>PawnIsPredator</li>
+        </keywords>
+        <memory>RV2_StrippingQuirkSatisfaction_Predator_Clothed_Bad</memory>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PreyIsNaked</li>
+          <li>PreyIsHumanlike</li>
+          <li>PawnIsPredator</li>
+        </keywords>
+        <memory>RV2_StrippingQuirkSatisfaction_Predator_Naked_Good</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  
+  <RimVore2.QuirkPoolDef>
+    <defName>StrippingPreference_Prey</defName>
+    <label>Stripping preference as prey</label>
+	<category>Stripping Preference</category>
+	<description>These quirks determine what the pawn either wants to do, or will try to do, when agreeing to a vore attempt while clothed, depending on your stripping settings.</description>
+    <generationOrder>2</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>StrippingPreference_Prey_Nude</li>
+      <li>StrippingPreference_Prey_None</li>
+      <li>StrippingPreference_Prey_NeverNude</li>
+    </quirks>
+    <blockingQuirks>
+      <li>PreyDisposition_Refuses</li>
+    </blockingQuirks>
+    <blockingKeywords>
+      <li>PawnIsAnimal</li>
+    </blockingKeywords>
+  </RimVore2.QuirkPoolDef>
+  
+  <!-- prey -->
+  <RimVore2.QuirkDef>
+    <defName>StrippingPreference_Prey_NeverNude</defName>
+    <label>Nevernude prey</label>
+    <description>[PAWN_label] prefers to have a protective and modest layer of clothes between [PAWN_objective]self and [PAWN_possessive] predator.</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>PreyStripDesire</modifierName>
+        <modifierValue>-1</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PreyIsNotNaked</li>
+          <li>PawnIsPrey</li>
+        </keywords>
+        <memory>RV2_StrippingQuirkSatisfaction_Prey_Clothed_Good</memory>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PreyIsNaked</li>
+          <li>PawnIsPrey</li>
+        </keywords>
+        <memory>RV2_StrippingQuirkSatisfaction_Prey_Naked_Bad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>StrippingPreference_Prey_None</defName>
+    <label>Clothing ambivalence</label>
+    <hidden>true</hidden>
+    <description>[PAWN_label] does not care if they are nude or clothed when being devoured.</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>PreyStripDesire</modifierName>
+        <modifierValue>0</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>StrippingPreference_Prey_Nude</defName>
+    <label>Commando prey</label>
+    <description>[PAWN_label] hates it when a layer of sopping-wet clothes gets between between [PAWN_objective] and [PAWN_possessive] predator. Leaving the clothes behind also makes washing up easier.</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>PreyStripDesire</modifierName>
+        <modifierValue>1</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PreyIsNotNaked</li>
+          <li>PawnIsPrey</li>
+        </keywords>
+        <memory>RV2_StrippingQuirkSatisfaction_Prey_Clothed_Bad</memory>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PreyIsNaked</li>
+          <li>PawnIsPrey</li>
+        </keywords>
+        <memory>RV2_StrippingQuirkSatisfaction_Prey_Naked_Good</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+</Defs>

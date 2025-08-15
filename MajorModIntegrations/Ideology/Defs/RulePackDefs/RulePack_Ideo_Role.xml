@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Predator -->
+
+  <RulePackDef>
+    <defName>RV2_NamerRoleAlphaPredator</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_roleName(p=4)->[memePredation]</li>
+        <li>r_roleName(p=2)->[memeAdjective] [memePredation]</li>
+        <li>r_roleName->[memePredation] of [chosenTheme]</li>
+        <li>r_roleName->[memePredation] of [keyDeity]</li>
+        <li>r_roleName->[memePredation] of [memeConcept]</li>
+        <li>r_roleName->[memePredation] of [chosenIdeoName]</li>
+        <li>r_roleName->[chosenAdjective] [memePredation]</li>
+        <li>r_roleName->[keyDeity]'s [memePredation]</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>RV2_NamerRoleChosenPrey</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_roleName(p=4)->[memePreyism]</li>
+        <li>r_roleName(p=2)->[memeAdjective] [memePreyism]</li>
+        <li>r_roleName->[memePreyism] of [chosenTheme]</li>
+        <li>r_roleName->[memePreyism] of [keyDeity]</li>
+        <li>r_roleName->[memePreyism] of [memeConcept]</li>
+        <li>r_roleName->[memePreyism] of [chosenIdeoName]</li>
+        <li>r_roleName->[chosenAdjective] [memePreyism]</li>
+        <li>r_roleName->[keyDeity]'s [memePreyism]</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>RV2_NamerRoleFeeder</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_feeder->Feeder</li>
+        <li>r_feeder->Voremaster</li>
+        <li>r_roleName(p=4)->[r_feeder]</li>
+        <li>r_roleName(p=2)->[memeAdjective] [r_feeder]</li>
+        <li>r_roleName->[r_feeder] of [chosenTheme]</li>
+        <li>r_roleName->[r_feeder] of [keyDeity]</li>
+        <li>r_roleName->[r_feeder] of [memeConcept]</li>
+        <li>r_roleName->[r_feeder] of [chosenIdeoName]</li>
+        <li>r_roleName->[chosenAdjective] [r_feeder]</li>
+        <li>r_roleName->[keyDeity]'s [r_feeder]</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  
+</Defs>

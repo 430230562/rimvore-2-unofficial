@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Pretty much just a dumb copy of RomanceProposal, down to accepted and denied -->
+
+<Defs>
+  <InteractionDef>
+    <defName>RV2_SuccessfulStruggle</defName>
+    <label>successful struggle</label>
+    <symbol>Motes/SpeechSymbols/SuccessfulStruggle</symbol>
+    <logRulesInitiator>
+      <rulesStrings>
+        <li>r_logentry->[INITIATOR_nameDef] successfuly struggled out of [RECIPIENT_nameDef].</li>
+      </rulesStrings>
+    </logRulesInitiator>
+  </InteractionDef>
+  <InteractionDef>
+    <defName>RV2_FailedStruggle</defName>
+    <label>failed struggle</label>
+    <symbol>Motes/SpeechSymbols/FailedStruggle</symbol>
+    <logRulesInitiator>
+      <rulesStrings>
+        <li>r_logentry->[INITIATOR_nameDef] failed to struggle out of [RECIPIENT_nameDef].</li>
+      </rulesStrings>
+    </logRulesInitiator>
+  </InteractionDef>
+  <InteractionDef>
+    <defName>RV2_ActiveStruggle</defName>
+    <label>struggling</label>
+    <symbol>Motes/SpeechSymbols/ActiveStruggle</symbol>
+    <logRulesInitiator>
+      <rulesStrings>
+        <li>r_logentry->[INITIATOR_nameDef] struggled inside [RECIPIENT_nameDef].</li>
+        <li>r_logentry->[INITIATOR_nameDef]'s footprint is visible inside of [RECIPIENT_nameDef].</li>
+        <li>r_logentry->[INITIATOR_nameDef]'s handprint is visible inside of [RECIPIENT_nameDef].</li>
+        <li>r_logentry->[INITIATOR_nameDef] [struggle_action_past] [RECIPIENT_nameDef] insides.</li>
+        <li>r_logentry->[INITIATOR_nameDef] [struggle_action_past] some sensitive flesh inside of [RECIPIENT_nameDef].</li>
+        <li>r_logentry->[INITIATOR_nameDef] tried to stretch to [INITIATOR_possessive] full size inside of [RECIPIENT_nameDef].</li>
+        <li>r_logentry->[RECIPIENT_nameDef] winced in pain due to [INITIATOR_nameDef]'s [struggle_action_gerund].</li>
+        <li>r_logentry->[RECIPIENT_nameDef] stumbled due to [INITIATOR_nameDef]'s [struggle_action_gerund].</li>
+        <li>r_logentry->[INITIATOR_nameDef] caused [RECIPIENT_nameDef] to stumble.</li>
+        <li>r_logentry->[INITIATOR_nameDef] heavily distracts [RECIPIENT_nameDef] from [RECIPIENT_possessive] work.</li>
+        <li>r_logentry->A muffled scream can be heard inside of [RECIPIENT_nameDef].</li>
+        <li>struggle_action_past->punched</li>
+        <li>struggle_action_past->scratched</li>
+        <li>struggle_action_past->bit</li>
+        <li>struggle_action_past->hurt</li>
+        <li>struggle_action_past->bumped</li>
+        <li>struggle_action_past->kicked</li>
+        <li>struggle_action_gerund->punching</li>
+        <li>struggle_action_gerund->scratching</li>
+        <li>struggle_action_gerund->biting</li>
+        <li>struggle_action_gerund->kicking</li>
+      </rulesStrings>
+    </logRulesInitiator>
+  </InteractionDef>
+</Defs>

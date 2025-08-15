@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RitualBehaviorDef>
+    <defName>RV2_VoreFeast</defName>
+    <workerClass>RimVore2.RitualBehaviorWorker_VoreFeast</workerClass>
+    <durationTicks>3000</durationTicks>
+    <letterTitle>{RITUAL_labelCap}</letterTitle>
+    <letterText>A vore feast is underway.</letterText>
+    <roles>
+      <li Class="RitualRoleTag">
+        <label>speaker</label>
+        <tag>Leader</tag>
+        <id>speaker</id>
+        <precept>IdeoRole_Leader</precept>
+        <required>True</required>
+        <maxCount>1</maxCount>
+        <countsAsParticipant>true</countsAsParticipant>
+      </li>
+    </roles>
+    <stages>
+      <li>
+        <ignoreDurationToFinishAfterStage>true</ignoreDurationToFinishAfterStage>
+        <defaultDuty>Spectate</defaultDuty>
+        <endTriggers>
+          <li Class="StageEndTrigger_DurationPercentage">
+            <percentage>1</percentage>
+          </li>
+        </endTriggers>
+        <roleBehaviors>
+          <li>
+            <roleId>speaker</roleId>
+            <dutyDef>SpeakOnCell_Leader</dutyDef>
+            <speakerInteraction>Speech_Leader</speakerInteraction>
+            <customPositions>
+              <li Class="RitualPosition_BesideThing" />
+            </customPositions>
+          </li>
+        </roleBehaviors>
+        <visualEffectDef>Speech</visualEffectDef>
+      </li>
+      <li>
+        <defaultDuty>RV2_RitualVoreFeast</defaultDuty>
+        <endTriggers>
+          <li Class="RimVore2.StageEndTrigger_NoVoreParticipantsLeft"/>
+        </endTriggers>
+      </li>
+    </stages>
+    <modExtensions>
+      <!-- needed to pass the vore validator and allow pawns to vore whilst participating in this ritual -->
+      <li Class="RimVore2.VoreRitualFlag"/>
+    </modExtensions>
+  </RitualBehaviorDef>
+</Defs>

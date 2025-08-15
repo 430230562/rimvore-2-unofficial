@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <PawnTableDef>
+    <defName>VorePreyTableDef</defName>
+    <workerClass>RimVore2.PawnTable_VoreOverview</workerClass>
+    <columns>
+      <li>VorePred</li>
+      <li>VorePrey</li>
+      <li>VoreGoal</li>
+      <li>VorePart</li>
+      <li>VorePartGoal</li>
+      <li>VoreStageProgress</li>
+      <li>VoreStruggle</li>
+      <li>VoreButtons</li>
+    </columns>
+  </PawnTableDef>
+
+</Defs>

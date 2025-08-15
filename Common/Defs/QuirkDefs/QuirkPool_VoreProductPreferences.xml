@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <RimVore2.QuirkPoolDef>
+    <defName>ProductPreference</defName>
+    <label>Vore product preference</label>
+	<category>General</category>
+	<description>These quirks determine how much a pawn enjoys eating edible vore products, which are food items produced by digestion/conversion such as milk and cum.</description>
+    <generationOrder>2</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+	  <li>ProductPreference_Loves</li>
+	  <li>ProductPreference_Likes</li>
+	  <li>ProductPreference_Neutral</li>
+	  <li>ProductPreference_Dislikes</li>
+	  <li>ProductPreference_Hates</li>
+    </quirks>
+    <blockingKeywords>
+      <li>PawnIsAnimal</li>
+    </blockingKeywords>
+  </RimVore2.QuirkPoolDef>
+  
+  <!-- MH: really kinda wanna figure out a way to make this dependent on either the cannibal trait or the dietary prefs for humanoid pawns. problem is, the pawnkind that the prey was is not tracked in the final product -->
+	<!-- MP11: could track it based on the product container it came from? though you would then need to worry about stacking. -->
+  
+  <RimVore2.QuirkDef>
+    <defName>ProductPreference_Loves</defName>
+    <label>Processed pawn connoisseur</label>
+    <description>[PAWN_label] loves to consume the treats dispensed by predators, who have so skillfully churned their prey into thick batter and creamy milk.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ThoughtOverride">
+        <originalThought>RV2_ConsumedDigestedPrey_Cum</originalThought>
+        <overrideThought>RV2_ConsumedDigestedPrey_Cum_VeryGood</overrideThought>
+        <priority>1</priority>
+      </li>
+	  <li Class="RimVore2.QuirkComp_ThoughtOverride">
+        <originalThought>RV2_ConsumedDigestedPrey_Milk</originalThought>
+        <overrideThought>RV2_ConsumedDigestedPrey_Milk_VeryGood</overrideThought>
+        <priority>1</priority>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>ProductPreference_Likes</defName>
+    <label>Processed pawn taste</label>
+    <description>[PAWN_label] likes to consume the remains of prey who have been churned into tasty beverages.</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ThoughtOverride">
+        <originalThought>RV2_ConsumedDigestedPrey_Cum</originalThought>
+        <overrideThought>RV2_ConsumedDigestedPrey_Cum_Good</overrideThought>
+        <priority>1</priority>
+      </li>
+	  <li Class="RimVore2.QuirkComp_ThoughtOverride">
+        <originalThought>RV2_ConsumedDigestedPrey_Milk</originalThought>
+        <overrideThought>RV2_ConsumedDigestedPrey_Milk_Good</overrideThought>
+        <priority>1</priority>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>ProductPreference_Neutral</defName>
+    <label>Processed pawn ambivalence</label>
+    <description>[PAWN_label] doesn't care one way or the other about consuming the remains of prey who have been churned into edibles.</description>
+    <rarity>Abundant</rarity>
+    <hidden>true</hidden>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>ProductPreference_Dislikes</defName>
+    <label>Processed pawn distaste</label>
+    <description>[PAWN_label] dislikes consuming the remains of prey who have been churned into edibles. It's a waste of good food.</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ThoughtOverride">
+        <originalThought>RV2_ConsumedDigestedPrey_Cum</originalThought>
+        <overrideThought>RV2_ConsumedDigestedPrey_Cum_Bad</overrideThought>
+        <priority>1</priority>
+      </li>
+	  <li Class="RimVore2.QuirkComp_ThoughtOverride">
+        <originalThought>RV2_ConsumedDigestedPrey_Milk</originalThought>
+        <overrideThought>RV2_ConsumedDigestedPrey_Milk_Bad</overrideThought>
+        <priority>1</priority>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>ProductPreference_Hates</defName>
+    <label>Processed pawn disgust</label>
+    <description>[PAWN_label] hates consuming the remains of prey who have been churned into edibles. It's a profane alchemy that mustn't grace [PAWN_possessive] tongue.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ThoughtOverride">
+        <originalThought>RV2_ConsumedDigestedPrey_Cum</originalThought>
+        <overrideThought>RV2_ConsumedDigestedPrey_Cum_VeryBad</overrideThought>
+        <priority>1</priority>
+      </li>
+	  <li Class="RimVore2.QuirkComp_ThoughtOverride">
+        <originalThought>RV2_ConsumedDigestedPrey_Milk</originalThought>
+        <overrideThought>RV2_ConsumedDigestedPrey_Milk_VeryBad</overrideThought>
+        <priority>1</priority>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  
+</Defs>

@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <IssueDef>
+    <defName>RV2_EndoVore</defName>
+    <label>Endo Vore</label>
+    <iconPath>UI/Issues/EndoVore</iconPath>
+  </IssueDef>
+
+  <!-- Neutral -->
+  <!--<PreceptDef>
+    <defName>RV2_EndoVore_Accepted</defName>
+    <issue>RV2_EndoVore</issue>
+    <label>Accepted</label>
+    <description>Enjoying prey is acceptable.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <associatedMemes>
+      <li>RV2_Preyism</li>
+      <li>RV2_Predation</li>
+    </associatedMemes>
+  </PreceptDef>-->
+
+  <!-- Disliked -->
+  <PreceptDef>
+    <defName>RV2_EndoVore_Disliked</defName>
+    <issue>RV2_EndoVore</issue>
+    <label>disliked</label>
+    <description>Not killing our prey is not okay.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <associatedMemes>
+      <li>RV2_Preyism</li>
+      <li>RV2_Predation</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>RV2_EndoVore</eventDef>
+        <thought>RV2_EndoVore_Disliked</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>RV2_EndoVore</eventDef>
+        <thought>RV2_EndoVore_Know_Disliked</thought>
+      </li>
+      <li Class="RimVore2.PreceptComp_Quirk_RemoveQuirks">
+        <quirks>
+          <li>GoalPreference_Predator_Pleasure_Obsessed</li>
+          <li>GoalPreference_Prey_Pleasure_Obsessed</li>
+          <li>GoalPreference_Predator_Store_Obsessed</li>
+          <li>GoalPreference_Prey_Store_Obsessed</li>
+          <li>GoalPreference_Predator_Hold_Obsessed</li>
+          <li>GoalPreference_Prey_Hold_Obsessed</li>
+          <li>GoalPreference_Predator_Heal_Obsessed</li>
+          <li>GoalPreference_Prey_Heal_Obsessed</li>
+        </quirks>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <ThoughtDef>
+    <defName>RV2_EndoVore_Disliked</defName>
+    <durationDays>3</durationDays>
+    <stages>
+      <li>
+        <label>I participated in endo vore</label>
+        <description>I should not have done that, my ideology discourages it</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>RV2_EndoVore_Know_Disliked</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>3</durationDays>
+    <stackLimit>1</stackLimit>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>endo vore participant</label>
+        <baseOpinionOffset>-5</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- Abhorrent -->
+  <PreceptDef>
+    <defName>RV2_EndoVore_Abhorrent</defName>
+    <issue>RV2_EndoVore</issue>
+    <label>abhorrent</label>
+    <description>Voring others without fatal intent is an affront to our belief.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <associatedMemes>
+      <li>RV2_Preyism</li>
+      <li>RV2_Predation</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>RV2_EndoVore</eventDef>
+        <thought>RV2_EndoVore_Abhorrent</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>RV2_EndoVore</eventDef>
+        <thought>RV2_EndoVore_Know_Abhorrent</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>RV2_EndoVore</eventDef>
+        <thought>RV2_EndoVore_Know_Social_Abhorrent</thought>
+      </li>
+      <li Class="RimVore2.PreceptComp_Quirk_RemoveQuirks">
+        <quirks>
+          <li>GoalPreference_Predator_Pleasure_Likes</li>
+          <li>GoalPreference_Predator_Pleasure_Obsessed</li>
+          <li>GoalPreference_Prey_Pleasure_Likes</li>
+          <li>GoalPreference_Prey_Pleasure_Obsessed</li>
+          <li>GoalPreference_Predator_Store_Likes</li>
+          <li>GoalPreference_Predator_Store_Obsessed</li>
+          <li>GoalPreference_Prey_Store_Likes</li>
+          <li>GoalPreference_Prey_Store_Obsessed</li>
+          <li>GoalPreference_Predator_Hold_Likes</li>
+          <li>GoalPreference_Predator_Hold_Obsessed</li>
+          <li>GoalPreference_Prey_Hold_Likes</li>
+          <li>GoalPreference_Prey_Hold_Obsessed</li>
+          <li>GoalPreference_Predator_Heal_Likes</li>
+          <li>GoalPreference_Predator_Heal_Obsessed</li>
+          <li>GoalPreference_Prey_Heal_Likes</li>
+          <li>GoalPreference_Prey_Heal_Obsessed</li>
+        </quirks>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <ThoughtDef>
+    <defName>RV2_EndoVore_Abhorrent</defName>
+    <durationDays>3</durationDays>
+    <stages>
+      <li>
+        <label>Endo vore</label>
+        <description>I participated in endo vore when it is against my ideology. I feel horrible.</description>
+        <baseMoodEffect>-24</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>RV2_EndoVore_Know_Abhorrent</defName>
+    <durationDays>3</durationDays>
+    <stages>
+      <li>
+        <label>Someone endo vored!!</label>
+        <description>One of us endo vored someone, this is a disgusting insult to our beliefs!</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>RV2_EndoVore_Know_Social_Abhorrent</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>3</durationDays>
+    <stackLimit>5</stackLimit>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>endo-vored</label>
+        <baseOpinionOffset>-10</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- Liked -->
+  <PreceptDef>
+    <defName>RV2_EndoVore_Liked</defName>
+    <issue>RV2_EndoVore</issue>
+    <label>liked</label>
+    <description>Endo vore is to be praised and encouraged.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <associatedMemes>
+      <li>RV2_Preyism</li>
+      <li>RV2_Predation</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>RV2_EndoVore</eventDef>
+        <thought>RV2_EndoVore_Liked</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>RV2_EndoVore</eventDef>
+        <thought>RV2_EndoVore_Know_Liked</thought>
+      </li>
+      <li Class="RimVore2.PreceptComp_Quirk_RemoveQuirks">
+        <quirks>
+          <li>GoalPreference_Predator_Pleasure_Refuses</li>
+          <li>GoalPreference_Predator_Store_Refuses</li>
+          <li>GoalPreference_Prey_Store_Refuses</li>
+          <li>GoalPreference_Predator_Hold_Refuses</li>
+          <li>GoalPreference_Prey_Hold_Refuses</li>
+          <li>GoalPreference_Predator_Heal_Refuses</li>
+          <li>GoalPreference_Prey_Heal_Refuses</li>
+        </quirks>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <ThoughtDef>
+    <defName>RV2_EndoVore_Liked</defName>
+    <durationDays>3</durationDays>
+    <stages>
+      <li>
+        <label>I participated in endo vore</label>
+        <description>Partaking in this divine art fills me with joy</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>RV2_EndoVore_Know_Liked</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>3</durationDays>
+    <stackLimit>1</stackLimit>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>endo-vored</label>
+        <baseOpinionOffset>5</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- Required -->
+  <PreceptDef>
+    <defName>RV2_EndoVore_Required</defName>
+    <issue>RV2_EndoVore</issue>
+    <label>required</label>
+    <description>We are born to love our prey, we require regular endo vore.</description>
+    <impact>High</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <associatedMemes>
+      <li>RV2_Preyism</li>
+      <li>RV2_Predation</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>RV2_EndoVore</eventDef>
+        <thought>RV2_EndoVore_Required</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>RV2_EndoVore</eventDef>
+        <thought>RV2_EndoVore_Know_Required</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>RV2_EndoVore</eventDef>
+        <thought>RV2_EndoVore_Know_Social_Required</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>RV2_NoRecentEndoVore_Required</thought>
+        <description>No endo vore for {VORERELATEDINTERVAL} days</description>
+      </li>
+      <li Class="RimVore2.PreceptComp_Quirk_RemoveQuirks">
+        <quirks>
+          <li>GoalPreference_Predator_Pleasure_Dislikes</li>
+          <li>GoalPreference_Predator_Pleasure_Refuses</li>
+          <li>GoalPreference_Prey_Pleasure_Dislikes</li>
+          <li>GoalPreference_Prey_Pleasure_Refuses</li>
+          <li>GoalPreference_Predator_Store_Dislikes</li>
+          <li>GoalPreference_Predator_Store_Refuses</li>
+          <li>GoalPreference_Prey_Store_Dislikes</li>
+          <li>GoalPreference_Prey_Store_Refuses</li>
+          <li>GoalPreference_Predator_Hold_Dislikes</li>
+          <li>GoalPreference_Predator_Hold_Refuses</li>
+          <li>GoalPreference_Prey_Hold_Dislikes</li>
+          <li>GoalPreference_Prey_Hold_Refuses</li>
+          <li>GoalPreference_Predator_Heal_Dislikes</li>
+          <li>GoalPreference_Predator_Heal_Refuses</li>
+          <li>GoalPreference_Prey_Heal_Dislikes</li>
+          <li>GoalPreference_Prey_Heal_Refuses</li>
+        </quirks>
+      </li>
+      <li Class="RimVore2.PreceptComp_Quirk_AddQuirks">
+        <quirks>
+          <li>Enablers_Core_Goal_TempEndo</li>
+        </quirks>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <ThoughtDef>
+    <defName>RV2_EndoVore_Required</defName>
+    <durationDays>1</durationDays>
+    <stages>
+      <li>
+        <label>Endo vored</label>
+        <description>By engaging in vore in a non-lethal way I honor my beliefs.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>RV2_EndoVore_Know_Required</defName>
+    <durationDays>1</durationDays>
+    <stages>
+      <li>
+        <label>Someone endo vored!</label>
+        <description>One of our members vored without malicious intent, a very respectable act!</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>RV2_EndoVore_Know_Social_Required</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>3</durationDays>
+    <stackLimit>5</stackLimit>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>divine endo lover</label>
+        <baseOpinionOffset>2</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>RV2_NoRecentEndoVore_Required</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>RimVore2.ThoughtWorker_Precept_RecentKeyword</workerClass>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>want to endo vore prey</label>
+        <description>It's been far too long since I last endo-vored someone.</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+    <modExtensions>
+      <li Class="RimVore2.PreceptThoughtWorker_ListeningKeyword">
+        <keyword>EndoVore</keyword>
+      </li>
+    </modExtensions>
+  </ThoughtDef>
+
+</Defs>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+
+<!-- base game has placeholders -->
+<!-- in the label: {0} = other pawn -->
+<!-- in the description: {0} = thought owner {1} = other pawn -->
+<!-- RV2_VoreMemory_BasePredatorSuccessMemory is a great example of place holders -->
+
+
+<Defs>
+  <ThoughtDef Name="RV2_VoreRitualMemory_Base" Abstract ="True">
+    <thoughtClass>Thought_AttendedRitual</thoughtClass>
+    <durationDays>6</durationDays>
+    <stackLimit>3</stackLimit>
+    <showBubble>true</showBubble>
+    <validWhileDespawned>true</validWhileDespawned>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="RV2_VoreRitualMemory_Base">
+    <defName>RV2_VoreRitual_Terrible</defName>
+    <stages>
+      <li>
+        <label>Terrible vore ritual</label>
+        <description>Bah, what a waste of time!</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_VoreRitualMemory_Base">
+    <defName>RV2_VoreRitual_Boring</defName>
+    <stages>
+      <li>
+        <label>Boring vore ritual</label>
+        <description>That could have gone better.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_VoreRitualMemory_Base">
+    <defName>RV2_VoreRitual_Satisfying</defName>
+    <stages>
+      <li>
+        <label>Satisfying vore ritual</label>
+        <description>I had a delightful time!</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_VoreRitualMemory_Base">
+    <defName>RV2_VoreRitual_Spectacular</defName>
+    <stages>
+      <li>
+        <label>Spectacular vore ritual</label>
+        <description>I am delighted to have participated in that ritual!</description>
+        <baseMoodEffect>7</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>

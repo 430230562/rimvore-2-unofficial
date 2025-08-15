@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <HediffDef Abstract="True" Name="LightGenitals_GenitalBase">
+    <isBad>false</isBad>
+    <everCurableByItem>false</everCurableByItem>
+    <hediffClass>HediffWithComps</hediffClass>
+    <stages>
+    <li>
+      <becomeVisible>false</becomeVisible>
+      <minSeverity>0</minSeverity>
+    </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef ParentName="LightGenitals_GenitalBase">
+    <defName>LightGenitals_Penis</defName>
+    <label>Penis</label>
+    <description>Male reproductive body part</description>
+  </HediffDef>
+
+  <HediffDef ParentName="LightGenitals_GenitalBase">
+    <defName>LightGenitals_Vagina</defName>
+    <label>Vagina</label>
+    <description>Female reproductive body part</description>
+  </HediffDef>
+
+  <HediffDef ParentName="LightGenitals_GenitalBase">
+    <defName>LightGenitals_Breasts</defName>
+    <label>Breasts</label>
+    <description>Female nursing body parts</description>
+  </HediffDef>
+
+  <HediffDef ParentName="LightGenitals_GenitalBase">
+    <defName>LightGenitals_Anus</defName>
+    <label>Anus</label>
+    <description>Body part for excretion</description>
+  </HediffDef>
+</Defs>

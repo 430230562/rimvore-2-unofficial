@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <!-- storage capacity modifiers expect a default storage capacity of pawn.BodySize * 1.5 -->
+  <!-- should the default value get updated, it would be reasonable to update these as well -->
+  
+  <RimVore2.QuirkPoolDef>
+    <defName>StorageCapacity</defName>
+    <label>Storage capacity</label>
+	<category>Capacity</category>
+	<description>These quirks determine how many prey can fit in the pawn. The volume of a preything is its body size. A predator's capacity is a multiplier of its body size.</description>
+    <generationOrder>3</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>StorageCapacity_Godlike</li> 
+      <li>StorageCapacity_VeryGood</li>
+      <li>StorageCapacity_Good</li>
+      <li>StorageCapacity_Normal</li>
+      <li>StorageCapacity_Bad</li>
+      <li>StorageCapacity_VeryBad</li>
+    </quirks>
+  </RimVore2.QuirkPoolDef>
+  
+     <RimVore2.QuirkDef>
+    <defName>StorageCapacity_Godlike</defName>
+    <label>Godlike Capacity</label>
+    <description>[PAWN_label]'s skin is supernaturally stretchy, able to expand to sizes that defy all logic and reason. No matter how full [PAWN_pronoun] gets, [PAWN_pronoun] seemingly always has room for one more.</description>
+    <rarity>VeryRare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>StorageCapacity</modifierName>
+        <modifierValue>10</modifierValue> <!-- many times the preds size -->
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkDef>
+    <defName>StorageCapacity_VeryGood</defName>
+    <label>Cavernous</label>
+    <description>[PAWN_label] can stuff [PAWN_objective]self silly with prey and still have room for more, though even [PAWN_pronoun] has limits.</description>
+    <rarity>Uncommon</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>StorageCapacity</modifierName>
+        <modifierValue>2</modifierValue> <!-- thrice the preds size -->
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkDef>
+    <defName>StorageCapacity_Good</defName>
+    <label>Stretchy</label>
+    <description>[PAWN_label] can stretch to fit more prey than the average predator.</description>
+    <rarity>Uncommon</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>StorageCapacity</modifierName>
+        <modifierValue>1.34</modifierValue> <!-- twice the preds size -->
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkDef>
+    <defName>StorageCapacity_Normal</defName>
+    <label>Normal capacity</label>
+    <hidden>true</hidden>
+    <description>[PAWN_label] can fit as many prey as anyone else.</description>
+    <rarity>Abundant</rarity>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>StorageCapacity_Bad</defName>
+    <label>Tight</label>
+    <description>[PAWN_label] struggles to fit as many prey inside [PAWN_objective]self as most of [PAWN_possessive] predatory peers can; there's only room for one, maybe (by default).</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>StorageCapacity</modifierName>
+        <modifierValue>0.67</modifierValue> <!-- exactly the preds size -->
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkDef>
+    <defName>StorageCapacity_VeryBad</defName>
+    <label>Claustrophobic</label>
+    <description>[PAWN_label] struggles with a lack of capacity for prey. [PAWN_pronoun] can't eat prey of the same size (by default), and fills up fast otherwise.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>StorageCapacity</modifierName>
+        <modifierValue>0.5</modifierValue> <!-- 3/4ths the preds size -->
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+</Defs>

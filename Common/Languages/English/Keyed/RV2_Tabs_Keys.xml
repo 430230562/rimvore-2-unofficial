@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<RV2_PawnVoreTab>Vore</RV2_PawnVoreTab>
+	<RV2_Tab_HiddenPreyCount>{0} More prey</RV2_Tab_HiddenPreyCount>
+  <RV2_Tab_ExpandOrCollapse>Expand / Collapse</RV2_Tab_ExpandOrCollapse>
+	<RV2_Interactive_Tab>Interactive View</RV2_Interactive_Tab>
+	<RV2_Overview_Table>Overview</RV2_Overview_Table>
+	<RV2_Pawn_Source_All>All</RV2_Pawn_Source_All>
+	<RV2_Pawn_Source_Map>All Map</RV2_Pawn_Source_Map>
+	<RV2_Toggle_Struggle>Toggle Struggle</RV2_Toggle_Struggle>
+  <RV2_Tab_Inspect>Select Prey</RV2_Tab_Inspect>
+</LanguageData>

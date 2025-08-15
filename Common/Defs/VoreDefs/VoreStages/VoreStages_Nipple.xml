@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+
+  <RimVore2.VoreStageDef Abstract="True" Name="Nipple_Base">
+    <partName>chest</partName>
+    <displayPartTranslationKey>RV2_DisplayPart_Nipple</displayPartTranslationKey>
+    <requirements>
+      <li>
+        <target>Predator</target>
+        <requirements>
+          <li Class="RimVore2.Requirement_BodyPartAlias">
+            <bodyPartAlias>chest</bodyPartAlias>
+          </li>
+        </requirements>
+      </li>
+    </requirements>
+  </RimVore2.VoreStageDef>
+
+  <RimVore2.VoreStageDef Abstract="True" Name="Nipple_Pass" ParentName="Nipple_Base">
+    <partGoal>Pass</partGoal>
+    <onStart>
+      <actions>
+        <li Class="RimVore2.RollAction_PlaySound">
+          <sound>RV2_Squish</sound>
+        </li>
+      </actions>
+    </onStart>
+    <passConditions>
+      <li Class="RimVore2.StagePassCondition_Timed">
+        <duration>8</duration>
+      </li>
+    </passConditions>
+  </RimVore2.VoreStageDef>
+
+  <RimVore2.VoreStageDef Name="Nipple_Enter" ParentName="Nipple_Pass">
+    <defName>Nipple_Enter</defName>
+    <canReverseDirection>true</canReverseDirection>
+    <predatorHediffDef>RV2_PreyInNipplePassing</predatorHediffDef>
+    <predatorThoughtDef>RV2_PreyInNipplePassing</predatorThoughtDef>
+    <onStart>
+      <actions>
+        <li Class="RimVore2.RollAction_RecordTale_VoreInitiation"/>
+      </actions>
+    </onStart>
+    <onEnd>
+      <actions>
+        <li Class="RimVore2.RollAction_PlaySound">
+          <sound>RV2_Slurp</sound>
+        </li>
+      </actions>
+    </onEnd>
+  </RimVore2.VoreStageDef>
+
+  <RimVore2.VoreStageDef Name="Nipple_Pleasure" ParentName="Nipple_Enter">
+    <defName>Nipple_Enter_Pleasure</defName>
+    <partGoal>Pleasure</partGoal>
+    <canReverseDirection>true</canReverseDirection>
+    <predatorHediffDef>RV2_PreyInNipplePleasuring</predatorHediffDef>
+    <predatorThoughtDef>RV2_PreyInNipplePleasuring</predatorThoughtDef>
+    <onStart>
+      <rollPresets>
+        <li>Sound_Moan_Chance</li>
+      </rollPresets>
+    </onStart>
+    <onCycle>
+      <rollPresets>
+        <li>Sound_Squish_2</li>
+        <li>Sound_Moan_Chance_3</li>
+        <li>StealNeed_ForPrey_Food</li>
+        <li>IncreaseNeed_Predator_Comfort</li>
+        <li>IncreaseNeed_Prey_Comfort</li>
+      </rollPresets>
+    </onCycle>
+    <onEnd>
+      <actions>
+        <li Class="RimVore2.RollAction_PlaySound">
+          <sound>RV2_Orgasm</sound>
+        </li>
+      </actions>
+    </onEnd>
+    <passConditions Inherit="False">
+      <li Class="RimVore2.StagePassCondition_Need">
+        <target>Predator</target>
+        <need>Comfort</need>
+        <targetLevel>0.95</targetLevel>
+      </li>
+    </passConditions>
+  </RimVore2.VoreStageDef>
+
+  <RimVore2.VoreStageDef Name="Nipple_Exit" ParentName="Nipple_Pass">
+    <defName>Nipple_Exit</defName>
+    <canReverseDirection>false</canReverseDirection>
+    <predatorHediffDef>RV2_PreyInNippleExiting</predatorHediffDef>
+    <predatorThoughtDef>RV2_PreyInNippleExiting</predatorThoughtDef>
+    <onCycle>
+      <rollPresets>
+        <li>Sound_Squish_2</li>
+      </rollPresets>
+    </onCycle>
+    <onEnd>
+      <actions>
+        <li Class="RimVore2.RollAction_PlaySound">
+          <sound>RV2_Splatter</sound>
+        </li>
+        <li Class="RimVore2.RollAction_RecordTale_VoreExit"/>
+      </actions>
+    </onEnd>
+    <passConditions Inherit="False">
+      <li Class="RimVore2.StagePassCondition_Timed">
+        <duration>100</duration>
+      </li>
+    </passConditions>
+  </RimVore2.VoreStageDef>
+
+  <RimVore2.VoreStageDef Name="Nipple_Exit_Pleasure" ParentName="Nipple_Exit">
+    <defName>Nipple_Exit_Pleasure</defName>
+    <onStart>
+      <rollPresets>
+        <li>Sound_Moan_Chance</li>
+      </rollPresets>
+    </onStart>
+    <onCycle>
+      <rollPresets>
+        <li>Sound_Moan_Chance_3</li>
+        <li>StealNeed_ForPrey_Food</li>
+        <li>IncreaseNeed_Predator_Comfort</li>
+        <li>IncreaseNeed_Prey_Comfort</li>
+      </rollPresets>
+    </onCycle>
+    <onEnd>
+      <actions>
+        <li Class="RimVore2.RollAction_PlaySound">
+          <sound>RV2_Orgasm</sound>
+        </li>
+      </actions>
+    </onEnd>
+  </RimVore2.VoreStageDef>
+
+  <RimVore2.VoreStageDef Name="Nipple_Dump" ParentName="Nipple_Exit">
+    <predatorHediffDef>RV2_PreyInNippleDumping</predatorHediffDef>
+    <predatorThoughtDef>RV2_PreyInNippleDumping</predatorThoughtDef>
+    <defName>Nipple_Dump</defName>
+    <onStart>
+      <rollPresets>
+        <li>Sound_Moan_Chance</li>
+      </rollPresets>
+    </onStart>
+    <onEnd>
+      <actions>
+        <li Class="RimVore2.RollAction_PlaySound">
+          <sound>RV2_Orgasm</sound>
+        </li>
+      </actions>
+    </onEnd>
+    <onCycle>
+      <rollPresets>
+        <li>Sound_Moan_Chance_3</li>
+        <li>IncreaseNeed_Predator_Comfort</li>
+      </rollPresets>
+    </onCycle>
+  </RimVore2.VoreStageDef>
+  
+  
+  
+</Defs>
+
+
+
+<!--
+  <RimVore2.VoreStageDef Abstract="True" Name="Nipple_Dump_Base" ParentName="Nipple_Base">
+    <partGoal>Dump</partGoal>
+    <canReverseDirection>false</canReverseDirection>
+    <predatorHediffDef>RV2_PreyInNippleDumping</predatorHediffDef>
+  </RimVore2.VoreStageDef>
+
+  <RimVore2.VoreStageDef Abstract="True" Name="Nipple_Exit_Base" ParentName="Nipple_Base">
+    <partGoal>Pass</partGoal>
+    <canReverseDirection>false</canReverseDirection>
+    <predatorHediffDef>RV2_PreyInNippleExiting</predatorHediffDef>
+  </RimVore2.VoreStageDef>
+
+  <RimVore2.VoreStageDef Abstract="True" Name="Nipple_Pass_Base" ParentName="Nipple_Base">
+    <partGoal>Pass</partGoal>
+    <canReverseDirection>true</canReverseDirection>
+    <predatorHediffDef>RV2_PreyInNipplePassing</predatorHediffDef>
+  </RimVore2.VoreStageDef>
+
+  <RimVore2.VoreStageDef Abstract="True" Name="Nipple_Pleasure_Base" ParentName="Nipple_Base">
+    <partGoal>Pleasure</partGoal>
+    <canReverseDirection>true</canReverseDirection>
+    <predatorHediffDef>RV2_PreyInNipplePleasuring</predatorHediffDef>
+  </RimVore2.VoreStageDef>
+
+-->

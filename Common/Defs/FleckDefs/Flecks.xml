@@ -1,0 +1,125 @@
+<!--<Defs>
+	<ThingDef ParentName="MoteBase">
+		<defName>RV2_Mote_Skull</defName>
+		<graphicData>
+			<texPath>UI/Icons/skull</texPath>
+		</graphicData>
+		<altitudeLayer>MetaOverlays</altitudeLayer>
+		<mote>
+			<fadeInTime>0.08</fadeInTime>
+			<solidTime>1.4</solidTime>
+			<fadeOutTime>1.5</fadeOutTime>
+		</mote>
+	</ThingDef>
+  <ThingDef ParentName="MoteBase">
+    <defName>RV2_Mote_Heart</defName>
+    <graphicData>
+      <texPath>UI/Icons/heart</texPath>
+    </graphicData>
+    <altitudeLayer>MetaOverlays</altitudeLayer>
+    <mote>
+      <fadeInTime>0.08</fadeInTime>
+      <solidTime>1.4</solidTime>
+      <fadeOutTime>1.5</fadeOutTime>
+    </mote>
+  </ThingDef>
+</Defs>-->
+<Defs>
+  <FleckDef Name="RV2_FleckBase" ParentName="FleckBase" Abstract="True">
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <solidTime>1.4</solidTime>
+    <fadeOutTime>1.5</fadeOutTime>
+    <graphicData>
+      <shaderType>MoteGlow</shaderType>
+    </graphicData>
+  </FleckDef>
+  <FleckDef ParentName="RV2_FleckBase">
+    <defName>RV2_Mote_Skull</defName>
+    <graphicData>
+      <texPath>UI/Icons/skull</texPath>
+    </graphicData>
+  </FleckDef>
+  <FleckDef ParentName="RV2_FleckBase">
+    <defName>RV2_Mote_Heart</defName>
+    <graphicData>
+      <texPath>UI/Icons/heart</texPath>
+    </graphicData>
+  </FleckDef>
+  
+  <!-- one bubble -->
+  <FleckDef Name="RV2_FleckBase_Bubble" ParentName="FleckBase" Abstract="True">
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <solidTime>1.4</solidTime>
+    <fadeOutTime>1.5</fadeOutTime>
+    <graphicData>
+      <shaderType>MoteGlow</shaderType>
+    </graphicData>
+  </FleckDef>
+  
+  <FleckDef ParentName="RV2_FleckBase_Bubble">
+    <defName>RV2_Mote_BubbleDigest</defName>
+    <graphicData>
+      <texPath>Motes/BubbleDigest</texPath>
+    </graphicData>
+  </FleckDef>
+  <FleckDef ParentName="RV2_FleckBase_Bubble">
+    <defName>RV2_Mote_BubbleGamete</defName>
+    <graphicData>
+      <texPath>Motes/BubbleGamete</texPath>
+    </graphicData>
+  </FleckDef>
+  <FleckDef ParentName="RV2_FleckBase_Bubble">
+    <defName>RV2_Mote_BubbleLove</defName>
+    <graphicData>
+      <texPath>Motes/BubbleLove</texPath>
+    </graphicData>
+  </FleckDef>
+  <FleckDef ParentName="RV2_FleckBase_Bubble">
+    <defName>RV2_Mote_BubbleMilk</defName>
+    <graphicData>
+      <texPath>Motes/BubbleMilk</texPath>
+    </graphicData>
+  </FleckDef>
+  
+  <!-- many bubbles -->
+  <FleckDef Name="RV2_FleckBase_Bubbles" ParentName="FleckBase" Abstract="True">
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <solidTime>1.4</solidTime>
+    <fadeOutTime>1.5</fadeOutTime>
+    <graphicData>
+      <shaderType>MoteGlow</shaderType>
+    </graphicData>
+  </FleckDef>
+  
+  <FleckDef ParentName="RV2_FleckBase_Bubbles">
+    <defName>RV2_Mote_BubblesDigest</defName>
+    <graphicData>
+      <texPath>Motes/BubblesDigest</texPath>
+    </graphicData>
+  </FleckDef>
+  <FleckDef ParentName="RV2_FleckBase_Bubbles">
+    <defName>RV2_Mote_BubblesGamete</defName>
+    <graphicData>
+      <texPath>Motes/BubblesGamete</texPath>
+    </graphicData>
+  </FleckDef>
+  <FleckDef ParentName="RV2_FleckBase_Bubbles">
+    <defName>RV2_Mote_BubblesLove</defName>
+    <graphicData>
+      <texPath>Motes/BubblesLove</texPath>
+    </graphicData>
+  </FleckDef>
+  <FleckDef ParentName="RV2_FleckBase_Bubbles">
+    <defName>RV2_Mote_BubblesMilk</defName>
+    <graphicData>
+      <texPath>Motes/BubblesMilk</texPath>
+    </graphicData>
+  </FleckDef>
+  <FleckDef ParentName="RV2_FleckBase_Bubbles">
+    <defName>RV2_Mote_Heal</defName>
+    <graphicData>
+      <texPath>Motes/Heal</texPath>
+    </graphicData>
+  </FleckDef>
+  
+</Defs>

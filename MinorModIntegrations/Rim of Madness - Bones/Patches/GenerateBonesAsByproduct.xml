@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- 
+  This will produce bones to any vore path that produces items
+-->
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/RimVore2.RollPresetDef[@Name="CreateThing"]/actionsOnSuccess</xpath>
+    <value>
+      <li Class="RimVore2.RollAction_CreateThingsFromDef">
+        <requiredNutrition>0.25</requiredNutrition>
+        <name>PreyNutrition</name>
+        <minValue>0</minValue>
+        <things>
+          <li>BoneItem</li>
+        </things>
+      </li>
+    </value>
+  </Operation>
+</Patch>

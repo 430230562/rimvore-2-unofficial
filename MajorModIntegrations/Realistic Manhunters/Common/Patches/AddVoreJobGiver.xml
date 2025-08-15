@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/DutyDef[defName="ReMa_HuntTarget"]/thinkNode/subNodes</xpath>
+    <order>Prepend</order>
+    <value>
+      <li Class="RV2_ReMa.JobGiver_VoreDownedPawns"/>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/DutyDef[defName="ReMa_Escort"]/thinkNode/subNodes</xpath>
+    <order>Prepend</order>
+    <value>
+      <li Class="RV2_ReMa.JobGiver_VoreDownedPawns"/>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/DutyDef[defName="ReMa_Roam"]/thinkNode/subNodes</xpath>
+    <order>Prepend</order>
+    <value>
+      <li Class="RV2_ReMa.JobGiver_VoreDownedPawns"/>
+    </value>
+  </Operation>
+</Patch>

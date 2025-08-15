@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+  <ThoughtDef>
+    <defName>RV2_PreyStruggling</defName>
+    <workerClass>RimVore2.ThoughtWorker_Situation_Struggle</workerClass>
+    <stages>
+      <li>
+        <label>Struggling prey</label>
+        <description>Oh that feels weird</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+      <li>
+        <label>Multiple struggling prey</label>
+        <description>Feels like a bad belly ache...</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>RV2_PreyStruggling_Loved</defName>
+    <workerClass>RimVore2.ThoughtWorker_Situation_Struggle</workerClass>
+    <stages>
+      <li>
+        <label>Struggling prey</label>
+        <description>That feels wonderful</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+      <li>
+        <label>Multiple struggling prey</label>
+        <description>Yes! Keep wiggling around in there!</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>RV2_PreyStruggling_Hated</defName>
+    <workerClass>RimVore2.ThoughtWorker_Situation_Struggle</workerClass>
+    <stages>
+      <li>
+        <label>Struggling prey</label>
+        <description>What a horrible feeling</description>
+        <baseMoodEffect>-12</baseMoodEffect>
+      </li>
+      <li>
+        <label>Multiple struggling prey</label>
+        <description>This disgusting feeling, make it stop! Please!</description>
+        <baseMoodEffect>-30</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

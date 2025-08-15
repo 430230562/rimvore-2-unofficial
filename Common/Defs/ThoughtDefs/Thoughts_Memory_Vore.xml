@@ -1,0 +1,855 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+
+<!-- base game has placeholders -->
+<!-- in the label: {0} = other pawn -->
+<!-- in the description: {0} = thought owner {1} = other pawn -->
+<!-- RV2_VoreMemory_BasePredatorSuccessMemory is a great example of place holders -->
+
+
+<Defs>
+  <ThoughtDef Name="RV2_VoreMemory_Base" Abstract ="True">
+    <durationDays>2</durationDays>
+    <stackLimit>2</stackLimit>
+    <showBubble>true</showBubble>
+    <validWhileDespawned>true</validWhileDespawned>
+  </ThoughtDef>
+  
+  <!-- digestion placeholders -->
+  <!-- currently unused 
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PredatorDigestSuccess</defName>
+    <stages>
+      <li>
+        <label>Digested {0}</label>
+        <description>I digested {1} through some ambiguous organ. A satisfying meal!</description>
+        <baseMoodEffect>8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PreyDigestInterrupted</defName>
+    <stages>
+      <li>
+        <label>Escaped digestion</label>
+        <description>{1} tried to digest me!</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  -->
+  <!-- pleasure placeholders -->
+  <!-- currently unused
+  <ThoughtDef Name="RV2_VoreMemory_BasePredatorSuccess" ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_VoreMemory_BasePredatorSuccess</defName>
+    <stages>
+      <li>
+        <label>Passed {0}</label>
+        <description>I vored {1} and passed them through my body! That was fun.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef Name="RV2_VoreMemory_BasePredatorInterrupted" ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_VoreMemory_BasePredatorInterrupted</defName>
+    <stages>
+      <li>
+        <label>Vore of {0} interrupted</label>
+        <description>I was interrupted while trying to vore {1}. How disappointing.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef Name="RV2_VoreMemory_BasePreySuccess" ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_VoreMemory_BasePreySuccess</defName>
+    <stages>
+      <li>
+        <label>Passed by {0}</label>
+        <description>{1} vored me and passed me through their system! That was fun.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef Name="RV2_VoreMemory_BasePreyInterrupted" ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_VoreMemory_BasePreyInterrupted</defName>
+    <stages>
+      <li>
+        <label>Endo-vore of {0} interrupted</label>
+        <description>We were interrupted while {1} was trying to vore me. How disappointing.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  -->
+  <!-- storage placeholders -->
+  <!-- currently unused 
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PredatorStoreEnd</defName>
+    <durationDays Inherit="False">0.3</durationDays>
+    <stages>
+      <li>
+        <label>Vore-stored {0}</label>
+        <description>I feel so much lighter!</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PreyStoreEnd</defName>
+    <durationDays Inherit="False">0.3</durationDays>
+    <stages>
+      <li>
+        <label>Was vore-stored by {0}</label>
+        <description>It's nice to have room to stretch again.</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  -->
+  
+  <!-- Oral -->
+  
+  <!-- Oral Digestion -->
+  
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PredatorOralDigestSuccess</defName>
+    <stages>
+      <li>
+        <label>Orally digested {0}</label>
+        <description>I ate and gurgled {1}. A satisfying meal!</description>
+        <baseMoodEffect>8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PredatorOralDigestInterrupted</defName>
+    <stages>
+      <li>
+        <label>Oral digestion of {0} interrupted</label>
+        <description>I tried to gurgle {1}, but they got away. *Now* what am I supposed to eat?</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PreyOralDigestInterrupted</defName>
+    <stages>
+      <li>
+        <label>Escaped oral digestion</label>
+        <description>{1} tried to eat me! I'm not food!</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- ESEGN: Oral pleasure was previously focused on being full tour, had to rewrite with addition of specific full tour type -->
+  <!-- Oral Pleasure -->
+
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PredatorOralPleasureSuccess</defName>
+    <stages>
+      <li>
+        <label>Bellied {0}</label>
+        <description>I gave {1} a place to relax in my stomach. Being so full felt great!</description>
+        <baseMoodEffect>12</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PredatorOralPleasureInterrupted</defName>
+    <stages>
+      <li>
+        <label>Bellying {0} interrupted</label>
+        <description>I tried to give {1} a vacation in my stomach, but we were interrupted. How disappointing.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PreyOralPleasureSuccess</defName>
+    <stages>
+      <li>
+        <label>Bellied by {0}</label>
+        <description>{1} let me relax in their stomach. It was a great way to unwind!</description>
+        <baseMoodEffect>12</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PreyOralPleasureInterrupted</defName>
+    <stages>
+      <li>
+        <label>Bellying by {0} interrupted</label>
+        <description>{1} tried to let me relax in their stomach, but we were interrupted. How disappointing.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- oral storage -->
+
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PredatorOralStoreEnd</defName>
+    <durationDays Inherit="False">0.3</durationDays>
+    <stages>
+      <li>
+        <label>Released {0} from stomach-storage</label>
+        <description>I feel so much lighter!</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PreyOralStoreEnd</defName>
+    <durationDays Inherit="False">0.3</durationDays>
+    <stages>
+      <li>
+        <label>Released from {0}'s stomach-storage</label>
+        <description>It's nice to have room to stretch again.</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- oral healing -->
+
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PredatorOralHealSuccess</defName>
+    <stages>
+      <li>
+        <label>Healed {0} in their stomach</label>
+        <description>Good as new!</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PreyOralHealSuccess</defName>
+    <stages>
+      <li>
+        <label>Healed by {0}'s stomach</label>
+        <description>I had a reinvigorating bath.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- ESEGN: FullTour -->
+
+  <!-- ESEGN: Full tour storage -->
+
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PredatorFullTourStoreEnd</defName>
+    <durationDays Inherit="False">0.3</durationDays>
+    <stages>
+      <li>
+        <label>Released {0} from stomach-storage by tour</label>
+        <description>I feel so much lighter!</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PreyFullTourStoreEnd</defName>
+    <durationDays Inherit="False">0.3</durationDays>
+    <stages>
+      <li>
+        <label>Released from {0}'s stomach-storage by tour</label>
+        <description>It's nice to have room to stretch again.</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- ESEGN: Full tour pleasure -->
+  <!-- ESEGN: Descriptions borrowed from old oral pleasure thoughts -->
+
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PredatorFullTourPleasureSuccess</defName>
+    <stages>
+      <li>
+        <label>Guided {0}</label>
+        <description>I gave {1} a sensual tour of my digestive system. I feel a bit cleaner inside!</description>
+        <baseMoodEffect>12</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PredatorFullTourPleasureInterrupted</defName>
+    <stages>
+      <li>
+        <label>Guiding {0} interrupted</label>
+        <description>I tried to give {1} a full tour of my digestive system, but we were interrupted. How disappointing.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PreyFullTourPleasureSuccess</defName>
+    <stages>
+      <li>
+        <label>Guided by {0}</label>
+        <description>{1} gave me a sensual tour of their digestive system. Every inch, a pleasure!</description>
+        <baseMoodEffect>12</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PreyFullTourPleasureInterrupted</defName>
+    <stages>
+      <li>
+        <label>Tour by {0} interrupted</label>
+        <description>{1} tried to give me a full tour of their digestive system, but we were interrupted. How disappointing.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- ESEGN: Full tour healing -->
+
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PredatorFullTourHealSuccess</defName>
+    <stages>
+      <li>
+        <label>Healed {0} in their guts</label>
+        <description>Good as new, hope you enjoyed the ride!</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PreyFullTourHealSuccess</defName>
+    <stages>
+      <li>
+        <label>Healed by {0}'s guts</label>
+        <description>I had a reinvigorating bath, and a nice trip.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- Anal -->
+  
+  <!--anal digestion-->
+  
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PredatorAnalDigestSuccess</defName>
+    <stages>
+      <li>
+        <label>Anally digested {0}</label>
+        <description>I lost {1} in my rear end--permanently!</description>
+        <baseMoodEffect>8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PredatorAnalDigestInterrupted</defName>
+    <stages>
+      <li>
+        <label>Anal digestion of {0} interrupted</label>
+        <description>I tried to eat {1} with my ass, but they got away. *Now* how am I supposed to feed my tush?</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PreyAnalDigestInterrupted</defName>
+    <stages>
+      <li>
+        <label>Escaped anal digestion</label>
+        <description>{1} tried to feed me to their ass! I'm not butt-food!</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!--anal pleasure-->
+
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PredatorAnalPleasureSuccess</defName>
+    <stages>
+      <li>
+        <label>Posternated {0}</label>
+        <description>I lost {1} up my butt for a while. They're back out, now.</description>
+        <baseMoodEffect>12</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PredatorAnalPleasureInterrupted</defName>
+    <stages>
+      <li>
+        <label>Posternation of {0} interrupted</label>
+        <description>I tried to stuff {1} up my butt, but we were interrupted. How disappointing.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PreyAnalPleasureSuccess</defName>
+    <stages>
+      <li>
+        <label>Posternated by {0}</label>
+        <description>{1} sent me deep inside their derriere. I'm a spelunker!</description>
+        <baseMoodEffect>12</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PreyAnalPleasureInterrupted</defName>
+    <stages>
+      <li>
+        <label>Posternation by {0} interrupted</label>
+        <description>{1} tried to push me up their posterior, but we were interrupted. How disappointing.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!--anal storage-->
+  
+  <ThoughtDef Name="PredatorAnalStoreEnd" ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PredatorAnalStoreEnd</defName>
+    <durationDays Inherit="False">0.3</durationDays>
+    <stages>
+      <li>
+        <label>Released {0} from intestinal storage</label>
+        <description>I feel so much lighter!</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef Name="PreyAnalStoreEnd" ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PreyAnalStoreEnd</defName>
+    <durationDays Inherit="False">0.3</durationDays>
+    <stages>
+      <li>
+        <label>Released from {0}'s intestinal storage</label>
+        <description>It's nice to have room to stretch again.</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- Vaginal -->
+  
+  <!-- Vaginal Conversion -->
+  
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PredatorVaginalConvertLubeSuccess</defName>
+    <stages>
+      <li>
+        <label>Vaginally lubrified {0}</label>
+        <description>I unbirthed and melted {1} into lube. Their life began in one womb (probably) and ended in another.</description>
+        <baseMoodEffect>8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PredatorVaginalConvertLubeInterrupted</defName>
+    <stages>
+      <li>
+        <label>Vaginal lubrifaction of {0} interrupted</label>
+        <description>I tried to melt {1} into lube, but they got away. Now I'm all pent-up...</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PreyVaginalConvertLubeInterrupted</defName>
+    <stages>
+      <li>
+        <label>Escaped vaginal lubrifaction by {0}</label>
+        <description>{1} tried to melt me into lube in their womb! I'm not a disposable sex-toy!</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!--Vaginal reformation -->
+  
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PredatorVaginalReformSuccess</defName>
+    <stages>
+      <li>
+        <label>Rebirthed {0}</label>
+        <description>They look way better with my genes.</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PredatorVaginalReformInterrupted</defName>
+    <stages>
+      <li>
+        <label>Rebirth of {0} interrupted</label>
+        <description>How disappointing.</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PreyVaginalReformSuccess</defName>
+    <stages>
+      <li>
+        <label>Reborn by {0}</label>
+        <description>Who... Who am I?</description>
+        <baseMoodEffect>0</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PreyVaginalReformInterrupted</defName>
+    <stages>
+      <li>
+        <label>Rebirth by {0} interrupted</label>
+        <description>I was starting to lose myself...</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- Vaginal pleasure-->
+  
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PredatorVaginalPleasureSuccess</defName>
+    <stages>
+      <li>
+        <label>Unbirthed {0} as a sex-toy</label>
+        <description>I fucked myself with {1}! I'm still twitching just thinking about it.~</description>
+        <baseMoodEffect>12</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PredatorVaginalPleasureInterrupted</defName>
+    <stages>
+      <li>
+        <label>Unbirthing of {0} as a sex-toy interrupted</label>
+        <description>I tried to fuck myself with {1}, but we were interrupted. Can't I get just a moment to unwind?</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PreyVaginalPleasureSuccess</defName>
+    <stages>
+      <li>
+        <label>Unbirthed by {0} as a sex-toy</label>
+        <description>{1} used me as a living dildo! I'm a little bit dizzy, but damn if it wasn't hot!</description>
+        <baseMoodEffect>12</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PreyVaginalPleasureInterrupted</defName>
+    <stages>
+      <li>
+        <label>Unbirth by {0} as a sex-toy interrupted</label>
+        <description>{1} tried to use me like a dildo, but we were interrupted. I was so excited, too.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- Vaginal storage-->
+  
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PredatorVaginalStoreEnd</defName>
+    <durationDays Inherit="False">0.3</durationDays>
+    <stages>
+      <li>
+        <label>Released {0} from womb-storage</label>
+        <description>That's a load off my hips!</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PreyVaginalStoreEnd</defName>
+    <durationDays Inherit="False">0.3</durationDays>
+    <stages>
+      <li>
+        <label>Released from {0}'s womb-storage</label>
+        <description>It's nice to have room to stretch again.</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- Nipple heal -->
+
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PredatorVaginalHealSuccess</defName>
+    <stages>
+      <li>
+        <label>Healed {0} in their womb</label>
+        <description>Good as new!</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PreyVaginalHealSuccess</defName>
+    <stages>
+      <li>
+        <label>Healed by {0}'s womb</label>
+        <description>I had a reinvigorating bath.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- Cock -->
+  
+  <!--cock conversion -->
+  
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PredatorCockConvertSpermSuccess</defName>
+    <stages>
+      <li>
+        <label>Phallically spermified {0}</label>
+        <description>I unsowed and melted {1} into cum. Seed, to living being, to seed again.</description>
+        <baseMoodEffect>8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PredatorCockConvertSpermInterrupted</defName>
+    <stages>
+      <li>
+        <label>Phallic spermifaction of {0} interrupted</label>
+        <description>I tried to churn {1} down into batter, but they got away. Now I'm all pent-up...</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PreyCockConvertSpermInterrupted</defName>
+    <stages>
+      <li>
+        <label>Escaped phallic spermifaction by {0}</label>
+        <description>{1} tried to melt me into sperm! I'm not a disposable sex-toy!</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!--cock pleasure-->
+  
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PredatorCockPleasureSuccess</defName>
+    <stages>
+      <li>
+        <label>Unsowed {0} as a sex-toy</label>
+        <description>I sounded myself with {1}--and dropped them in.~</description>
+        <baseMoodEffect>12</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PredatorCockPleasureInterrupted</defName>
+    <stages>
+      <li>
+        <label>Unsowing of {0} as a sex-toy interrupted</label>
+        <description>I tried to use {1} as a sounding-rod, but we were interrupted. Can't I get just a moment to unwind?</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PreyCockPleasureSuccess</defName>
+    <stages>
+      <li>
+        <label>Unsown by {0} as a sex-toy</label>
+        <description>{1} used me as a living sounding-rod! I'm a little bit dizzy, but damn if it wasn't hot!</description>
+        <baseMoodEffect>12</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PreyCockPleasureInterrupted</defName>
+    <stages>
+      <li>
+        <label>Unsowing by {0} as a sex-toy interrupted</label>
+        <description>{1} tried to use me like a sounding-rod, but we were interrupted. I was so excited, too.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!--cock storage-->
+  
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PredatorCockStoreEnd</defName>
+    <durationDays Inherit="False">0.3</durationDays>
+    <stages>
+      <li>
+        <label>Released {0} from ball-storage</label>
+        <description>That's a weight off my loins!</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PreyCockStoreEnd</defName>
+    <durationDays Inherit="False">0.3</durationDays>
+    <stages>
+      <li>
+        <label>Released from {0}'s ball-storage</label>
+        <description>It's nice to have room to stretch again.</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- cock heal -->
+
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PredatorCockHealSuccess</defName>
+    <stages>
+      <li>
+        <label>Healed {0} in their testicles</label>
+        <description>Good as new!</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PreyCockHealSuccess</defName>
+    <stages>
+      <li>
+        <label>Healed by {0}'s testicles</label>
+        <description>I had a reinvigorating bath.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- Nipple -->
+  
+  <!-- Nipple Conversion -->
+  
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PredatorNippleConvertMilkSuccess</defName>
+    <stages>
+      <li>
+        <label>Mammily lactified {0}</label>
+        <description>I unsuckled {1} and melted them into milk. They made a delicious batch!</description>
+        <baseMoodEffect>8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PredatorNippleConvertMilkInterrupted</defName>
+    <stages>
+      <li>
+        <label>Mammary lactifaction of {0} interrupted</label>
+        <description>I tried to churn {1} down into milk, but they got away. My taps are so dry...</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PreyNippleConvertMilkInterrupted</defName>
+    <stages>
+      <li>
+        <label>Escaped mammary lactifaction by {0}</label>
+        <description>{1} tried to churn me into milk! I'm not an enriching source of calcium!</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- Nipple pleasure-->
+  
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PredatorNipplePleasureSuccess</defName>
+    <stages>
+      <li>
+        <label>Unsuckled {0} as a sex-toy</label>
+        <description>{1} massaged my tit from the inside-out! They should bring a friend or two next time...~</description>
+        <baseMoodEffect>12</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PredatorNipplePleasureInterrupted</defName>
+    <stages>
+      <li>
+        <label>Unsuckling of {0} as a sex-toy interrupted</label>
+        <description>I tried to give {1} a milk-bath, but we were interrupted. Can't I get just a moment to unwind?</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PreyNipplePleasureSuccess</defName>
+    <stages>
+      <li>
+        <label>Unsuckled by {0} as a sex-toy</label>
+        <description>{1} gave me a long, warm bath in their milk, right where it gets made! I feel revitalized!</description>
+        <baseMoodEffect>12</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PreyNipplePleasureInterrupted</defName>
+    <stages>
+      <li>
+        <label>Unsuckling by {0} as a sex-toy interrupted</label>
+        <description>{1} tried to draw me a milk-bath, but we were interrupted. I was hoping to relieve some tension in the spa...</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- Nipple store-->
+  
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PredatorNippleStoreEnd</defName>
+    <durationDays Inherit="False">0.3</durationDays>
+    <stages>
+      <li>
+        <label>Released {0} from breast-storage</label>
+        <description>Oh, my back is ever so grateful!</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PreyNippleStoreEnd</defName>
+    <durationDays Inherit="False">0.3</durationDays>
+    <stages>
+      <li>
+        <label>Released from {0}'s breast-storage</label>
+        <description>It's nice to have room to stretch again.</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- Nipple heal -->
+
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PredatorNippleHealSuccess</defName>
+    <stages>
+      <li>
+        <label>Healed {0} in their breasts</label>
+        <description>Good as new!</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef ParentName="RV2_VoreMemory_Base">
+    <defName>RV2_PreyNippleHealSuccess</defName>
+    <stages>
+      <li>
+        <label>Healed by {0}'s breasts</label>
+        <description>I had a reinvigorating bath.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+</Defs>

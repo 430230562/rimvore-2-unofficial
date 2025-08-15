@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <StatDef>
+    <defName>RV2_ExternalEjectChance</defName>
+    <workerClass>RimVore2.StatWorker_Colonist</workerClass>
+    <label>Eject chance</label>
+    <description>The likelihood that this pawn can successfully force another predator to eject their prey.</description>
+    <category>Vore</category>
+    <displayPriorityInCategory>900</displayPriorityInCategory>
+    <defaultBaseValue>0.4</defaultBaseValue>
+    <minValue>0</minValue>
+    <maxValue>1</maxValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <skillNeedFactors>
+      <li Class="SkillNeed_BaseBonus">
+        <skill>Melee</skill>
+        <baseValue>1</baseValue>
+        <bonusPerLevel>0.1</bonusPerLevel>
+      </li>
+    </skillNeedFactors>
+    <capacityFactors>
+      <li>
+        <capacity>Manipulation</capacity>
+        <weight>0.9</weight>
+        <allowedDefect>0.05</allowedDefect>
+        <max>1</max>
+      </li>
+    </capacityFactors>
+  </StatDef>
+  
+
+</Defs>

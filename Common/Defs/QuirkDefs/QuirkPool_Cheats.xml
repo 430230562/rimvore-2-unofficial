@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RimVore2.QuirkPoolDef>
+    <defName>Cheats</defName>
+    <label>Cheat quirks</label>
+    <category>General</category>
+    <description>These quirks severely disrupt game balance and are disabled by default, but they're presented here in case you want to play with them. If you only want to enable them for specific pawns and do not want them spawning naturally, you do not need to enable them here; just enable dev mode and enter the quirks menu(s) of the desired pawn(s).</description>
+    <generationOrder>2</generationOrder>
+    <poolType>RollForEach</poolType>
+    <quirks>
+      <li>Cheat_Hammerspace</li>
+      <li>Cheat_HyperEfficient</li>
+      <li>Cheat_Inedible</li>
+      <li>Cheat_NeverPredator</li>
+      <li>Cheat_NeverEndoPrey</li>
+      <li>Cheat_NeverFatalPrey</li>
+      <li>Cheat_Inescapable</li>
+      <li>Cheat_Indigestible</li>
+      <li>Cheat_InfiniteCapacity</li>
+      <li>Cheat_InstantDigestion</li>
+      <li>Cheat_InstantSwallow</li>
+    </quirks>
+  </RimVore2.QuirkPoolDef>
+
+  <!-- technically a mobility quirk -->
+  <RimVore2.QuirkDef>
+    <defName>Cheat_Hammerspace</defName>
+    <label>Hammerspace</label>
+    <description>[PAWN_label]’s body compresses [PAWN_possessive] prey down to an incredible degree. You can’t quite tell how many prey [PAWN_pronoun] has inside [PAWN_objective] at any given time, though you can guess if you know [PAWN_possessive] limit.</description>
+    <rarity>ForcedOnly</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_CapacityOffsetModifier">
+        <capacity>Moving</capacity>
+        <modifierValue>0.0000000001</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <!-- technically a nutrition amount quirk. we can also consider making a hypernutritious quirk if people want that -->
+  <RimVore2.QuirkDef>
+    <defName>Cheat_HyperEfficient</defName>
+    <label>Hyper-efficient</label>
+    <description>[PAWN_label] is about ten times as efficient as any other predator when it comes to extracting nutrition and producing materials from prey. It's like dropping a rough mint candy into soda.</description>
+    <rarity>ForcedOnly</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>PreyNutritionMultiplierAsPredator</modifierName>
+        <modifierValue>10</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <!-- technically an inability quirk -->
+  <RimVore2.QuirkDef>
+    <defName>Cheat_Inedible</defName>
+    <label>Inedible</label>
+    <description>[PAWN_label] cannot be eaten. It just physically cannot happen. How? Don't ask questions; this is a cheat quirk.</description>
+    <rarity>ForcedOnly</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_DesignationBlock">
+        <designation>endo</designation>
+      </li>
+      <li Class="RimVore2.QuirkComp_DesignationBlock">
+        <designation>fatal</designation>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>Cheat_NeverPredator</defName>
+    <label>Never Predator</label>
+    <description>[PAWN_label] cannot be designated as a predator</description>
+    <rarity>ForcedOnly</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_DesignationBlock">
+        <designation>predator</designation>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>Cheat_NeverEndoPrey</defName>
+    <label>Never Endo Prey</label>
+    <description>[PAWN_label] cannot be designated as an endo vore target</description>
+    <rarity>ForcedOnly</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_DesignationBlock">
+        <designation>endo</designation>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>Cheat_NeverFatalPrey</defName>
+    <label>Never Fatal Prey</label>
+    <description>[PAWN_label] cannot be designated as a fatal vore target</description>
+    <rarity>ForcedOnly</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_DesignationBlock">
+        <designation>fatal</designation>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <!-- technically an inability quirk -->
+  <RimVore2.QuirkDef>
+    <defName>Cheat_Inescapable</defName>
+    <label>Inescapable</label>
+    <description>[PAWN_label]’s insides are like a steel trap. Anything that goes in cannot be removed without either surgery or the full tour.</description>
+    <rarity>ForcedOnly</rarity>
+    <blockingKeywords>
+      <li>PawnIsAnimal</li>
+    </blockingKeywords>
+    <comps>
+      <li Class="RimVore2.QuirkComp_SpecialFlag">
+        <flag>InescapablePredator</flag>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <!-- technically a digestion resistance quirk -->
+  <RimVore2.QuirkDef>
+    <defName>Cheat_Indigestible</defName>
+    <label>Indigestible</label>
+    <description>[PAWN_label] is immune to digestion. Not immune to bullets, blades, explosions, or even external acid sprays, but certainly immune to digestion.</description>
+    <rarity>ForcedOnly</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>DigestionResistance</modifierName>
+        <modifierValue>0.000000000001</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <!-- technically a capacity quirk -->
+  <RimVore2.QuirkDef>
+    <defName>Cheat_InfiniteCapacity</defName>
+    <label>Infinite capacity</label>
+    <description>[PAWN_label] doesn’t know the meaning of the word “full”. There’s always room for more prey. Always.</description>
+    <rarity>ForcedOnly</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>StorageCapacity</modifierName>
+        <modifierValue>99999</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <!-- technically a digestion strength quirk -->
+  <RimVore2.QuirkDef>
+    <defName>Cheat_InstantDigestion</defName>
+    <label>Instant digestion</label>
+    <description>Only the [PAWN_label]-tron reduces an entire preything into soup-like homogenate in 30 seconds.</description>
+    <rarity>ForcedOnly</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>DigestionStrength</modifierName>
+        <modifierValue>999999</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <!-- technically a swallow speed quirk -->
+  <RimVore2.QuirkDef>
+    <defName>Cheat_InstantSwallow</defName>
+    <label>Instant swallow</label>
+    <description>[PAWN_label] inhales prey like [PAWN_pronoun]'s drowning and the prey are air.</description>
+    <rarity>ForcedOnly</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>SwallowSpeed</modifierName>
+        <modifierValue>9999999</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+</Defs>

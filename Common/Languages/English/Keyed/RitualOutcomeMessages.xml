@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <RV2_OutcomeMessage_IdeologyReassured>{0} has been reassured in their blief in {1}</RV2_OutcomeMessage_IdeologyReassured>
+  <RV2_OutcomeMessage_IdeologyConversionAttempt>{0} has changed their belief in {1}</RV2_OutcomeMessage_IdeologyConversionAttempt>
+  
+</LanguageData>

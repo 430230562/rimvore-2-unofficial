@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- 
+  This patch adds the grapple move to the base pawn, so any race or animal mod author that does not inherit from BasePawn
+  will need a custom patch to add the vore grapple to - or pester the author to just inherit from BasePawn like you should
+-->
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>Defs/ThingDef[@Name="BasePawn" and not(tools)]</xpath> <!-- add tools node to races that don't have them already -->
+    <value>
+      <tools/>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Combat Extended</li>
+    </mods>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[@Name="BasePawn"]/tools</xpath>
+      <value>
+        <li Class="CombatExtended.ToolCE">
+          <label>vore grapple</label>
+          <capacities>
+            <li>RV2_VoreGrapple</li>
+          </capacities>
+          <power>5</power>
+          <cooldownTime>5</cooldownTime>
+        </li>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[@Name="BasePawn"]/tools</xpath>
+      <value>
+        <li>
+          <label>vore grapple</label>
+          <capacities>
+            <li>RV2_VoreGrapple</li>
+          </capacities>
+          <power>5</power>
+          <cooldownTime>5</cooldownTime>
+        </li>
+      </value>
+    </nomatch>
+  </Operation>
+</Patch>

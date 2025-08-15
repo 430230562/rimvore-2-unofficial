@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- 
+  This patch adds the grapple move to the base pawn, so any race or animal mod author that does not inherit from BasePawn
+  will need a custom patch to add the vore grapple to - or pester the author to just inherit from BasePawn like you should
+-->
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/WorkTypeDef[defName="RV2_Propose"]</xpath>
+    <value>
+      <disabledForSlaves>true</disabledForSlaves>
+    </value>
+  </Operation>
+</Patch>

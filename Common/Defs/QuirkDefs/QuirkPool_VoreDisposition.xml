@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RimVore2.QuirkPoolDef>
+    <defName>PredatorDisposition</defName>
+    <label>Predator disposition</label>
+	<category>Role Preference</category>
+	<description>These quirks determine the degreee to which the pawn prefers to be a predator. At the extremes, the pawn will always either refuse to or always be a predator.</description>
+    <generationOrder>1</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>PredatorDisposition_Obsessed</li>
+      <li>PredatorDisposition_Likes</li>
+      <li>PredatorDisposition_Neutral</li>
+      <li>PredatorDisposition_Dislikes</li>
+      <li>PredatorDisposition_Refuses</li>
+    </quirks>
+    <blockingKeywords>
+      <li>PawnIsAnimal</li>
+    </blockingKeywords>
+  </RimVore2.QuirkPoolDef>
+  
+  <RimVore2.QuirkDef>
+    <defName>PredatorDisposition_Obsessed</defName>
+    <label>Ravenous predator</label>
+    <description>[PAWN_label] imagines [PAWN_objective]self as an apex predator, sitting proud at the top of the food chain. [PAWN_pronoun] lives to prey on those around [PAWN_objective].</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ThoughtOverride">
+        <originalThought>AteCorpse</originalThought>
+        <overrideThought>RV2_AteCorpse_Predator</overrideThought>
+        <priority>1</priority>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+        </keywords>
+        <memory>RV2_DispositionQuirkSatisfaction_Predator_VeryGood</memory>
+        </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>PredatorDisposition_Likes</defName>
+    <label>Predator</label>
+    <description>[PAWN_label] is a predator, always scanning the scene for prey to devour.</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ThoughtOverride">
+        <originalThought>AteCorpse</originalThought>
+        <overrideThought>RV2_AteCorpse_Predator</overrideThought>
+        <priority>1</priority>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+        </keywords>
+        <memory>RV2_DispositionQuirkSatisfaction_Predator_Good</memory>
+        </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>PredatorDisposition_Neutral</defName>
+    <label>Predatory ambivalence</label>
+	<hidden>true</hidden>
+    <description>[PAWN_label] doesn't really care one way or the other about being a predator.</description>
+    <rarity>Abundant</rarity>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>PredatorDisposition_Dislikes</defName>
+    <label>Predatory aversion</label>
+    <description>[PAWN_label] is not much of a predator and doesn't want to devour anyone. It'd have to be for convenience, survival, or really scratching an uncommon itch.</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+        </keywords>
+        <memory>RV2_DispositionQuirkSatisfaction_Predator_Bad</memory>
+        </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>PredatorDisposition_Refuses</defName>
+    <label>Predatory refusal</label>
+    <description>[PAWN_label] is not a predator and will never willingly devour anyone.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+        </keywords>
+        <memory>RV2_DispositionQuirkSatisfaction_Predator_VeryBad</memory>
+        </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  
+  <RimVore2.QuirkPoolDef>
+    <defName>PreyDisposition</defName>
+    <label>Prey disposition</label>
+	<category>Role Preference</category>
+	<description>These quirks determine the degreee to which the pawn prefers to be a prey. At the extremes, the pawn will always either refuse to or always be prey.</description>
+    <generationOrder>1</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>PreyDisposition_Obsessed</li>
+      <li>PreyDisposition_Likes</li>
+      <li>PreyDisposition_Neutral</li>
+      <li>PreyDisposition_Dislikes</li>
+      <li>PreyDisposition_Refuses</li>
+    </quirks>
+    <blockingKeywords>
+      <li>PawnIsAnimal</li>
+    </blockingKeywords>
+  </RimVore2.QuirkPoolDef>
+  
+  <RimVore2.QuirkDef>
+    <defName>PreyDisposition_Obsessed</defName>
+    <label>Preyslut</label>
+    <description>[PAWN_label] is more comfortable inside of someone’s body than outside. [PAWN_pronoun] would spend [PAWN_possessive] whole life there if [PAWN_pronoun] could.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+        </keywords>
+        <memory>RV2_DispositionQuirkSatisfaction_Prey_VeryGood</memory>
+        </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Prey</role>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>PreyDisposition_Likes</defName>
+    <label>Prey</label>
+    <description>[PAWN_label] is turned on by the prospect of being devoured alive, constantly scanning for some pred or other to scoop [PAWN_objective] up.</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+        </keywords>
+        <memory>RV2_DispositionQuirkSatisfaction_Prey_Good</memory>
+        </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Prey</role>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>PreyDisposition_Neutral</defName>
+    <label>Preyish ambivalence</label>
+	<hidden>true</hidden>
+    <description>[PAWN_label] doesn't really care one way or the other about being prey.</description>
+    <rarity>Abundant</rarity>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>PreyDisposition_Dislikes</defName>
+    <label>Preyish aversion</label>
+    <description>[PAWN_label] isn't that interested in getting devoured. It'd have to be for convenience, survival, or really scratching an uncommon itch.</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+        </keywords>
+        <memory>RV2_DispositionQuirkSatisfaction_Prey_Bad</memory>
+        </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Prey</role>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>PreyDisposition_Refuses</defName>
+    <label>Preyish refusal</label>
+    <description>[PAWN_label] has no absolutely desire to get devoured at all. [PAWN_pronoun] insists that [PAWN_pronoun] is not food.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+        </keywords>
+        <memory>RV2_DispositionQuirkSatisfaction_Prey_VeryBad</memory>
+        </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Prey</role>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkPoolDef>
+    <defName>FeederDisposition</defName>
+    <label>Feeder disposition</label>
+    <category>Role Preference</category>
+    <description>These quirks determine the degree to which the pawn prefers to be a feeder for another pred. At the extremes, the pawn will always either refuse to or always be a feeder.</description>
+    <generationOrder>1</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>FeederDisposition_Obsessed</li>
+      <li>FeederDisposition_Likes</li>
+      <li>FeederDisposition_Neutral</li>
+      <li>FeederDisposition_Dislikes</li>
+      <li>FeederDisposition_Refuses</li>
+    </quirks>
+    <blockingKeywords>
+      <li>PawnIsAnimal</li>
+    </blockingKeywords>
+  </RimVore2.QuirkPoolDef>
+
+  <!-- feeding preference as feeder -->
+  <RimVore2.QuirkDef>
+    <defName>FeederDisposition_Obsessed</defName>
+    <label>Frenzied feeder</label>
+    <description>[PAWN_label] finds little in this world more rewarding than handling all the busywork for a predator, up to and including hand-feeding said pred some prey.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsFeeder</li>
+        </keywords>
+        <memory>RV2_DispositionQuirkSatisfaction_Feeder_VeryGood</memory>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>FeederDisposition_Likes</defName>
+    <label>Feeder</label>
+    <description>[PAWN_label] likes to help preds out with their hunting by fetching the prey for them.</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsFeeder</li>
+        </keywords>
+        <memory>RV2_DispositionQuirkSatisfaction_Feeder_Good</memory>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>FeederDisposition_Neutral</defName>
+    <label>Feeder ambivalence</label>
+    <hidden>true</hidden>
+    <description>[PAWN_label] doesn't really care one way or the other about hand-feeding predators.</description>
+    <rarity>Abundant</rarity>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>FeederDisposition_Dislikes</defName>
+    <label>Feeder aversion</label>
+    <description>[PAWN_label] dislikes hand-feeding predators and would rather the predator just got their food themself.</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsFeeder</li>
+        </keywords>
+        <memory>RV2_DispositionQuirkSatisfaction_Feeder_Bad</memory>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>FeederDisposition_Refuses</defName>
+    <label>Feeder refusal</label>
+    <description>[PAWN_label] hates hand-feeding predators and will not willingly do it. That's just an elaborate way to get eaten last.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsFeeder</li>
+        </keywords>
+        <memory>RV2_DispositionQuirkSatisfaction_Feeder_VeryBad</memory>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Feeder</role>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <!-- feeding preference as predator -->
+  <RimVore2.QuirkPoolDef>
+    <defName>FeederDisposition_Predator</defName>
+    <label>Feeder disposition (Receiver)</label>
+    <category>Role Preference</category>
+    <description>These quirks determine the receptiveness of a pawn to be the predator in proposed feeding vore.</description>
+    <generationOrder>2</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>FeederDisposition_Predator_Obsessed</li>
+      <li>FeederDisposition_Predator_Likes</li>
+      <li>FeederDisposition_Predator_Neutral</li>
+      <li>FeederDisposition_Predator_Dislikes</li>
+      <li>FeederDisposition_Predator_Refuses</li>
+    </quirks>
+    <blockingKeywords>
+      <li>PawnIsAnimal</li>
+    </blockingKeywords>
+  </RimVore2.QuirkPoolDef>
+
+  <RimVore2.QuirkDef>
+    <defName>FeederDisposition_Predator_Obsessed</defName>
+    <label>Spoonfed</label>
+    <description>[PAWN_label] loves gobbling up prey, but hates the effort involved in chasing them down. Having someone else do it for [PAWN_objective] sounds delightful.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_FeederVoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+    </comps>
+    <blockingQuirks>
+      <li>PredatorDisposition_Dislikes</li>
+      <li>PredatorDisposition_Refuses</li>
+    </blockingQuirks>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>FeederDisposition_Predator_Likes</defName>
+    <label>Receptive</label>
+    <description>[PAWN_label] likes the idea of having prey fed to them with no extra effort involved.</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_FeederVoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+    </comps>
+    <blockingQuirks>
+      <li>PredatorDisposition_Dislikes</li>
+      <li>PredatorDisposition_Refuses</li>
+    </blockingQuirks>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>FeederDisposition_Predator_Neutral</defName>
+    <label>Ambivalence</label>
+    <hidden>true</hidden>
+    <description>[PAWN_label] doesn't really care if they have to track down their own prey or be fed.</description>
+    <rarity>Abundant</rarity>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>FeederDisposition_Predator_Dislikes</defName>
+    <label>Unreceptive</label>
+    <description>[PAWN_label] prefers to ask [PAWN_possessive] own prey for vore.</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_FeederVoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>FeederDisposition_Predator_Refuses</defName>
+    <label>Picky Eater</label>
+    <description>[PAWN_label] is fully grown and self-reliant. Feeding prey to [PAWN_objective] is insulting when [PAWN_pronoun] can just get the prey [PAWN_objective]self.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_FeederVoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <!-- feeding preference as prey -->
+  <RimVore2.QuirkPoolDef>
+    <defName>FeederDisposition_Prey</defName>
+    <label>Feeder disposition (Fodder)</label>
+    <category>Role Preference</category>
+    <description>These quirks determine the receptiveness of a pawn to be the prey in proposed feeding vore.</description>
+    <generationOrder>2</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>FeederDisposition_Prey_Obsessed</li>
+      <li>FeederDisposition_Prey_Likes</li>
+      <li>FeederDisposition_Prey_Neutral</li>
+      <li>FeederDisposition_Prey_Dislikes</li>
+      <li>FeederDisposition_Prey_Refuses</li>
+    </quirks>
+    <blockingKeywords>
+      <li>PawnIsAnimal</li>
+    </blockingKeywords>
+  </RimVore2.QuirkPoolDef>
+
+  <RimVore2.QuirkDef>
+    <defName>FeederDisposition_Prey_Obsessed</defName>
+    <label>Intro(vore)ted</label>
+    <description>[PAWN_label] is extremely intro(vore)ted and needs someone else to hook [PAWN_objective] up to a predator.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_FeederVoreTargetSelectorModifier">
+        <selectors>
+          <role>Prey</role>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+    </comps>
+    <blockingQuirks>
+      <li>PreyDisposition_Dislikes</li>
+      <li>PreyDisposition_Refuses</li>
+    </blockingQuirks>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>FeederDisposition_Prey_Likes</defName>
+    <label>Snack</label>
+    <description>[PAWN_label] likes blind dates with [PAWN_possessive] predator.</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_FeederVoreTargetSelectorModifier">
+        <selectors>
+          <role>Prey</role>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+    </comps>
+    <blockingQuirks>
+      <li>PreyDisposition_Dislikes</li>
+      <li>PreyDisposition_Refuses</li>
+    </blockingQuirks>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>FeederDisposition_Prey_Neutral</defName>
+    <label>Feeder ambivalence</label>
+    <hidden>true</hidden>
+    <description>[PAWN_label] doesn't really care if [PAWN_pronoun] is being fed to someone.</description>
+    <rarity>Abundant</rarity>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>FeederDisposition_Prey_Dislikes</defName>
+    <label>Fodder aversion</label>
+    <description>[PAWN_label] doesn't want to be a bother, so they'd rather not have someone spend their time introducing them to a pred.</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_FeederVoreTargetSelectorModifier">
+        <selectors>
+          <role>Prey</role>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>FeederDisposition_Prey_Refuses</defName>
+    <label>Fodder refusal</label>
+    <description>[PAWN_label] hates the idea of being fed to someone else. [PAWN_pronoun] wants to pick [PAWN_possessive] own holes to jump into.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_FeederVoreTargetSelectorModifier">
+        <selectors>
+          <role>Prey</role>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+</Defs>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <!-- you are not supposed to snoop around here. These are loaded on aprils fools -->
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <SoundDef LoadIfDate="01.04.">
+    <defName>BoomDay_JudgeFailure</defName>
+    <slot>BoomDayJudgeFailure</slot>
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Misc/JudgeFailure</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>100~100</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef LoadIfDate="01.04.">
+    <defName>BoomDay_JudgeSuccess</defName>
+    <slot>BoomDayJudgeSuccess</slot>
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Misc/JudgeSuccess</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>100~100</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef LoadIfDate="01.04.">
+    <defName>BoomDay_Spawn</defName>
+    <slot>BoomDaySpawn</slot>
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Misc/Spawn</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>100~100</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <HediffDef LoadIfDate="01.04.">
+    <defName>BoomDay_NitroGodBlessing</defName>
+    <label>BLESSED BE THE BOOM GODS</label>
+    <isBad>false</isBad>
+    <defaultLabelColor>(1, 0, 0)</defaultLabelColor>
+    <description>This pawn has been chosen to be judged by the BOOM GODS due to their brave choice in prey.</description>
+    <initialSeverity>1</initialSeverity>
+    <stages>
+      <li>
+        <minSeverity>1</minSeverity>
+        <capMods>
+          <li>
+            <capacity>BloodFiltration</capacity>
+            <offset>4</offset>
+          </li>
+          <li>
+            <capacity>BloodPumping</capacity>
+            <offset>4</offset>
+          </li>
+          <li>
+            <capacity>Breathing</capacity>
+            <offset>4</offset>
+          </li>
+          <li>
+            <capacity>Eating</capacity>
+            <offset>4</offset>
+          </li>
+          <li>
+            <capacity>Hearing</capacity>
+            <offset>4</offset>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>4</offset>
+          </li>
+          <li>
+            <capacity>Metabolism</capacity>
+            <offset>4</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>4</offset>
+          </li>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>4</offset>
+          </li>
+          <li>
+            <capacity>Talking</capacity>
+            <offset>4</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+
+  </HediffDef>
+</Defs>

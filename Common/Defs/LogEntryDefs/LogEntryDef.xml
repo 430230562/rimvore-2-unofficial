@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <LogEntryDef>
+    <defName>RV2_VoreGrappleAttacker</defName>
+    <iconDamaged>Combat/grappleAttacker</iconDamaged>
+    <iconDamagedFromInstigator>Combat/grappleDefender</iconDamagedFromInstigator>
+  </LogEntryDef>
+  
+  <LogEntryDef>
+    <defName>RV2_VoreGrappleDefender</defName>
+    <iconDamaged>Combat/grappleDefender</iconDamaged>
+    <iconDamagedFromInstigator>Combat/grappleAttacker</iconDamagedFromInstigator>
+  </LogEntryDef>
+
+</Defs>

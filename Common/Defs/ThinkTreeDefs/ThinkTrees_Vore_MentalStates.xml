@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!-- Three types of vore mental breaks: -->
+  <!-- Vore and idle around the colony -->
+  <!-- Vore and kill prey -->
+  <!-- Be vored and idle -->
+  
+  <!-- Vore the required amount of targets for the mental state (usually one), then start to idle in the colony -->
+  <!-- Once the predator is exhausted, they will sleep, otherwise they will normally eat and try to receive joy -->
+  <ThinkTreeDef>
+    <defName>RV2_MentalStateVoreAndIdle</defName>
+    <insertTag>Humanlike_PostMentalState</insertTag>
+    <insertPriority>1</insertPriority>
+    <thinkRoot Class="ThinkNode_Tagger">
+      <tagToGive>InMentalState</tagToGive>
+      <subNodes>
+        <li Class="ThinkNode_ConditionalMentalStates">
+          <states>
+            <li>RV2_EndoAbductor</li>
+            <li>RV2_PetThief</li>
+            <li>RV2_PrisonerAbductor</li>
+            <li>RV2_LivestockSwallower</li>
+            <li>RV2_EndoSpree</li>
+          </states>
+          <subNodes>
+            <li Class="RimVore2.ThinkNode_HasFulfilledVoreMentalStateTargetCount">
+              <invert>true</invert>
+              <subNodes>
+                <li Class="RimVore2.JobGiver_VoreMentalStateTarget"/>
+              </subNodes>
+            </li>
+            <li Class="ThinkNode_ConditionalExhausted">
+              <subNodes>
+                <li Class="JobGiver_GetRest"/>
+              </subNodes>
+            </li>
+            <li Class="ThinkNode_PrioritySorter">
+              <minPriority>0.5</minPriority>
+              <subNodes>
+                <li Class="JobGiver_GetFood"/>
+                <li Class="JobGiver_SatisfyChemicalNeed"/>
+                <li Class="ThinkNode_Priority_GetJoy">
+                  <subNodes>
+                    <li Class="JobGiver_GetJoy"/>
+                  </subNodes>
+                </li>
+              </subNodes>
+            </li>
+            <li Class="JobGiver_WanderColony" />
+          </subNodes>
+        </li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+  
+  <!-- These mental states only care about being vored by a predator -->
+  <ThinkTreeDef>
+    <defName>RV2_MentalStateGetVoredAndIdle</defName>
+    <insertTag>Humanlike_PostMentalState</insertTag>
+    <insertPriority>1</insertPriority>
+    <thinkRoot Class="ThinkNode_Tagger">
+      <tagToGive>InMentalState</tagToGive>
+      <subNodes>
+        <li Class="ThinkNode_ConditionalMentalStates">
+          <states>
+            <li>RV2_HideInPredator</li>
+            <li>RV2_GurgleSeeker</li>
+          </states>
+          <subNodes>
+            <li Class="RimVore2.ThinkNode_IsCurrentlyVored">
+              <invert>true</invert>
+              <subNodes>
+                <li Class="RimVore2.JobGiver_VoreMentalStateTarget"/>
+              </subNodes>
+            </li>
+          </subNodes>
+        </li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+  <ThinkTreeDef>
+    <defName>RV2_MentalStateVoreAndKill</defName>
+    <insertTag>Humanlike_PostMentalState</insertTag>
+    <insertPriority>1</insertPriority>
+    <thinkRoot Class="ThinkNode_Tagger">
+      <tagToGive>InMentalState</tagToGive>
+      <subNodes>
+        <li Class="ThinkNode_ConditionalMentalStates">
+          <states>
+            <li>RV2_VoraciousHunt</li>
+            <li>RV2_Digesticutioner</li>
+            <li>RV2_VorederousRage</li>
+            <li>RV2_ForbiddenFruit</li>
+            <li>RV2_Voreserk</li>
+          </states>
+          <subNodes>
+            <li Class="RimVore2.ThinkNode_HasFulfilledVoreMentalStateTargetCount">
+              <invert>true</invert>
+              <subNodes>
+                <li Class="RimVore2.JobGiver_VoreMentalStateTarget"/>
+              </subNodes>
+            </li>
+            <li Class="ThinkNode_ConditionalExhausted">
+              <subNodes>
+                <li Class="JobGiver_GetRest"/>
+              </subNodes>
+            </li>
+            <li Class="ThinkNode_PrioritySorter">
+              <minPriority>0.5</minPriority>
+              <subNodes>
+                <li Class="JobGiver_GetFood"/>
+                <li Class="JobGiver_SatisfyChemicalNeed"/>
+                <li Class="ThinkNode_Priority_GetJoy">
+                  <subNodes>
+                    <li Class="JobGiver_GetJoy"/>
+                  </subNodes>
+                </li>
+              </subNodes>
+            </li>
+            <li Class="JobGiver_WanderColony" />
+          </subNodes>
+        </li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+
+
+  <ThinkTreeDef>
+    <defName>RV2_MentalStateVoreFighting</defName>
+    <insertTag>Humanlike_PostMentalState</insertTag>
+    <insertPriority>1</insertPriority>
+    <thinkRoot Class="ThinkNode_Tagger">
+      <tagToGive>InMentalState</tagToGive>
+      <subNodes>
+        <li Class="ThinkNode_ConditionalMentalStates">
+          <states>
+            <li>RV2_VoreFighting_Attacker</li>
+            <li>RV2_VoreFighting_Defender</li>
+          </states>
+          <subNodes>
+            <li Class="ThinkNode_Priority">
+              <subNodes>
+                <li Class="RimVore2.JobGiver_VoreFighting" />
+                <li Class="JobGiver_WanderAnywhere">
+                  <maxDanger>Deadly</maxDanger>
+                </li>
+              </subNodes>
+            </li>
+          </subNodes>
+        </li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+  
+</Defs>

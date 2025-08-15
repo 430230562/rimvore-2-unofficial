@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="SculptureBase">
+    <defName>RV2_DisposalUrn</defName>
+    <thingClass>RimVore2.Building_DisposalUrn</thingClass>
+    <label>disposal urn</label>
+    <description>An urn designed to hold digested pawns.</description>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <graphicData>
+      <shaderType>CutoutComplex</shaderType>
+      <graphicClass>Graphic_Random</graphicClass>
+      <!-- multi is enforced due to shaderType -->
+      <texPath>Things/DisposalUrns/empty</texPath>
+      <drawSize>1.5</drawSize>
+      <drawOffset>0, 0, 0.2</drawOffset>
+    </graphicData>
+    <fillPercent>0.35</fillPercent>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MaxHitPoints>90</MaxHitPoints>
+      <Mass>3</Mass>
+      <Beauty>50</Beauty>
+      <WorkToMake>9000</WorkToMake>
+      <StyleDominance MayRequire="Ludeon.RimWorld.Ideology">5</StyleDominance>
+    </statBases>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <costStuffCount>50</costStuffCount>
+    <comps>
+      <li Class="CompProperties_AssignableToPawn">
+        <compClass>RimVore2.ThingComp_AssignableToPawn_ReleaseSpot</compClass>
+      </li>
+    </comps>
+    <modExtensions>
+      <li Class="RimVore2.PreyReleaseTarget">
+        <isForProducts>true</isForProducts>
+      </li>
+      <li Class="RimVore2.FilledDisposalContainerGraphics">
+        <baseGraphic>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Random</graphicClass>
+          <texPath>Things/DisposalUrns/full</texPath>
+          <drawSize>1.5</drawSize>
+          <drawOffset>0, 0, 0.2</drawOffset>
+        </baseGraphic>
+        <triggers>
+          <li>
+            <triggeringItem>RV2_Resource_Cum</triggeringItem>
+            <graphic>
+              <shaderType>CutoutComplex</shaderType>
+              <graphicClass>Graphic_Random</graphicClass>
+              <texPath>Things/DisposalUrns/whiteLiquid</texPath>
+              <drawSize>1.5</drawSize>
+              <drawOffset>0, 0, 0.2</drawOffset>
+            </graphic>
+          </li>
+          <li>
+            <triggeringItem>RV2_Resource_Milk</triggeringItem>
+            <graphic>
+              <shaderType>CutoutComplex</shaderType>
+              <graphicClass>Graphic_Random</graphicClass>
+              <texPath>Things/DisposalUrns/whiteLiquid</texPath>
+              <drawSize>1.5</drawSize>
+              <drawOffset>0, 0, 0.2</drawOffset>
+            </graphic>
+          </li>
+          <li>
+            <triggeringItem>RV2_Resource_Scat</triggeringItem>
+            <graphic>
+              <shaderType>CutoutComplex</shaderType>
+              <graphicClass>Graphic_Random</graphicClass>
+              <texPath>Things/DisposalUrns/scat</texPath>
+              <drawSize>1.5</drawSize>
+              <drawOffset>0, 0, 0.2</drawOffset>
+            </graphic>
+          </li>
+          <li>
+            <triggeringItem>RV2_Resource_Bones</triggeringItem>
+            <graphic>
+              <shaderType>CutoutComplex</shaderType>
+              <graphicClass>Graphic_Random</graphicClass>
+              <texPath>Things/DisposalUrns/bones</texPath>
+              <drawSize>1.5</drawSize>
+              <drawOffset>0, 0, 0.2</drawOffset>
+            </graphic>
+          </li>
+        </triggers>
+      </li>
+    </modExtensions>
+  </ThingDef>
+</Defs>

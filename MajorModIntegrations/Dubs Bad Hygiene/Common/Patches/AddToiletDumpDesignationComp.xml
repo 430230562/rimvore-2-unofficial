@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <!-- add comps node -->
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>
+      Defs/ThingDef[
+        (
+          @Name="DubsDirtyTerletBase"
+          or defName="LitterBox"
+          or defName="PitLatrine"
+        )
+        and not(comps)
+      ]
+    </xpath>
+    <value>
+      <comps/>
+    </value>
+  </Operation>
+
+  <!-- add comp -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>
+      Defs/ThingDef[@Name="DubsDirtyTerletBase"
+        or defName="LitterBox"
+        or defName="PitLatrine"
+      ]/comps
+    </xpath>
+    <value>
+      <li Class="RV2_DBH.ThingCompProperties_DesignatableDumpToilet"/>
+    </value>
+  </Operation>
+</Patch>

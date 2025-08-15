@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <HediffDef Abstract="True" Name="RV2_VoreEnabledPart_Base">
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <everCurableByItem>false</everCurableByItem>
+    <stages>
+      <li>
+        <minSeverity>0</minSeverity>
+        <becomeVisible>false</becomeVisible>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <!--<HediffDef ParentName="RV2_VoreEnabledPart_Base">
+    <defName>RV2_Hediff_ForceInescapable</defName>
+    <label>DEBUG_QUIRKFORCER</label>
+    <description>Yo</description>
+    <comps>
+      <li Class="RimVore2.HediffCompProperties_QuirkForcer">
+        <quirks>
+          <li>Cheat_Inescapable</li>
+        </quirks>
+      </li>
+    </comps>
+  </HediffDef>-->
+  
+  <!-- MH: worth considering: instead of checking that the hediff is present, what about a check if the hediff is on the appropriate part? that way one can avoid unlocking several undesired hediffs when, for instance, one only wants to unlock chemfuel conversion in the breasts-->
+  
+  <!-- Goal Enablers 
+  These mainly unlock new goals for a pawn's exisiting types. -->
+  
+  <HediffDef ParentName="RV2_VoreEnabledPart_Base">
+    <defName>RV2_GoalEnabler_ConvertLube</defName>
+    <label>Lubrifactive enzymes</label>
+    <description>This pawn is capable of turning live prey into lubricant within their womb, using powerful enzymes.</description>
+    <comps>
+      <li Class="RimVore2.HediffCompProperties_QuirkForcer">
+        <quirks>
+          <li>Enablers_Core_Goal_ConvertLube</li>
+        </quirks>
+      </li>
+    </comps>
+  </HediffDef>
+  
+  <HediffDef ParentName="RV2_VoreEnabledPart_Base">
+    <defName>RV2_GoalEnabler_ConvertMilk</defName>
+    <label>Lactifactive enzymes</label>
+    <description>This pawn is capable of turning live prey into edible milk within their breasts, using powerful enzymes.</description>
+    <comps>
+      <li Class="RimVore2.HediffCompProperties_QuirkForcer">
+        <quirks>
+          <li>Enablers_Core_Goal_ConvertMilk</li>
+        </quirks>
+      </li>
+    </comps>
+  </HediffDef>
+  
+  <HediffDef ParentName="RV2_VoreEnabledPart_Base">
+    <defName>RV2_GoalEnabler_ConvertSperm</defName>
+    <label>Spermifactive enzymes</label>
+    <description>This pawn is capable of turning live prey into edible sperm within their testes, using powerful enzymes.</description>
+    <comps>
+      <li Class="RimVore2.HediffCompProperties_QuirkForcer">
+        <quirks>
+          <li>Enablers_Core_Goal_ConvertSperm</li>
+        </quirks>
+      </li>
+    </comps>
+  </HediffDef>
+  
+  <HediffDef ParentName="RV2_VoreEnabledPart_Base">
+    <defName>RV2_GoalEnabler_Digest</defName>
+    <label>Hyperdigestive enzymes</label>
+    <description>This pawn is capable of digesting live prey in a timely manner, using powerful enzymes.</description>
+    <comps>
+      <li Class="RimVore2.HediffCompProperties_QuirkForcer">
+        <quirks>
+          <li>Enablers_Core_Goal_Digest</li>
+        </quirks>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef ParentName="RV2_VoreEnabledPart_Base">
+    <defName>RV2_GoalEnabler_Heal</defName>
+    <label>Analeptic enzymes</label>
+    <description>This pawn's internal organs can function as a sanitary, comfortable, and even medicinal substitute for conventional bedrest.</description>
+    <comps>
+      <li Class="RimVore2.HediffCompProperties_QuirkForcer">
+        <quirks>
+          <li>Enablers_Core_Goal_Heal</li>
+        </quirks>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef ParentName="RV2_VoreEnabledPart_Base">
+    <defName>RV2_GoalEnabler_Reform</defName>
+    <label>Reproductive enzymes</label>
+    <description>This pawn's womb can deconstruct the genetic code of their prey and re-form them with their own genetic influence.</description>
+    <comps>
+      <li Class="RimVore2.HediffCompProperties_QuirkForcer">
+        <quirks>
+          <li>Enablers_Core_Goal_Reform</li>
+        </quirks>
+      </li>
+    </comps>
+  </HediffDef>
+  
+  <HediffDef ParentName="RV2_VoreEnabledPart_Base">
+    <defName>RV2_GoalEnabler_TempEndo</defName>
+    <label>Storage-safe organs</label>
+    <description>This pawn's body comfortable and safe for temporary ingestion, thanks to a number of improvements, including the addition of proper airflow.</description>
+    <comps>
+      <li Class="RimVore2.HediffCompProperties_QuirkForcer">
+        <quirks>
+          <li>Enablers_Core_Goal_TempEndo</li>
+        </quirks>
+      </li>
+    </comps>
+  </HediffDef>
+  
+  <HediffDef ParentName="RV2_VoreEnabledPart_Base">
+    <defName>RV2_GoalEnabler_Store</defName>
+    <label>Sphincter strength</label>
+    <description>This pawn's body can hold onto prey indefinitely, without killing them or letting them out on accident.</description>
+    <comps>
+      <li Class="RimVore2.HediffCompProperties_QuirkForcer">
+        <quirks>
+          <li>Enablers_Core_Goal_Longendo</li>
+        </quirks>
+      </li>
+    </comps>
+  </HediffDef>
+  
+  <!-- Type Enablers 
+  These mainly unlock new types for a pawn's exisiting goals. -->
+  
+  <HediffDef ParentName="RV2_VoreEnabledPart_Base">
+    <defName>RV2_TypeEnabler_Oral</defName>
+    <label>Oral elasticity</label>
+    <description>This pawn has an elastic mouth and throat for oral vore.</description>
+    <comps>
+      <li Class="RimVore2.HediffCompProperties_QuirkForcer">
+        <quirks>
+          <li>Enablers_Core_Type_Oral</li>
+        </quirks>
+      </li>
+    </comps>
+  </HediffDef>
+  
+  <HediffDef ParentName="RV2_VoreEnabledPart_Base">
+    <defName>RV2_TypeEnabler_Anal</defName>
+    <label>Anal elasticity</label>
+    <description>This pawn has an elastic anus and intestines for anal vore.</description>
+    <comps>
+      <li Class="RimVore2.HediffCompProperties_QuirkForcer">
+        <quirks>
+          <li>Enablers_Core_Type_Anal</li>
+        </quirks>
+      </li>
+    </comps>
+  </HediffDef>
+  
+  <HediffDef ParentName="RV2_VoreEnabledPart_Base">
+    <defName>RV2_TypeEnabler_Vaginal</defName>
+    <label>Vaginal elasticity</label>
+    <description>This pawn has an elastic vagina and womb for vaginal vore.</description>
+    <comps>
+      <li Class="RimVore2.HediffCompProperties_QuirkForcer">
+        <quirks>
+          <li>Enablers_Core_Type_Vaginal</li>
+        </quirks>
+      </li>
+    </comps>
+  </HediffDef>
+  
+  <HediffDef ParentName="RV2_VoreEnabledPart_Base">
+    <defName>RV2_TypeEnabler_Cock</defName>
+    <label>Penile elasticity</label>
+    <description>This pawn has an elastic penis and testes for cock vore.</description>
+    <comps>
+      <li Class="RimVore2.HediffCompProperties_QuirkForcer">
+        <quirks>
+          <li>Enablers_Core_Type_Cock</li>
+        </quirks>
+      </li>
+    </comps>
+  </HediffDef>
+  
+  <HediffDef ParentName="RV2_VoreEnabledPart_Base">
+    <defName>RV2_TypeEnabler_Nipple</defName>
+    <label>Nipple elasticity</label>
+    <description>This pawn has elastic nipples and breasts for nipple vore.</description>
+    <comps>
+      <li Class="RimVore2.HediffCompProperties_QuirkForcer">
+        <quirks>
+          <li>Enablers_Core_Type_Nipple</li>
+        </quirks>
+      </li>
+    </comps>
+  </HediffDef>
+  
+</Defs>

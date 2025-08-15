@@ -1,0 +1,1456 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- MH: this will all need revisited when we're ready to work on dlc support. besides, right now, i don't really know how precepts hook into/override thoughts anyways-->
+
+  <RimVore2.QuirkPoolDef>
+    <defName>DietaryPreference_Predator_Animals</defName>
+    <label>Dietary preference (animals)</label>
+    <category>Kind Preference</category>
+    <description>These quirks determine how much a pawn likes having animals as prey. At the extremes, a pawn will either reject all autonomous proposals to be fed an animal, or seek out animal prey to the exclusion of other kinds of prey. While insectoids normally count as animals, these quirks are written to exclude insectoids from the type preferences.</description>
+    <generationOrder>2</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>DietaryPreference_Predator_Animals_Obsessed</li>
+      <li>DietaryPreference_Predator_Animals_Likes</li>
+      <li>DietaryPreference_Predator_Animals_Neutral</li>
+      <li>DietaryPreference_Predator_Animals_Dislikes</li>
+      <li>DietaryPreference_Predator_Animals_Refuses</li>
+      <!-- <li>DietaryPreference_Predator_Animals_Incapable</li> -->
+    </quirks>
+    <blockingQuirks>
+      <li>PredatorDisposition_Refuses</li>
+    </blockingQuirks>
+    <blockingKeywords>
+      <li>PawnIsAnimal</li>
+    </blockingKeywords>
+  </RimVore2.QuirkPoolDef>
+
+  <!-- todo: get thoughts for this shit, so that Memory_Quirk is distinct to read! -->
+
+  <RimVore2.QuirkDef>
+    <defName>DietaryPreference_Predator_Animals_Obsessed</defName>
+    <label>Zoophagical obsession</label>
+    <description>[PAWN_label] adores having animals as prey. Never let [PAWN_objective] watch your pets.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+          <raceType>Animal</raceType>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+          <raceType>Insectoid</raceType>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>PreyIsAnimal</li>
+          <li>PreyIsNotInsectoid</li>
+        </keywords>
+        <memory>RV2_DietaryQuirkSatisfactionPredator_Animals_VeryGood</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>DietaryPreference_Predator_Animals_Likes</defName>
+    <label>Zoophagical taste</label>
+    <description>[PAWN_label] likes having animals as prey. It's what most sapient life's been doing already for thousands of years; why stop now, especially when they squirm so wildly?</description>
+    <rarity>Uncommon</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+          <raceType>Animal</raceType>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+          <raceType>Insectoid</raceType>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>PreyIsAnimal</li>
+          <li>PreyIsNotInsectoid</li>
+        </keywords>
+        <memory>RV2_DietaryQuirkSatisfactionPredator_Animals_Good</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>DietaryPreference_Predator_Animals_Neutral</defName>
+    <label>Zoophagical ambivalence</label>
+    <description>[PAWN_label] doesn't mind having animals as prey, but doesn't prefer them either.</description>
+    <rarity>Common</rarity>
+    <hidden>true</hidden>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>DietaryPreference_Predator_Animals_Dislikes</defName>
+    <label>Zoophagical distaste</label>
+    <description>[PAWN_label] dislikes having animals as prey. Maybe [PAWN_pronoun] can't bear to see [PAWN_possessive] fuzzy friends imperiled, maybe [PAWN_pronoun] thinks cannibalism is the true way, maybe [PAWN_pronoun] just doesn't like to get dirt and fur all over [PAWN_possessive] tongue.</description>
+    <rarity>Uncommon</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+          <raceType>Animal</raceType>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+          <raceType>Insectoid</raceType>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>PreyIsAnimal</li>
+          <li>PreyIsNotInsectoid</li>
+        </keywords>
+        <memory>RV2_DietaryQuirkSatisfactionPredator_Animals_Bad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>DietaryPreference_Predator_Animals_Refuses</defName>
+    <label>Zoophagical revulsion</label>
+    <description>[PAWN_label] hates having animals as prey and will never willingly consume them. [PAWN_pronoun] would sooner hunt the beast down, skin it, butcher it, cook it, and eat it, all on [PAWN_possessive] own, than swallow it whole.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+          <raceType>Animal</raceType>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+          <raceType>Insectoid</raceType>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>PreyIsAnimal</li>
+          <li>PreyIsNotInsectoid</li>
+        </keywords>
+        <memory>RV2_DietaryQuirkSatisfactionPredator_Animals_VeryBad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <!-- here will be a blocker for animals as prey <RimVore2.QuirkDef>
+    <defName>DietaryPreference_Predator_Animals_Incapable</defName>
+    <label>Zoophagical inability</label>
+    <description>[PAWN_label] just can't have animals as prey at all.</description>
+    <rarity>VeryRare</rarity>
+  </RimVore2.QuirkDef> -->
+
+  <!-- MH: While most prey types work on a simple scale of love to hate, humanoids have to be a little more complicated, in order to mirror vanilla behavior regarding cannibalism.
+  To this end, cannibals can get their own variants on Obsessed and Likes which include digesting humanoid prey (as well as the non-cannibal variants), while non-cannibals are limited to non-cannibal variants.
+  Cannibals MAY roll a general distaste for human prey, which MAY eventually be split into their own quirks with appropriate thoughts or something, later.
+  These will need updated every time a new goal is introduced!-->
+  <RimVore2.QuirkPoolDef>
+    <defName>DietaryPreference_Predator_Humanoids</defName>
+    <label>Dietary preference (humanoids)</label>
+    <category>Kind Preference</category>
+    <description>These quirks determine how much a pawn likes having humanoids as prey. At the extremes, a pawn will either reject all autonomous proposals by humanoid prey, or seek out humanoid prey to the exclusion of other kinds of prey. Non-cannibals with a preference for humanoid prey will only prefer endo humanoid prey; only cannibals can spawn with a fatal preference for humanoid prey. If you want everybody to be able to have total preference for humanoid prey, and don't want to remove the cannibal requirement for those traits in the XMLs, you can instead make the cannibal trait universal using the scenario editor.</description>
+    <generationOrder>2</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>DietaryPreference_Predator_Humanoids_Obsessed_Cannibal</li>
+      <li>DietaryPreference_Predator_Humanoids_Likes_Cannibal</li>
+      <li>DietaryPreference_Predator_Humanoids_Obsessed_NotCannibal</li>
+      <li>DietaryPreference_Predator_Humanoids_Likes_NotCannibal</li>
+      <li>DietaryPreference_Predator_Humanoids_Neutral</li>
+      <li>DietaryPreference_Predator_Humanoids_Dislikes</li>
+      <li>DietaryPreference_Predator_Humanoids_Refuses</li>
+      <!-- <li>DietaryPreference_Predator_Humanoids_Incapable</li> -->
+    </quirks>
+    <blockingQuirks>
+      <li>PredatorDisposition_Refuses</li>
+    </blockingQuirks>
+    <blockingKeywords>
+      <li>PawnIsAnimal</li>
+    </blockingKeywords>
+  </RimVore2.QuirkPoolDef>
+
+  <RimVore2.QuirkDef>
+    <defName>DietaryPreference_Predator_Humanoids_Obsessed_Cannibal</defName>
+    <label>Anthropophagical obsession (cannibal)</label>
+    <description>[PAWN_label] adores having [PAWN_possessive] fellow sapient beings as prey; even fatally, as an extension of [PAWN_possessive] cannibalistic tendencies. Humanoid meat tastes best alive and kicking.</description>
+    <rarity>Uncommon</rarity>
+    <requiredTraits>
+      <li>Cannibal</li>
+    </requiredTraits>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ThoughtOverride">
+        <originalThought>AteHumanlikeMeatDirect</originalThought>
+        <overrideThought>RV2_AteHumanlikeMeatDirect_Predator</overrideThought>
+        <priority>1</priority>
+      </li>
+      <li Class="RimVore2.QuirkComp_ThoughtOverride">
+        <originalThought>AteHumanlikeMeatDirectCannibal</originalThought>
+        <overrideThought>RV2_AteHumanlikeMeatDirectCannibal_Predator</overrideThought>
+        <priority>1</priority>
+      </li>
+      <li Class="RimVore2.QuirkComp_ThoughtOverride">
+        <originalThought>AteHumanlikeMeatAsIngredient</originalThought>
+        <overrideThought>RV2_AteHumanlikeMeatAsIngredient_Predator</overrideThought>
+        <priority>1</priority>
+      </li>
+      <li Class="RimVore2.QuirkComp_ThoughtOverride">
+        <originalThought>AteHumanlikeMeatAsIngredientCannibal</originalThought>
+        <overrideThought>RV2_AteHumanlikeMeatAsIngredientCannibal_Predator</overrideThought>
+        <priority>1</priority>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+          <raceType>Humanoid</raceType>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>PreyIsHumanlike</li>
+        </keywords>
+        <memory>RV2_DietaryQuirkSatisfactionPredator_Humanoids_VeryGood</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>DietaryPreference_Predator_Humanoids_Likes_Cannibal</defName>
+    <label>Anthropophagical taste (cannibal)</label>
+    <description>[PAWN_label] likes having [PAWN_possessive] fellow sapient beings as prey; even fatally, as an extension of [PAWN_possessive] cannibalistic tendencies. People are tasty! And clean, usually.</description>
+    <rarity>Common</rarity>
+    <requiredTraits>
+      <li>Cannibal</li>
+    </requiredTraits>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ThoughtOverride">
+        <originalThought>AteHumanlikeMeatDirect</originalThought>
+        <overrideThought>RV2_AteHumanlikeMeatDirect_Predator</overrideThought>
+        <priority>1</priority>
+      </li>
+      <li Class="RimVore2.QuirkComp_ThoughtOverride">
+        <originalThought>AteHumanlikeMeatDirectCannibal</originalThought>
+        <overrideThought>RV2_AteHumanlikeMeatDirectCannibal_Predator</overrideThought>
+        <priority>1</priority>
+      </li>
+      <li Class="RimVore2.QuirkComp_ThoughtOverride">
+        <originalThought>AteHumanlikeMeatAsIngredient</originalThought>
+        <overrideThought>RV2_AteHumanlikeMeatAsIngredient_Predator</overrideThought>
+        <priority>1</priority>
+      </li>
+      <li Class="RimVore2.QuirkComp_ThoughtOverride">
+        <originalThought>AteHumanlikeMeatAsIngredientCannibal</originalThought>
+        <overrideThought>RV2_AteHumanlikeMeatAsIngredientCannibal_Predator</overrideThought>
+        <priority>1</priority>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+          <raceType>Humanoid</raceType>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>PreyIsHumanlike</li>
+        </keywords>
+        <memory>RV2_DietaryQuirkSatisfactionPredator_Humanoids_Good</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>DietaryPreference_Predator_Humanoids_Obsessed_NotCannibal</defName>
+    <label>Anthropophagical obsession (endo)</label>
+    <description>[PAWN_label] adores having [PAWN_possessive] fellow sapient beings as prey, so long as it's safe. The dark side of vore does tempt [PAWN_objective] though, with all these delicious, filling preythings...</description>
+    <rarity>Rare</rarity>
+    <blockingTraits>
+      <li>Cannibal</li>
+    </blockingTraits>
+    <!-- this is where the inability to do endo goes <blockingQuirks>
+      <li></li>
+    </blockingQuirks> -->
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+          <raceType>Humanoid</raceType>
+          <voreGoal>Digest</voreGoal>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+          <raceType>Humanoid</raceType>
+          <voreGoal>ConvertLube</voreGoal>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+          <raceType>Humanoid</raceType>
+          <voreGoal>ConvertSperm</voreGoal>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+          <raceType>Humanoid</raceType>
+          <voreGoal>Pleasure</voreGoal>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+          <raceType>Humanoid</raceType>
+          <voreGoal>Store</voreGoal>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>PreyIsHumanlike</li>
+          <li>VoreGoal_Digest</li>
+        </keywords>
+        <memory>RV2_DietaryQuirkSatisfactionPredator_Humanoids_Bad</memory>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>PreyIsHumanlike</li>
+          <li>VoreGoal_ConvertLubes</li>
+        </keywords>
+        <memory>RV2_DietaryQuirkSatisfactionPredator_Humanoids_Bad</memory>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>PreyIsHumanlike</li>
+          <li>VoreGoal_ConvertMilk</li>
+        </keywords>
+        <memory>RV2_DietaryQuirkSatisfactionPredator_Humanoids_Bad</memory>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>PreyIsHumanlike</li>
+          <li>VoreGoal_ConvertSperm</li>
+        </keywords>
+        <memory>RV2_DietaryQuirkSatisfactionPredator_Humanoids_Bad</memory>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>PreyIsHumanlike</li>
+          <li>VoreGoal_Pleasure</li>
+        </keywords>
+        <memory>RV2_DietaryQuirkSatisfactionPredator_Humanoids_VeryGood</memory>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>PreyIsHumanlike</li>
+          <li>VoreGoal_Store</li>
+        </keywords>
+        <memory>RV2_DietaryQuirkSatisfactionPredator_Humanoids_VeryGood</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>DietaryPreference_Predator_Humanoids_Likes_NotCannibal</defName>
+    <label>Anthropophagical taste (endo)</label>
+    <description>[PAWN_label] likes having [PAWN_possessive] fellow sapient beings as prey, so long as it's safe. Fatal vore, on the other hand, is no different from regular old butcher-and-chew cannibalism.</description>
+    <rarity>Common</rarity>
+    <blockingTraits>
+      <li>Cannibal</li>
+    </blockingTraits>
+    <!-- this is where the inability to do endo goes <blockingQuirks>
+      <li></li>
+    </blockingQuirks> -->
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+          <raceType>Humanoid</raceType>
+          <voreGoal>Digest</voreGoal>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+          <raceType>Humanoid</raceType>
+          <voreGoal>ConvertLube</voreGoal>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+          <raceType>Humanoid</raceType>
+          <voreGoal>ConvertSperm</voreGoal>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+          <raceType>Humanoid</raceType>
+          <voreGoal>Pleasure</voreGoal>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+          <raceType>Humanoid</raceType>
+          <voreGoal>Store</voreGoal>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>PreyIsHumanlike</li>
+          <li>VoreGoal_Digest</li>
+        </keywords>
+        <memory>RV2_DietaryQuirkSatisfactionPredator_Humanoids_VeryBad</memory>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>PreyIsHumanlike</li>
+          <li>VoreGoal_ConvertLubes</li>
+        </keywords>
+        <memory>RV2_DietaryQuirkSatisfactionPredator_Humanoids_VeryBad</memory>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>PreyIsHumanlike</li>
+          <li>VoreGoal_ConvertMilk</li>
+        </keywords>
+        <memory>RV2_DietaryQuirkSatisfactionPredator_Humanoids_VeryBad</memory>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>PreyIsHumanlike</li>
+          <li>VoreGoal_ConvertSperm</li>
+        </keywords>
+        <memory>RV2_DietaryQuirkSatisfactionPredator_Humanoids_VeryBad</memory>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>PreyIsHumanlike</li>
+          <li>VoreGoal_Pleasure</li>
+        </keywords>
+        <memory>RV2_DietaryQuirkSatisfactionPredator_Humanoids_Good</memory>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>PreyIsHumanlike</li>
+          <li>VoreGoal_Store</li>
+        </keywords>
+        <memory>RV2_DietaryQuirkSatisfactionPredator_Humanoids_Good</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>DietaryPreference_Predator_Humanoids_Neutral</defName>
+    <label>Anthropophagical ambivalence</label>
+    <description>[PAWN_label] doesn't mind having [PAWN_possessive] fellow sapient beings as prey, fatal or otherwise, but doesn't prefer them either.</description>
+    <rarity>Common</rarity>
+    <hidden>true</hidden>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>DietaryPreference_Predator_Humanoids_Dislikes</defName>
+    <label>Anthropophagical distaste</label>
+    <description>[PAWN_label] dislikes having [PAWN_possessive] fellow sapient beings as prey. Maybe it's too much like cannibalism; maybe [PAWN_pronoun]'s self-conscious about [PAWN_possessive] insides.</description>
+    <rarity>Uncommon</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+          <raceType>Humanoid</raceType>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>PreyIsHumanlike</li>
+        </keywords>
+        <memory>RV2_DietaryQuirkSatisfactionPredator_Humanoids_Bad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>DietaryPreference_Predator_Humanoids_Refuses</defName>
+    <label>Anthropophagical revulsion</label>
+    <description>[PAWN_label] hates having [PAWN_possessive] fellow sapient beings as prey and will never willingly consume them. It's a perversion of the natural order, cannibalistic or not.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+          <raceType>Humanoid</raceType>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>PreyIsHumanlike</li>
+        </keywords>
+        <memory>RV2_DietaryQuirkSatisfactionPredator_Humanoids_VeryBad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <!-- Retired, but still potentially desirable
+  <RimVore2.QuirkDef>
+    <defName>DietaryPreference_Predator_Humanoids_NeutralEndo</defName>
+    <label>Light holo-anthropophage</label>
+    <description>[PAWN_label] enjoys having people as prey, preferably safely. [PAWN_pronoun] doesn't have any qualms about digestion per se, but it's not [PAWN_possessive] thing.</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ThoughtOverride">
+        <originalThought>AteHumanlikeMeatDirect</originalThought>
+        <overrideThought>RV2_AteHumanlikeMeatDirect_Predator</overrideThought>
+        <priority>1</priority>
+      </li>
+      <li Class="RimVore2.QuirkComp_ThoughtOverride">
+        <originalThought>AteHumanlikeMeatDirectCannibal</originalThought>
+        <overrideThought>RV2_AteHumanlikeMeatDirectCannibal_Predator</overrideThought>
+        <priority>1</priority>
+      </li>
+      <li Class="RimVore2.QuirkComp_ThoughtOverride">
+        <originalThought>AteHumanlikeMeatAsIngredient</originalThought>
+        <overrideThought>RV2_AteHumanlikeMeatAsIngredient_Predator</overrideThought>
+        <priority>1</priority>
+      </li>
+      <li Class="RimVore2.QuirkComp_ThoughtOverride">
+        <originalThought>AteHumanlikeMeatAsIngredientCannibal</originalThought>
+        <overrideThought>RV2_AteHumanlikeMeatAsIngredientCannibal_Predator</overrideThought>
+        <priority>1</priority>
+      </li>
+	  <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+		  <raceType>Humanoid</raceType>
+		  <voreGoal>Digest</voreGoal>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+	  <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+		  <raceType>Humanoid</raceType>
+		  <voreGoal>ConvertChemfuel</voreGoal>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+	  <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+		  <raceType>Humanoid</raceType>
+		  <voreGoal>ConvertEggs</voreGoal>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+	  <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+		  <raceType>Humanoid</raceType>
+		  <voreGoal>ConvertLube</voreGoal>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+	  <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+		  <raceType>Humanoid</raceType>
+		  <voreGoal>ConvertSperm</voreGoal>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+	  <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+		  <raceType>Humanoid</raceType>
+		  <voreGoal>ConvertUrine</voreGoal>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+	  <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+		  <raceType>Humanoid</raceType>
+		  <voreGoal>Pleasure</voreGoal>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+	  <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+		  <raceType>Humanoid</raceType>
+		  <voreGoal>Store</voreGoal>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+	  <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+		  <li>PreyIsHumanlike</li>
+		  <li>VoreGoal_Pleasure</li>
+        </keywords>
+        <memory>RV2_DietaryQuirkSatisfactionPredator_Good</memory>
+      </li>
+	  <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+		  <li>PreyIsHumanlike</li>
+		  <li>VoreGoal_Store</li>
+        </keywords>
+        <memory>RV2_DietaryQuirkSatisfactionPredator_Good</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef> -->
+
+  <RimVore2.QuirkPoolDef>
+    <defName>DietaryPreference_Predator_Insectoids</defName>
+    <label>Dietary preference (insectoids)</label>
+    <category>Kind Preference</category>
+    <description>These quirks determine how much a pawn likes having insectoids as prey. At the extremes, a pawn will either reject all autonomous proposals to be fed an insectoid, or seek out insectoid prey to the exclusion of other kinds of prey.</description>
+    <generationOrder>2</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>DietaryPreference_Predator_Insectoids_Obsessed</li>
+      <li>DietaryPreference_Predator_Insectoids_Likes</li>
+      <li>DietaryPreference_Predator_Insectoids_Neutral</li>
+      <li>DietaryPreference_Predator_Insectoids_Dislikes</li>
+      <li>DietaryPreference_Predator_Insectoids_Refuses</li>
+      <!-- <li>DietaryPreference_Predator_Insectoids_Incapable</li> -->
+    </quirks>
+    <blockingQuirks>
+      <li>PredatorDisposition_Refuses</li>
+    </blockingQuirks>
+    <blockingKeywords>
+      <li>PawnIsAnimal</li>
+    </blockingKeywords>
+  </RimVore2.QuirkPoolDef>
+
+  <RimVore2.QuirkDef>
+    <defName>DietaryPreference_Predator_Insectoids_Obsessed</defName>
+    <label>Entomophagical obsession</label>
+    <description>[PAWN_label] adores having live bugs as prey. [PAWN_possessive] whole body may as well be a hive. Furthermore, [PAWN_possessive] taste for chewing chitin extends to raw and cooked bug meat, too.</description>
+    <rarity>VeryRare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ThoughtOverride">
+        <originalThought>AteInsectMeatDirect</originalThought>
+        <overrideThought>RV2_AteInsectMeatDirect_ChitinChewer</overrideThought>
+        <priority>1</priority>
+      </li>
+      <li Class="RimVore2.QuirkComp_ThoughtOverride">
+        <originalThought>AteInsectMeatAsIngredient</originalThought>
+        <overrideThought>RV2_AteInsectMeatAsIngredient_ChitinChewer</overrideThought>
+        <priority>1</priority>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+          <raceType>Insectoid</raceType>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>PreyIsInsectoid</li>
+        </keywords>
+        <memory>RV2_DietaryQuirkSatisfactionPredator_Insectoids_VeryGood</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>DietaryPreference_Predator_Insectoids_Likes</defName>
+    <label>Entomophagical taste</label>
+    <description>[PAWN_label] enjoys having live bugs as prey. [PAWN_possessive] taste for chewing chitin extends to raw and cooked bug meat, too.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ThoughtOverride">
+        <originalThought>AteInsectMeatDirect</originalThought>
+        <overrideThought>RV2_AteInsectMeatDirect_ChitinChewer</overrideThought>
+        <priority>1</priority>
+      </li>
+      <li Class="RimVore2.QuirkComp_ThoughtOverride">
+        <originalThought>AteInsectMeatAsIngredient</originalThought>
+        <overrideThought>RV2_AteInsectMeatAsIngredient_ChitinChewer</overrideThought>
+        <priority>1</priority>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+          <raceType>Insectoid</raceType>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>PreyIsInsectoid</li>
+        </keywords>
+        <memory>RV2_DietaryQuirkSatisfactionPredator_Insectoids_Good</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>DietaryPreference_Predator_Insectoids_Neutral</defName>
+    <label>Entomophagical ambivalence</label>
+    <description>[PAWN_label] doesn't mind having live bugs as prey, but doesn't prefer them either.</description>
+    <rarity>Common</rarity>
+    <hidden>true</hidden>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>DietaryPreference_Predator_Insectoids_Dislikes</defName>
+    <label>Entomophagical distaste</label>
+    <description>[PAWN_label] dislikes having live bugs as prey. [PAWN_pronoun] has a list of places bugs should not be, and one of those places is "alive and crawling around inside [PAWN_possessive] body".</description>
+    <rarity>Common</rarity>
+    <comps>
+      <!-- MH: Ideology note: while vanilla pawns hate eating bugs by default and thus do not need a thought override, there is an Ideology precept for entomophagy, which will need to be accounted for.-->
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+          <raceType>Insectoid</raceType>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>PreyIsInsectoid</li>
+        </keywords>
+        <memory>RV2_DietaryQuirkSatisfactionPredator_Insectoids_Bad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>DietaryPreference_Predator_Insectoids_Refuses</defName>
+    <label>Entomophagical revulsion</label>
+    <description>[PAWN_label] hates having live bugs as prey and will never willingly consume them. The very thought makes [PAWN_possessive] skin crawl.</description>
+    <rarity>Abundant</rarity>
+    <comps>
+      <!-- MH: Ideology note: while vanilla pawns hate eating bugs by default and thus do not need a thought override, there is an Ideology precept for entomophagy, which will need to be accounted for.-->
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+          <raceType>Insectoid</raceType>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPredator</li>
+          <li>PreyIsInsectoid</li>
+        </keywords>
+        <memory>RV2_DietaryQuirkSatisfactionPredator_Insectoids_VeryBad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkPoolDef>
+    <defName>DietaryPreference_Predator_Mechanoids</defName>
+    <label>Dietary preference (mechanoids)</label>
+    <category>Kind Preference</category>
+    <description>These quirks determine how much a pawn likes having mechanoids as prey. At the extremes, a pawn will either reject all autonomous proposals to be fed a mechanoid, or seek out mechanoid prey to the exclusion of other kinds of prey. Note that the consumption and digestion of mechanoids is restricted. For now, those with a preference for mechanoid prey are able to digest mechanoids, while those with any of these quirks, even the normal quirk, can store or pleasure themselves with a mechanoid. This is temporary.</description>
+    <generationOrder>2</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>DietaryPreference_Predator_Mechanoids_Obsessed</li>
+      <li>DietaryPreference_Predator_Mechanoids_Likes</li>
+      <li>DietaryPreference_Predator_Mechanoids_Neutral</li>
+      <li>DietaryPreference_Predator_Mechanoids_Dislikes</li>
+      <li>DietaryPreference_Predator_Mechanoids_Refuses</li>
+      <!-- <li>DietaryPreference_Predator_Mechanoids_Incapable</li> -->
+    </quirks>
+    <blockingQuirks>
+      <li>PredatorDisposition_Refuses</li>
+    </blockingQuirks>
+    <blockingKeywords>
+      <li>PawnIsAnimal</li>
+    </blockingKeywords>
+  </RimVore2.QuirkPoolDef>
+
+  <RimVore2.QuirkDef>
+    <defName>DietaryPreference_Predator_Mechanoids_Obsessed</defName>
+    <label>Mechanophagical obsession</label>
+    <description>[PAWN_label] adores having mechanoids as prey. [PAWN_pronoun] has the munchies for metal, a taste for titanium and steel. That doesn't necessarily equate to the digestive strength to churn a mechanoid into food, but it's something. NOTE: currently, this quirk grants pawns the ability to digest mechanoids into slag or scrap. This will be changed in the future.</description>
+    <!-- move to vore enablers! <description>[PAWN_label]’s acids are uniquely attuned to the metals which compose mechanoids, allowing [PAWN_objective] to process devoured mechanoids into usable scrap.</description> -->
+    <rarity>VeryRare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+          <raceType>Mechanoid</raceType>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PreyIsMechanoid</li>
+          <li>PawnIsPredator</li>
+        </keywords>
+        <memory>RV2_DietaryQuirkSatisfactionPredator_Mechanoids_VeryGood</memory>
+      </li>
+      <!-- MH: this is not exactly my desired implementation; Digestion enabling will be done by a vore enabler hediff -->
+      <li Class="RimVore2.QuirkComp_VoreEnabler">
+        <selector>
+          <role>Prey</role>
+          <raceType>Mechanoid</raceType>
+        </selector>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>DietaryPreference_Predator_Mechanoids_Likes</defName>
+    <label>Mechanophagical taste</label>
+    <description>[PAWN_label] likes having mechanoids as prey. It proves the flesh is stronger than the machine, or something. That doesn't necessarily equate to the digestive strength to churn a mechanoid into food, but it's something. NOTE: currently, this quirk grants pawns the ability to digest mechanoids into slag or scrap. This will be changed in the future.</description>
+    <!-- move to vore enablers! <description>[PAWN_label]’s acids are uniquely attuned to the metals which compose mechanoids, allowing [PAWN_objective] to process devoured mechanoids into usable scrap.</description> -->
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+          <raceType>Mechanoid</raceType>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PreyIsMechanoid</li>
+          <li>PawnIsPredator</li>
+        </keywords>
+        <memory>RV2_DietaryQuirkSatisfactionPredator_Mechanoids_Good</memory>
+      </li>
+      <!-- MH: this is not exactly my desired implementation; Digestion enabling will be done by a vore enabler hediff -->
+      <li Class="RimVore2.QuirkComp_VoreEnabler">
+        <selector>
+          <role>Prey</role>
+          <raceType>Mechanoid</raceType>
+        </selector>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>DietaryPreference_Predator_Mechanoids_Neutral</defName>
+    <label>Mechanophagical ambivalence</label>
+    <description>[PAWN_label] doesn't mind having mechanoids as prey, but doesn't prefer them either.</description>
+    <hidden>true</hidden>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreEnabler">
+        <selector>
+          <role>Prey</role>
+          <raceType>Mechanoid</raceType>
+        </selector>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>DietaryPreference_Predator_Mechanoids_Dislikes</defName>
+    <label>Mechanophagical distaste</label>
+    <description>[PAWN_label] dislikes having mechanoids as prey. They're cold and angry and don't exactly feel great to swallow.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+          <raceType>Mechanoid</raceType>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PreyIsMechanoid</li>
+          <li>PawnIsPredator</li>
+        </keywords>
+        <memory>RV2_DietaryQuirkSatisfactionPredator_Mechanoids_Bad</memory>
+      </li>
+      <!-- MH: this is not exactly my desired implementation -->
+      <li Class="RimVore2.QuirkComp_VoreEnabler">
+        <selector>
+          <role>Prey</role>
+          <raceType>Mechanoid</raceType>
+        </selector>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>DietaryPreference_Predator_Mechanoids_Refuses</defName>
+    <label>Mechanophagical revulsion</label>
+    <description>[PAWN_label] hates having mechanoids as prey and will never willingly consume them. [PAWN_pronoun] absolutely does not want to put hundreds of angry pounds' worth of sharp edges, moving parts, and cold steel directly into [PAWN_possessive] body.</description>
+    <rarity>VeryRare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Predator</role>
+          <raceType>Mechanoid</raceType>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PreyIsMechanoid</li>
+          <li>PawnIsPredator</li>
+        </keywords>
+        <memory>RV2_DietaryQuirkSatisfactionPredator_Mechanoids_VeryBad</memory>
+      </li>
+      <!-- MH: this is not exactly my desired implementation -->
+      <li Class="RimVore2.QuirkComp_VoreEnabler">
+        <selector>
+          <role>Prey</role>
+          <raceType>Mechanoid</raceType>
+        </selector>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkPoolDef>
+    <defName>DietaryPreference_Prey_Animals</defName>
+    <label>Foddering preference (animals)</label>
+    <category>Kind Preference</category>
+    <description>These quirks determine how much a pawn likes having animals as predators. At the extremes, a pawn will either reject all autonomous proposals to be fed to an animal, or seek out animal predators to the exclusion of other kinds of predator. While insectoids normally count as animals, these quirks are written to exclude insectoids from the type preferences.</description>
+    <generationOrder>2</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>DietaryPreference_Prey_Animals_Obsessed</li>
+      <li>DietaryPreference_Prey_Animals_Likes</li>
+      <li>DietaryPreference_Prey_Animals_Neutral</li>
+      <li>DietaryPreference_Prey_Animals_Dislikes</li>
+      <li>DietaryPreference_Prey_Animals_Refuses</li>
+      <!-- <li>DietaryPreference_Prey_Animals_Incapable</li> -->
+    </quirks>
+    <blockingQuirks>
+      <li>PreyDisposition_Refuses</li>
+    </blockingQuirks>
+    <blockingKeywords>
+      <li>PawnIsAnimal</li>
+    </blockingKeywords>
+  </RimVore2.QuirkPoolDef>
+
+  <RimVore2.QuirkDef>
+    <defName>DietaryPreference_Prey_Animals_Obsessed</defName>
+    <label>Zoogastric obsession</label>
+    <description>[PAWN_label] adores being prey for animals. If [PAWN_pronoun] ever goes missing, make sure to check the bellies of all your livestock, pets, and the wildlife.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Prey</role>
+          <raceType>Animal</raceType>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Prey</role>
+          <raceType>Insectoid</raceType>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>PredatorIsAnimal</li>
+          <li>PreyIsNotInsectoid</li>
+        </keywords>
+        <memory>RV2_DietaryQuirkSatisfactionPrey_Animals_VeryGood</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>DietaryPreference_Prey_Animals_Likes</defName>
+    <label>Zoogastric interest</label>
+    <description>[PAWN_label] likes being prey for animals. It's thrilling to be subject to the inscrutable whims of a beast, not knowing if it might change its mind about [PAWN_possessive] safety, or when it'll decide to release [PAWN_objective].</description>
+    <rarity>Uncommon</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Prey</role>
+          <raceType>Animal</raceType>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Prey</role>
+          <raceType>Insectoid</raceType>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>PredatorIsAnimal</li>
+          <li>PreyIsNotInsectoid</li>
+        </keywords>
+        <memory>RV2_DietaryQuirkSatisfactionPrey_Animals_Good</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>DietaryPreference_Prey_Animals_Neutral</defName>
+    <label>Zoogastric ambivalence</label>
+    <description>[PAWN_label] doesn't mind being prey for animals, but doesn't prefer it either.</description>
+    <rarity>Common</rarity>
+    <hidden>true</hidden>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>DietaryPreference_Prey_Animals_Dislikes</defName>
+    <label>Zoogastric disinterest</label>
+    <description>[PAWN_label] dislikes being prey for animals. How certain can [PAWN_pronoun] be that the beast will listen to demands to be let out?</description>
+    <rarity>Abundant</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Prey</role>
+          <raceType>Animal</raceType>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Prey</role>
+          <raceType>Insectoid</raceType>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>PredatorIsAnimal</li>
+          <li>PreyIsNotInsectoid</li>
+        </keywords>
+        <memory>RV2_DietaryQuirkSatisfactionPrey_Animals_Bad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>DietaryPreference_Prey_Animals_Refuses</defName>
+    <label>Zoogastric revulsion</label>
+    <description>[PAWN_label] hates being prey for animals and will never willingly be consumed by them. It's as disgusting as it is degrading.</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Prey</role>
+          <raceType>Animal</raceType>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Prey</role>
+          <raceType>Insectoid</raceType>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>PredatorIsAnimal</li>
+          <li>PreyIsNotInsectoid</li>
+        </keywords>
+        <memory>RV2_DietaryQuirkSatisfactionPrey_Animals_VeryBad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkPoolDef>
+    <defName>DietaryPreference_Prey_Humanoids</defName>
+    <label>Foddering preference (humanoids)</label>
+    <category>Kind Preference</category>
+    <description>These quirks determine how much a pawn likes having humanoids as predators. At the extremes, a pawn will either reject all autonomous proposals to be a humanoid's prey, or seek out humanoid predators to the exclusion of other kinds of predator. Because vanilla Rimworld does not indicate anything about how pawns feel about being cannibalized, these quirks are simpler than their predatory counterparts.</description>
+    <generationOrder>2</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>DietaryPreference_Prey_Humanoids_Obsessed</li>
+      <li>DietaryPreference_Prey_Humanoids_Likes</li>
+      <li>DietaryPreference_Prey_Humanoids_Neutral</li>
+      <li>DietaryPreference_Prey_Humanoids_Dislikes</li>
+      <li>DietaryPreference_Prey_Humanoids_Refuses</li>
+      <!-- <li>DietaryPreference_Prey_Humanoids_Incapable</li> -->
+    </quirks>
+    <blockingQuirks>
+      <li>PreyDisposition_Refuses</li>
+    </blockingQuirks>
+    <blockingKeywords>
+      <li>PawnIsAnimal</li>
+    </blockingKeywords>
+  </RimVore2.QuirkPoolDef>
+
+  <RimVore2.QuirkDef>
+    <defName>DietaryPreference_Prey_Humanoids_Obsessed</defName>
+    <label>Anthropogastric obsession</label>
+    <description>[PAWN_label] adores being prey for [PAWN_possessive] fellow sapient beings. [PAWN_pronoun] is a prey of the people--any person, really.</description>
+    <rarity>Uncommon</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Prey</role>
+          <raceType>Humanoid</raceType>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>PredatorIsHumanlike</li>
+        </keywords>
+        <memory>RV2_DietaryQuirkSatisfactionPrey_Humanoids_VeryGood</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>DietaryPreference_Prey_Humanoids_Likes</defName>
+    <label>Anthropogastric interest</label>
+    <description>[PAWN_label] likes being prey for [PAWN_possessive] fellow sapient beings. It's nice to be able to socialize with [PAWN_possessive] predator.</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Prey</role>
+          <raceType>Humanoid</raceType>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>PredatorIsHumanlike</li>
+        </keywords>
+        <memory>RV2_DietaryQuirkSatisfactionPrey_Humanoids_Good</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>DietaryPreference_Prey_Humanoids_Neutral</defName>
+    <label>Anthropogastric ambivalence</label>
+    <description>[PAWN_label] doesn't mind being prey for [PAWN_possessive] fellow sapient beings, but doesn't prefer it either.</description>
+    <rarity>Abundant</rarity>
+    <hidden>true</hidden>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>DietaryPreference_Prey_Humanoids_Dislikes</defName>
+    <label>Anthropogastric disinterest</label>
+    <description>[PAWN_label] dislikes being prey for [PAWN_possessive] fellow sapient beings. [PAWN_pronoun] can't escape the stresses of society by entering the body of a member of society.</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Prey</role>
+          <raceType>Humanoid</raceType>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>PredatorIsHumanlike</li>
+        </keywords>
+        <memory>RV2_DietaryQuirkSatisfactionPrey_Humanoids_Bad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>DietaryPreference_Prey_Humanoids_Refuses</defName>
+    <label>Anthropogastric revulsion</label>
+    <description>[PAWN_label] hates being prey for [PAWN_possessive] fellow sapient beings and will never willingly be consumed by them. That's at least three kinds of unnatural.</description>
+    <rarity>Uncommon</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Prey</role>
+          <raceType>Humanoid</raceType>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>PredatorIsHumanlike</li>
+        </keywords>
+        <memory>RV2_DietaryQuirkSatisfactionPrey_Humanoids_VeryBad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkPoolDef>
+    <defName>DietaryPreference_Prey_Insectoids</defName>
+    <label>Foddering preference (insectoids)</label>
+    <category>Kind Preference</category>
+    <description>These quirks determine how much a pawn likes having insectoids as predators. At the extremes, a pawn will either reject all autonomous proposals to be fed to an insectoid, or seek out insectoid predators to the exclusion of other kinds of predator.</description>
+    <generationOrder>2</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>DietaryPreference_Prey_Insectoids_Obsessed</li>
+      <li>DietaryPreference_Prey_Insectoids_Likes</li>
+      <li>DietaryPreference_Prey_Insectoids_Neutral</li>
+      <li>DietaryPreference_Prey_Insectoids_Dislikes</li>
+      <li>DietaryPreference_Prey_Insectoids_Refuses</li>
+      <!-- <li>DietaryPreference_Prey_Insectoids_Incapable</li> -->
+    </quirks>
+    <blockingQuirks>
+      <li>PreyDisposition_Refuses</li>
+    </blockingQuirks>
+    <blockingKeywords>
+      <li>PawnIsAnimal</li>
+    </blockingKeywords>
+  </RimVore2.QuirkPoolDef>
+
+  <RimVore2.QuirkDef>
+    <defName>DietaryPreference_Prey_Insectoids_Obsessed</defName>
+    <label>Entomogastric obsession</label>
+    <description>[PAWN_label] adores being prey for insectoids. There aren't many other ways for a humanoid to become one with the hive.</description>
+    <rarity>VeryRare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Prey</role>
+          <raceType>Insectoid</raceType>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>PredatorIsInsectoid</li>
+        </keywords>
+        <memory>RV2_DietaryQuirkSatisfactionPrey_Insectoids_VeryGood</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>DietaryPreference_Prey_Insectoids_Likes</defName>
+    <label>Entomogastric interest</label>
+    <description>[PAWN_label] likes being prey for insectoids. Such an alien physiology is quite fascinating to tour from the inside.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Prey</role>
+          <raceType>Insectoid</raceType>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>PredatorIsInsectoid</li>
+        </keywords>
+        <memory>RV2_DietaryQuirkSatisfactionPrey_Insectoids_Good</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>DietaryPreference_Prey_Insectoids_Neutral</defName>
+    <label>Entomogastric ambivalence</label>
+    <description>[PAWN_label] doesn't mind being prey for insectoids, but doesn't prefer it either.</description>
+    <rarity>Uncommon</rarity>
+    <hidden>true</hidden>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>DietaryPreference_Prey_Insectoids_Dislikes</defName>
+    <label>Entomogastric disinterest</label>
+    <description>[PAWN_label] dislikes being prey for insectoids. Bugs aren't known for eating their prey in one whole bite. Not swarms of them, at least...</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Prey</role>
+          <raceType>Insectoid</raceType>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>PredatorIsInsectoid</li>
+        </keywords>
+        <memory>RV2_DietaryQuirkSatisfactionPrey_Insectoids_Bad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>DietaryPreference_Prey_Insectoids_Refuses</defName>
+    <label>Entomogastric revulsion</label>
+    <description>[PAWN_label] hates being prey for insectoids and will not willingly be consumed by them. No amount of showers would ever let [PAWN_objective] feel clean again.</description>
+    <rarity>Abundant</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Prey</role>
+          <raceType>Insectoid</raceType>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PawnIsPrey</li>
+          <li>PredatorIsInsectoid</li>
+        </keywords>
+        <memory>RV2_DietaryQuirkSatisfactionPrey_Insectoids_VeryBad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+  <RimVore2.QuirkPoolDef>
+    <defName>DietaryPreference_Prey_Mechanoids</defName>
+    <label>Foddering preference (mechanoids)</label>
+    <category>Kind Preference</category>
+    <description>These quirks determine how much a pawn likes having mechanoids as predators. At the extremes, a pawn will either reject all autonomous proposals to be fed to a mechanoid, or seek out mechanoid predators to the exclusion of other kinds of predator.</description>
+    <generationOrder>2</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>DietaryPreference_Prey_Mechanoids_Obsessed</li>
+      <li>DietaryPreference_Prey_Mechanoids_Likes</li>
+      <li>DietaryPreference_Prey_Mechanoids_Neutral</li>
+      <li>DietaryPreference_Prey_Mechanoids_Dislikes</li>
+      <li>DietaryPreference_Prey_Mechanoids_Refuses</li>
+      <!-- <li>DietaryPreference_Prey_Mechanoids_Incapable</li> -->
+    </quirks>
+    <blockingQuirks>
+      <li>PreyDisposition_Refuses</li>
+    </blockingQuirks>
+    <blockingKeywords>
+      <li>PawnIsAnimal</li>
+    </blockingKeywords>
+  </RimVore2.QuirkPoolDef>
+
+  <RimVore2.QuirkDef>
+    <defName>DietaryPreference_Prey_Mechanoids_Obsessed</defName>
+    <label>Mechanogastric obsession</label>
+    <description>[PAWN_label] adores being prey for mechanoids. [PAWN_pronoun] is more at home among flexing hydraulics and humming circuits than the beat of most hearts.</description>
+    <rarity>VeryRare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Prey</role>
+          <raceType>Mechanoid</raceType>
+        </selectors>
+        <modifierValue>4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PredatorIsMechanoid</li>
+          <li>PawnIsPrey</li>
+        </keywords>
+        <memory>RV2_DietaryQuirkSatisfactionPrey_Mechanoids_VeryGood</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>DietaryPreference_Prey_Mechanoids_Likes</defName>
+    <label>Mechanogastric interest</label>
+    <description>[PAWN_label] likes being prey for mechanoids. Cold, unyielding plasteel makes for a unique and exhillarating experience.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Prey</role>
+          <raceType>Mechanoid</raceType>
+        </selectors>
+        <modifierValue>2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PredatorIsMechanoid</li>
+          <li>PawnIsPrey</li>
+        </keywords>
+        <memory>RV2_DietaryQuirkSatisfactionPrey_Mechanoids_Good</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>DietaryPreference_Prey_Mechanoids_Neutral</defName>
+    <label>Mechanogastric ambivalence</label>
+    <description>[PAWN_label] doesn't mind being prey for mechanoids, but doesn't prefer it either.</description>
+    <rarity>Uncommon</rarity>
+    <hidden>true</hidden>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>DietaryPreference_Prey_Mechanoids_Dislikes</defName>
+    <label>Mechanogastric disinterest</label>
+    <description>[PAWN_label] dislikes being prey for mechanoids. Think of all the grinding gears! All the constant clicking and ticking!</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Prey</role>
+          <raceType>Mechanoid</raceType>
+        </selectors>
+        <modifierValue>-2</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PredatorIsMechanoid</li>
+          <li>PawnIsPrey</li>
+        </keywords>
+        <memory>RV2_DietaryQuirkSatisfactionPredator_Mechanoids_Bad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>DietaryPreference_Prey_Mechanoids_Refuses</defName>
+    <label>Mechanogastric revulsion</label>
+    <description>[PAWN_label] hates being prey for mechanoids and will not willingly be consumed by them. Even if [PAWN_pronoun] was suicidal, that sure as hell ain't the way [PAWN_pronoun] wants to go out.</description>
+    <rarity>Abundant</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_VoreTargetSelectorModifier">
+        <selectors>
+          <role>Prey</role>
+          <raceType>Mechanoid</raceType>
+        </selectors>
+        <modifierValue>-4</modifierValue>
+      </li>
+      <li Class="RimVore2.QuirkComp_PostVoreMemory">
+        <keywords>
+          <li>PredatorIsMechanoid</li>
+          <li>PawnIsPrey</li>
+        </keywords>
+        <memory>RV2_DietaryQuirkSatisfactionPredator_Mechanoids_VeryBad</memory>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+</Defs>

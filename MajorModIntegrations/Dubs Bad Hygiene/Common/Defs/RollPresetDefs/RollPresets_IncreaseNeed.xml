@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Bladder -->
+  <RimVore2.RollPresetDef>
+    <defName>RV2_DBH_IncreaseNeed_Predator_Bladder</defName>
+    <successChance>1</successChance>
+    <strength>-1</strength>
+    <actionsOnSuccess>
+      <li Class="RimVore2.RollAction_IncreaseNeed">
+        <target>Predator</target>
+        <need>Bladder</need>
+      </li>
+    </actionsOnSuccess>
+  </RimVore2.RollPresetDef>
+</Defs>

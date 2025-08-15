@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <RV2_RitualInvalidReasons_NoRoles>No assignments</RV2_RitualInvalidReasons_NoRoles>
+  <RV2_RitualInvalidReasons_PredatorNotSet>No Predator</RV2_RitualInvalidReasons_PredatorNotSet>
+  <RV2_RitualInvalidReasons_PreyNotSet>No Prey</RV2_RitualInvalidReasons_PreyNotSet>
+  <RV2_RitualInvalidReasons_NoPath>Vore initiator has no preferred VorePath</RV2_RitualInvalidReasons_NoPath>
+
+</LanguageData>

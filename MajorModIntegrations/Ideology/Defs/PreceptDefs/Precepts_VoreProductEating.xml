@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <IssueDef>
+    <defName>RV2_VoreProductEating</defName>
+    <label>vore product eating</label>
+    <iconPath>UI/Issues/EatingVoreProduct</iconPath>
+  </IssueDef>
+
+  <!-- Neutral -->
+  <!--<PreceptDef>
+    <defName>RV2_VoreProductEating_Acceptable</defName>
+    <issue>RV2_VoreProductEating</issue>
+    <label>acceptable</label>
+    <description>Nothing to it.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <associatedMemes>
+      <li>RV2_Preyism</li>
+      <li>RV2_Predation</li>
+    </associatedMemes>
+  </PreceptDef>-->
+  
+  <!-- Abhorrent -->
+  <PreceptDef>
+    <defName>RV2_VoreProductEating_Abhorrent</defName>
+    <issue>RV2_VoreProductEating</issue>
+    <label>abhorrent</label>
+    <description>Yuck.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <associatedMemes>
+      <li>RV2_Preyism</li>
+      <li>RV2_Predation</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>RV2_ConsumedVoreProduct</eventDef>
+        <thought>RV2_AteVoreProduct_Abhorrent</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>RV2_ConsumedVoreProduct</eventDef>
+        <thought>RV2_AteVoreProduct_Know_Abhorrent</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <ThoughtDef>
+    <defName>RV2_AteVoreProduct_Abhorrent</defName>
+    <thoughtClass>Thought_FoodEaten</thoughtClass>
+    <durationDays>1</durationDays>
+    <stages>
+      <li>
+        <label>ate vore product</label>
+        <description>This is an insult to my ideology, what am I doing?</description>
+        <baseMoodEffect>-24</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>RV2_AteVoreProduct_Know_Abhorrent</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>3</durationDays>
+    <stackLimit>100</stackLimit>
+    <stackLimitForSameOtherPawn>3</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>ate vore product</label>
+        <baseOpinionOffset>-12</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <!-- Preferred -->
+  <PreceptDef>
+    <defName>RV2_VoreProductEating_Preferred</defName>
+    <issue>RV2_VoreProductEating</issue>
+    <label>preferred</label>
+    <description>Tasty.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <associatedMemes>
+      <li>RV2_Preyism</li>
+      <li>RV2_Predation</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>RV2_ConsumedVoreProduct</eventDef>
+        <thought>RV2_AteVoreProduct_Preferred</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <ThoughtDef>
+    <defName>RV2_AteVoreProduct_Preferred</defName>
+    <thoughtClass>Thought_FoodEaten</thoughtClass>
+    <durationDays>1</durationDays>
+    <stages>
+      <li>
+        <label>ate vore product</label>
+        <description>I could eat this every day</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <PreceptDef>
+    <defName>RV2_VoreProductEating_Required</defName>
+    <issue>RV2_VoreProductEating</issue>
+    <label>required</label>
+    <description>Must be part of regular consumption.</description>
+    <impact>High</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <requiredMemes>
+      <li>RV2_Predation</li>
+    </requiredMemes>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>RV2_ConsumedVoreProduct</eventDef>
+        <thought>RV2_AteVoreProduct_Required</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>RV2_NoRecentVoreProduct_Required</thought>
+        <description>No vore product for {VORERELATEDINTERVAL} days</description>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <ThoughtDef>
+    <defName>RV2_AteVoreProduct_Required</defName>
+    <thoughtClass>Thought_FoodEaten</thoughtClass>
+    <durationDays>1</durationDays>
+    <stages>
+      <li>
+        <label>ate vore product</label>
+        <description>Just as my ideology dictates!</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>RV2_NoRecentVoreProduct_Required</defName>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>RimVore2.ThoughtWorker_Precept_RecentKeyword</workerClass>
+    <doNotApplyToQuestLodgers>true</doNotApplyToQuestLodgers>
+    <stages>
+      <li>
+        <label>want vore product</label>
+        <description>It's been far too long since I consumed a vore product. I should have eaten by now.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+    <modExtensions>
+      <li Class="RimVore2.PreceptThoughtWorker_ListeningKeyword">
+        <keyword>IngestedVoreProduct</keyword>
+      </li>
+    </modExtensions>
+  </ThoughtDef>
+
+
+</Defs>

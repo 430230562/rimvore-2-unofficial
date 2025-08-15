@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!-- This document contains all digestion paths. Digestion nourishes the pred and optionally produces a fertilizer material. For cumgestion, milkification, and so on, see VorePath_Convert-->
+
+  <RimVore2.VorePathDef Abstract="True" Name="Digest_Base">
+    <voreGoal>Digest</voreGoal>
+    <feedsPredator>true</feedsPredator>
+  </RimVore2.VorePathDef>
+
+  <!-- Essential Paths -->
+  <!-- Oral -->
+
+  <RimVore2.VorePathDef ParentName="Digest_Base">
+    <defName>OralDigest</defName>
+    <label>(Digest) Oral</label>
+    <RMBLabel>Oral vore</RMBLabel>
+    <actionDescription>{PREDATOR} will orally digest {PREY}</actionDescription>
+    <description>Oral digestion is where the predator swallows the prey into their stomach for fatal digestion, feeding the predator and turning the prey into either fertilizer components or nothing at all.</description>
+    <initTale>RV2_VoreInitiation_OralDigest</initTale>
+    <exitTale>RV2_VoreExit_OralDigest</exitTale>
+    <voreType>Oral</voreType>
+    <voreProduct>
+      <items>
+        <!-- produced items are excreted on finished vore, alongside the pawn / remains or the container for them -->
+        <li>Filth_CorpseBile</li>
+      </items>
+      <selectableContainers>
+        <li>RV2_Container_Scat</li>
+        <li>RV2_Container_Bones</li>
+        <li>RV2_Container_Sack</li>
+        <li>RV2_Container_None</li>
+      </selectableContainers>
+      <containerItems>
+        <!-- produced container items are put into the container -->
+        <li>Filth_CorpseBile</li>
+      </containerItems>
+    </voreProduct>
+    <postVoreMemories>
+      <predatorPostVoreSuccess>RV2_PredatorOralDigestSuccess</predatorPostVoreSuccess>
+      <predatorPostVoreInterrupted>RV2_PredatorOralDigestInterrupted</predatorPostVoreInterrupted>
+      <preyPostVoreInterrupted>RV2_PreyOralDigestInterrupted</preyPostVoreInterrupted>
+    </postVoreMemories>
+    <stages>
+      <li>Mouth_Enter</li>
+      <li>Stomach_Warmup</li>
+      <li>Stomach_Digest</li>
+      <li>Stomach_Churn</li>
+      <li>Intestines_Process</li>
+      <li>Anus_Dump</li>
+    </stages>
+    <defaultRequiredStruggles>60</defaultRequiredStruggles>
+  </RimVore2.VorePathDef>
+
+  <!-- Anal -->
+
+  <RimVore2.VorePathDef ParentName="Digest_Base">
+    <defName>AnalDigest</defName>
+    <label>(Digest) Anal</label>
+    <RMBLabel>Anal vore</RMBLabel>
+    <description>Anal digestion is where the predator is where the predator stuffs the prey up their butt and eventually to their stomach for fatal digestion, feeding the predator and turning the prey into either fertilizer components or nothing at all.</description>
+    <actionDescription>{PREDATOR} will anally digest {PREY}</actionDescription>
+    <initTale>RV2_VoreInitiation_AnalDigest</initTale>
+    <exitTale>RV2_VoreExit_AnalDigest</exitTale>
+    <voreType>Anal</voreType>
+    <voreProduct>
+      <items>
+        <li>Filth_CorpseBile</li>
+      </items>
+      <selectableContainers>
+        <li>RV2_Container_Scat</li>
+        <li>RV2_Container_Bones</li>
+        <li>RV2_Container_Sack</li>
+        <li>RV2_Container_None</li>
+      </selectableContainers>
+      <containerItems>
+        <li>Filth_CorpseBile</li>
+      </containerItems>
+    </voreProduct>
+    <postVoreMemories>
+      <predatorPostVoreSuccess>RV2_PredatorAnalDigestSuccess</predatorPostVoreSuccess>
+      <predatorPostVoreInterrupted>RV2_PredatorAnalDigestInterrupted</predatorPostVoreInterrupted>
+      <preyPostVoreInterrupted>RV2_PreyAnalDigestInterrupted</preyPostVoreInterrupted>
+    </postVoreMemories>
+    <stages>
+      <li>Anus_Enter</li>
+      <li>Intestines_Enter</li>
+      <li>Stomach_Warmup</li>
+      <li>Stomach_Digest</li>
+      <li>Stomach_Churn</li>
+      <li>Intestines_Process</li>
+      <li>Anus_Dump</li>
+    </stages>
+    <defaultRequiredStruggles>60</defaultRequiredStruggles>
+  </RimVore2.VorePathDef>
+
+
+</Defs>

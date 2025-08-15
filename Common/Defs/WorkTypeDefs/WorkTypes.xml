@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <WorkTypeDef>
+    <defName>RV2_Propose</defName>
+    <labelShort>Vore</labelShort>
+    <pawnLabel>Vore</pawnLabel>
+    <gerundLabel>Vore</gerundLabel>
+    <description>Things related to vore.</description>
+    <verb>vore</verb>
+    <naturalPriority>960</naturalPriority>
+    <!-- added in patch so 1.2 doesn't break <disabledForSlaves>true</disabledForSlaves>-->
+    <relevantSkills>
+      <li>Social</li>
+    </relevantSkills>
+    <workTags>
+      <li>Social</li>
+    </workTags>
+  </WorkTypeDef>
+</Defs>

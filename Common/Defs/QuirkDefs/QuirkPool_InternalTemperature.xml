@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RimVore2.QuirkPoolDef>
+    <defName>InternalTemperature</defName>
+    <label>Internal temperature</label>
+    <category>General</category>
+    <description>These quirks determine how hot or cold their insides are for the prey.</description>
+    <generationOrder>2</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>InternalTemperature_Hot</li>
+      <li>InternalTemperature_Warm</li>
+      <li>InternalTemperature_Normal</li>
+      <li>InternalTemperature_Cold</li>
+      <li>InternalTemperature_Freezing</li>
+    </quirks>
+  </RimVore2.QuirkPoolDef>
+
+  <RimVore2.QuirkDef>
+    <defName>InternalTemperature_Hot</defName>
+    <label>Hot guts</label>
+    <description>[PAWN_label] insides are dangerously hot (60°C / 140°F), any prey inside of [PAWN_objective] is liable to suffer from heatstroke.</description>
+    <rarity>VeryRare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>InternalTemperature</modifierName>
+        <modifierValue>60</modifierValue>
+        <operation>Set</operation>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>InternalTemperature_Warm</defName>
+    <label>Warm</label>
+    <description>[PAWN_label] insides are warmer than usual insides (40°C / 104°F), prey inside may suffer from heatstroke after prolonged vore.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>InternalTemperature</modifierName>
+        <modifierValue>40</modifierValue>
+        <operation>Set</operation>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>InternalTemperature_Normal</defName>
+    <label>Normal</label>
+    <description>[PAWN_label] insides are just as warm as any other pawns.</description>
+    <rarity>Guaranteed</rarity><!-- highest weight -->
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>InternalTemperature_Cold</defName>
+    <label>Cold</label>
+    <description>[PAWN_label] insides are colder than usual (12°C / 53.6°F), long vores may lead to pawns suffering from frostbite.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>InternalTemperature</modifierName>
+        <modifierValue>12</modifierValue>
+        <operation>Set</operation>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>InternalTemperature_Freezing</defName>
+    <label>Freezer</label>
+    <description>[PAWN_label] insides are freezing (0°C / 32°F), some genetic mutation lowers [PAWN_objective] to freezing temperatures.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>InternalTemperature</modifierName>
+        <modifierValue>0</modifierValue>
+        <operation>Set</operation>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+</Defs>

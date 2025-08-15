@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RimVore2.QuirkPoolDef>
+    <defName>AutoProposalFrequency</defName>
+    <label>Proposal frequency</label>
+	<category>Proposals</category>
+	<description>These quirks determine how frequently a pawn will autonomously try to to make a vore attempt. Pawns may do so as pred or as prey, but, at the time of writing, they will only make vore attempts when they are idle.</description>
+    <generationOrder>3</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>ProposalFrequency_None</li>
+      <li>ProposalFrequency_Low</li>
+      <li>ProposalFrequency_Normal</li>
+      <li>ProposalFrequency_High</li>
+      <li>ProposalFrequency_VeryHigh</li>
+    </quirks>
+    <blockingKeywords>
+	  <li>PawnIsAnimal</li>
+    </blockingKeywords>
+  </RimVore2.QuirkPoolDef>
+
+  <RimVore2.QuirkDef>
+    <defName>ProposalFrequency_None</defName>
+    <label>Vore apathy</label>
+    <description>[PAWN_label] does not care enough about vore to initiate vore proposals on [PAWN_possessive] own. [PAWN_pronoun] has no qualms about being told to do it, though.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>voreRequestMtb</modifierName>
+        <modifierValue>99999</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>ProposalFrequency_Low</defName>
+    <label>Vore disinterest</label>
+    <description>[PAWN_label] will seek vore out on [PAWN_possessive] own much less frequently than others.</description>
+    <rarity>Uncommon</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>voreRequestMtb</modifierName>
+        <modifierValue>1.5</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>ProposalFrequency_Normal</defName>
+    <label>Passing vore interest</label>
+    <hidden>true</hidden>
+    <description>[PAWN_label] proposes vore as frequently as everyone else.</description>
+    <rarity>Abundant</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>voreRequestMtb</modifierName>
+        <modifierValue>1</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>ProposalFrequency_High</defName>
+    <label>Vore eagerness</label>
+    <description>[PAWN_label] will propose vore on [PAWN_possessive] own more often than other pawns.</description>
+    <rarity>Uncommon</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>voreRequestMtb</modifierName>
+        <modifierValue>0.66</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>ProposalFrequency_VeryHigh</defName>
+    <label>Vore obsession</label>
+    <description>[PAWN_label] is ever-eager for vore, and will propose it on [PAWN_possessive] own twice as much as other pawns.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>voreRequestMtb</modifierName>
+        <modifierValue>0.5</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+</Defs>

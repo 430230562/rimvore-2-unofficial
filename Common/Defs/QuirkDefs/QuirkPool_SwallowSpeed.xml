@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RimVore2.QuirkPoolDef>
+    <defName>SwallowSpeed</defName>
+    <label>Swallow Speed</label>
+    <category>General</category>
+    <description>These quirks determine how quickly a pawn begins vore (i.e., how quickly the prey is removed from the map and added to the pawn's hediffs). It does not currently impact how quickly the "passing" stages progress.</description>
+    <generationOrder>3</generationOrder>
+    <poolType>PickOne</poolType>
+    <quirks>
+      <li>SwallowSpeed_VeryGood</li>
+      <li>SwallowSpeed_Good</li>
+      <li>SwallowSpeed_Normal</li>
+      <li>SwallowSpeed_Bad</li>
+      <li>SwallowSpeed_VeryBad</li>
+    </quirks>
+  </RimVore2.QuirkPoolDef>
+
+  <RimVore2.QuirkDef>
+    <defName>SwallowSpeed_VeryGood</defName>
+    <label>Speed-slurper</label>
+    <description>[PAWN_label] belts down prey at about four times the speed of other predators. [PAWN_pronoun] could dominate a prey-swallowing contest.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>SwallowSpeed</modifierName>
+        <modifierValue>3</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>SwallowSpeed_Good</defName>
+    <label>Quick eater</label>
+    <description>[PAWN_label] puts prey away quickly, at about twice the speed of other predators.</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>SwallowSpeed</modifierName>
+        <modifierValue>1.5</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>SwallowSpeed_Normal</defName>
+    <label>Normal swallow speed</label>
+    <description>[PAWN_label] swallows prey at an average speed.</description>
+    <hidden>true</hidden>
+    <rarity>Abundant</rarity>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>SwallowSpeed_Bad</defName>
+    <label>Slow eater</label>
+    <description>[PAWN_label] takes prey in at a leisurely pace, half as quick as other predators.</description>
+    <rarity>Common</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>SwallowSpeed</modifierName>
+        <modifierValue>0.75</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+  <RimVore2.QuirkDef>
+    <defName>SwallowSpeed_VeryBad</defName>
+    <label>Lollygagger</label>
+    <description>[PAWN_label] has to devour prey real slowly, at about a quarter the speed of other predators, lest [PAWN_possessive] body reject [PAWN_possessive] prey.</description>
+    <rarity>Rare</rarity>
+    <comps>
+      <li Class="RimVore2.QuirkComp_ValueModifier">
+        <modifierName>SwallowSpeed</modifierName>
+        <modifierValue>0.4</modifierValue>
+      </li>
+    </comps>
+  </RimVore2.QuirkDef>
+
+</Defs>

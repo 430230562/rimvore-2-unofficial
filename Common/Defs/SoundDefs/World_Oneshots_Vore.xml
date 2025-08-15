@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <SoundDef Abstract="True" Name="RV2_Base">
+    <context>MapOnly</context>
+    <maxSimultaneous>3</maxSimultaneous>
+  </SoundDef>
+  
+  <SoundDef ParentName="RV2_Base">
+    <defName>RV2_Nom</defName>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Vore/Nom</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>90~110</volumeRange>
+        <pitchRange>0.9~1.1</pitchRange>
+        <distRange>0~50</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef ParentName="RV2_Base">
+    <defName>RV2_Slurp</defName>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Vore/Slurp</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>90~110</volumeRange>
+        <pitchRange>0.9~1.1</pitchRange>
+        <distRange>0~50</distRange>        
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef ParentName="RV2_Base">
+    <defName>RV2_Swallow</defName>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Vore/Swallow</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>90~110</volumeRange>
+        <pitchRange>0.9~1.1</pitchRange>
+        <distRange>0~50</distRange>        
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef ParentName="RV2_Base">
+    <defName>RV2_Burp</defName>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Vore/Burp</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>90~110</volumeRange>
+        <pitchRange>0.9~1.1</pitchRange>
+        <distRange>0~50</distRange>        
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef ParentName="RV2_Base">
+    <defName>RV2_Belch</defName>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Vore/Belch</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>90~110</volumeRange>
+        <pitchRange>0.9~1.1</pitchRange>
+        <distRange>0~50</distRange>        
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef ParentName="RV2_Base">
+    <defName>RV2_Churn</defName>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Vore/Churn</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>90~110</volumeRange>
+        <pitchRange>0.9~1.1</pitchRange>
+        <distRange>0~50</distRange>        
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef ParentName="RV2_Base">
+    <defName>RV2_Gurgle</defName>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Vore/Gurgle</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>90~110</volumeRange>
+        <pitchRange>0.9~1.1</pitchRange>
+        <distRange>0~50</distRange>        
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef ParentName="RV2_Base">
+    <defName>RV2_Toot</defName>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Vore/Toot</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>90~110</volumeRange>
+        <pitchRange>0.9~1.1</pitchRange>
+        <distRange>0~50</distRange>        
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef ParentName="RV2_Base">
+    <defName>RV2_Fart</defName>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Vore/Fart</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>70~90</volumeRange> <!-- TODO may require more tuning -->
+        <pitchRange>0.9~1.1</pitchRange>
+        <distRange>0~50</distRange>        
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef ParentName="RV2_Base">
+    <defName>RV2_Moan</defName>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Vore/MoanFemale</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>60~80</volumeRange>
+        <pitchRange>0.9~1.1</pitchRange>
+        <distRange>0~50</distRange>        
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef ParentName="RV2_Base">
+    <defName>RV2_MoanMale</defName>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Vore/MoanMale</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>60~80</volumeRange>
+        <pitchRange>0.9~1.1</pitchRange>
+        <distRange>0~50</distRange>        
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef ParentName="RV2_Base">
+    <defName>RV2_MoanFemale</defName>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Vore/MoanFemale</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>60~80</volumeRange>
+        <pitchRange>0.9~1.1</pitchRange>
+        <distRange>0~50</distRange>        
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef ParentName="RV2_Base">
+    <defName>RV2_Orgasm</defName>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Vore/OrgasmFemale</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>90~110</volumeRange>
+        <pitchRange>0.9~1.1</pitchRange>
+        <distRange>0~50</distRange>        
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef ParentName="RV2_Base">
+    <defName>RV2_OrgasmMale</defName>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Vore/OrgasmMale</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>90~110</volumeRange>
+        <pitchRange>0.9~1.1</pitchRange>
+        <distRange>0~50</distRange>        
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef ParentName="RV2_Base">
+    <defName>RV2_OrgasmFemale</defName>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Vore/OrgasmFemale</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>90~110</volumeRange>
+        <pitchRange>0.9~1.1</pitchRange>
+        <distRange>0~50</distRange>        
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef ParentName="RV2_Base">
+    <defName>RV2_Squish</defName>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Vore/Squish</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>90~110</volumeRange>
+        <pitchRange>0.9~1.1</pitchRange>
+        <distRange>0~50</distRange>        
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef ParentName="RV2_Base">
+    <defName>RV2_Heave</defName>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Vore/Heave</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>90~110</volumeRange>
+        <pitchRange>0.9~1.1</pitchRange>
+        <distRange>0~50</distRange>        
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef ParentName="RV2_Base">
+    <defName>RV2_Puke</defName>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Vore/Puke</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>90~110</volumeRange>
+        <pitchRange>0.9~1.1</pitchRange>
+        <distRange>0~50</distRange>        
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef ParentName="RV2_Base">
+    <defName>RV2_Splatter</defName>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Vore/Splatter</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>90~110</volumeRange>
+        <pitchRange>0.9~1.1</pitchRange>
+        <distRange>0~50</distRange>        
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef ParentName="RV2_Base">
+    <defName>RV2_Blorp</defName>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Vore/Blorp</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>90~110</volumeRange>
+        <pitchRange>0.9~1.1</pitchRange>
+        <distRange>0~50</distRange>        
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef ParentName="RV2_Base">
+    <defName>RV2_Sploosh</defName>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Vore/Sploosh</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>90~110</volumeRange>
+        <pitchRange>0.9~0.98</pitchRange>
+        <distRange>0~50</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+    <SoundDef ParentName="RV2_Base">
+    <defName>RV2_Splurt</defName>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>Vore/Splurt</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>90~110</volumeRange>
+        <pitchRange>0.95~1</pitchRange>
+        <distRange>0~50</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+</Defs>

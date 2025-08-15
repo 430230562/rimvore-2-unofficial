@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  
+  <!-- block scat and bones (which are thingCategory ResourcesRaw) from being spawned as reward or event items -->
+  <Operation Class="PatchOperationSequence">
+    <success>Normal</success>
+    <operations>
+      <li Class="PatchOperationTest">
+        <success>Normal</success>
+        <xpath>//thingSetMaker/fixedParams/filter[categories/li="ResourcesRaw"]</xpath>
+      </li>
+      <li Class="PatchOperationConditional">
+        <success>Normal</success>
+        <xpath>//thingSetMaker/fixedParams/filter[categories/li="ResourcesRaw"]/disallowedThingDefs</xpath>
+        <match Class="PatchOperationAdd">
+          <xpath>//thingSetMaker/fixedParams/filter[categories/li="ResourcesRaw"]/disallowedThingDefs</xpath>
+          <value>
+            <li>RV2_Resource_Scat</li>
+            <li>RV2_Resource_Bones</li>
+          </value>
+        </match>
+        <nomatch Class="PatchOperationAdd">
+          <xpath>//thingSetMaker/fixedParams/filter[categories/li="ResourcesRaw"]</xpath>
+          <value>
+            <disallowedThingDefs>
+              <li>RV2_Resource_Scat</li>
+              <li>RV2_Resource_Bones</li>
+            </disallowedThingDefs>
+          </value>
+        </nomatch>
+      </li>
+    </operations>
+  </Operation>
+  
+</Patch>

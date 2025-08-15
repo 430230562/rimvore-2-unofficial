@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <DamageDef Abstract="true" Name="RV2_Acid_Base">
+	<workerClass>DamageWorker_AddInjury</workerClass>
+	<hasForcefulImpact>false</hasForcefulImpact>
+    <makesBlood>false</makesBlood>
+  </DamageDef>
+  
+  <DamageDef Parent_Name="RV2_Acid_Base">
+    <defName>RV2_StomachAcid</defName>
+    <label>Damage caused by digestion.</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <deathMessage>{0} has been digested.</deathMessage>
+    <hediff>RV2_StomachAcid</hediff>
+    <defaultDamage>50</defaultDamage>
+    <defaultArmorPenetration>1.5</defaultArmorPenetration>
+  </DamageDef>
+  
+  <DamageDef Parent_Name="RV2_Acid_Base">
+    <defName>RV2_LubeConversionEnzymes</defName>
+    <label>Damage caused by lubrifaction.</label>
+    <deathMessage>{0} has been melted into lube.</deathMessage>
+    <hediff>RV2_LubeConversionEnzymes</hediff>
+    <defaultDamage>50</defaultDamage>
+    <defaultArmorPenetration>1.5</defaultArmorPenetration>
+  </DamageDef>
+  <DamageDef Parent_Name="RV2_Acid_Base">
+    <defName>RV2_MilkConversionEnzymes</defName>
+    <label>Damage caused by lactifaction.</label>
+    <deathMessage>{0} has been melted into milk.</deathMessage>
+    <hediff>RV2_MilkConversionEnzymes</hediff>
+    <defaultDamage>50</defaultDamage>
+    <defaultArmorPenetration>1.5</defaultArmorPenetration>
+  </DamageDef>
+  <DamageDef Parent_Name="RV2_Acid_Base">
+    <defName>RV2_SpermConversionEnzymes</defName>
+    <label>Damage caused by spermifaction.</label>
+    <deathMessage>{0} has been melted into cum.</deathMessage>
+    <hediff>RV2_SpermConversionEnzymes</hediff>
+    <defaultDamage>50</defaultDamage>
+    <defaultArmorPenetration>1.5</defaultArmorPenetration>
+  </DamageDef>
+  
+</Defs>

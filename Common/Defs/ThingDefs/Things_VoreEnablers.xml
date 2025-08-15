@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThingDef Abstract="True" Name="RV2_VoreEnabler_Base" ParentName="BodyPartBase">
+    <techLevel>Spacer</techLevel>
+    <graphicData>
+      <texPath>Things/Item/Health/HealthItem</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.80</drawSize>
+      <color>(233,136,230)</color>
+    </graphicData>
+    <tradeability Inherit="False">Buyable</tradeability>
+    <statBases>
+      <MarketValue>350</MarketValue>
+      <Mass>1</Mass>
+    </statBases>
+    <thingCategories>
+      <li>RV2_VoreEnablers</li>
+    </thingCategories>
+  </ThingDef>
+
+  <!-- Goal Enablers 
+  These mainly unlock new goals for a pawn's exisiting types. -->
+
+  <ThingDef ParentName="RV2_VoreEnabler_Base">
+    <defName>RV2_GoalEnabler_ConvertLube</defName>
+    <label>Lubrifactive enzyme seeder</label>
+    <description>Special mechanites which enable the production of transformative enzymes in the womb, which distill prey into sexual lubricant.</description>
+    <descriptionHyperlinks>
+      <RecipeDef>RV2_InstallGoalEnabler_ConvertLube</RecipeDef>
+      <HediffDef>RV2_GoalEnabler_ConvertLube</HediffDef>
+    </descriptionHyperlinks>
+  </ThingDef>
+
+  <ThingDef ParentName="RV2_VoreEnabler_Base">
+    <defName>RV2_GoalEnabler_ConvertMilk</defName>
+    <label>Lactifactive enzyme seeder</label>
+    <description>Special mechanites which enable the production of transformative enzymes in the breasts, which distill prey into sweet breastmilk.</description>
+    <descriptionHyperlinks>
+      <RecipeDef>RV2_InstallGoalEnabler_ConvertMilk</RecipeDef>
+      <HediffDef>RV2_GoalEnabler_ConvertMilk</HediffDef>
+    </descriptionHyperlinks>
+  </ThingDef>
+
+  <ThingDef ParentName="RV2_VoreEnabler_Base">
+    <defName>RV2_GoalEnabler_ConvertSperm</defName>
+    <label>Spermifactive enzyme seeder</label>
+    <description>Special mechanites which enable the production of transformative enzymes in the testes, which distill prey into potent sperm.</description>
+    <descriptionHyperlinks>
+      <RecipeDef>RV2_InstallGoalEnabler_ConvertSperm</RecipeDef>
+      <HediffDef>RV2_GoalEnabler_ConvertSperm</HediffDef>
+    </descriptionHyperlinks>
+  </ThingDef>
+
+  <ThingDef ParentName="RV2_VoreEnabler_Base">
+    <defName>RV2_GoalEnabler_Digest</defName>
+    <label>Hyperdigestive enzyme seeder</label>
+    <description>Special mechanites which enable the production of powerful digestive enzymes, which enable the digestion of live prey in a timely manner.</description>
+    <descriptionHyperlinks>
+      <RecipeDef>RV2_InstallGoalEnabler_Digest</RecipeDef>
+      <HediffDef>RV2_GoalEnabler_Digest</HediffDef>
+    </descriptionHyperlinks>
+  </ThingDef>
+
+  <!-- enables Hold and Pleasure -->
+  <ThingDef ParentName="RV2_VoreEnabler_Base">
+    <defName>RV2_GoalEnabler_TempEndo</defName>
+    <label>Internal hospitality adjuster</label>
+    <description>Special mechanites which adjust airflow, moisture levels, and sanitation within a predator's body to make brief stays comfortable and even pleasurable.</description>
+    <descriptionHyperlinks>
+      <RecipeDef>RV2_InstallGoalEnabler_TempEndo</RecipeDef>
+      <HediffDef>RV2_GoalEnabler_TempEndo</HediffDef>
+    </descriptionHyperlinks>
+  </ThingDef>
+
+  <ThingDef ParentName="RV2_VoreEnabler_Base">
+    <defName>RV2_GoalEnabler_Store</defName>
+    <label>Internal hospitality adjuster</label>
+    <description>Special mechanites which adjust airflow, moisture levels, and sanitation within a predator's body to make prolonged stays comfortable and even pleasurable.</description>
+    <descriptionHyperlinks>
+      <RecipeDef>RV2_InstallGoalEnabler_Store</RecipeDef>
+      <HediffDef>RV2_GoalEnabler_Store</HediffDef>
+    </descriptionHyperlinks>
+  </ThingDef>
+
+  <ThingDef ParentName="RV2_VoreEnabler_Base">
+    <defName>RV2_GoalEnabler_Heal</defName>
+    <label>Regenerative gland</label>
+    <description>A special gland that circulates regenerative nanites in the predators bloodstream. The predator can control and target these nanites to heal prey.</description>
+    <descriptionHyperlinks>
+      <RecipeDef>RV2_InstallGoalEnabler_Heal</RecipeDef>
+      <HediffDef>RV2_GoalEnabler_Heal</HediffDef>
+    </descriptionHyperlinks>
+  </ThingDef>
+
+  <ThingDef ParentName="RV2_VoreEnabler_Base">
+    <defName>RV2_GoalEnabler_Reform</defName>
+    <label>Reproductive adjuster</label>
+    <description>Special mechanites that modify the reproductive genes of the predator. With these prey can be deconstructed down to their genetic material and be reformed with the predators own genes.</description>
+    <descriptionHyperlinks>
+      <RecipeDef>RV2_InstallGoalEnabler_Reform</RecipeDef>
+      <HediffDef>RV2_GoalEnabler_Reform</HediffDef>
+    </descriptionHyperlinks>
+  </ThingDef>
+
+  <!-- Type Enablers 
+  These mainly unlock new types for a pawn's exisiting goals. -->
+
+  <ThingDef ParentName="RV2_VoreEnabler_Base">
+    <defName>RV2_TypeEnabler_Oral</defName>
+    <label>Oral elasticizer</label>
+    <description>Special mechanites which elasticize the tissues of the throat, stomach, lips, and jaw-hinges to grant the power of oral vore.</description>
+    <descriptionHyperlinks>
+      <RecipeDef>RV2_InstallTypeEnabler_Oral</RecipeDef>
+      <HediffDef>RV2_TypeEnabler_Oral</HediffDef>
+    </descriptionHyperlinks>
+  </ThingDef>
+
+  <ThingDef ParentName="RV2_VoreEnabler_Base">
+    <defName>RV2_TypeEnabler_Anal</defName>
+    <label>Anal elasticizer</label>
+    <description>Special mechanites which elasticize the tissues of the anus, intestines, and stomach to grant the power of anal vore.</description>
+    <descriptionHyperlinks>
+      <RecipeDef>RV2_InstallTypeEnabler_Anal</RecipeDef>
+      <HediffDef>RV2_TypeEnabler_Anal</HediffDef>
+    </descriptionHyperlinks>
+  </ThingDef>
+
+  <ThingDef ParentName="RV2_VoreEnabler_Base">
+    <defName>RV2_TypeEnabler_Vaginal</defName>
+    <label>Vaginal elasticizer</label>
+    <description>Special mechanites which elasticize the tissues of the vagina, womb, ovaries, and other parts of the bearer reproductive system to grant the power of vaginal vore.</description>
+    <descriptionHyperlinks>
+      <RecipeDef>RV2_InstallTypeEnabler_Vaginal</RecipeDef>
+      <HediffDef>RV2_TypeEnabler_Vaginal</HediffDef>
+    </descriptionHyperlinks>
+  </ThingDef>
+
+  <ThingDef ParentName="RV2_VoreEnabler_Base">
+    <defName>RV2_TypeEnabler_Cock</defName>
+    <label>Penile elasticizer</label>
+    <description>Special mechanites which elasticize the tissues of the urethra, testes, and other parts of the sire reproductive system to grant the power of cock vore.</description>
+    <descriptionHyperlinks>
+      <RecipeDef>RV2_InstallTypeEnabler_Cock</RecipeDef>
+      <HediffDef>RV2_TypeEnabler_Cock</HediffDef>
+    </descriptionHyperlinks>
+  </ThingDef>
+
+  <ThingDef ParentName="RV2_VoreEnabler_Base">
+    <defName>RV2_TypeEnabler_Nipple</defName>
+    <label>Nipple elasticizer</label>
+    <description>Special mechanites which elasticize the tissues of the nipples, breasts, and mammary glands to grant the power of nipple vore.</description>
+    <descriptionHyperlinks>
+      <RecipeDef>RV2_InstallTypeEnabler_Nipple</RecipeDef>
+      <HediffDef>RV2_TypeEnabler_Nipple</HediffDef>
+    </descriptionHyperlinks>
+  </ThingDef>
+
+</Defs>

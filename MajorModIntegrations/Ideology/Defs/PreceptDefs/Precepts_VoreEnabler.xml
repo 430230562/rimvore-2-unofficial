@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <IssueDef>
+    <defName>RV2_VoreEnablers</defName>
+    <label>Vore Enablers</label>
+    <iconPath>UI/Issues/voreEnablers</iconPath>
+  </IssueDef>
+
+  <!-- Neutral -->
+  <!--<PreceptDef>
+    <defName>RV2_VoreEnablers_Accepted</defName>
+    <issue>RV2_VoreEnablers</issue>
+    <label>Accepted</label>
+    <description>We can enhance our bodies to allow us to do vore that we normally could not do.</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <associatedMemes>
+      <li>RV2_Predation</li>
+    </associatedMemes>
+  </PreceptDef>-->
+  
+  <!-- Abhorrent -->
+  <PreceptDef>
+    <defName>RV2_VoreEnablers_Abhorrent</defName>
+    <issue>RV2_VoreEnablers</issue>
+    <label>abhorrent</label>
+    <description>Our bodies are pure, those of us born without special vore abilities should not pursue augmentation to achieve them.</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>20</displayOrderInIssue>
+    <displayOrderInImpact>1000</displayOrderInImpact>
+    <associatedMemes>
+      <li>RV2_Predation</li>
+    </associatedMemes>
+    <comps>
+      <li Class="PreceptComp_SelfTookMemoryThought">
+        <eventDef>RV2_InstalledVoreEnabler</eventDef>
+        <thought>RV2_InstalledVoreEnabler_Abhorrent</thought>
+      </li>
+      <li Class="PreceptComp_KnowsMemoryThought">
+        <eventDef>RV2_InstalledVoreEnabler</eventDef>
+        <thought>RV2_InstalledVoreEnabler_Know_Social_Abhorrent</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>RV2_HasVoreEnabler_Abhorrent</thought>
+      </li>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>RV2_HasVoreEnabler_Social_Abhorrent</thought>
+      </li>
+    </comps>
+  </PreceptDef>
+
+  <ThoughtDef>
+    <defName>RV2_InstalledVoreEnabler_Abhorrent</defName>
+    <durationDays>3</durationDays>
+    <stages>
+      <li>
+        <label>Installed vore enabler</label>
+        <description>I installed a vore enabler on someone, but we should not pursue vore augmentations!</description>
+        <baseMoodEffect>-24</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>RV2_InstalledVoreEnabler_Know_Social_Abhorrent</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>7</durationDays>
+    <stackLimit>5</stackLimit>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>installed vore enabler</label>
+        <baseOpinionOffset>-10</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>RV2_HasVoreEnabler_Abhorrent</defName>
+    <workerClass>RimVore2.ThoughtWorker_Precept_HasArtificialVoreEnabler</workerClass>
+    <stages>
+      <li>
+        <label>Vore enabler</label>
+        <description>I have a vore enabler augment installed on my body, I am tainted</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>RV2_HasVoreEnabler_Social_Abhorrent</defName>
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
+    <workerClass>RimVore2.ThoughtWorker_Precept_HasArtificialVoreEnabler_Social</workerClass>
+    <stages>
+      <li>
+        <label>has vore enabler</label>
+        <baseOpinionOffset>-10</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+</Defs>

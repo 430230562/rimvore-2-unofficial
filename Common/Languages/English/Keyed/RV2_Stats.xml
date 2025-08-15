@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <RV2_StatsReport_FactorForBodySize>Body size</RV2_StatsReport_FactorForBodySize>
+  <RV2_StatsReport_InfluencedMeleeImpact>Melee skill factor</RV2_StatsReport_InfluencedMeleeImpact>
+  <RV2_StatsReport_DefaultGrappleChance>Base grapple Chance (Settings)</RV2_StatsReport_DefaultGrappleChance>
+  <RV2_StatsReport_MaxGrappleChance>Max grapple Chance (Settings)</RV2_StatsReport_MaxGrappleChance>
+  <RV2_StatsReport_VoredPrey>Vored prey</RV2_StatsReport_VoredPrey>
+  <RV2_StatsReport_VoreProductContainerContents>Contents</RV2_StatsReport_VoreProductContainerContents>
+  <RV2_StatsReport_VoreCapacityMultiplier>Body size to vore capacity multiplier</RV2_StatsReport_VoreCapacityMultiplier>
+  <RV2_StatsReport_VoreCapacityMinimum>(Cheat) Forced Minimum</RV2_StatsReport_VoreCapacityMinimum>
+</LanguageData>

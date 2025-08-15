@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <RV2_SurgeryRemovePrey>Removing prey from {0}</RV2_SurgeryRemovePrey>
+  <RV2_ThingList_None>None</RV2_ThingList_None>
+  <RV2_DisposalUrn_Empty>Empty</RV2_DisposalUrn_Empty>
+  <RV2_DisposalUrn_Contents>Contents: </RV2_DisposalUrn_Contents>
+  <RV2_Time_Seconds>{0} Seconds</RV2_Time_Seconds>
+  <RV2_Time_Minutes>{0} Minutes</RV2_Time_Minutes>
+  <RV2_Time_Hours>{0} Hours</RV2_Time_Hours>
+  <RV2_Time_Days>{0} Days</RV2_Time_Days>
+  <RV2_Time_Weeks>{0} Weeks</RV2_Time_Weeks>
+
+  <RV2_Dialog_RestartNotification>RimVore-2 settings had to be wiped and a game restart is required to properly destroy the old settings.\n\nNot restarting right now may break RV-2 and its settings menu, so it's highly encouraged to do so.</RV2_Dialog_RestartNotification>
+  <RV2_Dialog_RestartOkay>Okay, restart</RV2_Dialog_RestartOkay>
+  <RV2_Dialog_RestartNo>Do not restart</RV2_Dialog_RestartNo>
+  <RV2_Dialog_RestartDeniedNotification>Oh well. The RimVore-2 mod and its settings menu will probably break. If you change your mind you can re-open this dialog and re-wipe the settings by looking at the DebugActions menu for RV-2.</RV2_Dialog_RestartDeniedNotification>
+
+  <RV2_PredatorSwitchedVoreGoal_Key>Vore goal switched</RV2_PredatorSwitchedVoreGoal_Key>
+  <RV2_PredatorSwitchedVoreGoal>{PREDATOR} changed the vore goal they used on {PREY} from {PREVIOUSGOAL} to {NEWGOAL}</RV2_PredatorSwitchedVoreGoal>
+  
+  <RV2_VoreMentalBreakNoPathAvailable>Reason: Could not do desired vore for mental break</RV2_VoreMentalBreakNoPathAvailable>
+</LanguageData>
