@@ -7,7 +7,9 @@
 
 语言包:
 English
+
 [Japanese](https://gitlab.com/Amecissist7/rimvore-jp) - Translator: https://twitter.com/Milcandybox
+
 [Chinese](https://github.com/430230562/RimVore2-Chinese-translate)
 
 原模组链接:https://gitlab.com/Nabber/rimvore-2
